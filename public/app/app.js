@@ -4,10 +4,6 @@ define(function (require, exports, module) {
     var Backbone = require('backbone');
     require('backbone.layoutmanager');
 
-
-    // The root path to run the application through.
-    //exports.root = "/";
-
     // Provide a global location to place configuration settings and module
     // creation.
     var app = {
@@ -48,16 +44,11 @@ define(function (require, exports, module) {
 
     // Mix Backbone.Events, modules, and layout management into the app object.
     module.exports = _.extend(app, {
-        // Create a custom object with a nested Views object.
-//        module: function (additionalProps) {
-//            return _.extend({ Views: {} }, additionalProps);
-//        },
-
         // Helper for using layouts.
-        useLayout: function (templateName) {
+        useLayout: function (name) {
             var Layout = Backbone.Layout.extend({
                 el: "#main",
-                template: templateName
+                template: name
             });
 
             var layout = new Layout();
@@ -66,5 +57,4 @@ define(function (require, exports, module) {
             return this.layout = layout;
         }
     }, Backbone.Events);
-
 });
