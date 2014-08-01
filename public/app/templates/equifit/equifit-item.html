@@ -1,0 +1,23 @@
+<div class="row-fluid item" data-id="<%= id %>">
+    <div class="span8">
+        <h3><%= createdAt %>
+            <% if(complete) { %>
+            <span class="label label-success">complete</span>
+            <% } else { %>
+            <span class="label label-warning">in progress</span>
+            <% } %>
+        </h3>
+        <p>by <%= updatedBy %> @ <%= clubName %></p>
+        <a href="#" class="viewClientReport">view client report</a> | <a href="#" class="printForm">print</a>
+    </div>
+    <div class="span4">
+        <% if(complete) { %>
+            <button class="btn btn-link submit">View</button>
+        <% } else { %>
+            <button class="btn btn-primary submit">View</button>
+        <% } %>
+        <div>Last modified on <%= updatedAt %></div>
+    </div>
+</div>
+
+<hr>

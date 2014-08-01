@@ -1,0 +1,21 @@
+{
+    "schema": {
+        "title": {
+            "type": "Select",
+            "options": ["", "Mr", "Mrs", "Ms"]
+        },
+        "name": "Text",
+        "email": {
+            "validators": ["required", "email"]
+        }
+    },
+
+    "fieldsets": [{
+        "legend": "Member Information",
+        "fields": ["title", "name", "email", "testHidden"]
+    }],
+    
+    "data": {
+        
+    }
+}

@@ -1,0 +1,301 @@
+﻿#main .fixed-sub-nav {
+    position: static;
+}
+
+.add-member{
+    text-align: right;
+}
+
+/* buttons */
+.date-nav.btn-group > .btn{
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+}
+
+.date-nav.btn-group > button.date{
+    background: none;
+    border: none;
+    box-shadow: none;
+}
+/* end buttons */
+
+/* tables*/
+.table{
+    border: 1px solid #c9ced2;
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
+    border-collapse: separate;
+    border-spacing: 0;
+}
+
+.table th,
+.table td {
+    padding: 8px 10px;
+}
+
+.table thead {
+    background: #4a4f55;
+    text-transform: uppercase;
+    color:#e3e3e3;
+    text-shadow: -1px -1px 2px #383b40;
+    filter: dropshadow(color=#000, offx=1, offy=1);
+}
+
+.table thead tr:first-child th{
+    line-height: 10px;
+}
+
+.table thead tr:last-child th {
+    border-top: none;
+    background: #585f67;
+}
+
+.table thead tr th.active{
+    background-color: #50565e;
+}
+
+.table th strong,
+.table td strong,
+.table th em {
+    font-style: normal;
+    font-weight: bold;
+    display: block;
+}
+
+.table div{
+    display: inline-block;
+    width: 48%;
+}
+
+.table th:nth-child(n+4),
+.table td:nth-child(n+4){
+    text-align: center;
+}
+
+.table th:nth-child(n+5){
+    border-left: 1px solid #3a3f45;
+}
+
+.table td:nth-child(n+5){
+    border-left: 1px solid #ddd;
+}
+
+.table .client-avatar {
+    height: 55px;
+    width: 55px;
+}
+
+.table select{
+    margin-bottom: 0;
+}
+
+.alert{
+    text-align: center;
+    margin: 20px 0;
+}
+
+.alert strong{
+    font-size: 1.4rem;
+}
+
+.sort{
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+@media (max-width: 979px) {
+    .navbar-fixed-top {
+        margin-bottom: 0;
+    }
+}
+
+@media (min-width: 980px) {
+
+}
+
+@media (min-width: 1200px) {
+    #main .container {
+        width: 1020px;
+    }
+}
+
+@media (max-width: 768px) {
+    .hidden-phone {
+        display: none !important;
+    }
+    
+    .visible-phone {
+        display: inherit !important;
+    }
+    
+    #main .container, .fixed-sub-nav .container, .main-nav .container {
+        width: 100%;
+    }
+
+    [class*="span"], .uneditable-input[class*="span"], .row-fluid [class*="span"] {
+        float: none;
+        display: block;
+        width: 100%;
+        margin-left: 0;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+    
+    .btn-group > .date.btn-large {
+        width: 200px;
+    }
+    
+    .btn.date > div{
+        line-height: 16px;
+        padding-bottom: 5px;
+        padding-top: 5px;
+    }
+    
+    .btn.date > div > div {
+        display: block;
+        padding-bottom: 0;
+        padding-top: 0;
+    }
+    
+    #main .container {
+        width: 100%;
+    }
+    
+    .status {
+        text-align: center;
+    }
+    
+    .buttons {
+      float: none;
+    }
+    .buttons .btn {
+        display: block;
+        width: 100%;
+        padding-left: 0;
+        padding-right: 0;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+        margin-bottom: 6px;
+    }
+    .buttons .btn, .modal-footer .btn {
+        padding: 10px 0;
+        margin-bottom: 6px;
+    }
+    .buttons .btn {
+        display: block;
+        width: 100%;
+        padding-left: 0;
+        padding-right: 0;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+        margin-bottom: 6px;
+    }
+}
+
+ /*Landscape phone to portrait tablet*/
+@media (max-width: 767px) {
+    #main .fixed-sub-nav {
+        position: static;
+    }
+
+    .container-fluid {
+        margin: 0 10px;
+    }
+
+    .table thead {
+        background: #4a4f55; /* Old browsers */
+        background: -moz-linear-gradient(top,  #4a4f55 0%, #585f67 100%); /* FF3.6+ */
+        background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#4a4f55), color-stop(100%,#585f67)); /* Chrome,Safari4+ */
+        background: -webkit-linear-gradient(top,  #4a4f55 0%,#585f67 100%); /* Chrome10+,Safari5.1+ */
+        background: -o-linear-gradient(top,  #4a4f55 0%,#585f67 100%); /* Opera 11.10+ */
+        background: -ms-linear-gradient(top,  #4a4f55 0%,#585f67 100%); /* IE10+ */
+        background: linear-gradient(to bottom,  #4a4f55 0%, #585f67 100%); /* W3C */
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4a4f55', endColorstr='#585f67',GradientType=0 ); /* IE6-9 */
+    }
+
+    .buttons {
+        float: none;
+    }
+
+    .buttons .btn{
+        display: block;
+        width: 100%;
+        padding-left: 0;
+        padding-right: 0;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+        margin-bottom: 6px;
+    }
+    .status {
+        text-align: center;
+    }
+    
+    
+    #main .container {
+        width:100%;
+    }
+}
+
+ /*Landscape phones and down*/
+@media (max-width: 480px) 
+{
+	table {
+		width: 95%;
+	}
+	.table th, .table td {
+		padding: 8px 4px 4px 4px;
+	}
+	
+	th.sort.alt1  {
+		max-width: 80px;
+	}
+	
+	td.alt1  
+	{
+		max-width: 80px !important; /* to force the line break */
+		word-wrap: break-word !important;
+		white-space: pre-wrap;
+	
+	}
+}
+
+
+/* Print */
+@media print {
+    * { background: transparent !important; color: black !important; box-shadow:none !important; text-shadow: none !important; filter:none !important; -ms-filter: none !important; } /* Black prints faster: h5bp.com/s */
+    a, a:visited { text-decoration: underline; }
+    a[href]:after { content: " (" attr(href) ")"; }
+    abbr[title]:after { content: " (" attr(title) ")"; }
+    .ir a:after, a[href^="javascript:"]:after, a[href^="#"]:after { content: ""; }  /* Don't show links for images, or javascript/internal links */
+    pre, blockquote { border: 1px solid #999; page-break-inside: avoid; }
+    thead { display: table-header-group; } /* h5bp.com/t */
+    tr, img { page-break-inside: avoid; }
+    img { max-width: 100% !important; }
+    @page { margin: 0.5cm; }
+    p, h2, h3 { orphans: 3; widows: 3; }
+    h2, h3 { page-break-after: avoid; }
+}
+
+#main .projections-header{
+margin: 0px !important;
+left: -13px !important;
+position: fixed;
+width: 106% !important;
+height: 40PX;
+margin-bottom: 50px;
+z-index: 1028;
+}
+
+#main .projections-subnav {
+    position: relative; top: 41px;
+}
+
+#main .projections-container {
+    position: relative; top: 10px;
+}
+

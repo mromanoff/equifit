@@ -1,0 +1,54 @@
+[
+    {
+        "id": 1,
+        "title": "Personal Info",
+        "description": "",
+        "slug": "personal-info",
+        "complete": false
+    },
+    {
+        "id": 12,
+        "title": "PAR-Q",
+        "description": "",
+        "slug": "par-q",
+        "complete": false
+    },
+    {
+        "id": 2,
+        "title": "Goals",
+        "description": "",
+        "slug": "goals",
+        "complete": false
+    },
+    {
+        "id": 3,
+        "title": "Orthopedic",
+        "description": "",
+        "slug": "medical-questions",
+        "complete": false
+    },
+
+    {
+        "id": 4,
+        "title": "Exercise History",
+        "description": "",
+        "slug": "exercise-history",
+        "complete": false
+    },
+
+    {
+        "id": 5,
+        "title": "Lifestyle",
+        "description": "",
+        "slug": "lifestyle",
+        "complete": false
+    },
+
+    {
+        "id": 6,
+        "title": "Physical Test",
+        "description": "",
+        "slug": "physical-test",
+        "complete": false
+    }
+]

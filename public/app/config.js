@@ -4,7 +4,9 @@ require.config({
     "lodash": "../bower_components/lodash/dist/lodash",
     "template": "../bower_components/lodash-template-loader/loader",
     "jquery": "../bower_components/jquery/dist/jquery",
-    "backbone": "../bower_components/backbone/backbone"
+    "backbone": "../bower_components/backbone/backbone",
+    "backbone.layoutmanager": "../bower_components/layoutmanager/backbone.layoutmanager",
+    "moment": "../bower_components/moment/moment"
   },
 
   deps: ["main"]

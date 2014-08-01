@@ -1,0 +1,21 @@
+{
+    "schema": {
+        "trainerLastName": {
+            "type": "Text"
+        },
+
+        "trainerFirstName": {
+            "type": "Text"
+        }
+    },
+    "fieldsets": [
+        {
+            "legend": "Personal Info",
+            "fields": ["trainerLastName", "trainerFirstName"]
+        }
+    ],
+    "data": {
+        "trainerLastName": "Josh",
+        "trainerFirstName": "Smith"
+    }
+}
