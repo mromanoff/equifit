@@ -1,11 +1,10 @@
-define([
-        '../../../app',
-        'moment'
-    ],
+define(function (require, exports, module) {
+    "use strict";
 
-// Map dependencies from above array.
-    function (app, moment) {
-        'use strict';
+    var app = require('app');
+    var moment = require('moment');
+
+    var EquifitsView;
 
         var Item =  Backbone.View.extend({
             manage: true,
@@ -45,7 +44,7 @@ define([
 
         });
 
-        return Backbone.View.extend({
+        EquifitsView = Backbone.View.extend({
             manage: true,
             el: false,
             template: 'equifit/equifits-list',
@@ -58,4 +57,6 @@ define([
                 }, this);
             }
         });
+
+       module.exports = EquifitsView;
     });

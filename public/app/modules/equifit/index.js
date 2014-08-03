@@ -1,7 +1,7 @@
 define(function (require, exports, module) {
     "use strict";
 
-    var app = require('../../app');
+    var app = require('app');
     var EquifitEntities = require('./entities/equifit');
     var EquifitView = require('./views/equifits');
 
@@ -64,74 +64,3 @@ define(function (require, exports, module) {
 
     module.exports = Equifit;
 });
-
-//
-//// Equifit module
-//define([
-//        '../../app',
-//        './entities/equifit',
-//        './views/equifits'
-//    ],
-//
-//    function (app, EquifitEntities, EquifitView) {
-//        'use strict';
-//
-//        var Equifit = app.module();
-//
-//        /// create an instance of forms collection.
-//        var equifitEntities = new EquifitEntities();
-//
-//        Equifit.Views.Layout = Backbone.Layout.extend({
-//            template: 'equifit/index',
-//            events: {
-//                'click .createNew': 'createNew',
-//                'click .printBlankForm': 'printForm'
-//            },
-//            printForm: function (e) {
-//                e.preventDefault();
-//                console.log('printBlankForm');
-//                window.location.href = 'app/mocks/equifit/equifit-forms.pdf';
-//            },
-//
-//            createNew: function (e) {
-//                e.preventDefault();
-//                console.log('Create New');
-//                app.router.navigate('/equifit/create', { trigger: true });
-//            }
-//        });
-//
-//        // render layout
-//        Equifit.renderLayout = function () {
-//            // Fetch data
-//            equifitEntities.fetch().then(
-//                function () {
-//                    app.useLayout('layouts/main').setViews({
-//                        '#content':  new Equifit.Views.Layout({
-//                            id:'equifit',
-//                            views: {
-//                                '.container': new EquifitView({
-//                                    collection: equifitEntities
-//                                })
-//                            }
-//                        })
-//                    }).render();
-//                    $('title').html('Equifit');
-//                },
-//                function (err) {
-//                    var message = app.exceptionHandling(err);
-//                    console.log('ERROR: ', err);
-//                    app.useLayout('layouts/main').setViews({
-//                        '#content': new Messages.Views.Warning({
-//                            model: {
-//                                type: 'alert-error',
-//                                code: 'Sorry, ',
-//                                text: message
-//                            }
-//                        })
-//                    }).render();
-//                }
-//            );
-//        };
-//
-//        return Equifit;
-//    });

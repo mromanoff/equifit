@@ -1,48 +1,55 @@
-define([
-        '../../../app'
-    ],
-    function (app) {
-        'use strict';
+define(function (require, exports, module) {
+    "use strict";
 
-        var Item =  Backbone.View.extend({
-            manage: true,
-            template: 'equifit/form-item',
-            tagName: 'li',
+    var app = require('app');
+    var FormsCollections;
 
-            events: {
-                'click .item': 'renderItemView'
-            },
+    var Item = Backbone.View.extend({
+        manage: true,
+        template: 'equifit/form-item',
+        tagName: 'li',
 
-            serialize: function () {
-                return this.model.toJSON();
-            },
+        events: {
+            'click .item': 'renderForm'
+        },
 
-            renderItemView: function (e) {
-                var url;
-                e.preventDefault();
-                if(_.isEqual(app.flow, 'edit')) {
-                    url = '/equifit/' + app.flow + '/' + app.equifitId + '/forms/' + $(e.currentTarget).data('slug');
-                }
-                else {
-                    url = '/equifit/' + app.flow + '/forms/' + $  (e.currentTarget).data('slug');
-                }
+        initialize: function () {
+           // console.log('form item', this.model);
+        },
 
-                console.log('url', url);
-                app.router.navigate(url, { trigger: true });
+        serialize: function () {
+            return this.model.toJSON();
+        },
+
+        renderForm: function (e) {
+            var url;
+            e.preventDefault();
+            if (_.isEqual(app.flow, 'edit')) {
+                url = '/equifit/' + app.flow + '/' + app.equifitId + '/forms/' + this.model.id; //$(e.currentTarget).data('slug');
             }
-        });
-
-
-        return Backbone.View.extend({
-            el: false,
-            template: 'equifit/forms-list',
-
-            beforeRender: function () {
-                this.collection.each(function (item) {
-                    this.insertView('ul', new Item({
-                        model: item
-                    }));
-                }, this);
+            else {
+                url = '/equifit/' + app.flow + '/forms/' +  + this.model.id; //$(e.currentTarget).data('slug');
             }
-        });
+
+            console.log('url', url);
+            app.router.navigate(url, { trigger: true });
+        }
     });
+
+
+    FormsCollections = Backbone.View.extend({
+        manage: true,
+        el: false,
+        template: 'equifit/forms-list',
+
+        beforeRender: function () {
+            this.collection.each(function (item) {
+                this.insertView('ul', new Item({
+                    model: item
+                }));
+            }, this);
+        }
+    });
+
+    module.exports = FormsCollections;
+});

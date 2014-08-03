@@ -1,32 +1,29 @@
 /**
  * Created by mromanoff on 7/24/2014.
  */
-// Equifit module
-define([
-        '../../../../app',
-        'modules/equifit/entities/form',
-        'modules/equifit/views/form'
-    ],
 
-    function (app, FormEntity, FormView) {
-        'use strict';
+define(function (require, exports, module) {
+    "use strict";
 
-        var Equifit = app.module();
+    var app = require('app');
+    var FormEntity = require('./entities/form');
+    var FormView = require('./views/form');
+
+        var Equifit = {};
 
         /// create an instance of forms collection.
         var form = new FormEntity();
 
-        Equifit.Views.Layout = Backbone.Layout.extend({
+        Equifit.Layout = Backbone.Layout.extend({
             template: 'equifit/form'
         });
 
         Equifit.renderLayout = function () {
-
             // Fetch data
             form.fetch().then(
                 function () {
                     app.useLayout('layouts/main').setViews({
-                        '#content':  new Equifit.Views.Layout({
+                        '#content':  new Equifit.Layout({
                             id:'equifit',
                             views: {
                                 '.container': new FormView({
@@ -51,12 +48,7 @@ define([
                     }).render();
                 }
             );
-
-            app.useLayout('layouts/main').setViews({
-                '#content': new Equifit.Views.Layout()
-            }).render();
-            $('title').html('Equifit - Lifestyle');
         };
 
-        return Equifit;
+        module.exports = Equifit;
     });

@@ -6,6 +6,7 @@ require.config({
     "jquery": "../bower_components/jquery/dist/jquery",
     "backbone": "../bower_components/backbone/backbone",
     "backbone.layoutmanager": "../bower_components/layoutmanager/backbone.layoutmanager",
+    "backbone-forms": "../bower_components/backbone-forms/distribution/backbone-forms",
     "moment": "../bower_components/moment/moment"
   },
 

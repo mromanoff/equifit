@@ -4,6 +4,7 @@ define(function (require, exports, module) {
     var Backbone = require('backbone');
     require('backbone.layoutmanager');
 
+
     // Provide a global location to place configuration settings and module
     // creation.
     var app = {

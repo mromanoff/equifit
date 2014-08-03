@@ -2,8 +2,8 @@ define(function (require, exports, module) {
     "use strict";
 
     // External dependencies.
-    var app = require('./app');
-    var Backbone = require("backbone");
+    var app = require('app');
+    var Backbone = require('backbone');
 
     // Defining the application router.
     var Router = Backbone.Router.extend({
@@ -52,7 +52,11 @@ define(function (require, exports, module) {
             app.equifitId = equifitId;
             app.formId = formId;
 
-            if (_.isUndefined(formId)) {
+            console.log('Edit route', equifitId, formId);
+
+            //TODO: check why formId attribute is null????
+            //if (_.isUndefined(formId)) {
+            if (_.isNull(formId)) {
                 console.log('render forms collection for equifit id ', equifitId);
                 require(['modules/equifit/forms'],
                     function (Equifit) {
@@ -60,6 +64,8 @@ define(function (require, exports, module) {
                     });
             }
             else {
+                console.log('Router: render form');
+
                 //require(['modules/equifit/' + formId],
                 require(['modules/equifit/form'],
                     function (Equifit) {
@@ -67,8 +73,6 @@ define(function (require, exports, module) {
                     });
             }
         }
-
-
     });
 
     module.exports = Router;

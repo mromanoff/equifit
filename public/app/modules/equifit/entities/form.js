@@ -1,14 +1,13 @@
 // Form Model
 
-define([
-        '../../../app'
-    ],
-    function () {
-        'use strict';
+define(function (require, exports, module) {
+    "use strict";
 
-        return Backbone.Model.extend({
-            url: function () {
-                return '/app/mocks/equifit/form.json';
-            }
-        });
+    var Form = Backbone.Model.extend({
+        url: function () {
+            return '/app/mocks/equifit/form.json';
+        }
     });
+
+    module.exports = Form;
+});
