@@ -21,6 +21,7 @@ define([
             model: model,
             url: function () {
                 return '/app/mocks/equifit/equifits.json';
+                //return '/equifit/api/members/1002209379/equifits/';
             }
         });
     });

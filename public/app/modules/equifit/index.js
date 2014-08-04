@@ -12,14 +12,22 @@ define(function (require, exports, module) {
 
     Equifit.Layout = Backbone.Layout.extend({
         template: 'equifit/index',
+
         events: {
             'click .createNew': 'createNew',
             'click .printBlankForm': 'printForm'
         },
+
+
+        serialize: function () {
+            return this.model;
+        },
+
+
         printForm: function (e) {
             e.preventDefault();
             console.log('printBlankForm');
-            window.location.href = 'app/mocks/equifit/equifit-forms.pdf';
+            window.location.href = '/app/mocks/equifit/equifit-forms.pdf';
         },
 
         createNew: function (e) {
@@ -36,6 +44,8 @@ define(function (require, exports, module) {
             function () {
                 app.useLayout('layouts/main').setViews({
                     '#content':  new Equifit.Layout({
+                        model: { memberName : app.store.memberName},
+
                         id:'equifit',
                         views: {
                             '.container': new EquifitView({

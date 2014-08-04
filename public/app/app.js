@@ -2,6 +2,7 @@ define(function (require, exports, module) {
     "use strict";
 
     var Backbone = require('backbone');
+    var moment = require('moment');
     require('backbone.layoutmanager');
 
 
@@ -12,7 +13,12 @@ define(function (require, exports, module) {
         root: "/",
 
         store: {
-            flow: null      // create, edit, cancel etc.
+            flow: null,      // create, edit, cancel etc.
+            memberName: window.equifitData.memberName || null,
+            memberId: window.equifitData.memberId || null,
+            equifitDate: moment().format('MMMM D, YYYY'),
+            formName: 'Error: there is no form',
+            formId: null
         }
     };
 

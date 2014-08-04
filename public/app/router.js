@@ -33,18 +33,18 @@ define(function (require, exports, module) {
             app.subApp = 'equifit';
             app.flow = 'create';
 
-            if (_.isUndefined(formId)) {
-                require(['./modules/equifit/forms'],
-                    function (Equifit) {
-                        Equifit.init();
-                    });
-            }
-            else {
-                require(['./modules/equifit/' + formId],
-                    function (Equifit) {
-                        Equifit.init();
-                    });
-            }
+//            if (_.isUndefined(formId)) {
+//                require(['./modules/equifit/forms'],
+//                    function (Equifit) {
+//                        Equifit.init();
+//                    });
+//            }
+//            else {
+//                require(['./modules/equifit/' + formId],
+//                    function (Equifit) {
+//                        Equifit.init();
+//                    });
+//            }
         },
 
         equifitEdit: function (equifitId, formId) {

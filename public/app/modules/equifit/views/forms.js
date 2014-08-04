@@ -32,6 +32,11 @@ define(function (require, exports, module) {
             }
 
             console.log('url', url);
+
+
+            app.store.formName = this.model.get('title');
+            app.store.formId = this.model.id;
+
             app.router.navigate(url, { trigger: true });
         }
     });

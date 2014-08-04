@@ -15,16 +15,35 @@ define(function (require, exports, module) {
         var form = new FormEntity();
 
         Equifit.Layout = Backbone.Layout.extend({
-            template: 'equifit/form'
+            template: 'equifit/form',
+
+            serialize: function () {
+                return this.model;
+            }
         });
 
-        Equifit.init = function () {
+        Equifit.init = function (equifitId, formId) {
+
+            form.url =  function () {
+                return '/app/mocks/equifit/form.json';
+                //return '/equifit/api/members/1002209379/equifits/' + equifitId + '/documents/' + formId;
+            };
+
             // Fetch data
             form.fetch().then(
                 function () {
                     app.useLayout('layouts/main').setViews({
                         '#content':  new Equifit.Layout({
                             id:'equifit',
+                            model: {
+                                memberName: app.store.memberName,
+                                memberId: app.store.memberId,
+                                equifitId: app.store.equifitId,
+                                date: app.store.equifitDate,
+                                formName: app.store.formName,
+                                formId: app.store.formId
+                            },
+
                             views: {
                                 '.container': new FormView({
                                     model: form
