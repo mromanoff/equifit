@@ -1,8 +1,84 @@
 extends layout
 block content
-    h1= title
-    p Welcome to #{title}
-
-    div#main
-
-    script(data-main="/app/config", src="/bower_components/requirejs/require.js")
+    div#pageWrapper
+        div.page
+            nav(class='navbar navbar-inverse navbar-fixed-top main-nav')
+                div.navbar-inner
+                    div.container
+                        button(type='button', class='btn btn-navbar', data-toggle='collapse', data-target='.nav-collapse')
+                            span.icon-bar
+                            span.icon-bar
+                            span.icon-bar
+                        a(class="pt-logo", href="/Dashboard/Home", data-bypass="true")
+                        div(class="nav-collapse collapse" id="navCollapse")
+                            ul.nav
+                                li
+                                    a(href="/Dashboard/Home", data-bypass="true")
+                                        i.icon-home Home
+                                        //                    li class="" ><a href="/clients/List/Search" data-bypass="true"><i class="icon-search"></i>Search</a></li>
+                                        //                    li id="jqCalenderNav" class =""><a href="/schedule/day" data-bypass="true"><i class="icon-calendar"></i>Calendar</a></li>
+                                        //                    li class =""><a href="/clients/List" data-bypass="true"><i class="icon-user"></i>Clients</a></li>
+                                        //                    li id="jqProjectionsNav" class =""><a href="/projections/"><i class="icon-road"></i>Projections</a></li>
+                                        //                    li class =""><a href="/notifications/Home" data-bypass="true"><i class="icon-bullhorn"></i>Alerts</a> </li>
+                                        //                    li data-toggle="collapse" data-target=".nav-collapse"  class="hidden-desktop"><a href="/settings"><i class="icon-cog"></i>Settings</a></li>
+                                        //                    li class="hidden-desktop"><a href="/logout" data-bypass="true"><i class="icon-off"></i>Sign Out</a></li>
+                                        //
+                            ul(class="nav pull-right  visible-desktop")
+                                li.dropdown
+                                    a(href="#", class="dropdown-toggle", data-toggle="dropdown", data-bypass="true") Hi,
+                                        strong
+                                            span#spnShowFirstName
+                                            span.caret
+                                    ul.dropdown-menu
+                                        li(class="pane-user-info clearfix")
+                            //                <div class="user-avatar" id="user-avatar" style="background:url('/Resources/Images/user.png') no-repeat;"></div>
+                            //                <div class="user-detail">
+                            //                    <h5>
+                            //                        <strong><span id="spnFirstName"></span></strong>
+                            //                        <br />
+                            //                        <span id="spnLastName"></span>
+                            //                    </h5>
+                            //                    <p> <span id="spnEmail"></span></p>
+                            //                </div>
+                            //                </li>
+                            //                <li class="divider"></li>
+                            //                <li class="nav-header"><span><i class="icon-cog"></i><strong>Settings</strong></span></li>
+                            //                <li class="nav-header-link"><a href="/settings/availability">My Availability</a></li>
+                            //                <li class="nav-header-link"><a href="/settings/contact">My Contact Info</a></li>
+                            //                <li class="divider"></li>
+                            //                <li><a href="/logout" data-bypass="true"><i class="icon-off"></i><strong>Sign Out</strong></a></li>
+                            //        </ul>
+                            //    </li>
+                            //</ul>
+                            //            </div>
+                            //            <!--/.nav-collapse -->
+                            //        </div>
+                            //    </div>
+                            //</nav>
+            section(role="main" id="main")
+                //    </div>
+                //    <div class="push">
+                //    </div>
+                //</div>
+                //<div id="warningPopupUpgrade" class="upgrade hide modal fade">
+                //    <div class="modal-header round-top-sml text-center">
+                //        <button type="button" class="close" data-dismiss="modal">
+                //            &times;</button>
+                //        <h4 style="margin: 0px;">
+                //            Your browser is not supported.</h4>
+                //    </div>
+                //    <div class="modal-body">
+                //        <p>
+                //            To get the most out of the Personal Training Application, please download the latest
+                //            version of <a href="https://www.google.com/intl/en/chrome/browser/">Chrome</a> or
+                //            <a href="http://www.mozilla.org/en-US/firefox/new/">Firefox</a></p>
+                //    </div>
+                //    <div class="modal-footer">
+                //        <a href="#" class="btn" data-dismiss="modal">Close</a>
+                //    </div>
+                //</div>
+            footer.full-width
+                div.container
+                    a(href="/feedback", data-bypass="true") Feedback |
+                    a(href="/faq" data-bypass="true") FAQ | Equinox @ 2014
+        input(type="hidden", id="TrainerId")
