@@ -21,7 +21,7 @@ define([
         });
 
         // render layout
-        Equifit.renderLayout = function () {
+        Equifit.init = function () {
             app.useLayout('layouts/main').setViews({
                 '#content': new Equifit.Views.Layout()
             }).render();

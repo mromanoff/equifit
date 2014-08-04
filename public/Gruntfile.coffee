@@ -5,14 +5,14 @@ module.exports = ->
 
   # Run JSHint and a quick test.
   @registerTask "test", [
-    "jshint"
+    # "jshint"
     "karma:run"
   ]
 
   # When running the default Grunt command, just lint the code.
   @registerTask "default", [
     "clean"
-    "jshint"
+    # "jshint"
     "karma:run"
     "processhtml"
     "copy"

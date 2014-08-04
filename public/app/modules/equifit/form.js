@@ -18,7 +18,7 @@ define(function (require, exports, module) {
             template: 'equifit/form'
         });
 
-        Equifit.renderLayout = function () {
+        Equifit.init = function () {
             // Fetch data
             form.fetch().then(
                 function () {

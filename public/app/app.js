@@ -55,7 +55,8 @@ define(function (require, exports, module) {
             var layout = new Layout();
 
             // Cache the refererence.
-            return this.layout = layout;
+            this.layout =  layout;
+            return layout;
         }
     }, Backbone.Events);
 });

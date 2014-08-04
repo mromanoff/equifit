@@ -14,7 +14,7 @@ define(function (require, exports, module) {
     });
 
     // render layout
-    Equifit.renderLayout = function () {
+    Equifit.init = function () {
         // Fetch data
         forms.fetch().then(
             function () {

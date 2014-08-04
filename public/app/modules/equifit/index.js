@@ -30,7 +30,7 @@ define(function (require, exports, module) {
     });
 
     // render layout
-    Equifit.renderLayout = function () {
+    Equifit.init = function () {
         // Fetch data
         equifitEntities.fetch().then(
             function () {

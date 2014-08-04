@@ -28,7 +28,7 @@ define(function (require, exports, module) {
                 url = '/equifit/' + app.flow + '/' + app.equifitId + '/forms/' + this.model.id; //$(e.currentTarget).data('slug');
             }
             else {
-                url = '/equifit/' + app.flow + '/forms/' +  + this.model.id; //$(e.currentTarget).data('slug');
+                url = '/equifit/' + app.flow + '/forms/' + this.model.id; //$(e.currentTarget).data('slug');
             }
 
             console.log('url', url);

@@ -23,9 +23,9 @@ define(function (require, exports, module) {
         equifit: function () {
             app.subApp = 'equifit';
 
-            require(['modules/equifit/index'],
+            require(['./modules/equifit/index'],
                 function (Equifit) {
-                    Equifit.renderLayout();
+                    Equifit.init();
                 });
         },
 
@@ -34,15 +34,15 @@ define(function (require, exports, module) {
             app.flow = 'create';
 
             if (_.isUndefined(formId)) {
-                require(['modules/equifit/forms'],
+                require(['./modules/equifit/forms'],
                     function (Equifit) {
-                        Equifit.renderLayout();
+                        Equifit.init();
                     });
             }
             else {
-                require(['modules/equifit/' + formId],
+                require(['./modules/equifit/' + formId],
                     function (Equifit) {
-                        Equifit.renderLayout();
+                        Equifit.init();
                     });
             }
         },
@@ -52,24 +52,18 @@ define(function (require, exports, module) {
             app.equifitId = equifitId;
             app.formId = formId;
 
-            console.log('Edit route', equifitId, formId);
-
             //TODO: check why formId attribute is null????
             //if (_.isUndefined(formId)) {
             if (_.isNull(formId)) {
-                console.log('render forms collection for equifit id ', equifitId);
-                require(['modules/equifit/forms'],
+                require(['./modules/equifit/forms'],
                     function (Equifit) {
-                        Equifit.renderLayout(equifitId);
+                        Equifit.init(equifitId);
                     });
             }
             else {
-                console.log('Router: render form');
-
-                //require(['modules/equifit/' + formId],
-                require(['modules/equifit/form'],
+                require(['./modules/equifit/form'],
                     function (Equifit) {
-                        Equifit.renderLayout(equifitId, formId);
+                        Equifit.init(equifitId, formId);
                     });
             }
         }

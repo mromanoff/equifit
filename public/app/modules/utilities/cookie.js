@@ -14,7 +14,7 @@ function () {
                 while (c.charAt(0) == ' ') {
                     c = c.substring(1, c.length);
                 }
-                if (c.indexOf(n) == 0) {
+                if (c.indexOf(n) === 0) {
                     return c.substring(n.length, c.length);
                 }
             }

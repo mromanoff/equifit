@@ -10,18 +10,21 @@ module.exports = ->
         generateSourceMaps: true
         include: ["main"]
         out: "dist/source.min.js"
-        optimize: "uglify2"
+      # optimize: "uglify2"
+        optimize: "none"
         baseUrl: "app"
 
         paths:
           "almond": "../bower_components/almond/almond"
 
-        # Include a minimal AMD implementation shim.
+      # Include a minimal AMD implementation shim.
         name: "almond"
 
-        # Wrap everything in an IIFE.
+      # Wrap everything in an IIFE.
         wrap: true
 
-        # Do not preserve any license comments when working with source maps.
-        # These options are incompatible.
+        findNestedDependencies: true
+
+      # Do not preserve any license comments when working with source maps.
+      # These options are incompatible.
         preserveLicenseComments: false
