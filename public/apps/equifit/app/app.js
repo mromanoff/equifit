@@ -4,33 +4,25 @@ define(function (require, exports, module) {
     var Backbone = require('backbone');
     var Layout = require('backbone.layoutmanager');
     var moment = require('moment');
-    var store = require('./modules/entities/store');
 
-    // set store
-    store.set({
-        flow: null,      // create, edit, cancel etc.
-        memberName: window.equifitData.memberName || null,
-        memberId: window.equifitData.memberId || null,
-        equifitDate: moment().format('MMMM D, YYYY'),
-        formName: 'Error: there is no form',
-        formId: null
-    });
 
     // Provide a global location to place configuration settings and module
     // creation.
     var app = {
         // The root path to run the application.
-        root: '/'
-
-//        store: {
-//            flow: null,      // create, edit, cancel etc.
-//            memberName: window.equifitData.memberName || null,
-//            memberId: window.equifitData.memberId || null,
-//            equifitDate: moment().format('MMMM D, YYYY'),
-//            formName: 'Error: there is no form',
-//            formId: null
-//        }
+        root: '/',
+        store: require('./modules/entities/store')
     };
+
+    // set store with initial data
+    app.store.set({
+        flow: null,      // create, edit, cancel etc.
+        memberName: window.equifitData.memberName || null,
+        memberId: window.equifitData.memberId || null,
+        equifitDate: moment().format('MMMM D, YYYY'),
+        formName: null,
+        formId: null
+    });
 
     // Configure LayoutManager with Backbone Boilerplate defaults.
     Layout.configure({

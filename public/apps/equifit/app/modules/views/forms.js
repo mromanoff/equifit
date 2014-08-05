@@ -2,8 +2,7 @@ define(function (require, exports, module) {
     "use strict";
 
     var app = require('app');
-    var store = require('../entities/store');
-    var FormsCollections;
+    var FormsView;
 
     var Item = Backbone.View.extend({
         manage: true,
@@ -14,10 +13,6 @@ define(function (require, exports, module) {
             'click .item': 'renderForm'
         },
 
-        initialize: function () {
-           // console.log('form item', this.model);
-        },
-
         serialize: function () {
             return this.model.toJSON();
         },
@@ -25,17 +20,14 @@ define(function (require, exports, module) {
         renderForm: function (e) {
             var url;
             e.preventDefault();
-            if (_.isEqual(app.flow, 'edit')) {
-                url = '/equifit/' + app.flow + '/' + app.equifitId + '/forms/' + this.model.id; //$(e.currentTarget).data('slug');
+            if (_.isEqual(app.store.get('appFlow'), 'edit')) {
+                url = '/equifit/' + app.store.get('appFlow') + '/' + app.store.get('equifitId') + '/forms/' + this.model.id; //$(e.currentTarget).data('slug');
             }
             else {
-                url = '/equifit/' + app.flow + '/forms/' + this.model.id; //$(e.currentTarget).data('slug');
+                url = '/equifit/' + app.store.get('appFlow') + '/forms/' + this.model.id; //$(e.currentTarget).data('slug');
             }
 
-            console.log('url', url);
-
-
-            store.set({
+            app.store.set({
                 formName: this.model.get('title'),
                 formId: this.model.id
             });
@@ -45,7 +37,7 @@ define(function (require, exports, module) {
     });
 
 
-    FormsCollections = Backbone.View.extend({
+    FormsView = Backbone.View.extend({
         manage: true,
         el: false,
         template: 'forms-list',
@@ -59,5 +51,5 @@ define(function (require, exports, module) {
         }
     });
 
-    module.exports = FormsCollections;
+    module.exports = FormsView;
 });

@@ -1,17 +1,26 @@
+<% if (_.isEqual(slug, 'equifit')) { %>
 <ul class="breadcrumb">
     <li><a href="#"><%= memberName %></a> <span class="divider">|</span></li>
     <li><a href="/equifit" class="active">Equifits</a></li>
 </ul>
 
+<% }
+    else if (_.isEqual(slug, 'forms')) {
+%>
 <ul class="breadcrumb">
     <li><a href="#"><%= memberName %></a> <span class="divider">|</span></li>
     <li><a href="/equifit">Equifits</a> <span class="divider">|</span></li>
     <li><a href="/equifit/edit/<%= equifitId %>" class="active"><%= equifitDate %></a></li>
 </ul>
 
+<% }
+    else if (_.isEqual(slug, 'form')) {
+%>
 <ul class="breadcrumb">
     <li><a href="#"><%= memberName %></a> <span class="divider">|</span></li>
     <li><a href="/equifit">Equifits</a> <span class="divider">|</span></li>
     <li><a href="/equifit/edit/<%= equifitId %>"><%= equifitDate %></a> <span class="divider">|</span></li>
     <li><a href="/equifit/edit/<%= equifitId %>/forms/<%= formId %>" class="active"><%= formName %></a></li>
 </ul>
+
+<% } else {} %>

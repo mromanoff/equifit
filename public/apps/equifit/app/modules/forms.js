@@ -7,19 +7,22 @@ define(function (require, exports, module) {
     var HeaderView = require('./views/header');
     var BreadcrumbView = require('./views/breadcrumb');
 
-    var Forms = {};
+    var FormsModule = {};
 
     // create an instance of forms collection.
     var formsEntities = new FormsEntities();
 
-    Forms.init = function () {
+    app.store.set({
+        pageTitle: 'Equifits Forms',
+        slug: 'forms'
+    });
+
+    FormsModule.init = function () {
         // Fetch data
         formsEntities.fetch().then(
             function () {
                 app.useLayout('layouts/main').setViews({
-                    '.header': new HeaderView({
-                        model: new Backbone.Model({ pageTitle: 'Equifits Forms'})
-                    }),
+                    '.header': new HeaderView(),
                     '.breadcrumb-container': new BreadcrumbView(),
                     '.main-container': new FormsView({
                         collection: formsEntities
@@ -30,5 +33,5 @@ define(function (require, exports, module) {
         );
     };
 
-    module.exports = Forms;
+    module.exports = FormsModule;
 });

@@ -1,9 +1,8 @@
-// Form Model
-
 define(function (require, exports, module) {
-    "use strict";
+    'use strict';
 
-    var Form = Backbone.Model.extend({});
+    var backbone = require('backbone');
+    var FormEntity = Backbone.Model.extend();
 
-    module.exports = Form;
+    module.exports = FormEntity;
 });

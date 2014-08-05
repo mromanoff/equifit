@@ -1,3 +1,8 @@
+/**
+ * Store Module
+ * description: Get adn Set common data during app lifespan
+ */
+
 define(function (require, exports, module) {
     "use strict";
 
@@ -7,7 +12,9 @@ define(function (require, exports, module) {
 
     Store = Backbone.Model.extend({
         defaults: {
-            flow: null,
+            appFlow: null,
+            slug: null,
+            pageTitle: null,
             memberName: null,
             memberId: null,
             equifitId: null,

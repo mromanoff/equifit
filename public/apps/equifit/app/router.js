@@ -16,7 +16,6 @@ define(function (require, exports, module) {
         },
 
         equifit: function () {
-            app.subApp = 'equifit';
             require(['./modules/equifits'],
                 function (Equifit) {
                     Equifit.init();
@@ -24,8 +23,7 @@ define(function (require, exports, module) {
         },
 
         equifitCreate: function (formId) {
-            app.subApp = 'equifit';
-            app.flow = 'create';
+            app.store.set({flow: 'create'});
 
 //            if (_.isUndefined(formId)) {
 //                require(['./modules/equifit/forms'],
@@ -42,9 +40,11 @@ define(function (require, exports, module) {
         },
 
         equifitEdit: function (equifitId, formId) {
-            app.flow = 'edit';
-            app.equifitId = equifitId;
-            app.formId = formId;
+            app.store.set({
+                appFlow: 'edit',
+                equifitId: equifitId,
+                formId: formId
+            });
 
             //TODO: check why formId attribute is null????
             //if (_.isUndefined(formId)) {

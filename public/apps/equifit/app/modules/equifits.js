@@ -8,18 +8,21 @@ define(function (require, exports, module) {
     var BreadcrumbView = require('./views/breadcrumb');
     var ActionView = require('./views/action');
 
-    var Equifits = {};
+    var EquifitsModule = {};
     // create an instance of equifits collection.
     var equifitEntities = new EquifitEntities();
 
-    Equifits.init = function () {
+    app.store.set({
+        pageTitle: 'Equifits',
+        slug: 'equifit'
+    });
+
+    EquifitsModule.init = function () {
         // Fetch data
         equifitEntities.fetch().then(
             function () {
                 app.useLayout('layouts/main').setViews({
-                    '.header': new HeaderView({
-                        model: new Backbone.Model({ pageTitle: 'Equifits'})
-                    }),
+                    '.header': new HeaderView(),
                     '.breadcrumb-container': new BreadcrumbView(),
                     '.action-container': new ActionView(),
                     '.main-container': new EquifitView({
@@ -31,5 +34,5 @@ define(function (require, exports, module) {
         );
     };
 
-    module.exports = Equifits;
+    module.exports = EquifitsModule;
 });

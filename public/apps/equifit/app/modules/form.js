@@ -11,62 +11,37 @@ define(function (require, exports, module) {
     var HeaderView = require('./views/header');
     var BreadcrumbView = require('./views/breadcrumb');
 
-        var Form = {};
+    var Form = {};
 
-        /// create an instance of forms collection.
-        var formEntity = new FormEntity();
+    /// create an instance of forms collection.
+    var formEntity = new FormEntity();
 
-//        Form.Layout = Backbone.Layout.extend({
-//            template: 'form',
-//
-//            serialize: function () {
-//                return this.model;
-//            }
-//        });
+    app.store.set({
+        pageTitle: 'Form', //app.store.get('formName'),
+        slug: 'form'
+    });
 
-        Form.init = function (equifitId, formId) {
+    Form.init = function (equifitId, formId) {
 
-            formEntity.url =  function () {
-                return '/apps/equifit/api/form.json';
-                //return '/equifit/api/members/1002209379/equifits/' + equifitId + '/documents/' + formId;
-            };
-
-            // Fetch data
-            formEntity.fetch().then(
-                function () {
-                    app.useLayout('layouts/main').setViews({
-                        '.header': new HeaderView({
-                            model: new Backbone.Model({ pageTitle: 'Form'})
-                        }),
-                        '.breadcrumb-container': new BreadcrumbView(),
-                        '.main-container': new FormView({
-                            model: formEntity
-                        })
-
-
-
-//                        '#content':  new Form.Layout({
-//                            id:'equifit',
-//                            model: {
-//                                memberName: app.store.memberName,
-//                                memberId: app.store.memberId,
-//                                equifitId: app.store.equifitId,
-//                                date: app.store.equifitDate,
-//                                formName: app.store.formName,
-//                                formId: app.store.formId
-//                            },
-//
-//                            views: {
-//                                '.container': new FormView({
-//                                    model: form
-//                                })
-//                            }
-//                        })
-                    }).render();
-                    $('title').html('Equifit');
-                }
-            );
+        formEntity.url = function () {
+            return '/apps/equifit/api/form.json';
+            //return '/equifit/api/members/1002209379/equifits/' + equifitId + '/documents/' + formId;
         };
 
-        module.exports = Form;
-    });
+        // Fetch data
+        formEntity.fetch().then(
+            function () {
+                app.useLayout('layouts/main').setViews({
+                    '.header': new HeaderView(),
+                    '.breadcrumb-container': new BreadcrumbView(),
+                    '.main-container': new FormView({
+                        model: formEntity
+                    })
+                }).render();
+                $('title').html('Equifit');
+            }
+        );
+    };
+
+    module.exports = Form;
+});

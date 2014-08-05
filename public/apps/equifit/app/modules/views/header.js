@@ -12,7 +12,7 @@ define(function (require, exports, module) {
         template: 'header',
 
         serialize: function () {
-            return this.model.toJSON();
+            return app.store.toJSON();
         }
     });
 
