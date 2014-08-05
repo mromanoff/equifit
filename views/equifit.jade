@@ -14,15 +14,37 @@ block content
                             ul.nav
                                 li
                                     a(href="/Dashboard/Home", data-bypass="true")
-                                        i.icon-home Home
-                                        //                    li class="" ><a href="/clients/List/Search" data-bypass="true"><i class="icon-search"></i>Search</a></li>
-                                        //                    li id="jqCalenderNav" class =""><a href="/schedule/day" data-bypass="true"><i class="icon-calendar"></i>Calendar</a></li>
-                                        //                    li class =""><a href="/clients/List" data-bypass="true"><i class="icon-user"></i>Clients</a></li>
-                                        //                    li id="jqProjectionsNav" class =""><a href="/projections/"><i class="icon-road"></i>Projections</a></li>
-                                        //                    li class =""><a href="/notifications/Home" data-bypass="true"><i class="icon-bullhorn"></i>Alerts</a> </li>
-                                        //                    li data-toggle="collapse" data-target=".nav-collapse"  class="hidden-desktop"><a href="/settings"><i class="icon-cog"></i>Settings</a></li>
-                                        //                    li class="hidden-desktop"><a href="/logout" data-bypass="true"><i class="icon-off"></i>Sign Out</a></li>
-                                        //
+                                        i.icon-home
+                                            Home
+                                li
+                                    a(href="/clients/List/Search", data-bypass="true")
+                                        i.icon-search
+                                            Search
+                                li#jqCalenderNav
+                                    a(href="/schedule/day", data-bypass="true")
+                                        i.icon-calendar
+                                            Calendar
+                                li
+                                    a(href="/clients/List", data-bypass="true")
+                                        i.icon-user
+                                            Clients
+                                li#jqProjectionsNav
+                                    a(href="/projections/")
+                                        i.icon-road
+                                            Projections
+                                li
+                                    a(href="/notifications/Home", data-bypass="true")
+                                        i.icon-bullhorn
+                                            Alerts
+                                li(data-toggle="collapse", data-target=".nav-collapse",  class="hidden-desktop")
+                                    a(href="/settings")
+                                        i.icon-cog
+                                            Settings
+                                li.hidden-desktop
+                                    a(href="/logout", data-bypass="true")
+                                        i.icon-off
+                                            Sign Out
+
                             ul(class="nav pull-right  visible-desktop")
                                 li.dropdown
                                     a(href="#", class="dropdown-toggle", data-toggle="dropdown", data-bypass="true") Hi,
@@ -31,52 +53,34 @@ block content
                                             span.caret
                                     ul.dropdown-menu
                                         li(class="pane-user-info clearfix")
-                            //                <div class="user-avatar" id="user-avatar" style="background:url('/Resources/Images/user.png') no-repeat;"></div>
-                            //                <div class="user-detail">
-                            //                    <h5>
-                            //                        <strong><span id="spnFirstName"></span></strong>
-                            //                        <br />
-                            //                        <span id="spnLastName"></span>
-                            //                    </h5>
-                            //                    <p> <span id="spnEmail"></span></p>
-                            //                </div>
-                            //                </li>
-                            //                <li class="divider"></li>
-                            //                <li class="nav-header"><span><i class="icon-cog"></i><strong>Settings</strong></span></li>
-                            //                <li class="nav-header-link"><a href="/settings/availability">My Availability</a></li>
-                            //                <li class="nav-header-link"><a href="/settings/contact">My Contact Info</a></li>
-                            //                <li class="divider"></li>
-                            //                <li><a href="/logout" data-bypass="true"><i class="icon-off"></i><strong>Sign Out</strong></a></li>
-                            //        </ul>
-                            //    </li>
-                            //</ul>
-                            //            </div>
+                                            div(class="user-avatar" id="user-avatar" style="background:url('/Resources/Images/user.png') no-repeat;")
+                                                div.user-detail
+                                                    h5
+                                                        strong
+                                                            span#spnFirstName
+                                                        br
+                                                        span#spnLastName
+
+                                                    p
+                                                        span#spnEmail
+
+                                        li.divider
+                                        li.nav-header
+                                            span
+                                                i.icon-cog
+                                                    strong  Settings
+                                        li.nav-header-link
+                                            a(href="/settings/availability") My Availability
+                                        li.nav-header-link
+                                            a(href="/settings/contact") My Contact Info
+                                        li.divider
+                                        li
+                                            a(href="/logout", data-bypass="true")
+                                                i.icon-off
+                                                    strong  Sign Out
                             //            <!--/.nav-collapse -->
-                            //        </div>
-                            //    </div>
-                            //</nav>
             section(role="main" id="main")
-                //    </div>
-                //    <div class="push">
-                //    </div>
-                //</div>
-                //<div id="warningPopupUpgrade" class="upgrade hide modal fade">
-                //    <div class="modal-header round-top-sml text-center">
-                //        <button type="button" class="close" data-dismiss="modal">
-                //            &times;</button>
-                //        <h4 style="margin: 0px;">
-                //            Your browser is not supported.</h4>
-                //    </div>
-                //    <div class="modal-body">
-                //        <p>
-                //            To get the most out of the Personal Training Application, please download the latest
-                //            version of <a href="https://www.google.com/intl/en/chrome/browser/">Chrome</a> or
-                //            <a href="http://www.mozilla.org/en-US/firefox/new/">Firefox</a></p>
-                //    </div>
-                //    <div class="modal-footer">
-                //        <a href="#" class="btn" data-dismiss="modal">Close</a>
-                //    </div>
-                //</div>
+
             footer.full-width
                 div.container
                     a(href="/feedback", data-bypass="true") Feedback |
@@ -85,6 +89,7 @@ block content
 
         script.
             var equifitData = {
+                env: 'local',
                 memberName: 'Kelly Jackson',
                 memberId: 100000000012
             }

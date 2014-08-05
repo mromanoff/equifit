@@ -16,6 +16,7 @@ define(function (require, exports, module) {
 
     // set store with initial data
     app.store.set({
+        env: window.equifitData.env || null,
         memberName: window.equifitData.memberName || null,
         memberId: window.equifitData.memberId || null,
         equifitDate: moment().format('MMMM D, YYYY'),

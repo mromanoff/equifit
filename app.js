@@ -1,13 +1,9 @@
-
-/**
- * Module dependencies.
- */
-
 var express = require('express');
-var routes = require('./routes');
-var user = require('./routes/user');
 var http = require('http');
 var path = require('path');
+var routes = require('./app/routes');
+var mongoose = require('mongoose');
+var seeder = require('./app/seeder');
 
 var app = express();
 
@@ -15,7 +11,6 @@ var app = express();
 app.set('port', process.env.PORT || 3000);
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
-app.use(express.favicon());
 app.use(express.logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded());
@@ -28,9 +23,17 @@ if ('development' == app.get('env')) {
   app.use(express.errorHandler());
 }
 
-app.get('/', routes.index);
-app.get('/equifit', routes.equifit);
-app.get('/users', user.list);
+//connect to the db server:
+mongoose.connect('mongodb://zelcie:test123@kahana.mongohq.com:10058/app27091973');
+mongoose.connection.on('open', function() {
+    console.log("Connected to Mongoose...");
+
+    // check if the db is empty, if so seed it with some contacts:
+    seeder.check();
+});
+
+//routes list:
+routes.initialize(app);
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));
