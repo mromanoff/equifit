@@ -3,15 +3,12 @@ define(function (require, exports, module) {
 
     var app = require('app');
     var Backbone = require('backbone');
-    require('backbone-forms');
+    var Form = require('backbone-forms');
 
     var FormView;
 
     FormView =  Backbone.View.extend({
         manage: true,
-        initialize: function () {
-            console.log('form view model', this.model);
-        },
 
         beforeRender: function () {
             // extend BB model with forms schema and fieldset
@@ -20,11 +17,11 @@ define(function (require, exports, module) {
                 fieldsets: this.model.get('fieldsets')
             });
 
-            // set model instanse with data
+            // set model instance with data
             var model = new FormModel(this.model.get('data'));
 
             // render form
-            var form = new Backbone.Form({
+            var form = new Form({
                 model: model
             }).render();
 

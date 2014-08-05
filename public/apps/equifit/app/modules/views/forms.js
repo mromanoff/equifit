@@ -2,6 +2,7 @@ define(function (require, exports, module) {
     "use strict";
 
     var app = require('app');
+    var store = require('../entities/store');
     var FormsCollections;
 
     var Item = Backbone.View.extend({
@@ -34,8 +35,10 @@ define(function (require, exports, module) {
             console.log('url', url);
 
 
-            app.store.formName = this.model.get('title');
-            app.store.formId = this.model.id;
+            store.set({
+                formName: this.model.get('title'),
+                formId: this.model.id
+            });
 
             app.router.navigate(url, { trigger: true });
         }

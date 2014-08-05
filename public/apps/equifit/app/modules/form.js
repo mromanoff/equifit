@@ -8,66 +8,65 @@ define(function (require, exports, module) {
     var app = require('app');
     var FormEntity = require('./entities/form');
     var FormView = require('./views/form');
+    var HeaderView = require('./views/header');
+    var BreadcrumbView = require('./views/breadcrumb');
 
-        var Equifit = {};
+        var Form = {};
 
         /// create an instance of forms collection.
-        var form = new FormEntity();
+        var formEntity = new FormEntity();
 
-        Equifit.Layout = Backbone.Layout.extend({
-            template: 'form',
+//        Form.Layout = Backbone.Layout.extend({
+//            template: 'form',
+//
+//            serialize: function () {
+//                return this.model;
+//            }
+//        });
 
-            serialize: function () {
-                return this.model;
-            }
-        });
+        Form.init = function (equifitId, formId) {
 
-        Equifit.init = function (equifitId, formId) {
-
-            form.url =  function () {
+            formEntity.url =  function () {
                 return '/apps/equifit/api/form.json';
                 //return '/equifit/api/members/1002209379/equifits/' + equifitId + '/documents/' + formId;
             };
 
             // Fetch data
-            form.fetch().then(
+            formEntity.fetch().then(
                 function () {
                     app.useLayout('layouts/main').setViews({
-                        '#content':  new Equifit.Layout({
-                            id:'equifit',
-                            model: {
-                                memberName: app.store.memberName,
-                                memberId: app.store.memberId,
-                                equifitId: app.store.equifitId,
-                                date: app.store.equifitDate,
-                                formName: app.store.formName,
-                                formId: app.store.formId
-                            },
-
-                            views: {
-                                '.container': new FormView({
-                                    model: form
-                                })
-                            }
+                        '.header': new HeaderView({
+                            model: new Backbone.Model({ pageTitle: 'Form'})
+                        }),
+                        '.breadcrumb-container': new BreadcrumbView(),
+                        '.main-container': new FormView({
+                            model: formEntity
                         })
+
+
+
+//                        '#content':  new Form.Layout({
+//                            id:'equifit',
+//                            model: {
+//                                memberName: app.store.memberName,
+//                                memberId: app.store.memberId,
+//                                equifitId: app.store.equifitId,
+//                                date: app.store.equifitDate,
+//                                formName: app.store.formName,
+//                                formId: app.store.formId
+//                            },
+//
+//                            views: {
+//                                '.container': new FormView({
+//                                    model: form
+//                                })
+//                            }
+//                        })
                     }).render();
                     $('title').html('Equifit');
-                },
-                function (err) {
-                    var message = app.exceptionHandling(err);
-                    console.log('ERROR: ', err);
-                    app.useLayout('layouts/main').setViews({
-                        '#content': new Messages.Views.Warning({
-                            model: {
-                                type: 'alert-error',
-                                code: 'Sorry, ',
-                                text: message
-                            }
-                        })
-                    }).render();
                 }
             );
         };
 
-        module.exports = Equifit;
+        module.exports = Form;
     });

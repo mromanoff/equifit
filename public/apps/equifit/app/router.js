@@ -17,9 +17,6 @@ define(function (require, exports, module) {
 
         equifit: function () {
             app.subApp = 'equifit';
-
-            console.log(' route');
-
             require(['./modules/equifits'],
                 function (Equifit) {
                     Equifit.init();

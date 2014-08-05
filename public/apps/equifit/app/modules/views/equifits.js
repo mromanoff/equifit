@@ -3,6 +3,7 @@ define(function (require, exports, module) {
 
     var app = require('app');
     var moment = require('moment');
+    var store = require('../entities/store');
 
     var EquifitsView;
 
@@ -39,8 +40,11 @@ define(function (require, exports, module) {
             viewEquifit: function (e) {
                 e.preventDefault();
                 var url = '/equifit/edit/' + this.model.id;
-                app.store.equifitDate = moment(this.model.get('createdAt')).format('MMMM D, YYYY');
-                app.store.equifitId = this.model.id;
+                store.set({
+                    equifitDate: moment(this.model.get('createdAt')).format('MMMM D, YYYY'),
+                    equifitId: this.model.id
+                });
+
                 app.router.navigate(url, { trigger: true });
             }
 
