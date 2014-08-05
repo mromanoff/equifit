@@ -2,8 +2,8 @@ define(function (require, exports, module) {
     "use strict";
 
     var Backbone = require('backbone');
+    var Layout = require('backbone.layoutmanager');
     var moment = require('moment');
-    require('backbone.layoutmanager');
 
 
     // Provide a global location to place configuration settings and module
@@ -23,7 +23,7 @@ define(function (require, exports, module) {
     };
 
     // Configure LayoutManager with Backbone Boilerplate defaults.
-    Backbone.Layout.configure({
+    Layout.configure({
         // Allow | Not Allow LayoutManager to augment Backbone.View.prototype.
         manage: false,
         prefix: "app/templates/",
@@ -53,12 +53,10 @@ define(function (require, exports, module) {
     module.exports = _.extend(app, {
         // Helper for using layouts.
         useLayout: function (name) {
-            var Layout = Backbone.Layout.extend({
+            var layout = new Backbone.Layout({
                 el: "#main",
                 template: name
             });
-
-            var layout = new Layout();
 
             // Cache the refererence.
             this.layout =  layout;
