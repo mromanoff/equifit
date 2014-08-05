@@ -1,6 +1,7 @@
 define(function (require, exports, module) {
     'use strict';
 
+    var app = require('app');
     var backbone = require('backbone');
     var EquifitEntities;
 
@@ -18,8 +19,8 @@ define(function (require, exports, module) {
     EquifitEntities = Backbone.Collection.extend({
         model: Model,
         url: function () {
-            return '/apps/equifit/api/equifits.json';
-            //return '/equifit/api/members/1002209379/equifits/';
+            //return '/apps/equifit/api/equifits.json';
+            return '/equifit/api/members/' + app.store.get('memberId') + '/equifits/';
         }
     });
 

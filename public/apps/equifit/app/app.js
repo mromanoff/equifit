@@ -16,12 +16,9 @@ define(function (require, exports, module) {
 
     // set store with initial data
     app.store.set({
-        flow: null,      // create, edit, cancel etc.
         memberName: window.equifitData.memberName || null,
         memberId: window.equifitData.memberId || null,
         equifitDate: moment().format('MMMM D, YYYY'),
-        formName: null,
-        formId: null
     });
 
     // Configure LayoutManager with Backbone Boilerplate defaults.

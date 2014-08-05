@@ -5,6 +5,7 @@
 define(function (require, exports, module) {
     "use strict";
 
+    var app = require('app');
     var backbone = require('backbone');
     var FormsEntities;
     var Model = Backbone.Model.extend({
@@ -20,8 +21,8 @@ define(function (require, exports, module) {
     FormsEntities = Backbone.Collection.extend({
         model: Model,
         url: function () {
-            return '/apps/equifit/api/forms.json';
-            //return '/equifit/api/members/1002209379/equifits/1/documents';
+            //return '/apps/equifit/api/forms.json';
+            return '/equifit/api/members/' + app.store.get('memberId') + '/equifits/' + app.store.get('equifitId') + '/documents';
         }
     });
 

@@ -24,8 +24,8 @@ define(function (require, exports, module) {
     Form.init = function (equifitId, formId) {
 
         formEntity.url = function () {
-            return '/apps/equifit/api/form.json';
-            //return '/equifit/api/members/1002209379/equifits/' + equifitId + '/documents/' + formId;
+            //return '/apps/equifit/api/form.json';
+            return '/equifit/api/members/' + app.store.get('memberId') + '/equifits/' + equifitId + '/documents/' + formId;
         };
 
         // Fetch data
