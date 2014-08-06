@@ -3,16 +3,22 @@ var mongoose = require('mongoose'),
     ObjectId = Schema.ObjectId;
 
 var Equifit = new Schema({
-    createdAt: { type: String },
-    updatedAt: { type: String },
-    updatedBy: { type: String },
-    clubName: { type: String },
-    complete: { type: Boolean }
+    createdAt: String,
+    updatedAt: String ,
+    updatedBy: String,
+    clubName: String,
+    complete: Boolean
 });
 
 var Form = new Schema({
-    title: { type: String },
-    complete: { type: Boolean }
+    title: String,
+    complete: Boolean,
+
+    formSchema: Schema.Types.Mixed,
+    fieldsets: [Schema.Types.Mixed],
+    data: Schema.Types.Mixed
+
+
 });
 
 module.exports = {

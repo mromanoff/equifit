@@ -59,7 +59,28 @@ module.exports = {
                 console.log('no forms found, seeding...');
                 var newForm = new models.Form({
                     title: "PAR-Q",
-                    complete: false
+                    complete: false,
+                    formSchema: {
+                        title: {
+                            type: "Select",
+                            options: ["", "Mr", "Mrs", "Ms"]
+                        },
+                        name: "Text",
+                        email: {
+                            validators: ["required", "email"]
+                        }
+                    },
+
+                    fieldsets: [{
+                        legend: "Member Information",
+                        fields: ["title", "name", "email", "testHidden"]
+                    }],
+
+                    data: {
+                        title: "Mr",
+                        name: "Billy Joel",
+                        email: "billy@test.com"
+                    }
                 });
                 newForm.save(function (err, form) {
                     console.log('successfully inserted document: ' + form._id);
