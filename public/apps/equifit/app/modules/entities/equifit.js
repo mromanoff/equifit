@@ -6,6 +6,8 @@ define(function (require, exports, module) {
     var EquifitEntities;
 
     var Model = Backbone.Model.extend({
+        idAttribute: '_id',
+
         defaults: {
             id: null,
             createdAt: null,
@@ -19,8 +21,8 @@ define(function (require, exports, module) {
     EquifitEntities = Backbone.Collection.extend({
         model: Model,
         url: function () {
-            return '/apps/equifit/api/equifits.json';
-            //return '/equifit/api/members/' + app.store.get('memberId') + '/equifits/';
+            //return '/apps/equifit/api/equifits.json';
+            return '/equifit/api/members/' + app.store.get('memberId') + '/equifits/';
         }
     });
 

@@ -1,52 +1,120 @@
 var mongoose = require('mongoose'),
-    models = require('./models'),
-    md5 = require('MD5');
+    models = require('./models');
 
 module.exports = {
     check: function() {
-        models.Contact.find({}, function(err, contacts) {
-            if (contacts.length === 0) {
-                console.log('no contacts found, seeding...');
-                var newContact = new models.Contact({
-                    email: 'jkat98@gmail.com',
-                    name: {
-                        first: 'Jason',
-                        last: 'Krol'
-                    },
-                    phone: '215-123-1234',
-                    gravatar: md5('jkat98@gmail.com')
+        models.Equifit.find({}, function(err, equifits) {
+            if (equifits.length === 0) {
+                console.log('no equifits found, seeding...');
+                var newEquifit = new models.Equifit({
+                    createdAt: "2014-03-15T13:30:00",
+                    updatedAt: "2014-04-29T13:30:00",
+                    updatedBy: "Josh Smith",
+                    clubName: "Tribeca",
+                    complete: false
                 });
-                newContact.save(function(err, contact) {
-                    console.log('successfully inserted contact: ' + contact._id);
+                newEquifit.save(function(err, equifit) {
+                    console.log('successfully inserted equifit: ' + equifit._id);
                 });
 
-                newContact = new models.Contact({
-                    email: 'testerson@example.com',
-                    name: {
-                        first: 'Steve',
-                        last: 'Testerson'
-                    },
-                    phone: '215-123-1234',
-                    gravatar: md5('testerson@example.com')
+                newEquifit = new models.Equifit({
+                    createdAt: "2014-05-01T13:30:00",
+                    updatedAt: "2014-08-02T13:30:00",
+                    updatedBy: "Billy Joel",
+                    clubName: "895 Broadway",
+                    complete: false
                 });
-                newContact.save(function(err, contact) {
-                    console.log('successfully inserted contact: ' + contact._id);
+                newEquifit.save(function(err, equifit) {
+                    console.log('successfully inserted equifit: ' + equifit._id);
                 });
 
-                newContact = new models.Contact({
-                    email: 'nancy@testerson.com',
-                    name: {
-                        first: 'Nancy',
-                        last: 'Testerson'
-                    },
-                    phone: '215-123-1234',
-                    gravatar: md5('nancy@testerson.com')
+                newEquifit = new models.Equifit({
+                    createdAt: "2013-05-01T13:30:00",
+                    updatedAt: "2013-08-02T13:30:00",
+                    updatedBy: "Bob Marley",
+                    clubName: "West Side",
+                    complete: true
                 });
-                newContact.save(function(err, contact) {
-                    console.log('successfully inserted contact: ' + contact._id);
+                newEquifit.save(function(err, equifit) {
+                    console.log('successfully inserted equifit: ' + equifit._id);
+                });
+
+                newEquifit = new models.Equifit({
+                    createdAt: "2012-05-01T13:30:00",
+                    updatedAt: "2012-01-06T13:30:00",
+                    updatedBy: "Steve Martine",
+                    clubName: "East Side",
+                    complete: true
+                });
+                newEquifit.save(function(err, equifit) {
+                    console.log('successfully inserted equifit: ' + equifit._id);
                 });
             } else {
-                console.log('found ' + contacts.length + ' existing contacts!');
+                console.log('found ' + equifits.length + ' existing equifits!');
+            }
+        });
+
+        models.Form.find({}, function(err, forms) {
+            if (forms.length === 0) {
+                console.log('no forms found, seeding...');
+                var newForm = new models.Form({
+                    title: "PAR-Q",
+                    complete: false
+                });
+                newForm.save(function (err, form) {
+                    console.log('successfully inserted document: ' + form._id);
+                });
+
+                newForm = new models.Form({
+                    title: "Personal Info",
+                    complete: false
+                });
+                newForm.save(function (err, form) {
+                    console.log('successfully inserted document: ' + form._id);
+                });
+
+                newForm = new models.Form({
+                    title: "Goals",
+                    complete: false
+                });
+                newForm.save(function (err, form) {
+                    console.log('successfully inserted document: ' + form._id);
+                });
+
+                newForm = new models.Form({
+                    title: "Orthopedic",
+                    complete: false
+                });
+                newForm.save(function (err, form) {
+                    console.log('successfully inserted document: ' + form._id);
+                });
+
+                newForm = new models.Form({
+                    title: "Exercise History",
+                    complete: false
+                });
+                newForm.save(function (err, form) {
+                    console.log('successfully inserted document: ' + form._id);
+                });
+
+                newForm = new models.Form({
+                    title: "Lifestyle",
+                    complete: false
+                });
+                newForm.save(function (err, form) {
+                    console.log('successfully inserted document: ' + form._id);
+                });
+
+                newForm = new models.Form({
+                    title: "Physical Test",
+                    complete: true
+                });
+                newForm.save(function (err, form) {
+                    console.log('successfully inserted document: ' + form._id);
+                });
+
+            } else {
+                console.log('found ' + forms.length + ' existing forms!');
             }
         });
     }

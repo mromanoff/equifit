@@ -20,21 +20,23 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // development only
 if ('development' == app.get('env')) {
-  app.use(express.errorHandler());
+    app.use(express.errorHandler());
 }
 
+
 //connect to the db server:
-mongoose.connect('mongodb://zelcie:test123@kahana.mongohq.com:10058/app27091973');
-mongoose.connection.on('open', function() {
+mongoose.connect('mongodb://localhost/pttrainer');
+mongoose.connection.on('open', function () {
     console.log("Connected to Mongoose...");
 
     // check if the db is empty, if so seed it with some contacts:
     seeder.check();
 });
 
+
 //routes list:
 routes.initialize(app);
 
-http.createServer(app).listen(app.get('port'), function(){
-  console.log('Express server listening on port ' + app.get('port'));
+http.createServer(app).listen(app.get('port'), function () {
+    console.log('Express server listening on port ' + app.get('port'));
 });
