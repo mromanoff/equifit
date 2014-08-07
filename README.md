@@ -18,6 +18,10 @@ each.
 
 ## Running the App:
 
+Start MongoDB
+	
+	$ mongod
+
 Start the server in DEV mode, with nodemon watching the app for a relaunch,
 watchers on scripts and less files for rebuild.
 
