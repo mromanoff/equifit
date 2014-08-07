@@ -13,7 +13,8 @@ var Equifit = new Schema({
 var Form = new Schema({
     title: String,
     complete: Boolean,
-
+    totalQuestions: Number,
+    totalAnsweredQuestions: Number,
     formSchema: Schema.Types.Mixed,
     fieldsets: [Schema.Types.Mixed],
     data: Schema.Types.Mixed

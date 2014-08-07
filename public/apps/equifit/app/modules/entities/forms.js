@@ -18,7 +18,8 @@ define(function (require, exports, module) {
         },
 
         parse: function (response) {
-            // backbone-forms needs 'schema' property. in mongoose 'schema' is reserved word. In mongoose we had to name it as a formSchema
+            // backbone-forms needs 'schema' property. in mongoose 'schema' is reserved word.
+            // In mongoose we had to name it as a formSchema
             response.schema = _.clone(response.formSchema);
             delete response.formSchema;
             return response;

@@ -17,7 +17,6 @@ define(function (require, exports, module) {
     var formEntities = new FormEntities();
 
     app.store.set({
-        pageTitle: 'Form', //app.store.get('formName'),
         slug: 'form'
     });
 

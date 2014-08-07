@@ -29,6 +29,7 @@ define(function (require, exports, module) {
 
             app.store.set({
                 formName: this.model.get('title'),
+                pageTitle: this.model.get('title'),
                 formId: this.model.id
             });
 
@@ -38,8 +39,11 @@ define(function (require, exports, module) {
 
     FormsView = Backbone.View.extend({
         manage: true,
-        el: false,
         template: 'forms-list',
+
+        serialize: function () {
+            return app.store.toJSON();
+        },
 
         beforeRender: function () {
             this.collection.each(function (item) {

@@ -60,6 +60,8 @@ module.exports = {
                 var newForm = new models.Form({
                     title: "PAR-Q",
                     complete: false,
+                    totalQuestions: 5,
+                    totalAnsweredQuestions: 2,
                     formSchema: {
                         title: {
                             type: "Select",
@@ -89,6 +91,8 @@ module.exports = {
                 newForm = new models.Form({
                     title: "Personal Info",
                     complete: false,
+                    totalQuestions: 10,
+                    totalAnsweredQuestions: 3,
                     formSchema: {
                         title: {
                             type: "Select",
@@ -118,6 +122,8 @@ module.exports = {
                 newForm = new models.Form({
                     title: "Goals",
                     complete: false,
+                    totalQuestions: 12,
+                    totalAnsweredQuestions: 1,
                     formSchema: {
                         title: {
                             type: "Select",
@@ -147,6 +153,8 @@ module.exports = {
                 newForm = new models.Form({
                     title: "Orthopedic",
                     complete: false,
+                    totalQuestions: 13,
+                    totalAnsweredQuestions: 0,
                     formSchema: {
                         title: {
                             type: "Select",
@@ -176,6 +184,8 @@ module.exports = {
                 newForm = new models.Form({
                     title: "Exercise History",
                     complete: false,
+                    totalQuestions: 7,
+                    totalAnsweredQuestions: 6,
                     formSchema: {
                         title: {
                             type: "Select",
@@ -205,6 +215,8 @@ module.exports = {
                 newForm = new models.Form({
                     title: "Lifestyle",
                     complete: false,
+                    totalQuestions: 15,
+                    totalAnsweredQuestions: 10,
                     formSchema: {
                         title: {
                             type: "Select",
@@ -224,7 +236,7 @@ module.exports = {
                     data: {
                         title: "Mr",
                         name: "Jimmy Page",
-                        email: "zepeline@test.com"
+                        email: "led.zeppelin@test.com"
                     }
                 });
                 newForm.save(function (err, form) {
@@ -234,6 +246,8 @@ module.exports = {
                 newForm = new models.Form({
                     title: "Physical Test",
                     complete: true,
+                    totalQuestions: 5,
+                    totalAnsweredQuestions: 0,
                     formSchema: {
                         title: {
                             type: "Select",
