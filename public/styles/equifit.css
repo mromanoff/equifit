@@ -9,9 +9,8 @@
     border: 1px solid #999;
 }
 
-.form-item h3{
+.form-item h4{
     text-transform: uppercase;
-    font-weight: bold;
 }
 
 .form-item.complete{

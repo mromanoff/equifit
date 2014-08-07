@@ -1,5 +1,5 @@
 <% var status = complete ? ' complete' : '' %>
 <div class="item form-item<%= status %>" data-id="<%= id %>" data-slug="<%= slug %>" data-status="<%= complete %>">
-    <h3><%= title %></h3>
-    <p><%= totalAnsweredQuestions %> of <%= totalQuestions %></p>
+    <h4><%= title %></h4>
+    <span class="pull-right"><%= totalAnsweredQuestions %> of <%= totalQuestions %></span>
 </div>
