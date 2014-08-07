@@ -19,7 +19,7 @@ define(function (require, exports, module) {
         serialize: function () {
             var data = this.model.toJSON();
             data.createdAt = moment(data.createdAt).format('MMMM D, YYYY');
-            data.updatedAt = moment(data.updatedAt).format('MMMM D, YYYY');
+            data.updatedAt = _.isNull(data.updatedAt) ? null : moment(data.updatedAt).format('MMMM D, YYYY');
             return data;
         },
 
