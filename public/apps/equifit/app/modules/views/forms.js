@@ -21,10 +21,10 @@ define(function (require, exports, module) {
             var url;
             e.preventDefault();
             if (_.isEqual(app.store.get('appFlow'), 'edit')) {
-                url = '/equifit/' + app.store.get('appFlow') + '/' + app.store.get('equifitId') + '/forms/' + this.model.id; //$(e.currentTarget).data('slug');
+                url = '/equifit/' + app.store.get('appFlow') + '/' + app.store.get('equifitId') + '/forms/' + this.model.id;
             }
             else {
-                url = '/equifit/' + app.store.get('appFlow') + '/forms/' + this.model.id; //$(e.currentTarget).data('slug');
+                url = '/equifit/' + app.store.get('appFlow') + '/forms/' + this.model.id;
             }
 
             app.store.set({
@@ -35,7 +35,6 @@ define(function (require, exports, module) {
             app.router.navigate(url, { trigger: true });
         }
     });
-
 
     FormsView = Backbone.View.extend({
         manage: true,

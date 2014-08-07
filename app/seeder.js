@@ -88,7 +88,28 @@ module.exports = {
 
                 newForm = new models.Form({
                     title: "Personal Info",
-                    complete: false
+                    complete: false,
+                    formSchema: {
+                        title: {
+                            type: "Select",
+                            options: ["", "Mr", "Mrs", "Ms"]
+                        },
+                        name: "Text",
+                        email: {
+                            validators: ["required", "email"]
+                        }
+                    },
+
+                    fieldsets: [{
+                        legend: "Member Information",
+                        fields: ["title", "name", "email", "testHidden"]
+                    }],
+
+                    data: {
+                        title: "Mr",
+                        name: "Bob Marley",
+                        email: "b.marley@test.com"
+                    }
                 });
                 newForm.save(function (err, form) {
                     console.log('successfully inserted document: ' + form._id);
@@ -96,7 +117,28 @@ module.exports = {
 
                 newForm = new models.Form({
                     title: "Goals",
-                    complete: false
+                    complete: false,
+                    formSchema: {
+                        title: {
+                            type: "Select",
+                            options: ["", "Mr", "Mrs", "Ms"]
+                        },
+                        name: "Text",
+                        email: {
+                            validators: ["required", "email"]
+                        }
+                    },
+
+                    fieldsets: [{
+                        legend: "Member Information",
+                        fields: ["title", "name", "email", "testHidden"]
+                    }],
+
+                    data: {
+                        title: "Mrs",
+                        name: "Donna Summer",
+                        email: "d.summer@test.com"
+                    }
                 });
                 newForm.save(function (err, form) {
                     console.log('successfully inserted document: ' + form._id);
@@ -104,7 +146,28 @@ module.exports = {
 
                 newForm = new models.Form({
                     title: "Orthopedic",
-                    complete: false
+                    complete: false,
+                    formSchema: {
+                        title: {
+                            type: "Select",
+                            options: ["", "Mr", "Mrs", "Ms"]
+                        },
+                        name: "Text",
+                        email: {
+                            validators: ["required", "email"]
+                        }
+                    },
+
+                    fieldsets: [{
+                        legend: "Member Information",
+                        fields: ["title", "name", "email", "testHidden"]
+                    }],
+
+                    data: {
+                        title: "Mr",
+                        name: "Gene Simmons",
+                        email: "kiss@test.com"
+                    }
                 });
                 newForm.save(function (err, form) {
                     console.log('successfully inserted document: ' + form._id);
@@ -112,7 +175,28 @@ module.exports = {
 
                 newForm = new models.Form({
                     title: "Exercise History",
-                    complete: false
+                    complete: false,
+                    formSchema: {
+                        title: {
+                            type: "Select",
+                            options: ["", "Mr", "Mrs", "Ms"]
+                        },
+                        name: "Text",
+                        email: {
+                            validators: ["required", "email"]
+                        }
+                    },
+
+                    fieldsets: [{
+                        legend: "Member Information",
+                        fields: ["title", "name", "email", "testHidden"]
+                    }],
+
+                    data: {
+                        title: "Mr",
+                        name: "Richie Blackmore",
+                        email: "deep.purple@test.com"
+                    }
                 });
                 newForm.save(function (err, form) {
                     console.log('successfully inserted document: ' + form._id);
@@ -120,7 +204,28 @@ module.exports = {
 
                 newForm = new models.Form({
                     title: "Lifestyle",
-                    complete: false
+                    complete: false,
+                    formSchema: {
+                        title: {
+                            type: "Select",
+                            options: ["", "Mr", "Mrs", "Ms"]
+                        },
+                        name: "Text",
+                        email: {
+                            validators: ["required", "email"]
+                        }
+                    },
+
+                    fieldsets: [{
+                        legend: "Member Information",
+                        fields: ["title", "name", "email", "testHidden"]
+                    }],
+
+                    data: {
+                        title: "Mr",
+                        name: "Jimmy Page",
+                        email: "zepeline@test.com"
+                    }
                 });
                 newForm.save(function (err, form) {
                     console.log('successfully inserted document: ' + form._id);
@@ -128,7 +233,28 @@ module.exports = {
 
                 newForm = new models.Form({
                     title: "Physical Test",
-                    complete: true
+                    complete: true,
+                    formSchema: {
+                        title: {
+                            type: "Select",
+                            options: ["", "Mr", "Mrs", "Ms"]
+                        },
+                        name: "Text",
+                        email: {
+                            validators: ["required", "email"]
+                        }
+                    },
+
+                    fieldsets: [{
+                        legend: "Member Information",
+                        fields: ["title", "name", "email", "testHidden"]
+                    }],
+
+                    data: {
+                        title: "Mr",
+                        name: "James Brown",
+                        email: "j.brown@test.com"
+                    }
                 });
                 newForm.save(function (err, form) {
                     console.log('successfully inserted document: ' + form._id);

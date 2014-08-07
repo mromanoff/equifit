@@ -6,7 +6,7 @@ define(function (require, exports, module) {
     "use strict";
 
     var app = require('app');
-    var FormEntity = require('./entities/form');
+    var FormEntities = require('./entities/forms');
     var FormView = require('./views/form');
     var HeaderView = require('./views/header');
     var BreadcrumbView = require('./views/breadcrumb');
@@ -14,7 +14,7 @@ define(function (require, exports, module) {
     var Form = {};
 
     /// create an instance of forms collection.
-    var formEntity = new FormEntity();
+    var formEntities = new FormEntities();
 
     app.store.set({
         pageTitle: 'Form', //app.store.get('formName'),
@@ -22,19 +22,14 @@ define(function (require, exports, module) {
     });
 
     Form.init = function (equifitId, formId) {
-        formEntity.url = function () {
-            //return '/apps/equifit/api/form.json';
-            return '/equifit/api/members/' + app.store.get('memberId') + '/equifits/' + equifitId + '/documents/' + formId;
-        };
-
         // Fetch data
-        formEntity.fetch().then(
+        formEntities.fetch().then(
             function () {
                 app.useLayout('layouts/main').setViews({
                     '.header': new HeaderView(),
                     '.breadcrumb-container': new BreadcrumbView(),
                     '.main-container': new FormView({
-                        model: formEntity
+                        model: formEntities.get(formId)
                     })
                 }).render();
                 $('title').html('Equifit');

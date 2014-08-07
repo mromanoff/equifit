@@ -46,8 +46,6 @@ define(function (require, exports, module) {
                 formId: formId
             });
 
-            //TODO: check why formId attribute is null????
-            //if (_.isUndefined(formId)) {
             if (_.isNull(formId)) {
                 require(['./modules/forms'],
                     function (Equifit) {

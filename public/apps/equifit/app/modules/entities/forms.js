@@ -7,30 +7,21 @@ define(function (require, exports, module) {
     var Model = Backbone.Model.extend({
         idAttribute: '_id',
 
-        urlRoot: function () {
-            return '/equifit/api/members/' + app.store.get('memberId') + '/equifits/' + app.store.get('equifitId') + '/documents';
-        },
-
-        parse: function(response) {
-            var schema =  response.formSchema;
-
-            console.log('schema name parsed', response, schema);
-
-            response.schema;
-            delete response.formShema;
-
-            return response;
-        },
-
         defaults: {
-            id: null,
+            id: this._id || null,
             title: null,
-            description: null,
-            slug: null,
             complete: false,
-            schema1: null,
+            slug: null,
+            schema: null,
             fieldsets: null,
             data: null
+        },
+
+        parse: function (response) {
+            // backbone-forms needs 'schema' property. in mongoose 'schema' is reserved word. In mongoose we had to name it as a formSchema
+            response.schema = _.clone(response.formSchema);
+            delete response.formSchema;
+            return response;
         }
     });
 
