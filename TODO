@@ -1,0 +1,6 @@
+1. render backbone forms with Bootstrap 2 templates.
+2. update seeder with validation and errors fields
+3. create modal for success and error messages
+4. add spinner
+5. add backbone.localstorage
+6. add unit testing
