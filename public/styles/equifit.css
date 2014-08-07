@@ -6,9 +6,15 @@
     margin: 20px 20px 20px 0;
     box-sizing: border-box;
     float: left;
+    border: 1px solid #999;
 }
 
 .form-item h3{
     text-transform: uppercase;
     font-weight: bold;
+}
+
+.form-item.complete{
+    background-color: #E6FFCC;
+    border: 1px solid #B8CCA3;
 }

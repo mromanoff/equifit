@@ -247,7 +247,7 @@ module.exports = {
                     title: "Physical Test",
                     complete: true,
                     totalQuestions: 5,
-                    totalAnsweredQuestions: 0,
+                    totalAnsweredQuestions: 5,
                     formSchema: {
                         title: {
                             type: "Select",
