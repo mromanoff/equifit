@@ -8,7 +8,7 @@ module.exports = {
                 console.log('no equifits found, seeding...');
                 var newEquifit = new models.Equifit({
                     createdAt: "2014-03-15T13:30:00",
-                    updatedAt: "2014-04-29T13:30:00",
+                    updatedAt: null,
                     updatedBy: "Josh Smith",
                     clubName: "Tribeca",
                     complete: false

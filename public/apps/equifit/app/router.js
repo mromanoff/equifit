@@ -1,7 +1,6 @@
 define(function (require, exports, module) {
     "use strict";
 
-    // External dependencies.
     var app = require('app');
     var Backbone = require('backbone');
 
@@ -16,7 +15,7 @@ define(function (require, exports, module) {
         },
 
         equifit: function () {
-            require(['./modules/equifits'],
+            require(['./modules/controllers/equifits'],
                 function (Equifit) {
                     Equifit.init();
                 });
@@ -47,13 +46,13 @@ define(function (require, exports, module) {
             });
 
             if (_.isNull(formId)) {
-                require(['./modules/forms'],
+                require(['./modules/controllers/forms'],
                     function (Equifit) {
                         Equifit.init(equifitId);
                     });
             }
             else {
-                require(['./modules/form'],
+                require(['./modules/controllers/form'],
                     function (Equifit) {
                         Equifit.init(equifitId, formId);
                     });
