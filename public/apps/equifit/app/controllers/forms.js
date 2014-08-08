@@ -2,10 +2,10 @@ define(function (require, exports, module) {
     "use strict";
 
     var app = require('app');
-    var FormsEntities = require('./../entities/forms');
-    var FormsView = require('./../views/forms');
-    var HeaderView = require('./../views/header');
-    var BreadcrumbView = require('./../views/breadcrumb');
+    var FormsEntities = require('entities/forms');
+    var FormsView = require('views/forms');
+    var HeaderView = require('views/header');
+    var BreadcrumbView = require('views/breadcrumb');
 
     var FormsModule = {};
 

@@ -10,7 +10,7 @@
 <ul class="breadcrumb">
     <li><a href="#"><%= memberName %></a> <span class="divider">|</span></li>
     <li><a href="/equifit">Equifits</a> <span class="divider">|</span></li>
-    <li><a href="/equifit/edit/<%= equifitId %>" class="active"><%= equifitDate %></a></li>
+    <li><a href="/equifit/<%= equifitId %>" class="active"><%= equifitDate %></a></li>
 </ul>
 
 <% }
@@ -19,8 +19,8 @@
 <ul class="breadcrumb">
     <li><a href="#"><%= memberName %></a> <span class="divider">|</span></li>
     <li><a href="/equifit">Equifits</a> <span class="divider">|</span></li>
-    <li><a href="/equifit/edit/<%= equifitId %>"><%= equifitDate %></a> <span class="divider">|</span></li>
-    <li><a href="/equifit/edit/<%= equifitId %>/forms/<%= formId %>" class="active"><%= formName %></a></li>
+    <li><a href="/equifit/<%= equifitId %>"><%= equifitDate %></a> <span class="divider">|</span></li>
+    <li><a href="/equifit/<%= equifitId %>/forms/<%= formId %>" class="active"><%= formName %></a></li>
 </ul>
 
 <% } else {} %>

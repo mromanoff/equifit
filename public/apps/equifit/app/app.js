@@ -1,22 +1,20 @@
 define(function (require, exports, module) {
-    "use strict";
+    'use strict';
 
     var Backbone = require('backbone');
     var Layout = require('backbone.layoutmanager');
     var moment = require('moment');
-
 
     // Provide a global location to place configuration settings and module
     // creation.
     var app = {
         // The root path to run the application.
         root: '/',
-        store: require('./modules/entities/store')
+        store: require('./entities/store')
     };
 
     // set store with initial data
     app.store.set({
-        env: window.equifitData.env || null,
         memberName: window.equifitData.memberName || null,
         memberId: window.equifitData.memberId || null,
         equifitDate: moment().format('MMMM D, YYYY'),

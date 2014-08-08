@@ -17,3 +17,8 @@
     background-color: #E6FFCC;
     border: 1px solid #B8CCA3;
 }
+
+a.active {
+    font-weight: bold;
+    color: #555;
+}

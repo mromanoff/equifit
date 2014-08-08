@@ -10,6 +10,8 @@ module.exports.initialize = function(app) {
     app.get('/equifit/api/members/:id/equifits/:id', equifit.getEquifit);
     app.get('/equifit/api/members/:id/equifits/:id/documents', equifit.getDocuments);
     app.get('/equifit/api/members/:id/equifits/:id/documents/:id', equifit.getDocument);
+
+    app.post('/equifit/api/members/:id/equifits/', equifit.addEquifit);
 };
 
 

@@ -2,10 +2,12 @@ define(function (require, exports, module) {
     'use strict';
 
     var app = require('app');
-    var backbone = require('backbone');
+    var Backbone = require('backbone');
+    //var EquifitEntity = require('entities/equifit');
     var EquifitEntities;
 
-    var Model = Backbone.Model.extend({
+
+    var EquifitEntity = Backbone.Model.extend({
         idAttribute: '_id',
 
         defaults: {
@@ -19,7 +21,8 @@ define(function (require, exports, module) {
     });
 
     EquifitEntities = Backbone.Collection.extend({
-        model: Model,
+        model: EquifitEntity,
+
         url: function () {
             //return '/apps/equifit/api/equifits.json';
             return '/equifit/api/members/' + app.store.get('memberId') + '/equifits/';

@@ -37,7 +37,7 @@ define(function (require, exports, module) {
 
         viewEquifit: function (e) {
             e.preventDefault();
-            var url = '/equifit/edit/' + this.model.id;
+            var url = '/equifit/' + this.model.id;
 
             app.store.set({
                 equifitDate: moment(this.model.get('createdAt')).format('MMMM D, YYYY'),

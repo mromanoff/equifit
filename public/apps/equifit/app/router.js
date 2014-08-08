@@ -9,50 +9,38 @@ define(function (require, exports, module) {
         routes: {
             'equifit(/)': 'equifit',
             'equifit/create(/)': 'equifitCreate',
-            'equifit/create/forms/:id': 'equifitCreate',
-            'equifit/edit/:id': 'equifitEdit',
-            'equifit/edit/:id/forms/:id': 'equifitEdit'
+            'equifit/:id': 'equifitEdit',
+            'equifit/:id/forms/:id': 'equifitEdit'
         },
 
         equifit: function () {
-            require(['./modules/controllers/equifits'],
+            require(['./controllers/equifits'],
                 function (Equifit) {
                     Equifit.init();
                 });
         },
 
-        equifitCreate: function (formId) {
-            app.store.set({flow: 'create'});
-
-//            if (_.isUndefined(formId)) {
-//                require(['./modules/equifit/forms'],
-//                    function (Equifit) {
-//                        Equifit.init();
-//                    });
-//            }
-//            else {
-//                require(['./modules/equifit/' + formId],
-//                    function (Equifit) {
-//                        Equifit.init();
-//                    });
-//            }
+        equifitCreate: function () {
+            require(['./controllers/create'],
+                function (Equifit) {
+                    Equifit.init();
+                });
         },
 
         equifitEdit: function (equifitId, formId) {
             app.store.set({
-                appFlow: 'edit',
                 equifitId: equifitId,
                 formId: formId
             });
 
             if (_.isNull(formId)) {
-                require(['./modules/controllers/forms'],
+                require(['./controllers/forms'],
                     function (Equifit) {
                         Equifit.init(equifitId);
                     });
             }
             else {
-                require(['./modules/controllers/form'],
+                require(['./controllers/form'],
                     function (Equifit) {
                         Equifit.init(equifitId, formId);
                     });

@@ -18,14 +18,12 @@ define(function (require, exports, module) {
         },
 
         renderForm: function (e) {
-            var url;
             e.preventDefault();
-            if (_.isEqual(app.store.get('appFlow'), 'edit')) {
-                url = '/equifit/' + app.store.get('appFlow') + '/' + app.store.get('equifitId') + '/forms/' + this.model.id;
-            }
-            else {
-                url = '/equifit/' + app.store.get('appFlow') + '/forms/' + this.model.id;
-            }
+
+            console.log('click on form', this.model);
+
+            var url;
+            url = '/equifit/' + app.store.get('equifitId') + '/forms/' + this.model.id;
 
             app.store.set({
                 formName: this.model.get('title'),

@@ -6,10 +6,10 @@ define(function (require, exports, module) {
     "use strict";
 
     var app = require('app');
-    var FormEntities = require('./../entities/forms');
-    var FormView = require('./../views/form');
-    var HeaderView = require('./../views/header');
-    var BreadcrumbView = require('./../views/breadcrumb');
+    var FormEntities = require('entities/forms');
+    var FormView = require('views/form');
+    var HeaderView = require('views/header');
+    var BreadcrumbView = require('views/breadcrumb');
 
     var Form = {};
 

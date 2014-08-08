@@ -12,7 +12,6 @@ define(function (require, exports, module) {
 
     Store = Backbone.Model.extend({
         defaults: {
-            appFlow: null,
             slug: null,
             pageTitle: null,
             memberName: null,
