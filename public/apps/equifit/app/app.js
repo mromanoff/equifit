@@ -9,7 +9,7 @@ define(function (require, exports, module) {
     // creation.
     var app = {
         // The root path to run the application.
-        root: '/',
+        root: '/apps/equifit/',
         store: require('./entities/store')
     };
 
@@ -17,33 +17,40 @@ define(function (require, exports, module) {
     app.store.set({
         memberName: window.equifitData.memberName || null,
         memberId: window.equifitData.memberId || null,
-        equifitDate: moment().format('MMMM D, YYYY'),
+        equifitDate: moment().format('MMMM D, YYYY')
     });
 
     // Configure LayoutManager with Backbone Boilerplate defaults.
     Layout.configure({
         // Allow | Not Allow LayoutManager to augment Backbone.View.prototype.
         manage: false,
-        prefix: "apps/equifit/app/templates/",
+        prefix: "app/templates/",
 
-        fetchTemplate: function (path) {
+        // This method will check for prebuilt templates first and fall back to
+        // loading in via AJAX.
+        fetchTemplate: function(path) {
+            // Check for a global JST object.  When you build your templates for
+            // production, ensure they are all attached here.
+            var JST = window.JST || {};
+
             // Concatenate the file extension.
             path = path + ".html";
 
-            window.JST = window.JST || {};
-
-            // If cached, use the compiled template.
-            if (window.JST[path]) {
-                return window.JST[path];
+            // If the path exists in the object, use it instead of fetching remotely.
+            if (JST[path]) {
+                return JST[path];
             }
 
-            // Put fetch into `async-mode`.
+            // If it does not exist in the JST object, mark this function as
+            // asynchronous.
             var done = this.async();
 
-            // Seek out the template asynchronously.
-            $.get(app.root + path, function (contents) {
-                done(window.JST[path] = _.template(contents));
-            });
+            // Fetch via jQuery's GET.  The third argument specifies the dataType.
+            $.get(app.root + path, function(contents) {
+                // Assuming you're using underscore templates, the compile step here is
+                // `_.template`.
+                done(_.template(contents));
+            }, 'text');
         }
     });
 
