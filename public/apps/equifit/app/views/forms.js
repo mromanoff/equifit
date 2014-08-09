@@ -8,7 +8,6 @@ define(function (require, exports, module) {
         manage: true,
         template: 'form-item',
         tagName: 'li',
-
         events: {
             'click .item': 'renderForm'
         },
@@ -19,11 +18,7 @@ define(function (require, exports, module) {
 
         renderForm: function (e) {
             e.preventDefault();
-
-            console.log('click on form', this.model);
-
-            var url;
-            url = '/equifit/' + app.store.get('equifitId') + '/forms/' + this.model.id;
+            var url = '/equifit/' + app.store.get('equifitId') + '/forms/' + this.model.id;
 
             app.store.set({
                 formName: this.model.get('title'),
@@ -35,6 +30,11 @@ define(function (require, exports, module) {
         }
     });
 
+    var ItemEmpty = Backbone.View.extend({
+            manage: true,
+            template: 'form-item-empty'
+        }),
+
     FormsView = Backbone.View.extend({
         manage: true,
         template: 'forms-list',
@@ -44,11 +44,16 @@ define(function (require, exports, module) {
         },
 
         beforeRender: function () {
-            this.collection.each(function (item) {
-                this.insertView('ul', new Item({
-                    model: item
-                }));
-            }, this);
+            // check if there is no items in collection
+            if(_.isEqual(_.size(this.collection), 7)) {
+                this.insertView('ul', new ItemEmpty());
+            } else {
+                this.collection.each(function (item) {
+                    this.insertView('ul', new Item({
+                        model: item
+                    }));
+                }, this);
+            }
         }
     });
 
