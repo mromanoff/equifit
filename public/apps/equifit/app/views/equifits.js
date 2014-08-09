@@ -51,7 +51,7 @@ define(function (require, exports, module) {
     var ItemEmpty = Backbone.View.extend({
         manage: true,
         template: 'equifit-item-empty'
-    }),
+    });
 
     EquifitsView = Backbone.View.extend({
         manage: true,

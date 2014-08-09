@@ -10,8 +10,8 @@ module.exports = ->
         generateSourceMaps: true
         include: ["main"]
         out: "dist/source.min.js"
-      # optimize: "uglify2"
-        optimize: "none"
+        optimize: "uglify2"
+        # optimize: "none"
         baseUrl: "app"
 
         paths:

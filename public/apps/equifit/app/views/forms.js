@@ -31,9 +31,9 @@ define(function (require, exports, module) {
     });
 
     var ItemEmpty = Backbone.View.extend({
-            manage: true,
-            template: 'form-item-empty'
-        }),
+        manage: true,
+        template: 'form-item-empty'
+    });
 
     FormsView = Backbone.View.extend({
         manage: true,
@@ -45,7 +45,7 @@ define(function (require, exports, module) {
 
         beforeRender: function () {
             // check if there is no items in collection
-            if(_.isEqual(_.size(this.collection), 7)) {
+            if (_.isEqual(_.size(this.collection), 0)) {
                 this.insertView('ul', new ItemEmpty());
             } else {
                 this.collection.each(function (item) {
