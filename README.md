@@ -19,7 +19,7 @@ each.
 ## Running the App:
 
 Start MongoDB
-	
+
 	$ mongod
 
 Start the server in DEV mode, with nodemon watching the app for a relaunch,

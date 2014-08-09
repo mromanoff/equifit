@@ -46,8 +46,12 @@ define(function (require, exports, module) {
 
             app.router.navigate(url, { trigger: true });
         }
-
     });
+
+    var ItemEmpty = Backbone.View.extend({
+        manage: true,
+        template: 'equifit-item-empty'
+    }),
 
     EquifitsView = Backbone.View.extend({
         manage: true,
@@ -55,11 +59,16 @@ define(function (require, exports, module) {
         template: 'equifits-list',
 
         beforeRender: function () {
-            this.collection.each(function (item) {
-                this.insertView('ul', new Item({
-                    model: item
-                }));
-            }, this);
+            // check if there is no items in collection
+            if(_.isEqual(_.size(this.collection), 0)) {
+                this.insertView('ul', new ItemEmpty());
+            } else {
+                this.collection.each(function (item) {
+                    this.insertView('ul', new Item({
+                        model: item
+                    }));
+                }, this);
+            }
         }
     });
 
