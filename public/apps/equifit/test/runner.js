@@ -27,7 +27,7 @@
 
   require([
     "config",
-    "../bower_components/lodash/dist/lodash.underscore"
+    "underscore"
   ],
 
   function(config, _) {

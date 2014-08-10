@@ -3,7 +3,7 @@ define(function (require, exports, module) {
 
     var app = require('app');
     var moment = require('moment');
-    var EquifitsView;
+    var EquifitsViewModule;
 
     var Item = Backbone.View.extend({
         manage: true,
@@ -26,7 +26,6 @@ define(function (require, exports, module) {
         printForm: function (e) {
             e.preventDefault();
             console.log('print form');
-            alert('print form');
         },
 
         viewClientReport: function (e) {
@@ -43,7 +42,6 @@ define(function (require, exports, module) {
                 equifitDate: moment(this.model.get('createdAt')).format('MMMM D, YYYY'),
                 equifitId: this.model.id
             });
-
             app.router.navigate(url, { trigger: true });
         }
     });
@@ -53,7 +51,7 @@ define(function (require, exports, module) {
         template: 'equifit-item-empty'
     });
 
-    EquifitsView = Backbone.View.extend({
+    EquifitsViewModule = Backbone.View.extend({
         manage: true,
         el: false,
         template: 'equifits-list',
@@ -72,5 +70,5 @@ define(function (require, exports, module) {
         }
     });
 
-    module.exports = EquifitsView;
+    module.exports = EquifitsViewModule;
 });

@@ -1,12 +1,12 @@
 define(function (require, exports, module) {
-    "use strict";
+    'use strict';
 
     var app = require('app');
     var Backbone = require('backbone');
 
-    var HeaderView;
+    var HeaderViewModule;
 
-    HeaderView =  Backbone.View.extend({
+    HeaderViewModule =  Backbone.View.extend({
         manage: true,
         tagName: 'h1',
         template: 'header',
@@ -16,5 +16,5 @@ define(function (require, exports, module) {
         }
     });
 
-    module.exports = HeaderView;
+    module.exports = HeaderViewModule;
 });

@@ -1,12 +1,12 @@
 define(function (require, exports, module) {
-    "use strict";
+    'use strict';
 
     var app = require('app');
     var Backbone = require('backbone');
 
-    var BreadcrumbView;
+    var BreadcrumbViewModule;
 
-    BreadcrumbView =  Backbone.View.extend({
+    BreadcrumbViewModule =  Backbone.View.extend({
         manage: true,
         template: 'breadcrumb',
 
@@ -15,5 +15,5 @@ define(function (require, exports, module) {
         }
     });
 
-    module.exports = BreadcrumbView;
+    module.exports = BreadcrumbViewModule;
 });

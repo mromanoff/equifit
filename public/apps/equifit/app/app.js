@@ -10,13 +10,14 @@ define(function (require, exports, module) {
     var app = {
         // The root path to run the application.
         root: '/apps/equifit/',
-        store: require('./entities/store')
+        store: require('./entities/store'),
+        equifitData: window.equifitData || {}
     };
 
     // set store with initial data
     app.store.set({
-        memberName: window.equifitData.memberName || null,
-        memberId: window.equifitData.memberId || null,
+        memberName: app.equifitData.memberName || null,
+        memberId: app.equifitData.memberId || null,
         equifitDate: moment().format('MMMM D, YYYY')
     });
 
@@ -24,7 +25,11 @@ define(function (require, exports, module) {
     Layout.configure({
         // Allow | Not Allow LayoutManager to augment Backbone.View.prototype.
         manage: false,
-        prefix: "app/templates/",
+
+        // Set the prefix to where your templates live on the server, but keep in
+        // mind that this prefix needs to match what your production paths will be.
+        // Typically those are relative.  So we'll add the leading `/` in `fetch`.
+        prefix: 'app/templates/',
 
         // This method will check for prebuilt templates first and fall back to
         // loading in via AJAX.
@@ -32,7 +37,6 @@ define(function (require, exports, module) {
             // Check for a global JST object.  When you build your templates for
             // production, ensure they are all attached here.
             var JST = window.JST || {};
-
             // Concatenate the file extension.
             path = path + ".html";
 

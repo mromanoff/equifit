@@ -1,5 +1,5 @@
 define(function (require, exports, module) {
-    "use strict";
+    'use strict';
 
     var app = require('app');
     var FormsEntities = require('entities/forms');

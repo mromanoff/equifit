@@ -2,7 +2,7 @@ module.exports = ->
   @loadNpmTasks "grunt-karma"
 
   # Change this to the framework you want to use.
-  framework = "mocha"
+  framework = "jasmine"  # "mocha"
 
   # Unit testing is provided by Karma.  Change the two commented locations
   # below to either: mocha, jasmine, or qunit.

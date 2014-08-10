@@ -7,7 +7,7 @@ module.exports = ->
 
     compile:
       files:
-        "dist/templates.js": ["app/templates/**/*.html"]
+        "dist/templates.min.js": ["app/templates/**/*.html"]
 
 
 

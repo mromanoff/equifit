@@ -1,9 +1,5 @@
-/**
- * Created by mromanoff on 7/24/2014.
- */
-
 define(function (require, exports, module) {
-    "use strict";
+    'use strict';
 
     var app = require('app');
     var FormEntities = require('entities/forms');
@@ -11,7 +7,7 @@ define(function (require, exports, module) {
     var HeaderView = require('views/header');
     var BreadcrumbView = require('views/breadcrumb');
 
-    var Form = {};
+    var FormModule = {};
 
     /// create an instance of forms collection.
     var formEntities = new FormEntities();
@@ -20,7 +16,7 @@ define(function (require, exports, module) {
         slug: 'form'
     });
 
-    Form.init = function (equifitId, formId) {
+    FormModule.init = function (equifitId, formId) {
         // Fetch data
         formEntities.fetch().then(
             function () {
@@ -36,5 +32,5 @@ define(function (require, exports, module) {
         );
     };
 
-    module.exports = Form;
+    module.exports = FormModule;
 });
