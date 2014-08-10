@@ -2,25 +2,17 @@ module.exports = ->
   @loadNpmTasks "grunt-contrib-less"
 
   @config "less",
-    development:
+    dev:
       options:
-        dumpLineNumbers: false # "mediaquery"
-        # paths: ["styles"]
-
+        strictImports: true
+        sourceMap: true
+        outputSourceFiles: true
       files:
         "styles/index.css": "less/manifest.less"
 
-      # production:
-        # options:
-          # paths: ["assets/css"],
-          # cleancss: true,
-          # modifyVars:
-            # imgPath: '"http://mycdn.com/path/to/images"',
-            # bgColor: 'red'
-
-
-        # files:
-          # "path/to/result.css": "path/to/source.less"
+    release:
+      files:
+        "styles/index.css": "less/manifest.less"
 
 
 

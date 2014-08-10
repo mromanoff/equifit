@@ -9,11 +9,17 @@ module.exports = ->
     # "karma:run"
   # ]
 
+  @registerTask "development", [
+    "less:dev"
+    "watch:css"
+  ]
+
   # When running the default Grunt command, just lint the code.
   @registerTask "default", [
     "clean"
     # "jshint"
     "copy"
-    "less"
+    "less:release"
     "cssmin"
+    "hub"
   ]
