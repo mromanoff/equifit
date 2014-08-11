@@ -3,22 +3,8 @@ define(function (require, exports, module) {
 
     var app = require('app');
     var Backbone = require('backbone');
-    //var EquifitEntity = require('entities/equifit');
+    var EquifitEntity = require('entities/equifit');
     var EquifitEntities;
-
-
-    var EquifitEntity = Backbone.Model.extend({
-        idAttribute: '_id',
-
-        defaults: {
-            id: null,
-            createdAt: null,
-            updatedAt: null,
-            updatedBy: null,
-            clubName: null,
-            complete: false
-        }
-    });
 
     EquifitEntities = Backbone.Collection.extend({
         model: EquifitEntity,

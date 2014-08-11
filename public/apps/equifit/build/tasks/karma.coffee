@@ -17,12 +17,13 @@ module.exports = ->
       reporters: ["dots", "coverage"]
       browsers: ["PhantomJS"]
 
-      frameworks: [framework]
+      frameworks: [framework, 'sinon']
 
       plugins: [
         "karma-jasmine"
         "karma-mocha"
         "karma-qunit"
+        "karma-sinon"
         "karma-phantomjs-launcher"
         "karma-coverage"
       ]

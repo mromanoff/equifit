@@ -15,7 +15,8 @@
     "assert": "~0.1.0",
     "bootstrap": "2.3.2",
     "moment": "~2.8.0",
-    "backbone-forms": "~0.14.0"
+    "backbone-forms": "~0.14.0",
+    "jasmine-jquery": "~2.0.5"
   },
   "devDependencies": {
     "layoutmanager": "~0.9.5"
