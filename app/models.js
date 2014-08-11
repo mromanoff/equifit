@@ -5,21 +5,21 @@ var mongoose = require('mongoose'),
 var Equifit = new Schema({
     createdAt: String,
     updatedAt: String ,
-    updatedBy: String,
+    trainerName: String,
     clubName: String,
-    complete: Boolean
+    isComplete: Boolean,
+    isSigned: Boolean
 });
 
 var Form = new Schema({
     title: String,
-    complete: Boolean,
+    templateId: Number,
+    isComplete: Boolean,
     totalQuestions: Number,
-    totalAnsweredQuestions: Number,
+    totalCompletedQuestions: Number,
     formSchema: Schema.Types.Mixed,
     fieldsets: [Schema.Types.Mixed],
     data: Schema.Types.Mixed
-
-
 });
 
 module.exports = {

@@ -12,9 +12,10 @@ define(function (require, exports, module) {
             id: null,
             createdAt: null,
             updatedAt: null,
-            updatedBy: null,
+            trainerName: null,
             clubName: null,
-            complete: false
+            isComplete: false,
+            isSigned: false
         }
     });
 

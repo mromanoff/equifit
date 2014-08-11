@@ -16,9 +16,10 @@ define(function(require) {
             expect(equifit.get('id')).toBeNull();
             expect(equifit.get('createdAt')).toBeNull();
             expect(equifit.get('updatedAt')).toBeNull();
-            expect(equifit.get('updatedBy')).toBeNull();
+            expect(equifit.get('trainerName')).toBeNull();
             expect(equifit.get('clubName')).toBeNull();
-            expect(equifit.get('complete')).toBe(false);
+            expect(equifit.get('isComplete')).toBe(false);
+            expect(equifit.get('isSigned')).toBe(false);
         });
     });
 });

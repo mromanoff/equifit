@@ -9,9 +9,10 @@ module.exports = {
                 var newEquifit = new models.Equifit({
                     createdAt: "2014-03-15T13:30:00",
                     updatedAt: null,
-                    updatedBy: "Josh Smith",
+                    trainerName: "Josh Smith",
                     clubName: "Tribeca",
-                    complete: false
+                    isComplete: false,
+                    isSigned: false
                 });
                 newEquifit.save(function(err, equifit) {
                     console.log('successfully inserted equifit: ' + equifit._id);
@@ -20,9 +21,10 @@ module.exports = {
                 newEquifit = new models.Equifit({
                     createdAt: "2014-05-01T13:30:00",
                     updatedAt: "2014-08-02T13:30:00",
-                    updatedBy: "Billy Joel",
+                    trainerName: "Billy Joel",
                     clubName: "895 Broadway",
-                    complete: false
+                    isComplete: false,
+                    isSigned: false
                 });
                 newEquifit.save(function(err, equifit) {
                     console.log('successfully inserted equifit: ' + equifit._id);
@@ -31,9 +33,10 @@ module.exports = {
                 newEquifit = new models.Equifit({
                     createdAt: "2013-05-01T13:30:00",
                     updatedAt: "2013-08-02T13:30:00",
-                    updatedBy: "Bob Marley",
+                    trainerName: "Bob Marley",
                     clubName: "West Side",
-                    complete: true
+                    isComplete: true,
+                    isSigned: false
                 });
                 newEquifit.save(function(err, equifit) {
                     console.log('successfully inserted equifit: ' + equifit._id);
@@ -42,9 +45,10 @@ module.exports = {
                 newEquifit = new models.Equifit({
                     createdAt: "2012-05-01T13:30:00",
                     updatedAt: "2012-01-06T13:30:00",
-                    updatedBy: "Steve Martine",
+                    trainerName: "Steve Martine",
                     clubName: "East Side",
-                    complete: true
+                    isComplete: true,
+                    isSigned: false
                 });
                 newEquifit.save(function(err, equifit) {
                     console.log('successfully inserted equifit: ' + equifit._id);
@@ -58,10 +62,12 @@ module.exports = {
             if (forms.length === 0) {
                 console.log('no forms found, seeding...');
                 var newForm = new models.Form({
+                    id: 1000,
+                    templateId: 2,
                     title: "PAR-Q",
-                    complete: false,
+                    isComplete: false,
                     totalQuestions: 5,
-                    totalAnsweredQuestions: 2,
+                    totalCompletedQuestions: 2,
                     formSchema: {
                         title: {
                             type: "Select",
@@ -89,10 +95,12 @@ module.exports = {
                 });
 
                 newForm = new models.Form({
+                    id: 1001,
+                    templateId: 3,
                     title: "Personal Info",
-                    complete: false,
+                    isComplete: false,
                     totalQuestions: 10,
-                    totalAnsweredQuestions: 3,
+                    totalCompletedQuestions: 3,
                     formSchema: {
                         title: {
                             type: "Select",
@@ -120,10 +128,12 @@ module.exports = {
                 });
 
                 newForm = new models.Form({
+                    id: 1003,
+                    templateId: 4,
                     title: "Goals",
-                    complete: false,
+                    isComplete: false,
                     totalQuestions: 12,
-                    totalAnsweredQuestions: 1,
+                    totalCompletedQuestions: 1,
                     formSchema: {
                         title: {
                             type: "Select",
@@ -151,10 +161,12 @@ module.exports = {
                 });
 
                 newForm = new models.Form({
+                    id: 1004,
+                    templateId: 5,
                     title: "Orthopedic",
-                    complete: false,
+                    isComplete: false,
                     totalQuestions: 13,
-                    totalAnsweredQuestions: 0,
+                    totalCompletedQuestions: 0,
                     formSchema: {
                         title: {
                             type: "Select",
@@ -182,10 +194,12 @@ module.exports = {
                 });
 
                 newForm = new models.Form({
+                    id: 1005,
+                    templateId: 6,
                     title: "Exercise History",
-                    complete: false,
+                    isComplete: false,
                     totalQuestions: 7,
-                    totalAnsweredQuestions: 6,
+                    totalCompletedQuestions: 6,
                     formSchema: {
                         title: {
                             type: "Select",
@@ -213,10 +227,12 @@ module.exports = {
                 });
 
                 newForm = new models.Form({
+                    id: 1006,
+                    templateId: 7,
                     title: "Lifestyle",
-                    complete: false,
+                    isComplete: false,
                     totalQuestions: 15,
-                    totalAnsweredQuestions: 10,
+                    totalCompletedQuestions: 10,
                     formSchema: {
                         title: {
                             type: "Select",
@@ -244,10 +260,12 @@ module.exports = {
                 });
 
                 newForm = new models.Form({
+                    id: 1007,
+                    templateId: 8,
                     title: "Physical Test",
-                    complete: true,
+                    isComplete: true,
                     totalQuestions: 5,
-                    totalAnsweredQuestions: 5,
+                    totalCompletedQuestions: 5,
                     formSchema: {
                         title: {
                             type: "Select",
