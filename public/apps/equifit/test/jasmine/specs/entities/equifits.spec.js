@@ -56,6 +56,11 @@ define(function(require) {
             expect(equifits.url).toHaveBeenCalled();
         });
 
+        it("url function return string value", function() {
+            var equifits = new EquifitEntities();
+            expect(equifits.url()).toEqual(jasmine.any(String));
+        });
+
         it('should have a model', function(){
             var equifits = new EquifitEntities();
             expect(equifits.model).toBe(EquifitEntity);
