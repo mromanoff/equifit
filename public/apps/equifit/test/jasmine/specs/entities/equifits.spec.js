@@ -46,7 +46,6 @@ define(function(require) {
         it('should have a url mapped to it', function(){
             var equifits = new EquifitEntities();
             expect(equifits.url).toBeDefined();
-           // expect(equifits.url).toBeTruthy();
         });
 
         it("calls url function", function() {

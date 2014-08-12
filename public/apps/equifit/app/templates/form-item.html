@@ -1,5 +1,5 @@
-<% var status = complete ? ' complete' : '' %>
-<div class="item form-item<%= status %>" data-id="<%= id %>" data-slug="<%= slug %>" data-status="<%= complete %>">
+<% var status = isComplete ? ' complete' : '' %>
+<div class="item form-item<%= status %>" data-id="<%= id %>" data-slug="<%= slug %>" data-status="<%= isComplete %>">
     <h4><%= title %></h4>
-    <span class="pull-right"><%= totalAnsweredQuestions %> of <%= totalQuestions %></span>
+    <span class="pull-right"><%= totalCompletedQuestions%> of <%= totalQuestions %></span>
 </div>

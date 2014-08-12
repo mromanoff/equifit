@@ -3,20 +3,23 @@ define(function (require, exports, module) {
 
     var app = require('app');
     var Backbone = require('backbone');
-    var FormsEntitie;
+    var FormEntity;
 
 
-    FormsEntitie = Backbone.Model.extend({
+    FormEntity = Backbone.Model.extend({
         idAttribute: '_id',
 
         defaults: {
             id: this._id || null,
             title: null,
-            complete: false,
-            slug: null,
+            templateId: null,
+            isComplete: false,
+            totalQuestions: null,
+            totalCompletedQuestions: null,
             schema: null,
             fieldsets: null,
-            data: null
+            data: null,
+            slug: null
         },
 
         parse: function (response) {
@@ -27,7 +30,5 @@ define(function (require, exports, module) {
             return response;
         }
     });
-
-
-    module.exports = FormsEntitie;
+    module.exports = FormEntity;
 });
