@@ -7,6 +7,7 @@ define(function (require, exports, module) {
     var HeaderView = require('views/header');
     var BreadcrumbView = require('views/breadcrumb');
     var ActionView = require('views/action');
+    var LoadingView = require('views/loading');
 
     var EquifitsModule = {};
     // create an instance of equifits collection.
@@ -18,6 +19,11 @@ define(function (require, exports, module) {
     });
 
     EquifitsModule.init = function () {
+
+        app.useLayout('layouts/main').setViews({
+            '.main-container': new LoadingView()
+        }).render();
+
         // Fetch data
         equifitEntities.fetch().then(
             function () {

@@ -5,6 +5,7 @@ define(function (require, exports, module) {
     var Layout = require('backbone.layoutmanager');
     var moment = require('moment');
 
+
     // Provide a global location to place configuration settings and module
     // creation.
     var app = {

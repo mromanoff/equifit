@@ -6,6 +6,7 @@ define(function (require, exports, module) {
     var FormsView = require('views/forms');
     var HeaderView = require('views/header');
     var BreadcrumbView = require('views/breadcrumb');
+    var LoadingView = require('views/loading');
 
     var FormsModule = {};
 
@@ -18,6 +19,11 @@ define(function (require, exports, module) {
     });
 
     FormsModule.init = function () {
+
+        app.useLayout('layouts/main').setViews({
+            '.main-container': new LoadingView()
+        }).render();
+
         // Fetch data
         formsEntities.fetch().then(
             function () {
