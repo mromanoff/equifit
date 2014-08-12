@@ -21,7 +21,9 @@ define(function (require, exports, module) {
     EquifitsModule.init = function () {
 
         app.useLayout('layouts/main').setViews({
-            '.main-container': new LoadingView()
+            '.main-container': new LoadingView({
+                title: 'Loading Equifits'
+            })
         }).render();
 
         // Fetch data

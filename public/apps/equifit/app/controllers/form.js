@@ -20,7 +20,9 @@ define(function (require, exports, module) {
     FormModule.init = function (equifitId, formId) {
 
         app.useLayout('layouts/main').setViews({
-            '.main-container': new LoadingView()
+            '.main-container': new LoadingView({
+                    title: 'Loading Form'
+            })
         }).render();
 
         // Fetch data

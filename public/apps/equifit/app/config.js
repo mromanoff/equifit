@@ -8,8 +8,7 @@ require.config({
     "backbone.layoutmanager": "../bower_components/layoutmanager/backbone.layoutmanager",
     "backbone-forms": "../bower_components/backbone-forms/distribution.amd/backbone-forms",
     "moment": "../bower_components/moment/moment",
-    "spin": "../bower_components/spin.js/spin",
-    "spin.jquery": "../bower_components/jquery.spinjs/dist/jquery.spin"
+    "spin": "../bower_components/spin.js/spin"
   },
 
   deps: ["main"]
