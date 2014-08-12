@@ -31,7 +31,6 @@ define(function (require, exports, module) {
         viewClientReport: function (e) {
             e.preventDefault();
             console.log('view client report');
-            alert('view client report');
         },
 
         viewEquifit: function (e) {
@@ -40,8 +39,10 @@ define(function (require, exports, module) {
 
             app.store.set({
                 equifitDate: moment(this.model.get('createdAt')).format('MMMM D, YYYY'),
+                isSigned: this.model.get('isSigned'),
                 equifitId: this.model.id
             });
+
             app.router.navigate(url, { trigger: true });
         }
     });

@@ -4,6 +4,12 @@ define(function (require, exports, module) {
     var app = require('app');
     var FormsView;
 
+    var Modal = Backbone.View.extend({
+        manage: true,
+        template: 'modal'
+    });
+
+
     var Item = Backbone.View.extend({
         manage: true,
         template: 'form-item',
@@ -39,11 +45,21 @@ define(function (require, exports, module) {
         manage: true,
         template: 'forms-list',
 
+        initialize: function () {
+            console.log('consent form', app.store.get('isSigned'));
+        },
+
         serialize: function () {
             return app.store.toJSON();
         },
 
         beforeRender: function () {
+            this.insertView('.modal', new Modal({
+                model: {}
+            }));
+
+
+
             // check if there is no items in collection
             if (_.isEqual(_.size(this.collection), 0)) {
                 this.insertView('ul', new ItemEmpty());

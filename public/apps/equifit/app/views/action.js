@@ -21,8 +21,7 @@ define(function (require, exports, module) {
 
         printForm: function (e) {
             e.preventDefault();
-            console.log('printBlankForm');
-            window.location.href = '/assets/files/equifit-forms.pdf';
+            window.location.href = '/apps/equifit/assets/files/equifit-forms.pdf';
         },
 
         createNew: function (e) {
