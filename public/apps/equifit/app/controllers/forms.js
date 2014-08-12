@@ -7,7 +7,6 @@ define(function (require, exports, module) {
     var HeaderView = require('views/header');
     var BreadcrumbView = require('views/breadcrumb');
     var LoadingView = require('views/loading');
-
     var FormsModule = {};
 
     // create an instance of forms collection.
@@ -36,6 +35,7 @@ define(function (require, exports, module) {
                         collection: formsEntities
                     })
                 }).render();
+
                 $('title').html('Equifit');
             }
         );

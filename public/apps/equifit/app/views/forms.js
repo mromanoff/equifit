@@ -4,11 +4,6 @@ define(function (require, exports, module) {
     var app = require('app');
     var FormsView;
 
-    var Modal = Backbone.View.extend({
-        manage: true,
-        template: 'modal'
-    });
-
 
     var Item = Backbone.View.extend({
         manage: true,
@@ -45,8 +40,8 @@ define(function (require, exports, module) {
         manage: true,
         template: 'forms-list',
 
-        initialize: function () {
-            console.log('consent form', app.store.get('isSigned'));
+        events: {
+            'click .consentForm': 'showConsentForm'
         },
 
         serialize: function () {
@@ -54,12 +49,6 @@ define(function (require, exports, module) {
         },
 
         beforeRender: function () {
-            this.insertView('.modal', new Modal({
-                model: {}
-            }));
-
-
-
             // check if there is no items in collection
             if (_.isEqual(_.size(this.collection), 0)) {
                 this.insertView('ul', new ItemEmpty());
@@ -70,6 +59,19 @@ define(function (require, exports, module) {
                     }));
                 }, this);
             }
+        },
+
+        showConsentForm: function () {
+            var url = '/equifit/consent-form';
+
+            //app.store.set({
+            //    formName: this.model.get('title'),
+            //    pageTitle: this.model.get('title'),
+            //});
+
+            app.router.navigate(url, { trigger: true });
+
+
         }
     });
 

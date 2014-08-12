@@ -9,6 +9,7 @@ define(function (require, exports, module) {
         routes: {
             'equifit(/)': 'equifit',
             'equifit/create(/)': 'equifitCreate',
+            'equifit/consent-form(/)': 'consentForm',
             'equifit/:id': 'equifitEdit',
             'equifit/:id/forms/:id': 'equifitEdit'
         },
@@ -45,7 +46,14 @@ define(function (require, exports, module) {
                         Equifit.init(equifitId, formId);
                     });
             }
-        }
+        },
+
+        consentForm: function () {
+            require(['./controllers/consent-form'],
+                function (Equifit) {
+                    Equifit.init();
+                });
+        },
     });
 
     module.exports = Router;

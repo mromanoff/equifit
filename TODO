@@ -1,9 +1,10 @@
 1. render backbone forms with Bootstrap 2 templates.
 2. update seeder with validation and errors fields
 3. create modal for success and error messages
-4. add spinner
+4. add spinner  -- DONE
 5. add backbone.localstorage
-6. add unit testing
+6. add unit testing  -- DONE
 7. Cache forms collection
 8. clicking on breadcrumb link doesn't change page title.  Fix # navigation in node server
-9. create controllers
+9. create controllers -- DONE
+10. full reload page loses 'isSigned' state
