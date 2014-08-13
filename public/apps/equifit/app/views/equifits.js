@@ -3,7 +3,13 @@ define(function (require, exports, module) {
 
     var app = require('app');
     var moment = require('moment');
-    var EquifitsViewModule;
+    var ModalView = require('./modal');
+    var EquifitsView;
+
+    app.store.set({
+        pageTitle: 'Equifits',
+        slug: 'equifit'
+    });
 
     var Item = Backbone.View.extend({
         manage: true,
@@ -12,8 +18,7 @@ define(function (require, exports, module) {
 
         events: {
             'click .printForm': 'printForm',
-            'click .viewClientReport': 'viewClientReport',
-            'click .submit': 'viewEquifit'
+            'click': 'viewEquifit'
         },
 
         serialize: function () {
@@ -24,13 +29,8 @@ define(function (require, exports, module) {
         },
 
         printForm: function (e) {
-            e.preventDefault();
+            e.stopPropagation();
             console.log('print form');
-        },
-
-        viewClientReport: function (e) {
-            e.preventDefault();
-            console.log('view client report');
         },
 
         viewEquifit: function (e) {
@@ -38,6 +38,7 @@ define(function (require, exports, module) {
             var url = '/equifit/' + this.model.id;
 
             app.store.set({
+                pageTitle: moment(this.model.get('createdAt')).format('MMMM D, YYYY'),
                 equifitDate: moment(this.model.get('createdAt')).format('MMMM D, YYYY'),
                 isSigned: this.model.get('isSigned'),
                 equifitId: this.model.id
@@ -52,7 +53,7 @@ define(function (require, exports, module) {
         template: 'equifit-item-empty'
     });
 
-    EquifitsViewModule = Backbone.View.extend({
+    EquifitsView = Backbone.View.extend({
         manage: true,
         el: false,
         template: 'equifits-list',
@@ -71,5 +72,5 @@ define(function (require, exports, module) {
         }
     });
 
-    module.exports = EquifitsViewModule;
+    module.exports = EquifitsView;
 });

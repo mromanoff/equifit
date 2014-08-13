@@ -7,15 +7,10 @@ define(function (require, exports, module) {
     var HeaderView = require('views/header');
     var BreadcrumbView = require('views/breadcrumb');
     var LoadingView = require('views/loading');
-
     var FormModule = {};
 
-    /// create an instance of forms collection.
+    // create an instance of forms collection.
     var formEntities = new FormEntities();
-
-    app.store.set({
-        slug: 'form'
-    });
 
     FormModule.init = function (equifitId, formId) {
 

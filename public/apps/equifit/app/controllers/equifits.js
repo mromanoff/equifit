@@ -8,15 +8,9 @@ define(function (require, exports, module) {
     var BreadcrumbView = require('views/breadcrumb');
     var ActionView = require('views/action');
     var LoadingView = require('views/loading');
-
     var EquifitsModule = {};
     // create an instance of equifits collection.
     var equifitEntities = new EquifitEntities();
-
-    app.store.set({
-        pageTitle: 'Equifits',
-        slug: 'equifit'
-    });
 
     EquifitsModule.init = function () {
 

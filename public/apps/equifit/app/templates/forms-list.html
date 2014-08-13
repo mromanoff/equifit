@@ -1,7 +1,17 @@
-<h2 class="text-center"><%= equifitDate %></h2>
-<% if(!isSigned) { %>
-    <div class="consentForm alert alert-warning">
-        <h5>Consent Form <span class="pull-right">not signed</span></h5>
-    </div>
-<% } %>
-<ul class="unstyled"></ul>
+<% var badgeStatus = isSigned ? 'badge-success' : 'badge-warning' %>
+<% var statusText = isSigned ? 'signed' : 'not signed' %>
+
+<section class="row-fluid text-right">
+    <button class="btn btn-primary submit">submit</button>
+</section>
+
+<ul class="nav nav-list">
+    <li>
+        <a href="#" class="consentForm">Consent Form
+            <span class="pull-right">
+                <span class="badge <%- badgeStatus %>"><%- statusText %></span>
+                <i class="icon-chevron-right"></i>
+            </span>
+        </a>
+    </li>
+</ul>

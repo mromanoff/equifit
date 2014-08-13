@@ -3,9 +3,14 @@ define(function (require, exports, module) {
 
     var app = require('app');
     var Backbone = require('backbone');
-    var ConsentForm;
+    var ConsentFormView;
 
-    ConsentForm =  Backbone.View.extend({
+    app.store.set({
+        pageTitle: 'Consent Form',
+        slug: 'forms'
+    });
+
+    ConsentFormView =  Backbone.View.extend({
         manage: true,
         template: 'consent-form',
         events: {
@@ -19,5 +24,5 @@ define(function (require, exports, module) {
         }
     });
 
-    module.exports = ConsentForm;
+    module.exports = ConsentFormView;
 });

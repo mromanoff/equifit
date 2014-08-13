@@ -12,20 +12,16 @@ define(function (require, exports, module) {
     // create an instance of forms collection.
     var formsEntities = new FormsEntities();
 
-    app.store.set({
-        pageTitle: 'Equifits Forms',
-        slug: 'forms'
-    });
-
     FormsModule.init = function () {
 
+        // create loading view
         app.useLayout('layouts/main').setViews({
             '.main-container': new LoadingView({
                 title: 'Loading Forms'
             })
         }).render();
 
-        // Fetch data
+        // Fetch data and replace loading view
         formsEntities.fetch().then(
             function () {
                 app.useLayout('layouts/main').setViews({

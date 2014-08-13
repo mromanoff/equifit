@@ -6,11 +6,14 @@ define(function (require, exports, module) {
     var Form = require('backbone-forms');
     var FormView;
 
+    app.store.set({
+        slug: 'form'
+    });
+
     FormView =  Backbone.View.extend({
         manage: true,
-
         events: {
-            'click .submit': 'submitForm'
+            'click .submitForm': 'submitForm'
         },
 
         beforeRender: function () {
@@ -29,7 +32,7 @@ define(function (require, exports, module) {
             }).render();
 
             this.$el.html(form.el);
-            this.$el.append('<button type="button" class="btn btn-primary submit">Submit</button>');
+            this.$el.append('<button type="button" class="btn btn-primary submitForm">Save</button>');
         },
 
         submitForm: function (e) {

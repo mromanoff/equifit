@@ -4,26 +4,29 @@ define(function (require, exports, module) {
     var app = require('app');
     var FormsView;
 
+    app.store.set({
+        slug: 'forms'
+    });
 
     var Item = Backbone.View.extend({
         manage: true,
         template: 'form-item',
         tagName: 'li',
         events: {
-            'click .item': 'renderForm'
+            'click': 'showForm'
         },
 
         serialize: function () {
             return this.model.toJSON();
         },
 
-        renderForm: function (e) {
+        showForm: function (e) {
             e.preventDefault();
             var url = '/equifit/' + app.store.get('equifitId') + '/forms/' + this.model.id;
 
             app.store.set({
-                formName: this.model.get('title'),
                 pageTitle: this.model.get('title'),
+                formName: this.model.get('title'),
                 formId: this.model.id
             });
 
@@ -61,17 +64,10 @@ define(function (require, exports, module) {
             }
         },
 
-        showConsentForm: function () {
+        showConsentForm: function (e) {
+            e.preventDefault();
             var url = '/equifit/consent-form';
-
-            //app.store.set({
-            //    formName: this.model.get('title'),
-            //    pageTitle: this.model.get('title'),
-            //});
-
             app.router.navigate(url, { trigger: true });
-
-
         }
     });
 

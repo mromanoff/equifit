@@ -7,17 +7,13 @@ define(function (require, exports, module) {
     var BreadcrumbView = require('views/breadcrumb');
     var ConsentFormModule = {};
 
-    app.store.set({
-        pageTitle: 'Consent Form',
-        slug: 'consent-form'
-    });
-
-    ConsentFormModule.init = function (equifitId, formId) {
+    ConsentFormModule.init = function () {
         app.useLayout('layouts/main').setViews({
             '.header': new HeaderView(),
             '.breadcrumb-container': new BreadcrumbView(),
             '.main-container': new ConsentFormView()
-    }).render();
+        }).render();
+
         $('title').html('Consent Form');
     };
 
