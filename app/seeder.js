@@ -296,5 +296,19 @@ module.exports = {
                 console.log('found ' + forms.length + ' existing forms!');
             }
         });
+
+        models.SubmitEquifit.find({}, function(err, items) {
+            if (items.length === 0) {
+                console.log('no submitted equifits found, seeding...');
+                var equifit = new models.SubmitEquifit({
+                    isValidated: true
+                });
+                equifit.save(function (err, item) {
+                    console.log('successfully inserted submit equifit: ' + item._id);
+                });
+            } else {
+                console.log('found ' + items.length + ' existing forms!');
+            }
+        });
     }
 };

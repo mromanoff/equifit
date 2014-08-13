@@ -30,7 +30,7 @@ define(function (require, exports, module) {
                 formId: this.model.id
             });
 
-            app.router.navigate(url, { trigger: true });
+            app.router.navigate(url, {trigger: true});
         }
     });
 
@@ -44,7 +44,8 @@ define(function (require, exports, module) {
         template: 'forms-list',
 
         events: {
-            'click .consentForm': 'showConsentForm'
+            'click .consentForm': 'showConsentForm',
+            'click .submit': 'submitEquifit'
         },
 
         serialize: function () {
@@ -67,7 +68,22 @@ define(function (require, exports, module) {
         showConsentForm: function (e) {
             e.preventDefault();
             var url = '/equifit/consent-form';
-            app.router.navigate(url, { trigger: true });
+            app.router.navigate(url, {trigger: true});
+        },
+
+        submitEquifit: function (e) {
+            e.preventDefault();
+            var data = {
+                //equifitId: app.store.toJSON().equifitId,
+                //id: app.store.toJSON().equifitId,
+                //_id: app.store.toJSON().equifitId,
+                isValidated: false
+            };
+
+            require(['../controllers/submit-equifit'],
+                function (Equifit) {
+                    Equifit.init(data);
+                });
         }
     });
 

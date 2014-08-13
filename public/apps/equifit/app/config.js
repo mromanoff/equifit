@@ -9,7 +9,12 @@ require.config({
         "backbone-forms": "../bower_components/backbone-forms/distribution.amd/backbone-forms",
         "moment": "../bower_components/moment/moment",
         "spin": "../bower_components/spin.js/spin",
-        "bootstrap": "../../../dist/bootstrap.min"
+        //"bootstrap": "../../../dist/bootstrap.min"
+        "bootstrap": "../bower_components/bootstrap.min"
+    },
+
+    shim: {
+        "bootstrap": ["jquery"]
     },
 
     deps: ["main"]

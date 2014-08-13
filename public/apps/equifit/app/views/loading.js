@@ -12,8 +12,8 @@ define(function (require, exports, module) {
         className: 'text-center',
         template: 'loading',
 
-        initialize: function(options){
-            var options = options || {};
+        initialize: function(opt){
+            var options = _.extend({}, opt);
             this.title = options.title || "Loading Data";
             this.message = options.message || "Please wait, data is loading.";
         },

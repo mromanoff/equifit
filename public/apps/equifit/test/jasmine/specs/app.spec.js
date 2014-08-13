@@ -5,6 +5,7 @@ define(function(require) {
     var Backbone = require('backbone');
     var Layout = require('backbone.layoutmanager');
     var moment = require('moment');
+    var bootstrap = require('bootstrap');
 
     // Test that the Router exists.
     describe("Application", function() {

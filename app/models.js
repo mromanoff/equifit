@@ -11,6 +11,10 @@ var Equifit = new Schema({
     isSigned: Boolean
 });
 
+var SubmitEquifit = new Schema({
+    isValidated: Boolean
+});
+
 var Form = new Schema({
     title: String,
     templateId: Number,
@@ -24,5 +28,6 @@ var Form = new Schema({
 
 module.exports = {
     Equifit: mongoose.model('Equifit', Equifit),
+    SubmitEquifit: mongoose.model('SubmitEquifit', SubmitEquifit),
     Form: mongoose.model('Form', Form)
 };

@@ -1,19 +1,19 @@
-<% var badgeStatus = isSigned ? 'badge-success' : '' %>
-<% var statusText = isSigned ? 'signed' : 'not signed' %>
-
 <section class="row-fluid text-right">
     <button class="btn btn-primary submit">submit</button>
 </section>
 
 <ul class="nav nav-list">
+
+    <% if(!isSigned) { %>
     <li>
         <a href="#" class="consentForm">Consent Form
             <span class="pull-right">
-                <span class="badge <%- badgeStatus %>"><%- statusText %></span>
+                <span class="badge">not signed</span>
                 <i class="icon-chevron-right"></i>
             </span>
         </a>
     </li>
+    <% } %>
 </ul>
 
 <section class="nav-jump-menu">

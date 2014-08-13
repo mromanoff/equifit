@@ -8,9 +8,9 @@ define(function (require, exports, module) {
         manage: true,
         template: 'alert',
 
-        initialize: function (options){
-            var options = options || {};
-            this.type = options.type || 'alert-error'
+        initialize: function (opt){
+            var options = _.extend({}, opt);
+            this.type = options.type || 'alert-error';
             this.title = options.title || 'Consent Form';
             this.message = options.message || 'Not signed';
         },

@@ -8,8 +8,8 @@ define(function (require, exports, module) {
         manage: true,
         template: 'modal',
 
-        initialize: function (options){
-            var options = options || {};
+        initialize: function (opt){
+            var options = _.extend({}, opt);
             this.title = options.title || 'Modal';
             this.message = options.message || 'Modal Text going here';
         },

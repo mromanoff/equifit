@@ -4,6 +4,7 @@ define(function (require, exports, module) {
     var $ = require('jquery');
     var Backbone = require('backbone');
     var Layout = require('backbone.layoutmanager');
+    var Store = require('./entities/store');
     var moment = require('moment');
     require('bootstrap');
 
@@ -12,7 +13,7 @@ define(function (require, exports, module) {
     var app = {
         // The root path to run the application.
         root: '/apps/equifit/',
-        store: require('./entities/store'),
+        store: new Store(),
         equifitData: window.equifitData || {}
     };
 
@@ -59,6 +60,11 @@ define(function (require, exports, module) {
             }, 'text');
         }
     });
+
+
+
+    // for debug
+    window.app =  app;
 
     // Mix Backbone.Events, modules, and layout management into the app object.
     module.exports = _.extend(app, {

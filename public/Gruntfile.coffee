@@ -18,6 +18,7 @@ module.exports = ->
   @registerTask "default", [
     "clean"
     # "jshint"
+    "uglify"
     "copy"
     "less:release"
     "cssmin"

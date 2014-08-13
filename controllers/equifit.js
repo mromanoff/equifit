@@ -48,5 +48,17 @@ module.exports = {
                 res.json(equifit);
             }
         });
+    },
+
+    submitEquifit: function (req, res) {
+        var newEquifit = new models.Equifit(req.body);
+        // newContact.gravatar = md5(newContact.email);
+        newEquifit.save(function (err, equifit) {
+            if (err) {
+                res.json({error: 'Error adding equifit.'});
+            } else {
+                res.json(equifit);
+            }
+        });
     }
-}
+};

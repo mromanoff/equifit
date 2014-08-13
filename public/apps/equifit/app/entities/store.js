@@ -7,10 +7,9 @@ define(function (require, exports, module) {
     "use strict";
 
     var Backbone = require('backbone');
+    var StoreEntity;
 
-    var Store;
-
-    Store = Backbone.Model.extend({
+    StoreEntity = Backbone.Model.extend({
         defaults: {
             slug: null,
             pageTitle: null,
@@ -19,10 +18,11 @@ define(function (require, exports, module) {
             equifitId: null,
             equifitDate: null,
             formName: null,
-            formId: false
+            formId: null,
+            isSigned: null
         }
     });
 
     // return instance
-    module.exports = new Store();
+    module.exports = StoreEntity;
 });
