@@ -1,10 +1,11 @@
 define(function (require, exports, module) {
     'use strict';
 
+    var $ = require('jquery');
     var Backbone = require('backbone');
     var Layout = require('backbone.layoutmanager');
     var moment = require('moment');
-
+    require('bootstrap');
 
     // Provide a global location to place configuration settings and module
     // creation.

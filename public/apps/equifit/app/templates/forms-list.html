@@ -1,4 +1,4 @@
-<% var badgeStatus = isSigned ? 'badge-success' : 'badge-warning' %>
+<% var badgeStatus = isSigned ? 'badge-success' : '' %>
 <% var statusText = isSigned ? 'signed' : 'not signed' %>
 
 <section class="row-fluid text-right">
@@ -15,3 +15,13 @@
         </a>
     </li>
 </ul>
+
+<section class="nav-jump-menu">
+    <div class="btn-group dropup">
+        <button class="btn">Jump to another section</button>
+        <button class="btn dropdown-toggle" data-toggle="dropdown">
+            <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu"></ul>
+    </div>
+</section>

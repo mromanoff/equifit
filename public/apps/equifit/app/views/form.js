@@ -5,6 +5,7 @@ define(function (require, exports, module) {
     var Backbone = require('backbone');
     var Form = require('backbone-forms');
     var FormView;
+    var form;
 
     app.store.set({
         slug: 'form'
@@ -12,27 +13,27 @@ define(function (require, exports, module) {
 
     FormView =  Backbone.View.extend({
         manage: true,
+        template: 'form',
         events: {
             'click .submitForm': 'submitForm'
         },
 
         beforeRender: function () {
-            // extend BB model with forms schema and fieldset
+            // extend BB model with forms schema and fieldsets
             var FormModel = Backbone.Model.extend({
                 schema: this.model.get('schema'),
                 fieldsets: this.model.get('fieldsets')
             });
 
-            // set model instance with data
-            var model = new FormModel(this.model.get('data'));
-
             // render form
-            var form = new Form({
-                model: model
+            form = new Form({
+                model: new FormModel(this.model.get('data'))
             }).render();
+        },
 
-            this.$el.html(form.el);
-            this.$el.append('<button type="button" class="btn btn-primary submitForm">Save</button>');
+        afterRender: function () {
+            // append form to the rendered view.
+            this.$el.find('.form').html(form.el);
         },
 
         submitForm: function (e) {
