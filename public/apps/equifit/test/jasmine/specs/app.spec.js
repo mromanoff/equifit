@@ -4,6 +4,7 @@ define(function(require) {
     var app = require('app');
     var Backbone = require('backbone');
     var Layout = require('backbone.layoutmanager');
+    var Store = require('entities/store');
     var moment = require('moment');
     var bootstrap = require('bootstrap');
 
@@ -19,6 +20,10 @@ define(function(require) {
 
         it("Layout Manager exists", function() {
             expect(Layout).toBeTruthy();
+        });
+
+        it("Store exists", function() {
+            expect(Store).toBeTruthy();
         });
 
         it("Layout Configure exists", function() {

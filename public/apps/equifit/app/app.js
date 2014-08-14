@@ -13,16 +13,8 @@ define(function (require, exports, module) {
     var app = {
         // The root path to run the application.
         root: '/apps/equifit/',
-        store: new Store(),
-        equifitData: window.equifitData || {}
+        store: new Store()
     };
-
-    // set store with initial data
-    app.store.set({
-        memberName: app.equifitData.memberName || null,
-        memberId: app.equifitData.memberId || null,
-        equifitDate: moment().format('MMMM D, YYYY')
-    });
 
     // Configure LayoutManager with Backbone Boilerplate defaults.
     Layout.configure({
@@ -64,7 +56,7 @@ define(function (require, exports, module) {
 
 
     // for debug
-    window.app =  app;
+    window.store =  app.store;
 
     // Mix Backbone.Events, modules, and layout management into the app object.
     module.exports = _.extend(app, {

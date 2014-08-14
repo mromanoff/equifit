@@ -2,6 +2,7 @@ define(function (require, exports, module) {
     'use strict';
 
     var app = require('app');
+    var msgBus = require('msgBus');
     var ConsentFormView = require('views/consent-form');
     var HeaderView = require('views/header');
     var BreadcrumbView = require('views/breadcrumb');
@@ -14,7 +15,7 @@ define(function (require, exports, module) {
             '.main-container': new ConsentFormView()
         }).render();
 
-        $('title').html('Consent Form');
+        msgBus.trigger('app:update:title', app.store.get('title'));
     };
 
     module.exports = ConsentFormModule;

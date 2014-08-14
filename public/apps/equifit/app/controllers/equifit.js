@@ -1,24 +1,26 @@
-/*
 define(function (require, exports, module) {
     'use strict';
 
     var app = require('app');
     var msgBus = require('msgBus');
-    var FormsEntities = require('entities/forms');
-    var FormsView = require('views/forms');
+    var EquifitEntities = require('entities/equifits');
+    var EquifitView = require('views/equifit');
     var HeaderView = require('views/header');
     var BreadcrumbView = require('views/breadcrumb');
     var LoadingView = require('views/loading');
-    var FormsModule = {};
+    var EquifitModule = {};
 
-    // create an instance of forms collection.
-    var formsEntities = new FormsEntities();
+    // create an instance of equifits collection.
+    var equifitEntities = new EquifitEntities();
 
-    FormsModule.init = function () {
+    EquifitModule.init = function (memberId, equifitId) {
 
         app.store.set({
             title: 'Forms',
-            slug: 'forms'
+            slug: 'forms',
+            url: '/equifit/member/' + memberId + '/equifits/' + equifitId,
+            memberId: memberId,
+            equifitId: equifitId
         });
 
         // create loading view
@@ -29,13 +31,13 @@ define(function (require, exports, module) {
         }).render();
 
         // Fetch data and replace loading view
-        formsEntities.fetch().then(
+        equifitEntities.fetch().then(
             function () {
                 app.useLayout('layouts/main').setViews({
                     '.header': new HeaderView(),
                     '.breadcrumb-container': new BreadcrumbView(),
-                    '.main-container': new FormsView({
-                        collection: formsEntities
+                    '.main-container': new EquifitView({
+                        model: equifitEntities.get(equifitId)
                     })
                 }).render();
 
@@ -44,5 +46,5 @@ define(function (require, exports, module) {
         );
     };
 
-    module.exports = FormsModule;
-});*/
+    module.exports = EquifitModule;
+});

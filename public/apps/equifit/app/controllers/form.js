@@ -2,6 +2,7 @@ define(function (require, exports, module) {
     'use strict';
 
     var app = require('app');
+    var msgBus = require('msgBus');
     var FormEntities = require('entities/forms');
     var FormView = require('views/form');
     var HeaderView = require('views/header');
@@ -12,7 +13,16 @@ define(function (require, exports, module) {
     // create an instance of forms collection.
     var formEntities = new FormEntities();
 
-    FormModule.init = function (equifitId, formId) {
+    FormModule.init = function (memberId, equifitId, formId) {
+
+        app.store.set({
+            title: 'Form',
+            slug: 'form',
+            url: '/equifit/member/' + memberId + '/equifits/' + equifitId + '/forms/' + formId,
+            memberId: memberId,
+            equifitId: equifitId,
+            formId: formId
+        });
 
         app.useLayout('layouts/main').setViews({
             '.main-container': new LoadingView({
@@ -22,7 +32,12 @@ define(function (require, exports, module) {
 
         // Fetch data
         formEntities.fetch().then(
+
             function () {
+
+                console.log('form fetch', formEntities, formId);
+
+
                 app.useLayout('layouts/main').setViews({
                     '.header': new HeaderView(),
                     '.breadcrumb-container': new BreadcrumbView(),
@@ -30,7 +45,8 @@ define(function (require, exports, module) {
                         model: formEntities.get(formId)
                     })
                 }).render();
-                $('title').html('Equifit');
+
+                msgBus.trigger('app:update:title', app.store.get('title'));
             }
         );
     };

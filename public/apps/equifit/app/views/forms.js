@@ -1,12 +1,9 @@
+/*
 define(function (require, exports, module) {
     "use strict";
 
     var app = require('app');
     var FormsView;
-
-    app.store.set({
-        slug: 'forms'
-    });
 
     var Item = Backbone.View.extend({
         manage: true,
@@ -88,4 +85,4 @@ define(function (require, exports, module) {
     });
 
     module.exports = FormsView;
-});
+});*/

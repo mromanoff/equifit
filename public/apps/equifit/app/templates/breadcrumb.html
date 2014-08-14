@@ -1,23 +1,23 @@
 <% if (_.isEqual(slug, 'equifit')) { %>
 <ul class="breadcrumb">
-    <li><a href="#"><%= memberName %></a> <span class="divider">&gt;</span></li>
+    <li><a href="/clients/<%- memberId %>"><%- memberName %></a> <span class="divider">&gt;</span></li>
 </ul>
 
 <% }
     else if (_.isEqual(slug, 'forms')) {
 %>
 <ul class="breadcrumb">
-    <li><a href="#"><%= memberName %></a> <span class="divider">&gt;</span></li>
-    <li><a href="/equifit">Equifits</a> <span class="divider">&gt;</span></li>
+    <li><a href="/clients/<%- memberId %>"><%- memberName %></a> <span class="divider">&gt;</span></li>
+    <li><a href="/equifit/member/<%- memberId %>">Equifits</a> <span class="divider">&gt;</span></li>
 </ul>
 
 <% }
     else if (_.isEqual(slug, 'form')) {
 %>
 <ul class="breadcrumb">
-    <li><a href="#"><%= memberName %></a> <span class="divider">&gt;</span></li>
-    <li><a href="/equifit">Equifits</a> <span class="divider">&gt;</span></li>
-    <li><a href="/equifit/<%= equifitId %>"><%= equifitDate %></a> <span class="divider">&gt;</span></li>
+    <li><a href="/clients/<%- memberId %>"><%= memberName %></a> <span class="divider">&gt;</span></li>
+    <li><a href="/equifit/member/<%- memberId %>">Equifits</a> <span class="divider">&gt;</span></li>
+    <li><a href="/equifit/member/<%- memberId %>/equifis/<%= equifitId %>"><%= appointmentAt %></a> <span class="divider">&gt;</span></li>
 </ul>
 
 <% } else {} %>

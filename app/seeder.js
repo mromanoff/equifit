@@ -2,55 +2,123 @@ var mongoose = require('mongoose'),
     models = require('./models');
 
 module.exports = {
-    check: function() {
-        models.Equifit.find({}, function(err, equifits) {
+    check: function () {
+        models.Equifit.find({}, function (err, equifits) {
             if (equifits.length === 0) {
                 console.log('no equifits found, seeding...');
                 var newEquifit = new models.Equifit({
-                    createdAt: "2014-03-15T13:30:00",
+                    appointmentAt: "2014-03-15T13:30:00",
                     updatedAt: null,
                     trainerName: "Josh Smith",
+                    memberName: "Donna Summer",
+                    memberId: 100000,
                     clubName: "Tribeca",
-                    isComplete: false,
-                    isSigned: false
+                    isSigned: false,
+                    isValidated: false,
+                    documents: [
+                        {
+                            id: 1,
+                            title: "PAR-Q",
+                            templateId: 2,
+                            totalQuestions: 5,
+                            totalCompletedQuestions: 2
+                        }, {
+                            id: 2,
+                            title: "Personal Info",
+                            templateId: 2,
+                            totalQuestions: 5,
+                            totalCompletedQuestions: 2
+                        }
+                    ]
                 });
-                newEquifit.save(function(err, equifit) {
+                newEquifit.save(function (err, equifit) {
                     console.log('successfully inserted equifit: ' + equifit._id);
                 });
 
                 newEquifit = new models.Equifit({
-                    createdAt: "2014-05-01T13:30:00",
+                    appointmentAt: "2014-05-01T13:30:00",
                     updatedAt: "2014-08-02T13:30:00",
                     trainerName: "Billy Joel",
+                    memberName: "Donna Summer",
+                    memberId: 100000,
                     clubName: "895 Broadway",
-                    isComplete: false,
-                    isSigned: false
+                    isSigned: false,
+                    isValidated: false,
+                    documents: [
+                        {
+                            id: 1,
+                            title: "PAR-Q",
+                            templateId: 2,
+                            totalQuestions: 5,
+                            totalCompletedQuestions: 2
+                        }, {
+                            id: 2,
+                            title: "Personal Info",
+                            templateId: 2,
+                            totalQuestions: 5,
+                            totalCompletedQuestions: 2
+                        }
+                    ]
                 });
-                newEquifit.save(function(err, equifit) {
+                newEquifit.save(function (err, equifit) {
                     console.log('successfully inserted equifit: ' + equifit._id);
                 });
 
                 newEquifit = new models.Equifit({
-                    createdAt: "2013-05-01T13:30:00",
+                    appointmentAt: "2013-05-01T13:30:00",
                     updatedAt: "2013-08-02T13:30:00",
+                    memberName: "Donna Summer",
+                    memberId: 100000,
                     trainerName: "Bob Marley",
                     clubName: "West Side",
-                    isComplete: true,
-                    isSigned: false
+                    isSigned: false,
+                    isValidated: false,
+                    documents: [
+                        {
+                            id: 1,
+                            title: "PAR-Q",
+                            templateId: 2,
+                            totalQuestions: 5,
+                            totalCompletedQuestions: 2
+                        }, {
+                            id: 2,
+                            title: "Personal Info",
+                            templateId: 2,
+                            totalQuestions: 5,
+                            totalCompletedQuestions: 2
+                        }
+                    ]
                 });
-                newEquifit.save(function(err, equifit) {
+                newEquifit.save(function (err, equifit) {
                     console.log('successfully inserted equifit: ' + equifit._id);
                 });
 
                 newEquifit = new models.Equifit({
-                    createdAt: "2012-05-01T13:30:00",
+                    appointmentAt: "2012-05-01T13:30:00",
                     updatedAt: "2012-01-06T13:30:00",
+                    memberName: "Donna Summer",
+                    memberId: 100000,
                     trainerName: "Steve Martine",
                     clubName: "East Side",
-                    isComplete: true,
-                    isSigned: false
+                    isSigned: true,
+                    isValidated: true,
+                    documents: [
+                        {
+                            id: 1,
+                            title: "PAR-Q",
+                            templateId: 2,
+                            totalQuestions: 5,
+                            totalCompletedQuestions: 2
+                        }, {
+                            id: 2,
+                            title: "Personal Info",
+                            templateId: 2,
+                            totalQuestions: 5,
+                            totalCompletedQuestions: 2
+                        }
+                    ]
                 });
-                newEquifit.save(function(err, equifit) {
+                newEquifit.save(function (err, equifit) {
                     console.log('successfully inserted equifit: ' + equifit._id);
                 });
             } else {
@@ -58,7 +126,7 @@ module.exports = {
             }
         });
 
-        models.Form.find({}, function(err, forms) {
+        models.Form.find({}, function (err, forms) {
             if (forms.length === 0) {
                 console.log('no forms found, seeding...');
                 var newForm = new models.Form({
@@ -294,20 +362,6 @@ module.exports = {
 
             } else {
                 console.log('found ' + forms.length + ' existing forms!');
-            }
-        });
-
-        models.SubmitEquifit.find({}, function(err, items) {
-            if (items.length === 0) {
-                console.log('no submitted equifits found, seeding...');
-                var equifit = new models.SubmitEquifit({
-                    isValidated: true
-                });
-                equifit.save(function (err, item) {
-                    console.log('successfully inserted submit equifit: ' + item._id);
-                });
-            } else {
-                console.log('found ' + items.length + ' existing forms!');
             }
         });
     }

@@ -11,15 +11,19 @@ define(function (require, exports, module) {
 
     StoreEntity = Backbone.Model.extend({
         defaults: {
-            slug: null,
-            pageTitle: null,
-            memberName: null,
+            title: null,
             memberId: null,
+            memberName: null,
+            appointmentAt: null,
+            isSigned: null,
+
+            url: null,
+
+            isValidated: null,
+            slug: null,
             equifitId: null,
-            equifitDate: null,
             formName: null,
-            formId: null,
-            isSigned: null
+            formId: null
         }
     });
 

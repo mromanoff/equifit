@@ -10,11 +10,10 @@ define(function (require, exports, module) {
 
         defaults: {
             id: null,
-            createdAt: null,
+            appointmentAt: null,
             updatedAt: null,
             trainerName: null,
             clubName: null,
-            isComplete: false,
             isSigned: false
         }
     });

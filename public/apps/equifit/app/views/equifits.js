@@ -3,13 +3,7 @@ define(function (require, exports, module) {
 
     var app = require('app');
     var moment = require('moment');
-    var ModalView = require('./modal');
     var EquifitsView;
-
-    app.store.set({
-        pageTitle: 'Equifits',
-        slug: 'equifit'
-    });
 
     var Item = Backbone.View.extend({
         manage: true,
@@ -23,7 +17,7 @@ define(function (require, exports, module) {
 
         serialize: function () {
             var data = this.model.toJSON();
-            data.createdAt = moment(data.createdAt).format('MMMM D, YYYY');
+            data.appointmentAt = moment(data.createdAt).format('MMMM D, YYYY');
             data.updatedAt = _.isNull(data.updatedAt) ? null : moment(data.updatedAt).format('MMMM D, YYYY');
             return data;
         },
@@ -35,11 +29,12 @@ define(function (require, exports, module) {
 
         viewEquifit: function (e) {
             e.preventDefault();
-            var url = '/equifit/' + this.model.id;
+            // /equifit/member/{1234}/equifits/{123}
+            var url = '/equifit/member/' + app.store.get('memberId') + '/equifits/' + this.model.id;
 
             app.store.set({
-                pageTitle: moment(this.model.get('createdAt')).format('MMMM D, YYYY'),
-                equifitDate: moment(this.model.get('createdAt')).format('MMMM D, YYYY'),
+                title: moment(this.model.get('createdAt')).format('MMMM D, YYYY'),
+                appointmentAt: moment(this.model.get('appointmentAt')).format('MMMM D, YYYY'),
                 isSigned: this.model.get('isSigned'),
                 equifitId: this.model.id
             });

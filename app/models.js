@@ -3,16 +3,24 @@ var mongoose = require('mongoose'),
     ObjectId = Schema.ObjectId;
 
 var Equifit = new Schema({
-    createdAt: String,
-    updatedAt: String ,
+    appointmentAt: String,
+    updatedAt: String,
     trainerName: String,
+    memberName: String,
+    memberId: Number,
     clubName: String,
     isComplete: Boolean,
-    isSigned: Boolean
-});
-
-var SubmitEquifit = new Schema({
-    isValidated: Boolean
+    isSigned: Boolean,
+    isValidated: Boolean,
+    documents: [
+        {
+            id: String,
+            title: String,
+            templateId: Number,
+            totalQuestions: Number,
+            totalCompletedQuestions: Number
+        }
+    ]
 });
 
 var Form = new Schema({
@@ -28,6 +36,5 @@ var Form = new Schema({
 
 module.exports = {
     Equifit: mongoose.model('Equifit', Equifit),
-    SubmitEquifit: mongoose.model('SubmitEquifit', SubmitEquifit),
     Form: mongoose.model('Form', Form)
 };
