@@ -73,6 +73,7 @@ define(function (require, exports, module) {
 
         submitEquifit: function (e) {
             e.preventDefault();
+            var self = this;
 
             this.model.set({isValidated: true});
 
@@ -80,8 +81,8 @@ define(function (require, exports, module) {
                 wait: true,
                 success: function(model, response, options){
                     //TODO create modal here
-
                     console.log('Submit Equifit Success', model, response, options);
+                    self.$('.submit').attr('disabled', 'disabled').text('submitted');
                 },
                 error: function(model, response, options){
                     //TODO create modal here
