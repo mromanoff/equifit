@@ -18,7 +18,7 @@ define(function (require, exports, module) {
 
         app.store.set({
             title: 'Equifits',
-            url: '/equifit/member/' + memberId,
+            url: '/equifit/client/' + memberId,
             slug: 'equifit',
             memberId: memberId
         });

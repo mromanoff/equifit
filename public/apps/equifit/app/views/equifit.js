@@ -19,7 +19,7 @@ define(function (require, exports, module) {
         showForm: function (e) {
             e.preventDefault();
             // /equifit/member/{1234}/equifit/{123}/form/{123}
-            var url = '/equifit/member/' + app.store.get('memberId') + '/equifit/' + app.store.get('equifitId') + '/form/' + this.model.get('_id');
+            var url = '/equifit/client/' + app.store.get('memberId') + '/equifit/' + app.store.get('equifitId') + '/form/' + this.model.get('_id');
 
             app.store.set({
                 pageTitle: this.model.get('title'),

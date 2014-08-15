@@ -7,10 +7,10 @@ define(function (require, exports, module) {
     // Defining the application router.
     var Router = Backbone.Router.extend({
         routes: {
-            'equifit/member/:id(/)': 'equifit',
-            'equifit/member/:id/equifit/:id': 'equifit',
-            'equifit/member/:id/equifit/:id/form/:id': 'equifit',
-            'equifit/member/:id/create(/)': 'createEquifit'
+            'equifit/client/:id(/)': 'equifit',
+            'equifit/client/:id/equifit/:id': 'equifit',
+            'equifit/client/:id/equifit/:id/form/:id': 'equifit',
+            'equifit/client/:id/create(/)': 'createEquifit'
         },
 
         equifit: function (memberId, equifitId, formId) {

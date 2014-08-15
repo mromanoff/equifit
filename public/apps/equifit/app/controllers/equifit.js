@@ -18,7 +18,7 @@ define(function (require, exports, module) {
         app.store.set({
             title: 'Forms',
             slug: 'forms',
-            url: '/equifit/member/' + memberId + '/equifits/' + equifitId,
+            url: '/equifit/client/' + memberId + '/equifits/' + equifitId,
             memberId: memberId,
             equifitId: equifitId
         });
