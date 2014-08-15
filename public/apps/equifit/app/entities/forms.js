@@ -9,7 +9,7 @@ define(function (require, exports, module) {
     FormEntities = Backbone.Collection.extend({
         model: FormEntity,
         url: function () {
-            return '/equifit/api/members/' + app.store.get('clientId') + '/equifits/' + app.store.get('equifitId') + '/documents';
+            return '/equifit/api/clients/' + app.store.get('clientId') + '/equifits/' + app.store.get('equifitId') + '/documents';
         }
     });
 

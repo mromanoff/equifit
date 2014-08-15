@@ -13,8 +13,8 @@ define(function (require, exports, module) {
         },
 
         url: function () {
-            //return '/equifit/api/members/' + app.store.get('clientId') + '/equifits/' + app.store.get('equifitId');
-            return '/equifit/api/members/' + app.store.get('clientId') + '/equifits/';
+            //return '/equifit/api/clients/' + app.store.get('clientId') + '/equifits/' + app.store.get('equifitId');
+            return '/equifit/api/clients/' + app.store.get('clientId') + '/equifits/';
         }
     });
 
