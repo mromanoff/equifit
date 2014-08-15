@@ -26,7 +26,7 @@ define(function (require, exports, module) {
 
         createNew: function (e) {
             e.preventDefault();
-            var url = '/equifit/client/' + app.store.get('memberId') + '/create';
+            var url = '/equifit/client/' + app.store.get('clientId') + '/create';
             app.router.navigate(url, { trigger: true });
         }
     });

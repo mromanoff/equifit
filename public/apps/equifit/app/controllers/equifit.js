@@ -13,13 +13,13 @@ define(function (require, exports, module) {
     // create an instance of equifits collection.
     var equifitEntities = new EquifitEntities();
 
-    EquifitModule.init = function (memberId, equifitId) {
+    EquifitModule.init = function (clientId, equifitId) {
 
         app.store.set({
             title: 'Forms',
             slug: 'forms',
-            url: '/equifit/client/' + memberId + '/equifits/' + equifitId,
-            memberId: memberId,
+            url: '/equifit/client/' + clientId + '/equifits/' + equifitId,
+            clientId: clientId,
             equifitId: equifitId
         });
 

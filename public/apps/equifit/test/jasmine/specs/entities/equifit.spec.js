@@ -17,7 +17,7 @@ define(function(require) {
             expect(equifit.get('appointmentAt')).toBeNull();
             expect(equifit.get('updatedAt')).toBeNull();
             expect(equifit.get('trainerName')).toBeNull();
-            expect(equifit.get('clubName')).toBeNull();
+            expect(equifit.get('trainerFacility')).toBeNull();
             expect(equifit.get('isSigned')).toBe(false);
         });
     });

@@ -6,14 +6,13 @@ var Equifit = new Schema({
     appointmentAt: String,
     updatedAt: String,
     trainerName: String,
-    memberName: String,
-    memberId: Number,
-    clubName: String,
+    clientName: String,
+    clientId: Number,
+    trainerFacility: String,
     isSigned: Boolean,
     isValidated: Boolean,
     documents: [
         {
-            id: String,
             title: String,
             templateId: Number,
             totalQuestions: Number,

@@ -12,8 +12,8 @@ define(function (require, exports, module) {
     StoreEntity = Backbone.Model.extend({
         defaults: {
             title: null,
-            memberId: null,
-            memberName: null,
+            clientId: null,
+            clientName: null,
             appointmentAt: null,
             isSigned: null,
 

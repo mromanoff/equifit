@@ -12,8 +12,8 @@ define(function(require) {
 
         it('should have certain defaults', function(){
             expect(store.get('title')).toBeNull();
-            expect(store.get('memberId')).toBeNull();
-            expect(store.get('memberName')).toBeNull();
+            expect(store.get('clientId')).toBeNull();
+            expect(store.get('clientName')).toBeNull();
             expect(store.get('appointmentAt')).toBeNull();
             expect(store.get('isSigned')).toBeNull();
             expect(store.get('slug')).toBeNull();

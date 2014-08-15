@@ -19,7 +19,7 @@ define(function (require, exports, module) {
         showForm: function (e) {
             e.preventDefault();
             // /equifit/member/{1234}/equifit/{123}/form/{123}
-            var url = '/equifit/client/' + app.store.get('memberId') + '/equifit/' + app.store.get('equifitId') + '/form/' + this.model.get('_id');
+            var url = '/equifit/client/' + app.store.get('clientId') + '/equifit/' + app.store.get('equifitId') + '/form/' + this.model.get('_id');
 
             app.store.set({
                 pageTitle: this.model.get('title'),
@@ -73,17 +73,22 @@ define(function (require, exports, module) {
 
         submitEquifit: function (e) {
             e.preventDefault();
-            var data = {
-                //equifitId: app.store.toJSON().equifitId,
-                //id: app.store.toJSON().equifitId,
-                //_id: app.store.toJSON().equifitId,
-                isValidated: false
-            };
 
-            require(['../controllers/submit-equifit'],
-                function (Equifit) {
-                    Equifit.init(data);
-                });
+            this.model.set({isValidated: true});
+
+            this.model.save(this.model, {
+                wait: true,
+                success: function(model, response, options){
+                    //TODO create modal here
+
+                    console.log('Submit Equifit Success', model, response, options);
+                },
+                error: function(model, response, options){
+                    //TODO create modal here
+
+                    console.log('Submit Equifit Error', model, response, options);
+                }
+            });
         }
     });
 

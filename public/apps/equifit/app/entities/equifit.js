@@ -12,9 +12,9 @@ define(function (require, exports, module) {
             appointmentAt: null,
             updatedAt: null,
             trainerName: null,
-            clubName: null,
-            memberId: null,
-            memberName: null,
+            trainerFacility: null,
+            clientId: null,
+            clientName: null,
             isSigned: false,
             isValidated: false,
             documents: null

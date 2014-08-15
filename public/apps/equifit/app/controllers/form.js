@@ -13,13 +13,13 @@ define(function (require, exports, module) {
     // create an instance of forms collection.
     var formEntities = new FormEntities();
 
-    FormModule.init = function (memberId, equifitId, formId) {
+    FormModule.init = function (clientId, equifitId, formId) {
 
         app.store.set({
             title: 'Form',
             slug: 'form',
-            url: '/equifit/client/' + memberId + '/equifits/' + equifitId + '/forms/' + formId,
-            memberId: memberId,
+            url: '/equifit/client/' + clientId + '/equifits/' + equifitId + '/forms/' + formId,
+            clientId: clientId,
             equifitId: equifitId,
             formId: formId
         });

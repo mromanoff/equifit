@@ -18,7 +18,7 @@ define(function (require, exports, module) {
             wait : true,
             success : function(model){
                 console.log('success callback', model);
-                url = '/equifit/client/' + app.store.get('memberId') + '/equifit/' + model.id;
+                url = '/equifit/client/' + app.store.get('clientId') + '/equifit/' + model.id;
                 app.router.navigate(url, { trigger: true });
             },
             error : function(err) {

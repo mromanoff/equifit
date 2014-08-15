@@ -13,24 +13,24 @@ define(function (require, exports, module) {
             'equifit/client/:id/create(/)': 'createEquifit'
         },
 
-        equifit: function (memberId, equifitId, formId) {
+        equifit: function (clientId, equifitId, formId) {
             console.log('route equifit');
             if (!equifitId && !formId) {
                 require(['./controllers/equifits'],
                     function (Equifit) {
-                        Equifit.init(memberId);
+                        Equifit.init(clientId);
                     });
             }
             else if (!formId) {
                 require(['./controllers/equifit'],
                     function (Equifit) {
-                        Equifit.init(memberId, equifitId);
+                        Equifit.init(clientId, equifitId);
                     });
             }
             else {
                 require(['./controllers/form'],
                     function (Equifit) {
-                        Equifit.init(memberId, equifitId, formId);
+                        Equifit.init(clientId, equifitId, formId);
                     });
             }
         },

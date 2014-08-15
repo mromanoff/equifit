@@ -14,13 +14,13 @@ define(function (require, exports, module) {
     // create an instance of equifits collection.
     var equifitEntities = new EquifitEntities();
 
-    EquifitsModule.init = function (memberId) {
+    EquifitsModule.init = function (clientId) {
 
         app.store.set({
             title: 'Equifits',
-            url: '/equifit/client/' + memberId,
+            url: '/equifit/client/' + clientId,
             slug: 'equifit',
-            memberId: memberId
+            clientId: clientId
         });
 
         app.useLayout('layouts/main').setViews({
@@ -35,7 +35,7 @@ define(function (require, exports, module) {
 
                 // update Store with member name
                 app.store.set({
-                    memberName: equifitEntities.at(1).get('memberName')
+                    clientName: equifitEntities.at(1).get('clientName')
                 });
 
                 app.useLayout('layouts/main').setViews({

@@ -30,7 +30,7 @@ define(function (require, exports, module) {
         viewEquifit: function (e) {
             e.preventDefault();
             // /equifit/member/{1234}/equifit/{123}
-            var url = '/equifit/client/' + app.store.get('memberId') + '/equifit/' + this.model.get('_id');
+            var url = '/equifit/client/' + app.store.get('clientId') + '/equifit/' + this.model.get('_id');
 
             app.store.set({
                 //title: moment(this.model.get('createdAt')).format('MMMM D, YYYY'),

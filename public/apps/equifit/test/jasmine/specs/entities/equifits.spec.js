@@ -12,7 +12,7 @@ define(function(require) {
                     createdAt: '2014-08-08',
                     updatedAt: '2014-08-08',
                     updatedBy: 'Bob',
-                    clubName: 'Tribeca',
+                    trainerFacility: 'Tribeca',
                     complete: false
                 },
                 {
@@ -20,7 +20,7 @@ define(function(require) {
                     createdAt: '2014-08-08',
                     updatedAt: '2014-08-08',
                     updatedBy: 'Bob',
-                    clubName: 'Tribeca',
+                    trainerFacility: 'Tribeca',
                     complete: false
                 },
                 {
@@ -28,7 +28,7 @@ define(function(require) {
                     createdAt: '2014-08-08',
                     updatedAt: '2014-08-08',
                     updatedBy: 'Bob',
-                    clubName: 'Tribeca',
+                    trainerFacility: 'Tribeca',
                     complete: false
                 }
             ]
