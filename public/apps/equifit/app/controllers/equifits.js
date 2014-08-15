@@ -35,7 +35,7 @@ define(function (require, exports, module) {
 
                 // update Store with member name
                 app.store.set({
-                    clientName: equifitEntities.at(1).get('clientName')
+                    clientName: equifitEntities.at(0).get('clientName')
                 });
 
                 app.useLayout('layouts/main').setViews({
