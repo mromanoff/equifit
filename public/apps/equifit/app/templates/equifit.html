@@ -3,7 +3,6 @@
 </section>
 
 <ul class="nav nav-list">
-
     <% if(!isSigned) { %>
     <li>
         <a href="#" class="consentForm">Consent Form
@@ -14,21 +13,6 @@
         </a>
     </li>
     <% } %>
-
-    <% var badgeStatus = isValidated ? 'badge-success' : 'badge-info' %>
-
-    <% _.each(documents, function(item){ %>
-    <li>
-        <a href="<%- url %>/forms/<%- _id %>"><%= item.title %>
-        <span class="pull-right">
-            <span class="badge <%- badgeStatus %>">
-                <%= item.totalCompletedQuestions%> of <%= item.totalQuestions %>
-            </span>
-             <i class="icon-chevron-right"></i>
-        </span>
-        </a>
-    </li>
-    <% }); %>
 </ul>
 
 <section class="nav-jump-menu">

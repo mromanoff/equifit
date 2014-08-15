@@ -29,14 +29,14 @@ define(function (require, exports, module) {
 
         viewEquifit: function (e) {
             e.preventDefault();
-            // /equifit/member/{1234}/equifits/{123}
-            var url = '/equifit/member/' + app.store.get('memberId') + '/equifits/' + this.model.id;
+            // /equifit/member/{1234}/equifit/{123}
+            var url = '/equifit/member/' + app.store.get('memberId') + '/equifit/' + this.model.get('_id');
 
             app.store.set({
-                title: moment(this.model.get('createdAt')).format('MMMM D, YYYY'),
+                //title: moment(this.model.get('createdAt')).format('MMMM D, YYYY'),
                 appointmentAt: moment(this.model.get('appointmentAt')).format('MMMM D, YYYY'),
                 isSigned: this.model.get('isSigned'),
-                equifitId: this.model.id
+                equifitId: this.model.get('_id')
             });
 
             app.router.navigate(url, { trigger: true });

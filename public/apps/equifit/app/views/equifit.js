@@ -4,36 +4,37 @@ define(function (require, exports, module) {
     var app = require('app');
     var EquifitView;
 
-    //var Item = Backbone.View.extend({
-    //    manage: true,
-    //    template: 'form-item',
-    //    tagName: 'li',
-    //    events: {
-    //        'click': 'showForm'
-    //    },
-    //
-    //    serialize: function () {
-    //        return this.model.toJSON();
-    //    },
-    //
-    //    showForm: function (e) {
-    //        e.preventDefault();
-    //        var url = '/equifit/' + app.store.get('equifitId') + '/forms/' + this.model.id;
-    //
-    //        app.store.set({
-    //            pageTitle: this.model.get('title'),
-    //            formName: this.model.get('title'),
-    //            formId: this.model.id
-    //        });
-    //
-    //        app.router.navigate(url, {trigger: true});
-    //    }
-    //});
-    //
-    //var ItemEmpty = Backbone.View.extend({
-    //    manage: true,
-    //    template: 'form-item-empty'
-    //});
+    var Item = Backbone.View.extend({
+        manage: true,
+        template: 'form-item',
+        tagName: 'li',
+        events: {
+            'click': 'showForm'
+        },
+
+        serialize: function () {
+            return this.model.toJSON();
+        },
+
+        showForm: function (e) {
+            e.preventDefault();
+            // /equifit/member/{1234}/equifit/{123}/form/{123}
+            var url = '/equifit/member/' + app.store.get('memberId') + '/equifit/' + app.store.get('equifitId') + '/form/' + this.model.get('_id');
+
+            app.store.set({
+                pageTitle: this.model.get('title'),
+                formName: this.model.get('title'),
+                formId: this.model.get('_id')
+            });
+
+            app.router.navigate(url, {trigger: true});
+        }
+    });
+
+    var ItemEmpty = Backbone.View.extend({
+        manage: true,
+        template: 'form-item-empty'
+    });
 
     EquifitView = Backbone.View.extend({
         manage: true,
@@ -44,13 +45,8 @@ define(function (require, exports, module) {
             'click .submit': 'submitEquifit'
         },
 
-        initialize: function (){
-            console.log('equifit view ', this.model.toJSON());
-
-        },
-
         serialize: function () {
-           //return app.store.toJSON();
+            //return app.store.toJSON();
 
             var data = _.extend({}, this.model.toJSON());
             data.url = app.store.get('url');
@@ -60,39 +56,35 @@ define(function (require, exports, module) {
             return data;
         },
 
-        //beforeRender: function () {
-        //    // check if there is no items in collection
-        //    if (_.isEqual(_.size(this.collection), 0)) {
-        //        this.insertView('ul', new ItemEmpty());
-        //    } else {
-        //        this.collection.each(function (item) {
-        //            this.insertView('ul', new Item({
-        //                model: item
-        //            }));
-        //        }, this);
-        //    }
-        //},
+        beforeRender: function () {
+            var documents = new Backbone.Collection(this.model.get('documents'));
 
-        //showConsentForm: function (e) {
-        //    e.preventDefault();
-        //    var url = '/equifit/consent-form';
-        //    app.router.navigate(url, {trigger: true});
-        //},
+            // check if there is no items in collection
+            if (_.isEqual(_.size(documents), 0)) {
+                this.insertView('ul', new ItemEmpty());
+            } else {
+                documents.each(function (item) {
+                    this.insertView('ul', new Item({
+                        model: item
+                    }));
+                }, this);
+            }
+        },
 
-        //submitEquifit: function (e) {
-        //    e.preventDefault();
-        //    var data = {
-        //        //equifitId: app.store.toJSON().equifitId,
-        //        //id: app.store.toJSON().equifitId,
-        //        //_id: app.store.toJSON().equifitId,
-        //        isValidated: false
-        //    };
-        //
-        //    require(['../controllers/submit-equifit'],
-        //        function (Equifit) {
-        //            Equifit.init(data);
-        //        });
-        //}
+        submitEquifit: function (e) {
+            e.preventDefault();
+            var data = {
+                //equifitId: app.store.toJSON().equifitId,
+                //id: app.store.toJSON().equifitId,
+                //_id: app.store.toJSON().equifitId,
+                isValidated: false
+            };
+
+            require(['../controllers/submit-equifit'],
+                function (Equifit) {
+                    Equifit.init(data);
+                });
+        }
     });
 
     module.exports = EquifitView;

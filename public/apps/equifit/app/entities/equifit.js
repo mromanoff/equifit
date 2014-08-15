@@ -9,12 +9,15 @@ define(function (require, exports, module) {
         idAttribute: '_id',
 
         defaults: {
-            id: null,
             appointmentAt: null,
             updatedAt: null,
             trainerName: null,
             clubName: null,
-            isSigned: false
+            memberId: null,
+            memberName: null,
+            isSigned: false,
+            isValidated: false,
+            documents: null
         }
     });
 

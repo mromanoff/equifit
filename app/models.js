@@ -9,7 +9,6 @@ var Equifit = new Schema({
     memberName: String,
     memberId: Number,
     clubName: String,
-    isComplete: Boolean,
     isSigned: Boolean,
     isValidated: Boolean,
     documents: [

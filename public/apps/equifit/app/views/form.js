@@ -18,6 +18,11 @@ define(function (require, exports, module) {
             'click .submitForm': 'submitForm'
         },
 
+
+        initialize: function () {
+            console.log('form model', this.model);
+        },
+
         beforeRender: function () {
             // extend BB model with forms schema and fieldsets
             var FormModel = Backbone.Model.extend({

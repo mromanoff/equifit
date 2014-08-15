@@ -32,6 +32,7 @@ define(function (require, exports, module) {
         // Fetch data and replace loading view
         equifitEntities.fetch().then(
             function () {
+
                 // update Store with member name
                 app.store.set({
                     memberName: equifitEntities.at(1).get('memberName')

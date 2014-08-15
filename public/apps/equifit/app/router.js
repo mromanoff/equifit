@@ -8,58 +8,40 @@ define(function (require, exports, module) {
     var Router = Backbone.Router.extend({
         routes: {
             'equifit/member/:id(/)': 'equifit',
-            'equifit/member/:id/equifits/:id': 'equifit',
-            //'equifit/member/:id/create(/)': 'equifitCreate',
-            // 'equifit/consent-form(/)': 'consentForm',
-            //'equifit/member/:id/equifits/:id': 'equifitEdit',
-            'equifit/member/:id/equifits/:id/forms/:id': 'form'
+            'equifit/member/:id/equifit/:id': 'equifit',
+            'equifit/member/:id/equifit/:id/form/:id': 'equifit',
+            'equifit/member/:id/create(/)': 'createEquifit'
         },
 
-        equifit: function (memberId, equifitId) {
-
-            if (_.isNull(equifitId)) {
+        equifit: function (memberId, equifitId, formId) {
+            console.log('route equifit');
+            if (!equifitId && !formId) {
                 require(['./controllers/equifits'],
                     function (Equifit) {
                         Equifit.init(memberId);
                     });
             }
-            else {
+            else if (!formId) {
                 require(['./controllers/equifit'],
                     function (Equifit) {
                         Equifit.init(memberId, equifitId);
                     });
             }
+            else {
+                require(['./controllers/form'],
+                    function (Equifit) {
+                        Equifit.init(memberId, equifitId, formId);
+                    });
+            }
         },
 
-
-        //equifitCreate: function () {
-        //    require(['./controllers/create'],
-        //        function (Equifit) {
-        //            Equifit.init();
-        //        });
-        //},
-
-        form: function (memberId, equifitId, formId) {
-            app.store.set({
-                memberId: memberId,
-                equifitId: equifitId,
-                formId: formId
-            });
-
-            require(['./controllers/form'],
+        createEquifit: function () {
+            console.log('route equifit');
+            require(['./controllers/create'],
                 function (Equifit) {
-                    Equifit.init(memberId, equifitId, formId);
+                    Equifit.init();
                 });
-
         }
-        //,
-
-        //consentForm: function () {
-        //    require(['./controllers/consent-form'],
-        //        function (Equifit) {
-        //            Equifit.init();
-        //        });
-        //},
     });
 
     module.exports = Router;

@@ -7,6 +7,7 @@ module.exports = {
             if (equifits.length === 0) {
                 console.log('no equifits found, seeding...');
                 var newEquifit = new models.Equifit({
+                    _id: "53ed60ebb4932fec89e19a41",
                     appointmentAt: "2014-03-15T13:30:00",
                     updatedAt: null,
                     trainerName: "Josh Smith",
@@ -17,17 +18,60 @@ module.exports = {
                     isValidated: false,
                     documents: [
                         {
+                            _id: "53ed60ebb4932fec89e19a48",
                             id: 1,
                             title: "PAR-Q",
                             templateId: 2,
                             totalQuestions: 5,
                             totalCompletedQuestions: 2
-                        }, {
+                        },
+                        {
+                            _id: "53ed60ebb4932fec89e19a49",
                             id: 2,
                             title: "Personal Info",
                             templateId: 2,
                             totalQuestions: 5,
                             totalCompletedQuestions: 2
+                        },
+                        {
+                            _id: "53ed60ebb4932fec89e19a50",
+                            templateId: 4,
+                            title: "Goals",
+                            isComplete: false,
+                            totalQuestions: 12,
+                            totalCompletedQuestions: 1
+                        },
+                        {
+                            _id: "53ed60ebb4932fec89e19a51",
+                            templateId: 5,
+                            title: "Orthopedic",
+                            isComplete: false,
+                            totalQuestions: 13,
+                            totalCompletedQuestions: 0
+                        },
+                        {
+                            _id: "53ed60ebb4932fec89e19a52",
+                            templateId: 6,
+                            title: "Exercise History",
+                            isComplete: false,
+                            totalQuestions: 7,
+                            totalCompletedQuestions: 6
+                        },
+                        {
+                            _id: "53ed60ebb4932fec89e19a53",
+                            templateId: 7,
+                            title: "Lifestyle",
+                            isComplete: false,
+                            totalQuestions: 15,
+                            totalCompletedQuestions: 10
+                        },
+                        {
+                            _id: "53ed60ebb4932fec89e19a54",
+                            templateId: 8,
+                            title: "Physical Test",
+                            isComplete: true,
+                            totalQuestions: 5,
+                            totalCompletedQuestions: 5
                         }
                     ]
                 });
@@ -36,6 +80,7 @@ module.exports = {
                 });
 
                 newEquifit = new models.Equifit({
+                    _id: "53ed60ebb4932fec89e19a42",
                     appointmentAt: "2014-05-01T13:30:00",
                     updatedAt: "2014-08-02T13:30:00",
                     trainerName: "Billy Joel",
@@ -46,17 +91,60 @@ module.exports = {
                     isValidated: false,
                     documents: [
                         {
+                            _id: "53ed60ebb4932fec89e19a48",
                             id: 1,
                             title: "PAR-Q",
                             templateId: 2,
                             totalQuestions: 5,
                             totalCompletedQuestions: 2
-                        }, {
+                        },
+                        {
+                            _id: "53ed60ebb4932fec89e19a49",
                             id: 2,
                             title: "Personal Info",
                             templateId: 2,
                             totalQuestions: 5,
                             totalCompletedQuestions: 2
+                        },
+                        {
+                            _id: "53ed60ebb4932fec89e19a50",
+                            templateId: 4,
+                            title: "Goals",
+                            isComplete: false,
+                            totalQuestions: 12,
+                            totalCompletedQuestions: 1
+                        },
+                        {
+                            _id: "53ed60ebb4932fec89e19a51",
+                            templateId: 5,
+                            title: "Orthopedic",
+                            isComplete: false,
+                            totalQuestions: 13,
+                            totalCompletedQuestions: 0
+                        },
+                        {
+                            _id: "53ed60ebb4932fec89e19a52",
+                            templateId: 6,
+                            title: "Exercise History",
+                            isComplete: false,
+                            totalQuestions: 7,
+                            totalCompletedQuestions: 6
+                        },
+                        {
+                            _id: "53ed60ebb4932fec89e19a53",
+                            templateId: 7,
+                            title: "Lifestyle",
+                            isComplete: false,
+                            totalQuestions: 15,
+                            totalCompletedQuestions: 10
+                        },
+                        {
+                            _id: "53ed60ebb4932fec89e19a54",
+                            templateId: 8,
+                            title: "Physical Test",
+                            isComplete: true,
+                            totalQuestions: 5,
+                            totalCompletedQuestions: 5
                         }
                     ]
                 });
@@ -65,6 +153,7 @@ module.exports = {
                 });
 
                 newEquifit = new models.Equifit({
+                    _id: "53ed60ebb4932fec89e19a48",
                     appointmentAt: "2013-05-01T13:30:00",
                     updatedAt: "2013-08-02T13:30:00",
                     memberName: "Donna Summer",
@@ -75,17 +164,60 @@ module.exports = {
                     isValidated: false,
                     documents: [
                         {
+                            _id: "53ed60ebb4932fec89e19a48",
                             id: 1,
                             title: "PAR-Q",
                             templateId: 2,
                             totalQuestions: 5,
                             totalCompletedQuestions: 2
-                        }, {
+                        },
+                        {
+                            _id: "53ed60ebb4932fec89e19a49",
                             id: 2,
                             title: "Personal Info",
                             templateId: 2,
                             totalQuestions: 5,
                             totalCompletedQuestions: 2
+                        },
+                        {
+                            _id: "53ed60ebb4932fec89e19a50",
+                            templateId: 4,
+                            title: "Goals",
+                            isComplete: false,
+                            totalQuestions: 12,
+                            totalCompletedQuestions: 1
+                        },
+                        {
+                            _id: "53ed60ebb4932fec89e19a51",
+                            templateId: 5,
+                            title: "Orthopedic",
+                            isComplete: false,
+                            totalQuestions: 13,
+                            totalCompletedQuestions: 0
+                        },
+                        {
+                            _id: "53ed60ebb4932fec89e19a52",
+                            templateId: 6,
+                            title: "Exercise History",
+                            isComplete: false,
+                            totalQuestions: 7,
+                            totalCompletedQuestions: 6
+                        },
+                        {
+                            _id: "53ed60ebb4932fec89e19a53",
+                            templateId: 7,
+                            title: "Lifestyle",
+                            isComplete: false,
+                            totalQuestions: 15,
+                            totalCompletedQuestions: 10
+                        },
+                        {
+                            _id: "53ed60ebb4932fec89e19a54",
+                            templateId: 8,
+                            title: "Physical Test",
+                            isComplete: true,
+                            totalQuestions: 5,
+                            totalCompletedQuestions: 5
                         }
                     ]
                 });
@@ -94,27 +226,71 @@ module.exports = {
                 });
 
                 newEquifit = new models.Equifit({
+                    _id: "53ed60ebb4932fec89e19a43",
                     appointmentAt: "2012-05-01T13:30:00",
                     updatedAt: "2012-01-06T13:30:00",
                     memberName: "Donna Summer",
                     memberId: 100000,
-                    trainerName: "Steve Martine",
+                    trainerName: "Steve Martin",
                     clubName: "East Side",
                     isSigned: true,
                     isValidated: true,
                     documents: [
                         {
+                            _id: "53ed60ebb4932fec89e19a48",
                             id: 1,
                             title: "PAR-Q",
                             templateId: 2,
                             totalQuestions: 5,
                             totalCompletedQuestions: 2
-                        }, {
+                        },
+                        {
+                            _id: "53ed60ebb4932fec89e19a49",
                             id: 2,
                             title: "Personal Info",
                             templateId: 2,
                             totalQuestions: 5,
                             totalCompletedQuestions: 2
+                        },
+                        {
+                            _id: "53ed60ebb4932fec89e19a50",
+                            templateId: 4,
+                            title: "Goals",
+                            isComplete: false,
+                            totalQuestions: 12,
+                            totalCompletedQuestions: 1
+                        },
+                        {
+                            _id: "53ed60ebb4932fec89e19a51",
+                            templateId: 5,
+                            title: "Orthopedic",
+                            isComplete: false,
+                            totalQuestions: 13,
+                            totalCompletedQuestions: 0
+                        },
+                        {
+                            _id: "53ed60ebb4932fec89e19a52",
+                            templateId: 6,
+                            title: "Exercise History",
+                            isComplete: false,
+                            totalQuestions: 7,
+                            totalCompletedQuestions: 6
+                        },
+                        {
+                            _id: "53ed60ebb4932fec89e19a53",
+                            templateId: 7,
+                            title: "Lifestyle",
+                            isComplete: false,
+                            totalQuestions: 15,
+                            totalCompletedQuestions: 10
+                        },
+                        {
+                            _id: "53ed60ebb4932fec89e19a54",
+                            templateId: 8,
+                            title: "Physical Test",
+                            isComplete: true,
+                            totalQuestions: 5,
+                            totalCompletedQuestions: 5
                         }
                     ]
                 });
@@ -130,7 +306,7 @@ module.exports = {
             if (forms.length === 0) {
                 console.log('no forms found, seeding...');
                 var newForm = new models.Form({
-                    id: 1000,
+                    _id: "53ed60ebb4932fec89e19a48",
                     templateId: 2,
                     title: "PAR-Q",
                     isComplete: false,
@@ -147,10 +323,12 @@ module.exports = {
                         }
                     },
 
-                    fieldsets: [{
-                        legend: "Member Information",
-                        fields: ["title", "name", "email", "testHidden"]
-                    }],
+                    fieldsets: [
+                        {
+                            legend: "Member Information",
+                            fields: ["title", "name", "email", "testHidden"]
+                        }
+                    ],
 
                     data: {
                         title: "Mr",
@@ -163,7 +341,7 @@ module.exports = {
                 });
 
                 newForm = new models.Form({
-                    id: 1001,
+                    _id: "53ed60ebb4932fec89e19a49",
                     templateId: 3,
                     title: "Personal Info",
                     isComplete: false,
@@ -180,10 +358,12 @@ module.exports = {
                         }
                     },
 
-                    fieldsets: [{
-                        legend: "Member Information",
-                        fields: ["title", "name", "email", "testHidden"]
-                    }],
+                    fieldsets: [
+                        {
+                            legend: "Member Information",
+                            fields: ["title", "name", "email", "testHidden"]
+                        }
+                    ],
 
                     data: {
                         title: "Mr",
@@ -196,7 +376,7 @@ module.exports = {
                 });
 
                 newForm = new models.Form({
-                    id: 1003,
+                    _id: "53ed60ebb4932fec89e19a50",
                     templateId: 4,
                     title: "Goals",
                     isComplete: false,
@@ -213,10 +393,12 @@ module.exports = {
                         }
                     },
 
-                    fieldsets: [{
-                        legend: "Member Information",
-                        fields: ["title", "name", "email", "testHidden"]
-                    }],
+                    fieldsets: [
+                        {
+                            legend: "Member Information",
+                            fields: ["title", "name", "email", "testHidden"]
+                        }
+                    ],
 
                     data: {
                         title: "Mrs",
@@ -229,7 +411,7 @@ module.exports = {
                 });
 
                 newForm = new models.Form({
-                    id: 1004,
+                    _id: "53ed60ebb4932fec89e19a51",
                     templateId: 5,
                     title: "Orthopedic",
                     isComplete: false,
@@ -246,10 +428,12 @@ module.exports = {
                         }
                     },
 
-                    fieldsets: [{
-                        legend: "Member Information",
-                        fields: ["title", "name", "email", "testHidden"]
-                    }],
+                    fieldsets: [
+                        {
+                            legend: "Member Information",
+                            fields: ["title", "name", "email", "testHidden"]
+                        }
+                    ],
 
                     data: {
                         title: "Mr",
@@ -262,7 +446,7 @@ module.exports = {
                 });
 
                 newForm = new models.Form({
-                    id: 1005,
+                    _id: "53ed60ebb4932fec89e19a52",
                     templateId: 6,
                     title: "Exercise History",
                     isComplete: false,
@@ -279,10 +463,12 @@ module.exports = {
                         }
                     },
 
-                    fieldsets: [{
-                        legend: "Member Information",
-                        fields: ["title", "name", "email", "testHidden"]
-                    }],
+                    fieldsets: [
+                        {
+                            legend: "Member Information",
+                            fields: ["title", "name", "email", "testHidden"]
+                        }
+                    ],
 
                     data: {
                         title: "Mr",
@@ -295,7 +481,7 @@ module.exports = {
                 });
 
                 newForm = new models.Form({
-                    id: 1006,
+                    _id: "53ed60ebb4932fec89e19a53",
                     templateId: 7,
                     title: "Lifestyle",
                     isComplete: false,
@@ -312,10 +498,12 @@ module.exports = {
                         }
                     },
 
-                    fieldsets: [{
-                        legend: "Member Information",
-                        fields: ["title", "name", "email", "testHidden"]
-                    }],
+                    fieldsets: [
+                        {
+                            legend: "Member Information",
+                            fields: ["title", "name", "email", "testHidden"]
+                        }
+                    ],
 
                     data: {
                         title: "Mr",
@@ -328,7 +516,7 @@ module.exports = {
                 });
 
                 newForm = new models.Form({
-                    id: 1007,
+                    _id: "53ed60ebb4932fec89e19a54",
                     templateId: 8,
                     title: "Physical Test",
                     isComplete: true,
@@ -345,10 +533,12 @@ module.exports = {
                         }
                     },
 
-                    fieldsets: [{
-                        legend: "Member Information",
-                        fields: ["title", "name", "email", "testHidden"]
-                    }],
+                    fieldsets: [
+                        {
+                            legend: "Member Information",
+                            fields: ["title", "name", "email", "testHidden"]
+                        }
+                    ],
 
                     data: {
                         title: "Mr",

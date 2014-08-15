@@ -9,13 +9,16 @@ define(function (require, exports, module) {
     var equifitEntities = new EquifitEntities();
 
     CreateModule.init = function () {
+        console.log('create init');
+
+
         equifitEntities.create(equifitEntities.model, {
             // waits for server to respond with 200
             // before adding newly created model to collection
             wait : true,
-            success : function(response){
-                console.log('success callback', response);
-                url = '/equifit/' + response.id;
+            success : function(model){
+                console.log('success callback', model);
+                url = '/equifit/member/' + app.store.get('memberId') + '/equifit/' + model.id;
                 app.router.navigate(url, { trigger: true });
             },
             error : function(err) {
