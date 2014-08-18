@@ -32,11 +32,16 @@ define(function (require, exports, module) {
         // Fetch data and replace loading view
         equifitEntities.fetch().then(
             function () {
+                // if there is no existing Equifit. server response []
+                // set clientName from the first model
+                if(equifitEntities.length !== 0) {
+                    // update Store with client name
+                    app.store.set({
+                        clientName: equifitEntities.at(0).get('clientName')
+                    });
 
-                // update Store with member name
-                app.store.set({
-                    clientName: equifitEntities.at(0).get('clientName')
-                });
+                    msgBus.trigger('update:store', {clientName: equifitEntities.at(0).get('clientName')});
+                }
 
                 app.useLayout('layouts/main').setViews({
                     '.header': new HeaderView(),
@@ -47,7 +52,7 @@ define(function (require, exports, module) {
                     })
                 }).render();
 
-                msgBus.trigger('app:update:title', app.store.get('title'));
+                msgBus.trigger('update:title', app.store.get('title'));
             }
         );
     };

@@ -11,14 +11,14 @@ var Equifit = new Schema({
     trainerFacility: String,
     isSigned: Boolean,
     isValidated: Boolean,
-    documents: [
-        {
-            title: String,
-            templateId: Number,
-            totalQuestions: Number,
-            totalCompletedQuestions: Number
-        }
-    ]
+    documents: [Schema.Types.Mixed]
+//        {
+//            title: String,
+//            templateId: Number,
+//            totalQuestions: Number,
+//            totalCompletedQuestions: Number
+//        }
+//    ]
 });
 
 var Form = new Schema({

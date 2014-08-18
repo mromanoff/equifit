@@ -17,5 +17,8 @@ require.config({
         "bootstrap": ["jquery"]
     },
 
+    // This will help with cache issues related to development.
+    //urlArgs: "bust=" + Number(new Date()),
+
     deps: ["main"]
 });

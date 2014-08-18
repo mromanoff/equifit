@@ -41,7 +41,7 @@ define(function (require, exports, module) {
                     })
                 }).render();
 
-                msgBus.trigger('app:update:title', app.store.get('title'));
+                msgBus.trigger('update:title', app.store.get('title'));
             }
         );
     };

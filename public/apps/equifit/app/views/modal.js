@@ -6,6 +6,9 @@ define(function (require, exports, module) {
 
     ModalView = Backbone.View.extend({
         manage: true,
+        id: 'myModal',
+        className: 'modal hide fade',
+        //el: false,
         template: 'modal',
 
         initialize: function (opt){
@@ -14,8 +17,23 @@ define(function (require, exports, module) {
             this.message = options.message || 'Modal Text going here';
         },
 
+        events: {
+            'click .close': 'closeModal'
+        },
+
         serialize: function () {
-            return { title: this.title, message: this.message };
+            return this.options;
+        },
+
+        afterRender: function () {
+          this.$el.modal({
+              backdrop: false
+          });
+        },
+
+        closeModal: function () {
+            this.$el.modal('hide');
+            this.remove();
         }
     });
 

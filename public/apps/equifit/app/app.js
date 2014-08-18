@@ -63,7 +63,7 @@ define(function (require, exports, module) {
         // Helper for using layouts.
         useLayout: function (name) {
             var layout = new Backbone.Layout({
-                el: '#main',
+                el: "#main",
                 template: name
             });
 

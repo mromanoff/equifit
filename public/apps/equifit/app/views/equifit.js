@@ -2,7 +2,10 @@ define(function (require, exports, module) {
     "use strict";
 
     var app = require('app');
+    var msgBus = require('msgBus');
+    var ModalView = require('views/modal');
     var EquifitView;
+    //var modalView =  new ModalView();
 
     var Item = Backbone.View.extend({
         manage: true,
@@ -51,7 +54,7 @@ define(function (require, exports, module) {
             var data = _.extend({}, this.model.toJSON());
             data.url = app.store.get('url');
 
-            console.log('data', data);
+            //console.log('data', data);
 
             return data;
         },
@@ -73,20 +76,41 @@ define(function (require, exports, module) {
 
         submitEquifit: function (e) {
             e.preventDefault();
+
+            this.$el.modal('hide');
+
+            console.log('e', $(e.currentTarget).data('validate'));
+
             var self = this;
 
-            this.model.set({isValidated: true});
+            if($(e.currentTarget).data('validate')) {
+                console.log('set isValidate to true');
+                this.model.set({isValidated: true});
 
-            this.model.save(this.model, {
+
+
+            }
+
+            this.model.save({}, {
                 wait: true,
-                success: function(model, response, options){
-                    //TODO create modal here
+                success: function (model, response, options) {
                     console.log('Submit Equifit Success', model, response, options);
-                    self.$('.submit').attr('disabled', 'disabled').text('submitted');
-                },
-                error: function(model, response, options){
-                    //TODO create modal here
 
+//                    msgBus.trigger('create:modal', {
+//                        context: self,
+//                        title: response.title,
+//                        message: response.messages[0].title
+//                    });
+
+                    self.setView('', new ModalView({
+                        title: response.title,
+                        message: response.messages //response.messages[0].title
+                    })).render();
+
+                    //////self.$('.submit').attr('disabled', 'disabled').text('submitted');
+                },
+                error: function (model, response, options) {
+                    //TODO create modal here
                     console.log('Submit Equifit Error', model, response, options);
                 }
             });

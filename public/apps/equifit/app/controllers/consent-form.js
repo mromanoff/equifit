@@ -15,7 +15,7 @@ define(function (require, exports, module) {
             '.main-container': new ConsentFormView()
         }).render();
 
-        msgBus.trigger('app:update:title', app.store.get('title'));
+        msgBus.trigger('update:title', app.store.get('title'));
     };
 
     module.exports = ConsentFormModule;

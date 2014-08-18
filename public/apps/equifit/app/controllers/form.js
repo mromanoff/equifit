@@ -32,12 +32,7 @@ define(function (require, exports, module) {
 
         // Fetch data
         formEntities.fetch().then(
-
             function () {
-
-                console.log('form fetch', formEntities, formId);
-
-
                 app.useLayout('layouts/main').setViews({
                     '.header': new HeaderView(),
                     '.breadcrumb-container': new BreadcrumbView(),
@@ -46,7 +41,7 @@ define(function (require, exports, module) {
                     })
                 }).render();
 
-                msgBus.trigger('app:update:title', app.store.get('title'));
+                msgBus.trigger('update:title', app.store.get('title'));
             }
         );
     };

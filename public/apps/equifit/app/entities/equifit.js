@@ -19,6 +19,11 @@ define(function (require, exports, module) {
             isValidated: false,
             documents: null
         }
+//        ,
+//
+//        save: function () {
+//            console.log('model save method');
+//        }
     });
 
     module.exports = EquifitEntity;
