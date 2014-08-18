@@ -1,15 +1,20 @@
-<!--<div id="equifitModal" class="modal hide fade" tabindex="-1" role="dialog" aria-hidden="true">-->
 <div>
     <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
         <h3><%- title %></h3>
     </div>
     <div class="modal-body">
-        <p><%- message %></p>
+        <% _.each(messages, function(message) { %>
+            <p><strong><%= message.title %>:</strong> <span class="pull-right"><%- message.text %></span></p>
+        <% }); %>
     </div>
     <div class="modal-footer">
-        <button class="btn" data-dismiss="modal" aria-hidden="true">Cansel</button>
-        <button class="btn btn-primary submit" data-validate="true">Submit Anyway</button>
+        <% if(!isValidated) { %>
+            <button class="btn" data-dismiss="modal" aria-hidden="true">Cansel</button>
+            <button class="btn btn-primary submit" data-validate="true">Submit Anyway</button>
+        <% } else { %>
+            <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+        <% } %>
     </div>
 </div>
 

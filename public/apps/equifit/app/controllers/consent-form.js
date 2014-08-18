@@ -1,22 +1,24 @@
-define(function (require, exports, module) {
-    'use strict';
+/*
+ define(function (require, exports, module) {
+ 'use strict';
 
-    var app = require('app');
-    var msgBus = require('msgBus');
-    var ConsentFormView = require('views/consent-form');
-    var HeaderView = require('views/header');
-    var BreadcrumbView = require('views/breadcrumb');
-    var ConsentFormModule = {};
+ var app = require('app');
+ var msgBus = require('msgBus');
+ var ConsentFormView = require('views/consent-form');
+ var HeaderView = require('views/header');
+ var BreadcrumbView = require('views/breadcrumb');
+ var ConsentFormModule = {};
 
-    ConsentFormModule.init = function () {
-        app.useLayout('layouts/main').setViews({
-            '.header': new HeaderView(),
-            '.breadcrumb-container': new BreadcrumbView(),
-            '.main-container': new ConsentFormView()
-        }).render();
+ ConsentFormModule.init = function () {
+ app.useLayout('layouts/main').setViews({
+ '.header': new HeaderView(),
+ '.breadcrumb-container': new BreadcrumbView(),
+ '.main-container': new ConsentFormView()
+ }).render();
 
-        msgBus.trigger('update:title', app.store.get('title'));
-    };
+ msgBus.trigger('equifit:title:update', app.store.get('title'));
+ };
 
-    module.exports = ConsentFormModule;
-});
+ module.exports = ConsentFormModule;
+ });
+ */

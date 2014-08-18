@@ -5,10 +5,15 @@ define(function (require, exports, module) {
     var ModalView = require('views/modal');
     var modalModule = {};
 
-    modalModule.init = function (options) {
-        var layout = new Backbone.Layout();
-        //layout.insertView("#modal", new ModalView(options)).render();
-        layout.setView('body', new ModalView(options), true).render();
+    modalModule.init = function (model) {
+        var layout = new Backbone.Layout({
+            el: "#modal"
+        });
+
+        layout.setView('', new ModalView({
+            model: model
+        })).render();
+
     };
 
     module.exports = modalModule;

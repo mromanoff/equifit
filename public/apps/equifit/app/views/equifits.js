@@ -12,7 +12,7 @@ define(function (require, exports, module) {
 
         events: {
             'click .printForm': 'printForm',
-            'click': 'viewEquifit'
+            'click': 'getEquifit'
         },
 
         serialize: function () {
@@ -27,7 +27,7 @@ define(function (require, exports, module) {
             console.log('print form');
         },
 
-        viewEquifit: function (e) {
+        getEquifit: function (e) {
             e.preventDefault();
             // /equifit/member/{1234}/equifit/{123}
             var url = '/equifit/client/' + app.store.get('clientId') + '/equifit/' + this.model.get('_id');

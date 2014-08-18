@@ -5,21 +5,32 @@ define(function (require, exports, module) {
     var msgBus = _.extend({}, Backbone.Events);
 
 
+    // event name
+    // {app name}:{what}:{command}
+    //equifit:title:update
+
+
     //msgBus.on('scroll:top', function () {
     //    return controller.scroll();
     //});
 
     // update page title
-    msgBus.on('update:title', function (title){
+    msgBus.on('equifit:title:update', function (title){
         $('title').text(title);
     });
 
-    msgBus.on('update:store', function(options){
+    msgBus.on('equifit:store:update', function(options){
         console.log('update store model with', options);
         app.store.set(options);
     });
 
-    msgBus.on('create:modal', function(options){
+    msgBus.on('equifit:equifit:update', function(model){
+        require(['controllers/equifit'], function (controller) {
+            controller.update(model);
+        });
+    });
+
+    msgBus.on('equifit:modal:create', function(options){
         require(['controllers/modal'], function (controller) {
             controller.init(options);
         });

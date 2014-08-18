@@ -2,24 +2,22 @@ define(function (require, exports, module) {
     "use strict";
 
     var app = require('app');
-    var msgBus = require('msgBus');
-    var ModalView = require('views/modal');
+    var msgBus = require('msgbus');
     var EquifitView;
-    //var modalView =  new ModalView();
 
     var Item = Backbone.View.extend({
         manage: true,
         template: 'form-item',
         tagName: 'li',
         events: {
-            'click': 'showForm'
+            'click': 'getForm'
         },
 
         serialize: function () {
             return this.model.toJSON();
         },
 
-        showForm: function (e) {
+        getForm: function (e) {
             e.preventDefault();
             // /equifit/member/{1234}/equifit/{123}/form/{123}
             var url = '/equifit/client/' + app.store.get('clientId') + '/equifit/' + app.store.get('equifitId') + '/form/' + this.model.get('_id');
@@ -44,18 +42,17 @@ define(function (require, exports, module) {
         template: 'equifit',
 
         events: {
-            'click .consentForm': 'showConsentForm',
-            'click .submit': 'submitEquifit'
+            'click .submit': 'updateEquifit'
+        },
+
+        initialize: function () {
+            console.log('moooooodel', this.model.toJSON());
         },
 
         serialize: function () {
             //return app.store.toJSON();
-
             var data = _.extend({}, this.model.toJSON());
             data.url = app.store.get('url');
-
-            //console.log('data', data);
-
             return data;
         },
 
@@ -72,48 +69,15 @@ define(function (require, exports, module) {
                     }));
                 }, this);
             }
+
+
+ //           self.$('.submit').attr('disabled', 'disabled').text('submitted');
+
         },
 
-        submitEquifit: function (e) {
+        updateEquifit: function (e) {
             e.preventDefault();
-
-            this.$el.modal('hide');
-
-            console.log('e', $(e.currentTarget).data('validate'));
-
-            var self = this;
-
-            if($(e.currentTarget).data('validate')) {
-                console.log('set isValidate to true');
-                this.model.set({isValidated: true});
-
-
-
-            }
-
-            this.model.save({}, {
-                wait: true,
-                success: function (model, response, options) {
-                    console.log('Submit Equifit Success', model, response, options);
-
-//                    msgBus.trigger('create:modal', {
-//                        context: self,
-//                        title: response.title,
-//                        message: response.messages[0].title
-//                    });
-
-                    self.setView('', new ModalView({
-                        title: response.title,
-                        message: response.messages //response.messages[0].title
-                    })).render();
-
-                    //////self.$('.submit').attr('disabled', 'disabled').text('submitted');
-                },
-                error: function (model, response, options) {
-                    //TODO create modal here
-                    console.log('Submit Equifit Error', model, response, options);
-                }
-            });
+            msgBus.trigger('equifit:equifit:update', this.model);
         }
     });
 

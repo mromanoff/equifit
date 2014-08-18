@@ -40,7 +40,7 @@ define(function (require, exports, module) {
                         clientName: equifitEntities.at(0).get('clientName')
                     });
 
-                    msgBus.trigger('update:store', {clientName: equifitEntities.at(0).get('clientName')});
+                    msgBus.trigger('equifit:store:update', {clientName: equifitEntities.at(0).get('clientName')});
                 }
 
                 app.useLayout('layouts/main').setViews({
@@ -52,7 +52,7 @@ define(function (require, exports, module) {
                     })
                 }).render();
 
-                msgBus.trigger('update:title', app.store.get('title'));
+                msgBus.trigger('equifit:title:update', app.store.get('title'));
             }
         );
     };

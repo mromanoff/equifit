@@ -18,12 +18,23 @@ define(function (require, exports, module) {
             isSigned: false,
             isValidated: false,
             documents: null
+        },
+
+        updateEquifit: function (model) {
+            console.log('model save method', model);
+            var deferred = $.Deferred();
+
+            //setTimeout(function () {
+            model.save({}, {
+                success: deferred.resolve,
+                error: deferred.reject
+            });
+            //}, 2000);
+            return deferred.promise();
+
+
+
         }
-//        ,
-//
-//        save: function () {
-//            console.log('model save method');
-//        }
     });
 
     module.exports = EquifitEntity;

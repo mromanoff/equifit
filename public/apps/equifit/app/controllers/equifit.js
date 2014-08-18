@@ -41,9 +41,22 @@ define(function (require, exports, module) {
                     })
                 }).render();
 
-                msgBus.trigger('update:title', app.store.get('title'));
+                msgBus.trigger('equifit:title:update', app.store.get('title'));
             }
         );
+    };
+
+    EquifitModule.update = function (model) {
+        var promise = model.updateEquifit(model);
+
+        promise.done(function (model) {
+            msgBus.trigger('equifit:modal:create', model);
+        });
+
+        promise.fail(function (model, jqXHR, textStatus) {
+            // TODO create error page
+            console.log('error:', model, jqXHR, textStatus);
+        });
     };
 
     module.exports = EquifitModule;
