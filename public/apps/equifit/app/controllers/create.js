@@ -4,15 +4,12 @@ define(function (require, exports, module) {
     var app = require('app');
     var EquifitEntities = require('entities/equifits');
     var url;
-    var CreateModule = {};
+    var createModule = {};
 
     var equifitEntities = new EquifitEntities();
 
-    CreateModule.init = function () {
-        console.log('create init');
-
-
-        equifitEntities.create(equifitEntities.model, {
+    createModule.init = function () {
+        equifitEntities.create({clientId: app.store.get('clientId')}, {
             // waits for server to respond with 200
             // before adding newly created model to collection
             wait : true,
@@ -30,5 +27,5 @@ define(function (require, exports, module) {
         });
     };
 
-    module.exports = CreateModule;
+    module.exports = createModule;
 });

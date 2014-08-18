@@ -17,7 +17,7 @@ define(function (require, exports, module) {
 
         serialize: function () {
             var data = this.model.toJSON();
-            data.appointmentAt = moment(data.createdAt).format('MMMM D, YYYY');
+            data.appointmentAt = _.isNull(data.appointmentAt) ? 'Equifit date is not set' : moment(data.appointmentAt).format('MMMM D, YYYY');
             data.updatedAt = _.isNull(data.updatedAt) ? null : moment(data.updatedAt).format('MMMM D, YYYY');
             return data;
         },
@@ -33,7 +33,6 @@ define(function (require, exports, module) {
             var url = '/equifit/client/' + app.store.get('clientId') + '/equifit/' + this.model.get('_id');
 
             app.store.set({
-                //title: moment(this.model.get('createdAt')).format('MMMM D, YYYY'),
                 appointmentAt: moment(this.model.get('appointmentAt')).format('MMMM D, YYYY'),
                 isSigned: this.model.get('isSigned'),
                 equifitId: this.model.get('_id')

@@ -10,24 +10,28 @@ define(function (require, exports, module) {
             'equifit/client/:id(/)': 'equifit',
             'equifit/client/:id/equifit/:id': 'equifit',
             'equifit/client/:id/equifit/:id/form/:id': 'equifit',
+            'equifit/client/:id/equifit/:id/create(/)': 'createForm',
             'equifit/client/:id/create(/)': 'createEquifit'
         },
 
         equifit: function (clientId, equifitId, formId) {
             console.log('route equifit');
             if (!equifitId && !formId) {
+                console.log('route get equifits');
                 require(['./controllers/equifits'],
                     function (Equifit) {
                         Equifit.init(clientId);
                     });
             }
             else if (!formId) {
+                console.log('route get equifit');
                 require(['./controllers/equifit'],
                     function (Equifit) {
                         Equifit.init(clientId, equifitId);
                     });
             }
             else {
+                console.log('route get form');
                 require(['./controllers/form'],
                     function (Equifit) {
                         Equifit.init(clientId, equifitId, formId);
@@ -36,10 +40,18 @@ define(function (require, exports, module) {
         },
 
         createEquifit: function () {
-            console.log('route equifit');
+            console.log('route create equifit');
             require(['./controllers/create'],
                 function (Equifit) {
                     Equifit.init();
+                });
+        },
+
+        createForm: function () {
+            console.log('route create form');
+            require(['./controllers/form'],
+                function (Equifit) {
+                    Equifit.addNewForm();
                 });
         }
     });

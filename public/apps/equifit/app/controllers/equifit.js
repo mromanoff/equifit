@@ -46,6 +46,11 @@ define(function (require, exports, module) {
         );
     };
 
+
+    EquifitModule.createNew = function () {
+        //TODO move create euifit here from separate controller
+    };
+
     EquifitModule.update = function (model) {
         var promise = model.updateEquifit(model);
 

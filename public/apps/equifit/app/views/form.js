@@ -7,10 +7,6 @@ define(function (require, exports, module) {
     var FormView;
     var form;
 
-    //app.store.set({
-    //    slug: 'form'
-    //});
-
     FormView =  Backbone.View.extend({
         manage: true,
         template: 'form',

@@ -31,9 +31,6 @@ define(function (require, exports, module) {
             });
             //}, 2000);
             return deferred.promise();
-
-
-
         }
     });
 

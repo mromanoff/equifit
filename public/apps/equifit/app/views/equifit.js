@@ -19,8 +19,16 @@ define(function (require, exports, module) {
 
         getForm: function (e) {
             e.preventDefault();
-            // /equifit/member/{1234}/equifit/{123}/form/{123}
-            var url = '/equifit/client/' + app.store.get('clientId') + '/equifit/' + app.store.get('equifitId') + '/form/' + this.model.get('_id');
+
+            var url = '/equifit/client/' + app.store.get('clientId') + '/equifit/' + app.store.get('equifitId');
+
+            if(this.model.has('_id')) {
+                // /equifit/member/{1234}/equifit/{123}/form/{123}  GET
+                url = url + '/form/' + this.model.get('_id');
+            } else {
+                // /equifit/member/{1234}/equifit/{123}/create/
+                url = url + '/create';
+            }
 
             app.store.set({
                 pageTitle: this.model.get('title'),
@@ -43,10 +51,6 @@ define(function (require, exports, module) {
 
         events: {
             'click .submit': 'updateEquifit'
-        },
-
-        initialize: function () {
-            console.log('moooooodel', this.model.toJSON());
         },
 
         serialize: function () {

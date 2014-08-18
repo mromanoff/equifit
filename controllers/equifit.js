@@ -95,5 +95,42 @@ module.exports = {
                 res.json(item);
             }
         });
+    },
+
+    createDocument: function (req, res) {
+        var newForm = new models.Form(req.body);
+        newForm.save(function (err, form) {
+            if (err) {
+                res.json({error: 'Error adding form.'});
+            } else {
+                res.json({
+                    templateId : 8,
+                    title : "Physical Test",
+                    isComplete : false,
+                    totalQuestions : 5,
+                    totalCompletedQuestions : 5,
+                    formSchema : { "email" : { "validators" : [
+                        "required",
+                        "email" ] },
+                        "name" : "Text",
+                        "title" : { "options" : [
+                            "",
+                            "Mr",
+                            "Mrs",
+                            "Ms" ],
+                            "type" : "Select" } },
+                    data : { "email" : "j.brown@test.com",
+                        "name" : "James Brown",
+                        "title" : "Mr" },
+                    fieldsets : [
+                        { "fields" : [
+                            "title",
+                            "name",
+                            "email",
+                            "testHidden" ],
+                            "legend" : "Member Information" } ]
+                });
+            }
+        });
     }
 };

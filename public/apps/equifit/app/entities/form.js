@@ -10,7 +10,6 @@ define(function (require, exports, module) {
         idAttribute: '_id',
 
         defaults: {
-            id: this._id || null,
             title: null,
             templateId: null,
             isComplete: false,
