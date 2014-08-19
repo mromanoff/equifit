@@ -19,7 +19,7 @@ define(function (require, exports, module) {
 
         getForm: function (e) {
             e.preventDefault();
-            var url = '/equifit/client/' + app.store.get('clientId') + '/equifit/' + app.store.get('equifitId');
+            var url = '/equifit/client/' + app.store.get('clientId') + '/equifit/' + app.store.get('_id');
 
             if(this.model.has('_id')) {
                 // /equifit/member/{1234}/equifit/{123}/form/{123}  GET
