@@ -4,7 +4,7 @@ var _ = require('underscore');
 module.exports = {
 
     equifit: function (req, res) {
-        res.render('equifit', { title: 'Equifit' });
+        res.render('equifit', {title: 'Equifit'});
     },
 
     getEquifits: function (req, res) {
@@ -14,7 +14,7 @@ module.exports = {
     },
 
     getEquifit: function (req, res) {
-        models.Equifit.find({ _id: req.params.id }, function (err, item) {
+        models.Equifit.find({_id: req.params.id}, function (err, item) {
             if (err) {
                 res.json({error: 'Equifit not found.'});
             } else {
@@ -27,10 +27,10 @@ module.exports = {
         var mockUp = {
             appointmentAt: null,
             updatedAt: null,
-            trainerName: "Josh Smith",
-            clientName: "Donna Summer",
+            trainerName: "Josh Smith NEW",
+            clientName: "Donna Summer NEW",
             //clientId: 1234,
-            trainerFacility: "Tribeca",
+            trainerFacility: "Tribeca NEW",
             isSigned: false,
             isValidated: false,
             documents: [
@@ -152,49 +152,54 @@ module.exports = {
     },
 
     getDocument: function (req, res) {
-        models.Form.find({ _id: req.params.id }, function (err, item) {
+
+        console.log('get document', req.params);
+
+
+        models.Form.find({_id: req.params.id}, function (err, item) {
             if (err) {
                 res.json({error: 'Document not found.'});
             } else {
+                console.log('ITEM', item);
                 res.json(item);
             }
         });
     },
 
     createDocument: function (req, res) {
-        var newForm = new models.Form(req.body);
+        var mockUp = {
+            templateId: 8,
+            title: "Physical Test",
+            isComplete: false,
+            totalQuestions: 5,
+            totalCompletedQuestions: 5,
+            formSchema: {
+                email: {
+                    validators: ["required", "email"]
+                },
+                name: "Text",
+                title: {
+                    options: ["", "Mr", "Mrs", "Ms"],
+                    type: "Select"
+                }
+            },
+            data: {},
+            fieldsets: [
+                {
+                    fields: ["title", "name", "email", "testHidden"],
+                    legend: "Member Information"
+                }
+            ]
+        };
+
+
+        var newForm = new models.Form(_.extend(req.body, mockUp));
         newForm.save(function (err, form) {
             if (err) {
                 res.json({error: 'Error adding form.'});
             } else {
-                res.json({
-                    templateId: 8,
-                    title: "Physical Test",
-                    isComplete: false,
-                    totalQuestions: 5,
-                    totalCompletedQuestions: 5,
-                    formSchema: { "email": { "validators": [
-                        "required",
-                        "email" ] },
-                        "name": "Text",
-                        "title": { "options": [
-                            "",
-                            "Mr",
-                            "Mrs",
-                            "Ms" ],
-                            "type": "Select" } },
-                    data: { "email": "j.brown@test.com",
-                        "name": "James Brown",
-                        "title": "Mr" },
-                    fieldsets: [
-                        { "fields": [
-                            "title",
-                            "name",
-                            "email",
-                            "testHidden" ],
-                            "legend": "Member Information" }
-                    ]
-                });
+                console.log('response on post ', form);
+                res.json(form);
             }
         });
     }

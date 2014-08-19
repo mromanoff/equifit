@@ -17,9 +17,14 @@ define(function (require, exports, module) {
             return this.model.toJSON();
         },
 
+
+        initialize: function () {
+            console.log('form model ', this.model.toJSON());
+        },
+
         getForm: function (e) {
             e.preventDefault();
-            var url = '/equifit/client/' + app.store.get('clientId') + '/equifit/' + app.store.get('_id');
+            var url = '/equifit/client/' + app.store.get('clientId') + '/equifit/' + app.store.get('equifitId');
 
             if(this.model.has('_id')) {
                 // /equifit/member/{1234}/equifit/{123}/form/{123}  GET

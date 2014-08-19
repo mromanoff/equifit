@@ -18,7 +18,7 @@ define(function (require, exports, module) {
             var deferred = $.Deferred();
 
            // setTimeout(function () {
-            this.create({clientId: clientId}, {
+            this.create({clientId: app.store.get('clientId')}, {
                 wait : true,
                 success: deferred.resolve,
                 error: deferred.reject

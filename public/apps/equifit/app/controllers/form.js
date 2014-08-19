@@ -15,6 +15,10 @@ define(function (require, exports, module) {
     var formEntities = new FormEntities();
 
     formModule.init = function (clientId, equifitId, formId) {
+
+
+        console.log('where is this', clientId, equifitId, formId);
+
         app.store.set({
             title: 'Form',
             slug: 'form',
@@ -55,7 +59,7 @@ define(function (require, exports, module) {
             wait : true,
             success : function(model){
                 console.log('success callback', model);
-                url = '/equifit/client/' + app.store.get('clientId') + '/equifit/' + app.store.get('equifitId') + '/form/' + model.get('templateId');
+                url = '/equifit/client/' + app.store.get('clientId') + '/equifit/' + app.store.get('equifitId') + '/form/' + model.get('_id');
                 app.router.navigate(url, { trigger: true });
             },
             error : function(err) {
