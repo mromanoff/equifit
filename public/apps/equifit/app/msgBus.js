@@ -36,6 +36,12 @@ define(function (require, exports, module) {
         });
     });
 
+    msgBus.on('equifit:form:create', function(){
+        require(['controllers/form'], function (controller) {
+            controller.createNew();
+        });
+    });
+
     msgBus.on('equifit:modal:create', function(options){
         require(['controllers/modal'], function (controller) {
             controller.init(options);

@@ -4,20 +4,17 @@ define(function (require, exports, module) {
     var app = require('app');
     var msgBus = require('msgBus');
     var EquifitEntities = require('entities/equifits');
-   // var EquifitEntity = require('entities/equifit');
     var EquifitView = require('views/equifit');
     var HeaderView = require('views/header');
     var BreadcrumbView = require('views/breadcrumb');
     var LoadingView = require('views/loading');
-    var EquifitModule = {};
+    var equifitModule = {};
     var url;
 
     // create an instance of equifits collection.
     var equifitEntities = new EquifitEntities();
-    //var equifitEntity = new EquifitEntity();
 
-    EquifitModule.init = function (clientId, equifitId) {
-
+    equifitModule.init = function (clientId, equifitId) {
         app.store.set({
             title: 'Forms',
             slug: 'forms',
@@ -48,31 +45,12 @@ define(function (require, exports, module) {
         );
     };
 
-    EquifitModule.createNew = function (clientId) {
-
-        //var promise = equifitEntity.addEquifit();
-        //
-        //promise.done(function (model) {
-        //    console.log('model success', model);
-        //    //msgBus.trigger('equifit:modal:create', model);
-        //    url = '/equifit/client/' + model.get('clientId') + '/equifit/' + model.id;
-        //    app.router.navigate(url, {trigger: true});
-        //});
-        //
-        //promise.fail(function (model, jqXHR, textStatus) {
-        //    // TODO create error page
-        //    console.log('error:', model, jqXHR, textStatus);
-        //});
-
+    equifitModule.createNew = function (clientId) {
         var promise = equifitEntities.addEquifit(clientId);
 
-        promise.done(function (model, responce) {
-            console.log('model success', model, responce);
-
+        promise.done(function (model) {
             url = '/equifit/client/' + model.get('clientId') + '/equifit/' + model.id;
             app.router.navigate(url, { trigger: true});
-
-            //EquifitModule.init(clientId, model.id )
         });
 
         promise.fail(function (model, jqXHR, textStatus) {
@@ -83,7 +61,7 @@ define(function (require, exports, module) {
         });
     };
 
-    EquifitModule.update = function (model) {
+    equifitModule.update = function (model) {
         var promise = model.updateEquifit(model);
 
         promise.done(function (model) {
@@ -96,5 +74,5 @@ define(function (require, exports, module) {
         });
     };
 
-    module.exports = EquifitModule;
+    module.exports = equifitModule;
 });

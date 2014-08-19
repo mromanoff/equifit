@@ -25,8 +25,8 @@ define(function (require, exports, module) {
                 // /equifit/member/{1234}/equifit/{123}/form/{123}  GET
                 url = url + '/form/' + this.model.get('_id');
             } else {
-                // /equifit/member/{1234}/equifit/{123}/create/
-                url = url + '/create';
+                console.log('create new form. POST to get id from the server');
+                msgBus.trigger('equifit:form:create');
             }
 
             app.store.set({

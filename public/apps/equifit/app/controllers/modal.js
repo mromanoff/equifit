@@ -13,7 +13,6 @@ define(function (require, exports, module) {
         layout.setView('', new ModalView({
             model: model
         })).render();
-
     };
 
     module.exports = modalModule;

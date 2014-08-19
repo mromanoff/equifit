@@ -15,11 +15,6 @@ define(function (require, exports, module) {
     var formEntities = new FormEntities();
 
     formModule.init = function (clientId, equifitId, formId) {
-
-
-        console.log('WWWwWWWW', clientId, equifitId, formId);
-
-
         app.store.set({
             title: 'Form',
             slug: 'form',
@@ -38,12 +33,6 @@ define(function (require, exports, module) {
         // Fetch data
         formEntities.fetch().then(
             function () {
-
-
-
-                console.log('fetch', formEntities);
-
-
                 app.useLayout('layouts/main').setViews({
                     '.header': new HeaderView(),
                     '.breadcrumb-container': new BreadcrumbView(),
@@ -57,7 +46,7 @@ define(function (require, exports, module) {
         );
     };
 
-    formModule.addNewForm = function () {
+    formModule.createNew = function () {
       console.log('add new form here');
 
         formEntities.create(null, {
