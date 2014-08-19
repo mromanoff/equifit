@@ -29,11 +29,18 @@ module.exports = {
             updatedAt: null,
             trainerName: "Josh Smith NEW",
             clientName: "Donna Summer NEW",
-            //clientId: 1234,
             trainerFacility: "Tribeca NEW",
             isSigned: false,
             isValidated: false,
             documents: [
+                {
+                    templateId: 66,
+                    title: "Consent Form",
+                    isComplete: false,
+                    totalQuestions: 1,
+                    totalCompletedQuestions: 0
+                },
+
                 {
                     title: "PAR-Q",
                     templateId: 2,
@@ -152,15 +159,10 @@ module.exports = {
     },
 
     getDocument: function (req, res) {
-
-        console.log('get document', req.params);
-
-
         models.Form.find({_id: req.params.id}, function (err, item) {
             if (err) {
                 res.json({error: 'Document not found.'});
             } else {
-                console.log('ITEM', item);
                 res.json(item);
             }
         });
@@ -202,5 +204,22 @@ module.exports = {
                 res.json(form);
             }
         });
+    },
+
+    updateDocument: function (req, res) {
+        var obj = req.body;
+        var id = obj._id;
+        delete obj._id;
+        if (id) {
+            models.Form.update({_id: id}, obj, function (err, data) {
+                if (err) {
+                    res.json({error: 'Error saving equifit.'});
+                } else {
+                    console.log('PUT DATA', data);
+
+                    res.json(data);
+                }
+            });
+        }
     }
 };

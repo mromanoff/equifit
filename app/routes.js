@@ -13,6 +13,7 @@ module.exports.initialize = function(app) {
     app.get('/equifit/api/clients/:id/equifits/:id/documents', equifit.getDocuments);
     app.post('/equifit/api/clients/:id/equifits/:id/documents', equifit.createDocument);
     app.get('/equifit/api/clients/:id/equifits/:id/documents/:id', equifit.getDocument);
+    app.get('/equifit/api/clients/:id/equifits/:id/documents/:id', equifit.updateDocument);
 
     app.get('/', home.index);
     app.get('/equifit', equifit.equifit);

@@ -15,10 +15,6 @@ define(function (require, exports, module) {
     var formEntities = new FormEntities();
 
     formModule.init = function (clientId, equifitId, formId) {
-
-
-        console.log('where is this', clientId, equifitId, formId);
-
         app.store.set({
             title: 'Form',
             slug: 'form',
@@ -68,6 +64,20 @@ define(function (require, exports, module) {
                 url = '/equifit/error';
                 app.router.navigate(url, { trigger: true });
             }
+        });
+    };
+
+    formModule.update = function (model) {
+        var promise = model.updateForm(model);
+
+        promise.done(function (model) {
+            //msgBus.trigger('equifit:modal:create', model);
+            console.log('Form updated', model);
+        });
+
+        promise.fail(function (model, jqXHR, textStatus) {
+            // TODO create error page
+            console.log('error:', model, jqXHR, textStatus);
         });
     };
 

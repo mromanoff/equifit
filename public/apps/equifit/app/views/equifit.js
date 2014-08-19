@@ -17,7 +17,6 @@ define(function (require, exports, module) {
             return this.model.toJSON();
         },
 
-
         initialize: function () {
             console.log('form model ', this.model.toJSON());
         },
@@ -30,7 +29,6 @@ define(function (require, exports, module) {
                 // /equifit/member/{1234}/equifit/{123}/form/{123}  GET
                 url = url + '/form/' + this.model.get('_id');
             } else {
-                console.log('create new form. POST to get id from the server');
                 msgBus.trigger('equifit:form:create');
             }
 
@@ -66,9 +64,6 @@ define(function (require, exports, module) {
 
         beforeRender: function () {
             var documents = new Backbone.Collection(this.model.get('documents'));
-
-            console.log('this model', this.model.toJSON());
-
             // check if there is no items in collection
             if (_.isEqual(_.size(documents), 0)) {
                 this.insertView('ul', new ItemEmpty());
@@ -79,7 +74,6 @@ define(function (require, exports, module) {
                     }));
                 }, this);
             }
-
 
  //           self.$('.submit').attr('disabled', 'disabled').text('submitted');
 

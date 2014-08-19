@@ -10,7 +10,6 @@ define(function (require, exports, module) {
             'equifit/client/:id(/)': 'equifit',
             'equifit/client/:id/equifit/:id': 'equifit',
             'equifit/client/:id/equifit/:id/form/:id': 'equifit',
-            //'equifit/client/:id/equifit/:id/create(/)': 'createForm',
             'equifit/client/:id/create(/)': 'createEquifit'
         },
 
@@ -46,15 +45,6 @@ define(function (require, exports, module) {
                     Equifit.createNew(clientId);
                 });
         }
-        //,
-
-//        createForm: function () {
-//            console.log('route create form');
-//            require(['./controllers/form'],
-//                function (Equifit) {
-//                    Equifit.addNewForm();
-//                });
-//        }
     });
 
     module.exports = Router;

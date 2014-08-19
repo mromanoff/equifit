@@ -5,7 +5,6 @@ define(function (require, exports, module) {
     var Backbone = require('backbone');
     var FormEntity;
 
-
     FormEntity = Backbone.Model.extend({
         idAttribute: '_id',
 
@@ -17,8 +16,7 @@ define(function (require, exports, module) {
             totalCompletedQuestions: null,
             schema: null,
             fieldsets: null,
-            data: null,
-            slug: null
+            data: null
         },
 
         parse: function (response) {
@@ -27,6 +25,18 @@ define(function (require, exports, module) {
             response.schema = _.clone(response.formSchema);
             delete response.formSchema;
             return response;
+        },
+
+        updateForm: function (model) {
+            var deferred = $.Deferred();
+            //setTimeout(function () {
+            model.save(model, {
+                wait: true,
+                success: deferred.resolve,
+                error: deferred.reject
+            });
+            //}, 2000);
+            return deferred.promise();
         }
     });
     module.exports = FormEntity;

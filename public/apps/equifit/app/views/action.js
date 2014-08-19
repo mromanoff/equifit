@@ -28,8 +28,6 @@ define(function (require, exports, module) {
         createNew: function (e) {
             e.preventDefault();
             msgBus.trigger('equifit:equifit:create');
-//            var url = '/equifit/client/' + app.store.get('clientId') + '/create';
-//            app.router.navigate(url, { trigger: true });
         }
     });
 

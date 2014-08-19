@@ -1,5 +1,5 @@
-var mongoose = require('mongoose'),
-    models = require('./models');
+var mongoose = require('mongoose');
+var models = require('./models');
 
 module.exports = {
     check: function () {
@@ -17,6 +17,15 @@ module.exports = {
                     isSigned: false,
                     isValidated: false,
                     documents: [
+                        {
+                            _id: "53ed60ebb4932fec89e19a40",
+                            templateId: 66,
+                            title: "Consent Form",
+                            isComplete: false,
+                            totalQuestions: 1,
+                            totalCompletedQuestions: 0
+                        },
+
                         {
                            // _id: "53ed60ebb4932fec89e19a48",
                             title: "PAR-Q",
@@ -89,6 +98,15 @@ module.exports = {
                     isValidated: false,
                     documents: [
                         {
+                            _id: "53ed60ebb4932fec89e19a40",
+                            templateId: 66,
+                            title: "Consent Form",
+                            isComplete: false,
+                            totalQuestions: 1,
+                            totalCompletedQuestions: 0
+                        },
+
+                        {
                             _id: "53ed60ebb4932fec89e19a48",
                             title: "PAR-Q",
                             templateId: 2,
@@ -159,6 +177,15 @@ module.exports = {
                     isSigned: false,
                     isValidated: false,
                     documents: [
+                        {
+                            _id: "53ed60ebb4932fec89e19a40",
+                            templateId: 66,
+                            title: "Consent Form",
+                            isComplete: false,
+                            totalQuestions: 1,
+                            totalCompletedQuestions: 0
+                        },
+
                         {
                             _id: "53ed60ebb4932fec89e19a48",
                             title: "PAR-Q",
@@ -231,6 +258,15 @@ module.exports = {
                     isValidated: true,
                     documents: [
                         {
+                            _id: "53ed60ebb4932fec89e19a40",
+                            templateId: 66,
+                            title: "Consent Form",
+                            isComplete: false,
+                            totalQuestions: 1,
+                            totalCompletedQuestions: 0
+                        },
+
+                        {
                             _id: "53ed60ebb4932fec89e19a48",
                             title: "PAR-Q",
                             templateId: 2,
@@ -298,6 +334,34 @@ module.exports = {
             if (forms.length === 0) {
                 console.log('no forms found, seeding...');
                 var newForm = new models.Form({
+                    _id: "53ed60ebb4932fec89e19a40",
+                    templateId: 66,
+                    title: "Consent Form",
+                    isComplete: false,
+                    totalQuestions: 1,
+                    totalCompletedQuestions: 0,
+                    formSchema: {
+                        initials: {
+                            type: "Text",
+                            title: "first & last initials",
+                            validators: ["required"]
+                        }
+                    },
+
+                    fieldsets: [
+                        {
+                            legend: "Consent Form",
+                            fields: ["initials"]
+                        }
+                    ],
+
+                    data: {}
+                });
+                newForm.save(function (err, form) {
+                    console.log('successfully inserted document: ' + form._id);
+                });
+
+                newForm = new models.Form({
                     _id: "53ed60ebb4932fec89e19a48",
                     templateId: 2,
                     title: "PAR-Q",

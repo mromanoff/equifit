@@ -11,11 +11,11 @@ define(function (require, exports, module) {
         className: 'modal hide fade',
         template: 'modal',
 
-        initialize: function (){
-           // console.log('model', this.model);
-            //this.title = this.model.get('title') || 'Modal';
-            //this.message = this.model.get('messages') || 'Modal Text going here';
-        },
+        //initialize: function (){
+        //   // console.log('model', this.model);
+        //    //this.title = this.model.get('title') || 'Modal';
+        //    //this.message = this.model.get('messages') || 'Modal Text going here';
+        //},
 
         events: {
             'click .close': 'closeModal',

@@ -2,8 +2,10 @@ define(function (require, exports, module) {
     'use strict';
 
     var app = require('app');
+    var msgBus = require('msgbus');
     var Backbone = require('backbone');
     var Form = require('backbone-forms');
+    var FormEntity = require('entities/form');
     var FormView;
     var form;
 
@@ -11,13 +13,12 @@ define(function (require, exports, module) {
         manage: true,
         template: 'form',
         events: {
-            'click .submitForm': 'submitForm'
+            'click .update': 'updateForm'
         },
 
-
-        initialize: function () {
-            console.log('form model', this.model);
-        },
+        //initialize: function () {
+        //    console.log('form model', this.model);
+        //},
 
         beforeRender: function () {
             // extend BB model with forms schema and fieldsets
@@ -37,10 +38,16 @@ define(function (require, exports, module) {
             this.$el.find('.form').html(form.el);
         },
 
-        submitForm: function (e) {
+        updateForm: function (e) {
             e.preventDefault();
             //TODO: validate form before submitting
-            console.log('submit form');
+            var errors = form.commit();
+
+            console.log('form commit', errors);
+            console.log('this commit', this.model.set({data: form.model.toJSON()}));
+            console.log('form commit', form.model);
+
+            msgBus.trigger('equifit:form:update', this.model);
         }
     });
 
