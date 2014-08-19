@@ -19,7 +19,6 @@ define(function (require, exports, module) {
 
         getForm: function (e) {
             e.preventDefault();
-
             var url = '/equifit/client/' + app.store.get('clientId') + '/equifit/' + app.store.get('equifitId');
 
             if(this.model.has('_id')) {
@@ -62,6 +61,8 @@ define(function (require, exports, module) {
 
         beforeRender: function () {
             var documents = new Backbone.Collection(this.model.get('documents'));
+
+            console.log('this model', this.model.toJSON());
 
             // check if there is no items in collection
             if (_.isEqual(_.size(documents), 0)) {

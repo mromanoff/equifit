@@ -2,6 +2,7 @@ define(function (require, exports, module) {
     'use strict';
 
     var app = require('app');
+    var msgBus = require('msgBus');
     var Backbone = require('backbone');
 
     var ActionViewModule;
@@ -26,8 +27,9 @@ define(function (require, exports, module) {
 
         createNew: function (e) {
             e.preventDefault();
-            var url = '/equifit/client/' + app.store.get('clientId') + '/create';
-            app.router.navigate(url, { trigger: true });
+            msgBus.trigger('equifit:equifit:create');
+//            var url = '/equifit/client/' + app.store.get('clientId') + '/create';
+//            app.router.navigate(url, { trigger: true });
         }
     });
 

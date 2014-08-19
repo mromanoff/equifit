@@ -1,4 +1,5 @@
 var models = require('../app/models');
+var _ = require('underscore');
 
 module.exports = {
 
@@ -23,12 +24,75 @@ module.exports = {
     },
 
     createEquifit: function (req, res) {
-        var newEquifit = new models.Equifit(req.body);
+        var mockUp = {
+            appointmentAt: null,
+            updatedAt: null,
+            trainerName: "Josh Smith",
+            clientName: "Donna Summer",
+            //clientId: 1234,
+            trainerFacility: "Tribeca",
+            isSigned: false,
+            isValidated: false,
+            documents: [
+                {
+                    title: "PAR-Q",
+                    templateId: 2,
+                    totalQuestions: 10,
+                    totalCompletedQuestions: 0
+                },
+                {
+                    title: "Personal Info",
+                    templateId: 3,
+                    totalQuestions: 10,
+                    totalCompletedQuestions: 0
+                },
+                {
+                    title: "Goals",
+                    templateId: 4,
+                    isComplete: false,
+                    totalQuestions: 12,
+                    totalCompletedQuestions: 0
+                },
+                {
+                    templateId: 5,
+                    title: "Orthopedic",
+                    isComplete: false,
+                    totalQuestions: 13,
+                    totalCompletedQuestions: 0
+                },
+                {
+                    templateId: 6,
+                    title: "Exercise History",
+                    isComplete: false,
+                    totalQuestions: 7,
+                    totalCompletedQuestions: 0
+                },
+                {
+                    templateId: 7,
+                    title: "Lifestyle",
+                    isComplete: false,
+                    totalQuestions: 15,
+                    totalCompletedQuestions: 0
+                },
+                {
+                    templateId: 8,
+                    title: "Physical Test",
+                    isComplete: false,
+                    totalQuestions: 5,
+                    totalCompletedQuestions: 0
+                }
+            ]
+        };
+
+        //console.log('req.body', req.body);
+
+        var newEquifit = new models.Equifit(_.extend(req.body, mockUp));
         // newContact.gravatar = md5(newContact.email);
         newEquifit.save(function (err, equifit) {
             if (err) {
                 res.json({error: 'Error adding equifit.'});
             } else {
+                console.log('response on post ', equifit);
                 res.json(equifit);
             }
         });
@@ -44,7 +108,7 @@ module.exports = {
                     res.json({error: 'Error saving equifit.'});
                 } else {
                     // two sucess messages depends on Client response isValidated
-                    if(obj.isValidated) {
+                    if (obj.isValidated) {
                         res.json({
                             status: 'success',
                             title: 'This equifit result has been submitted to equifit administrator successfully!',
@@ -104,31 +168,32 @@ module.exports = {
                 res.json({error: 'Error adding form.'});
             } else {
                 res.json({
-                    templateId : 8,
-                    title : "Physical Test",
-                    isComplete : false,
-                    totalQuestions : 5,
-                    totalCompletedQuestions : 5,
-                    formSchema : { "email" : { "validators" : [
+                    templateId: 8,
+                    title: "Physical Test",
+                    isComplete: false,
+                    totalQuestions: 5,
+                    totalCompletedQuestions: 5,
+                    formSchema: { "email": { "validators": [
                         "required",
                         "email" ] },
-                        "name" : "Text",
-                        "title" : { "options" : [
+                        "name": "Text",
+                        "title": { "options": [
                             "",
                             "Mr",
                             "Mrs",
                             "Ms" ],
-                            "type" : "Select" } },
-                    data : { "email" : "j.brown@test.com",
-                        "name" : "James Brown",
-                        "title" : "Mr" },
-                    fieldsets : [
-                        { "fields" : [
+                            "type": "Select" } },
+                    data: { "email": "j.brown@test.com",
+                        "name": "James Brown",
+                        "title": "Mr" },
+                    fieldsets: [
+                        { "fields": [
                             "title",
                             "name",
                             "email",
                             "testHidden" ],
-                            "legend" : "Member Information" } ]
+                            "legend": "Member Information" }
+                    ]
                 });
             }
         });

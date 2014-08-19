@@ -20,8 +20,11 @@ define(function (require, exports, module) {
             documents: null
         },
 
+        //url: function () {
+        //    return '/equifit/api/clients/' + app.store.get('clientId') + '/equifits/';
+        //},
+
         updateEquifit: function (model) {
-            console.log('model save method', model);
             var deferred = $.Deferred();
 
             //setTimeout(function () {
@@ -31,7 +34,19 @@ define(function (require, exports, module) {
             });
             //}, 2000);
             return deferred.promise();
-        }
+        },
+
+        //addEquifit: function () {
+        //    var deferred = $.Deferred();
+        //
+        //    //setTimeout(function () {
+        //    this.save({}, {
+        //        success: deferred.resolve,
+        //        error: deferred.reject
+        //    });
+        //    //}, 2000);
+        //    return deferred.promise();
+        //}
     });
 
     module.exports = EquifitEntity;

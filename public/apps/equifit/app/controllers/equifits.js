@@ -39,7 +39,6 @@ define(function (require, exports, module) {
                     app.store.set({
                         clientName: equifitEntities.at(0).get('clientName')
                     });
-
                     msgBus.trigger('equifit:store:update', {clientName: equifitEntities.at(0).get('clientName')});
                 }
 

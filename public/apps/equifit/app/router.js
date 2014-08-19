@@ -10,7 +10,7 @@ define(function (require, exports, module) {
             'equifit/client/:id(/)': 'equifit',
             'equifit/client/:id/equifit/:id': 'equifit',
             'equifit/client/:id/equifit/:id/form/:id': 'equifit',
-            'equifit/client/:id/equifit/:id/create(/)': 'createForm',
+            //'equifit/client/:id/equifit/:id/create(/)': 'createForm',
             'equifit/client/:id/create(/)': 'createEquifit'
         },
 
@@ -39,21 +39,22 @@ define(function (require, exports, module) {
             }
         },
 
-        createEquifit: function () {
-            console.log('route create equifit');
-            require(['./controllers/create'],
+        createEquifit: function (clientId) {
+            console.log('route create equifit', clientId);
+            require(['./controllers/equifit'],
                 function (Equifit) {
-                    Equifit.init();
-                });
-        },
-
-        createForm: function () {
-            console.log('route create form');
-            require(['./controllers/form'],
-                function (Equifit) {
-                    Equifit.addNewForm();
+                    Equifit.createNew(clientId);
                 });
         }
+        //,
+
+//        createForm: function () {
+//            console.log('route create form');
+//            require(['./controllers/form'],
+//                function (Equifit) {
+//                    Equifit.addNewForm();
+//                });
+//        }
     });
 
     module.exports = Router;

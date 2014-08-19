@@ -24,6 +24,12 @@ define(function (require, exports, module) {
         app.store.set(options);
     });
 
+    msgBus.on('equifit:equifit:create', function(clientId){
+        require(['controllers/equifit'], function (controller) {
+            controller.createNew(clientId);
+        });
+    });
+
     msgBus.on('equifit:equifit:update', function(model){
         require(['controllers/equifit'], function (controller) {
             controller.update(model);
