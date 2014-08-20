@@ -21,6 +21,7 @@ define(function (require, exports, module) {
 
             isValidated: null,
             slug: null,
+            equifitName: null,
             equifitId: null,
             formName: null,
             formId: null

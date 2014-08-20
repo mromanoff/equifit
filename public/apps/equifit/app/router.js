@@ -2,6 +2,7 @@ define(function (require, exports, module) {
     "use strict";
 
     var app = require('app');
+    var msgBus = require('msgbus');
     var Backbone = require('backbone');
 
     // Defining the application router.
@@ -14,15 +15,24 @@ define(function (require, exports, module) {
         },
 
         equifit: function (clientId, equifitId, formId) {
-            console.log('route equifit', clientId);
+
+            console.log('route equifit', clientId, equifitId, formId);
+
             if (!equifitId && !formId) {
-                console.log('route get equifits');
+                msgBus.trigger('equifit:store:update', {
+                    clientId: clientId
+                });
+                console.log('route get equifits', clientId);
                 require(['./controllers/equifits'],
                     function (Equifit) {
                         Equifit.init(clientId);
                     });
             }
             else if (!formId) {
+                msgBus.trigger('equifit:store:update', {
+                    clientId: clientId,
+                    equifitId: equifitId
+                });
                 console.log('route get equifit', clientId, equifitId);
                 require(['./controllers/equifit'],
                     function (Equifit) {
@@ -30,6 +40,11 @@ define(function (require, exports, module) {
                     });
             }
             else {
+                msgBus.trigger('equifit:store:update', {
+                    clientId: clientId,
+                    equifitId: equifitId,
+                    formId: formId
+                });
                 console.log('route get form', clientId, equifitId, formId);
                 require(['./controllers/form'],
                     function (Equifit) {
@@ -39,6 +54,9 @@ define(function (require, exports, module) {
         },
 
         createEquifit: function (clientId) {
+            msgBus.trigger('equifit:store:update', {
+                clientId: clientId
+            });
             console.log('route create equifit', clientId);
             require(['./controllers/equifit'],
                 function (Equifit) {

@@ -32,11 +32,11 @@ define(function (require, exports, module) {
                 msgBus.trigger('equifit:form:create');
             }
 
-            app.store.set({
-                pageTitle: this.model.get('title'),
-                formName: this.model.get('title'),
-                formId: this.model.get('_id')
-            });
+            //app.store.set({
+            //    pageTitle: this.model.get('title'),
+            //    formName: this.model.get('title'),
+            //    formId: this.model.get('_id')
+            //});
 
             app.router.navigate(url, {trigger: true});
         }

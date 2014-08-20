@@ -2,7 +2,7 @@ define(function (require, exports, module) {
     'use strict';
 
     var app = require('app');
-    var msgBus = require('msgBus');
+    var msgBus = require('msgbus');
     var Backbone = require('backbone');
 
     var ActionViewModule;
@@ -27,7 +27,7 @@ define(function (require, exports, module) {
 
         createNew: function (e) {
             e.preventDefault();
-            msgBus.trigger('equifit:equifit:create');
+            msgBus.trigger('equifit:equifit:create', app.store.get('clientId'));
         }
     });
 

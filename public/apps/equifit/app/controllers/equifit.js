@@ -2,7 +2,7 @@ define(function (require, exports, module) {
     'use strict';
 
     var app = require('app');
-    var msgBus = require('msgBus');
+    var msgBus = require('msgbus');
     var EquifitEntities = require('entities/equifits');
     var EquifitView = require('views/equifit');
     var HeaderView = require('views/header');
@@ -14,14 +14,15 @@ define(function (require, exports, module) {
     // create an instance of equifits collection.
     var equifitEntities = new EquifitEntities();
 
-    equifitModule.init = function (clientId, equifitId) {
-        app.store.set({
+    equifitModule.init = function () {
+
+        // update store model
+        msgBus.trigger('equifit:store:update', {
             title: 'Forms',
             slug: 'forms',
-            url: '/equifit/client/' + clientId + '/equifits/' + equifitId,
-            clientId: clientId,
-            equifitId: equifitId
+            url: '/equifit/client/' + app.store.get('clientId') + '/equifits/' + app.store.get('equifitId')
         });
+
 
         // create loading view
         app.useLayout('layouts/main').setViews({
@@ -33,23 +34,32 @@ define(function (require, exports, module) {
         // Fetch data and replace loading view
         equifitEntities.fetch().then(
             function () {
+                var equifitEntety = equifitEntities.get(app.store.get('equifitId'));
+
+                // update store model
+                msgBus.trigger('equifit:store:update', {
+                    clientName: equifitEntety.get('clientName')
+                });
+
                 app.useLayout('layouts/main').setViews({
                     '.header': new HeaderView(),
                     '.breadcrumb-container': new BreadcrumbView(),
                     '.main-container': new EquifitView({
-                        model: equifitEntities.get(equifitId)
+                        model: equifitEntety
                     })
                 }).render();
+
                 msgBus.trigger('equifit:title:update', app.store.get('title'));
             }
         );
     };
 
-    equifitModule.createNew = function (clientId) {
-        var promise = equifitEntities.addEquifit(clientId);
+    equifitModule.createNew = function () {
+
+        var promise = equifitEntities.addEquifit();
 
         promise.done(function (model) {
-            url = '/equifit/client/' + model.get('clientId') + '/equifit/' + model.id;
+            url = '/equifit/client/' + app.store.get('clientId') + '/equifit/' + model.id;
             app.router.navigate(url, { trigger: true});
         });
 

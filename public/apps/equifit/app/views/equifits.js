@@ -2,6 +2,7 @@ define(function (require, exports, module) {
     'use strict';
 
     var app = require('app');
+    var msgBus = require('msgbus');
     var moment = require('moment');
     var EquifitsView;
 
@@ -32,8 +33,12 @@ define(function (require, exports, module) {
             // /equifit/member/{1234}/equifit/{123}
             var url = '/equifit/client/' + app.store.get('clientId') + '/equifit/' + this.model.get('_id');
 
-            app.store.set({
+            // udpate store model
+            msgBus.trigger('equifit:store:update', {
                 appointmentAt: moment(this.model.get('appointmentAt')).format('MMMM D, YYYY'),
+
+                //TODO it gets overwriten
+                //title: moment(this.model.get('appointmentAt')).format('MMMM D, YYYY'),
                 isSigned: this.model.get('isSigned'),
                 equifitId: this.model.get('_id')
             });

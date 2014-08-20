@@ -2,7 +2,7 @@ define(function (require, exports, module) {
     'use strict';
 
     var app = require('app');
-    var msgBus = require('msgBus');
+    var msgBus = require('msgbus');
     var EquifitEntities = require('entities/equifits');
     var EquifitView = require('views/equifits');
     var HeaderView = require('views/header');
@@ -14,13 +14,12 @@ define(function (require, exports, module) {
     // create an instance of equifits collection.
     var equifitEntities = new EquifitEntities();
 
-    EquifitsModule.init = function (clientId) {
-
-        app.store.set({
+    EquifitsModule.init = function () {
+        // update store model
+        msgBus.trigger('equifit:store:update', {
             title: 'Equifits',
-            url: '/equifit/client/' + clientId,
-            slug: 'equifit',
-            clientId: clientId
+            url: '/equifit/client/' + app.store.get('clientId'),
+            slug: 'equifit'
         });
 
         app.useLayout('layouts/main').setViews({
@@ -35,11 +34,10 @@ define(function (require, exports, module) {
                 // if there is no existing Equifit. server response []
                 // set clientName from the first model
                 if(equifitEntities.length !== 0) {
-                    // update Store with client name
-                    app.store.set({
+                    // update store model
+                    msgBus.trigger('equifit:store:update', {
                         clientName: equifitEntities.at(0).get('clientName')
                     });
-                    msgBus.trigger('equifit:store:update', {clientName: equifitEntities.at(0).get('clientName')});
                 }
 
                 app.useLayout('layouts/main').setViews({

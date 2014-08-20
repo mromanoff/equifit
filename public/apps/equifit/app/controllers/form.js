@@ -2,7 +2,7 @@ define(function (require, exports, module) {
     'use strict';
 
     var app = require('app');
-    var msgBus = require('msgBus');
+    var msgBus = require('msgbus');
     var FormEntities = require('entities/forms');
     var FormView = require('views/form');
     var HeaderView = require('views/header');
@@ -14,14 +14,13 @@ define(function (require, exports, module) {
     // create an instance of forms collection.
     var formEntities = new FormEntities();
 
-    formModule.init = function (clientId, equifitId, formId) {
-        app.store.set({
+    formModule.init = function () {
+
+        // update store model
+        msgBus.trigger('equifit:store:update', {
             title: 'Form',
             slug: 'form',
-            url: '/equifit/client/' + clientId + '/equifits/' + equifitId + '/forms/' + formId,
-            clientId: clientId,
-            equifitId: equifitId,
-            formId: formId
+            url: '/equifit/client/' + app.store.get('clientId') + '/equifits/' + app.store.get('equifitId') + '/forms/' + app.store.get('formId')
         });
 
         app.useLayout('layouts/main').setViews({
@@ -37,7 +36,7 @@ define(function (require, exports, module) {
                     '.header': new HeaderView(),
                     '.breadcrumb-container': new BreadcrumbView(),
                     '.main-container': new FormView({
-                        model: formEntities.get(formId)
+                        model: formEntities.get(app.store.get('formId'))
                     })
                 }).render();
 

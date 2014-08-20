@@ -22,11 +22,12 @@ define(function (require, exports, module) {
     msgBus.on('equifit:store:update', function(options){
         console.log('update store model with', options);
         app.store.set(options);
+        console.log('store model updated', app.store.toJSON());
     });
 
-    msgBus.on('equifit:equifit:create', function(clientId){
+    msgBus.on('equifit:equifit:create', function(){
         require(['controllers/equifit'], function (controller) {
-            controller.createNew(clientId);
+            controller.createNew();
         });
     });
 

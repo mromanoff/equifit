@@ -14,7 +14,7 @@ define(function (require, exports, module) {
             return '/equifit/api/clients/' + app.store.get('clientId') + '/equifits/';
         },
 
-        addEquifit: function (clientId) {
+        addEquifit: function () {
             var deferred = $.Deferred();
 
            // setTimeout(function () {
