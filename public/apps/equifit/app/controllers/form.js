@@ -13,8 +13,8 @@ define(function (require, exports, module) {
     var url;
 
     // create an instance of form model and form collection.
-    var formEntity = new FormEntity();
     var formEntities = new FormEntities();
+    var formEntity = new FormEntity();
 
     formModule.init = function () {
 
@@ -34,6 +34,9 @@ define(function (require, exports, module) {
         // Fetch data
         formEntity.fetch().then(
             function () {
+
+                console.log('form entity fetched', formEntity);
+
                 app.useLayout('layouts/main').setViews({
                     '.header': new HeaderView(),
                     '.breadcrumb-container': new BreadcrumbView(),

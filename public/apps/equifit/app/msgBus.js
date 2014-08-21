@@ -22,7 +22,7 @@ define(function (require, exports, module) {
     msgBus.on('equifit:store:update', function(options){
         console.log('update store model with', options);
         app.store.set(options);
-        console.log('store model updated', app.store.toJSON());
+        //console.log('store model updated', app.store.toJSON());
     });
 
     msgBus.on('equifit:equifit:create', function(){

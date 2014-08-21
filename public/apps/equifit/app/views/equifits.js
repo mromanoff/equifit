@@ -38,7 +38,7 @@ define(function (require, exports, module) {
                 appointmentAt: moment(this.model.get('appointmentAt')).format('MMMM D, YYYY'),
 
                 //TODO it gets overwriten
-                //title: moment(this.model.get('appointmentAt')).format('MMMM D, YYYY'),
+                title: moment(this.model.get('appointmentAt')).format('MMMM D, YYYY'),
                 isSigned: this.model.get('isSigned'),
                 equifitId: this.model.id
             });

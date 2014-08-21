@@ -11,6 +11,7 @@ define(function (require, exports, module) {
         defaults: {
             title: null,
             templateId: null,
+            templateType: null,
             totalQuestions: null,
             totalCompletedQuestions: null,
             schema: null,
@@ -26,14 +27,13 @@ define(function (require, exports, module) {
             }
         },
 
-
-        parse: function (response) {
-            // backbone-forms needs 'schema' property. in mongoose 'schema' is reserved word.
-            // In mongoose we had to name it as a formSchema
-            response.schema = _.clone(response.formSchema);
-            delete response.formSchema;
-            return response;
-        },
+        //parse: function (response) {
+        //    // backbone-forms needs 'schema' property. in mongoose 'schema' is reserved word.
+        //    // In mongoose we had to name it as a formSchema
+        //    response.schema = _.clone(response.formSchema);
+        //    delete response.formSchema;
+        //    return response;
+        //},
 
         updateForm: function (model) {
             var deferred = $.Deferred();

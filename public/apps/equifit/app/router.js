@@ -22,10 +22,10 @@ define(function (require, exports, module) {
                 msgBus.trigger('equifit:store:update', {
                     clientId: clientId
                 });
-                console.log('route get equifits', clientId);
+                console.log('route get equifits:', clientId);
                 require(['./controllers/equifits'],
                     function (Equifit) {
-                        Equifit.init(clientId);
+                        Equifit.init();
                     });
             }
             else if (!formId) {
@@ -33,10 +33,10 @@ define(function (require, exports, module) {
                     clientId: clientId,
                     equifitId: equifitId
                 });
-                console.log('route get equifit', clientId, equifitId);
+                console.log('route get equifit:', clientId, equifitId);
                 require(['./controllers/equifit'],
                     function (Equifit) {
-                        Equifit.init(clientId, equifitId);
+                        Equifit.init();
                     });
             }
             else {
@@ -45,10 +45,10 @@ define(function (require, exports, module) {
                     equifitId: equifitId,
                     formId: formId
                 });
-                console.log('route get form', clientId, equifitId, formId);
+                console.log('route get form:', clientId, equifitId, formId);
                 require(['./controllers/form'],
                     function (Equifit) {
-                        Equifit.init(clientId, equifitId, formId);
+                        Equifit.init();
                     });
             }
         },
@@ -60,7 +60,7 @@ define(function (require, exports, module) {
             console.log('route create equifit', clientId);
             require(['./controllers/equifit'],
                 function (Equifit) {
-                    Equifit.createNew(clientId);
+                    Equifit.createNew();
                 });
         }
     });

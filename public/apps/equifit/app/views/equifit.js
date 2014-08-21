@@ -17,17 +17,23 @@ define(function (require, exports, module) {
             return this.model.toJSON();
         },
 
-        initialize: function () {
-            console.log('form model ', this.model.toJSON());
-        },
+        //initialize: function () {
+        //    console.log('Equifit: form model ', this.model.toJSON());
+        //},
 
         getForm: function (e) {
             e.preventDefault();
+
             var url = '/equifit/client/' + app.store.get('clientId') + '/equifit/' + app.store.get('equifitId');
 
-            if(this.model.has('id')) {
+
+            console.log('this.model', this.model);
+
+            if(!_.isNull(this.model.id)) {
                 // /equifit/member/{1234}/equifit/{123}/form/{123}  GET
                 url = url + '/form/' + this.model.id;
+                app.router.navigate(url, {trigger: true});
+
             } else {
                 msgBus.trigger('equifit:form:create', this.model.get('templateId'));
             }
@@ -38,7 +44,7 @@ define(function (require, exports, module) {
             //    formId: this.model.get('_id')
             //});
 
-            app.router.navigate(url, {trigger: true});
+
         }
     });
 
@@ -69,6 +75,9 @@ define(function (require, exports, module) {
                 this.insertView('ul', new ItemEmpty());
             } else {
                 documents.each(function (item) {
+                    // create id from id or _id (mongo)
+                    item.id  = item.get('id') || item.get('_id') || null;
+
                     this.insertView('ul', new Item({
                         model: item
                     }));

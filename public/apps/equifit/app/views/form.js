@@ -5,7 +5,6 @@ define(function (require, exports, module) {
     var msgBus = require('msgbus');
     var Backbone = require('backbone');
     var Form = require('backbone-forms');
-    //var FormEntity = require('entities/form');
     var FormView;
     var form;
 
@@ -17,7 +16,7 @@ define(function (require, exports, module) {
         },
 
         initialize: function () {
-            console.log('form model', this.model);
+            console.log('init form model', this.model);
         },
 
         beforeRender: function () {
@@ -28,6 +27,9 @@ define(function (require, exports, module) {
             });
 
             var formModel =  new FormModel(this.model.get('data'));
+
+
+            console.log('form model', formModel);
 
             // render form
             form = new Form({
