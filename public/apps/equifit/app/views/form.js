@@ -16,9 +16,9 @@ define(function (require, exports, module) {
             'click .update': 'updateForm'
         },
 
-        //initialize: function () {
-        //    console.log('form model', this.model);
-        //},
+        initialize: function () {
+            console.log('form model', this.model);
+        },
 
         beforeRender: function () {
             // extend BB model with forms schema and fieldsets
@@ -27,9 +27,11 @@ define(function (require, exports, module) {
                 fieldsets: this.model.get('fieldsets')
             });
 
+            var formModel =  new FormModel(this.model.get('data'));
+
             // render form
             form = new Form({
-                model: new FormModel(this.model.get('data'))
+                model: formModel
             }).render();
         },
 
@@ -43,9 +45,11 @@ define(function (require, exports, module) {
             //TODO: validate form before submitting
             var errors = form.commit();
 
-            console.log('form commit', errors);
-            console.log('this commit', this.model.set({data: form.model.toJSON()}));
+            this.model.set({data: form.model.toJSON()});
+
+            console.log('form errors', errors);
             console.log('form commit', form.model);
+            console.log('this commit', this.model);
 
             msgBus.trigger('equifit:form:update', this.model);
         }

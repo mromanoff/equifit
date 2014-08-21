@@ -16,7 +16,7 @@ define(function (require, exports, module) {
 
         equifit: function (clientId, equifitId, formId) {
 
-            console.log('route equifit', clientId, equifitId, formId);
+            console.log('Route equifit all params', clientId, equifitId, formId);
 
             if (!equifitId && !formId) {
                 msgBus.trigger('equifit:store:update', {

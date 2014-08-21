@@ -1,5 +1,6 @@
 var equifit = require('../controllers/equifit');
 var home = require('../controllers/home');
+var client = require('../controllers/client');
 
 
 module.exports.initialize = function(app) {
@@ -16,6 +17,7 @@ module.exports.initialize = function(app) {
     app.get('/equifit/api/clients/:id/equifits/:id/documents/:id', equifit.updateDocument);
 
     app.get('/', home.index);
+    app.get('/clients/client*', client.index);
     app.get('/equifit', equifit.equifit);
     // match all others to make Single Page App Work
     app.get('/equifit/*', equifit.equifit);
