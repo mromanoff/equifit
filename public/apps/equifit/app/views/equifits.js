@@ -31,7 +31,7 @@ define(function (require, exports, module) {
         getEquifit: function (e) {
             e.preventDefault();
             // /equifit/member/{1234}/equifit/{123}
-            var url = '/equifit/client/' + app.store.get('clientId') + '/equifit/' + this.model.get('_id');
+            var url = '/equifit/client/' + app.store.get('clientId') + '/equifit/' + this.model.id;
 
             // udpate store model
             msgBus.trigger('equifit:store:update', {
@@ -40,7 +40,7 @@ define(function (require, exports, module) {
                 //TODO it gets overwriten
                 //title: moment(this.model.get('appointmentAt')).format('MMMM D, YYYY'),
                 isSigned: this.model.get('isSigned'),
-                equifitId: this.model.get('_id')
+                equifitId: this.model.id
             });
 
             app.router.navigate(url, { trigger: true });

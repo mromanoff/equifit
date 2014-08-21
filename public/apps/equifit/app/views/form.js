@@ -5,7 +5,7 @@ define(function (require, exports, module) {
     var msgBus = require('msgbus');
     var Backbone = require('backbone');
     var Form = require('backbone-forms');
-    var FormEntity = require('entities/form');
+    //var FormEntity = require('entities/form');
     var FormView;
     var form;
 

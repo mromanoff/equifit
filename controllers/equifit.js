@@ -27,14 +27,16 @@ module.exports = {
         var mockUp = {
             appointmentAt: null,
             updatedAt: null,
-            trainerName: "Josh Smith NEW",
-            clientName: "Donna Summer NEW",
-            trainerFacility: "Tribeca NEW",
+            trainerName: "Josh Smith",
+            trainerFacility: "Tribeca",
+            clientName: "Donna Summer",
+            clientId: 123,
             isSigned: false,
             isValidated: false,
             documents: [
                 {
                     templateId: 66,
+                    templateType: "InformedConsent",
                     title: "Consent Form",
                     isComplete: false,
                     totalQuestions: 1,
@@ -43,6 +45,7 @@ module.exports = {
 
                 {
                     title: "PAR-Q",
+                    templateType: 2,
                     templateId: 2,
                     totalQuestions: 10,
                     totalCompletedQuestions: 0
@@ -50,18 +53,21 @@ module.exports = {
                 {
                     title: "Personal Info",
                     templateId: 3,
+                    templateType: 2,
                     totalQuestions: 10,
                     totalCompletedQuestions: 0
                 },
                 {
                     title: "Goals",
                     templateId: 4,
+                    templateType: 2,
                     isComplete: false,
                     totalQuestions: 12,
                     totalCompletedQuestions: 0
                 },
                 {
                     templateId: 5,
+                    templateType: 2,
                     title: "Orthopedic",
                     isComplete: false,
                     totalQuestions: 13,
@@ -69,6 +75,7 @@ module.exports = {
                 },
                 {
                     templateId: 6,
+                    templateType: 2,
                     title: "Exercise History",
                     isComplete: false,
                     totalQuestions: 7,
@@ -76,6 +83,7 @@ module.exports = {
                 },
                 {
                     templateId: 7,
+                    templateType: 2,
                     title: "Lifestyle",
                     isComplete: false,
                     totalQuestions: 15,
@@ -83,6 +91,7 @@ module.exports = {
                 },
                 {
                     templateId: 8,
+                    templateType: 2,
                     title: "Physical Test",
                     isComplete: false,
                     totalQuestions: 5,
@@ -172,7 +181,6 @@ module.exports = {
         var mockUp = {
             templateId: 8,
             title: "Physical Test",
-            isComplete: false,
             totalQuestions: 5,
             totalCompletedQuestions: 5,
             formSchema: {

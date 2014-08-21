@@ -3,6 +3,7 @@ define(function (require, exports, module) {
 
     var app = require('app');
     var msgBus = require('msgbus');
+    var FormEntity = require('entities/form');
     var FormEntities = require('entities/forms');
     var FormView = require('views/form');
     var HeaderView = require('views/header');
@@ -11,7 +12,8 @@ define(function (require, exports, module) {
     var formModule = {};
     var url;
 
-    // create an instance of forms collection.
+    // create an instance of form model and form collection.
+    var formEntity = new FormEntity();
     var formEntities = new FormEntities();
 
     formModule.init = function () {
@@ -30,13 +32,13 @@ define(function (require, exports, module) {
         }).render();
 
         // Fetch data
-        formEntities.fetch().then(
+        formEntity.fetch().then(
             function () {
                 app.useLayout('layouts/main').setViews({
                     '.header': new HeaderView(),
                     '.breadcrumb-container': new BreadcrumbView(),
                     '.main-container': new FormView({
-                        model: formEntities.get(app.store.get('formId'))
+                        model: formEntity
                     })
                 }).render();
 
@@ -45,16 +47,16 @@ define(function (require, exports, module) {
         );
     };
 
-    formModule.createNew = function () {
+    formModule.createNew = function (templateId) {
       console.log('add new form here');
 
-        formEntities.create(null, {
+        formEntities.create({templateId: templateId}, {
             // waits for server to respond with 200
             // before adding newly created model to collection
             wait : true,
             success : function(model){
                 console.log('success callback', model);
-                url = '/equifit/client/' + app.store.get('clientId') + '/equifit/' + app.store.get('equifitId') + '/form/' + model.get('_id');
+                url = '/equifit/client/' + app.store.get('clientId') + '/equifit/' + app.store.get('equifitId') + '/form/' + model.id;
                 app.router.navigate(url, { trigger: true });
             },
             error : function(err) {

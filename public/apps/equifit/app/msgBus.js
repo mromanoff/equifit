@@ -37,9 +37,9 @@ define(function (require, exports, module) {
         });
     });
 
-    msgBus.on('equifit:form:create', function(){
+    msgBus.on('equifit:form:create', function(templateId){
         require(['controllers/form'], function (controller) {
-            controller.createNew();
+            controller.createNew(templateId);
         });
     });
 

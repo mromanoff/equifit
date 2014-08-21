@@ -11,13 +11,21 @@ define(function (require, exports, module) {
         defaults: {
             title: null,
             templateId: null,
-            isComplete: false,
             totalQuestions: null,
             totalCompletedQuestions: null,
             schema: null,
             fieldsets: null,
             data: null
         },
+
+        url: function () {
+            if(_.isNull(app.store.get('formId'))) {
+                return '/equifit/api/clients/' + app.store.get('clientId') + '/equifits/' + app.store.get('equifitId') + '/documents/';
+            } else {
+                return '/equifit/api/clients/' + app.store.get('clientId') + '/equifits/' + app.store.get('equifitId') + '/documents/' + app.store.get('formId');
+            }
+        },
+
 
         parse: function (response) {
             // backbone-forms needs 'schema' property. in mongoose 'schema' is reserved word.

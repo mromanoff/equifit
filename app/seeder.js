@@ -11,9 +11,9 @@ module.exports = {
                     appointmentAt: "2014-03-15T13:30:00",
                     updatedAt: null,
                     trainerName: "Josh Smith",
+                    trainerFacility: "Tribeca",
                     clientName: "Donna Summer",
                     clientId: 100000,
-                    trainerFacility: "Tribeca",
                     isSigned: false,
                     isValidated: false,
                     documents: [
@@ -21,62 +21,64 @@ module.exports = {
                             _id: "53ed60ebb4932fec89e19a40",
                             templateId: 66,
                             title: "Consent Form",
-                            isComplete: false,
+                            templateType: "InformedConsent",
                             totalQuestions: 1,
                             totalCompletedQuestions: 0
                         },
 
                         {
-                           // _id: "53ed60ebb4932fec89e19a48",
+                            _id: "53ed60ebb4932fec89e19a48",
                             title: "PAR-Q",
                             templateId: 2,
+                            templateType: 2,
                             totalQuestions: 5,
                             totalCompletedQuestions: 2
                         },
                         {
-                           // _id: "53ed60ebb4932fec89e19a49",
+                            _id: "53ed60ebb4932fec89e19a49",
                             title: "Personal Info",
                             templateId: 2,
+                            templateType: 2,
                             totalQuestions: 5,
                             totalCompletedQuestions: 2
                         },
                         {
-                           // _id: "53ed60ebb4932fec89e19a50",
+                            _id: "53ed60ebb4932fec89e19a50",
                             templateId: 4,
+                            templateType: 2,
                             title: "Goals",
-                            isComplete: false,
                             totalQuestions: 12,
                             totalCompletedQuestions: 1
                         },
                         {
-                           // _id: "53ed60ebb4932fec89e19a51",
+                            _id: "53ed60ebb4932fec89e19a51",
                             templateId: 5,
+                            templateType: 2,
                             title: "Orthopedic",
-                            isComplete: false,
                             totalQuestions: 13,
                             totalCompletedQuestions: 0
                         },
                         {
-                           // _id: "53ed60ebb4932fec89e19a52",
+                            _id: "53ed60ebb4932fec89e19a52",
                             templateId: 6,
+                            templateType: 2,
                             title: "Exercise History",
-                            isComplete: false,
                             totalQuestions: 7,
                             totalCompletedQuestions: 6
                         },
                         {
-                           // _id: "53ed60ebb4932fec89e19a53",
+                            _id: "53ed60ebb4932fec89e19a53",
                             templateId: 7,
+                            templateType: 2,
                             title: "Lifestyle",
-                            isComplete: false,
                             totalQuestions: 15,
                             totalCompletedQuestions: 10
                         },
                         {
-                           // _id: "53ed60ebb4932fec89e19a54",
+                            _id: "53ed60ebb4932fec89e19a54",
                             templateId: 8,
+                            templateType: 2,
                             title: "Physical Test",
-                            isComplete: true,
                             totalQuestions: 5,
                             totalCompletedQuestions: 5
                         }
@@ -91,17 +93,17 @@ module.exports = {
                     appointmentAt: "2014-05-01T13:30:00",
                     updatedAt: "2014-08-02T13:30:00",
                     trainerName: "Billy Joel",
+                    trainerFacility: "895 Broadway",
                     clientName: "Donna Summer",
                     clientId: 100000,
-                    trainerFacility: "895 Broadway",
                     isSigned: false,
                     isValidated: false,
                     documents: [
                         {
                             _id: "53ed60ebb4932fec89e19a40",
                             templateId: 66,
+                            templateType: "InformedConsent",
                             title: "Consent Form",
-                            isComplete: false,
                             totalQuestions: 1,
                             totalCompletedQuestions: 0
                         },
@@ -110,6 +112,7 @@ module.exports = {
                             _id: "53ed60ebb4932fec89e19a48",
                             title: "PAR-Q",
                             templateId: 2,
+                            templateType: 2,
                             totalQuestions: 5,
                             totalCompletedQuestions: 2
                         },
@@ -117,46 +120,47 @@ module.exports = {
                             _id: "53ed60ebb4932fec89e19a49",
                             title: "Personal Info",
                             templateId: 2,
+                            templateType: 2,
                             totalQuestions: 5,
                             totalCompletedQuestions: 2
                         },
                         {
                             _id: "53ed60ebb4932fec89e19a50",
                             templateId: 4,
+                            templateType: 2,
                             title: "Goals",
-                            isComplete: false,
                             totalQuestions: 12,
                             totalCompletedQuestions: 1
                         },
                         {
                             _id: "53ed60ebb4932fec89e19a51",
                             templateId: 5,
+                            templateType: 2,
                             title: "Orthopedic",
-                            isComplete: false,
                             totalQuestions: 13,
                             totalCompletedQuestions: 0
                         },
                         {
                             _id: "53ed60ebb4932fec89e19a52",
                             templateId: 6,
+                            templateType: 2,
                             title: "Exercise History",
-                            isComplete: false,
                             totalQuestions: 7,
                             totalCompletedQuestions: 6
                         },
                         {
                             _id: "53ed60ebb4932fec89e19a53",
                             templateId: 7,
+                            templateType: 2,
                             title: "Lifestyle",
-                            isComplete: false,
                             totalQuestions: 15,
                             totalCompletedQuestions: 10
                         },
                         {
                             _id: "53ed60ebb4932fec89e19a54",
                             templateId: 8,
+                            templateType: 2,
                             title: "Physical Test",
-                            isComplete: true,
                             totalQuestions: 5,
                             totalCompletedQuestions: 5
                         }
@@ -180,8 +184,8 @@ module.exports = {
                         {
                             _id: "53ed60ebb4932fec89e19a40",
                             templateId: 66,
+                            templateType: "InformedConsent",
                             title: "Consent Form",
-                            isComplete: false,
                             totalQuestions: 1,
                             totalCompletedQuestions: 0
                         },
@@ -190,6 +194,7 @@ module.exports = {
                             _id: "53ed60ebb4932fec89e19a48",
                             title: "PAR-Q",
                             templateId: 2,
+                            templateType: 2,
                             totalQuestions: 5,
                             totalCompletedQuestions: 2
                         },
@@ -197,46 +202,47 @@ module.exports = {
                             _id: "53ed60ebb4932fec89e19a49",
                             title: "Personal Info",
                             templateId: 2,
+                            templateType: 2,
                             totalQuestions: 5,
                             totalCompletedQuestions: 2
                         },
                         {
                             _id: "53ed60ebb4932fec89e19a50",
                             templateId: 4,
+                            templateType: 2,
                             title: "Goals",
-                            isComplete: false,
                             totalQuestions: 12,
                             totalCompletedQuestions: 1
                         },
                         {
                             _id: "53ed60ebb4932fec89e19a51",
                             templateId: 5,
+                            templateType: 2,
                             title: "Orthopedic",
-                            isComplete: false,
                             totalQuestions: 13,
                             totalCompletedQuestions: 0
                         },
                         {
                             _id: "53ed60ebb4932fec89e19a52",
                             templateId: 6,
+                            templateType: 2,
                             title: "Exercise History",
-                            isComplete: false,
                             totalQuestions: 7,
                             totalCompletedQuestions: 6
                         },
                         {
                             _id: "53ed60ebb4932fec89e19a53",
                             templateId: 7,
+                            templateType: 2,
                             title: "Lifestyle",
-                            isComplete: false,
                             totalQuestions: 15,
                             totalCompletedQuestions: 10
                         },
                         {
                             _id: "53ed60ebb4932fec89e19a54",
                             templateId: 8,
+                            templateType: 2,
                             title: "Physical Test",
-                            isComplete: true,
                             totalQuestions: 5,
                             totalCompletedQuestions: 5
                         }
@@ -260,8 +266,8 @@ module.exports = {
                         {
                             _id: "53ed60ebb4932fec89e19a40",
                             templateId: 66,
+                            templateType: "InformedConsent",
                             title: "Consent Form",
-                            isComplete: false,
                             totalQuestions: 1,
                             totalCompletedQuestions: 0
                         },
@@ -270,6 +276,7 @@ module.exports = {
                             _id: "53ed60ebb4932fec89e19a48",
                             title: "PAR-Q",
                             templateId: 2,
+                            templateType: 2,
                             totalQuestions: 5,
                             totalCompletedQuestions: 2
                         },
@@ -277,46 +284,47 @@ module.exports = {
                             _id: "53ed60ebb4932fec89e19a49",
                             title: "Personal Info",
                             templateId: 2,
+                            templateType: 2,
                             totalQuestions: 5,
                             totalCompletedQuestions: 2
                         },
                         {
                             _id: "53ed60ebb4932fec89e19a50",
                             templateId: 4,
+                            templateType: 2,
                             title: "Goals",
-                            isComplete: false,
                             totalQuestions: 12,
                             totalCompletedQuestions: 1
                         },
                         {
                             _id: "53ed60ebb4932fec89e19a51",
                             templateId: 5,
+                            templateType: 2,
                             title: "Orthopedic",
-                            isComplete: false,
                             totalQuestions: 13,
                             totalCompletedQuestions: 0
                         },
                         {
                             _id: "53ed60ebb4932fec89e19a52",
                             templateId: 6,
+                            templateType: 2,
                             title: "Exercise History",
-                            isComplete: false,
                             totalQuestions: 7,
                             totalCompletedQuestions: 6
                         },
                         {
                             _id: "53ed60ebb4932fec89e19a53",
                             templateId: 7,
+                            templateType: 2,
                             title: "Lifestyle",
-                            isComplete: false,
                             totalQuestions: 15,
                             totalCompletedQuestions: 10
                         },
                         {
                             _id: "53ed60ebb4932fec89e19a54",
                             templateId: 8,
+                            templateType: 2,
                             title: "Physical Test",
-                            isComplete: true,
                             totalQuestions: 5,
                             totalCompletedQuestions: 5
                         }
@@ -336,8 +344,8 @@ module.exports = {
                 var newForm = new models.Form({
                     _id: "53ed60ebb4932fec89e19a40",
                     templateId: 66,
+                    templateType: "InformedConsent",
                     title: "Consent Form",
-                    isComplete: false,
                     totalQuestions: 1,
                     totalCompletedQuestions: 0,
                     formSchema: {
@@ -364,8 +372,8 @@ module.exports = {
                 newForm = new models.Form({
                     _id: "53ed60ebb4932fec89e19a48",
                     templateId: 2,
+                    templateType: 2,
                     title: "PAR-Q",
-                    isComplete: false,
                     totalQuestions: 5,
                     totalCompletedQuestions: 2,
                     formSchema: {
@@ -382,7 +390,7 @@ module.exports = {
                     fieldsets: [
                         {
                             legend: "Member Information",
-                            fields: ["title", "name", "email", "testHidden"]
+                            fields: ["title", "name", "email"]
                         }
                     ],
 
@@ -399,8 +407,8 @@ module.exports = {
                 newForm = new models.Form({
                     _id: "53ed60ebb4932fec89e19a49",
                     templateId: 3,
+                    templateType: 2,
                     title: "Personal Info",
-                    isComplete: false,
                     totalQuestions: 10,
                     totalCompletedQuestions: 3,
                     formSchema: {
@@ -417,7 +425,7 @@ module.exports = {
                     fieldsets: [
                         {
                             legend: "Member Information",
-                            fields: ["title", "name", "email", "testHidden"]
+                            fields: ["title", "name", "email"]
                         }
                     ],
 
@@ -434,8 +442,8 @@ module.exports = {
                 newForm = new models.Form({
                     _id: "53ed60ebb4932fec89e19a50",
                     templateId: 4,
+                    templateType: 2,
                     title: "Goals",
-                    isComplete: false,
                     totalQuestions: 12,
                     totalCompletedQuestions: 1,
                     formSchema: {
@@ -452,7 +460,7 @@ module.exports = {
                     fieldsets: [
                         {
                             legend: "Member Information",
-                            fields: ["title", "name", "email", "testHidden"]
+                            fields: ["title", "name", "email"]
                         }
                     ],
 
@@ -469,8 +477,8 @@ module.exports = {
                 newForm = new models.Form({
                     _id: "53ed60ebb4932fec89e19a51",
                     templateId: 5,
+                    templateType: 2,
                     title: "Orthopedic",
-                    isComplete: false,
                     totalQuestions: 13,
                     totalCompletedQuestions: 0,
                     formSchema: {
@@ -487,7 +495,7 @@ module.exports = {
                     fieldsets: [
                         {
                             legend: "Member Information",
-                            fields: ["title", "name", "email", "testHidden"]
+                            fields: ["title", "name", "email"]
                         }
                     ],
 
@@ -504,8 +512,8 @@ module.exports = {
                 newForm = new models.Form({
                     _id: "53ed60ebb4932fec89e19a52",
                     templateId: 6,
+                    templateType: 2,
                     title: "Exercise History",
-                    isComplete: false,
                     totalQuestions: 7,
                     totalCompletedQuestions: 6,
                     formSchema: {
@@ -522,7 +530,7 @@ module.exports = {
                     fieldsets: [
                         {
                             legend: "Member Information",
-                            fields: ["title", "name", "email", "testHidden"]
+                            fields: ["title", "name", "email"]
                         }
                     ],
 
@@ -539,8 +547,8 @@ module.exports = {
                 newForm = new models.Form({
                     _id: "53ed60ebb4932fec89e19a53",
                     templateId: 7,
+                    templateType: 2,
                     title: "Lifestyle",
-                    isComplete: false,
                     totalQuestions: 15,
                     totalCompletedQuestions: 10,
                     formSchema: {
@@ -557,7 +565,7 @@ module.exports = {
                     fieldsets: [
                         {
                             legend: "Member Information",
-                            fields: ["title", "name", "email", "testHidden"]
+                            fields: ["title", "name", "email"]
                         }
                     ],
 
@@ -574,8 +582,8 @@ module.exports = {
                 newForm = new models.Form({
                     _id: "53ed60ebb4932fec89e19a54",
                     templateId: 8,
+                    templateType: 2,
                     title: "Physical Test",
-                    isComplete: true,
                     totalQuestions: 5,
                     totalCompletedQuestions: 5,
                     formSchema: {
@@ -592,7 +600,7 @@ module.exports = {
                     fieldsets: [
                         {
                             legend: "Member Information",
-                            fields: ["title", "name", "email", "testHidden"]
+                            fields: ["title", "name", "email"]
                         }
                     ],
 

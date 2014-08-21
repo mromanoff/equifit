@@ -25,11 +25,11 @@ define(function (require, exports, module) {
             e.preventDefault();
             var url = '/equifit/client/' + app.store.get('clientId') + '/equifit/' + app.store.get('equifitId');
 
-            if(this.model.has('_id')) {
+            if(this.model.has('id')) {
                 // /equifit/member/{1234}/equifit/{123}/form/{123}  GET
-                url = url + '/form/' + this.model.get('_id');
+                url = url + '/form/' + this.model.id;
             } else {
-                msgBus.trigger('equifit:form:create');
+                msgBus.trigger('equifit:form:create', this.model.get('templateId'));
             }
 
             //app.store.set({
