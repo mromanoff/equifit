@@ -7,9 +7,9 @@ define(function(require) {
     var moment = require('moment');
 
     // Test that the Router exists.
-    describe("Equifits View Module", function() {
+    describe('Equifits View Module', function() {
 
-        it("EquifitsViewModule exists", function() {
+        it('EquifitsViewModule exists', function() {
             expect(EquifitsViewModule).toBeTruthy();
             expect(EquifitsViewModule instanceof Object).toBe(true);
             expect(EquifitsViewModule.prototype instanceof Backbone.View).toBe(true);
@@ -17,12 +17,12 @@ define(function(require) {
 
         describe('EquifitsViewModule has external dependencies', function () {
 
-            it("app exists", function() {
+            it('app exists', function() {
                 expect(app).toBeTruthy();
                 expect(app instanceof Object).toBe(true);
             });
 
-            it("Moment JS exists", function() {
+            it('Moment JS exists', function() {
                 expect(moment).toBeTruthy();
             });
 

@@ -1,5 +1,5 @@
 define(function(require) {
-    "use strict";
+    'use strict';
 
     var EquifitEntities = require('entities/equifits');
     var EquifitEntity = require('entities/equifit');
@@ -36,7 +36,7 @@ define(function(require) {
     };
 
     // Test that the Router exists.
-    describe("Equifit Entities Collection", function() {
+    describe('Equifit Entities Collection', function() {
 
         it('should exist', function(){
             expect(EquifitEntities).toBeDefined();
@@ -48,14 +48,14 @@ define(function(require) {
             expect(equifits.url).toBeDefined();
         });
 
-        it("calls url function", function() {
+        it('calls url function', function() {
             var equifits = new EquifitEntities();
-            spyOn(equifits, "url");
+            spyOn(equifits, 'url');
             equifits.url();
             expect(equifits.url).toHaveBeenCalled();
         });
 
-        it("url function return string value", function() {
+        it('url function return string value', function() {
             var equifits = new EquifitEntities();
             expect(equifits.url()).toEqual(jasmine.any(String));
         });

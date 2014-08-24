@@ -4,7 +4,7 @@
  */
 
 define(function (require, exports, module) {
-    "use strict";
+    'use strict';
 
     var Backbone = require('backbone');
     var StoreEntity;

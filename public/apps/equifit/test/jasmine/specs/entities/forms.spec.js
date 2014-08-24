@@ -10,30 +10,30 @@ define(function(require) {
             forms: [
                 {
                     templateId: 3,
-                    title: "Personal Info",
+                    title: 'Personal Info',
                     isComplete: false,
                     totalQuestions: 10,
                     totalCompletedQuestions: 3,
                     formSchema: {
                         title: {
-                            type: "Select",
-                            options: ["", "Mr", "Mrs", "Ms"]
+                            type: 'Select',
+                            options: ['', 'Mr', 'Mrs', 'Ms']
                         },
-                        name: "Text",
+                        name: 'Text',
                         email: {
-                            validators: ["required", "email"]
+                            validators: ['required', 'email']
                         }
                     },
 
                     fieldsets: [{
-                        legend: "Member Information",
-                        fields: ["title", "name", "email", "testHidden"]
+                        legend: 'Member Information',
+                        fields: ['title', 'name', 'email', 'testHidden']
                     }],
 
                     data: {
-                        title: "Mr",
-                        name: "Bob Marley",
-                        email: "b.marley@test.com"
+                        title: 'Mr',
+                        name: 'Bob Marley',
+                        email: 'b.marley@test.com'
                     }
                 }
             ]
@@ -41,7 +41,7 @@ define(function(require) {
     };
 
     // Test that the Router exists.
-    describe("Form Entities Collection", function() {
+    describe('Form Entities Collection', function() {
 
         it('should exist', function(){
             expect(FormEntities).toBeDefined();
@@ -52,13 +52,13 @@ define(function(require) {
             expect(forms.url).toBeDefined();
         });
 
-        it("calls url function", function() {
-            spyOn(forms, "url");
+        it('calls url function', function() {
+            spyOn(forms, 'url');
             forms.url();
             expect(forms.url).toHaveBeenCalled();
         });
 
-        it("url function return string value", function() {
+        it('url function return string value', function() {
             expect(forms.url()).toEqual(jasmine.any(String));
         });
 

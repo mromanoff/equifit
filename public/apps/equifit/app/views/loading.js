@@ -1,7 +1,6 @@
 define(function (require, exports, module) {
     'use strict';
 
-    var app = require('app');
     var Backbone = require('backbone');
     var Spinner = require('spin');
     var LoadingViewModule;
@@ -14,8 +13,8 @@ define(function (require, exports, module) {
 
         initialize: function(opt){
             var options = _.extend({}, opt);
-            this.title = options.title || "Loading Data";
-            this.message = options.message || "Please wait, data is loading.";
+            this.title = options.title || 'Loading Data';
+            this.message = options.message || 'Please wait, data is loading.';
         },
 
         serialize: function () {
@@ -38,9 +37,7 @@ define(function (require, exports, module) {
                 shadow: false, // Whether to render a shadow
                 hwaccel: false, // Whether to use hardware acceleration
                 className: 'spinner', // The CSS class to assign to the spinner
-                zIndex: 2e9, // The z-index (defaults to 2000000000)
-
-
+                zIndex: 2e9 // The z-index (defaults to 2000000000)
             };
 
             var target = document.getElementById(this.el.id);

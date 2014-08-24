@@ -2,10 +2,10 @@ define(function(require) {
     'use strict';
 
     var FormEntity = require('entities/form');
-    var form = new FormEntity;
+    var form = new FormEntity();
 
     // Test that the Router exists.
-    describe("Form Entity Model", function() {
+    describe('Form Entity Model', function() {
 
         it('should exist', function(){
             expect(FormEntity).toBeDefined();
@@ -15,20 +15,19 @@ define(function(require) {
         it('should have certain defaults', function(){
             expect(form.get('title')).toBeNull();
             expect(form.get('templateId')).toBeNull();
-            expect(form.get('isComplete')).toBe(false);
+            expect(form.get('templateType')).toBeNull();
             expect(form.get('totalQuestions')).toBeNull();
             expect(form.get('totalCompletedQuestions')).toBeNull();
             expect(form.get('schema')).toBeNull();
             expect(form.get('fieldsets')).toBeNull();
             expect(form.get('data')).toBeNull();
-            expect(form.get('slug')).toBeNull();
         });
 
         it('should have parse method', function(){
             expect(form.parse).toBeDefined();
         });
 
-        it("parse method return object value", function() {
+        it('parse method return object value', function() {
             expect(form.parse({})).toEqual(jasmine.any(Object));
         });
 

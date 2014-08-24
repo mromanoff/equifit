@@ -1,13 +1,12 @@
 define(function (require, exports, module) {
     'use strict';
 
-    var app = require('app');
     var ModalView = require('views/modal');
     var modalModule = {};
 
     modalModule.init = function (model) {
         var layout = new Backbone.Layout({
-            el: "#modal"
+            el: '#modal'
         });
 
         layout.setView('', new ModalView({

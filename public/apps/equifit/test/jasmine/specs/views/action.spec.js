@@ -7,9 +7,9 @@ define(function(require) {
     var Backbone = require('backbone');
 
     // Test that the Router exists.
-    describe("Action View Module", function() {
+    describe('Action View Module', function() {
 
-        it("ActionViewModule exists", function() {
+        it('ActionViewModule exists', function() {
             expect(ActionViewModule).toBeTruthy();
             expect(ActionViewModule instanceof Object).toBe(true);
             expect(ActionViewModule.prototype instanceof Backbone.View).toBe(true);
@@ -17,12 +17,12 @@ define(function(require) {
 
         describe('HeaderViewModule has external dependencies', function () {
 
-            it("app exists", function() {
+            it('app exists', function() {
                 expect(app).toBeTruthy();
                 expect(app instanceof Object).toBe(true);
             });
 
-            it("Backbone exists", function() {
+            it('Backbone exists', function() {
                 expect(Backbone).toBeTruthy();
             });
         });

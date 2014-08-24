@@ -5,7 +5,7 @@ define(function (require, exports, module) {
     var Backbone = require('backbone');
     var Layout = require('backbone.layoutmanager');
     var Store = require('./entities/store');
-    var moment = require('moment');
+    //var moment = require('moment');
     require('bootstrap');
 
     // Provide a global location to place configuration settings and module
@@ -33,7 +33,7 @@ define(function (require, exports, module) {
             // production, ensure they are all attached here.
             var JST = window.JST || {};
             // Concatenate the file extension.
-            path = path + ".html";
+            path = path + '.html';
 
             // If the path exists in the object, use it instead of fetching remotely.
             if (JST[path]) {
@@ -53,8 +53,6 @@ define(function (require, exports, module) {
         }
     });
 
-
-
     // for debug
     window.store =  app.store;
 
@@ -63,7 +61,7 @@ define(function (require, exports, module) {
         // Helper for using layouts.
         useLayout: function (name) {
             var layout = new Backbone.Layout({
-                el: "#main",
+                el: '#main',
                 template: name
             });
 

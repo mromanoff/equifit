@@ -4,7 +4,7 @@ define(function(require) {
     var Store = require('entities/store');
     var store = new Store();
 
-    describe("Store Entity Model", function() {
+    describe('Store Entity Model', function() {
         it('should exist', function(){
             expect(Store).toBeDefined();
             expect(Store.prototype instanceof Backbone.Model).toBe(true);

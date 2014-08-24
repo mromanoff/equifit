@@ -1,5 +1,5 @@
 (function (window) {
-    "use strict";
+    'use strict';
 
     var karma = window.__karma__;
 
@@ -20,28 +20,28 @@
     // Set the application endpoint and load the configuration.
     require.config({
         paths: {
-            underscore: "../bower_components/lodash/dist/lodash.underscore"
-            //jquery: "../bower_components/jquery/dist/jquery",
-            //bootstrap: "../../../dist/bootstrap.min"
+            underscore: '../bower_components/lodash/dist/lodash.underscore'
+            //jquery: '../bower_components/jquery/dist/jquery',
+            //bootstrap: '../../../dist/bootstrap.min'
         },
 
         shim: {
-            "bootstrap": ["jquery"]
+            'bootstrap': ['jquery']
         },
 
-        baseUrl: "base/app"
+        baseUrl: 'base/app'
     });
 
     require([
-            "config",
-            "underscore"
+            'config',
+            'underscore'
         ],
 
         function (config, _) {
             // Ensure templates can be found correctly.
             require.config({
                 lodashLoader: {
-                    root: "/base/app/templates"
+                    root: '/base/app/templates'
                 }
             });
 

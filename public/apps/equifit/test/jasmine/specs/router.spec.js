@@ -1,16 +1,16 @@
 define(function(require) {
-  "use strict";
+  'use strict';
 
-  var Backbone = require("backbone");
-  var Router = require("router");
+  var Backbone = require('backbone');
+  var Router = require('router');
 
   // Test that the Router exists.
-  describe("Application Router", function() {
-    it("exists", function() {
+  describe('Application Router', function() {
+    it('exists', function() {
       expect(Router).toBeTruthy();
     });
 
-    it("is a Backbone.Router", function() {
+    it('is a Backbone.Router', function() {
       expect(Router.prototype instanceof Backbone.Router).toBe(true);
     });
   });

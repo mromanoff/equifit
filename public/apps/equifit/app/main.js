@@ -1,5 +1,7 @@
 // Kick off the application.
 require(['app', 'router'], function (app, Router) {
+    'use strict';
+
     // Define your master router on the application namespace and trigger all
     // navigation from this instance.
     app.router = new Router();

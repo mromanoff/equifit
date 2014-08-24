@@ -1,7 +1,6 @@
 define(function (require, exports, module) {
     'use strict';
 
-    var app = require('app');
     var msgBus = require('msgbus');
     var Backbone = require('backbone');
     var Form = require('backbone-forms');
