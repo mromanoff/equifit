@@ -1,34 +1,33 @@
-/*
 define(function(require) {
     'use strict';
 
-    var FormsModule = require('controllers/forms');
+    var EquifitModule = require('controllers/equifit');
 
     var app = require('app');
     var FormsEntities = require('entities/forms');
-    var FormsView = require('views/forms');
+    var EquifitView = require('views/equifit');
     var HeaderView = require('views/header');
     var BreadcrumbView = require('views/breadcrumb');
 
     // Test that the Router exists.
     describe('Forms Controller Module', function() {
 
-        it('FormsModule exists', function() {
-            expect(FormsModule).toBeTruthy();
-            expect(FormsModule instanceof Object).toBe(true);
+        it('EquifitModule exists', function() {
+            expect(EquifitModule).toBeTruthy();
+            expect(EquifitModule instanceof Object).toBe(true);
         });
 
-        it('FormsModule has init method', function() {
-            expect(FormsModule.init).toBeTruthy();
-            expect(FormsModule.init instanceof Function).toBe(true);
+        it('EquifitModule has init method', function() {
+            expect(EquifitModule.init).toBeTruthy();
+            expect(EquifitModule.init instanceof Function).toBe(true);
         });
 
-        xit('FormsModule set app.store params', function() {
+        xit('EquifitModule set app.store params', function() {
             expect(app.store.get('pageTitle')).toEqual('Equifits Forms');
             expect(app.store.get('slug')).toEqual('forms');
         });
 
-        describe('FormsModule has external dependencies', function () {
+        describe('EquifitModule has external dependencies', function () {
 
             it('app exists', function() {
                 expect(app).toBeTruthy();
@@ -40,7 +39,7 @@ define(function(require) {
             });
 
             it('FormsView is a Backbone.View', function() {
-                expect(FormsView.prototype instanceof Backbone.View).toBe(true);
+                expect(EquifitView.prototype instanceof Backbone.View).toBe(true);
             });
 
             it('HeaderView is a Backbone.View', function() {
@@ -53,4 +52,3 @@ define(function(require) {
         });
     });
 });
-*/

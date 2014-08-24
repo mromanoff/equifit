@@ -216,16 +216,19 @@ module.exports = {
 
     updateDocument: function (req, res) {
         var obj = req.body;
+
+        //console.log('obj', obj);
+
         var id = obj._id;
         delete obj._id;
         if (id) {
             models.Form.update({_id: id}, obj, function (err, data) {
                 if (err) {
-                    res.json({error: 'Error saving equifit.'});
+                    res.json({error: 'Error saving document.'});
                 } else {
                     console.log('PUT DATA', data);
-
-                    res.json(data);
+                    console.log('Updated document', obj);
+                    res.json(obj);
                 }
             });
         }
