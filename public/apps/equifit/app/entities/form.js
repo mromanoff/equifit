@@ -20,6 +20,10 @@ define(function (require, exports, module) {
             data: null
         },
 
+        //initialize: function () {
+        //    console.log('Form Model init: ', this.url());
+        //},
+
         url: function () {
             if(_.isNull(app.store.get('formId'))) {
                 return '/equifit/api/clients/' + app.store.get('clientId') + '/equifits/' + app.store.get('equifitId') + '/documents/';

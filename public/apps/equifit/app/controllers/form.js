@@ -31,12 +31,9 @@ define(function (require, exports, module) {
             })
         }).render();
 
-        // Fetch data
-        formEntity.fetch({id: app.store.get('formId')}).then(
+
+        formEntity.fetch().then(
             function () {
-
-                console.log('Form data fetched', formEntity);
-
                 app.useLayout('layouts/main').setViews({
                     '.header': new HeaderView(),
                     '.breadcrumb-container': new BreadcrumbView(),
