@@ -15,6 +15,7 @@ define(function (require, exports, module) {
             totalQuestions: null,
             totalCompletedQuestions: null,
             schema: null,
+            formSchema: null,
             fieldsets: null,
             data: null
         },
@@ -27,13 +28,17 @@ define(function (require, exports, module) {
             }
         },
 
-        //parse: function (response) {
-        //    // backbone-forms needs 'schema' property. in mongoose 'schema' is reserved word.
-        //    // In mongoose we had to name it as a formSchema
-        //    response.schema = _.clone(response.formSchema);
-        //    delete response.formSchema;
-        //    return response;
+        //urlRoot: function () {
+        //    return '/equifit/api/clients/' + app.store.get('clientId') + '/equifits/' + app.store.get('equifitId') + '/documents/';
         //},
+
+        parse: function (response) {
+            // backbone-forms needs 'schema' property. in mongoose 'schema' is reserved word.
+            // In mongoose we had to name it as a formSchema
+            response.schema = _.clone(response.formSchema);
+            delete response.formSchema;
+            return response;
+        },
 
         updateForm: function (model) {
             var deferred = $.Deferred();

@@ -27,7 +27,7 @@ define(function (require, exports, module) {
             var url = '/equifit/client/' + app.store.get('clientId') + '/equifit/' + app.store.get('equifitId');
 
 
-            console.log('this.model', this.model);
+            console.log('GetForm this.model', this.model);
 
             if(!_.isNull(this.model.id)) {
                 // /equifit/member/{1234}/equifit/{123}/form/{123}  GET

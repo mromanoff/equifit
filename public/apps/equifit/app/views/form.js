@@ -28,7 +28,7 @@ define(function (require, exports, module) {
             var formModel =  new FormModel(this.model.get('data'));
 
 
-            console.log('form model', formModel);
+            console.log('backbone form model', formModel);
 
             // render form
             form = new Form({

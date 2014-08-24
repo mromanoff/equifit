@@ -32,10 +32,10 @@ define(function (require, exports, module) {
         }).render();
 
         // Fetch data
-        formEntity.fetch().then(
+        formEntity.fetch({id: app.store.get('formId')}).then(
             function () {
 
-                console.log('form entity fetched', formEntity);
+                console.log('Form data fetched', formEntity);
 
                 app.useLayout('layouts/main').setViews({
                     '.header': new HeaderView(),
@@ -51,8 +51,6 @@ define(function (require, exports, module) {
     };
 
     formModule.createNew = function (templateId) {
-      console.log('add new form here');
-
         formEntities.create({templateId: templateId}, {
             // waits for server to respond with 200
             // before adding newly created model to collection

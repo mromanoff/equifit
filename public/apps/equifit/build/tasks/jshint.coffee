@@ -8,5 +8,5 @@ module.exports = ->
     build:
       src: [
         "app/**/*.js"
-        "test/**/*.js"
+        "test/jasmine/**/*.js"
       ]
