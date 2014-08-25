@@ -30,8 +30,7 @@ define(function (require, exports, module) {
 
         getEquifit: function (e) {
             e.preventDefault();
-            // /equifit/member/{1234}/equifit/{123}
-            var url = '/equifit/client/' + app.store.get('clientId') + '/equifit/' + this.model.id;
+            var url = 'client/' + app.store.get('clientId') + '/equifit/' + this.model.id;
 
             // udpate store model
             msgBus.trigger('equifit:store:update', {

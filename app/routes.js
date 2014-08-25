@@ -19,8 +19,6 @@ module.exports.initialize = function(app) {
     app.get('/', home.index);
     app.get('/clients/client*', client.index);
     app.get('/equifit', equifit.equifit);
-    // match all others to make Single Page App Work
-    app.get('/equifit/*', equifit.equifit);
 };
 
 

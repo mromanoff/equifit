@@ -5,7 +5,6 @@ define(function (require, exports, module) {
     var Backbone = require('backbone');
     var Layout = require('backbone.layoutmanager');
     var Store = require('./entities/store');
-    //var moment = require('moment');
     require('bootstrap');
 
     // Provide a global location to place configuration settings and module

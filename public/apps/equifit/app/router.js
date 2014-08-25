@@ -1,16 +1,17 @@
 define(function (require, exports, module) {
     'use strict';
 
-    var msgBus = require('msgbus');
     var Backbone = require('backbone');
+    var msgBus = require('msgbus');
 
     // Defining the application router.
     var Router = Backbone.Router.extend({
+
         routes: {
-            'equifit/client/:id(/)': 'equifit',
-            'equifit/client/:id/equifit/:id': 'equifit',
-            'equifit/client/:id/equifit/:id/form/:id': 'equifit',
-            'equifit/client/:id/create(/)': 'createEquifit'
+            'client/:id(/)': 'equifit',
+            'client/:id/equifit/:id': 'equifit',
+            'client/:id/equifit/:id/form/:id': 'equifit',
+            'client/:id/create(/)': 'createEquifit'
         },
 
         equifit: function (clientId, equifitId, formId) {

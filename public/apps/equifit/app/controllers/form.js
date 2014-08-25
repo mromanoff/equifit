@@ -54,13 +54,13 @@ define(function (require, exports, module) {
             wait : true,
             success : function(model){
                 console.log('success callback', model);
-                url = '/equifit/client/' + app.store.get('clientId') + '/equifit/' + app.store.get('equifitId') + '/form/' + model.id;
+                url = 'client/' + app.store.get('clientId') + '/equifit/' + app.store.get('equifitId') + '/form/' + model.id;
                 app.router.navigate(url, { trigger: true });
             },
             error : function(err) {
                 console.log('ERROR: can\'t create new forms', err);
 
-                url = '/equifit/error';
+                url = 'error';
                 app.router.navigate(url, { trigger: true });
             }
         });

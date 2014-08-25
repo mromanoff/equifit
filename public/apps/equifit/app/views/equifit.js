@@ -17,20 +17,11 @@ define(function (require, exports, module) {
             return this.model.toJSON();
         },
 
-        //initialize: function () {
-        //    console.log('Equifit: form model ', this.model.toJSON());
-        //},
-
         getForm: function (e) {
             e.preventDefault();
-
-            var url = '/equifit/client/' + app.store.get('clientId') + '/equifit/' + app.store.get('equifitId');
-
-
-            console.log('GetForm this.model', this.model);
+            var url = 'client/' + app.store.get('clientId') + '/equifit/' + app.store.get('equifitId');
 
             if(!_.isNull(this.model.id)) {
-                // /equifit/member/{1234}/equifit/{123}/form/{123}  GET
                 url = url + '/form/' + this.model.id;
                 app.router.navigate(url, {trigger: true});
 
@@ -43,8 +34,6 @@ define(function (require, exports, module) {
             //    formName: this.model.get('title'),
             //    formId: this.model.get('_id')
             //});
-
-
         }
     });
 

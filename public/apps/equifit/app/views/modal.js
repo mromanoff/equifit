@@ -42,7 +42,9 @@ define(function (require, exports, module) {
 
             if($(e.currentTarget).data('validate')) {
                 console.log('set isValidate to true');
-                this.model.set({isValidated: true});
+                this.model.set({
+                    isValidated: true
+                });
             }
 
             msgBus.trigger('equifit:equifit:update', this.model);

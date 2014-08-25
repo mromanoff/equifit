@@ -18,7 +18,7 @@ define(function (require, exports, module) {
         // update store model
         msgBus.trigger('equifit:store:update', {
             title: 'Equifits',
-            url: '/equifit/client/' + app.store.get('clientId'),
+            //url: '/equifit/client/' + app.store.get('clientId'),
             slug: 'equifit'
         });
 

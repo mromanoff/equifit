@@ -20,8 +20,9 @@ define(function (require, exports, module) {
         // update store model
         msgBus.trigger('equifit:store:update', {
             title: 'Forms',
-            slug: 'forms',
-            url: '/equifit/client/' + app.store.get('clientId') + '/equifits/' + app.store.get('equifitId')
+            slug: 'forms'
+            //,
+            //url: '/equifit/client/' + app.store.get('clientId') + '/equifits/' + app.store.get('equifitId')
         });
 
 
@@ -69,14 +70,14 @@ define(function (require, exports, module) {
         var promise = equifitEntities.addEquifit();
 
         promise.done(function (model) {
-            url = '/equifit/client/' + app.store.get('clientId') + '/equifit/' + model.id;
+            url = 'client/' + app.store.get('clientId') + '/equifit/' + model.id;
             app.router.navigate(url, { trigger: true});
         });
 
         promise.fail(function (model, jqXHR, textStatus) {
             // TODO create error page
             console.log('error:', model, jqXHR, textStatus);
-            url = '/equifit/error';
+            url = 'error';
             app.router.navigate(url, { trigger: true });
         });
     };
