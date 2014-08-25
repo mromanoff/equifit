@@ -37,13 +37,7 @@ define(function (require, exports, module) {
         equifitEntities.fetch().then(
             function () {
                 var equifitEntety = equifitEntities.get(app.store.get('equifitId'));
-                // this will copy _id and maps to id in new model
-                //var model =  new EquifitEntity(equifitEntety.toJSON());
 
-
-                //console.log('Model', model);
-
-                // TODO check what is better create var model or create  equifitEntety.id
                 // create id from id or _id (mongo)
                 equifitEntety.id  = equifitEntety.get('id') || equifitEntety.get('_id') || null;
 
@@ -56,7 +50,7 @@ define(function (require, exports, module) {
                     '.header': new HeaderView(),
                     '.breadcrumb-container': new BreadcrumbView(),
                     '.main-container': new EquifitView({
-                        model: equifitEntety //model
+                        model: equifitEntety
                     })
                 }).render();
 

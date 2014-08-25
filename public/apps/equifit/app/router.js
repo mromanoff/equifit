@@ -11,7 +11,8 @@ define(function (require, exports, module) {
             'client/:id(/)': 'equifit',
             'client/:id/equifit/:id': 'equifit',
             'client/:id/equifit/:id/form/:id': 'equifit',
-            'client/:id/create(/)': 'createEquifit'
+            'client/:id/create(/)': 'createEquifit',
+            'error': 'errorPage'
         },
 
         equifit: function (clientId, equifitId, formId) {
@@ -61,6 +62,14 @@ define(function (require, exports, module) {
             require(['./controllers/equifit'],
                 function (Equifit) {
                     Equifit.createNew();
+                });
+        },
+
+        errorPage: function () {
+            console.log('route error');
+            require(['./controllers/error'],
+                function (Equifit) {
+                    Equifit.init();
                 });
         }
     });

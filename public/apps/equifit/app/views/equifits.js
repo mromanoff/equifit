@@ -34,7 +34,7 @@ define(function (require, exports, module) {
 
             // udpate store model
             msgBus.trigger('equifit:store:update', {
-                appointmentAt: moment(this.model.get('appointmentAt')).format('MMMM D, YYYY'),
+                equifitName: _.isNull(this.model.get('appointmentAt')) ? 'Equifit' : moment(this.model.get('appointmentAt')).format('MMMM D, YYYY'),
 
                 //TODO it gets overwriten
                 title: moment(this.model.get('appointmentAt')).format('MMMM D, YYYY'),
@@ -42,7 +42,7 @@ define(function (require, exports, module) {
                 equifitId: this.model.id
             });
 
-            app.router.navigate(url, { trigger: true });
+            app.router.navigate(url, {trigger: true});
         }
     });
 
@@ -58,7 +58,7 @@ define(function (require, exports, module) {
 
         beforeRender: function () {
             // check if there is no items in collection
-            if(_.isEqual(_.size(this.collection), 0)) {
+            if (_.isEqual(_.size(this.collection), 0)) {
                 this.insertView('ul', new ItemEmpty());
             } else {
                 this.collection.each(function (item) {

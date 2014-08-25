@@ -15,14 +15,9 @@ define(function (require, exports, module) {
             totalQuestions: null,
             totalCompletedQuestions: null,
             schema: null,
-            formSchema: null,
             fieldsets: null,
             data: null
         },
-
-        //initialize: function () {
-        //    console.log('Form Model init: ', this.url());
-        //},
 
         url: function () {
             if(_.isNull(app.store.get('formId'))) {

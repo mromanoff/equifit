@@ -89,5 +89,11 @@ define(function (require, exports, module) {
         });
     });
 
+    msgBus.on('equifit:error', function(options){
+        require(['controllers/error'], function (controller) {
+            controller.init(options);
+        });
+    });
+
     module.exports = msgBus;
 });

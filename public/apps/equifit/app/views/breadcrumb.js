@@ -11,6 +11,9 @@ define(function (require, exports, module) {
         template: 'breadcrumb',
 
         serialize: function () {
+
+            console.log('Store', app.store.toJSON());
+
             return app.store.toJSON();
         }
     });
