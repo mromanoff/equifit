@@ -68,5 +68,6 @@ define(function (require, exports, module) {
             this.layout =  layout;
             return layout;
         }
-    }, Backbone.Events);
+    //}, Backbone.Events);
+    });
 });
