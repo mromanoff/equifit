@@ -18,7 +18,7 @@ module.exports.initialize = function(app) {
 
     app.get('/', home.index);
     app.get('/clients/client*', client.index);
-    app.get('/equifit', equifit.equifit);
+    app.get('/equifit/*', equifit.equifit);
 };
 
 

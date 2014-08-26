@@ -1,9 +1,7 @@
 define(function (require, exports, module) {
     'use strict';
 
-    var app = require('app');
     var Backbone = require('backbone');
-
     var ErrorModule;
 
     ErrorModule =  Backbone.View.extend({

@@ -23,6 +23,6 @@
     "commit": "166cd72b2d284c101e1407b52ceb424106d90bf6"
   },
   "_source": "git://github.com/fgnass/spin.js.git",
-  "_target": "*",
+  "_target": "~2.0.1",
   "_originalSource": "spin.js"
 }

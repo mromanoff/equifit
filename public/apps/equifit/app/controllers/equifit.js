@@ -4,7 +4,6 @@ define(function (require, exports, module) {
     var app = require('app');
     var msgBus = require('msgbus');
     var EquifitEntities = require('entities/equifits');
-    var EquifitEntity = require('entities/equifit');
     var EquifitView = require('views/equifit');
     var HeaderView = require('views/header');
     var BreadcrumbView = require('views/breadcrumb');
@@ -21,10 +20,7 @@ define(function (require, exports, module) {
         msgBus.trigger('equifit:store:update', {
             title: 'Forms',
             slug: 'forms'
-            //,
-            //url: '/equifit/client/' + app.store.get('clientId') + '/equifits/' + app.store.get('equifitId')
         });
-
 
         // create loading view
         app.useLayout('layouts/main').setViews({

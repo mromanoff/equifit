@@ -168,14 +168,22 @@ module.exports = {
     },
 
     getDocument: function (req, res) {
-        models.Form.findOne({_id: req.params.id}, function (err, item) {
-            if (err) {
-                res.json({error: 'Document not found.'});
-            } else {
-                console.log('ITEM', item);
-                res.json(item);
-            }
+
+        models.Form.findById(req.params.id, function(err, item) {
+            if (err)
+                res.send(err);
+            res.json(item);
         });
+
+
+        //models.Form.findOne({_id: req.params.id}, function (err, item) {
+        //    if (err) {
+        //        res.json({error: 'Document not found.'});
+        //    } else {
+        //        console.log('ITEM', item);
+        //        res.json(item);
+        //    }
+        //});
     },
 
     createDocument: function (req, res) {

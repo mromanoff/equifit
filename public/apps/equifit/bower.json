@@ -1,25 +1,17 @@
 {
-  "name": "equifit",
-  "dependencies": {
-    "pure": "~0.5.0",
-    "almond": "~0.2.9",
-    "lodash": "~2.4.1",
-    "lodash-template-loader": "~0.1.6",
-    "backbone": "~1.1.2",
-    "jquery": "~2.1.1",
-    "requirejs": "~2.1.14",
-    "qunit": "~1.14.0",
-    "jasmine": "~2.0.0",
-    "mocha": "~1.20.1",
-    "sinon": "~1.10.2",
-    "assert": "~0.1.0",
-    "bootstrap": "2.3.2",
-    "moment": "~2.8.0",
-    "backbone-forms": "~0.14.0",
-    "jasmine-jquery": "~2.0.5",
-    "jquery.spinjs": "*"
-  },
-  "devDependencies": {
-    "layoutmanager": "~0.9.5"
-  }
+    "name": "equifit",
+    "dependencies": {
+        "almond": "~0.3.0",
+        "lodash": "~2.4.1",
+        "lodash-template-loader": "~0.1.6",
+        "backbone": "~1.1.2",
+        "layoutmanager": "~0.9.5",
+        "jquery": "~2.1.1",
+        "requirejs": "~2.1.14",
+        "jasmine": "~2.0.0",
+        "moment": "~2.8.0",
+        "backbone-forms": "~0.14.0",
+        "jasmine-jquery": "~2.0.5",
+        "spin.js": "~2.0.1"
+    }
 }
