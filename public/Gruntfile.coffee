@@ -3,12 +3,6 @@ module.exports = ->
   # Load task configurations.
   @loadTasks "build/tasks"
 
-  # Run JSHint and a quick test.
-  # @registerTask "test", [
-    # "jshint"
-    # "karma:run"
-  # ]
-
   @registerTask "development", [
     "less:dev"
     "watch:css"
