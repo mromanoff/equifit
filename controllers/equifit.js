@@ -100,10 +100,7 @@ module.exports = {
             ]
         };
 
-        //console.log('req.body', req.body);
-
         var newEquifit = new models.Equifit(_.extend(req.body, mockUp));
-        // newContact.gravatar = md5(newContact.email);
         newEquifit.save(function (err, equifit) {
             if (err) {
                 res.json({error: 'Error adding equifit.'});

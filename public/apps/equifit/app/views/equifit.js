@@ -3,6 +3,7 @@ define(function (require, exports, module) {
 
     var app = require('app');
     var msgBus = require('msgbus');
+    var MessageView = require('views/message');
     var EquifitView;
 
     var Item = Backbone.View.extend({
@@ -28,12 +29,6 @@ define(function (require, exports, module) {
             } else {
                 msgBus.trigger('equifit:form:create', this.model.get('templateId'));
             }
-
-            //app.store.set({
-            //    pageTitle: this.model.get('title'),
-            //    formName: this.model.get('title'),
-            //    formId: this.model.get('_id')
-            //});
         }
     });
 
@@ -42,39 +37,48 @@ define(function (require, exports, module) {
         template: 'form-item-empty'
     });
 
-    EquifitView = Backbone.View.extend({
-        manage: true,
+    EquifitView = Backbone.Layout.extend({
         template: 'equifit',
 
         events: {
-            'click .submit': 'updateEquifit'
+            'click .submit': 'updateEquifit',
+            'click [data-url]': 'showPage'
         },
 
-        serialize: function () {
-            //return app.store.toJSON();
-            var data = _.extend({}, this.model.toJSON());
-            data.url = app.store.get('url');
-            return data;
+        showPage: function (e) {
+            e.preventDefault();
+            var url = $(e.currentTarget).data('url');
+            console.log('navigate', url);
+            app.router.navigate(url, {trigger: true});
         },
 
         beforeRender: function () {
             var documents = new Backbone.Collection(this.model.get('documents'));
+
+            console.log('app.store.get(isSigned)', app.store.get('isSigned'));
+
+            // check if consent form is signed
+            if (!app.store.get('isSigned')) {
+                this.setView('.message', new MessageView());
+            }
+
             // check if there is no items in collection
             if (_.isEqual(_.size(documents), 0)) {
-                this.insertView('ul', new ItemEmpty());
+                this.insertView('.list', new ItemEmpty());
             } else {
                 documents.each(function (item) {
                     // create id from id or _id (mongo)
                     item.id  = item.get('id') || item.get('_id') || null;
 
-                    this.insertView('ul', new Item({
+                    this.insertView('.list', new Item({
                         model: item
                     }));
                 }, this);
             }
+        },
 
- //           self.$('.submit').attr('disabled', 'disabled').text('submitted');
-
+        serialize: function () {
+            return app.store.toJSON();
         },
 
         updateEquifit: function (e) {

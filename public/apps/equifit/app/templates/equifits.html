@@ -1,14 +1,11 @@
 <ul class="breadcrumb">
     <li><a href="/clients/client/<%- clientId %>" data-bypass="true"><%- clientName %></a> <span class="divider">&gt;</span></li>
-    <li><a href="#" data-url="client/<%- clientId %>">Equifits</a> <span class="divider">&gt;</span></li>
 </ul>
 
-<% if(!isValidated) { %>
 <section class="row-fluid text-right">
-    <button class="btn btn-primary submit">submit</button>
+    <button class="btn createNew"><span class="icon-plus"></span> Create New</button>
+    <a href="#" class="btn printBlankForm"><span class="icon-print"></span> Print Blank Form</a>
 </section>
-<% } %>
 
 <section class="message"></section>
 <ul class="nav nav-list list"></ul>
-

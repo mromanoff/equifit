@@ -6,8 +6,8 @@ define(function (require, exports, module) {
     var EquifitEntities = require('entities/equifits');
     var EquifitView = require('views/equifits');
     var HeaderView = require('views/header');
-    var BreadcrumbView = require('views/breadcrumb');
-    var ActionView = require('views/action');
+    //var BreadcrumbView = require('views/breadcrumb');
+    //var ActionView = require('views/action');
     var LoadingView = require('views/loading');
     var EquifitsModule = {};
 
@@ -43,8 +43,6 @@ define(function (require, exports, module) {
                 msgBus.trigger('equifit:title:update', app.store.get('title'));
 
                 app.layout.setView('.header', new HeaderView());
-                app.layout.setView('.breadcrumb-container', new BreadcrumbView());
-                app.layout.setView('.action-container', new ActionView());
                 app.layout.setView('.main-container', new EquifitView({
                     collection: equifitEntities
                 }));

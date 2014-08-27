@@ -6,21 +6,16 @@ define(function (require, exports, module) {
     var Backbone = require('backbone');
     var Form = require('backbone-forms');
     require('backbone-forms-template');
+    var MessageView = require('views/message');
     var SimpleContent = require('views/simple-content');
     var FormView;
     var form;
 
-    FormView = Backbone.View.extend({
-        manage: true,
+    FormView = Backbone.Layout.extend({
         template: 'form',
         events: {
             'click .update': 'updateForm',
-            'click .show': 'showForm'
-        },
-
-        initialize: function () {
-            //console.log('init form model', this.model);
-            console.log('init app store', app.store.get('forms'));
+            'click [data-url]': 'showPage'
         },
 
         beforeRender: function () {
@@ -33,36 +28,36 @@ define(function (require, exports, module) {
             var formModel = new FormModel(this.model.get('data'));
 
             /***
-             * render form
+             * render() form!!! backbone layout manager is not managing this view
              */
             form = new Form({
                 model: formModel
             }).render();
 
+            // check if consent form is signed
+            if (!app.store.get('isSigned')) {
+                this.setView('.message', new MessageView());
+            }
 
             // check if there is no items in collection
             //if (_.isEqual(_.size(this.collection), 0)) {
                 this.insertView('.content', new SimpleContent({ model: this.model.get('content')}));
             //}
-
-
         },
 
         serialize: function () {
-            return {
-                forms: app.store.get('forms')
-            };
+            return app.store.toJSON();
         },
 
         afterRender: function () {
             // append form to the rendered view.
             this.$el.find('.form').html(form.el);
-            //this.$el.find('.form').prepend(_.template('<% _.each(content, function(item){ %> <h2><%- item.title %></h2><p><%- item.text %></p> <% } ) %>', {content: this.model.get('content')}));
         },
 
-        showForm: function (e) {
+        showPage: function (e) {
             e.preventDefault();
-            var url = 'client/' + app.store.get('clientId') + '/equifit/' + app.store.get('equifitId') + '/form/' + $(e.currentTarget).data('id');
+            var url = $(e.currentTarget).data('url');
+            console.log('navigate', url);
             app.router.navigate(url, {trigger: true});
         },
 

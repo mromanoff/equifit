@@ -58,22 +58,39 @@ define(function (require, exports, module) {
         template: 'equifit-item-empty'
     });
 
-    EquifitsView = Backbone.View.extend({
-        manage: true,
-        el: false,
-        template: 'equifits-list',
+    EquifitsView = Backbone.Layout.extend({
+        template: 'equifits',
+
+        events: {
+            'click .createNew': 'createNew',
+            'click .printBlankForm': 'printForm'
+        },
+
+        printForm: function (e) {
+            e.preventDefault();
+            window.location.href = '/apps/equifit/assets/files/equifit-forms.pdf';
+        },
+
+        createNew: function (e) {
+            e.preventDefault();
+            msgBus.trigger('equifit:equifit:create', app.store.get('clientId'));
+        },
 
         beforeRender: function () {
             // check if there is no items in collection
             if (_.isEqual(_.size(this.collection), 0)) {
-                this.insertView('ul', new ItemEmpty());
+                this.insertView('.list', new ItemEmpty());
             } else {
                 this.collection.each(function (item) {
-                    this.insertView('ul', new Item({
+                    this.insertView('.list', new Item({
                         model: item
                     }));
                 }, this);
             }
+        },
+
+        serialize: function () {
+            return app.store.toJSON();
         }
     });
 
