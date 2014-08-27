@@ -8,6 +8,7 @@ define(function (require, exports, module) {
     var FormView = require('views/form');
     var HeaderView = require('views/header');
     var BreadcrumbView = require('views/breadcrumb');
+    var MessageView = require('views/message');
     var LoadingView = require('views/loading');
     var formModule = {};
     var url;
@@ -22,8 +23,6 @@ define(function (require, exports, module) {
         msgBus.trigger('equifit:store:update', {
             title: 'Form',
             slug: 'form'
-            //,
-            //url: '/equifit/client/' + app.store.get('clientId') + '/equifits/' + app.store.get('equifitId') + '/forms/' + app.store.get('formId')
         });
 
         app.useLayout('layouts/main').setViews({
@@ -42,16 +41,25 @@ define(function (require, exports, module) {
                     formName: formEntity.get('title')
                 });
 
+                //
+                //app.useLayout('layouts/main').setViews({
+                //    '.header': new HeaderView(),
+                //    '.breadcrumb-container': new BreadcrumbView(),
+                //    '.main-container': new FormView({
+                //        model: formEntity
+                //    })
+                //}).render();
 
-                console.log('formEntity', formEntity);
+                app.layout.setView('.header', new HeaderView());
+                app.layout.setView('.breadcrumb-container', new BreadcrumbView());
+                if (!app.store.get('isSigned')) {
+                    app.layout.setView('.message', new MessageView());
+                }
+                app.layout.setView('.main-container', new FormView({
+                    model: formEntity
+                }));
 
-                app.useLayout('layouts/main').setViews({
-                    '.header': new HeaderView(),
-                    '.breadcrumb-container': new BreadcrumbView(),
-                    '.main-container': new FormView({
-                        model: formEntity
-                    })
-                }).render();
+                app.layout.render();
 
                 msgBus.trigger('equifit:title:update', app.store.get('title'));
             }

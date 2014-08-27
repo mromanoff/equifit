@@ -10,7 +10,7 @@ require.config({
         'moment': '../bower_components/moment/moment',
         'spin': '../bower_components/spin.js/spin',
         //'bootstrap': '../../../dist/bootstrap.min'
-        'bootstrap': '../libs/bootstrap.min'
+        'bootstrap': '../lib/bootstrap.min'
     },
 
     shim: {

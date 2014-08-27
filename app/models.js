@@ -12,19 +12,11 @@ var Equifit = new Schema({
     isSigned: Boolean,
     isValidated: Boolean,
     documents: [Schema.Types.Mixed]
-    //    {
-    //        title: String,
-    //        templateId: Number,
-    //        totalQuestions: Number,
-    //        totalCompletedQuestions: Number
-    //    }
-    //]
 });
 
 var Form = new Schema({
     title: String,
     templateId: Number,
-    isComplete: Boolean,
     totalQuestions: Number,
     totalCompletedQuestions: Number,
     formSchema: Schema.Types.Mixed,

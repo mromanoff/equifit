@@ -10,7 +10,6 @@ define(function (require, exports, module) {
         model: EquifitEntity,
 
         url: function () {
-            //return '/apps/equifit/api/equifits.json';
             return '/equifit/api/clients/' + app.store.get('clientId') + '/equifits/';
         },
 

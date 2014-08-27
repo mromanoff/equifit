@@ -16,9 +16,6 @@ define(function (require, exports, module) {
             clientName: null,
             appointmentAt: null,
             isSigned: null,
-
-            url: null,
-
             isValidated: null,
             slug: null,
             equifitName: null,

@@ -7,6 +7,7 @@ define(function (require, exports, module) {
     var EquifitView = require('views/equifit');
     var HeaderView = require('views/header');
     var BreadcrumbView = require('views/breadcrumb');
+    var MessageView = require('views/message');
     var LoadingView = require('views/loading');
     var equifitModule = {};
     var url;
@@ -39,17 +40,20 @@ define(function (require, exports, module) {
 
                 // update store model
                 msgBus.trigger('equifit:store:update', {
-                    clientName: equifitEntety.get('clientName')
+                    clientName: equifitEntety.get('clientName'),
+                    isSigned: equifitEntety.get('isSigned')
                 });
 
-                app.useLayout('layouts/main').setViews({
-                    '.header': new HeaderView(),
-                    '.breadcrumb-container': new BreadcrumbView(),
-                    '.main-container': new EquifitView({
-                        model: equifitEntety
-                    })
-                }).render();
+                app.layout.setView('.header', new HeaderView());
+                app.layout.setView('.breadcrumb-container', new BreadcrumbView());
+                if (!app.store.get('isSigned')) {
+                    app.layout.setView('.message', new MessageView());
+                }
+                app.layout.setView('.main-container', new EquifitView({
+                    model: equifitEntety
+                }));
 
+                app.layout.render();
                 msgBus.trigger('equifit:title:update', app.store.get('title'));
             }
         );
