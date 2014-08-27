@@ -18,15 +18,12 @@ define(function (require, exports, module) {
         // update store model
         msgBus.trigger('equifit:store:update', {
             title: 'Equifits',
-            //url: '/equifit/client/' + app.store.get('clientId'),
             slug: 'equifit'
         });
 
-        app.useLayout('layouts/main').setViews({
-            '.main-container': new LoadingView({
-                title: 'Loading Equifits'
-            })
-        }).render();
+        app.layout.setView('.main-container', new LoadingView({
+            title: 'Loading Forms'
+        })).render();
 
         // Fetch data and replace loading view
         equifitEntities.fetch().then(
@@ -40,16 +37,18 @@ define(function (require, exports, module) {
                     });
                 }
 
-                app.useLayout('layouts/main').setViews({
-                    '.header': new HeaderView(),
-                    '.breadcrumb-container': new BreadcrumbView(),
-                    '.action-container': new ActionView(),
-                    '.main-container': new EquifitView({
-                        collection: equifitEntities
-                    })
-                }).render();
-
+                /***
+                 * update page title
+                 */
                 msgBus.trigger('equifit:title:update', app.store.get('title'));
+
+                app.layout.setView('.header', new HeaderView());
+                app.layout.setView('.breadcrumb-container', new BreadcrumbView());
+                app.layout.setView('.action-container', new ActionView());
+                app.layout.setView('.main-container', new EquifitView({
+                    collection: equifitEntities
+                }));
+                app.layout.render();
             }
         );
     };

@@ -19,36 +19,33 @@ define(function (require, exports, module) {
 
     formModule.init = function () {
 
-        // update store model
+        /***
+         * update store model
+         */
         msgBus.trigger('equifit:store:update', {
             title: 'Form',
             slug: 'form'
         });
 
-        app.useLayout('layouts/main').setViews({
-            '.main-container': new LoadingView({
-                title: 'Loading Form'
-            })
-        }).render();
-
+        app.layout.setView('.main-container', new LoadingView({
+            title: 'Loading Forms'
+        })).render();
 
         formEntity.fetch().then(
             function () {
 
-                // update store model
+                /***
+                 * update store model
+                 */
                 msgBus.trigger('equifit:store:update', {
                     title: formEntity.get('title'),
                     formName: formEntity.get('title')
                 });
 
-                //
-                //app.useLayout('layouts/main').setViews({
-                //    '.header': new HeaderView(),
-                //    '.breadcrumb-container': new BreadcrumbView(),
-                //    '.main-container': new FormView({
-                //        model: formEntity
-                //    })
-                //}).render();
+                /***
+                 * update page title
+                 */
+                msgBus.trigger('equifit:title:update', app.store.get('title'));
 
                 app.layout.setView('.header', new HeaderView());
                 app.layout.setView('.breadcrumb-container', new BreadcrumbView());
@@ -58,10 +55,7 @@ define(function (require, exports, module) {
                 app.layout.setView('.main-container', new FormView({
                     model: formEntity
                 }));
-
                 app.layout.render();
-
-                msgBus.trigger('equifit:title:update', app.store.get('title'));
             }
         );
     };

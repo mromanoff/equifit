@@ -21,7 +21,8 @@ define(function (require, exports, module) {
             equifitName: null,
             equifitId: null,
             formName: null,
-            formId: null
+            formId: null,
+            forms: null
         }
     });
 

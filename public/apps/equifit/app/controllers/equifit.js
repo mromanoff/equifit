@@ -17,20 +17,21 @@ define(function (require, exports, module) {
 
     equifitModule.init = function () {
 
-        // update store model
+        /***
+         * update store model
+         */
         msgBus.trigger('equifit:store:update', {
             title: 'Forms',
             slug: 'forms'
         });
 
-        // create loading view
-        app.useLayout('layouts/main').setViews({
-            '.main-container': new LoadingView({
-                title: 'Loading Forms'
-            })
-        }).render();
+        app.layout.setView('.main-container', new LoadingView({
+            title: 'Loading Forms'
+        })).render();
 
-        // Fetch data and replace loading view
+        /***
+         * Fetch data and replace loading view
+         */
         equifitEntities.fetch().then(
             function () {
                 var equifitEntety = equifitEntities.get(app.store.get('equifitId'));
@@ -38,11 +39,19 @@ define(function (require, exports, module) {
                 // create id from id or _id (mongo)
                 equifitEntety.id  = equifitEntety.get('id') || equifitEntety.get('_id') || null;
 
-                // update store model
+                /***
+                 * update store model
+                 */
                 msgBus.trigger('equifit:store:update', {
                     clientName: equifitEntety.get('clientName'),
-                    isSigned: equifitEntety.get('isSigned')
+                    isSigned: equifitEntety.get('isSigned'),
+                    forms: equifitEntety.get('documents')
                 });
+
+                /***
+                 * update page title
+                 */
+                msgBus.trigger('equifit:title:update', app.store.get('title'));
 
                 app.layout.setView('.header', new HeaderView());
                 app.layout.setView('.breadcrumb-container', new BreadcrumbView());
@@ -52,15 +61,12 @@ define(function (require, exports, module) {
                 app.layout.setView('.main-container', new EquifitView({
                     model: equifitEntety
                 }));
-
                 app.layout.render();
-                msgBus.trigger('equifit:title:update', app.store.get('title'));
             }
         );
     };
 
     equifitModule.createNew = function () {
-
         var promise = equifitEntities.addEquifit();
 
         promise.done(function (model) {

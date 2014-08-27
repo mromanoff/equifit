@@ -10,10 +10,18 @@ define(function (require, exports, module) {
         manage: true,
         template: 'breadcrumb',
 
+        events: {
+            'click [data-url]': 'showPage'
+        },
+
+        showPage: function (e) {
+            e.preventDefault();
+            var url = $(e.currentTarget).data('url');
+            console.log('navigate', url);
+            app.router.navigate(url, {trigger: true});
+        },
+
         serialize: function () {
-
-            console.log('Store', app.store.toJSON());
-
             return app.store.toJSON();
         }
     });
