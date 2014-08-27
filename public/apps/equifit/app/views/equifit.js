@@ -58,12 +58,6 @@ define(function (require, exports, module) {
         },
 
         beforeRender: function () {
-
-            //this.insertView('.message', new Item({
-            //    model: item
-            //}));
-
-
             var documents = new Backbone.Collection(this.model.get('documents'));
             // check if there is no items in collection
             if (_.isEqual(_.size(documents), 0)) {

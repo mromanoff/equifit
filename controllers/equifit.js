@@ -168,13 +168,11 @@ module.exports = {
     },
 
     getDocument: function (req, res) {
-
         models.Form.findById(req.params.id, function(err, item) {
             if (err)
                 res.send(err);
             res.json(item);
         });
-
 
         //models.Form.findOne({_id: req.params.id}, function (err, item) {
         //    if (err) {

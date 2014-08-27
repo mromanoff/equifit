@@ -13,7 +13,7 @@ define(function (require, exports, module) {
 
         events: {
             'click .printForm': 'printForm',
-            'click': 'getEquifit'
+            'click': 'showEquifit'
         },
 
         serialize: function () {
@@ -23,21 +23,28 @@ define(function (require, exports, module) {
             return data;
         },
 
+        /***
+         * print form
+         * @param e
+         */
         printForm: function (e) {
             e.stopPropagation();
             console.log('print form');
         },
 
-        getEquifit: function (e) {
+        /***
+         * show Equifit page
+         * @param e
+         */
+        showEquifit: function (e) {
             e.preventDefault();
             var url = 'client/' + app.store.get('clientId') + '/equifit/' + this.model.id;
 
-            // udpate store model
+            /***
+             * update store model
+             */
             msgBus.trigger('equifit:store:update', {
                 equifitName: _.isNull(this.model.get('appointmentAt')) ? 'Equifit' : moment(this.model.get('appointmentAt')).format('MMMM D, YYYY'),
-
-                //TODO it gets overwriten
-                title: moment(this.model.get('appointmentAt')).format('MMMM D, YYYY'),
                 isSigned: this.model.get('isSigned'),
                 equifitId: this.model.id
             });

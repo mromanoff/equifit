@@ -7,6 +7,8 @@ require.config({
         'backbone': '../bower_components/backbone/backbone',
         'backbone.layoutmanager': '../bower_components/layoutmanager/backbone.layoutmanager',
         'backbone-forms': '../bower_components/backbone-forms/distribution.amd/backbone-forms',
+        'backbone-forms-template': '../bower_components/backbone-forms/distribution.amd/templates/bootstrap',
+        'localstorage': '../bower_components/backbone.localStorage/backbone.localStorage',
         'moment': '../bower_components/moment/moment',
         'spin': '../bower_components/spin.js/spin',
         //'bootstrap': '../../../dist/bootstrap.min'

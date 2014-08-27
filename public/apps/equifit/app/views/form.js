@@ -1,14 +1,16 @@
 define(function (require, exports, module) {
     'use strict';
 
-    var app =  require('app');
+    var app = require('app');
     var msgBus = require('msgbus');
     var Backbone = require('backbone');
     var Form = require('backbone-forms');
+    require('backbone-forms-template');
+    var SimpleContent = require('views/simple-content');
     var FormView;
     var form;
 
-    FormView =  Backbone.View.extend({
+    FormView = Backbone.View.extend({
         manage: true,
         template: 'form',
         events: {
@@ -28,7 +30,7 @@ define(function (require, exports, module) {
                 fieldsets: this.model.get('fieldsets')
             });
 
-            var formModel =  new FormModel(this.model.get('data'));
+            var formModel = new FormModel(this.model.get('data'));
 
             /***
              * render form
@@ -36,6 +38,14 @@ define(function (require, exports, module) {
             form = new Form({
                 model: formModel
             }).render();
+
+
+            // check if there is no items in collection
+            //if (_.isEqual(_.size(this.collection), 0)) {
+                this.insertView('.content', new SimpleContent({ model: this.model.get('content')}));
+            //}
+
+
         },
 
         serialize: function () {
@@ -47,6 +57,7 @@ define(function (require, exports, module) {
         afterRender: function () {
             // append form to the rendered view.
             this.$el.find('.form').html(form.el);
+            //this.$el.find('.form').prepend(_.template('<% _.each(content, function(item){ %> <h2><%- item.title %></h2><p><%- item.text %></p> <% } ) %>', {content: this.model.get('content')}));
         },
 
         showForm: function (e) {
@@ -64,9 +75,13 @@ define(function (require, exports, module) {
 
             console.log('form errors', errors);
             console.log('form commit', form.model);
-            console.log('this commit', this.model);
 
-            msgBus.trigger('equifit:form:update', this.model);
+            if (_.isEmpty(errors)) {
+                msgBus.trigger('equifit:form:update', this.model);
+            }
+            else {
+                console.log('validate form');
+            }
         }
     });
 
