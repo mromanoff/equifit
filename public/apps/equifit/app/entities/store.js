@@ -8,6 +8,7 @@ define(function (require, exports, module) {
 
     var Backbone = require('backbone');
     Backbone.LocalStorage = require('localstorage');
+    //var msgBus = require('msgbus');
     var StoreEntity;
 
     StoreEntity = Backbone.Model.extend({
@@ -20,7 +21,6 @@ define(function (require, exports, module) {
             appointmentAt: null,
             isSigned: null,
             isValidated: null,
-           // slug: null,
             equifitName: null,
             equifitId: null,
             formName: null,
@@ -28,12 +28,17 @@ define(function (require, exports, module) {
             forms: null
         },
 
-        initialize : function () {
+        initialize: function () {
             this.on('change', this.updateStorage);
+            this.on('change:title', this.updatePageTitle);
         },
 
         updateStorage: function () {
             this.save();
+        },
+
+        updatePageTitle: function () {
+            $('title').text(this.get('title'));
         }
     });
 

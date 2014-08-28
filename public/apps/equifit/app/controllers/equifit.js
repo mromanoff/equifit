@@ -19,8 +19,7 @@ define(function (require, exports, module) {
          * update store model
          */
         msgBus.trigger('equifit:store:update', {
-            title: 'Forms',
-            slug: 'forms'
+            title: 'Forms'
         });
 
         app.layout.setView('.main-container', new LoadingView({
@@ -34,8 +33,7 @@ define(function (require, exports, module) {
             function () {
                 var equifitEntety = equifitEntities.get(app.store.get('equifitId'));
 
-                // create id from id or _id (mongo)
-                //equifitEntety.id  = equifitEntety.get('id') || equifitEntety.get('_id');
+                console.warn('equifitEntety', equifitEntety);
 
                 /***
                  * update store model
@@ -45,11 +43,6 @@ define(function (require, exports, module) {
                     isSigned: equifitEntety.get('isSigned'),
                     forms: equifitEntety.get('documents')
                 });
-
-                /***
-                 * update page title
-                 */
-                msgBus.trigger('equifit:title:update', app.store.get('title'));
 
                 app.layout.setView('.header', new HeaderView());
                 app.layout.setView('.main-container', new EquifitView({

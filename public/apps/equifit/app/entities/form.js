@@ -19,17 +19,20 @@ define(function (require, exports, module) {
             data: null
         },
 
-        //url: function () {
-        //    if(_.isNull(app.store.get('formId'))) {
-        //        return '/equifit/api/clients/' + app.store.get('clientId') + '/equifits/' + app.store.get('equifitId') + '/documents/';
-        //    } else {
-        //        return '/equifit/api/clients/' + app.store.get('clientId') + '/equifits/' + app.store.get('equifitId') + '/documents/' + app.store.get('formId');
-        //    }
-        //},
+        url: function () {
 
-        urlRoot: function () {
-            return '/equifit/api/clients/' + app.store.get('clientId') + '/equifits/' + app.store.get('equifitId') + '/documents/';
+          console.warn('form id last ', app.store.get('formId'));
+
+          if(!_.isEmpty(app.store.get('formId'))) {
+              return '/equifit/api/clients/' + app.store.get('clientId') + '/equifits/' + app.store.get('equifitId') + '/documents/' + app.store.get('formId');
+          } else {
+                return '/equifit/api/clients/' + app.store.get('clientId') + '/equifits/' + app.store.get('equifitId') + '/documents/';
+          }
         },
+
+        //urlRoot: function () {
+        //    return '/equifit/api/clients/' + app.store.get('clientId') + '/equifits/' + app.store.get('equifitId') + '/documents/';
+        //},
 
         parse: function (response) {
             // backbone-forms needs 'schema' property. in mongoose 'schema' is reserved word.

@@ -7,7 +7,6 @@ define(function(require) {
     var FormEntities = require('entities/forms');
     var FormView = require('views/form');
     var HeaderView = require('views/header');
-    var BreadcrumbView = require('views/breadcrumb');
 
     // Test that the Router exists.
     describe('Form Controller Module', function() {
@@ -43,10 +42,6 @@ define(function(require) {
 
             it('HeaderView is a Backbone.View', function() {
                 expect(HeaderView.prototype instanceof Backbone.View).toBe(true);
-            });
-
-            it('BreadcrumbView is a Backbone.View', function() {
-                expect(BreadcrumbView.prototype instanceof Backbone.View).toBe(true);
             });
         });
     });

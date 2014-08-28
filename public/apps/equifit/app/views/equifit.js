@@ -11,29 +11,33 @@ define(function (require, exports, module) {
         template: 'form-item',
         tagName: 'li',
         events: {
-            'click': 'showForm'
-        },
-
-        initialize: function () {
-            console.log('view equfit ', this.model);
+            'click a': 'showForm'
         },
 
         serialize: function () {
             return this.model.toJSON();
         },
 
+        /***
+         * show form
+         * description we need to create new form if it has no id or get form if it has id
+         * @param e
+         */
         showForm: function (e) {
             e.preventDefault();
             var url = 'client/' + app.store.get('clientId') + '/equifit/' + app.store.get('equifitId');
 
-            console.log('view equfit id ', this.model.id);
+            console.log('click on this form ', this.model);
 
-            if(!_.isUndefined(this.model.id)) {
-                url = url + '/form/' + this.model.id;
-                app.router.navigate(url, {trigger: true});
-
-            } else {
+            if(_.isEmpty(this.model.get('_id'))) {
+                console.log('this model doesn\'t have an ID');
+                console.warn('create new form with template id', this.model.get('templateId'));
                 msgBus.trigger('equifit:form:create', this.model.get('templateId'));
+            }
+            else {
+                console.log('this model have an ID');
+                url = url + '/form/' + this.model.get('_id');
+                app.router.navigate(url, {trigger: true});
             }
         }
     });
@@ -72,7 +76,7 @@ define(function (require, exports, module) {
             } else {
                 documents.each(function (item) {
                     // create id from id or _id (mongo)
-                    item.id  = item.get('id') || item.get('_id'); // || null;
+                   // item.id  = item.get('id') || item.get('_id'); // || null;
 
                     this.insertView('.list', new Item({
                         model: item

@@ -7,7 +7,6 @@ define(function(require) {
     var FormsEntities = require('entities/forms');
     var EquifitView = require('views/equifit');
     var HeaderView = require('views/header');
-    var BreadcrumbView = require('views/breadcrumb');
 
     // Test that the Router exists.
     describe('Forms Controller Module', function() {
@@ -24,7 +23,6 @@ define(function(require) {
 
         xit('EquifitModule set app.store params', function() {
             expect(app.store.get('pageTitle')).toEqual('Equifits Forms');
-            expect(app.store.get('slug')).toEqual('forms');
         });
 
         describe('EquifitModule has external dependencies', function () {
@@ -44,10 +42,6 @@ define(function(require) {
 
             it('HeaderView is a Backbone.View', function() {
                 expect(HeaderView.prototype instanceof Backbone.View).toBe(true);
-            });
-
-            it('BreadcrumbView is a Backbone.View', function() {
-                expect(BreadcrumbView.prototype instanceof Backbone.View).toBe(true);
             });
         });
     });

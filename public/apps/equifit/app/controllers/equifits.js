@@ -15,8 +15,7 @@ define(function (require, exports, module) {
     EquifitsModule.init = function () {
         // update store model
         msgBus.trigger('equifit:store:update', {
-            title: 'Equifits',
-            slug: 'equifit'
+            title: 'Equifits'
         });
 
         app.layout.setView('.main-container', new LoadingView({
@@ -34,11 +33,6 @@ define(function (require, exports, module) {
                         clientName: equifitEntities.at(0).get('clientName')
                     });
                 }
-
-                /***
-                 * update page title
-                 */
-                msgBus.trigger('equifit:title:update', app.store.get('title'));
 
                 app.layout.setView('.header', new HeaderView());
                 app.layout.setView('.main-container', new EquifitView({

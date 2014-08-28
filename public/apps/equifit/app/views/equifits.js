@@ -66,6 +66,10 @@ define(function (require, exports, module) {
             'click .printBlankForm': 'printForm'
         },
 
+        initialize: function () {
+            msgBus.trigger('scroll:top');
+        },
+
         printForm: function (e) {
             e.preventDefault();
             window.location.href = '/apps/equifit/assets/files/equifit-forms.pdf';

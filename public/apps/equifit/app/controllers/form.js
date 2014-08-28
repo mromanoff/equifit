@@ -21,8 +21,7 @@ define(function (require, exports, module) {
          * update store model
          */
         msgBus.trigger('equifit:store:update', {
-            title: 'Form',
-            slug: 'form'
+            title: 'Form'
         });
 
         app.layout.setView('.main-container', new LoadingView({
@@ -32,6 +31,8 @@ define(function (require, exports, module) {
         formEntity.fetch().then(
             function () {
 
+                console.warn('formEntety', formEntity);
+
                 /***
                  * update store model
                  */
@@ -40,10 +41,6 @@ define(function (require, exports, module) {
                     formName: formEntity.get('title')
                 });
 
-                /***
-                 * update page title
-                 */
-                msgBus.trigger('equifit:title:update', app.store.get('title'));
 
                 app.layout.setView('.header', new HeaderView());
                 app.layout.setView('.main-container', new FormView({
@@ -55,6 +52,9 @@ define(function (require, exports, module) {
     };
 
     formModule.createNew = function (templateId) {
+
+        console.warn("create new form", templateId);
+
         formEntities.create({templateId: templateId}, {
             // waits for server to respond with 200
             // before adding newly created model to collection
@@ -64,11 +64,10 @@ define(function (require, exports, module) {
                 url = 'client/' + app.store.get('clientId') + '/equifit/' + app.store.get('equifitId') + '/form/' + model.id;
                 app.router.navigate(url, {trigger: true});
             },
-            error: function (err) {
-                console.log('ERROR: can\'t create new forms', err);
-
-                url = 'error';
-                app.router.navigate(url, {trigger: true});
+            error: function (model, response) {
+                console.log('ERROR: can\'t create new forms', model, response);
+                msgBus.trigger('equifit:error', response);
+                app.router.navigate('error');
             }
         });
     };

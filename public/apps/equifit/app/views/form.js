@@ -18,6 +18,11 @@ define(function (require, exports, module) {
             'click [data-url]': 'showPage'
         },
 
+
+        initialize: function () {
+            console.log('this model', this.model);
+        },
+
         beforeRender: function () {
             // extend BB model with forms schema and fieldsets
             var FormModel = Backbone.Model.extend({
