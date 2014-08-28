@@ -6,8 +6,6 @@ define(function (require, exports, module) {
     var EquifitEntities = require('entities/equifits');
     var EquifitView = require('views/equifits');
     var HeaderView = require('views/header');
-    //var BreadcrumbView = require('views/breadcrumb');
-    //var ActionView = require('views/action');
     var LoadingView = require('views/loading');
     var EquifitsModule = {};
 

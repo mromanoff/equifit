@@ -11,18 +11,24 @@ define(function (require, exports, module) {
         template: 'form-item',
         tagName: 'li',
         events: {
-            'click': 'getForm'
+            'click': 'showForm'
+        },
+
+        initialize: function () {
+            console.log('view equfit ', this.model);
         },
 
         serialize: function () {
             return this.model.toJSON();
         },
 
-        getForm: function (e) {
+        showForm: function (e) {
             e.preventDefault();
             var url = 'client/' + app.store.get('clientId') + '/equifit/' + app.store.get('equifitId');
 
-            if(!_.isNull(this.model.id)) {
+            console.log('view equfit id ', this.model.id);
+
+            if(!_.isUndefined(this.model.id)) {
                 url = url + '/form/' + this.model.id;
                 app.router.navigate(url, {trigger: true});
 
@@ -55,8 +61,6 @@ define(function (require, exports, module) {
         beforeRender: function () {
             var documents = new Backbone.Collection(this.model.get('documents'));
 
-            console.log('app.store.get(isSigned)', app.store.get('isSigned'));
-
             // check if consent form is signed
             if (!app.store.get('isSigned')) {
                 this.setView('.message', new MessageView());
@@ -68,7 +72,7 @@ define(function (require, exports, module) {
             } else {
                 documents.each(function (item) {
                     // create id from id or _id (mongo)
-                    item.id  = item.get('id') || item.get('_id') || null;
+                    item.id  = item.get('id') || item.get('_id'); // || null;
 
                     this.insertView('.list', new Item({
                         model: item

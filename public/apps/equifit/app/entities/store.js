@@ -20,7 +20,7 @@ define(function (require, exports, module) {
             appointmentAt: null,
             isSigned: null,
             isValidated: null,
-            slug: null,
+           // slug: null,
             equifitName: null,
             equifitId: null,
             formName: null,

@@ -7,8 +7,6 @@ define(function (require, exports, module) {
     var FormEntities = require('entities/forms');
     var FormView = require('views/form');
     var HeaderView = require('views/header');
-    var BreadcrumbView = require('views/breadcrumb');
-    var MessageView = require('views/message');
     var LoadingView = require('views/loading');
     var formModule = {};
     var url;
@@ -48,10 +46,6 @@ define(function (require, exports, module) {
                 msgBus.trigger('equifit:title:update', app.store.get('title'));
 
                 app.layout.setView('.header', new HeaderView());
-                app.layout.setView('.breadcrumb-container', new BreadcrumbView());
-                if (!app.store.get('isSigned')) {
-                    app.layout.setView('.message', new MessageView());
-                }
                 app.layout.setView('.main-container', new FormView({
                     model: formEntity
                 }));

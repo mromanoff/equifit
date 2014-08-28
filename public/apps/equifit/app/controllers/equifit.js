@@ -6,8 +6,6 @@ define(function (require, exports, module) {
     var EquifitEntities = require('entities/equifits');
     var EquifitView = require('views/equifit');
     var HeaderView = require('views/header');
-    var BreadcrumbView = require('views/breadcrumb');
-//    var MessageView = require('views/message');
     var LoadingView = require('views/loading');
     var equifitModule = {};
     var url;
@@ -37,7 +35,7 @@ define(function (require, exports, module) {
                 var equifitEntety = equifitEntities.get(app.store.get('equifitId'));
 
                 // create id from id or _id (mongo)
-                equifitEntety.id  = equifitEntety.get('id') || equifitEntety.get('_id') || null;
+                //equifitEntety.id  = equifitEntety.get('id') || equifitEntety.get('_id');
 
                 /***
                  * update store model
@@ -53,11 +51,7 @@ define(function (require, exports, module) {
                  */
                 msgBus.trigger('equifit:title:update', app.store.get('title'));
 
-                //app.layout.setView('.header', new HeaderView());
-                //app.layout.setView('.breadcrumb-container', new BreadcrumbView());
-                //if (!app.store.get('isSigned')) {
-                //    app.layout.setView('.message', new MessageView());
-                //}
+                app.layout.setView('.header', new HeaderView());
                 app.layout.setView('.main-container', new EquifitView({
                     model: equifitEntety
                 }));
