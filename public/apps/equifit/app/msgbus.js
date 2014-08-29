@@ -1,3 +1,6 @@
+/**
+ * Created by mromanoff on 8/28/14.
+ */
 define(function (require, exports, module) {
     'use strict';
 
@@ -12,11 +15,11 @@ define(function (require, exports, module) {
     /***
      * Get all Equifits
      */
-        //msgBus.on('equifit:equifit:getAll', function(){
-        //    require(['controllers/equifit'], function (controller) {
-        //        controller.createNew();
-        //    });
-        //});
+    //msgBus.on('equifit:equifit:getAll', function(){
+    //    require(['controllers/equifit'], function (controller) {
+    //        controller.createNew();
+    //    });
+    //});
 
     /***
      * Create new Equifit

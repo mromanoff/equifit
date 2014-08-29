@@ -53,7 +53,7 @@ define(function (require, exports, module) {
 
     formModule.createNew = function (templateId) {
 
-        console.warn("create new form", templateId);
+        console.warn('create new form', templateId);
 
         formEntities.create({templateId: templateId}, {
             // waits for server to respond with 200
