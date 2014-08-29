@@ -20,7 +20,7 @@ define(function (require, exports, module) {
 
 
         initialize: function () {
-            console.log('this model', this.model);
+            console.log('Form data model', this.model);
         },
 
         beforeRender: function () {
@@ -78,9 +78,15 @@ define(function (require, exports, module) {
 
             if (_.isEmpty(errors)) {
                 msgBus.trigger('equifit:form:update', this.model);
+
+                // only if templateTYpe === 'InformedConsent' redirect to Equifit Page
+                if(_.isEqual(this.model.get('templateType'), 'InformedConsent')) {
+                    var url = 'client/' + app.store.get('clientId') + '/equifit/' + app.store.get('equifitId');
+                    app.router.navigate(url, {trigger: true});
+                }
             }
             else {
-                console.log('validate form');
+                console.log('form did\'t pass validtion');
             }
         }
     });

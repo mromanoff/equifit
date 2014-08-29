@@ -17,6 +17,7 @@ var Equifit = new Schema({
 var Form = new Schema({
     title: String,
     templateId: Number,
+    templateType: String,
     totalQuestions: Number,
     totalCompletedQuestions: Number,
     formSchema: Schema.Types.Mixed,

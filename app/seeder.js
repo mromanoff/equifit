@@ -18,61 +18,94 @@ module.exports = {
                     isValidated: false,
                     documents: [
                         {
+                            _id: "53ed60ebb4932fec89e19a49",
+                            title: "Personal Info",
+                            templateId: 2,
+                            templateType: "Personal Information",
+                            totalQuestions: 5,
+                            totalCompletedQuestions: 2
+                        },
+
+                        {
                             _id: "53ed60ebb4932fec89e19a40",
                             templateId: 66,
-                            title: "Consent Form",
+                            title: "Informed Consent",
                             templateType: "InformedConsent",
                             totalQuestions: 1,
                             totalCompletedQuestions: 0
                         },
-
                         {
                             _id: "53ed60ebb4932fec89e19a48",
-                            title: "PAR-Q",
+                            title: "Medical / Orthopedic HX",
                             templateId: 2,
-                            templateType: 2,
+                            templateType: "Medical",
                             totalQuestions: 5,
                             totalCompletedQuestions: 2
                         },
                         {
-                            _id: "53ed60ebb4932fec89e19a49",
-                            title: "Personal Info",
-                            templateId: 2,
-                            templateType: 2,
-                            totalQuestions: 5,
-                            totalCompletedQuestions: 2
+                            _id: "53ed60ebb4932fec89e19a53",
+                            templateId: 7,
+                            templateType: "Lifestyle",
+                            title: "Lifestyle",
+                            totalQuestions: 15,
+                            totalCompletedQuestions: 10
                         },
-                        {
-                            _id: "53ed60ebb4932fec89e19a50",
-                            templateId: 4,
-                            templateType: 2,
-                            title: "Goals",
-                            totalQuestions: 12,
-                            totalCompletedQuestions: 1
-                        },
-                        {
-                            _id: "53ed60ebb4932fec89e19a51",
-                            templateId: 5,
-                            templateType: 2,
-                            title: "Orthopedic",
-                            totalQuestions: 13,
-                            totalCompletedQuestions: 0
-                        },
+
                         {
                             _id: "53ed60ebb4932fec89e19a52",
                             templateId: 6,
-                            templateType: 2,
+                            templateType: "ExerciseHistory",
                             title: "Exercise History",
                             totalQuestions: 7,
                             totalCompletedQuestions: 6
                         },
                         {
-                            _id: "53ed60ebb4932fec89e19a53",
-                            templateId: 7,
-                            templateType: 2,
-                            title: "Lifestyle",
-                            totalQuestions: 15,
-                            totalCompletedQuestions: 10
+                            _id: "53ed60ebb4932fec89e19a50",
+                            templateId: 4,
+                            templateType: "GoalsHabits",
+                            title: "Goals & Habits",
+                            totalQuestions: 12,
+                            totalCompletedQuestions: 1
+                        },
+                        {
+                            _id: "53ed60ebb4932fec89e19a60",
+                            templateId: 4,
+                            templateType: "RegenerationNutrition",
+                            title: "Regeneration & Nutrition",
+                            totalQuestions: 12,
+                            totalCompletedQuestions: 1
+                        },
+                        {
+                            _id: "53ed60ebb4932fec89e19a61",
+                            templateId: 4,
+                            templateType: "BodyMeasurements",
+                            title: "Body Measurements",
+                            totalQuestions: 12,
+                            totalCompletedQuestions: 1
+                        },
+                        {
+                            _id: "53ed60ebb4932fec89e19a62",
+                            templateId: 4,
+                            templateType: "FunctionalMovementScreen",
+                            title: "Functional Movement Screen",
+                            totalQuestions: 12,
+                            totalCompletedQuestions: 1
+                        },
+                        {
+                            _id: "53ed60ebb4932fec89e19a63",
+                            templateId: 4,
+                            templateType: "Equistretch",
+                            title: "Equistretch",
+                            totalQuestions: 12,
+                            totalCompletedQuestions: 1
+                        },
+                        {
+                            _id: "53ed60ebb4932fec89e19a64",
+                            templateId: 4,
+                            templateType: "PerformanceTesting",
+                            title: "Performance Testing",
+                            totalQuestions: 12,
+                            totalCompletedQuestions: 1
                         },
                         {
                             _id: "53ed60ebb4932fec89e19a54",
@@ -100,61 +133,94 @@ module.exports = {
                     isValidated: false,
                     documents: [
                         {
-                            _id: "53ed60ebb4932fec89e19a40",
-                            templateId: 66,
-                            templateType: "InformedConsent",
-                            title: "Consent Form",
-                            totalQuestions: 1,
-                            totalCompletedQuestions: 0
-                        },
-
-                        {
-                            _id: "53ed60ebb4932fec89e19a48",
-                            title: "PAR-Q",
-                            templateId: 2,
-                            templateType: 2,
-                            totalQuestions: 5,
-                            totalCompletedQuestions: 2
-                        },
-                        {
                             _id: "53ed60ebb4932fec89e19a49",
                             title: "Personal Info",
                             templateId: 2,
-                            templateType: 2,
+                            templateType: "Personal Information",
+                            totalQuestions: 5,
+                            totalCompletedQuestions: 2
+                        },
+
+                        {
+                            _id: "53ed60ebb4932fec89e19a40",
+                            templateId: 66,
+                            title: "Informed Consent",
+                            templateType: "InformedConsent",
+                            totalQuestions: 1,
+                            totalCompletedQuestions: 0
+                        },
+                        {
+                            _id: "53ed60ebb4932fec89e19a48",
+                            title: "Medical / Orthopedic HX",
+                            templateId: 2,
+                            templateType: "Medical",
                             totalQuestions: 5,
                             totalCompletedQuestions: 2
                         },
                         {
-                            _id: "53ed60ebb4932fec89e19a50",
-                            templateId: 4,
-                            templateType: 2,
-                            title: "Goals",
-                            totalQuestions: 12,
-                            totalCompletedQuestions: 1
+                            _id: "53ed60ebb4932fec89e19a53",
+                            templateId: 7,
+                            templateType: "Lifestyle",
+                            title: "Lifestyle",
+                            totalQuestions: 15,
+                            totalCompletedQuestions: 10
                         },
-                        {
-                            _id: "53ed60ebb4932fec89e19a51",
-                            templateId: 5,
-                            templateType: 2,
-                            title: "Orthopedic",
-                            totalQuestions: 13,
-                            totalCompletedQuestions: 0
-                        },
+
                         {
                             _id: "53ed60ebb4932fec89e19a52",
                             templateId: 6,
-                            templateType: 2,
+                            templateType: "ExerciseHistory",
                             title: "Exercise History",
                             totalQuestions: 7,
                             totalCompletedQuestions: 6
                         },
                         {
-                            _id: "53ed60ebb4932fec89e19a53",
-                            templateId: 7,
-                            templateType: 2,
-                            title: "Lifestyle",
-                            totalQuestions: 15,
-                            totalCompletedQuestions: 10
+                            _id: "53ed60ebb4932fec89e19a50",
+                            templateId: 4,
+                            templateType: "GoalsHabits",
+                            title: "Goals & Habits",
+                            totalQuestions: 12,
+                            totalCompletedQuestions: 1
+                        },
+                        {
+                            _id: "53ed60ebb4932fec89e19a60",
+                            templateId: 4,
+                            templateType: "RegenerationNutrition",
+                            title: "Regeneration & Nutrition",
+                            totalQuestions: 12,
+                            totalCompletedQuestions: 1
+                        },
+                        {
+                            _id: "53ed60ebb4932fec89e19a61",
+                            templateId: 4,
+                            templateType: "BodyMeasurements",
+                            title: "Body Measurements",
+                            totalQuestions: 12,
+                            totalCompletedQuestions: 1
+                        },
+                        {
+                            _id: "53ed60ebb4932fec89e19a62",
+                            templateId: 4,
+                            templateType: "FunctionalMovementScreen",
+                            title: "Functional Movement Screen",
+                            totalQuestions: 12,
+                            totalCompletedQuestions: 1
+                        },
+                        {
+                            _id: "53ed60ebb4932fec89e19a63",
+                            templateId: 4,
+                            templateType: "Equistretch",
+                            title: "Equistretch",
+                            totalQuestions: 12,
+                            totalCompletedQuestions: 1
+                        },
+                        {
+                            _id: "53ed60ebb4932fec89e19a64",
+                            templateId: 4,
+                            templateType: "PerformanceTesting",
+                            title: "Performance Testing",
+                            totalQuestions: 12,
+                            totalCompletedQuestions: 1
                         },
                         {
                             _id: "53ed60ebb4932fec89e19a54",
@@ -182,61 +248,94 @@ module.exports = {
                     isValidated: false,
                     documents: [
                         {
-                            _id: "53ed60ebb4932fec89e19a40",
-                            templateId: 66,
-                            templateType: "InformedConsent",
-                            title: "Consent Form",
-                            totalQuestions: 1,
-                            totalCompletedQuestions: 0
-                        },
-
-                        {
-                            _id: "53ed60ebb4932fec89e19a48",
-                            title: "PAR-Q",
-                            templateId: 2,
-                            templateType: 2,
-                            totalQuestions: 5,
-                            totalCompletedQuestions: 2
-                        },
-                        {
                             _id: "53ed60ebb4932fec89e19a49",
                             title: "Personal Info",
                             templateId: 2,
-                            templateType: 2,
+                            templateType: "Personal Information",
+                            totalQuestions: 5,
+                            totalCompletedQuestions: 2
+                        },
+
+                        {
+                            _id: "53ed60ebb4932fec89e19a40",
+                            templateId: 66,
+                            title: "Informed Consent",
+                            templateType: "InformedConsent",
+                            totalQuestions: 1,
+                            totalCompletedQuestions: 0
+                        },
+                        {
+                            _id: "53ed60ebb4932fec89e19a48",
+                            title: "Medical / Orthopedic HX",
+                            templateId: 2,
+                            templateType: "Medical",
                             totalQuestions: 5,
                             totalCompletedQuestions: 2
                         },
                         {
-                            _id: "53ed60ebb4932fec89e19a50",
-                            templateId: 4,
-                            templateType: 2,
-                            title: "Goals",
-                            totalQuestions: 12,
-                            totalCompletedQuestions: 1
+                            _id: "53ed60ebb4932fec89e19a53",
+                            templateId: 7,
+                            templateType: "Lifestyle",
+                            title: "Lifestyle",
+                            totalQuestions: 15,
+                            totalCompletedQuestions: 10
                         },
-                        {
-                            _id: "53ed60ebb4932fec89e19a51",
-                            templateId: 5,
-                            templateType: 2,
-                            title: "Orthopedic",
-                            totalQuestions: 13,
-                            totalCompletedQuestions: 0
-                        },
+
                         {
                             _id: "53ed60ebb4932fec89e19a52",
                             templateId: 6,
-                            templateType: 2,
+                            templateType: "ExerciseHistory",
                             title: "Exercise History",
                             totalQuestions: 7,
                             totalCompletedQuestions: 6
                         },
                         {
-                            _id: "53ed60ebb4932fec89e19a53",
-                            templateId: 7,
-                            templateType: 2,
-                            title: "Lifestyle",
-                            totalQuestions: 15,
-                            totalCompletedQuestions: 10
+                            _id: "53ed60ebb4932fec89e19a50",
+                            templateId: 4,
+                            templateType: "GoalsHabits",
+                            title: "Goals & Habits",
+                            totalQuestions: 12,
+                            totalCompletedQuestions: 1
+                        },
+                        {
+                            _id: "53ed60ebb4932fec89e19a60",
+                            templateId: 4,
+                            templateType: "RegenerationNutrition",
+                            title: "Regeneration & Nutrition",
+                            totalQuestions: 12,
+                            totalCompletedQuestions: 1
+                        },
+                        {
+                            _id: "53ed60ebb4932fec89e19a61",
+                            templateId: 4,
+                            templateType: "BodyMeasurements",
+                            title: "Body Measurements",
+                            totalQuestions: 12,
+                            totalCompletedQuestions: 1
+                        },
+                        {
+                            _id: "53ed60ebb4932fec89e19a62",
+                            templateId: 4,
+                            templateType: "FunctionalMovementScreen",
+                            title: "Functional Movement Screen",
+                            totalQuestions: 12,
+                            totalCompletedQuestions: 1
+                        },
+                        {
+                            _id: "53ed60ebb4932fec89e19a63",
+                            templateId: 4,
+                            templateType: "Equistretch",
+                            title: "Equistretch",
+                            totalQuestions: 12,
+                            totalCompletedQuestions: 1
+                        },
+                        {
+                            _id: "53ed60ebb4932fec89e19a64",
+                            templateId: 4,
+                            templateType: "PerformanceTesting",
+                            title: "Performance Testing",
+                            totalQuestions: 12,
+                            totalCompletedQuestions: 1
                         },
                         {
                             _id: "53ed60ebb4932fec89e19a54",
@@ -264,61 +363,94 @@ module.exports = {
                     isValidated: true,
                     documents: [
                         {
-                            _id: "53ed60ebb4932fec89e19a40",
-                            templateId: 66,
-                            templateType: "InformedConsent",
-                            title: "Consent Form",
-                            totalQuestions: 1,
-                            totalCompletedQuestions: 0
-                        },
-
-                        {
-                            _id: "53ed60ebb4932fec89e19a48",
-                            title: "PAR-Q",
-                            templateId: 2,
-                            templateType: 2,
-                            totalQuestions: 5,
-                            totalCompletedQuestions: 2
-                        },
-                        {
                             _id: "53ed60ebb4932fec89e19a49",
                             title: "Personal Info",
                             templateId: 2,
-                            templateType: 2,
+                            templateType: "Personal Information",
+                            totalQuestions: 5,
+                            totalCompletedQuestions: 2
+                        },
+
+                        {
+                            _id: "53ed60ebb4932fec89e19a40",
+                            templateId: 66,
+                            title: "Informed Consent",
+                            templateType: "InformedConsent",
+                            totalQuestions: 1,
+                            totalCompletedQuestions: 0
+                        },
+                        {
+                            _id: "53ed60ebb4932fec89e19a48",
+                            title: "Medical / Orthopedic HX",
+                            templateId: 2,
+                            templateType: "Medical",
                             totalQuestions: 5,
                             totalCompletedQuestions: 2
                         },
                         {
-                            _id: "53ed60ebb4932fec89e19a50",
-                            templateId: 4,
-                            templateType: 2,
-                            title: "Goals",
-                            totalQuestions: 12,
-                            totalCompletedQuestions: 1
+                            _id: "53ed60ebb4932fec89e19a53",
+                            templateId: 7,
+                            templateType: "Lifestyle",
+                            title: "Lifestyle",
+                            totalQuestions: 15,
+                            totalCompletedQuestions: 10
                         },
-                        {
-                            _id: "53ed60ebb4932fec89e19a51",
-                            templateId: 5,
-                            templateType: 2,
-                            title: "Orthopedic",
-                            totalQuestions: 13,
-                            totalCompletedQuestions: 0
-                        },
+
                         {
                             _id: "53ed60ebb4932fec89e19a52",
                             templateId: 6,
-                            templateType: 2,
+                            templateType: "ExerciseHistory",
                             title: "Exercise History",
                             totalQuestions: 7,
                             totalCompletedQuestions: 6
                         },
                         {
-                            _id: "53ed60ebb4932fec89e19a53",
-                            templateId: 7,
-                            templateType: 2,
-                            title: "Lifestyle",
-                            totalQuestions: 15,
-                            totalCompletedQuestions: 10
+                            _id: "53ed60ebb4932fec89e19a50",
+                            templateId: 4,
+                            templateType: "GoalsHabits",
+                            title: "Goals & Habits",
+                            totalQuestions: 12,
+                            totalCompletedQuestions: 1
+                        },
+                        {
+                            _id: "53ed60ebb4932fec89e19a60",
+                            templateId: 4,
+                            templateType: "RegenerationNutrition",
+                            title: "Regeneration & Nutrition",
+                            totalQuestions: 12,
+                            totalCompletedQuestions: 1
+                        },
+                        {
+                            _id: "53ed60ebb4932fec89e19a61",
+                            templateId: 4,
+                            templateType: "BodyMeasurements",
+                            title: "Body Measurements",
+                            totalQuestions: 12,
+                            totalCompletedQuestions: 1
+                        },
+                        {
+                            _id: "53ed60ebb4932fec89e19a62",
+                            templateId: 4,
+                            templateType: "FunctionalMovementScreen",
+                            title: "Functional Movement Screen",
+                            totalQuestions: 12,
+                            totalCompletedQuestions: 1
+                        },
+                        {
+                            _id: "53ed60ebb4932fec89e19a63",
+                            templateId: 4,
+                            templateType: "Equistretch",
+                            title: "Equistretch",
+                            totalQuestions: 12,
+                            totalCompletedQuestions: 1
+                        },
+                        {
+                            _id: "53ed60ebb4932fec89e19a64",
+                            templateId: 4,
+                            templateType: "PerformanceTesting",
+                            title: "Performance Testing",
+                            totalQuestions: 12,
+                            totalCompletedQuestions: 1
                         },
                         {
                             _id: "53ed60ebb4932fec89e19a54",
@@ -338,101 +470,19 @@ module.exports = {
             }
         });
 
+        //////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
         models.Form.find({}, function (err, forms) {
             if (forms.length === 0) {
                 console.log('no forms found, seeding...');
-                var newForm = new models.Form({
-                    _id: "53ed60ebb4932fec89e19a40",
-                    templateId: 66,
-                    templateType: "InformedConsent",
-                    title: "Informed Consent",
-                    totalQuestions: 1,
-                    totalCompletedQuestions: 0,
-
-                    formSchema: {
-                        consent01: {
-                            type: "Text",
-                            title: "first & last initial",
-                            help: "I have read this form, and I understand the test procedures I will perform. I consent to participate in the Equifit and understand that the information obtained during this evaluation may be used for statistical purposes"
-                        }
-                    },
-                    fieldsets: [{"legend": "Informed Consent", "fields": ["consent01"]}],
-                    data: {
-                        consent01: null
-                    },
-                    content: [
-                        {
-                            title: "Informed Consent",
-                            text: "The Equifit is a measure of your overall fitness level. It is not intended as a formal \“stress test.\”"
-                        },
-                        {
-                            title: "Explanation of the fitness evaluation",
-                            text: "The Equifit includes measurements of weight, percent body fat, resting heart rate, blood pressure, flexibility, muscle strength and muscle endurance. You will also be performing the following: a functional movement screen (FMS), a passive range of motion screen, and an estimated VO2Max test. We may stop any test at any time because of signs of fatigue or discomfort. During the performance of the test, a personal trainer will monitor your heart rate."
-                        },
-                        {
-                            title: "Risks and discomfort",
-                            text: "here exists the possibility of certain changes during the Equifit. They include abnormal blood pressure, fainting, disorders of the heart beat, and in very rare instances, heart attack. Every effort will be made to minimize these discomforts by a preliminary screen and by observation during the testing."
-                        },
-                        {
-                            title: "Benefits to be expected",
-                            text: "The information obtained during this test will help you gauge your fitness level and will be used to develop effective, goal-directed fitness programs."
-                        },
-                        {
-                            title: "Inquiries",
-                            text: "If you have any concerns or questions, please ask us for further explanations"
-                        },
-                        {
-                            title: "Freedom of consent",
-                            text: "Your permission to perform the Equifit is voluntary. You are free to decline consent or participation if you so desire"
-                        }
-                    ]
-                });
-                newForm.save(function (err, form) {
-                    console.log('successfully inserted document: ' + form._id);
-                });
-
-                newForm = new models.Form({
-                    _id: "53ed60ebb4932fec89e19a48",
-                    templateId: 2,
-                    templateType: 2,
-                    title: "PAR-Q",
-                    totalQuestions: 5,
-                    totalCompletedQuestions: 2,
-                    formSchema: {
-                        title: {
-                            type: "Select",
-                            options: ["", "Mr", "Mrs", "Ms"]
-                        },
-                        name: "Text",
-                        email: {
-                            validators: ["required", "email"]
-                        }
-                    },
-
-                    fieldsets: [
-                        {
-                            legend: "Member Information",
-                            fields: ["title", "name", "email"]
-                        }
-                    ],
-
-                    data: {
-                        title: "Mr",
-                        name: "Billy Joel",
-                        email: "billy@test.com"
-                    }
-                });
-                newForm.save(function (err, form) {
-                    console.log('successfully inserted document: ' + form._id);
-                });
-
                 newForm = new models.Form({
                     _id: "53ed60ebb4932fec89e19a49",
-                    templateId: 3,
-                    templateType: 2,
                     title: "Personal Info",
-                    totalQuestions: 10,
-                    totalCompletedQuestions: 3,
+                    templateId: 2,
+                    templateType: "Personal Information",
+                    totalQuestions: 5,
+                    totalCompletedQuestions: 2,
                     formSchema: {
                         "personal01": {
                             "type": "Text",
@@ -517,6 +567,266 @@ module.exports = {
                         "personal06": null
                     }
                 });
+                newForm.save(function (err, form) {
+                    console.log('successfully inserted document: ' + form._id);
+                });
+
+                var newForm = new models.Form({
+                    _id: "53ed60ebb4932fec89e19a40",
+                    templateId: 66,
+                    title: "Informed Consent",
+                    templateType: "InformedConsent",
+                    totalQuestions: 1,
+                    totalCompletedQuestions: 0,
+                    formSchema: {
+                        consent01: {
+                            type: "Text",
+                            title: "first & last initial",
+                            validators: ['required'],
+                            help: "I have read this form, and I understand the test procedures I will perform. I consent to participate in the Equifit and understand that the information obtained during this evaluation may be used for statistical purposes"
+                        }
+                    },
+                    fieldsets: [{"legend": "Informed Consent", "fields": ["consent01"]}],
+                    data: {
+                        consent01: null
+                    },
+                    content: [
+                        {
+                            title: "Informed Consent",
+                            text: "The Equifit is a measure of your overall fitness level. It is not intended as a formal \“stress test.\”"
+                        },
+                        {
+                            title: "Explanation of the fitness evaluation",
+                            text: "The Equifit includes measurements of weight, percent body fat, resting heart rate, blood pressure, flexibility, muscle strength and muscle endurance. You will also be performing the following: a functional movement screen (FMS), a passive range of motion screen, and an estimated VO2Max test. We may stop any test at any time because of signs of fatigue or discomfort. During the performance of the test, a personal trainer will monitor your heart rate."
+                        },
+                        {
+                            title: "Risks and discomfort",
+                            text: "here exists the possibility of certain changes during the Equifit. They include abnormal blood pressure, fainting, disorders of the heart beat, and in very rare instances, heart attack. Every effort will be made to minimize these discomforts by a preliminary screen and by observation during the testing."
+                        },
+                        {
+                            title: "Benefits to be expected",
+                            text: "The information obtained during this test will help you gauge your fitness level and will be used to develop effective, goal-directed fitness programs."
+                        },
+                        {
+                            title: "Inquiries",
+                            text: "If you have any concerns or questions, please ask us for further explanations"
+                        },
+                        {
+                            title: "Freedom of consent",
+                            text: "Your permission to perform the Equifit is voluntary. You are free to decline consent or participation if you so desire"
+                        }
+                    ]
+                });
+
+                newForm.save(function (err, form) {
+                    console.log('successfully inserted document: ' + form._id);
+                });
+                newForm = new models.Form({
+                    _id: "53ed60ebb4932fec89e19a48",
+                    title: "Medical / Orthopedic HX",
+                    templateId: 2,
+                    templateType: "Medical",
+                    totalQuestions: 5,
+                    totalCompletedQuestions: 2,
+                    formSchema: {
+                        title: {
+                            type: "Select",
+                            options: ["", "Mr", "Mrs", "Ms"]
+                        },
+                        name: "Text",
+                        email: {
+                            validators: ["required", "email"]
+                        }
+                    },
+
+                    fieldsets: [
+                        {
+                            legend: "Member Information",
+                            fields: ["title", "name", "email"]
+                        }
+                    ],
+
+                    data: {
+                        title: "Mr",
+                        name: "Billy Joel",
+                        email: "billy@test.com"
+                    }
+                });
+
+                newForm.save(function (err, form) {
+                    console.log('successfully inserted document: ' + form._id);
+                });
+
+                newForm = new models.Form({
+                    _id: "53ed60ebb4932fec89e19a53",
+                    templateId: 7,
+                    templateType: "Lifestyle",
+                    title: "Lifestyle",
+                    totalQuestions: 15,
+                    totalCompletedQuestions: 10,
+                    formSchema: {
+                        "lifestyle01": {
+                            "type": "Select",
+                            "title": "On a scale of 1-5, on average how stressful is your day?",
+                            "options": [
+                                {"val": "lifestyle01-1", "label": "1"},
+                                {"val": "lifestyle01-2", "label": "2"},
+                                {"val": "lifestyle01-3", "label": "3"},
+                                {"val": "lifestyle01-4", "label": "4"},
+                                {"val": "lifestyle01-5", "label": "5"}
+                            ],
+                            "validators": [{"type": "required", "message": "Please select one.", "regex": null}],
+                            "help": null
+                        },
+                        "lifestyle02": {
+                            "type": "Radio",
+                            "title": "Do you feel exercise helps you in managing your stress?",
+                            "options": [
+                                {"val": "lifestyle02-1", "label": "Yes"},
+                                {"val": "lifestyle02-2", "label": "No"}
+                            ],
+                            "validators": [{"type": "required", "message": "Please select one.", "regex": null}],
+                            "help": null
+                        },
+                        "lifestyle03": {
+                            "type": "Text",
+                            "title": "Describe your typical daily nutritional habits?",
+                            "options": null,
+                            "validators": [{"type": "required", "message": "The field is required.", "regex": null}],
+                            "help": "Number of times you eat per day and basic content of diet"
+                        },
+                        "lifestyle04": {
+                            "type": "Radio",
+                            "title": "Do you feel you need to change anything with regards to your nutrition?",
+                            "options": [
+                                {"val": "lifestyle04-1", "label": "Yes"},
+                                {"val": "lifestyle04-2", "label": "No"}
+                            ],
+                            "validators": [{"type": "required", "message": "Please select one.", "regex": null}],
+                            "help": null
+                        },
+                        "lifestyle05": {
+                            "type": "Text",
+                            "title": "What types of liquids do you typically drink?",
+                            "options": null,
+                            "validators": [{"type": "required", "message": "The field is required.", "regex": null}],
+                            "help": null
+                        },
+                        "lifestyle06": {
+                            "type": "Select",
+                            "title": "How much water do you take in daily?",
+                            "options": [
+                                {"val": "lifestyle06-1", "label": "None"},
+                                {"val": "lifestyle06-2", "label": "1 - 2"},
+                                {"val": "lifestyle06-3", "label": "3 - 4"},
+                                {"val": "lifestyle06-4", "label": "5 - 6"},
+                                {"val": "lifestyle06-5", "label": "7 - 8"},
+                                {"val": "lifestyle06-6", "label": "9 - 10"},
+                                {"val": "lifestyle06-7", "label": "11 - 12"},
+                                {"val": "lifestyle06-8", "label": "More than 12"}
+                            ],
+                            "validators": [{"type": "required", "message": "Please select one.", "regex": null}],
+                            "help": "Number in glasses. One glass = 8 fluid ounces."
+                        },
+                        "lifestyle07": {
+                            "type": "Text",
+                            "title": "Before we get started with assessments, do you have any additional comments or is there anything we did not cover?",
+                            "options": null,
+                            "validators": [],
+                            "help": null
+                        }
+                    },
+                    fieldsets: [
+                        {
+                            "legend": "Stress",
+                            "fields": [
+                                "lifestyle01",
+                                "lifestyle02"
+                            ]
+                        },
+                        {
+                            "legend": "Nutrition",
+                            "fields": [
+                                "lifestyle03",
+                                "lifestyle04",
+                                "lifestyle05",
+                                "lifestyle06"
+                            ]
+                        },
+                        {"legend": "Additional Comments", "fields": ["lifestyle07"]}
+                    ],
+                    data: {
+                        "lifestyle01": null,
+                        "lifestyle02": null,
+                        "lifestyle03": null,
+                        "lifestyle04": null,
+                        "lifestyle05": null,
+                        "lifestyle06": null,
+                        "lifestyle07": null
+                    }
+                });
+                newForm.save(function (err, form) {
+                    console.log('successfully inserted document: ' + form._id);
+                });
+
+                newForm = new models.Form({
+                    _id: "53ed60ebb4932fec89e19a52",
+                    templateId: 6,
+                    templateType: 2,
+                    title: "Exercise History",
+                    totalQuestions: 7,
+                    totalCompletedQuestions: 6,
+
+                    formSchema: {
+                        "exercisehistory01": {
+                            "type": "Text",
+                            "title": "Tell me about your current exercise routine?",
+                            "options": null,
+                            "validators": [{"type": "required", "message": "The field is required.", "regex": null}],
+                            "help": null
+                        },
+                        "exercisehistory02": {
+                            "type": "Select",
+                            "title": "How many times per week on average do you engage in physical activity and/or exercise?",
+                            "options": [
+                                {"val": "exercisehistory02-1", "label": "0"},
+                                {"val": "exercisehistory02-2", "label": "1"},
+                                {"val": "exercisehistory02-3", "label": "2"},
+                                {"val": "exercisehistory02-4", "label": "3"},
+                                {"val": "exercisehistory02-5", "label": "4"},
+                                {"val": "exercisehistory02-6", "label": "5"},
+                                {"val": "exercisehistory02-7", "label": "6"},
+                                {"val": "exercisehistory02-8", "label": "7"},
+                                {"val": "exercisehistory02-9", "label": "8+"}
+                            ],
+                            "validators": [{"type": "required", "message": "Please select one.", "regex": null}],
+                            "help": null
+                        },
+                        "exercisehistory03": {
+                            "type": "Radio",
+                            "title": "Do you or have you ever strength trained? (free weights / machines / body wieght)",
+                            "options": [
+                                {"val": "exercisehistory03-1", "label": "Yes"},
+                                {"val": "exercisehistory03-2", "label": "No"}
+                            ],
+                            "validators": [{"type": "required", "message": "Please select one.", "regex": null}],
+                            "help": null
+                        }
+                    },
+                    "fieldsets": [
+                        {
+                            "legend": "General questions about your exercise history",
+                            "fields": [
+                                "exercisehistory01",
+                                "exercisehistory02",
+                                "exercisehistory03"
+                            ]
+                        }
+                    ],
+                    "data": {"exercisehistory01": null, "exercisehistory02": null, "exercisehistory03": null}
+
+                });
+
                 newForm.save(function (err, form) {
                     console.log('successfully inserted document: ' + form._id);
                 });
@@ -662,12 +972,12 @@ module.exports = {
                 });
 
                 newForm = new models.Form({
-                    _id: "53ed60ebb4932fec89e19a51",
-                    templateId: 5,
-                    templateType: 2,
-                    title: "Orthopedic",
-                    totalQuestions: 13,
-                    totalCompletedQuestions: 0,
+                    _id: "53ed60ebb4932fec89e19a60",
+                    templateId: 4,
+                    templateType: "RegenerationNutrition",
+                    title: "Regeneration & Nutrition",
+                    totalQuestions: 12,
+                    totalCompletedQuestions: 1,
                     formSchema: {
                         title: {
                             type: "Select",
@@ -697,173 +1007,139 @@ module.exports = {
                 });
 
                 newForm = new models.Form({
-                    _id: "53ed60ebb4932fec89e19a52",
-                    templateId: 6,
-                    templateType: 2,
-                    title: "Exercise History",
-                    totalQuestions: 7,
-                    totalCompletedQuestions: 6,
-
+                    _id: "53ed60ebb4932fec89e19a61",
+                    templateId: 4,
+                    templateType: "BodyMeasurements",
+                    title: "Body Measurements",
+                    totalQuestions: 12,
+                    totalCompletedQuestions: 1,
                     formSchema: {
-                        "exercisehistory01": {
-                            "type": "Text",
-                            "title": "Tell me about your current exercise routine?",
-                            "options": null,
-                            "validators": [{"type": "required", "message": "The field is required.", "regex": null}],
-                            "help": null
+                        title: {
+                            type: "Select",
+                            options: ["", "Mr", "Mrs", "Ms"]
                         },
-                        "exercisehistory02": {
-                            "type": "Select",
-                            "title": "How many times per week on average do you engage in physical activity and/or exercise?",
-                            "options": [
-                                {"val": "exercisehistory02-1", "label": "0"},
-                                {"val": "exercisehistory02-2", "label": "1"},
-                                {"val": "exercisehistory02-3", "label": "2"},
-                                {"val": "exercisehistory02-4", "label": "3"},
-                                {"val": "exercisehistory02-5", "label": "4"},
-                                {"val": "exercisehistory02-6", "label": "5"},
-                                {"val": "exercisehistory02-7", "label": "6"},
-                                {"val": "exercisehistory02-8", "label": "7"},
-                                {"val": "exercisehistory02-9", "label": "8+"}
-                            ],
-                            "validators": [{"type": "required", "message": "Please select one.", "regex": null}],
-                            "help": null
-                        },
-                        "exercisehistory03": {
-                            "type": "Radio",
-                            "title": "Do you or have you ever strength trained? (free weights / machines / body wieght)",
-                            "options": [
-                                {"val": "exercisehistory03-1", "label": "Yes"},
-                                {"val": "exercisehistory03-2", "label": "No"}
-                            ],
-                            "validators": [{"type": "required", "message": "Please select one.", "regex": null}],
-                            "help": null
+                        name: "Text",
+                        email: {
+                            validators: ["required", "email"]
                         }
                     },
-                    "fieldsets": [
+
+                    fieldsets: [
                         {
-                            "legend": "General questions about your exercise history",
-                            "fields": [
-                                "exercisehistory01",
-                                "exercisehistory02",
-                                "exercisehistory03"
-                            ]
+                            legend: "Member Information",
+                            fields: ["title", "name", "email"]
                         }
                     ],
-                    "data": {"exercisehistory01": null, "exercisehistory02": null, "exercisehistory03": null}
 
+                    data: {
+                        title: "Mr",
+                        name: "James Brown",
+                        email: "j.brown@test.com"
+                    }
                 });
                 newForm.save(function (err, form) {
                     console.log('successfully inserted document: ' + form._id);
                 });
 
                 newForm = new models.Form({
-                    _id: "53ed60ebb4932fec89e19a53",
-                    templateId: 5,
-                    templateType: 2,
-                    title: "Lifestyle",
-                    totalQuestions: 7,
-                    totalCompletedQuestions: 0,
-
+                    _id: "53ed60ebb4932fec89e19a62",
+                    templateId: 4,
+                    templateType: "FunctionalMovementScreen",
+                    title: "Functional Movement Screen",
+                    totalQuestions: 12,
+                    totalCompletedQuestions: 1,
                     formSchema: {
-                        "lifestyle01": {
-                            "type": "Select",
-                            "title": "On a scale of 1-5, on average how stressful is your day?",
-                            "options": [
-                                {"val": "lifestyle01-1", "label": "1"},
-                                {"val": "lifestyle01-2", "label": "2"},
-                                {"val": "lifestyle01-3", "label": "3"},
-                                {"val": "lifestyle01-4", "label": "4"},
-                                {"val": "lifestyle01-5", "label": "5"}
-                            ],
-                            "validators": [{"type": "required", "message": "Please select one.", "regex": null}],
-                            "help": null
+                        title: {
+                            type: "Select",
+                            options: ["", "Mr", "Mrs", "Ms"]
                         },
-                        "lifestyle02": {
-                            "type": "Radio",
-                            "title": "Do you feel exercise helps you in managing your stress?",
-                            "options": [
-                                {"val": "lifestyle02-1", "label": "Yes"},
-                                {"val": "lifestyle02-2", "label": "No"}
-                            ],
-                            "validators": [{"type": "required", "message": "Please select one.", "regex": null}],
-                            "help": null
-                        },
-                        "lifestyle03": {
-                            "type": "Text",
-                            "title": "Describe your typical daily nutritional habits?",
-                            "options": null,
-                            "validators": [{"type": "required", "message": "The field is required.", "regex": null}],
-                            "help": "Number of times you eat per day and basic content of diet"
-                        },
-                        "lifestyle04": {
-                            "type": "Radio",
-                            "title": "Do you feel you need to change anything with regards to your nutrition?",
-                            "options": [
-                                {"val": "lifestyle04-1", "label": "Yes"},
-                                {"val": "lifestyle04-2", "label": "No"}
-                            ],
-                            "validators": [{"type": "required", "message": "Please select one.", "regex": null}],
-                            "help": null
-                        },
-                        "lifestyle05": {
-                            "type": "Text",
-                            "title": "What types of liquids do you typically drink?",
-                            "options": null,
-                            "validators": [{"type": "required", "message": "The field is required.", "regex": null}],
-                            "help": null
-                        },
-                        "lifestyle06": {
-                            "type": "Select",
-                            "title": "How much water do you take in daily?",
-                            "options": [
-                                {"val": "lifestyle06-1", "label": "None"},
-                                {"val": "lifestyle06-2", "label": "1 - 2"},
-                                {"val": "lifestyle06-3", "label": "3 - 4"},
-                                {"val": "lifestyle06-4", "label": "5 - 6"},
-                                {"val": "lifestyle06-5", "label": "7 - 8"},
-                                {"val": "lifestyle06-6", "label": "9 - 10"},
-                                {"val": "lifestyle06-7", "label": "11 - 12"},
-                                {"val": "lifestyle06-8", "label": "More than 12"}
-                            ],
-                            "validators": [{"type": "required", "message": "Please select one.", "regex": null}],
-                            "help": "Number in glasses. One glass = 8 fluid ounces."
-                        },
-                        "lifestyle07": {
-                            "type": "Text",
-                            "title": "Before we get started with assessments, do you have any additional comments or is there anything we did not cover?",
-                            "options": null,
-                            "validators": [],
-                            "help": null
+                        name: "Text",
+                        email: {
+                            validators: ["required", "email"]
                         }
                     },
+
                     fieldsets: [
                         {
-                            "legend": "Stress",
-                            "fields": [
-                                "lifestyle01",
-                                "lifestyle02"
-                            ]
-                        },
-                        {
-                            "legend": "Nutrition",
-                            "fields": [
-                                "lifestyle03",
-                                "lifestyle04",
-                                "lifestyle05",
-                                "lifestyle06"
-                            ]
-                        },
-                        {"legend": "Additional Comments", "fields": ["lifestyle07"]}
+                            legend: "Member Information",
+                            fields: ["title", "name", "email"]
+                        }
                     ],
+
                     data: {
-                        "lifestyle01": null,
-                        "lifestyle02": null,
-                        "lifestyle03": null,
-                        "lifestyle04": null,
-                        "lifestyle05": null,
-                        "lifestyle06": null,
-                        "lifestyle07": null
+                        title: "Mr",
+                        name: "James Brown",
+                        email: "j.brown@test.com"
+                    }
+                });
+                newForm.save(function (err, form) {
+                    console.log('successfully inserted document: ' + form._id);
+                });
+
+                newForm = new models.Form({
+                    _id: "53ed60ebb4932fec89e19a63",
+                    templateId: 4,
+                    templateType: "Equistretch",
+                    title: "Equistretch",
+                    totalQuestions: 12,
+                    totalCompletedQuestions: 1,
+                    formSchema: {
+                        title: {
+                            type: "Select",
+                            options: ["", "Mr", "Mrs", "Ms"]
+                        },
+                        name: "Text",
+                        email: {
+                            validators: ["required", "email"]
+                        }
+                    },
+
+                    fieldsets: [
+                        {
+                            legend: "Member Information",
+                            fields: ["title", "name", "email"]
+                        }
+                    ],
+
+                    data: {
+                        title: "Mr",
+                        name: "James Brown",
+                        email: "j.brown@test.com"
+                    }
+                });
+                newForm.save(function (err, form) {
+                    console.log('successfully inserted document: ' + form._id);
+                });
+
+                newForm = new models.Form({
+                    _id: "53ed60ebb4932fec89e19a64",
+                    templateId: 4,
+                    templateType: "PerformanceTesting",
+                    title: "Performance Testing",
+                    totalQuestions: 12,
+                    totalCompletedQuestions: 1,
+                    formSchema: {
+                        title: {
+                            type: "Select",
+                            options: ["", "Mr", "Mrs", "Ms"]
+                        },
+                        name: "Text",
+                        email: {
+                            validators: ["required", "email"]
+                        }
+                    },
+
+                    fieldsets: [
+                        {
+                            legend: "Member Information",
+                            fields: ["title", "name", "email"]
+                        }
+                    ],
+
+                    data: {
+                        title: "Mr",
+                        name: "James Brown",
+                        email: "j.brown@test.com"
                     }
                 });
                 newForm.save(function (err, form) {
