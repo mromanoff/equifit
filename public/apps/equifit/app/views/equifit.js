@@ -14,11 +14,6 @@ define(function (require, exports, module) {
             'click a': 'showForm'
         },
 
-        beforeRender: function () {
-            console.log('before render', this.model.toJSON());
-
-        },
-
         serialize: function () {
             var data = {};
             data.title = this.model.get('title');
