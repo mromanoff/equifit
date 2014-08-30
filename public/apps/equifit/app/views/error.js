@@ -8,8 +8,17 @@ define(function (require, exports, module) {
         manage: true,
         template: 'error',
 
+        initialize: function (){
+            console.log('model', this.model);
+            this.title = this.model.get('statusText') || 'Error';
+            this.text = this.model.get('responseText') || null;
+        },
+
         serialize: function () {
-            //return app.store.toJSON();
+            return {
+                title: this.title,
+                text: this.text
+            };
         }
     });
 

@@ -38,5 +38,5 @@ mongoose.connection.on('open', function () {
 routes.initialize(app);
 
 http.createServer(app).listen(app.get('port'), function () {
-    console.log('Express server listening on port ' + app.get('port'));
+    console.log('Express server listening on port http://0.0.0.0:' + app.get('port'));
 });

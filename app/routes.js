@@ -11,7 +11,7 @@ module.exports.initialize = function(app) {
     app.put('/equifit/api/clients/:id/equifits/:id', equifit.updateEquifit);
 
 
-    app.get('/equifit/api/clients/:id/equifits/:id/documents', equifit.getDocuments);
+    //app.get('/equifit/api/clients/:id/equifits/:id/documents', equifit.getDocuments);  it API we don't have this call
     app.post('/equifit/api/clients/:id/equifits/:id/documents', equifit.createDocument);
     app.get('/equifit/api/clients/:id/equifits/:id/documents/:id', equifit.getDocument);
     app.put('/equifit/api/clients/:id/equifits/:id/documents/:id', equifit.updateDocument);

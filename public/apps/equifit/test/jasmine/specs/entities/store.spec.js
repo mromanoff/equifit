@@ -16,9 +16,9 @@ define(function(require) {
             expect(store.get('clientName')).toBeNull();
             expect(store.get('appointmentAt')).toBeNull();
             expect(store.get('isSigned')).toBeNull();
-            expect(store.get('slug')).toBeNull();
             expect(store.get('formName')).toBeNull();
             expect(store.get('formId')).toBeNull();
+            expect(store.get('forms')).toBeNull();
         });
     });
 });

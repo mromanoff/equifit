@@ -7,7 +7,6 @@ define(function (require, exports, module) {
     var FormEntities = require('entities/forms');
     var FormView = require('views/form');
     var HeaderView = require('views/header');
-    var BreadcrumbView = require('views/breadcrumb');
     var LoadingView = require('views/loading');
     var formModule = {};
     var url;
@@ -18,47 +17,44 @@ define(function (require, exports, module) {
 
     formModule.init = function () {
 
-        // update store model
+        /***
+         * update store model
+         */
         msgBus.trigger('equifit:store:update', {
-            title: 'Form',
-            slug: 'form'
-            //,
-            //url: '/equifit/client/' + app.store.get('clientId') + '/equifits/' + app.store.get('equifitId') + '/forms/' + app.store.get('formId')
+            title: 'Form'
         });
 
-        app.useLayout('layouts/main').setViews({
-            '.main-container': new LoadingView({
-                title: 'Loading Form'
-            })
-        }).render();
-
+        app.layout.setView('.main-container', new LoadingView({
+            title: 'Loading Forms'
+        })).render();
 
         formEntity.fetch().then(
             function () {
 
-                // update store model
+                console.warn('formEntety', formEntity);
+
+                /***
+                 * update store model
+                 */
                 msgBus.trigger('equifit:store:update', {
                     title: formEntity.get('title'),
                     formName: formEntity.get('title')
                 });
 
 
-                console.log('formEntity', formEntity);
-
-                app.useLayout('layouts/main').setViews({
-                    '.header': new HeaderView(),
-                    '.breadcrumb-container': new BreadcrumbView(),
-                    '.main-container': new FormView({
-                        model: formEntity
-                    })
-                }).render();
-
-                msgBus.trigger('equifit:title:update', app.store.get('title'));
+                app.layout.setView('.header', new HeaderView());
+                app.layout.setView('.main-container', new FormView({
+                    model: formEntity
+                }));
+                app.layout.render();
             }
         );
     };
 
     formModule.createNew = function (templateId) {
+
+        console.warn('create new form', templateId);
+
         formEntities.create({templateId: templateId}, {
             // waits for server to respond with 200
             // before adding newly created model to collection
@@ -68,11 +64,10 @@ define(function (require, exports, module) {
                 url = 'client/' + app.store.get('clientId') + '/equifit/' + app.store.get('equifitId') + '/form/' + model.id;
                 app.router.navigate(url, {trigger: true});
             },
-            error: function (err) {
-                console.log('ERROR: can\'t create new forms', err);
-
-                url = 'error';
-                app.router.navigate(url, {trigger: true});
+            error: function (model, response) {
+                console.log('ERROR: can\'t create new forms', model, response);
+                msgBus.trigger('equifit:error', response);
+                app.router.navigate('error');
             }
         });
     };

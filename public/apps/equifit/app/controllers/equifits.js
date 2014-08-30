@@ -6,8 +6,6 @@ define(function (require, exports, module) {
     var EquifitEntities = require('entities/equifits');
     var EquifitView = require('views/equifits');
     var HeaderView = require('views/header');
-    var BreadcrumbView = require('views/breadcrumb');
-    var ActionView = require('views/action');
     var LoadingView = require('views/loading');
     var EquifitsModule = {};
 
@@ -17,16 +15,12 @@ define(function (require, exports, module) {
     EquifitsModule.init = function () {
         // update store model
         msgBus.trigger('equifit:store:update', {
-            title: 'Equifits',
-            //url: '/equifit/client/' + app.store.get('clientId'),
-            slug: 'equifit'
+            title: 'Equifits'
         });
 
-        app.useLayout('layouts/main').setViews({
-            '.main-container': new LoadingView({
-                title: 'Loading Equifits'
-            })
-        }).render();
+        app.layout.setView('.main-container', new LoadingView({
+            title: 'Loading Forms'
+        })).render();
 
         // Fetch data and replace loading view
         equifitEntities.fetch().then(
@@ -40,16 +34,11 @@ define(function (require, exports, module) {
                     });
                 }
 
-                app.useLayout('layouts/main').setViews({
-                    '.header': new HeaderView(),
-                    '.breadcrumb-container': new BreadcrumbView(),
-                    '.action-container': new ActionView(),
-                    '.main-container': new EquifitView({
-                        collection: equifitEntities
-                    })
-                }).render();
-
-                msgBus.trigger('equifit:title:update', app.store.get('title'));
+                app.layout.setView('.header', new HeaderView());
+                app.layout.setView('.main-container', new EquifitView({
+                    collection: equifitEntities
+                }));
+                app.layout.render();
             }
         );
     };

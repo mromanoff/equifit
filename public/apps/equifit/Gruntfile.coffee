@@ -14,7 +14,6 @@ module.exports = ->
     "clean"
     "jshint"
     "karma:run"
-    "processhtml"
     "jst"
     "copy"
     "requirejs"

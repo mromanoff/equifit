@@ -52,7 +52,7 @@ module.exports = ->
           pattern: "bower_components/**/*.js", included: false
         }
         {
-          pattern: "libs/**/*.js", included: false
+          pattern: "lib/**/*.js", included: false
         }
       ]
 

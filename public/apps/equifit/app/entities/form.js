@@ -20,11 +20,14 @@ define(function (require, exports, module) {
         },
 
         url: function () {
-            if(_.isNull(app.store.get('formId'))) {
+
+          console.warn('form id last ', app.store.get('formId'));
+
+          if(!_.isEmpty(app.store.get('formId'))) {
+              return '/equifit/api/clients/' + app.store.get('clientId') + '/equifits/' + app.store.get('equifitId') + '/documents/' + app.store.get('formId');
+          } else {
                 return '/equifit/api/clients/' + app.store.get('clientId') + '/equifits/' + app.store.get('equifitId') + '/documents/';
-            } else {
-                return '/equifit/api/clients/' + app.store.get('clientId') + '/equifits/' + app.store.get('equifitId') + '/documents/' + app.store.get('formId');
-            }
+          }
         },
 
         //urlRoot: function () {

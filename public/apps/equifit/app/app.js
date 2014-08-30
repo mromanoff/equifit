@@ -55,6 +55,12 @@ define(function (require, exports, module) {
     // for debug
     window.store =  app.store;
 
+
+    app.layout = new Backbone.Layout({
+        el: '#main',
+        template: 'layouts/main'
+    });
+
     // Mix Backbone.Events, modules, and layout management into the app object.
     module.exports = _.extend(app, {
         // Helper for using layouts.

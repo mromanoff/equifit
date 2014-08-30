@@ -13,7 +13,7 @@ define(function (require, exports, module) {
 
         events: {
             'click .printForm': 'printForm',
-            'click': 'getEquifit'
+            'click': 'showEquifit'
         },
 
         serialize: function () {
@@ -23,21 +23,28 @@ define(function (require, exports, module) {
             return data;
         },
 
+        /***
+         * print form
+         * @param e
+         */
         printForm: function (e) {
             e.stopPropagation();
             console.log('print form');
         },
 
-        getEquifit: function (e) {
+        /***
+         * show Equifit page
+         * @param e
+         */
+        showEquifit: function (e) {
             e.preventDefault();
             var url = 'client/' + app.store.get('clientId') + '/equifit/' + this.model.id;
 
-            // udpate store model
+            /***
+             * update store model
+             */
             msgBus.trigger('equifit:store:update', {
                 equifitName: _.isNull(this.model.get('appointmentAt')) ? 'Equifit' : moment(this.model.get('appointmentAt')).format('MMMM D, YYYY'),
-
-                //TODO it gets overwriten
-                title: moment(this.model.get('appointmentAt')).format('MMMM D, YYYY'),
                 isSigned: this.model.get('isSigned'),
                 equifitId: this.model.id
             });
@@ -51,22 +58,43 @@ define(function (require, exports, module) {
         template: 'equifit-item-empty'
     });
 
-    EquifitsView = Backbone.View.extend({
-        manage: true,
-        el: false,
-        template: 'equifits-list',
+    EquifitsView = Backbone.Layout.extend({
+        template: 'equifits',
+
+        events: {
+            'click .createNew': 'createNew',
+            'click .printBlankForm': 'printForm'
+        },
+
+        initialize: function () {
+            msgBus.trigger('scroll:top');
+        },
+
+        printForm: function (e) {
+            e.preventDefault();
+            window.location.href = '/apps/equifit/assets/files/equifit-forms.pdf';
+        },
+
+        createNew: function (e) {
+            e.preventDefault();
+            msgBus.trigger('equifit:equifit:create', app.store.get('clientId'));
+        },
 
         beforeRender: function () {
             // check if there is no items in collection
             if (_.isEqual(_.size(this.collection), 0)) {
-                this.insertView('ul', new ItemEmpty());
+                this.insertView('.list', new ItemEmpty());
             } else {
                 this.collection.each(function (item) {
-                    this.insertView('ul', new Item({
+                    this.insertView('.list', new Item({
                         model: item
                     }));
                 }, this);
             }
+        },
+
+        serialize: function () {
+            return app.store.toJSON();
         }
     });
 

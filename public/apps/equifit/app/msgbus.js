@@ -1,3 +1,6 @@
+/**
+ * Created by mromanoff on 8/28/14.
+ */
 define(function (require, exports, module) {
     'use strict';
 
@@ -12,18 +15,18 @@ define(function (require, exports, module) {
     /***
      * Get all Equifits
      */
-        //msgBus.on('equifit:equifit:getAll', function(){
-        //    require(['controllers/equifit'], function (controller) {
-        //        controller.createNew();
-        //    });
-        //});
+    //msgBus.on('equifit:equifit:getAll', function(){
+    //    require(['controllers/equifit'], function (controller) {
+    //        controller.createNew();
+    //    });
+    //});
 
     /***
      * Create new Equifit
      */
-    msgBus.on('equifit:equifit:create', function(){
+    msgBus.on('equifit:equifit:create', function(templateId){
         require(['controllers/equifit'], function (controller) {
-            controller.createNew();
+            controller.createNew(templateId);
         });
     });
 
@@ -60,24 +63,17 @@ define(function (require, exports, module) {
      * @type {Object}
      */
 
-        //msgBus.on('scroll:top', function () {
-        //    return controller.scroll();
-        //});
-
-    /***
-     * Update page Title
-     */
-    msgBus.on('equifit:title:update', function (title){
-        $('title').text(title);
+    msgBus.on('scroll:top', function () {
+        require(['controllers/helper'], function (controller) {
+            controller.scrollTop();
+        });
     });
 
     /***
      * Update Data Storage
      */
     msgBus.on('equifit:store:update', function(options){
-        console.log('update store model with', options);
         app.store.set(options);
-        //console.log('store model updated', app.store.toJSON());
     });
 
     /***
@@ -89,9 +85,9 @@ define(function (require, exports, module) {
         });
     });
 
-    msgBus.on('equifit:error', function(options){
+    msgBus.on('equifit:error', function(error){
         require(['controllers/error'], function (controller) {
-            controller.init(options);
+            controller.init(error);
         });
     });
 
