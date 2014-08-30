@@ -3,7 +3,7 @@ define(function (require, exports, module) {
 
     var app = require('app');
     var msgBus = require('msgbus');
-   // var EquifitEntities = require('entities/equifits');
+    var EquifitEntities = require('entities/equifits');
     var EquifitView = require('views/equifits');
     var HeaderView = require('views/header');
     var BreadcrumbView = require('views/breadcrumb');
@@ -12,12 +12,13 @@ define(function (require, exports, module) {
     var EquifitsModule = {};
 
     // create an instance of equifits collection.
-    //var equifitEntities = new EquifitEntities();
+    var equifitEntities = new EquifitEntities();
 
     EquifitsModule.init = function () {
         // update store model
         msgBus.trigger('equifit:store:update', {
             title: 'Equifits',
+            //url: '/equifit/client/' + app.store.get('clientId'),
             slug: 'equifit'
         });
 
@@ -26,79 +27,31 @@ define(function (require, exports, module) {
                 title: 'Loading Equifits'
             })
         }).render();
-        //
-        //
-
-     // require(['entities/equifits'], function () {
-            var promise = msgBus.trigger('entities:get:equifits');
-
-
-
-            console.log('promise ', promise);
-
-        $.when(promise).done(function (data) {
-
-
-
-            //promise.done(function () {
-               // alert('!');
-            //});
-
-                console.log('DONE', data);
-                //function () {
-                    // if there is no existing Equifit. server response []
-                    // set clientName from the first model
-                    //if(equifitEntities.length !== 0) {
-                    //    // update store model
-                    //    msgBus.trigger('equifit:store:update', {
-                    //        clientName: equifitEntities.at(0).get('clientName')
-                    //    });
-                    //}
-
-                    app.useLayout('layouts/main').setViews({
-                        '.header': new HeaderView(),
-                        '.breadcrumb-container': new BreadcrumbView(),
-                        '.action-container': new ActionView(),
-                        '.main-container': new EquifitView({
-                            //collection: equifitEntities
-                        })
-                    }).render();
-
-                    msgBus.trigger('equifit:title:update', app.store.get('title'));
-                //}
-            });
-
-        $.when(promise).fail(function (model, jqXHR, textStatus) {
-                msgBus.trigger('equifit:error', {error: [model, jqXHR, textStatus]});
-            });
-
-     //});
-
 
         // Fetch data and replace loading view
-        //equifitEntities.fetch().then(
-        //    function () {
-        //        // if there is no existing Equifit. server response []
-        //        // set clientName from the first model
-        //        if(equifitEntities.length !== 0) {
-        //            // update store model
-        //            msgBus.trigger('equifit:store:update', {
-        //                clientName: equifitEntities.at(0).get('clientName')
-        //            });
-        //        }
-        //
-        //        app.useLayout('layouts/main').setViews({
-        //            '.header': new HeaderView(),
-        //            '.breadcrumb-container': new BreadcrumbView(),
-        //            '.action-container': new ActionView(),
-        //            '.main-container': new EquifitView({
-        //                collection: equifitEntities
-        //            })
-        //        }).render();
-        //
-        //        msgBus.trigger('equifit:title:update', app.store.get('title'));
-        //    }
-        //);
+        equifitEntities.fetch().then(
+            function () {
+                // if there is no existing Equifit. server response []
+                // set clientName from the first model
+                if(equifitEntities.length !== 0) {
+                    // update store model
+                    msgBus.trigger('equifit:store:update', {
+                        clientName: equifitEntities.at(0).get('clientName')
+                    });
+                }
+
+                app.useLayout('layouts/main').setViews({
+                    '.header': new HeaderView(),
+                    '.breadcrumb-container': new BreadcrumbView(),
+                    '.action-container': new ActionView(),
+                    '.main-container': new EquifitView({
+                        collection: equifitEntities
+                    })
+                }).render();
+
+                msgBus.trigger('equifit:title:update', app.store.get('title'));
+            }
+        );
     };
 
     module.exports = EquifitsModule;

@@ -12,12 +12,11 @@ define(function (require, exports, module) {
     /***
      * Get all Equifits
      */
-    msgBus.on('entities:get:equifits', function(){
-        console.log('msg bus: get equifits');
-        require(['entities/equifits'], function (api) {
-            return api.getEquifits();
-        });
-    });
+        //msgBus.on('equifit:equifit:getAll', function(){
+        //    require(['controllers/equifit'], function (controller) {
+        //        controller.createNew();
+        //    });
+        //});
 
     /***
      * Create new Equifit
