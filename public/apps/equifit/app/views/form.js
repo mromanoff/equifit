@@ -80,6 +80,10 @@ define(function (require, exports, module) {
                 msgBus.trigger('equifit:form:update', this.model);
 
                 // only if templateTYpe === 'InformedConsent' redirect to Equifit Page
+                // update equifit isSigned to true
+                ////msgBus.trigger('equifit:equifit:update', { isSigned: true});
+
+
                 if(_.isEqual(this.model.get('templateType'), 'InformedConsent')) {
                     var url = 'client/' + app.store.get('clientId') + '/equifit/' + app.store.get('equifitId');
                     app.router.navigate(url, {trigger: true});

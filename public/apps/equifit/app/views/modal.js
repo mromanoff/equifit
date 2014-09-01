@@ -47,6 +47,8 @@ define(function (require, exports, module) {
                 });
             }
 
+            console.log('update equifit ', this.model);
+
             msgBus.trigger('equifit:equifit:update', this.model);
         }
     });
