@@ -3,45 +3,42 @@ define(function (require, exports, module) {
 
     var app = require('app');
     var msgBus = require('msgbus');
-    var EquifitEntities = require('entities/equifits');
+    require('entities/equifits');
     var EquifitView = require('views/equifits');
     var HeaderView = require('views/header');
     var LoadingView = require('views/loading');
-    var EquifitsModule = {};
+    var controller = {};
 
-    // create an instance of equifits collection.
-    var equifitEntities = new EquifitEntities();
-
-    EquifitsModule.init = function () {
+    controller.getEquifits = function () {
         // update store model
-        msgBus.trigger('equifit:store:update', {
+        msgBus.commands.execute('store:set', {
             title: 'Equifits'
         });
 
         app.layout.setView('.main-container', new LoadingView({
-            title: 'Loading Forms'
-        })).render();
+            title: 'Loading Equifits'
+        }));
+        app.layout.render();
 
-        // Fetch data and replace loading view
-        equifitEntities.fetch().then(
-            function () {
-                // if there is no existing Equifit. server response []
-                // set clientName from the first model
-                if(equifitEntities.length !== 0) {
-                    // update store model
-                    msgBus.trigger('equifit:store:update', {
-                        clientName: equifitEntities.at(0).get('clientName')
-                    });
-                }
+        var fetchingEquifits = msgBus.reqres.request('equifit:entities');
+        $.when(fetchingEquifits).done(function (equifits) {
 
-                app.layout.setView('.header', new HeaderView());
-                app.layout.setView('.main-container', new EquifitView({
-                    collection: equifitEntities
-                }));
-                app.layout.render();
+            // if there is no existing Equifit. server response []
+            // set clientName from the first model
+            if(equifits.length !== 0) {
+                // update store model
+                msgBus.commands.execute('store:set', {
+                    clientName: equifits.at(0).get('clientName')
+                });
             }
-        );
+
+            app.layout.setView('.header', new HeaderView());
+            app.layout.setView('.main-container', new EquifitView({
+                collection: equifits
+            }));
+            app.layout.render();
+        });
     };
 
-    module.exports = EquifitsModule;
+    module.exports = controller;
 });

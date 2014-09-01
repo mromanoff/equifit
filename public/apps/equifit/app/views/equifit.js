@@ -2,6 +2,7 @@ define(function (require, exports, module) {
     'use strict';
 
     var app = require('app');
+    var Backbone = require('backbone');
     var msgBus = require('msgbus');
     var MessageView = require('views/message');
     var EquifitView;
@@ -98,7 +99,7 @@ define(function (require, exports, module) {
 
         updateEquifit: function (e) {
             e.preventDefault();
-            msgBus.trigger('equifit:equifit:update', this.model);
+            msgBus.commands.execute('equifit:update', this.model);
         }
     });
 

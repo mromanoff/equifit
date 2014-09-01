@@ -5,11 +5,18 @@ define(function (require, exports, module) {
     'use strict';
 
     var app = require('app');
-    var msgBus = _.extend({}, Backbone.Events);
+    var Wreqr = require('backbone.wreqr');
+
+
+    var msgBus = {
+        reqres: new Wreqr.RequestResponse(),
+        commands: new Wreqr.Commands(),
+        events: new Wreqr.EventAggregator()
+    };
 
 
     // event name
-    // {app name}:{what}:{command}
+    // {what}:{command}
 
 
     /***
@@ -24,38 +31,50 @@ define(function (require, exports, module) {
     /***
      * Create new Equifit
      */
-    msgBus.on('equifit:equifit:create', function(templateId){
+    //msgBus.on('equifit:equifit:create', function(templateId){
+    //    require(['controllers/equifit'], function (controller) {
+    //        controller.createNew(templateId);
+    //    });
+    //});
+
+    msgBus.commands.setHandler('equifit:create', function(){
         require(['controllers/equifit'], function (controller) {
-            controller.createNew(templateId);
+            controller.createEquifit();
         });
     });
 
     /***
      * Update Equifit
      */
-    msgBus.on('equifit:equifit:update', function(model){
+    //msgBus.on('equifit:equifit:update', function(model){
+    //    require(['controllers/equifit'], function (controller) {
+    //        controller.update(model);
+    //    });
+    //});
+
+    msgBus.commands.setHandler('equifit:update', function(equifit){
         require(['controllers/equifit'], function (controller) {
-            controller.update(model);
+            controller.updateEquifit(equifit);
         });
     });
 
     /***
      * Create new Form
      */
-    msgBus.on('equifit:form:create', function(templateId){
-        require(['controllers/form'], function (controller) {
-            controller.createNew(templateId);
-        });
-    });
+    //msgBus.on('equifit:form:create', function(templateId){
+    //    require(['controllers/form'], function (controller) {
+    //        controller.createNew(templateId);
+    //    });
+    //});
 
     /***
      * Update Form
      */
-    msgBus.on('equifit:form:update', function(model){
-        require(['controllers/form'], function (controller) {
-            controller.update(model);
-        });
-    });
+    //msgBus.on('equifit:form:update', function(model){
+    //    require(['controllers/form'], function (controller) {
+    //        controller.update(model);
+    //    });
+    //});
 
 
     /***
@@ -63,7 +82,7 @@ define(function (require, exports, module) {
      * @type {Object}
      */
 
-    msgBus.on('scroll:top', function () {
+    msgBus.commands.setHandler('scroll:top', function () {
         require(['controllers/helper'], function (controller) {
             controller.scrollTop();
         });
@@ -72,24 +91,40 @@ define(function (require, exports, module) {
     /***
      * Update Data Storage
      */
-    msgBus.on('equifit:store:update', function(options){
+    msgBus.commands.setHandler('store:set', function(options){
+
+        console.log('set store with', options);
+
         app.store.set(options);
     });
 
     /***
      * Create Modal
      */
-    msgBus.on('equifit:modal:create', function(options){
+    msgBus.commands.setHandler('modal:show', function(options){
         require(['controllers/modal'], function (controller) {
             controller.init(options);
         });
     });
 
-    msgBus.on('equifit:error', function(error){
-        require(['controllers/error'], function (controller) {
-            controller.init(error);
-        });
-    });
+    //msgBus.on('equifit:error', function(error){
+    //    require(['controllers/error'], function (controller) {
+    //        controller.init(error);
+    //    });
+    //});
+
+
+
+    //msgBus.on('equifit:entities', function () {
+    //    console.log('triggered');
+    //    //return API.getEquifitEntities();
+    //    //require(['entities/equifits'], function (controller) {
+    //    //    console.log('now require');
+    //    //    controller.API.getEquifitEntities();
+    //    //});
+    //
+    //});
+
 
     module.exports = msgBus;
 });

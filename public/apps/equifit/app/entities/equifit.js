@@ -1,3 +1,4 @@
+/*
 define(function (require, exports, module) {
     'use strict';
 
@@ -33,3 +34,4 @@ define(function (require, exports, module) {
 
     module.exports = EquifitEntity;
 });
+*/

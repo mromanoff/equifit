@@ -43,7 +43,7 @@ define(function (require, exports, module) {
             /***
              * update store model
              */
-            msgBus.trigger('equifit:store:update', {
+            msgBus.commands.execute('store:set', {
                 equifitName: _.isNull(this.model.get('appointmentAt')) ? 'Equifit' : moment(this.model.get('appointmentAt')).format('MMMM D, YYYY'),
                 isSigned: this.model.get('isSigned'),
                 equifitId: this.model.id
@@ -62,12 +62,12 @@ define(function (require, exports, module) {
         template: 'equifits',
 
         events: {
-            'click .createNew': 'createNew',
+            'click .createNew': 'createEquifit',
             'click .printBlankForm': 'printForm'
         },
 
         initialize: function () {
-            msgBus.trigger('scroll:top');
+            msgBus.commands.execute('scroll:top');
         },
 
         printForm: function (e) {
@@ -75,9 +75,9 @@ define(function (require, exports, module) {
             window.location.href = '/apps/equifit/assets/files/equifit-forms.pdf';
         },
 
-        createNew: function (e) {
+        createEquifit: function (e) {
             e.preventDefault();
-            msgBus.trigger('equifit:equifit:create', app.store.get('clientId'));
+            msgBus.commands.execute('equifit:create');
         },
 
         beforeRender: function () {

@@ -3,55 +3,51 @@ define(function (require, exports, module) {
 
     var app = require('app');
     var msgBus = require('msgbus');
-    var FormEntity = require('entities/form');
-    var FormEntities = require('entities/forms');
+    //var FormEntity = require('entities/form');
+    require('entities/forms');
+
     var FormView = require('views/form');
     var HeaderView = require('views/header');
     var LoadingView = require('views/loading');
-    var formModule = {};
+    var controller = {};
     var url;
 
     // create an instance of form model and form collection.
-    var formEntities = new FormEntities();
-    var formEntity = new FormEntity();
+    //var formEntities = new FormEntities();
+    //var formEntity = new FormEntity();
 
-    formModule.init = function () {
-
+    controller.getForm = function () {
         /***
          * update store model
          */
-        msgBus.trigger('equifit:store:update', {
+        msgBus.commands.execute('store:set', {
             title: 'Form'
         });
 
         app.layout.setView('.main-container', new LoadingView({
             title: 'Loading Forms'
-        })).render();
+        }));
+        app.layout.render();
 
-        formEntity.fetch().then(
-            function () {
+        var fetchingForm = msgBus.reqres.request('form:entity', app.store.get('formId'));
+        $.when(fetchingForm).done(function (form) {
+            /***
+             * update store model
+             */
+            msgBus.commands.execute('store:set', {
+                title: form.get('title'),
+                formName: form.get('title')
+            });
 
-                console.warn('formEntety', formEntity);
-
-                /***
-                 * update store model
-                 */
-                msgBus.trigger('equifit:store:update', {
-                    title: formEntity.get('title'),
-                    formName: formEntity.get('title')
-                });
-
-
-                app.layout.setView('.header', new HeaderView());
-                app.layout.setView('.main-container', new FormView({
-                    model: formEntity
-                }));
-                app.layout.render();
-            }
-        );
+            app.layout.setView('.header', new HeaderView());
+            app.layout.setView('.main-container', new FormView({
+                model: form
+            }));
+            app.layout.render();
+        });
     };
 
-    formModule.createNew = function (templateId) {
+    controller.createNew = function (templateId) {
 
         console.warn('create new form', templateId);
 
@@ -72,7 +68,7 @@ define(function (require, exports, module) {
         });
     };
 
-    formModule.update = function (model) {
+    controller.update = function (model) {
         var promise = model.updateForm(model);
 
         promise.done(function (model) {
@@ -85,5 +81,5 @@ define(function (require, exports, module) {
         });
     };
 
-    module.exports = formModule;
+    module.exports = controller;
 });

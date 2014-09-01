@@ -6,12 +6,13 @@
 define(function (require, exports, module) {
     'use strict';
 
+    var app = require('app');
     var Backbone = require('backbone');
     Backbone.LocalStorage = require('localstorage');
     //var msgBus = require('msgbus');
-    var StoreEntity;
+    var Entities = {};
 
-    StoreEntity = Backbone.Model.extend({
+    Entities.Store = Backbone.Model.extend({
         localStorage: new Backbone.LocalStorage('Equifit'),
 
         defaults: {
@@ -42,6 +43,44 @@ define(function (require, exports, module) {
         }
     });
 
+    //app.store = new Entities.Store();
+  //  var store = new Entities.Store();
+
+
+    //var API = {
+    //    setStore: function (options) {
+    //        //app.store.set(options);
+    //    },
+    //
+    //    getStore: function () {
+    //        console.log('get store');
+    //        //return store;
+    //
+    //        var store = new Entities.Store();
+    //        var deferred = $.Deferred();
+    //
+    //        store.fetch({
+    //            success: deferred.resolve,
+    //            error: deferred.reject
+    //        });
+    //
+    //        return deferred.promise();
+    //
+    //
+    //    }
+    //};
+    //
+    //msgBus.commands.setHandler('store:set', function(options){
+    //    console.log('set store with ', options);
+    //    return API.setStore(options);
+    //});
+    //
+    //msgBus.reqres.setHandler('equifit:store:get', function () {
+    //    console.log('get store data');
+    //    return API.getStore();
+    //});
+
+
     // return instance
-    module.exports = StoreEntity;
+    module.exports = Entities.Store;
 });

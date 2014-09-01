@@ -3,8 +3,8 @@ define(function (require, exports, module) {
 
     var $ = require('jquery');
     var Backbone = require('backbone');
-    var Layout = require('backbone.layoutmanager');
     var Store = require('./entities/store');
+    var Layout = require('backbone.layoutmanager');
     require('bootstrap');
 
     // Provide a global location to place configuration settings and module
@@ -62,17 +62,19 @@ define(function (require, exports, module) {
     });
 
     // Mix Backbone.Events, modules, and layout management into the app object.
-    module.exports = _.extend(app, {
-        // Helper for using layouts.
-        useLayout: function (name) {
-            var layout = new Backbone.Layout({
-                el: '#main',
-                template: name
-            });
+    //module.exports = _.extend(app, {
+    //    // Helper for using layouts.
+    //    useLayout: function (name) {
+    //        var layout = new Backbone.Layout({
+    //            el: '#main',
+    //            template: name
+    //        });
+    //
+    //        // Cache the refererence.
+    //        this.layout =  layout;
+    //        return layout;
+    //    }
+    //}, Backbone.Events);
 
-            // Cache the refererence.
-            this.layout =  layout;
-            return layout;
-        }
-    }, Backbone.Events);
+    module.exports = app;
 });

@@ -3,84 +3,114 @@ define(function (require, exports, module) {
 
     var app = require('app');
     var msgBus = require('msgbus');
-    var EquifitEntities = require('entities/equifits');
+    require('entities/equifits');
     var EquifitView = require('views/equifit');
     var HeaderView = require('views/header');
     var LoadingView = require('views/loading');
-    var equifitModule = {};
-    var url;
+    var controller = {};
 
-    // create an instance of equifits collection.
-    var equifitEntities = new EquifitEntities();
-
-    equifitModule.init = function () {
-
+    controller.getEquifit = function () {
         /***
          * update store model
          */
-        msgBus.trigger('equifit:store:update', {
+        msgBus.commands.execute('store:set', {
             title: 'Forms'
         });
 
         app.layout.setView('.main-container', new LoadingView({
             title: 'Loading Forms'
-        })).render();
+        }));
+        app.layout.render();
 
-        /***
-         * Fetch data and replace loading view
-         */
-        equifitEntities.fetch().then(
-            function () {
-                var equifitEntety = equifitEntities.get(app.store.get('equifitId'));
+        var fetchingEquifit = msgBus.reqres.request('equifit:entity', app.store.get('equifitId'));
+        $.when(fetchingEquifit).done(function (equifit) {
+            /***
+             * update store model
+             */
+            msgBus.commands.execute('store:set', {
+                clientName: equifit.get('clientName'),
+                isSigned: equifit.get('isSigned'),
+                forms: equifit.get('documents')
+            });
 
-                console.warn('equifitEntety', equifitEntety);
-
-                /***
-                 * update store model
-                 */
-                msgBus.trigger('equifit:store:update', {
-                    clientName: equifitEntety.get('clientName'),
-                    isSigned: equifitEntety.get('isSigned'),
-                    forms: equifitEntety.get('documents')
-                });
-
-                app.layout.setView('.header', new HeaderView());
-                app.layout.setView('.main-container', new EquifitView({
-                    model: equifitEntety
-                }));
-                app.layout.render();
-            }
-        );
+            app.layout.setView('.header', new HeaderView());
+            app.layout.setView('.main-container', new EquifitView({
+                model: equifit
+            }));
+            app.layout.render();
+        });
     };
 
-    equifitModule.createNew = function () {
-        var promise = equifitEntities.addEquifit();
+    controller.createEquifit = function () {
+        var createEquifit = msgBus.reqres.request('equifit:entity:create');
+        $.when(createEquifit).done(function (equifit) {
+            /***
+             * update store model
+             */
+            msgBus.commands.execute('store:set', {
+                clientName: equifit.get('clientName'),
+                isSigned: equifit.get('isSigned'),
+                forms: equifit.get('documents')
+            });
 
-        promise.done(function (model) {
-            url = 'client/' + app.store.get('clientId') + '/equifit/' + model.id;
-            app.router.navigate(url, { trigger: true});
+            app.layout.setView('.header', new HeaderView());
+            app.layout.setView('.main-container', new EquifitView({
+                model: equifit
+            }));
+            app.layout.render();
+
+            var url = 'client/' + app.store.get('clientId') + '/equifit/' + equifit.id;
+            app.router.navigate(url);
         });
 
-        promise.fail(function (model, jqXHR, textStatus) {
-            // TODO create error page
-            console.log('error:', model, jqXHR, textStatus);
-            url = 'error';
+        $.when(createEquifit).fail(function (model, jqXHR, textStatus) {
+            console.log('error: equifit create failed', model, jqXHR, textStatus);
+            var url = 'error';
             app.router.navigate(url, { trigger: true });
         });
     };
 
-    equifitModule.update = function (model) {
-        var promise = model.updateEquifit(model);
 
-        promise.done(function (model) {
-            msgBus.trigger('equifit:modal:create', model);
+    controller.updateEquifit = function (equifit) {
+
+        console.warn('controller update equifit request', equifit);
+
+
+        var updateEquifit = msgBus.reqres.request('equifit:entity:update', equifit);
+        $.when(updateEquifit).done(function (equifit) {
+
+            console.warn('controller update equifit response', equifit);
+
+            msgBus.commands.execute('modal:show', equifit);
+
+
+
+
+            /***
+             * update store model
+             */
+            //msgBus.commands.execute('store:set', {
+            //    clientName: equifit.get('clientName'),
+            //    isSigned: equifit.get('isSigned'),
+            //    forms: equifit.get('documents')
+            //});
+            //
+            //app.layout.setView('.header', new HeaderView());
+            //app.layout.setView('.main-container', new EquifitView({
+            //    model: equifit
+            //}));
+            //app.layout.render();
+            //
+            //var url = 'client/' + app.store.get('clientId') + '/equifit/' + equifit.id;
+            //app.router.navigate(url);
         });
 
-        promise.fail(function (model, jqXHR, textStatus) {
-            // TODO create error page
-            console.log('error:', model, jqXHR, textStatus);
+        $.when(updateEquifit).fail(function (model, jqXHR, textStatus) {
+            console.log('error: equifit create failed', model, jqXHR, textStatus);
+            var url = 'error';
+            app.router.navigate(url, { trigger: true });
         });
     };
 
-    module.exports = equifitModule;
+    module.exports = controller;
 });

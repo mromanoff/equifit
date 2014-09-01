@@ -11,7 +11,7 @@ define(function (require, exports, module) {
         /***
          * update store model
          */
-        msgBus.trigger('equifit:store:update', {
+        msgBus.commands.execute('store:set', {
             title: 'Error'
         });
 

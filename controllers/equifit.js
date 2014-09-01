@@ -20,13 +20,33 @@ module.exports = {
     getEquifit: function (req, res) {
         'use strict';
 
-        models.Equifit.find({_id: req.params.id}, function (err, item) {
+        //models.Equifit.find({_id: req.params.id}, function (err, item) {
+        //    if (err) {
+        //        res.json({error: 'Equifit not found.'});
+        //    } else {
+        //        res.json(item);
+        //    }
+        //});
+
+        models.Equifit.findById(req.params.id, function(err, item) {
             if (err) {
                 res.json({error: 'Equifit not found.'});
             } else {
                 res.json(item);
             }
         });
+
+        //models.Form.findOne({_id: req.params.id}, function (err, item) {
+        //    if (err) {
+        //        res.json({error: 'Document not found.'});
+        //    } else {
+        //        console.log('ITEM', item);
+        //        res.json(item);
+        //    }
+        //});
+
+
+
     },
 
     createEquifit: function (req, res) {
@@ -202,9 +222,11 @@ module.exports = {
         'use strict';
 
         models.Form.findById(req.params.id, function(err, item) {
-            if (err)
-                res.send(err);
-            res.json(item);
+            if (err) {
+                res.json({error: 'form not found.'});
+            } else {
+                res.json(item);
+            }
         });
 
         //models.Form.findOne({_id: req.params.id}, function (err, item) {

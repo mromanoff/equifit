@@ -26,8 +26,8 @@ define(function (require, exports, module) {
         },
 
         afterRender: function () {
-          this.$el.modal();
-    },
+            this.$el.modal();
+        },
 
         closeModal: function () {
             $('.modal-backdrop').remove();
@@ -40,16 +40,13 @@ define(function (require, exports, module) {
             // close previously open modal
             this.closeModal();
 
-            if($(e.currentTarget).data('validate')) {
+            if ($(e.currentTarget).data('validate')) {
                 console.log('set isValidate to true');
                 this.model.set({
                     isValidated: true
                 });
             }
-
-            console.log('update equifit ', this.model);
-
-            msgBus.trigger('equifit:equifit:update', this.model);
+            msgBus.commands.execute('equifit:update', this.model);
         }
     });
 
