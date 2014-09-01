@@ -20,8 +20,10 @@ define(function (require, exports, module) {
 
             if (_.isEqual(this.model.get('templateType'), 'InformedConsent')) {
                 data.status = app.store.get('isSigned') ? 'Signed' : 'Not Signed';
+                data.badge = 'badge-important';
             } else {
-                data.status = this.model.get('totalCompletedQuestions') + ' of ' + this.model.get('totalQuestions')
+                data.status = this.model.get('totalCompletedQuestions') + ' of ' + this.model.get('totalQuestions');
+                data.badge = null;
             }
             return data;
         },
@@ -83,9 +85,6 @@ define(function (require, exports, module) {
                 this.insertView('.list', new ItemEmpty());
             } else {
                 documents.each(function (item) {
-                    // create id from id or _id (mongo)
-                   // item.id  = item.get('id') || item.get('_id'); // || null;
-
                     this.insertView('.list', new Item({
                         model: item
                     }));

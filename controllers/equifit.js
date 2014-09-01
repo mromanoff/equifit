@@ -4,16 +4,22 @@ var _ = require('underscore');
 module.exports = {
 
     equifit: function (req, res) {
+        'use strict';
+
         res.render('equifit', {title: 'Equifit'});
     },
 
     getEquifits: function (req, res) {
+        'use strict';
+
         models.Equifit.find({}, function (err, data) {
             res.json(data);
         });
     },
 
     getEquifit: function (req, res) {
+        'use strict';
+
         models.Equifit.find({_id: req.params.id}, function (err, item) {
             if (err) {
                 res.json({error: 'Equifit not found.'});
@@ -24,78 +30,104 @@ module.exports = {
     },
 
     createEquifit: function (req, res) {
+        'use strict';
+
         var mockUp = {
             appointmentAt: null,
             updatedAt: null,
-            trainerName: "Josh Smith",
-            trainerFacility: "Tribeca",
-            clientName: "Donna Summer",
+            trainerName: 'Josh Smith',
+            trainerFacility: 'Tribeca',
+            clientName: 'Donna Summer',
             clientId: 123,
             isSigned: false,
             isValidated: false,
             documents: [
                 {
-                    templateId: 66,
-                    templateType: "InformedConsent",
-                    title: "Consent Form",
-                    isComplete: false,
-                    totalQuestions: 1,
-                    totalCompletedQuestions: 0
+                    title: 'Personal Info',
+                    templateId: 2,
+                    templateType: 'Personal Information',
+                    totalQuestions: 5,
+                    totalCompletedQuestions: 2
                 },
 
                 {
-                    title: "PAR-Q",
-                    templateType: 2,
+                    templateId: 66,
+                    title: 'Informed Consent',
+                    templateType: 'InformedConsent',
+                    totalQuestions: 1,
+                    totalCompletedQuestions: 0
+                },
+                {
+                    title: 'Medical / Orthopedic HX',
                     templateId: 2,
-                    totalQuestions: 10,
-                    totalCompletedQuestions: 0
-                },
-                {
-                    title: "Personal Info",
-                    templateId: 3,
-                    templateType: 2,
-                    totalQuestions: 10,
-                    totalCompletedQuestions: 0
-                },
-                {
-                    title: "Goals",
-                    templateId: 4,
-                    templateType: 2,
-                    isComplete: false,
-                    totalQuestions: 12,
-                    totalCompletedQuestions: 0
-                },
-                {
-                    templateId: 5,
-                    templateType: 2,
-                    title: "Orthopedic",
-                    isComplete: false,
-                    totalQuestions: 13,
-                    totalCompletedQuestions: 0
-                },
-                {
-                    templateId: 6,
-                    templateType: 2,
-                    title: "Exercise History",
-                    isComplete: false,
-                    totalQuestions: 7,
-                    totalCompletedQuestions: 0
+                    templateType: 'Medical',
+                    totalQuestions: 5,
+                    totalCompletedQuestions: 2
                 },
                 {
                     templateId: 7,
-                    templateType: 2,
-                    title: "Lifestyle",
-                    isComplete: false,
+                    templateType: 'Lifestyle',
+                    title: 'Lifestyle',
                     totalQuestions: 15,
-                    totalCompletedQuestions: 0
+                    totalCompletedQuestions: 10
+                },
+
+                {
+                    templateId: 6,
+                    templateType: 'ExerciseHistory',
+                    title: 'Exercise History',
+                    totalQuestions: 7,
+                    totalCompletedQuestions: 6
+                },
+                {
+                    templateId: 4,
+                    templateType: 'GoalsHabits',
+                    title: 'Goals & Habits',
+                    totalQuestions: 12,
+                    totalCompletedQuestions: 1
+                },
+                {
+                    _id: '53ed60ebb4932fec89e19a60',
+                    templateId: 4,
+                    templateType: 'RegenerationNutrition',
+                    title: 'Regeneration & Nutrition',
+                    totalQuestions: 12,
+                    totalCompletedQuestions: 1
+                },
+                {
+                    templateId: 4,
+                    templateType: 'BodyMeasurements',
+                    title: 'Body Measurements',
+                    totalQuestions: 12,
+                    totalCompletedQuestions: 1
+                },
+                {
+                    templateId: 4,
+                    templateType: 'FunctionalMovementScreen',
+                    title: 'Functional Movement Screen',
+                    totalQuestions: 12,
+                    totalCompletedQuestions: 1
+                },
+                {
+                    templateId: 4,
+                    templateType: 'Equistretch',
+                    title: 'Equistretch',
+                    totalQuestions: 12,
+                    totalCompletedQuestions: 1
+                },
+                {
+                    templateId: 4,
+                    templateType: 'PerformanceTesting',
+                    title: 'Performance Testing',
+                    totalQuestions: 12,
+                    totalCompletedQuestions: 1
                 },
                 {
                     templateId: 8,
                     templateType: 2,
-                    title: "Physical Test",
-                    isComplete: false,
+                    title: 'Physical Test',
                     totalQuestions: 5,
-                    totalCompletedQuestions: 0
+                    totalCompletedQuestions: 5
                 }
             ]
         };
@@ -112,6 +144,8 @@ module.exports = {
     },
 
     updateEquifit: function (req, res) {
+        'use strict';
+
         var obj = req.body;
         var id = obj._id;
         delete obj._id;
@@ -158,13 +192,15 @@ module.exports = {
         }
     },
 
-    getDocuments: function (req, res) {
-        models.Form.find({}, function (err, data) {
-            res.json(data);
-        });
-    },
+    //getDocuments: function (req, res) {
+    //    models.Form.find({}, function (err, data) {
+    //        res.json(data);
+    //    });
+    //},
 
     getDocument: function (req, res) {
+        'use strict';
+
         models.Form.findById(req.params.id, function(err, item) {
             if (err)
                 res.send(err);
@@ -182,26 +218,28 @@ module.exports = {
     },
 
     createDocument: function (req, res) {
+        'use strict';
+
         var mockUp = {
-            templateId: 8,
-            title: "Physical Test",
+            templateId: 2,
+            title: 'Physical Test',
             totalQuestions: 5,
             totalCompletedQuestions: 5,
             formSchema: {
                 email: {
-                    validators: ["required", "email"]
+                    validators: ['required', 'email']
                 },
-                name: "Text",
+                name: 'Text',
                 title: {
-                    options: ["", "Mr", "Mrs", "Ms"],
-                    type: "Select"
+                    options: ['', 'Mr', 'Mrs', 'Ms'],
+                    type: 'Select'
                 }
             },
             data: {},
             fieldsets: [
                 {
-                    fields: ["title", "name", "email", "testHidden"],
-                    legend: "Member Information"
+                    fields: ['title', 'name', 'email', 'testHidden'],
+                    legend: 'Member Information'
                 }
             ]
         };
@@ -219,6 +257,8 @@ module.exports = {
     },
 
     updateDocument: function (req, res) {
+        'use strict';
+
         var obj = req.body;
 
         //console.log('obj', obj);
