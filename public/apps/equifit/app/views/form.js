@@ -18,7 +18,6 @@ define(function (require, exports, module) {
             'click [data-url]': 'showPage'
         },
 
-
         initialize: function () {
             console.log('Form data model', this.model);
         },

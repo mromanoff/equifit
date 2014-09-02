@@ -17,9 +17,7 @@ define(function (require, exports, module) {
             title: 'Form'
         });
 
-        app.layout.setView('.main-container', new LoadingView({
-            title: 'Loading Form'
-        }));
+        app.layout.setView('.main-container', new LoadingView());
         app.layout.render();
 
         var fetchingForm = msgBus.reqres.request('form:entity', app.store.get('formId'));

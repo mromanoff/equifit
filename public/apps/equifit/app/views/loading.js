@@ -8,22 +8,14 @@ define(function (require, exports, module) {
     LoadingViewModule =  Backbone.View.extend({
         manage: true,
         id: 'spinner',
-        className: 'text-center',
-        template: 'loading',
 
         initialize: function(opt){
             var options = _.extend({}, opt);
-            this.title = options.title || 'Loading Data';
-            this.message = options.message || 'Please wait, data is loading.';
-        },
-
-        serialize: function () {
-            return { title: this.title, message: this.message };
+            this.message = options.message || 'Loading...';
         },
 
         afterRender: function () {
             var opts = {
-
                 lines: 13, // The number of lines to draw
                 length: 7, // The length of each line
                 width: 2, // The line thickness
@@ -42,6 +34,7 @@ define(function (require, exports, module) {
 
             var target = document.getElementById(this.el.id);
             new Spinner(opts).spin(target);
+            $('.' + opts.className).prepend('<div class="spinner-block"><small>' + this.message + '</small></div>');
         }
     });
 

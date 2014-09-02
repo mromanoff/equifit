@@ -17,9 +17,7 @@ define(function (require, exports, module) {
             title: 'Forms'
         });
 
-        app.layout.setView('.main-container', new LoadingView({
-            title: 'Loading Forms'
-        }));
+        app.layout.setView('.main-container', new LoadingView());
         app.layout.render();
 
         var fetchingEquifit = msgBus.reqres.request('equifit:entity', app.store.get('equifitId'));

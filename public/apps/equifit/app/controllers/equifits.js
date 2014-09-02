@@ -15,9 +15,7 @@ define(function (require, exports, module) {
             title: 'Equifits'
         });
 
-        app.layout.setView('.main-container', new LoadingView({
-            title: 'Loading Equifits'
-        }));
+        app.layout.setView('.main-container', new LoadingView());
         app.layout.render();
 
         var fetchingEquifits = msgBus.reqres.request('equifit:entities');
