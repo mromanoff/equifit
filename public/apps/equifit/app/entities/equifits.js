@@ -43,7 +43,7 @@ define(function (require) {
                         defer.resolve(data);
                     },
                     error: function (data) {
-                        defer.resolve(undefined);
+                        defer.resolve(data);
                     }
                 });
            // }, 2000);

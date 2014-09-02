@@ -38,6 +38,12 @@ define(function (require, exports, module) {
             }));
             app.layout.render();
         });
+
+        $.when(fetchingEquifits).fail(function (model, jqXHR, textStatus) {
+            console.log('error: equifit create failed', model, jqXHR, textStatus);
+            var url = 'error';
+            app.router.navigate(url, { trigger: true });
+        });
     };
 
     module.exports = controller;

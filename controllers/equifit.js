@@ -5,7 +5,6 @@ module.exports = {
 
     equifit: function (req, res) {
         'use strict';
-
         res.render('equifit', {title: 'Equifit'});
     },
 
@@ -13,20 +12,16 @@ module.exports = {
         'use strict';
 
         models.Equifit.find({}, function (err, data) {
-            res.json(data);
+            if (err) {
+                res.json({error: 'No Equifits found.'});
+            } else {
+                res.json(data);
+            }
         });
     },
 
     getEquifit: function (req, res) {
         'use strict';
-
-        //models.Equifit.find({_id: req.params.id}, function (err, item) {
-        //    if (err) {
-        //        res.json({error: 'Equifit not found.'});
-        //    } else {
-        //        res.json(item);
-        //    }
-        //});
 
         models.Equifit.findById(req.params.id, function(err, item) {
             if (err) {
@@ -44,9 +39,6 @@ module.exports = {
         //        res.json(item);
         //    }
         //});
-
-
-
     },
 
     createEquifit: function (req, res) {
@@ -282,9 +274,6 @@ module.exports = {
         'use strict';
 
         var obj = req.body;
-
-        //console.log('obj', obj);
-
         var id = obj._id;
         delete obj._id;
         if (id) {

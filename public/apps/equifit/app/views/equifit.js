@@ -38,12 +38,10 @@ define(function (require, exports, module) {
             e.preventDefault();
             var url = 'client/' + app.store.get('clientId') + '/equifit/' + app.store.get('equifitId');
 
-            console.log('click on this form ', this.model);
-
             if(_.isEmpty(this.model.get('_id'))) {
                 console.log('this model doesn\'t have an ID');
                 console.warn('create new form with template id', this.model.get('templateId'));
-                msgBus.trigger('equifit:form:create', this.model.get('templateId'));
+                msgBus.commands.execute('form:create', this.model.get('templateId'));
             }
             else {
                 console.log('this model have an ID');

@@ -3,18 +3,11 @@ define(function (require, exports, module) {
 
     var app = require('app');
     var msgBus = require('msgbus');
-    //var FormEntity = require('entities/form');
     require('entities/forms');
-
     var FormView = require('views/form');
     var HeaderView = require('views/header');
     var LoadingView = require('views/loading');
     var controller = {};
-    var url;
-
-    // create an instance of form model and form collection.
-    //var formEntities = new FormEntities();
-    //var formEntity = new FormEntity();
 
     controller.getForm = function () {
         /***
@@ -25,7 +18,7 @@ define(function (require, exports, module) {
         });
 
         app.layout.setView('.main-container', new LoadingView({
-            title: 'Loading Forms'
+            title: 'Loading Form'
         }));
         app.layout.render();
 
@@ -45,39 +38,81 @@ define(function (require, exports, module) {
             }));
             app.layout.render();
         });
+
+        $.when(fetchingForm).fail(function (model, jqXHR, textStatus) {
+            console.log('error: form create failed', model, jqXHR, textStatus);
+            var url = 'error';
+            app.router.navigate(url, { trigger: true });
+        });
     };
 
-    controller.createNew = function (templateId) {
-
+    controller.createForm = function (templateId) {
         console.warn('create new form', templateId);
 
-        formEntities.create({templateId: templateId}, {
-            // waits for server to respond with 200
-            // before adding newly created model to collection
-            wait: true,
-            success: function (model) {
-                console.log('success callback', model);
-                url = 'client/' + app.store.get('clientId') + '/equifit/' + app.store.get('equifitId') + '/form/' + model.id;
-                app.router.navigate(url, {trigger: true});
-            },
-            error: function (model, response) {
-                console.log('ERROR: can\'t create new forms', model, response);
-                msgBus.trigger('equifit:error', response);
-                app.router.navigate('error');
-            }
+        /***
+         * update store model
+         */
+        msgBus.commands.execute('store:set', {
+            title: 'Form'
+        });
+
+        app.layout.setView('.main-container', new LoadingView({
+            title: 'Loading Form'
+        }));
+        app.layout.render();
+
+        var createForm = msgBus.reqres.request('form:entity:create', templateId);
+        $.when(createForm).done(function (form) {
+            /***
+             * update store model
+             */
+            msgBus.commands.execute('store:set', {
+                title: form.get('title'),
+                formName: form.get('title'),
+                equifitName: 'Forms'
+            });
+
+            app.layout.setView('.header', new HeaderView());
+            app.layout.setView('.main-container', new FormView({
+                model: form
+            }));
+            app.layout.render();
+
+            var url = 'client/' + app.store.get('clientId') + '/equifit/' + app.store.get('equifitId') + '/form/' + form.id;
+            app.router.navigate(url);
+        });
+
+        $.when(createForm).fail(function (model, jqXHR, textStatus) {
+            console.log('error: form create failed', model, jqXHR, textStatus);
+            var url = 'error';
+            app.router.navigate(url, { trigger: true });
         });
     };
 
-    controller.update = function (model) {
-        var promise = model.updateForm(model);
+    controller.updateForm = function (form) {
+        console.warn('controller update form request', form);
 
-        promise.done(function (model) {
-            console.log('Form updated', model);
+        app.layout.setView('.main-container', new LoadingView({
+            title: 'Loading Form'
+        }));
+        app.layout.render();
+
+        var updateForm = msgBus.reqres.request('form:entity:update', form);
+        $.when(updateForm).done(function (equifit) {
+            console.warn('controller update form response', equifit);
+            //TODO create success module
+
+            //app.layout.setView('.header', new HeaderView());
+            //app.layout.setView('.main-container', new FormView({
+            //    model: equifit
+            //}));
+            //app.layout.render();
         });
 
-        promise.fail(function (model, jqXHR, textStatus) {
-            // TODO create error page
-            console.log('error:', model, jqXHR, textStatus);
+        $.when(updateForm).fail(function (model, jqXHR, textStatus) {
+            console.log('error: equifit create failed', model, jqXHR, textStatus);
+            var url = 'error';
+            app.router.navigate(url, { trigger: true });
         });
     };
 

@@ -4,6 +4,8 @@ var client = require('../controllers/client');
 
 
 module.exports.initialize = function(app) {
+    'use strict';
+
     // api routes going first
     app.get('/equifit/api/clients/:id/equifits', equifit.getEquifits);
     app.post('/equifit/api/clients/:id/equifits/', equifit.createEquifit);

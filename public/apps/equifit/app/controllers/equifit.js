@@ -39,9 +39,22 @@ define(function (require, exports, module) {
             }));
             app.layout.render();
         });
+
+        $.when(fetchingEquifit).fail(function (model, jqXHR, textStatus) {
+            console.log('error: equifit create failed', model, jqXHR, textStatus);
+            var url = 'error';
+            app.router.navigate(url, { trigger: true });
+        });
     };
 
     controller.createEquifit = function () {
+        /***
+         * update store model
+         */
+        msgBus.commands.execute('store:set', {
+            title: 'Forms'
+        });
+
         var createEquifit = msgBus.reqres.request('equifit:entity:create');
         $.when(createEquifit).done(function (equifit) {
             /***
@@ -70,21 +83,11 @@ define(function (require, exports, module) {
         });
     };
 
-
     controller.updateEquifit = function (equifit) {
-
-        console.warn('controller update equifit request', equifit);
-
-
         var updateEquifit = msgBus.reqres.request('equifit:entity:update', equifit);
         $.when(updateEquifit).done(function (equifit) {
-
             console.warn('controller update equifit response', equifit);
-
             msgBus.commands.execute('modal:show', equifit);
-
-
-
 
             /***
              * update store model

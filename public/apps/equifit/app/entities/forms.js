@@ -40,44 +40,10 @@ define(function (require) {
             response.schema = _.clone(response.formSchema);
             delete response.formSchema;
             return response;
-        },
-        //
-        //updateForm: function (model) {
-        //    var deferred = $.Deferred();
-        //    //setTimeout(function () {
-        //    model.save(model, {
-        //        wait: true,
-        //        success: deferred.resolve,
-        //        error: deferred.reject
-        //    });
-        //    //}, 2000);
-        //    return deferred.promise();
-        //}
+        }
     });
 
-    //Entities.FormCollection = Backbone.Collection.extend({
-    //    model: Entities.Form,
-    //
-    //    url: function () {
-    //        return '/equifit/api/clients/' + app.store.get('clientId') + '/equifits/' + app.store.get('equifitId') + '/documents';
-    //    }
-    //});
-
     var API = {
-        //getFormEntities: function () {
-        //    var forms = new Entities.FormCollection();
-        //    var defer = $.Deferred();
-        //    forms.fetch({
-        //        success: function (data) {
-        //            defer.resolve(data);
-        //        },
-        //        error: function (data) {
-        //            defer.resolve(undefined);
-        //        }
-        //    });
-        //    return defer.promise();
-        //},
-
         getFormEntity: function(formId){
             var equifit = new Entities.Form({_id: formId});
             var defer = $.Deferred();
@@ -93,15 +59,56 @@ define(function (require) {
             });
             //}, 2000);
             return defer.promise();
+        },
+
+        createFormEntity: function (templateId) {
+            console.warn('create form:', templateId);
+            var model = new Entities.Form();
+            var defer = $.Deferred();
+
+            //setTimeout(function(){
+            model.save({templateId: templateId}, {
+                wait : true,
+                success: function (data) {
+                    defer.resolve(data);
+                },
+                error: function (data) {
+                    defer.reject(data);
+                }
+            });
+            //}, 2000);
+            return defer.promise();
+        },
+
+        updateFormEntity: function (form) {
+            var model = new Entities.Form({_id: form.id});
+            var defer = $.Deferred();
+
+            //setTimeout(function(){
+            model.save(form, {
+                wait : true,
+                success: function (data) {
+                    defer.resolve(data);
+                },
+                error: function (data) {
+                    defer.reject(data);
+                }
+            });
+            //}, 2000);
+            return defer.promise();
         }
     };
 
-    //msgBus.reqres.setHandler('form:entities', function () {
-    //    return API.getFormEntities();
-    //});
-
     msgBus.reqres.setHandler('form:entity', function (id) {
         return API.getFormEntity(id);
+    });
+
+    msgBus.reqres.setHandler('form:entity:create', function (templateId) {
+        return API.createFormEntity(templateId);
+    });
+
+    msgBus.reqres.setHandler('form:entity:update', function (form) {
+        return API.updateFormEntity(form);
     });
 
 });

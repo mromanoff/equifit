@@ -77,7 +77,8 @@ define(function (require, exports, module) {
             console.log('form commit', form.model);
 
             if (_.isEmpty(errors)) {
-                msgBus.trigger('equifit:form:update', this.model);
+                msgBus.commands.execute('form:update', this.model);
+
 
                 // only if templateTYpe === 'InformedConsent' redirect to Equifit Page
                 // update equifit isSigned to true
@@ -90,7 +91,7 @@ define(function (require, exports, module) {
                 }
             }
             else {
-                console.log('form did\'t pass validtion');
+                console.error('form did\'t pass validtion');
             }
         }
     });
