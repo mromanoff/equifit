@@ -487,39 +487,14 @@ module.exports = {
                         "personal01": {
                             "type": "Text",
                             "title": "Trainer First & Last Name",
-                            "options": null,
                             "validators": [{"type": "required", "message": "The field is required.", "regex": null}],
-                            "help": null
                         },
                         "personal02": {
                             "type": "Text",
                             "title": "Client First & Last Name",
-                            "options": null,
                             "validators": [{"type": "required", "message": "The field is required.", "regex": null}],
-                            "help": null
                         },
                         "personal03": {
-                            "type": "Select",
-                            "title": "Age",
-                            "options": [
-                                {"val": "personal03-1", "label": "< 18"},
-                                {"val": "personal03-2", "label": "18 - 22"},
-                                {"val": "personal03-3", "label": "23 - 27"},
-                                {"val": "personal03-4", "label": "28 - 32"},
-                                {"val": "personal03-5", "label": "33 - 37"},
-                                {"val": "personal03-6", "label": "38 - 42"},
-                                {"val": "personal03-7", "label": "43 - 47"},
-                                {"val": "personal03-8", "label": "48 - 52"},
-                                {"val": "personal03-9", "label": "53 - 57"},
-                                {"val": "personal03-10", "label": "58 - 62"},
-                                {"val": "personal03-11", "label": "63 - 67"},
-                                {"val": "personal03-12", "label": "68 - 72"},
-                                {"val": "personal03-13", "label": "72 +"}
-                            ],
-                            "validators": [{"type": "required", "message": "Please select one.", "regex": null}],
-                            "help": null
-                        },
-                        "personal04": {
                             "type": "Select",
                             "title": "Gender",
                             "options": [
@@ -530,29 +505,72 @@ module.exports = {
                             "validators": [{"type": "required", "message": "Please select one.", "regex": null}],
                             "help": null
                         },
+
+                        "personal04": {
+                            type: "Date",
+                            title: "Age",
+                            validators: [{ type: "required", message: "Please select date.", "regex": null}]
+                        },
+
+                        //"personal04": {
+                        //    "type": "Select",
+                        //    "title": "Age",
+                        //    "options": [
+                        //        {"val": "personal03-1", "label": "< 18"},
+                        //        {"val": "personal03-2", "label": "18 - 22"},
+                        //        {"val": "personal03-3", "label": "23 - 27"},
+                        //        {"val": "personal03-4", "label": "28 - 32"},
+                        //        {"val": "personal03-5", "label": "33 - 37"},
+                        //        {"val": "personal03-6", "label": "38 - 42"},
+                        //        {"val": "personal03-7", "label": "43 - 47"},
+                        //        {"val": "personal03-8", "label": "48 - 52"},
+                        //        {"val": "personal03-9", "label": "53 - 57"},
+                        //        {"val": "personal03-10", "label": "58 - 62"},
+                        //        {"val": "personal03-11", "label": "63 - 67"},
+                        //        {"val": "personal03-12", "label": "68 - 72"},
+                        //        {"val": "personal03-13", "label": "72 +"}
+                        //    ],
+                        //    "validators": [{"type": "required", "message": "Please select one.", "regex": null}],
+                       // },
                         "personal05": {
-                            "type": "Date",
-                            "title": "Date of Equifit",
-                            "options": null,
-                            "validators": [{"type": "required", "message": "Please select date.", "regex": null}],
-                            "help": null
+                            type: "Date",
+                            title: "Date of Equifit",
+                            yearStart: new Date().getFullYear(),
+                            yearEnd: new Date().getFullYear() + 10,
+                            validators: [{ type: "required", message: "Please select date.", "regex": null}],
                         },
                         "personal06": {
                             "type": "Select",
-                            "title": "Club",
-                            "options": [{"val": "", "label": "Select"}],
-                            "validators": [{"type": "required", "message": "Please select one.", "regex": null}],
-                            "help": null
+                            "title": "Location",
+                            "options": [
+                                {"val": "", "label": "Select"},
+                                {"val": "broadway", "label": "19 Street"},
+                                {"val": "tribeca", "label": "Tribeca"},
+                                {"val": "westside", "label": "West Side"},
+                                {"val": "es", "label": "East Side"},
+                                {"val": "les", "label": "Lower East Side"}
+                            ],
+                            "validators": [{"type": "required", "message": "Please select one.", "regex": null}]
                         }
                     },
-                    "fieldsets": [
+
+                    fieldsets: [
                         {
-                            "legend": "Personal Information",
-                            "fields": [
-                                "personal01",
+                            legend: "I am",
+                            fields:["personal01"]
+                        },
+                        {
+                            legend: "Kelly Jackson is",
+                            fields: [
                                 "personal02",
                                 "personal03",
-                                "personal04",
+                                "personal04"
+                            ]
+                        },
+
+                        {
+                            legend: "Date ofEquifit",
+                            fields: [
                                 "personal05",
                                 "personal06"
                             ]

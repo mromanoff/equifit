@@ -2,6 +2,7 @@ define(function (require, exports, module) {
     'use strict';
 
     var app = require('app');
+    var moment = require('moment');
     var msgBus = require('msgbus');
     require('entities/forms');
     var FormView = require('views/form');
@@ -88,7 +89,6 @@ define(function (require, exports, module) {
     };
 
     controller.updateForm = function (form) {
-        console.warn('controller update form request', form);
 
         app.layout.setView('.main-container', new LoadingView({
             title: 'Loading Form'
@@ -96,15 +96,21 @@ define(function (require, exports, module) {
         app.layout.render();
 
         var updateForm = msgBus.reqres.request('form:entity:update', form);
-        $.when(updateForm).done(function (equifit) {
-            console.warn('controller update form response', equifit);
-            //TODO create success module
 
-            //app.layout.setView('.header', new HeaderView());
-            //app.layout.setView('.main-container', new FormView({
-            //    model: equifit
-            //}));
-            //app.layout.render();
+        $.when(updateForm).done(function (equifit) {
+            var updatedAt = '<small>updated at: ' + moment().format("dddd, MMMM Do YYYY, h:mm:ss a") + '</small>';
+
+            msgBus.commands.execute('modal:simple:show',
+                new Backbone.Model({
+                    title: 'Success',
+                    messages: ['Form updated!', updatedAt]
+                }));
+
+            app.layout.setView('.header', new HeaderView());
+            app.layout.setView('.main-container', new FormView({
+                model: form
+            }));
+            app.layout.render();
         });
 
         $.when(updateForm).fail(function (model, jqXHR, textStatus) {

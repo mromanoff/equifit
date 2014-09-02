@@ -16,6 +16,7 @@ define(function (require) {
             totalCompletedQuestions: null,
             schema: null,
             fieldsets: null,
+            content: null,
             data: null
         },
 
@@ -84,8 +85,13 @@ define(function (require) {
             var model = new Entities.Form({_id: form.id});
             var defer = $.Deferred();
 
+            console.log('form update', form);
+
             //setTimeout(function(){
-            model.save(form, {
+            model.save({
+                data: form.get('data'),
+                content: form.get('content')
+            }, {
                 wait : true,
                 success: function (data) {
                     defer.resolve(data);

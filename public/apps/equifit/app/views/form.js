@@ -61,7 +61,6 @@ define(function (require, exports, module) {
         showPage: function (e) {
             e.preventDefault();
             var url = $(e.currentTarget).data('url');
-            console.log('navigate', url);
             app.router.navigate(url, {trigger: true});
         },
 
@@ -70,20 +69,20 @@ define(function (require, exports, module) {
             //TODO: validate form before submitting
             var errors = form.commit();
 
-            this.model.set({data: form.model.toJSON()});
+            console.error('form errors', errors);
 
-            console.log('form errors', errors);
-            console.log('form commit', form.model);
+            this.model.set({data: form.model.toJSON()});
+            console.log('form data to commit', form.model.toJSON());
+            console.log('form model to commit', this.model.toJSON());
+
 
             if (_.isEmpty(errors)) {
                 msgBus.commands.execute('form:update', this.model);
 
-
-                // only if templateTYpe === 'InformedConsent' redirect to Equifit Page
                 // update equifit isSigned to true
                 ////msgBus.trigger('equifit:equifit:update', { isSigned: true});
 
-
+                // only if templateType === 'InformedConsent' redirect to Equifit Page
                 if(_.isEqual(this.model.get('templateType'), 'InformedConsent')) {
                     var url = 'client/' + app.store.get('clientId') + '/equifit/' + app.store.get('equifitId');
                     app.router.navigate(url, {trigger: true});

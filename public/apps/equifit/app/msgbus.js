@@ -79,6 +79,15 @@ define(function (require, exports, module) {
         });
     });
 
+    /***
+     * Create simple Modal
+     */
+    msgBus.commands.setHandler('modal:simple:show', function(options){
+        require(['controllers/simple-modal'], function (controller) {
+            controller.init(options);
+        });
+    });
+
     //msgBus.on('equifit:error', function(error){
     //    require(['controllers/error'], function (controller) {
     //        controller.init(error);
