@@ -21,7 +21,7 @@ module.exports = {
                             _id: "53ed60ebb4932fec89e19a49",
                             title: "Personal Info",
                             templateId: 2,
-                            templateType: "Personal Information",
+                            templateType: "PersonalInformation",
                             totalQuestions: 5,
                             totalCompletedQuestions: 2
                         },
@@ -480,58 +480,53 @@ module.exports = {
                     _id: "53ed60ebb4932fec89e19a49",
                     title: "Personal Info",
                     templateId: 2,
-                    templateType: "Personal Information",
+                    templateType: "PersonalInformation",
                     totalQuestions: 5,
                     totalCompletedQuestions: 2,
+                    idPrefix: 'personal-info-',
                     formSchema: {
                         "personal01": {
-                            "type": "Text",
-                            "title": "Trainer First & Last Name",
-                            "validators": [{"type": "required", "message": "The field is required.", "regex": null}],
+                            type: "Text",
+                            title: "Trainer First & Last Name",
+                            validators: [{type: "required", "message": "The field is required.", "regex": null}]
                         },
                         "personal02": {
-                            "type": "Text",
-                            "title": "Client First & Last Name",
-                            "validators": [{"type": "required", "message": "The field is required.", "regex": null}],
+                            type: "Text",
+                            title: "Client First & Last Name",
+                            validators: [{type: "required", "message": "The field is required.", "regex": null}]
                         },
                         "personal03": {
-                            "type": "Select",
-                            "title": "Gender",
-                            "options": [
+                            type: "Select",
+                            title: "Gender",
+                            options: [
                                 {"val": "", "label": "Select"},
                                 {"val": "personal04-1", "label": "Male"},
                                 {"val": "personal04-2", "label": "Female"}
                             ],
-                            "validators": [{"type": "required", "message": "Please select one.", "regex": null}],
+                            validators: [{type: "required", "message": "Please select one.", "regex": null}],
                             "help": null
                         },
 
-                        "personal04": {
-                            type: "Date",
+                        personal04: {
+                            type: "Select",
                             title: "Age",
-                            validators: [{ type: "required", message: "Please select date.", "regex": null}]
-                        },
-
-                        //"personal04": {
-                        //    "type": "Select",
-                        //    "title": "Age",
-                        //    "options": [
-                        //        {"val": "personal03-1", "label": "< 18"},
-                        //        {"val": "personal03-2", "label": "18 - 22"},
-                        //        {"val": "personal03-3", "label": "23 - 27"},
-                        //        {"val": "personal03-4", "label": "28 - 32"},
-                        //        {"val": "personal03-5", "label": "33 - 37"},
-                        //        {"val": "personal03-6", "label": "38 - 42"},
-                        //        {"val": "personal03-7", "label": "43 - 47"},
-                        //        {"val": "personal03-8", "label": "48 - 52"},
-                        //        {"val": "personal03-9", "label": "53 - 57"},
-                        //        {"val": "personal03-10", "label": "58 - 62"},
-                        //        {"val": "personal03-11", "label": "63 - 67"},
-                        //        {"val": "personal03-12", "label": "68 - 72"},
-                        //        {"val": "personal03-13", "label": "72 +"}
-                        //    ],
-                        //    "validators": [{"type": "required", "message": "Please select one.", "regex": null}],
-                       // },
+                            options: [
+                                {"val": "personal03-1", "label": "< 18"},
+                                {"val": "personal03-2", "label": "18 - 22"},
+                                {"val": "personal03-3", "label": "23 - 27"},
+                                {"val": "personal03-4", "label": "28 - 32"},
+                                {"val": "personal03-5", "label": "33 - 37"},
+                                {"val": "personal03-6", "label": "38 - 42"},
+                                {"val": "personal03-7", "label": "43 - 47"},
+                                {"val": "personal03-8", "label": "48 - 52"},
+                                {"val": "personal03-9", "label": "53 - 57"},
+                                {"val": "personal03-10", "label": "58 - 62"},
+                                {"val": "personal03-11", "label": "63 - 67"},
+                                {"val": "personal03-12", "label": "68 - 72"},
+                                {"val": "personal03-13", "label": "72 +"}
+                            ],
+                            validators: [{type: "required", "message": "Please select one.", "regex": null}],
+                       },
                         "personal05": {
                             type: "Date",
                             title: "Date of Equifit",
@@ -540,9 +535,9 @@ module.exports = {
                             validators: [{ type: "required", message: "Please select date.", "regex": null}],
                         },
                         "personal06": {
-                            "type": "Select",
-                            "title": "Location",
-                            "options": [
+                            type: "Select",
+                            title: "Club",
+                            options: [
                                 {"val": "", "label": "Select"},
                                 {"val": "broadway", "label": "19 Street"},
                                 {"val": "tribeca", "label": "Tribeca"},
@@ -550,7 +545,7 @@ module.exports = {
                                 {"val": "es", "label": "East Side"},
                                 {"val": "les", "label": "Lower East Side"}
                             ],
-                            "validators": [{"type": "required", "message": "Please select one.", "regex": null}]
+                            validators: [{type: "required", "message": "Please select one.", "regex": null}]
                         }
                     },
 
@@ -684,56 +679,56 @@ module.exports = {
                     totalCompletedQuestions: 10,
                     formSchema: {
                         "lifestyle01": {
-                            "type": "Select",
-                            "title": "On a scale of 1-5, on average how stressful is your day?",
-                            "options": [
+                            type: "Select",
+                            title: "On a scale of 1-5, on average how stressful is your day?",
+                            options: [
                                 {"val": "lifestyle01-1", "label": "1"},
                                 {"val": "lifestyle01-2", "label": "2"},
                                 {"val": "lifestyle01-3", "label": "3"},
                                 {"val": "lifestyle01-4", "label": "4"},
                                 {"val": "lifestyle01-5", "label": "5"}
                             ],
-                            "validators": [{"type": "required", "message": "Please select one.", "regex": null}],
+                            validators: [{type: "required", "message": "Please select one.", "regex": null}],
                             "help": null
                         },
                         "lifestyle02": {
-                            "type": "Radio",
-                            "title": "Do you feel exercise helps you in managing your stress?",
-                            "options": [
+                            type: "Radio",
+                            title: "Do you feel exercise helps you in managing your stress?",
+                            options: [
                                 {"val": "lifestyle02-1", "label": "Yes"},
                                 {"val": "lifestyle02-2", "label": "No"}
                             ],
-                            "validators": [{"type": "required", "message": "Please select one.", "regex": null}],
+                            validators: [{type: "required", "message": "Please select one.", "regex": null}],
                             "help": null
                         },
                         "lifestyle03": {
-                            "type": "Text",
-                            "title": "Describe your typical daily nutritional habits?",
-                            "options": null,
-                            "validators": [{"type": "required", "message": "The field is required.", "regex": null}],
+                            type: "Text",
+                            title: "Describe your typical daily nutritional habits?",
+                            options: null,
+                            validators: [{type: "required", "message": "The field is required.", "regex": null}],
                             "help": "Number of times you eat per day and basic content of diet"
                         },
                         "lifestyle04": {
-                            "type": "Radio",
-                            "title": "Do you feel you need to change anything with regards to your nutrition?",
-                            "options": [
+                            type: "Radio",
+                            title: "Do you feel you need to change anything with regards to your nutrition?",
+                            options: [
                                 {"val": "lifestyle04-1", "label": "Yes"},
                                 {"val": "lifestyle04-2", "label": "No"}
                             ],
-                            "validators": [{"type": "required", "message": "Please select one.", "regex": null}],
+                            validators: [{type: "required", "message": "Please select one.", "regex": null}],
                             "help": null
                         },
                         "lifestyle05": {
-                            "type": "Text",
-                            "title": "What types of liquids do you typically drink?",
-                            "options": null,
-                            "validators": [{"type": "required", "message": "The field is required.", "regex": null}],
+                            type: "Text",
+                            title: "What types of liquids do you typically drink?",
+                            options: null,
+                            validators: [{type: "required", "message": "The field is required.", "regex": null}],
                             "help": null
                         },
                         "lifestyle06": {
-                            "type": "Select",
-                            "title": "How much water do you take in daily?",
-                            "options": [
+                            type: "Select",
+                            title: "How much water do you take in daily?",
+                            options: [
                                 {"val": "lifestyle06-1", "label": "None"},
                                 {"val": "lifestyle06-2", "label": "1 - 2"},
                                 {"val": "lifestyle06-3", "label": "3 - 4"},
@@ -743,14 +738,14 @@ module.exports = {
                                 {"val": "lifestyle06-7", "label": "11 - 12"},
                                 {"val": "lifestyle06-8", "label": "More than 12"}
                             ],
-                            "validators": [{"type": "required", "message": "Please select one.", "regex": null}],
+                            validators: [{type: "required", "message": "Please select one.", "regex": null}],
                             "help": "Number in glasses. One glass = 8 fluid ounces."
                         },
                         "lifestyle07": {
-                            "type": "Text",
-                            "title": "Before we get started with assessments, do you have any additional comments or is there anything we did not cover?",
-                            "options": null,
-                            "validators": [],
+                            type: "Text",
+                            title: "Before we get started with assessments, do you have any additional comments or is there anything we did not cover?",
+                            options: null,
+                            validators: [],
                             "help": null
                         }
                     },
@@ -797,16 +792,16 @@ module.exports = {
 
                     formSchema: {
                         "exercisehistory01": {
-                            "type": "Text",
-                            "title": "Tell me about your current exercise routine?",
-                            "options": null,
-                            "validators": [{"type": "required", "message": "The field is required.", "regex": null}],
+                            type: "Text",
+                            title: "Tell me about your current exercise routine?",
+                            options: null,
+                            validators: [{type: "required", "message": "The field is required.", "regex": null}],
                             "help": null
                         },
                         "exercisehistory02": {
-                            "type": "Select",
-                            "title": "How many times per week on average do you engage in physical activity and/or exercise?",
-                            "options": [
+                            type: "Select",
+                            title: "How many times per week on average do you engage in physical activity and/or exercise?",
+                            options: [
                                 {"val": "exercisehistory02-1", "label": "0"},
                                 {"val": "exercisehistory02-2", "label": "1"},
                                 {"val": "exercisehistory02-3", "label": "2"},
@@ -817,17 +812,17 @@ module.exports = {
                                 {"val": "exercisehistory02-8", "label": "7"},
                                 {"val": "exercisehistory02-9", "label": "8+"}
                             ],
-                            "validators": [{"type": "required", "message": "Please select one.", "regex": null}],
+                            validators: [{type: "required", "message": "Please select one.", "regex": null}],
                             "help": null
                         },
                         "exercisehistory03": {
-                            "type": "Radio",
-                            "title": "Do you or have you ever strength trained? (free weights / machines / body wieght)",
-                            "options": [
+                            type: "Radio",
+                            title: "Do you or have you ever strength trained? (free weights / machines / body wieght)",
+                            options: [
                                 {"val": "exercisehistory03-1", "label": "Yes"},
                                 {"val": "exercisehistory03-2", "label": "No"}
                             ],
-                            "validators": [{"type": "required", "message": "Please select one.", "regex": null}],
+                            validators: [{type: "required", "message": "Please select one.", "regex": null}],
                             "help": null
                         }
                     },
@@ -853,102 +848,102 @@ module.exports = {
                     _id: "53ed60ebb4932fec89e19a50",
                     templateId: 4,
                     templateType: 2,
-                    "title": "Goals & Habits",
+                    title: "Goals & Habits",
                     "totalQuestions": 11,
                     "totalCompletedQuestions": 0,
 
                     "formSchema": {
                         "goals01": {
-                            "type": "Text",
-                            "title": "Fitness goal #1",
-                            "options": null,
-                            "validators": [{"type": "required", "message": "The field is required.", "regex": null}],
+                            type: "Text",
+                            title: "Fitness goal #1",
+                            options: null,
+                            validators: [{type: "required", "message": "The field is required.", "regex": null}],
                             "help": null
                         },
                         "goals02": {
-                            "type": "Text",
-                            "title": "Fitness goal #2",
-                            "options": null,
-                            "validators": [{"type": "required", "message": "The field is required.", "regex": null}],
+                            type: "Text",
+                            title: "Fitness goal #2",
+                            options: null,
+                            validators: [{type: "required", "message": "The field is required.", "regex": null}],
                             "help": null
                         },
                         "goals03": {
-                            "type": "Text",
-                            "title": "Fitness goal #3",
-                            "options": null,
-                            "validators": [],
+                            type: "Text",
+                            title: "Fitness goal #3",
+                            options: null,
+                            validators: [],
                             "help": null
                         },
                         "goals04": {
-                            "type": "Select",
-                            "title": "How long have you wanted to achieve your number one goal?",
-                            "options": [
+                            type: "Select",
+                            title: "How long have you wanted to achieve your number one goal?",
+                            options: [
                                 {"val": "goals04-1", "label": "Less than 3 months"},
                                 {"val": "goals04-2", "label": "3 - 6 months"},
                                 {"val": "goals04-3", "label": "7 - 11 months"},
                                 {"val": "goals04-4", "label": "Longer than 3 years"},
                                 {"val": "goals04-5", "label": "Other"}
                             ],
-                            "validators": [{"type": "required", "message": "Please select one.", "regex": null}],
+                            validators: [{type: "required", "message": "Please select one.", "regex": null}],
                             "help": null
                         },
                         "goals05": {
-                            "type": "Radio",
-                            "title": "Have you ever achieved this goal in the past?",
-                            "options": [
+                            type: "Radio",
+                            title: "Have you ever achieved this goal in the past?",
+                            options: [
                                 {"val": "goals05-1", "label": "Yes"},
                                 {"val": "goals05-2", "label": "No"},
                                 {"val": "goals05-3", "label": "Partially"}
                             ],
-                            "validators": [{"type": "required", "message": "Please select one.", "regex": null}],
+                            validators: [{type: "required", "message": "Please select one.", "regex": null}],
                             "help": null
                         },
                         "goals06": {
-                            "type": "Date",
-                            "title": "When would you like to achieve it by?",
-                            "options": null,
-                            "validators": [{"type": "required", "message": "Please select date.", "regex": null}],
+                            type: "Date",
+                            title: "When would you like to achieve it by?",
+                            options: null,
+                            validators: [{type: "required", "message": "Please select date.", "regex": null}],
                             "help": null
                         },
                         "goals07": {
-                            "type": "Text",
-                            "title": "Why would you like to achieve this goal?",
-                            "options": null,
-                            "validators": [{"type": "required", "message": "The field is required.", "regex": null}],
+                            type: "Text",
+                            title: "Why would you like to achieve this goal?",
+                            options: null,
+                            validators: [{type: "required", "message": "The field is required.", "regex": null}],
                             "help": null
                         },
                         "goals08": {
-                            "type": "Text",
-                            "title": "What is the biggest challenge getting in your way of achieving each of these goals?",
-                            "options": null,
-                            "validators": [{"type": "required", "message": "The field is required.", "regex": null}],
+                            type: "Text",
+                            title: "What is the biggest challenge getting in your way of achieving each of these goals?",
+                            options: null,
+                            validators: [{type: "required", "message": "The field is required.", "regex": null}],
                             "help": null
                         },
                         "goals09": {
-                            "type": "Text",
-                            "title": "What strategies in the past have you utilized to overcome these challenges, if any?",
-                            "options": null,
-                            "validators": [{"type": "required", "message": "The field is required.", "regex": null}],
+                            type: "Text",
+                            title: "What strategies in the past have you utilized to overcome these challenges, if any?",
+                            options: null,
+                            validators: [{type: "required", "message": "The field is required.", "regex": null}],
                             "help": null
                         },
                         "goals10": {
-                            "type": "Radio",
-                            "title": "On a scale of 1 - 5, how committed are you to each goal?",
-                            "options": [
+                            type: "Radio",
+                            title: "On a scale of 1 - 5, how committed are you to each goal?",
+                            options: [
                                 {"val": "goals10-1", "label": "1"},
                                 {"val": "goals10-2", "label": "2"},
                                 {"val": "goals10-3", "label": "3"},
                                 {"val": "goals10-4", "label": "4"},
                                 {"val": "goals10-5", "label": "5"}
                             ],
-                            "validators": [{"type": "required", "message": "Please select one.", "regex": null}],
+                            validators: [{type: "required", "message": "Please select one.", "regex": null}],
                             "help": null
                         },
                         "goals11": {
-                            "type": "Text",
-                            "title": "Notes / Strategy Ideas",
-                            "options": null,
-                            "validators": [{"type": "required", "message": "The field is required.", "regex": null}],
+                            type: "Text",
+                            title: "Notes / Strategy Ideas",
+                            options: null,
+                            validators: [{type: "required", "message": "The field is required.", "regex": null}],
                             "help": null
                         }
                     },

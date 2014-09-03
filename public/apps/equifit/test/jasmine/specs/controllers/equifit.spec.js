@@ -2,7 +2,6 @@ define(function(require) {
     'use strict';
 
     var EquifitModule = require('controllers/equifit');
-
     var app = require('app');
     var FormsEntities = require('entities/forms');
     var EquifitView = require('views/equifit');

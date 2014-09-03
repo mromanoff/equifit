@@ -23,7 +23,8 @@ var Form = new Schema({
     formSchema: Schema.Types.Mixed,
     fieldsets: [Schema.Types.Mixed],
     data: Schema.Types.Mixed,
-    content: [Schema.Types.Mixed]
+    content: [Schema.Types.Mixed],
+    idPrefix: String
 });
 
 module.exports = {

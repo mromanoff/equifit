@@ -6,10 +6,8 @@
 define(function (require, exports, module) {
     'use strict';
 
-    var app = require('app');
     var Backbone = require('backbone');
     Backbone.LocalStorage = require('localstorage');
-    //var msgBus = require('msgbus');
     var Entities = {};
 
     Entities.Store = Backbone.Model.extend({

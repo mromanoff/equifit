@@ -3,7 +3,9 @@
  *
  * 'data-*' attributes control where elements are placed
  */
-define(['jquery', 'underscore', 'backbone', 'backbone-forms'], function($, _, Backbone) {
+define(['jquery', '../../bower_components/lodash/dist/lodash.underscore', 'backbone', 'backbone-forms'], function($, _, Backbone) {
+    'use strict';
+
     var Form = Backbone.Form;
 
 

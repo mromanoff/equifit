@@ -5,7 +5,7 @@ define(function (require, exports, module) {
     var msgBus = require('msgbus');
     var Backbone = require('backbone');
     var Form = require('backbone-forms');
-   // require('../templates/forms-template');
+    require('views/forms-template');
     var MessageView = require('views/message');
     var SimpleContent = require('views/simple-content');
     var FormView;
@@ -25,6 +25,7 @@ define(function (require, exports, module) {
             console.log('fieldsets', this.model.get('fieldsets'));
 
             var FormModel = Backbone.Model.extend({
+                idPrefix: this.model.get('idPrefix'),
                 schema: this.model.get('schema'),
                 fieldsets: this.model.get('fieldsets')
             });

@@ -97,8 +97,8 @@ define(function (require, exports, module) {
 
         var updateForm = msgBus.reqres.request('form:entity:update', form);
 
-        $.when(updateForm).done(function (equifit) {
-            var updatedAt = '<small>updated at: ' + moment().format("dddd, MMMM Do YYYY, h:mm:ss a") + '</small>';
+        $.when(updateForm).done(function () {
+            var updatedAt = '<small>updated at: ' + moment().format('dddd, MMMM Do YYYY, h:mm:ss a') + '</small>';
 
             msgBus.commands.execute('modal:simple:show',
                 new Backbone.Model({
