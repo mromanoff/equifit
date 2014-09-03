@@ -1171,6 +1171,7 @@ module.exports = {
                     title: "Physical Test",
                     totalQuestions: 5,
                     totalCompletedQuestions: 5,
+                    idPrefix: 'physical-test-',
                     formSchema: {
                         title: {
                             type: 'Select',
