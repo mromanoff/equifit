@@ -1173,26 +1173,53 @@ module.exports = {
                     totalCompletedQuestions: 5,
                     formSchema: {
                         title: {
-                            type: "Select",
-                            options: ["", "Mr", "Mrs", "Ms"]
+                            type: 'Select',
+                            options: ['', 'Mr', 'Mrs', 'Ms']
                         },
-                        name: "Text",
+                        name: 'Text',
                         email: {
-                            validators: ["required", "email"]
+                            validators: ['required', 'email']
+                        },
+
+                        address: {
+                            type: 'Text',
+                            title: 'Address 1',
+                            validators: ['required']
+                        },
+
+                        city: {
+                            type: 'Text',
+                            validators: ['required']
+                        },
+
+                        state: {
+                            type: 'Select',
+                            options: ['', 'AR', 'CT', 'NJ', 'NY']
+                        },
+
+                        zip: {
+                            type: 'Text',
+                            validators: ['required']
                         }
                     },
 
-                    fieldsets: [
-                        {
-                            legend: "Member Information",
-                            fields: ["title", "name", "email"]
-                        }
-                    ],
+                    fieldsets: [{
+                        legend: "Member Information",
+                        fields: ["title", "name", "email"]
+                    }, {
+                        legend: "Address",
+                        fields: ['address', 'city', 'state', 'zip']
+                    }],
 
+                    // data will be populte these fields
                     data: {
-                        title: "Mr",
-                        name: "James Brown",
-                        email: "j.brown@test.com"
+                        title: 'Mr',
+                        name: 'Billy Joel',
+                        email: 'b.joel@test.com',
+                        address: '1 Park Ave.',
+                        city: 'New York',
+                        state: 'NY',
+                        zip: 10002
                     }
                 });
                 newForm.save(function (err, form) {

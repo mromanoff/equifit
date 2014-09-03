@@ -55,9 +55,40 @@
     font-weight: normal;
   }
 
+  // forms
+  form {
+    .control-group{
+      margin-bottom: 26px;
+    }
+    [data-editor] div {
+      .makeRow()
+    }
+    ul {
+      margin-left: 0;
+      li {
+        list-style-type: none;
+        float: left;
+        margin-right: 20px;
+        input {
+          margin: -2px 5px 0 0;
+          padding: 10px;
+        }
+      }
+    }
+
+    select[data-type="date"] {
+      .makeColumn(1)
+    }
+    select[data-type="month"] {
+      .makeColumn(2)
+    }
+    select[data-type="year"] {
+      .makeColumn(2)
+    }
+  }
 
 }
-////////////////////////////////
+
 .spinner-block {
   -webkit-border-radius: 6px;
   -webkit-box-shadow: 1px 1px 10px 10px rgba(160, 160, 160, 0.1);

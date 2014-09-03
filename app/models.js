@@ -24,7 +24,6 @@ var Form = new Schema({
     fieldsets: [Schema.Types.Mixed],
     data: Schema.Types.Mixed,
     content: [Schema.Types.Mixed]
-
 });
 
 module.exports = {

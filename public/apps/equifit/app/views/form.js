@@ -5,7 +5,7 @@ define(function (require, exports, module) {
     var msgBus = require('msgbus');
     var Backbone = require('backbone');
     var Form = require('backbone-forms');
-    require('backbone-forms-template');
+   // require('../templates/forms-template');
     var MessageView = require('views/message');
     var SimpleContent = require('views/simple-content');
     var FormView;
@@ -18,18 +18,20 @@ define(function (require, exports, module) {
             'click [data-url]': 'showPage'
         },
 
-        initialize: function () {
-            console.log('Form data model', this.model);
-        },
-
         beforeRender: function () {
             // extend BB model with forms schema and fieldsets
+
+            console.log('schema', this.model.get('schema'));
+            console.log('fieldsets', this.model.get('fieldsets'));
+
             var FormModel = Backbone.Model.extend({
                 schema: this.model.get('schema'),
                 fieldsets: this.model.get('fieldsets')
             });
 
             var formModel = new FormModel(this.model.get('data'));
+
+            console.log('FormModel', formModel);
 
             /***
              * render() form!!! backbone layout manager is not managing this view
@@ -72,6 +74,7 @@ define(function (require, exports, module) {
             console.error('form errors', errors);
 
             this.model.set({data: form.model.toJSON()});
+
             console.log('form data to commit', form.model.toJSON());
             console.log('form model to commit', this.model.toJSON());
 
