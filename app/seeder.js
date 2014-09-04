@@ -526,13 +526,13 @@ module.exports = {
                                 {"val": "personal03-13", "label": "72 +"}
                             ],
                             validators: [{type: "required", "message": "Please select one.", "regex": null}],
-                       },
+                        },
                         "personal05": {
                             type: "Date",
                             title: "Date of Equifit",
                             yearStart: new Date().getFullYear(),
                             yearEnd: new Date().getFullYear() + 10,
-                            validators: [{ type: "required", message: "Please select date.", "regex": null}],
+                            validators: [{type: "required", message: "Please select date.", "regex": null}],
                         },
                         "personal06": {
                             type: "Select",
@@ -552,7 +552,7 @@ module.exports = {
                     fieldsets: [
                         {
                             legend: "I am",
-                            fields:["personal01"]
+                            fields: ["personal01"]
                         },
                         {
                             legend: "Kelly Jackson is",
@@ -637,34 +637,161 @@ module.exports = {
                 });
                 newForm = new models.Form({
                     _id: "53ed60ebb4932fec89e19a48",
-                    title: "Medical / Orthopedic HX",
-                    templateId: 2,
-                    templateType: "Medical",
+                    title: "Medical/Orthopedic HX",
+                    templateId: 4,
+                    templateType: "MedicalOrthopedic",
                     idPrefix: 'medical-',
-                    totalQuestions: 5,
-                    totalCompletedQuestions: 2,
+                    totalQuestions: 11,
+                    totalCompletedQuestions: 0,
                     formSchema: {
-                        title: {
-                            type: "Select",
-                            options: ["", "Mr", "Mrs", "Ms"]
+                        "medical01": {
+                            "type": "Radio",
+                            "title": "Do you experience an irregular or racing heart rate during rest or exercise?",
+                            "options": [
+                                {"val": "medical01-1", "label": "Yes"},
+                                {"val": "medical01-2", "label": "No"}
+                            ],
+                            "validators": [{"type": "required", "message": "Please select one.", "regex": null}],
+                            "help": null
                         },
-                        name: "Text",
-                        email: {
-                            validators: ["required", "email"]
+                        "medical02": {
+                            "type": "Radio",
+                            "title": "Has a doctor ever said you have a heart condition and that you should only do physical activity recommended by a doctor?",
+                            "options": [
+                                {"val": "medical02-1", "label": "Yes"},
+                                {"val": "medical02-2", "label": "No"}
+                            ],
+                            "validators": [{"type": "required", "message": "Please select one.", "regex": null}],
+                            "help": null
+                        },
+                        "medical03": {
+                            "type": "Radio",
+                            "title": "Do you feel pain in your chest when you do physical activity?",
+                            "options": [
+                                {"val": "medical03-1", "label": "Yes"},
+                                {"val": "medical03-2", "label": "No"}
+                            ],
+                            "validators": [{"type": "required", "message": "Please select one.", "regex": null}],
+                            "help": null
+                        },
+                        "medical04": {
+                            "type": "Radio",
+                            "title": "Is your doctor currently prescribing drugs (for example, water pills) for your blood pressure or heart condition?",
+                            "options": [
+                                {"val": "medical04-1", "label": "Yes"},
+                                {"val": "medical04-2", "label": "No"}
+                            ],
+                            "validators": [{"type": "required", "message": "Please select one.", "regex": null}],
+                            "help": null
+                        },
+                        "medical05": {
+                            "type": "Radio",
+                            "title": "Do you lose your balance because of dizziness or do you ever lose consciousness?",
+                            "options": [
+                                {"val": "medical05-1", "label": "Yes"},
+                                {"val": "medical05-2", "label": "No"}
+                            ],
+                            "validators": [{"type": "required", "message": "Please select one.", "regex": null}],
+                            "help": null
+                        },
+                        "medical06": {
+                            "type": "Radio",
+                            "title": "Do you have a bone or joint problem that could be made worse by a change in your physical activity?",
+                            "options": [
+                                {"val": "medical06-1", "label": "Yes"},
+                                {"val": "medical06-2", "label": "No"}
+                            ],
+                            "validators": [{"type": "required", "message": "Please select one.", "regex": null}],
+                            "help": null
+                        },
+                        "medical07": {
+                            "type": "Radio",
+                            "title": "Do you know of any other reason why you should not do physical activity?",
+                            "options": [
+                                {"val": "medical07-1", "label": "Yes"},
+                                {"val": "medical07-2", "label": "No"}
+                            ],
+                            "validators": [{"type": "required", "message": "Please select one.", "regex": null}],
+                            "help": null
+                        },
+                        "medical08": {
+                            "type": "Radio",
+                            "title": "Are you over 65 and not accustomed to vigorous exercise?",
+                            "options": [
+                                {"val": "medical08-1", "label": "Yes"},
+                                {"val": "medical08-2", "label": "No"}
+                            ],
+                            "validators": [{"type": "required", "message": "Please select one.", "regex": null}],
+                            "help": null
+                        },
+                        "medical09": {
+                            "type": "Radio",
+                            "title": "Are you diabetic? ",
+                            "options": [
+                                {"val": "medical09-1", "label": "Yes"},
+                                {"val": "medical09-2", "label": "No"}
+                            ],
+                            "validators": [{"type": "required", "message": "Please select one.", "regex": null}],
+                            "help": null
+                        },
+                        "medical10": {
+                            "type": "Radio",
+                            "title": "Are you pregnant?",
+                            "options": [
+                                {"val": "medical10-1", "label": "Yes"},
+                                {"val": "medical10-2", "label": "No"}
+                            ],
+                            "validators": [{"type": "required", "message": "Please select one.", "regex": null}],
+                            "help": null
+                        },
+                        "medical11": {
+                            "type": "Text",
+                            "title": "Is there anything you would specifically like to learn about youself during the Equifit?",
+                            "options": null,
+                            "validators": [{"type": "required", "message": "The field is required.", "regex": null}],
+                            "help": null
                         }
                     },
-
-                    fieldsets: [
+                    "fieldsets": [
                         {
-                            legend: "Member Information",
-                            fields: ["title", "name", "email"]
+                            "legend": "Heart",
+                            "fields": [
+                                "medical01",
+                                "medical02",
+                                "medical03",
+                                "medical04"
+                            ]
+                        },
+                        {
+                            "legend": "Balance, Bone & Joint",
+                            "fields": [
+                                "medical05",
+                                "medical06"
+                            ]
+                        },
+                        {"legend": "Body Injury", "fields": ["medical07"]},
+                        {
+                            "legend": "Other Medical Conditions",
+                            "fields": [
+                                "medical08",
+                                "medical09",
+                                "medical10",
+                                "medical11"
+                            ]
                         }
                     ],
-
-                    data: {
-                        title: "Mr",
-                        name: "Billy Joel",
-                        email: "billy@test.com"
+                    "data": {
+                        "medical01": null,
+                        "medical02": null,
+                        "medical03": null,
+                        "medical04": null,
+                        "medical05": null,
+                        "medical06": null,
+                        "medical07": null,
+                        "medical08": null,
+                        "medical09": null,
+                        "medical10": null,
+                        "medical11": null
                     }
                 });
 
@@ -991,35 +1118,87 @@ module.exports = {
 
                 newForm = new models.Form({
                     _id: "53ed60ebb4932fec89e19a60",
-                    templateId: 4,
+                    templateId: 8,
                     templateType: "RegenerationNutrition",
                     title: "Regeneration & Nutrition",
                     idPrefix: 'regeneration-nutrition-',
-                    totalQuestions: 12,
-                    totalCompletedQuestions: 1,
+                    totalQuestions: 4,
+                    totalCompletedQuestions: 0,
                     formSchema: {
-                        title: {
-                            type: "Select",
-                            options: ["", "Mr", "Mrs", "Ms"]
+                        "regeneration01": {
+                            "type": "Text",
+                            "title": "Number of times you eat per day and basic content of diet?",
+                            "options": null,
+                            "validators": [],
+                            "help": null
                         },
-                        name: "Text",
-                        email: {
-                            validators: ["required", "email"]
+                        "regeneration02": {
+                            "type": "Radio",
+                            "title": "Do you feel you need to change anything with regards to your nutrition?",
+                            "options": [
+                                {"val": "regeneration02-1", "label": "Yes"},
+                                {"val": "regeneration02-2", "label": "No"}
+                            ],
+                            "validators": [{"type": "required", "message": "Please select one.", "regex": null}],
+                            "help": null
+                        },
+                        "regeneration03": {
+                            "type": "Select",
+                            "title": "What types of liquids do you typically drink?",
+                            "options": [
+                                {"val": "regeneration03-1", "label": "Water"},
+                                {"val": "regeneration03-2", "label": "Coffee"},
+                                {"val": "regeneration03-3", "label": "Tea"},
+                                {"val": "regeneration03-4", "label": "Soda"},
+                                {"val": "regeneration03-5", "label": "Wine"},
+                                {"val": "regeneration03-6", "label": "Beer"},
+                                {"val": "regeneration03-7", "label": "Liquor / Mixed Drink"},
+                                {"val": "regeneration03-8", "label": "Coconut Water"},
+                                {"val": "regeneration03-9", "label": "Fruit Juice"},
+                                {"val": "regeneration03-10", "label": "Pressed Juices"},
+                                {"val": "regeneration03-11", "label": "Protein Shakes"},
+                                {"val": "regeneration03-12", "label": "Milk (including soy, almond, dairy, etc.)"},
+                                {"val": "regeneration03-13", "label": "Energy Drinks"},
+                                {"val": "regeneration03-14", "label": "Sports Drinks"},
+                                {"val": "regeneration03-15", "label": "Other"}
+                            ],
+                            "validators": [{"type": "required", "message": "Please select one.", "regex": null}],
+                            "help": null
+                        },
+                        "regeneration04": {
+                            "type": "Select",
+                            "title": "How much water do you take in daily?",
+                            "options": [
+                                {"val": "regeneration04-1", "label": "None"},
+                                {"val": "regeneration04-2", "label": "1 - 2 glasses"},
+                                {"val": "regeneration04-3", "label": "3 - 4 glasses"},
+                                {"val": "regeneration04-4", "label": "5 - 6 glasses"},
+                                {"val": "regeneration04-5", "label": "7 - 8 glasses"},
+                                {"val": "regeneration04-6", "label": "9 - 10 glasses"},
+                                {"val": "regeneration04-7", "label": "11 - 12 glasses"},
+                                {"val": "regeneration04-8", "label": "More than 12 glasses"}
+                            ],
+                            "validators": [{"type": "required", "message": "Please select one.", "regex": null}],
+                            "help": "One glass = 8 fluid ounces"
                         }
                     },
-
-                    fieldsets: [
+                    "fieldsets": [
                         {
-                            legend: "Member Information",
-                            fields: ["title", "name", "email"]
+                            "legend": "Regeneration & Nutrition",
+                            "fields": [
+                                "regeneration01",
+                                "regeneration02",
+                                "regeneration03",
+                                "regeneration04"
+                            ]
                         }
                     ],
-
-                    data: {
-                        title: "Mr",
-                        name: "Gene Simmons",
-                        email: "kiss@test.com"
-                    }
+                    "data": {
+                        "regeneration01": null,
+                        "regeneration02": null,
+                        "regeneration03": null,
+                        "regeneration04": null
+                    },
                 });
                 newForm.save(function (err, form) {
                     console.log('successfully inserted document: ' + form._id);
@@ -1027,34 +1206,175 @@ module.exports = {
 
                 newForm = new models.Form({
                     _id: "53ed60ebb4932fec89e19a61",
-                    templateId: 4,
+                    templateId: 9,
                     templateType: "BodyMeasurements",
                     title: "Body Measurements",
                     idPrefix: 'body-measurements-',
-                    totalQuestions: 12,
-                    totalCompletedQuestions: 1,
+                    totalQuestions: 17,
+                    totalCompletedQuestions: 0,
                     formSchema: {
-                        title: {
-                            type: "Select",
-                            options: ["", "Mr", "Mrs", "Ms"]
+                        "bodymeasurements01": {
+                            "type": "Text",
+                            "title": "Height",
+                            "options": null,
+                            "validators": [{"type": "required", "message": "The field is required.", "regex": null}],
+                            "help": "ft, in"
                         },
-                        name: "Text",
-                        email: {
-                            validators: ["required", "email"]
+                        "bodymeasurements02": {
+                            "type": "Number",
+                            "title": "Weight",
+                            "options": null,
+                            "validators": [{"type": "required", "message": "The field is required.", "regex": null}],
+                            "help": "lbs"
+                        },
+                        "bodymeasurements03": {
+                            "type": "Number",
+                            "title": "Resting Heart Rate",
+                            "options": null,
+                            "validators": [{"type": "required", "message": "The field is required.", "regex": null}],
+                            "help": "bpm"
+                        },
+                        "bodymeasurements04": {
+                            "type": "Number",
+                            "title": "Blood Pressure",
+                            "options": null,
+                            "validators": [{"type": "required", "message": "The field is required.", "regex": null}],
+                            "help": null
+                        },
+                        "bodymeasurements05": {
+                            "type": "Number",
+                            "title": "Right Upper Arm Circumference",
+                            "options": null,
+                            "validators": [{"type": "required", "message": "The field is required.", "regex": null}],
+                            "help": "in"
+                        },
+                        "bodymeasurements06": {
+                            "type": "Number",
+                            "title": "Right Upper Arm Circumference",
+                            "options": null,
+                            "validators": [{"type": "required", "message": "The field is required.", "regex": null}],
+                            "help": "in"
+                        },
+                        "bodymeasurements07": {
+                            "type": "Number",
+                            "title": "Left Upper Arm Circumference",
+                            "options": null,
+                            "validators": [{"type": "required", "message": "The field is required.", "regex": null}],
+                            "help": "in"
+                        },
+                        "bodymeasurements08": {
+                            "type": "Number",
+                            "title": "Chest Circumference",
+                            "options": null,
+                            "validators": [{"type": "required", "message": "The field is required.", "regex": null}],
+                            "help": "in"
+                        },
+                        "bodymeasurements09": {
+                            "type": "Number",
+                            "title": "Waist Circumference",
+                            "options": null,
+                            "validators": [{"type": "required", "message": "The field is required.", "regex": null}],
+                            "help": "in"
+                        },
+                        "bodymeasurements10": {
+                            "type": "Number",
+                            "title": "Abdominal Circumference",
+                            "options": null,
+                            "validators": [{"type": "required", "message": "The field is required.", "regex": null}],
+                            "help": "in"
+                        },
+                        "bodymeasurements11": {
+                            "type": "Number",
+                            "title": "Hip Circumference",
+                            "options": null,
+                            "validators": [{"type": "required", "message": "The field is required.", "regex": null}],
+                            "help": "in"
+                        },
+                        "bodymeasurements12": {
+                            "type": "Number",
+                            "title": "Right Mid Thigh Circumference",
+                            "options": null,
+                            "validators": [{"type": "required", "message": "The field is required.", "regex": null}],
+                            "help": "in"
+                        },
+                        "bodymeasurements13": {
+                            "type": "Number",
+                            "title": "Left Mid Thigh Circumference",
+                            "options": null,
+                            "validators": [{"type": "required", "message": "The field is required.", "regex": null}],
+                            "help": "in"
+                        },
+                        "bodymeasurements14": {
+                            "type": "Number",
+                            "title": "Skinfold Measurement - Tricep",
+                            "options": null,
+                            "validators": [{"type": "required", "message": "The field is required.", "regex": null}],
+                            "help": "mm"
+                        },
+                        "bodymeasurements15": {
+                            "type": "Number",
+                            "title": "Skinfold Measurement - Abdomen",
+                            "options": null,
+                            "validators": [{"type": "required", "message": "The field is required.", "regex": null}],
+                            "help": "mm"
+                        },
+                        "bodymeasurements16": {
+                            "type": "Number",
+                            "title": "Skinfold Measurement - Suprailiac",
+                            "options": null,
+                            "validators": [{"type": "required", "message": "The field is required.", "regex": null}],
+                            "help": "mm"
+                        },
+                        "bodymeasurements17": {
+                            "type": "Number",
+                            "title": "Skinfold Measurement - Mid Thigh",
+                            "options": null,
+                            "validators": [{"type": "required", "message": "The field is required.", "regex": null}],
+                            "help": "mm"
                         }
                     },
-
-                    fieldsets: [
+                    "fieldsets": [
                         {
-                            legend: "Member Information",
-                            fields: ["title", "name", "email"]
+                            "legend": "Body Measurements",
+                            "fields": [
+                                "bodymeasurements01",
+                                "bodymeasurements02",
+                                "bodymeasurements03",
+                                "bodymeasurements04",
+                                "bodymeasurements05",
+                                "bodymeasurements06",
+                                "bodymeasurements07",
+                                "bodymeasurements08",
+                                "bodymeasurements09",
+                                "bodymeasurements10",
+                                "bodymeasurements11",
+                                "bodymeasurements12",
+                                "bodymeasurements13",
+                                "bodymeasurements14",
+                                "bodymeasurements15",
+                                "bodymeasurements16",
+                                "bodymeasurements17"
+                            ]
                         }
                     ],
-
-                    data: {
-                        title: "Mr",
-                        name: "James Brown",
-                        email: "j.brown@test.com"
+                    "data": {
+                        "bodymeasurements01": null,
+                        "bodymeasurements02": null,
+                        "bodymeasurements03": null,
+                        "bodymeasurements04": null,
+                        "bodymeasurements05": null,
+                        "bodymeasurements06": null,
+                        "bodymeasurements07": null,
+                        "bodymeasurements08": null,
+                        "bodymeasurements09": null,
+                        "bodymeasurements10": null,
+                        "bodymeasurements11": null,
+                        "bodymeasurements12": null,
+                        "bodymeasurements13": null,
+                        "bodymeasurements14": null,
+                        "bodymeasurements15": null,
+                        "bodymeasurements16": null,
+                        "bodymeasurements17": null
                     }
                 });
                 newForm.save(function (err, form) {
@@ -1063,34 +1383,261 @@ module.exports = {
 
                 newForm = new models.Form({
                     _id: "53ed60ebb4932fec89e19a62",
-                    templateId: 4,
-                    templateType: "FunctionalMovementScreen",
+                    templateId: 10,
+                    templateType: "Fms",
                     title: "Functional Movement Screen",
                     idPrefix: 'functional-movement-screen-',
-                    totalQuestions: 12,
-                    totalCompletedQuestions: 1,
+                    totalQuestions: 24,
+                    totalCompletedQuestions: 0,
                     formSchema: {
-                        title: {
-                            type: "Select",
-                            options: ["", "Mr", "Mrs", "Ms"]
+                        "fms01": {
+                            "type": "Select",
+                            "title": "Overhead Deep Squat",
+                            "options": [
+                                {"val": "fms01-1", "label": "0"},
+                                {"val": "fms01-2", "label": "1"},
+                                {"val": "fms01-3", "label": "2"},
+                                {"val": "fms01-4", "label": "3"}
+                            ],
+                            "validators": [{"type": "required", "message": "Please select one.", "regex": null}],
+                            "help": null
                         },
-                        name: "Text",
-                        email: {
-                            validators: ["required", "email"]
-                        }
+                        "fms02": {"type": "Text", "title": "Notes", "options": null, "validators": [], "help": null},
+                        "fms03": {
+                            "type": "Select",
+                            "title": "Hurdle Step (R)",
+                            "options": [
+                                {"val": "fms03-1", "label": "0"},
+                                {"val": "fms03-2", "label": "1"},
+                                {"val": "fms03-3", "label": "2"},
+                                {"val": "fms03-4", "label": "3"}
+                            ],
+                            "validators": [{"type": "required", "message": "Please select one.", "regex": null}],
+                            "help": null
+                        },
+                        "fms04": {
+                            "type": "Select",
+                            "title": "Hurdle Step (L)",
+                            "options": [
+                                {"val": "fms04-1", "label": "0"},
+                                {"val": "fms04-2", "label": "1"},
+                                {"val": "fms04-3", "label": "2"},
+                                {"val": "fms04-4", "label": "3"}
+                            ],
+                            "validators": [{"type": "required", "message": "Please select one.", "regex": null}],
+                            "help": null
+                        },
+                        "fms05": {
+                            "type": "Number",
+                            "title": "Floor to Tibial Tuberosity",
+                            "options": null,
+                            "validators": [{"type": "required", "message": "The field is required.", "regex": null}],
+                            "help": null
+                        },
+                        "fms06": {"type": "Text", "title": "Notes", "options": null, "validators": [], "help": null},
+                        "fms07": {
+                            "type": "Select",
+                            "title": "In-line Lunge (R)",
+                            "options": [
+                                {"val": "fms07-1", "label": "0"},
+                                {"val": "fms07-2", "label": "1"},
+                                {"val": "fms07-3", "label": "2"},
+                                {"val": "fms07-4", "label": "3"}
+                            ],
+                            "validators": [{"type": "required", "message": "Please select one.", "regex": null}],
+                            "help": null
+                        },
+                        "fms08": {
+                            "type": "Select",
+                            "title": "In-line Lunge (L)",
+                            "options": [
+                                {"val": "fms08-1", "label": "0"},
+                                {"val": "fms08-2", "label": "1"},
+                                {"val": "fms08-3", "label": "2"},
+                                {"val": "fms08-4", "label": "3"}
+                            ],
+                            "validators": [{"type": "required", "message": "Please select one.", "regex": null}],
+                            "help": null
+                        },
+                        "fms09": {"type": "Text", "title": "Notes", "options": null, "validators": [], "help": null},
+                        "fms10": {
+                            "type": "Select",
+                            "title": "Shoulder Mobility (R)",
+                            "options": [
+                                {"val": "fms10-1", "label": "0"},
+                                {"val": "fms10-2", "label": "1"},
+                                {"val": "fms10-3", "label": "2"},
+                                {"val": "fms10-4", "label": "3"}
+                            ],
+                            "validators": [{"type": "required", "message": "Please select one.", "regex": null}],
+                            "help": null
+                        },
+                        "fms11": {
+                            "type": "Select",
+                            "title": "Shoulder Mobility (L)",
+                            "options": [
+                                {"val": "fms11-1", "label": "0"},
+                                {"val": "fms11-2", "label": "1"},
+                                {"val": "fms11-3", "label": "2"},
+                                {"val": "fms11-4", "label": "3"}
+                            ],
+                            "validators": [{"type": "required", "message": "Please select one.", "regex": null}],
+                            "help": null
+                        },
+                        "fms12": {
+                            "type": "Select",
+                            "title": "Distal Wrist Crease to tip of 3rd finger",
+                            "options": [
+                                {"val": "fms12-1", "label": "0"},
+                                {"val": "fms12-2", "label": "1"},
+                                {"val": "fms12-3", "label": "2"},
+                                {"val": "fms12-4", "label": "3"}
+                            ],
+                            "validators": [{"type": "required", "message": "Please select one.", "regex": null}],
+                            "help": null
+                        },
+                        "fms13": {
+                            "type": "Number",
+                            "title": "Pain Clearance (Was there pain?)",
+                            "options": null,
+                            "validators": [{"type": "required", "message": "The field is required.", "regex": null}],
+                            "help": null
+                        },
+                        "fms14": {"type": "Text", "title": "Notes", "options": null, "validators": [], "help": null},
+                        "fms15": {
+                            "type": "Select",
+                            "title": "Active Straight Leg Raise (R)",
+                            "options": [
+                                {"val": "fms15-1", "label": "0"},
+                                {"val": "fms15-2", "label": "1"},
+                                {"val": "fms15-3", "label": "2"},
+                                {"val": "fms15-4", "label": "3"}
+                            ],
+                            "validators": [{"type": "required", "message": "Please select one.", "regex": null}],
+                            "help": null
+                        },
+                        "fms16": {
+                            "type": "Select",
+                            "title": "Active Straight Leg Raise (L)",
+                            "options": [
+                                {"val": "fms16-1", "label": "0"},
+                                {"val": "fms16-2", "label": "1"},
+                                {"val": "fms16-3", "label": "2"},
+                                {"val": "fms16-4", "label": "3"}
+                            ],
+                            "validators": [{"type": "required", "message": "Please select one.", "regex": null}],
+                            "help": null
+                        },
+                        "fms17": {"type": "Text", "title": "Notes", "options": null, "validators": [], "help": null},
+                        "fms18": {
+                            "type": "Select",
+                            "title": "Trunk Stability Pushup",
+                            "options": [
+                                {"val": "fms18-1", "label": "0"},
+                                {"val": "fms18-2", "label": "1"},
+                                {"val": "fms18-3", "label": "2"},
+                                {"val": "fms18-4", "label": "3"}
+                            ],
+                            "validators": [{"type": "required", "message": "Please select one.", "regex": null}],
+                            "help": null
+                        },
+                        "fms19": {
+                            "type": "Number",
+                            "title": "Pain Clearance (Was there pain?)",
+                            "options": null,
+                            "validators": [{"type": "required", "message": "The field is required.", "regex": null}],
+                            "help": null
+                        },
+                        "fms20": {"type": "Text", "title": "Notes", "options": null, "validators": [], "help": null},
+                        "fms21": {
+                            "type": "Select",
+                            "title": "Rotary Stability (R)",
+                            "options": [
+                                {"val": "fms21-1", "label": "0"},
+                                {"val": "fms21-2", "label": "1"},
+                                {"val": "fms21-3", "label": "2"},
+                                {"val": "fms21-4", "label": "3"}
+                            ],
+                            "validators": [{"type": "required", "message": "Please select one.", "regex": null}],
+                            "help": null
+                        },
+                        "fms22": {
+                            "type": "Select",
+                            "title": "Rotary Stability (L)",
+                            "options": [
+                                {"val": "fms22-1", "label": "0"},
+                                {"val": "fms22-2", "label": "1"},
+                                {"val": "fms22-3", "label": "2"},
+                                {"val": "fms22-4", "label": "3"}
+                            ],
+                            "validators": [{"type": "required", "message": "Please select one.", "regex": null}],
+                            "help": null
+                        },
+                        "fms23": {
+                            "type": "Number",
+                            "title": "Pain Clearance (Was there pain?)",
+                            "options": null,
+                            "validators": [{"type": "required", "message": "The field is required.", "regex": null}],
+                            "help": null
+                        },
+                        "fms24": {"type": "Text", "title": "Notes", "options": null, "validators": [], "help": null}
                     },
-
-                    fieldsets: [
+                    "fieldsets": [
                         {
-                            legend: "Member Information",
-                            fields: ["title", "name", "email"]
+                            "legend": "Functional Movement",
+                            "fields": [
+                                "fms01",
+                                "fms02",
+                                "fms03",
+                                "fms04",
+                                "fms05",
+                                "fms06",
+                                "fms07",
+                                "fms08",
+                                "fms09",
+                                "fms10",
+                                "fms11",
+                                "fms12",
+                                "fms13",
+                                "fms14",
+                                "fms15",
+                                "fms16",
+                                "fms17",
+                                "fms18",
+                                "fms19",
+                                "fms20",
+                                "fms21",
+                                "fms22",
+                                "fms23",
+                                "fms24"
+                            ]
                         }
                     ],
-
-                    data: {
-                        title: "Mr",
-                        name: "James Brown",
-                        email: "j.brown@test.com"
+                    "data": {
+                        "fms01": null,
+                        "fms02": null,
+                        "fms03": null,
+                        "fms04": null,
+                        "fms05": null,
+                        "fms06": null,
+                        "fms07": null,
+                        "fms08": null,
+                        "fms09": null,
+                        "fms10": null,
+                        "fms11": null,
+                        "fms12": null,
+                        "fms13": null,
+                        "fms14": null,
+                        "fms15": null,
+                        "fms16": null,
+                        "fms17": null,
+                        "fms18": null,
+                        "fms19": null,
+                        "fms20": null,
+                        "fms21": null,
+                        "fms22": null,
+                        "fms23": null,
+                        "fms24": null
                     }
                 });
                 newForm.save(function (err, form) {
@@ -1099,34 +1646,204 @@ module.exports = {
 
                 newForm = new models.Form({
                     _id: "53ed60ebb4932fec89e19a63",
-                    templateId: 4,
+                    templateId: 11,
                     templateType: "Equistretch",
                     title: "Equistretch",
                     idPrefix: 'equistretch-',
-                    totalQuestions: 12,
-                    totalCompletedQuestions: 1,
+                    totalQuestions: 14,
+                    totalCompletedQuestions: 0,
                     formSchema: {
-                        title: {
-                            type: "Select",
-                            options: ["", "Mr", "Mrs", "Ms"]
+                        "equistretch01": {
+                            "type": "Radio",
+                            "title": "Seated Cervical Flexion",
+                            "options": [
+                                {"val": "equistretch01-1", "label": "Excellent"},
+                                {"val": "equistretch01-2", "label": "Satisifactory"},
+                                {"val": "equistretch01-3", "label": "Needs Improvement"}
+                            ],
+                            "validators": [{"type": "required", "message": "Please select one.", "regex": null}],
+                            "help": null
                         },
-                        name: "Text",
-                        email: {
-                            validators: ["required", "email"]
+                        "equistretch02": {
+                            "type": "Radio",
+                            "title": "Seated Cervical Extension",
+                            "options": [
+                                {"val": "equistretch02-1", "label": "Excellent"},
+                                {"val": "equistretch02-2", "label": "Satisifactory"},
+                                {"val": "equistretch02-3", "label": "Needs Improvement"}
+                            ],
+                            "validators": [{"type": "required", "message": "Please select one.", "regex": null}],
+                            "help": null
+                        },
+                        "equistretch03": {
+                            "type": "Radio",
+                            "title": "Seated Cervical Rotation",
+                            "options": [
+                                {"val": "equistretch03-1", "label": "Excellent"},
+                                {"val": "equistretch03-2", "label": "Satisifactory"},
+                                {"val": "equistretch03-3", "label": "Needs Improvement"}
+                            ],
+                            "validators": [{"type": "required", "message": "Please select one.", "regex": null}],
+                            "help": null
+                        },
+                        "equistretch04": {
+                            "type": "Radio",
+                            "title": "Seated Cervical Side Bending",
+                            "options": [
+                                {"val": "equistretch04-1", "label": "Excellent"},
+                                {"val": "equistretch04-2", "label": "Satisifactory"},
+                                {"val": "equistretch04-3", "label": "Needs Improvement"}
+                            ],
+                            "validators": [{"type": "required", "message": "Please select one.", "regex": null}],
+                            "help": null
+                        },
+                        "equistretch05": {
+                            "type": "Radio",
+                            "title": "Seated Shoulder Elevation",
+                            "options": [
+                                {"val": "equistretch05-1", "label": "Excellent"},
+                                {"val": "equistretch05-2", "label": "Satisifactory"},
+                                {"val": "equistretch05-3", "label": "Needs Improvement"}
+                            ],
+                            "validators": [{"type": "required", "message": "Please select one.", "regex": null}],
+                            "help": null
+                        },
+                        "equistretch06": {
+                            "type": "Radio",
+                            "title": "Seated Hands Behind Head",
+                            "options": [
+                                {"val": "equistretch06-1", "label": "Excellent"},
+                                {"val": "equistretch06-2", "label": "Satisifactory"},
+                                {"val": "equistretch06-3", "label": "Needs Improvement"}
+                            ],
+                            "validators": [{"type": "required", "message": "Please select one.", "regex": null}],
+                            "help": null
+                        },
+                        "equistretch07": {
+                            "type": "Radio",
+                            "title": "Seated Hands Behind Back",
+                            "options": [
+                                {"val": "equistretch07-1", "label": "Excellent"},
+                                {"val": "equistretch07-2", "label": "Satisifactory"},
+                                {"val": "equistretch07-3", "label": "Needs Improvement"}
+                            ],
+                            "validators": [{"type": "required", "message": "Please select one.", "regex": null}],
+                            "help": null
+                        },
+                        "equistretch08": {
+                            "type": "Radio",
+                            "title": "Supine Lat Length",
+                            "options": [
+                                {"val": "equistretch08-1", "label": "Excellent"},
+                                {"val": "equistretch08-2", "label": "Satisifactory"},
+                                {"val": "equistretch08-3", "label": "Needs Improvement"}
+                            ],
+                            "validators": [{"type": "required", "message": "Please select one.", "regex": null}],
+                            "help": null
+                        },
+                        "equistretch09": {
+                            "type": "Radio",
+                            "title": "Supine Hip Flexor",
+                            "options": [
+                                {"val": "equistretch09-1", "label": "Excellent"},
+                                {"val": "equistretch09-2", "label": "Satisifactory"},
+                                {"val": "equistretch09-3", "label": "Needs Improvement"}
+                            ],
+                            "validators": [{"type": "required", "message": "Please select one.", "regex": null}],
+                            "help": null
+                        },
+                        "equistretch10": {
+                            "type": "Radio",
+                            "title": "Supine Adductor Length",
+                            "options": [
+                                {"val": "equistretch10-1", "label": "Excellent"},
+                                {"val": "equistretch10-2", "label": "Satisifactory"},
+                                {"val": "equistretch10-3", "label": "Needs Improvement"}
+                            ],
+                            "validators": [{"type": "required", "message": "Please select one.", "regex": null}],
+                            "help": null
+                        },
+                        "equistretch11": {
+                            "type": "Radio",
+                            "title": "Supine Gastroc Length",
+                            "options": [
+                                {"val": "equistretch11-1", "label": "Excellent"},
+                                {"val": "equistretch11-2", "label": "Satisifactory"},
+                                {"val": "equistretch11-3", "label": "Needs Improvement"}
+                            ],
+                            "validators": [{"type": "required", "message": "Please select one.", "regex": null}],
+                            "help": null
+                        },
+                        "equistretch12": {
+                            "type": "Radio",
+                            "title": "Side Lying ITB Length (Ober's Test)",
+                            "options": [
+                                {"val": "equistretch12-1", "label": "Excellent"},
+                                {"val": "equistretch12-2", "label": "Satisifactory"},
+                                {"val": "equistretch12-3", "label": "Needs Improvement"}
+                            ],
+                            "validators": [{"type": "required", "message": "Please select one.", "regex": null}],
+                            "help": null
+                        },
+                        "equistretch13": {
+                            "type": "Radio",
+                            "title": "Prone Knee Flexion (Ely's Test)",
+                            "options": [
+                                {"val": "equistretch13-1", "label": "Excellent"},
+                                {"val": "equistretch13-2", "label": "Satisifactory"},
+                                {"val": "equistretch13-3", "label": "Needs Improvement"}
+                            ],
+                            "validators": [{"type": "required", "message": "Please select one.", "regex": null}],
+                            "help": null
+                        },
+                        "equistretch14": {
+                            "type": "Radio",
+                            "title": "Prone Soleus Lenght",
+                            "options": [
+                                {"val": "equistretch14-1", "label": "Excellent"},
+                                {"val": "equistretch14-2", "label": "Satisifactory"},
+                                {"val": "equistretch14-3", "label": "Needs Improvement"}
+                            ],
+                            "validators": [{"type": "required", "message": "Please select one.", "regex": null}],
+                            "help": null
                         }
                     },
-
-                    fieldsets: [
+                    "fieldsets": [
                         {
-                            legend: "Member Information",
-                            fields: ["title", "name", "email"]
+                            "legend": "Equistretch",
+                            "fields": [
+                                "equistretch01",
+                                "equistretch02",
+                                "equistretch03",
+                                "equistretch04",
+                                "equistretch05",
+                                "equistretch06",
+                                "equistretch07",
+                                "equistretch08",
+                                "equistretch09",
+                                "equistretch10",
+                                "equistretch11",
+                                "equistretch12",
+                                "equistretch13",
+                                "equistretch14"
+                            ]
                         }
                     ],
-
-                    data: {
-                        title: "Mr",
-                        name: "James Brown",
-                        email: "j.brown@test.com"
+                    "data": {
+                        "equistretch01": null,
+                        "equistretch02": null,
+                        "equistretch03": null,
+                        "equistretch04": null,
+                        "equistretch05": null,
+                        "equistretch06": null,
+                        "equistretch07": null,
+                        "equistretch08": null,
+                        "equistretch09": null,
+                        "equistretch10": null,
+                        "equistretch11": null,
+                        "equistretch12": null,
+                        "equistretch13": null,
+                        "equistretch14": null
                     }
                 });
                 newForm.save(function (err, form) {
@@ -1135,34 +1852,112 @@ module.exports = {
 
                 newForm = new models.Form({
                     _id: "53ed60ebb4932fec89e19a64",
-                    templateId: 4,
+                    templateId: 12,
                     templateType: "PerformanceTesting",
                     title: "Performance Testing",
                     idPrefix: 'performance-testing-',
-                    totalQuestions: 12,
-                    totalCompletedQuestions: 1,
+                    totalQuestions: 10,
+                    totalCompletedQuestions: 0,
                     formSchema: {
-                        title: {
-                            type: "Select",
-                            options: ["", "Mr", "Mrs", "Ms"]
+                        "performancetesting01": {
+                            "type": "Number",
+                            "title": "Leg Press (10 RM)",
+                            "options": null,
+                            "validators": [{"type": "required", "message": "The field is required.", "regex": null}],
+                            "help": "lbs"
                         },
-                        name: "Text",
-                        email: {
-                            validators: ["required", "email"]
+                        "performancetesting02": {
+                            "type": "Number",
+                            "title": "Chest Press (10 RM)",
+                            "options": null,
+                            "validators": [{"type": "required", "message": "The field is required.", "regex": null}],
+                            "help": "lbs"
+                        },
+                        "performancetesting03": {
+                            "type": "Number",
+                            "title": "Push Ups Test",
+                            "options": null,
+                            "validators": [{"type": "required", "message": "The field is required.", "regex": null}],
+                            "help": "total number completed"
+                        },
+                        "performancetesting04": {
+                            "type": "Number",
+                            "title": "Bruce Treadmill Protocol - HR at the end of stage 1",
+                            "options": null,
+                            "validators": [{"type": "required", "message": "The field is required.", "regex": null}],
+                            "help": "bpm"
+                        },
+                        "performancetesting05": {
+                            "type": "Number",
+                            "title": "Bruce Treadmill Protocol - HR at the end of stage 2",
+                            "options": null,
+                            "validators": [{"type": "required", "message": "The field is required.", "regex": null}],
+                            "help": "bpm"
+                        },
+                        "performancetesting06": {
+                            "type": "Number",
+                            "title": "Bruce Treadmill Protocol - HR at the end of stage 3",
+                            "options": null,
+                            "validators": [{"type": "required", "message": "The field is required.", "regex": null}],
+                            "help": "bpm"
+                        },
+                        "performancetesting07": {
+                            "type": "Number",
+                            "title": "Bruce Treadmill Protocol - HR at the end of stage 4",
+                            "options": null,
+                            "validators": [{"type": "required", "message": "The field is required.", "regex": null}],
+                            "help": "bpm"
+                        },
+                        "performancetesting08": {
+                            "type": "Number",
+                            "title": "Bruce Treadmill Protocol - HR at the end of stage 5",
+                            "options": null,
+                            "validators": [{"type": "required", "message": "The field is required.", "regex": null}],
+                            "help": "bpm"
+                        },
+                        "performancetesting09": {
+                            "type": "Number",
+                            "title": "Bruce Treadmill Protocol - HR at the end of stage 6",
+                            "options": null,
+                            "validators": [{"type": "required", "message": "The field is required.", "regex": null}],
+                            "help": "bpm"
+                        },
+                        "performancetesting10": {
+                            "type": "Text",
+                            "title": "Final Stage / Total Time / HR at time of Stop",
+                            "options": null,
+                            "validators": [{"type": "required", "message": "The field is required.", "regex": null}],
+                            "help": null
                         }
                     },
-
-                    fieldsets: [
+                    "fieldsets": [
                         {
-                            legend: "Member Information",
-                            fields: ["title", "name", "email"]
+                            "legend": "Performance Testing",
+                            "fields": [
+                                "performancetesting01",
+                                "performancetesting02",
+                                "performancetesting03",
+                                "performancetesting04",
+                                "performancetesting05",
+                                "performancetesting06",
+                                "performancetesting07",
+                                "performancetesting08",
+                                "performancetesting09",
+                                "performancetesting10"
+                            ]
                         }
                     ],
-
-                    data: {
-                        title: "Mr",
-                        name: "James Brown",
-                        email: "j.brown@test.com"
+                    "data": {
+                        "performancetesting01": null,
+                        "performancetesting02": null,
+                        "performancetesting03": null,
+                        "performancetesting04": null,
+                        "performancetesting05": null,
+                        "performancetesting06": null,
+                        "performancetesting07": null,
+                        "performancetesting08": null,
+                        "performancetesting09": null,
+                        "performancetesting10": null
                     }
                 });
                 newForm.save(function (err, form) {
