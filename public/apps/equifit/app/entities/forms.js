@@ -16,6 +16,7 @@ define(function (require) {
             totalCompletedQuestions: null,
             schema: null,
             fieldsets: null,
+            idPrefix: null,
             content: null,
             data: null
         },
@@ -38,6 +39,7 @@ define(function (require) {
         parse: function (response) {
             // backbone-forms needs 'schema' property. in mongoose 'schema' is reserved word.
             // In mongoose we had to name it as a formSchema
+            // remap formSchema to schema
             response.schema = _.clone(response.formSchema);
             delete response.formSchema;
             return response;

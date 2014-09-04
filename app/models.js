@@ -22,9 +22,9 @@ var Form = new Schema({
     totalCompletedQuestions: Number,
     formSchema: Schema.Types.Mixed,
     fieldsets: [Schema.Types.Mixed],
+    idPrefix: String,
     data: Schema.Types.Mixed,
-    content: [Schema.Types.Mixed],
-    idPrefix: String
+    content: [Schema.Types.Mixed]
 });
 
 module.exports = {

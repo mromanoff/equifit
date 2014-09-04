@@ -19,26 +19,13 @@ define(function (require, exports, module) {
         },
 
         beforeRender: function () {
-            // extend BB model with forms schema and fieldsets
-
-            console.log('schema', this.model.get('schema'));
-            console.log('fieldsets', this.model.get('fieldsets'));
-
-            var FormModel = Backbone.Model.extend({
-                idPrefix: this.model.get('idPrefix'),
-                schema: this.model.get('schema'),
-                fieldsets: this.model.get('fieldsets')
-            });
-
+            var FormModel = Backbone.Model.extend();
             var formModel = new FormModel(this.model.get('data'));
-
-            console.log('FormModel', formModel);
-
-            /***
-             * render() form!!! backbone layout manager is not managing this view
-             */
             form = new Form({
-                model: formModel
+                model: formModel,
+                schema: this.model.get('schema'),
+                fieldsets: this.model.get('fieldsets'),
+                idPrefix: this.model.get('idPrefix')
             }).render();
 
             // check if consent form is signed

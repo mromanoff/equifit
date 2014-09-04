@@ -589,6 +589,7 @@ module.exports = {
                     templateId: 66,
                     title: "Informed Consent",
                     templateType: "InformedConsent",
+                    idPrefix: 'informed-consent-',
                     totalQuestions: 1,
                     totalCompletedQuestions: 0,
                     formSchema: {
@@ -639,6 +640,7 @@ module.exports = {
                     title: "Medical / Orthopedic HX",
                     templateId: 2,
                     templateType: "Medical",
+                    idPrefix: 'medical-',
                     totalQuestions: 5,
                     totalCompletedQuestions: 2,
                     formSchema: {
@@ -675,6 +677,7 @@ module.exports = {
                     templateId: 7,
                     templateType: "Lifestyle",
                     title: "Lifestyle",
+                    idPrefix: 'lifestyle-',
                     totalQuestions: 15,
                     totalCompletedQuestions: 10,
                     formSchema: {
@@ -787,6 +790,7 @@ module.exports = {
                     templateId: 6,
                     templateType: 2,
                     title: "Exercise History",
+                    idPrefix: 'exercise-history-',
                     totalQuestions: 7,
                     totalCompletedQuestions: 6,
 
@@ -849,6 +853,7 @@ module.exports = {
                     templateId: 4,
                     templateType: 2,
                     title: "Goals & Habits",
+                    idPrefix: 'goals-habits-',
                     "totalQuestions": 11,
                     "totalCompletedQuestions": 0,
 
@@ -989,6 +994,7 @@ module.exports = {
                     templateId: 4,
                     templateType: "RegenerationNutrition",
                     title: "Regeneration & Nutrition",
+                    idPrefix: 'regeneration-nutrition-',
                     totalQuestions: 12,
                     totalCompletedQuestions: 1,
                     formSchema: {
@@ -1024,6 +1030,7 @@ module.exports = {
                     templateId: 4,
                     templateType: "BodyMeasurements",
                     title: "Body Measurements",
+                    idPrefix: 'body-measurements-',
                     totalQuestions: 12,
                     totalCompletedQuestions: 1,
                     formSchema: {
@@ -1059,6 +1066,7 @@ module.exports = {
                     templateId: 4,
                     templateType: "FunctionalMovementScreen",
                     title: "Functional Movement Screen",
+                    idPrefix: 'functional-movement-screen-',
                     totalQuestions: 12,
                     totalCompletedQuestions: 1,
                     formSchema: {
@@ -1094,6 +1102,7 @@ module.exports = {
                     templateId: 4,
                     templateType: "Equistretch",
                     title: "Equistretch",
+                    idPrefix: 'equistretch-',
                     totalQuestions: 12,
                     totalCompletedQuestions: 1,
                     formSchema: {
@@ -1129,6 +1138,7 @@ module.exports = {
                     templateId: 4,
                     templateType: "PerformanceTesting",
                     title: "Performance Testing",
+                    idPrefix: 'performance-testing-',
                     totalQuestions: 12,
                     totalCompletedQuestions: 1,
                     formSchema: {
@@ -1164,9 +1174,9 @@ module.exports = {
                     templateId: 8,
                     templateType: 2,
                     title: "Physical Test",
+                    idPrefix: 'physical-test-',
                     totalQuestions: 5,
                     totalCompletedQuestions: 5,
-                    idPrefix: 'physical-test-',
                     formSchema: {
                         title: {
                             type: 'Select',
