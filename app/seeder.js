@@ -18,21 +18,21 @@ module.exports = {
                     isValidated: false,
                     documents: [
                         {
-                            _id: "53ed60ebb4932fec89e19a49",
-                            title: "Personal Info",
-                            templateId: 2,
-                            templateType: "PersonalInformation",
-                            totalQuestions: 5,
-                            totalCompletedQuestions: 2
-                        },
-
-                        {
                             _id: "53ed60ebb4932fec89e19a40",
                             templateId: 66,
                             title: "Informed Consent",
                             templateType: "InformedConsent",
                             totalQuestions: 1,
                             totalCompletedQuestions: 0
+                        },
+
+                        {
+                            _id: "53ed60ebb4932fec89e19a49",
+                            title: "Personal Info",
+                            templateId: 2,
+                            templateType: "PersonalInformation",
+                            totalQuestions: 5,
+                            totalCompletedQuestions: 2
                         },
                         {
                             _id: "53ed60ebb4932fec89e19a48",
@@ -133,21 +133,21 @@ module.exports = {
                     isValidated: false,
                     documents: [
                         {
-                            _id: "53ed60ebb4932fec89e19a49",
-                            title: "Personal Info",
-                            templateId: 2,
-                            templateType: "Personal Information",
-                            totalQuestions: 5,
-                            totalCompletedQuestions: 2
-                        },
-
-                        {
                             _id: "53ed60ebb4932fec89e19a40",
                             templateId: 66,
                             title: "Informed Consent",
                             templateType: "InformedConsent",
                             totalQuestions: 1,
                             totalCompletedQuestions: 0
+                        },
+
+                        {
+                            _id: "53ed60ebb4932fec89e19a49",
+                            title: "Personal Info",
+                            templateId: 2,
+                            templateType: "Personal Information",
+                            totalQuestions: 5,
+                            totalCompletedQuestions: 2
                         },
                         {
                             _id: "53ed60ebb4932fec89e19a48",
@@ -248,21 +248,21 @@ module.exports = {
                     isValidated: false,
                     documents: [
                         {
-                            _id: "53ed60ebb4932fec89e19a49",
-                            title: "Personal Info",
-                            templateId: 2,
-                            templateType: "Personal Information",
-                            totalQuestions: 5,
-                            totalCompletedQuestions: 2
-                        },
-
-                        {
                             _id: "53ed60ebb4932fec89e19a40",
                             templateId: 66,
                             title: "Informed Consent",
                             templateType: "InformedConsent",
                             totalQuestions: 1,
                             totalCompletedQuestions: 0
+                        },
+
+                        {
+                            _id: "53ed60ebb4932fec89e19a49",
+                            title: "Personal Info",
+                            templateId: 2,
+                            templateType: "Personal Information",
+                            totalQuestions: 5,
+                            totalCompletedQuestions: 2
                         },
                         {
                             _id: "53ed60ebb4932fec89e19a48",
@@ -363,21 +363,21 @@ module.exports = {
                     isValidated: true,
                     documents: [
                         {
-                            _id: "53ed60ebb4932fec89e19a49",
-                            title: "Personal Info",
-                            templateId: 2,
-                            templateType: "Personal Information",
-                            totalQuestions: 5,
-                            totalCompletedQuestions: 2
-                        },
-
-                        {
                             _id: "53ed60ebb4932fec89e19a40",
                             templateId: 66,
                             title: "Informed Consent",
                             templateType: "InformedConsent",
                             totalQuestions: 1,
                             totalCompletedQuestions: 0
+                        },
+
+                        {
+                            _id: "53ed60ebb4932fec89e19a49",
+                            title: "Personal Info",
+                            templateId: 2,
+                            templateType: "Personal Information",
+                            totalQuestions: 5,
+                            totalCompletedQuestions: 2
                         },
                         {
                             _id: "53ed60ebb4932fec89e19a48",
