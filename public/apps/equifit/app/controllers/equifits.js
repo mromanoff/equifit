@@ -21,6 +21,11 @@ define(function (require, exports, module) {
         var fetchingEquifits = msgBus.reqres.request('equifit:entities');
         $.when(fetchingEquifits).done(function (equifits) {
 
+            // cache equifits
+            msgBus.commands.execute('store:set', {
+                equifits: equifits
+            });
+
             // if there is no existing Equifit. server response []
             // set clientName from the first model
             if(equifits.length !== 0) {

@@ -7,6 +7,7 @@ define(function (require, exports, module) {
     'use strict';
 
     var Backbone = require('backbone');
+    //var msgBus = require('msgbus');
     Backbone.LocalStorage = require('localstorage');
     var Entities = {};
 
@@ -24,7 +25,11 @@ define(function (require, exports, module) {
             equifitId: null,
             formName: null,
             formId: null,
-            forms: null
+            forms: null,
+
+
+            equifits: []
+
         },
 
         initialize: function () {
@@ -44,17 +49,18 @@ define(function (require, exports, module) {
     //app.store = new Entities.Store();
   //  var store = new Entities.Store();
 
-
+    //var store = new Entities.Store();
+    //
     //var API = {
     //    setStore: function (options) {
     //        //app.store.set(options);
+    //        store.save();
     //    },
     //
     //    getStore: function () {
     //        console.log('get store');
     //        //return store;
     //
-    //        var store = new Entities.Store();
     //        var deferred = $.Deferred();
     //
     //        store.fetch({
@@ -73,7 +79,7 @@ define(function (require, exports, module) {
     //    return API.setStore(options);
     //});
     //
-    //msgBus.reqres.setHandler('equifit:store:get', function () {
+    //msgBus.reqres.setHandler('store:get', function () {
     //    console.log('get store data');
     //    return API.getStore();
     //});

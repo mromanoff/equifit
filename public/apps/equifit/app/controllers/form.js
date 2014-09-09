@@ -26,6 +26,10 @@ define(function (require, exports, module) {
             /***
              * update store model
              */
+
+
+            console.log('form ', form);
+
             msgBus.commands.execute('store:set', {
                 title: form.get('title'),
                 formName: form.get('title')
