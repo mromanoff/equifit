@@ -652,7 +652,13 @@ module.exports = {
                                 {"val": "medical01-2", "label": "No"}
                             ],
                             "validators": [{"type": "required", "message": "Please select one.", "regex": null}],
-                            "help": null
+                            "help": "we recommend that you see a doctor before your Equifit or before you begin an exercise program.",
+                            fieldClass: 'eventBinder',
+                            "fieldAttrs": {
+                                'data-action': 'showHelp',
+                                'data-target': "help-block",
+                                'data-condition': 'medical01-1'
+                            }
                         },
                         "medical02": {
                             "type": "Radio",
@@ -662,7 +668,13 @@ module.exports = {
                                 {"val": "medical02-2", "label": "No"}
                             ],
                             "validators": [{"type": "required", "message": "Please select one.", "regex": null}],
-                            "help": null
+                            "help": "we recommend that you see a doctor before your Equifit or before you begin an exercise program.",
+                            fieldClass: 'eventBinder',
+                            "fieldAttrs": {
+                                'data-action': 'showHelp',
+                                'data-target': "help-block",
+                                'data-condition': 'medical02-1'
+                            }
                         },
                         "medical03": {
                             "type": "Radio",
@@ -672,7 +684,13 @@ module.exports = {
                                 {"val": "medical03-2", "label": "No"}
                             ],
                             "validators": [{"type": "required", "message": "Please select one.", "regex": null}],
-                            "help": null
+                            "help": "we recommend that you see a doctor before your Equifit or before you begin an exercise program.",
+                            fieldClass: 'eventBinder',
+                            "fieldAttrs": {
+                                'data-action': 'showHelp',
+                                'data-target': "help-block",
+                                'data-condition': 'medical03-1'
+                            }
                         },
                         "medical04": {
                             "type": "Radio",
@@ -682,7 +700,13 @@ module.exports = {
                                 {"val": "medical04-2", "label": "No"}
                             ],
                             "validators": [{"type": "required", "message": "Please select one.", "regex": null}],
-                            "help": null
+                            "help": "we recommend that you see a doctor before your Equifit or before you begin an exercise program.",
+                            fieldClass: 'eventBinder',
+                            "fieldAttrs": {
+                                'data-action': 'showHelp',
+                                'data-target': "help-block",
+                                'data-condition': 'medical04-1'
+                            }
                         },
                         "medical05": {
                             "type": "Radio",
@@ -692,7 +716,13 @@ module.exports = {
                                 {"val": "medical05-2", "label": "No"}
                             ],
                             "validators": [{"type": "required", "message": "Please select one.", "regex": null}],
-                            "help": null
+                            "help": "we recommend that you see a doctor before your Equifit or before you begin an exercise program.",
+                            fieldClass: 'eventBinder',
+                            "fieldAttrs": {
+                                'data-action': 'showHelp',
+                                'data-target': "help-block",
+                                'data-condition': 'medical05-1'
+                            }
                         },
                         "medical06": {
                             "type": "Radio",
@@ -702,7 +732,13 @@ module.exports = {
                                 {"val": "medical06-2", "label": "No"}
                             ],
                             "validators": [{"type": "required", "message": "Please select one.", "regex": null}],
-                            "help": null
+                            "help": "we recommend that you see a doctor before your Equifit or before you begin an exercise program.",
+                            fieldClass: 'eventBinder',
+                            "fieldAttrs": {
+                                'data-action': 'showHelp',
+                                'data-target': "help-block",
+                                'data-condition': 'medical06-1'
+                            }
                         },
                         "medical07": {
                             "type": "Radio",
@@ -712,7 +748,13 @@ module.exports = {
                                 {"val": "medical07-2", "label": "No"}
                             ],
                             "validators": [{"type": "required", "message": "Please select one.", "regex": null}],
-                            "help": null
+                            "help": "we recommend that you see a doctor before your Equifit or before you begin an exercise program.",
+                            fieldClass: 'eventBinder',
+                            "fieldAttrs": {
+                                'data-action': 'showHelp',
+                                'data-target': "help-block",
+                                'data-condition': 'medical07-1'
+                            }
                         },
                         "medical08": {
                             "type": "Radio",
@@ -722,7 +764,13 @@ module.exports = {
                                 {"val": "medical08-2", "label": "No"}
                             ],
                             "validators": [{"type": "required", "message": "Please select one.", "regex": null}],
-                            "help": null
+                            "help": "we recommend that you see a doctor before your Equifit or before you begin an exercise program.",
+                            fieldClass: 'eventBinder',
+                            "fieldAttrs": {
+                                'data-action': 'showHelp',
+                                'data-target': "help-block",
+                                'data-condition': 'medical08-1'
+                            }
                         },
                         "medical09": {
                             "type": "Radio",
@@ -732,7 +780,13 @@ module.exports = {
                                 {"val": "medical09-2", "label": "No"}
                             ],
                             "validators": [{"type": "required", "message": "Please select one.", "regex": null}],
-                            "help": null
+                            "help": "we recommend that you see a doctor before your Equifit or before you begin an exercise program.",
+                            fieldClass: 'eventBinder',
+                            "fieldAttrs": {
+                                'data-action': 'showHelp',
+                                'data-target': "help-block",
+                                'data-condition': 'medical09-1'
+                            }
                         },
                         "medical10": {
                             "type": "Radio",
@@ -742,14 +796,26 @@ module.exports = {
                                 {"val": "medical10-2", "label": "No"}
                             ],
                             "validators": [{"type": "required", "message": "Please select one.", "regex": null}],
-                            "help": null
+                            "help": "we recommend that you see a doctor before your Equifit or before you begin an exercise program.",
+                            fieldClass: 'eventBinder',
+                            "fieldAttrs": {
+                                'data-action': 'showHelp',
+                                'data-target': "help-block",
+                                'data-condition': 'medical10-1'
+                            }
                         },
                         "medical11": {
                             "type": "Text",
                             "title": "Is there anything you would specifically like to learn about youself during the Equifit?",
                             "options": null,
                             "validators": [{"type": "required", "message": "The field is required.", "regex": null}],
-                            "help": null
+                            "help": "we recommend that you see a doctor before your Equifit or before you begin an exercise program.",
+                            fieldClass: 'eventBinder',
+                            "fieldAttrs": {
+                                'data-action': 'showHelp',
+                                'data-target': "help-block",
+                                'data-condition': 'medical11-1'
+                            }
                         }
                     },
                     "fieldsets": [

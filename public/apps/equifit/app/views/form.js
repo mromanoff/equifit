@@ -28,6 +28,41 @@ define(function (require, exports, module) {
                 idPrefix: this.model.get('idPrefix')
             }).render();
 
+            _.each(form.fields, function(editor){
+                console.log(editor.key);
+                form.on(editor.key + ':change', function(form, editor) {
+                    // console.log('field',form.fields[editor.key]);
+                    setUp(form.fields[editor.key], editor);
+                })
+            });
+
+            var setUp = function (field, editor) {
+                console.log('set up', field, editor);
+                var $el = field.$el;
+
+                if ($el.hasClass('eventBinder')) {
+                    var action = $el.data('action');
+                    var condition = $el.data('condition');
+                    var target = $el.data('target');
+
+                    console.log(action, target, condition);
+                    console.log('value', editor.getValue());
+
+                    if(editor.getValue() == $el.data('condition')) {
+                        // target
+                        $el.find('.' + target).slideDown(200);
+                    }
+                    else {
+                        // target
+                        $el.find('.' + target).slideUp(200);
+                    }
+                }
+            };
+
+
+
+
+
             // check if consent form is signed
             if (!app.store.get('isSigned')) {
                 this.setView('.message', new MessageView());
