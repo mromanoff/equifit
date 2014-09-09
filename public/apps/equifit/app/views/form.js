@@ -28,6 +28,9 @@ define(function (require, exports, module) {
                 idPrefix: this.model.get('idPrefix')
             }).render();
 
+
+
+            //TODO move this out of here
             _.each(form.fields, function(editor){
                 console.log(editor.key);
                 form.on(editor.key + ':change', function(form, editor) {
@@ -36,6 +39,7 @@ define(function (require, exports, module) {
                 })
             });
 
+            //TODO move this out of here
             var setUp = function (field, editor) {
                 console.log('set up', field, editor);
                 var $el = field.$el;
