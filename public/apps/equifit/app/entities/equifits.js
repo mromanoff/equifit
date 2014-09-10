@@ -4,7 +4,13 @@ define(function (require) {
     var app = require('app');
     var Backbone = require('backbone');
     var msgBus = require('msgbus');
+    var LoadingView = require('views/loading');
     var Entities = {};
+
+    var loadingView = function () {
+        app.layout.setView('.main-container', new LoadingView());
+        app.layout.render();
+    };
 
     Entities.Equifit = Backbone.Model.extend({
         idAttribute: '_id',
@@ -37,7 +43,10 @@ define(function (require) {
             var collection = new Entities.EquifitCollection();
             var defer = $.Deferred();
 
-           // setTimeout(function () {
+            // show spinner while fetching data
+            loadingView();
+
+            setTimeout(function () {
                 collection.fetch({
                     success: function (data) {
                         defer.resolve(data);
@@ -46,24 +55,7 @@ define(function (require) {
                         defer.resolve(data);
                     }
                 });
-           // }, 2000);
-            return defer.promise();
-        },
-
-        getEquifitEntity: function (equifitId) {
-            var model = new Entities.Equifit({_id: equifitId});
-            var defer = $.Deferred();
-
-         //   setTimeout(function(){
-            model.fetch({
-                success: function (data) {
-                    defer.resolve(data);
-                },
-                error: function (data) {
-                    defer.resolve(data);
-                }
-            });
-        //    }, 2000);
+            }, 1000);
             return defer.promise();
         },
 
@@ -71,7 +63,10 @@ define(function (require) {
             var collection = new Entities.EquifitCollection();
             var defer = $.Deferred();
 
-            //setTimeout(function(){
+            // show spinner while fetching data
+            loadingView();
+
+            setTimeout(function(){
             collection.create({clientId: app.store.get('clientId')}, {
                 wait : true,
                 success: function (data) {
@@ -81,7 +76,7 @@ define(function (require) {
                     defer.reject(data);
                 }
             });
-            //}, 2000);
+            }, 1000);
             return defer.promise();
         },
 
@@ -89,7 +84,10 @@ define(function (require) {
             var model = new Entities.Equifit({_id: equifit.id});
             var defer = $.Deferred();
 
-            //setTimeout(function(){
+            // show spinner while fetching data
+            loadingView();
+
+            setTimeout(function(){
             model.save({}, {
                 wait : true,
                 success: function (data) {
@@ -99,17 +97,13 @@ define(function (require) {
                     defer.reject(data);
                 }
             });
-            //}, 2000);
+            }, 2000);
             return defer.promise();
         }
     };
 
     msgBus.reqres.setHandler('equifit:entities', function () {
         return API.getEquifitEntities();
-    });
-
-    msgBus.reqres.setHandler('equifit:entity', function (id) {
-        return API.getEquifitEntity(id);
     });
 
     msgBus.reqres.setHandler('equifit:entity:create', function () {

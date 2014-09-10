@@ -4,34 +4,20 @@ define(function (require, exports, module) {
     var app = require('app');
     var moment = require('moment');
     var msgBus = require('msgbus');
-    require('entities/forms');
     var FormView = require('views/form');
     var HeaderView = require('views/header');
-    var LoadingView = require('views/loading');
     var controller = {};
 
-    controller.getForm = function () {
-        /***
-         * update store model
-         */
-        msgBus.commands.execute('store:set', {
-            title: 'Form'
-        });
+    controller.getForm = function (formId) {
 
-        app.layout.setView('.main-container', new LoadingView());
-        app.layout.render();
-
-        var fetchingForm = msgBus.reqres.request('form:entity', app.store.get('formId'));
+        require('entities/forms');
+        var fetchingForm = msgBus.reqres.request('form:entity', formId);
         $.when(fetchingForm).done(function (form) {
             /***
              * update store model
              */
-
-
-            console.log('form ', form);
-
             msgBus.commands.execute('store:set', {
-                title: form.get('title'),
+                pageTitle: form.get('title'),
                 formName: form.get('title')
             });
 
@@ -43,34 +29,19 @@ define(function (require, exports, module) {
         });
 
         $.when(fetchingForm).fail(function (model, jqXHR, textStatus) {
-            console.log('error: form create failed', model, jqXHR, textStatus);
-            var url = 'error';
-            app.router.navigate(url, { trigger: true });
+            msgBus.commands.setHandler('equifit:error', jqXHR);
+            app.router.navigate('error');
         });
     };
 
     controller.createForm = function (templateId) {
-        console.warn('create new form', templateId);
-
-        /***
-         * update store model
-         */
-        msgBus.commands.execute('store:set', {
-            title: 'Form'
-        });
-
-        app.layout.setView('.main-container', new LoadingView({
-            title: 'Loading Form'
-        }));
-        app.layout.render();
-
         var createForm = msgBus.reqres.request('form:entity:create', templateId);
         $.when(createForm).done(function (form) {
             /***
              * update store model
              */
             msgBus.commands.execute('store:set', {
-                title: form.get('title'),
+                pageTitle: form.get('title'),
                 formName: form.get('title'),
                 equifitName: 'Forms'
             });
@@ -86,23 +57,32 @@ define(function (require, exports, module) {
         });
 
         $.when(createForm).fail(function (model, jqXHR, textStatus) {
-            console.log('error: form create failed', model, jqXHR, textStatus);
-            var url = 'error';
-            app.router.navigate(url, { trigger: true });
+            msgBus.commands.setHandler('equifit:error', jqXHR);
+            app.router.navigate('error');
         });
     };
 
     controller.updateForm = function (form) {
-
-        app.layout.setView('.main-container', new LoadingView({
-            title: 'Loading Form'
-        }));
-        app.layout.render();
-
         var updateForm = msgBus.reqres.request('form:entity:update', form);
 
         $.when(updateForm).done(function () {
             var updatedAt = '<small>updated at: ' + moment().format('dddd, MMMM Do YYYY, h:mm:ss a') + '</small>';
+
+
+            console.log('form updated', form);
+
+            // update equifit isSigned to true
+            ////msgBus.trigger('equifit:equifit:update', { isSigned: true});
+
+            // only if templateType === 'InformedConsent' redirect to Equifit Page
+            //if(_.isEqual(this.model.get('templateType'), 'InformedConsent')) {
+            //    var url = 'client/' + app.store.get('clientId') + '/equifit/' + app.store.get('equifitId');
+            //
+            //    msgBus.commands.execute('equifit:get', app.store.get('equifitId'));
+            //    app.router.navigate(url);
+            //}
+
+
 
             msgBus.commands.execute('modal:simple:show',
                 new Backbone.Model({
@@ -118,9 +98,8 @@ define(function (require, exports, module) {
         });
 
         $.when(updateForm).fail(function (model, jqXHR, textStatus) {
-            console.log('error: equifit create failed', model, jqXHR, textStatus);
-            var url = 'error';
-            app.router.navigate(url, { trigger: true });
+            msgBus.commands.setHandler('equifit:error', jqXHR);
+            app.router.navigate('error');
         });
     };
 

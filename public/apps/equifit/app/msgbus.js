@@ -17,6 +17,24 @@ define(function (require, exports, module) {
     // {what}:{command}
 
     /***
+     * Get Equifits
+     */
+    msgBus.commands.setHandler('equifits:get', function(clientId){
+        require(['controllers/equifits'], function (controller) {
+            controller.getEquifits(clientId);
+        });
+    });
+
+    /***
+     * Get Equifit
+     */
+    msgBus.commands.setHandler('equifit:get', function(equifitId){
+        require(['controllers/equifit'], function (controller) {
+            controller.getEquifit(equifitId);
+        });
+    });
+
+    /***
      * Create new Equifit
      */
     msgBus.commands.setHandler('equifit:create', function(){
@@ -33,6 +51,16 @@ define(function (require, exports, module) {
             controller.updateEquifit(equifit);
         });
     });
+
+    /***
+     * Get Form
+     */
+    msgBus.commands.setHandler('form:get', function(formId){
+        require(['controllers/form'], function (controller) {
+            controller.getForm(formId);
+        });
+    });
+
 
     /***
      * Create new Form
@@ -63,12 +91,20 @@ define(function (require, exports, module) {
     });
 
     /***
-     * Update Data Storage
+     * Set Data Storage
      */
     msgBus.commands.setHandler('store:set', function(options){
-        console.log('set store with', options);
         app.store.set(options);
     });
+
+    /***
+     * Get Data Storage
+     */
+
+    //msgBus.reqres.setHandler('store:get', function (attribute) {
+    //    console.log('get store property', attribute);
+    //    return app.store.get(attribute);
+    //});
 
     /***
      * Create Modal
@@ -88,11 +124,11 @@ define(function (require, exports, module) {
         });
     });
 
-    //msgBus.on('equifit:error', function(error){
-    //    require(['controllers/error'], function (controller) {
-    //        controller.init(error);
-    //    });
-    //});
+    msgBus.commands.setHandler('equifit:error', function(error){
+        require(['controllers/error'], function (controller) {
+            controller.init(error);
+        });
+    });
 
     module.exports = msgBus;
 });

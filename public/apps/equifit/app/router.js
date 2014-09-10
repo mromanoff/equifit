@@ -24,7 +24,7 @@ define(function (require, exports, module) {
                 console.log('route get equifits:', clientId);
                 require(['./controllers/equifits'],
                     function (controller) {
-                        controller.getEquifits();
+                        controller.getEquifits(clientId);
                     });
             }
             else if (!formId) {
@@ -35,7 +35,7 @@ define(function (require, exports, module) {
                 console.log('route get equifit:', clientId, equifitId);
                 require(['./controllers/equifit'],
                     function (controller) {
-                        controller.getEquifit();
+                        controller.getEquifit(equifitId);
                     });
             }
             else {
@@ -47,7 +47,7 @@ define(function (require, exports, module) {
                 console.log('route get form:', clientId, equifitId, formId);
                 require(['./controllers/form'],
                     function (controller) {
-                        controller.getForm();
+                        controller.getForm(formId);
                     });
             }
         },

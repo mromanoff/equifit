@@ -3,30 +3,34 @@ define(function (require, exports, module) {
 
     var app = require('app');
     var msgBus = require('msgbus');
-    require('entities/equifits');
     var EquifitView = require('views/equifit');
+    var moment = require('moment');
     var HeaderView = require('views/header');
-    var LoadingView = require('views/loading');
     var controller = {};
 
-    controller.getEquifit = function () {
+    controller.getEquifit = function (equifitId) {
         /***
          * update store model
          */
         msgBus.commands.execute('store:set', {
-            title: 'Forms'
+            pageTitle: 'Forms'
         });
 
-        app.layout.setView('.main-container', new LoadingView());
-        app.layout.render();
+        require('entities/equifits');
+        var fetchingEquifits = msgBus.reqres.request('equifit:entities');
 
-        var fetchingEquifit = msgBus.reqres.request('equifit:entity', app.store.get('equifitId'));
-        $.when(fetchingEquifit).done(function (equifit) {
-            /***
-             * update store model
-             */
+        $.when(fetchingEquifits).done(function (equifits) {
+            var equifit = equifits.get(equifitId);
+
+            console.log('equifit', equifit);
+
+            // update store model
             msgBus.commands.execute('store:set', {
+                clientId: equifit.get('clientId'),
                 clientName: equifit.get('clientName'),
+                appointmentAt: equifit.get('appointmentAt'),
+                equifitId: equifit.get('_id'),
+                equifitName: moment(equifit.get('appointmentAt')).format('MMMM D, YYYY') || 'Equifit',
                 isSigned: equifit.get('isSigned'),
                 forms: equifit.get('documents')
             });
@@ -35,13 +39,14 @@ define(function (require, exports, module) {
             app.layout.setView('.main-container', new EquifitView({
                 model: equifit
             }));
+
             app.layout.render();
         });
 
-        $.when(fetchingEquifit).fail(function (model, jqXHR, textStatus) {
-            console.log('error: equifit create failed', model, jqXHR, textStatus);
-            var url = 'error';
-            app.router.navigate(url, { trigger: true });
+        $.when(fetchingEquifits).fail(function (model, jqXHR, textStatus) {
+            console.log('error: get equifit failed', model, jqXHR, textStatus);
+            msgBus.commands.setHandler('equifit:error', jqXHR);
+            app.router.navigate('error');
         });
     };
 
@@ -59,7 +64,11 @@ define(function (require, exports, module) {
              * update store model
              */
             msgBus.commands.execute('store:set', {
+                clientId: equifit.get('clientId'),
                 clientName: equifit.get('clientName'),
+                appointmentAt: equifit.get('appointmentAt'),
+                equifitId: equifit.get('_id'),
+                equifitName: moment(equifit.get('appointmentAt')).format('MMMM D, YYYY') || 'Equifit',
                 isSigned: equifit.get('isSigned'),
                 forms: equifit.get('documents')
             });
@@ -76,40 +85,21 @@ define(function (require, exports, module) {
 
         $.when(createEquifit).fail(function (model, jqXHR, textStatus) {
             console.log('error: equifit create failed', model, jqXHR, textStatus);
-            var url = 'error';
-            app.router.navigate(url, { trigger: true });
+            msgBus.commands.setHandler('equifit:error', jqXHR);
+            app.router.navigate('error');
         });
     };
 
     controller.updateEquifit = function (equifit) {
         var updateEquifit = msgBus.reqres.request('equifit:entity:update', equifit);
         $.when(updateEquifit).done(function (equifit) {
-            console.warn('controller update equifit response', equifit);
             msgBus.commands.execute('modal:show', equifit);
-
-            /***
-             * update store model
-             */
-            //msgBus.commands.execute('store:set', {
-            //    clientName: equifit.get('clientName'),
-            //    isSigned: equifit.get('isSigned'),
-            //    forms: equifit.get('documents')
-            //});
-            //
-            //app.layout.setView('.header', new HeaderView());
-            //app.layout.setView('.main-container', new EquifitView({
-            //    model: equifit
-            //}));
-            //app.layout.render();
-            //
-            //var url = 'client/' + app.store.get('clientId') + '/equifit/' + equifit.id;
-            //app.router.navigate(url);
         });
 
         $.when(updateEquifit).fail(function (model, jqXHR, textStatus) {
             console.log('error: equifit create failed', model, jqXHR, textStatus);
             var url = 'error';
-            app.router.navigate(url, { trigger: true });
+            app.router.navigate(url, {trigger: true});
         });
     };
 

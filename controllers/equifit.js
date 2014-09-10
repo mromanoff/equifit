@@ -20,27 +20,6 @@ module.exports = {
         });
     },
 
-    getEquifit: function (req, res) {
-        'use strict';
-
-        models.Equifit.findById(req.params.id, function(err, item) {
-            if (err) {
-                res.json({error: 'Equifit not found.'});
-            } else {
-                res.json(item);
-            }
-        });
-
-        //models.Form.findOne({_id: req.params.id}, function (err, item) {
-        //    if (err) {
-        //        res.json({error: 'Document not found.'});
-        //    } else {
-        //        console.log('ITEM', item);
-        //        res.json(item);
-        //    }
-        //});
-    },
-
     createEquifit: function (req, res) {
         'use strict';
 
@@ -55,19 +34,19 @@ module.exports = {
             isValidated: false,
             documents: [
                 {
-                    title: 'Personal Info',
-                    templateId: 2,
-                    templateType: 'Personal Information',
-                    totalQuestions: 5,
-                    totalCompletedQuestions: 2
-                },
-
-                {
                     templateId: 66,
                     title: 'Informed Consent',
                     templateType: 'InformedConsent',
                     totalQuestions: 1,
                     totalCompletedQuestions: 0
+                },
+
+                {
+                    title: 'Personal Info',
+                    templateId: 2,
+                    templateType: 'Personal Information',
+                    totalQuestions: 5,
+                    totalCompletedQuestions: 2
                 },
                 {
                     title: 'Medical / Orthopedic HX',
@@ -204,12 +183,6 @@ module.exports = {
         }
     },
 
-    //getDocuments: function (req, res) {
-    //    models.Form.find({}, function (err, data) {
-    //        res.json(data);
-    //    });
-    //},
-
     getDocument: function (req, res) {
         'use strict';
 
@@ -220,15 +193,6 @@ module.exports = {
                 res.json(item);
             }
         });
-
-        //models.Form.findOne({_id: req.params.id}, function (err, item) {
-        //    if (err) {
-        //        res.json({error: 'Document not found.'});
-        //    } else {
-        //        console.log('ITEM', item);
-        //        res.json(item);
-        //    }
-        //});
     },
 
     createDocument: function (req, res) {

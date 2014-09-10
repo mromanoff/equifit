@@ -7,7 +7,7 @@ require.config({
         'backbone': '../bower_components/backbone/backbone',
         'backbone.layoutmanager': '../bower_components/layoutmanager/backbone.layoutmanager',
         'backbone-forms': '../bower_components/backbone-forms/distribution.amd/backbone-forms',
-       // 'backbone-forms-template': '../bower_components/backbone-forms/distribution.amd/templates/bootstrap',
+        'backbone-forms-template': '../bower_components/backbone-forms/distribution.amd/templates/bootstrap',
         'backbone.wreqr': '../bower_components/backbone.wreqr/lib/backbone.wreqr',
         'localstorage': '../bower_components/backbone.localStorage/backbone.localStorage',
         'moment': '../bower_components/moment/moment',

@@ -8,41 +8,45 @@ define(function (require, exports, module) {
 
     var Backbone = require('backbone');
     //var msgBus = require('msgbus');
-    Backbone.LocalStorage = require('localstorage');
+   //Backbone.LocalStorage = require('localstorage');
     var Entities = {};
 
     Entities.Store = Backbone.Model.extend({
-        localStorage: new Backbone.LocalStorage('Equifit'),
+       // localStorage: new Backbone.LocalStorage('Equifit'),
 
         defaults: {
-            title: null,
+            pageTitle: null,
+
             clientId: null,
             clientName: null,
+            equifitId: null,
+            equifitName: null,
+            formName: null,
+            formId: null,
+
             appointmentAt: null,
             isSigned: null,
             isValidated: null,
-            equifitName: null,
-            equifitId: null,
-            formName: null,
-            formId: null,
-            forms: null,
 
-
-            equifits: []
-
+            forms: null
         },
 
         initialize: function () {
-            this.on('change', this.updateStorage);
-            this.on('change:title', this.updatePageTitle);
+            //this.on('change', this.updateStorage);
+            this.on('change', this.debug);
+            this.on('change:pageTitle', this.updatePageTitle);
         },
 
-        updateStorage: function () {
-            this.save();
+        //updateStorage: function () {
+        //    this.save();
+        //},
+
+        debug: function () {
+            console.warn('STORE', this.toJSON());
         },
 
         updatePageTitle: function () {
-            $('title').text(this.get('title'));
+            $('title').text(this.get('pageTitle'));
         }
     });
 

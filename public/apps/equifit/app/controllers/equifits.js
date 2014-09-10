@@ -3,38 +3,29 @@ define(function (require, exports, module) {
 
     var app = require('app');
     var msgBus = require('msgbus');
-    require('entities/equifits');
     var EquifitView = require('views/equifits');
     var HeaderView = require('views/header');
-    var LoadingView = require('views/loading');
     var controller = {};
 
-    controller.getEquifits = function () {
+
+    controller.getEquifits = function (clientId) {
         // update store model
         msgBus.commands.execute('store:set', {
-            title: 'Equifits'
+            pageTitle: 'Equifits'
         });
 
-        app.layout.setView('.main-container', new LoadingView());
-        app.layout.render();
+        require('entities/equifits');
+        var fetchingEquifits = msgBus.reqres.request('equifit:entities', clientId);
 
-        var fetchingEquifits = msgBus.reqres.request('equifit:entities');
         $.when(fetchingEquifits).done(function (equifits) {
-
-            // cache equifits
-            msgBus.commands.execute('store:set', {
-                equifits: equifits
-            });
-
             // if there is no existing Equifit. server response []
             // set clientName from the first model
-            if(equifits.length !== 0) {
+            if (equifits.length !== 0) {
                 // update store model
                 msgBus.commands.execute('store:set', {
                     clientName: equifits.at(0).get('clientName')
                 });
             }
-
             app.layout.setView('.header', new HeaderView());
             app.layout.setView('.main-container', new EquifitView({
                 collection: equifits
@@ -43,9 +34,9 @@ define(function (require, exports, module) {
         });
 
         $.when(fetchingEquifits).fail(function (model, jqXHR, textStatus) {
-            console.log('error: equifit create failed', model, jqXHR, textStatus);
-            var url = 'error';
-            app.router.navigate(url, { trigger: true });
+            console.error('error: equifit fetch failed:', model, jqXHR, textStatus);
+            msgBus.commands.setHandler('equifit:error', jqXHR);
+            app.router.navigate('error');
         });
     };
 

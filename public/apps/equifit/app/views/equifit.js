@@ -36,17 +36,19 @@ define(function (require, exports, module) {
          */
         showForm: function (e) {
             e.preventDefault();
-            var url = 'client/' + app.store.get('clientId') + '/equifit/' + app.store.get('equifitId');
+
+            var url = 'client/' + this.model.get('parent').clientId + '/equifit/' + this.model.get('parent')._id;
 
             if(_.isEmpty(this.model.get('_id'))) {
-                console.log('this model doesn\'t have an ID');
+                console.log('this model doesn\'t have an _Id');
                 console.warn('create new form with template id', this.model.get('templateId'));
                 msgBus.commands.execute('form:create', this.model.get('templateId'));
             }
             else {
-                console.log('this model have an ID');
+                console.log('this model have an _Id');
+                msgBus.commands.execute('form:get', this.model.get('_id'));
                 url = url + '/form/' + this.model.get('_id');
-                app.router.navigate(url, {trigger: true});
+                app.router.navigate(url);
             }
         }
     });
@@ -61,21 +63,23 @@ define(function (require, exports, module) {
 
         events: {
             'click .submit': 'updateEquifit',
-            'click [data-url]': 'showPage'
+            'click .show-equifits': 'showEquifits'
         },
 
-        showPage: function (e) {
+        showEquifits: function (e) {
             e.preventDefault();
-            var url = $(e.currentTarget).data('url');
-            console.log('navigate', url);
-            app.router.navigate(url, {trigger: true});
+            var url = 'client/' + app.store.get('clientId');
+            msgBus.commands.execute('equifits:get', app.store.get('clientId'));
+            app.router.navigate(url);
         },
 
         beforeRender: function () {
             var documents = new Backbone.Collection(this.model.get('documents'));
 
+            console.log('this model docs', this.model.toJSON());
+
             // check if consent form is signed
-            if (!app.store.get('isSigned')) {
+            if (!this.model.get('isSigned')) {
                 this.setView('.message', new MessageView());
             }
 
@@ -83,9 +87,10 @@ define(function (require, exports, module) {
             if (_.isEqual(_.size(documents), 0)) {
                 this.insertView('.list', new ItemEmpty());
             } else {
-                documents.each(function (item) {
+                documents.each(function (model) {
+                    model.set({parent: _.clone(this.model.toJSON())});
                     this.insertView('.list', new Item({
-                        model: item
+                        model: model
                     }));
                 }, this);
             }

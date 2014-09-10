@@ -12,7 +12,6 @@ define(function (require, exports, module) {
         tagName: 'li',
 
         events: {
-            'click .printForm': 'printForm',
             'click': 'showEquifit'
         },
 
@@ -24,32 +23,13 @@ define(function (require, exports, module) {
         },
 
         /***
-         * print form
-         * @param e
-         */
-        printForm: function (e) {
-            e.stopPropagation();
-            console.log('print form');
-        },
-
-        /***
          * show Equifit page
          * @param e
          */
         showEquifit: function (e) {
             e.preventDefault();
-            var url = 'client/' + app.store.get('clientId') + '/equifit/' + this.model.id;
-
-            /***
-             * update store model
-             */
-            msgBus.commands.execute('store:set', {
-                equifitName: _.isNull(this.model.get('appointmentAt')) ? 'Equifit' : moment(this.model.get('appointmentAt')).format('MMMM D, YYYY'),
-                isSigned: this.model.get('isSigned'),
-                equifitId: this.model.id
-            });
-
-            app.router.navigate(url, {trigger: true});
+            msgBus.commands.execute('equifit:get', this.model.id);
+            app.router.navigate('client/' + this.model.get('clientId') + '/equifit/' + this.model.id);
         }
     });
 

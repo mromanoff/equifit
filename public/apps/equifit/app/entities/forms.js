@@ -4,7 +4,13 @@ define(function (require) {
     var app = require('app');
     var Backbone = require('backbone');
     var msgBus = require('msgbus');
+    var LoadingView = require('views/loading');
     var Entities = {};
+
+    var loadingView = function () {
+        app.layout.setView('.main-container', new LoadingView());
+        app.layout.render();
+    };
 
     Entities.Form = Backbone.Model.extend({
         idAttribute: '_id',
@@ -20,17 +26,6 @@ define(function (require) {
             content: null,
             data: null
         },
-
-        //url: function () {
-        //
-        //    console.warn('form id last ', app.store.get('formId'));
-        //
-        //    if (!_.isEmpty(app.store.get('formId'))) {
-        //        return '/equifit/api/clients/' + app.store.get('clientId') + '/equifits/' + app.store.get('equifitId') + '/documents/' + app.store.get('formId');
-        //    } else {
-        //        return '/equifit/api/clients/' + app.store.get('clientId') + '/equifits/' + app.store.get('equifitId') + '/documents/';
-        //    }
-        //},
 
         urlRoot: function () {
             return '/equifit/api/clients/' + app.store.get('clientId') + '/equifits/' + app.store.get('equifitId') + '/documents/';
@@ -51,7 +46,10 @@ define(function (require) {
             var equifit = new Entities.Form({_id: formId});
             var defer = $.Deferred();
 
-            //setTimeout(function(){
+            // show spinner while fetching data
+            loadingView();
+
+            setTimeout(function(){
             equifit.fetch({
                 success: function(data){
                     defer.resolve(data);
@@ -60,7 +58,7 @@ define(function (require) {
                     defer.resolve(data);
                 }
             });
-            //}, 2000);
+            }, 1000);
             return defer.promise();
         },
 
@@ -69,7 +67,11 @@ define(function (require) {
             var model = new Entities.Form();
             var defer = $.Deferred();
 
-            //setTimeout(function(){
+
+            // show spinner while fetching data
+            loadingView();
+
+            setTimeout(function(){
             model.save({templateId: templateId}, {
                 wait : true,
                 success: function (data) {
@@ -79,7 +81,7 @@ define(function (require) {
                     defer.reject(data);
                 }
             });
-            //}, 2000);
+            }, 1000);
             return defer.promise();
         },
 
@@ -87,9 +89,10 @@ define(function (require) {
             var model = new Entities.Form({_id: form.id});
             var defer = $.Deferred();
 
-            console.log('form update', form);
+            // show spinner while fetching data
+            loadingView();
 
-            //setTimeout(function(){
+            setTimeout(function(){
             model.save({
                 data: form.get('data'),
                 content: form.get('content')
@@ -102,7 +105,7 @@ define(function (require) {
                     defer.reject(data);
                 }
             });
-            //}, 2000);
+            }, 2000);
             return defer.promise();
         }
     };
