@@ -11,6 +11,30 @@ define(function (require, exports, module) {
     var FormView;
     var form;
 
+    var Field = function(form, editor) {
+        this.form = form;
+        this.editor = editor;
+        this.$el = this.editor.$el;
+        this.action = this.$el.data('action');
+        this.condition = this.$el.data('condition');
+        this.target = this.$el.data('target');
+    };
+
+    Field.prototype.initialize = function() {
+        if (this.editor.getValue() == this.$el.data('condition')) {
+            this.$el.find('.' + this.target).slideDown(200);
+        }
+        else {
+            this.$el.find('.' + this.target).slideUp(200);
+        }
+    };
+
+    Field.prototype.bind = function() {
+        this.form.on(this.editor.key + ':change', function () {
+            this.initialize();
+        }, this);
+    };
+
     FormView = Backbone.Layout.extend({
         template: 'form',
         events: {
@@ -30,50 +54,20 @@ define(function (require, exports, module) {
                 idPrefix: this.model.get('idPrefix')
             }).render();
 
-
-            //TODO move this out of here
-            _.each(form.fields, function(editor){
-                console.log(editor.key);
-                form.on(editor.key + ':change', function(form, editor) {
-                    // console.log('field',form.fields[editor.key]);
-                    setUp(form.fields[editor.key], editor);
-                })
-            });
-
-            //TODO move this out of here
-            var setUp = function (field, editor) {
-                console.log('set up', field, editor);
-                var $el = field.$el;
-
-                if ($el.hasClass('eventBinder')) {
-                    var action = $el.data('action');
-                    var condition = $el.data('condition');
-                    var target = $el.data('target');
-
-                    console.log(action, target, condition);
-                    console.log('value', editor.getValue());
-
-                    if(editor.getValue() == $el.data('condition')) {
-                        // target
-                        $el.find('.' + target).slideDown(200);
-                    }
-                    else {
-                        // target
-                        $el.find('.' + target).slideUp(200);
-                    }
+            _.each(form.fields, function (editor) {
+                if (editor.$el.hasClass('eventBinder')) {
+                    var field = new Field(form, editor);
+                    field.initialize();
+                    field.bind();
                 }
-            };
-
+            }, this);
 
             // check if consent form is signed
             if (!app.store.get('isSigned')) {
                 this.setView('.message', new MessageView());
             }
 
-            // check if there is no items in collection
-            //if (_.isEqual(_.size(this.collection), 0)) {
-                this.insertView('.content', new SimpleContent({ model: this.model.get('content')}));
-            //}
+            this.insertView('.content', new SimpleContent({model: this.model.get('content')}));
         },
 
         serialize: function () {
@@ -118,7 +112,7 @@ define(function (require, exports, module) {
                 msgBus.commands.execute('form:update', this.model);
             }
             else {
-                console.error('form did\'t pass validtion');
+                console.error('form did\'t pass validation:', errors);
             }
         }
     });
