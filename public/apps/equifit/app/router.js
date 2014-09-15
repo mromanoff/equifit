@@ -7,6 +7,10 @@ define(function (require, exports, module) {
     // Defining the application router.
     var Router = Backbone.Router.extend({
 
+        initialize: function () {
+            console.info('route init');
+        },
+
         routes: {
             'client/:id(/)': 'equifit',
             'client/:id/equifit/:id': 'equifit',
@@ -22,10 +26,7 @@ define(function (require, exports, module) {
                 });
 
                 console.log('route get equifits:', clientId);
-                require(['./controllers/equifits'],
-                    function (controller) {
-                        controller.getEquifits(clientId);
-                    });
+                msgBus.commands.execute('equifits:get');
             }
             else if (!formId) {
                 msgBus.commands.execute('store:set', {
@@ -33,10 +34,14 @@ define(function (require, exports, module) {
                     equifitId: equifitId
                 });
                 console.log('route get equifit:', clientId, equifitId);
-                require(['./controllers/equifit'],
-                    function (controller) {
-                        controller.getEquifit(equifitId);
-                    });
+                msgBus.commands.execute('equifit:get');
+                //
+                //
+
+                //require(['./controllers/equifit'],
+                //    function (controller) {
+                //        controller.getEquifit(equifitId);
+                //    });
             }
             else {
                 msgBus.commands.execute('store:set', {
@@ -45,10 +50,15 @@ define(function (require, exports, module) {
                     formId: formId
                 });
                 console.log('route get form:', clientId, equifitId, formId);
-                require(['./controllers/form'],
-                    function (controller) {
-                        controller.getForm(formId);
-                    });
+
+                msgBus.commands.execute('form:get');
+
+
+
+                //require(['./controllers/form'],
+                //    function (controller) {
+                //        controller.getForm(formId);
+                //    });
             }
         },
 
@@ -57,18 +67,18 @@ define(function (require, exports, module) {
                 clientId: clientId
             });
             console.log('route create equifit', clientId);
-            require(['./controllers/equifit'],
-                function (controller) {
-                    controller.createNew();
-                });
+            msgBus.commands.execute('equifit:create');
         },
 
         errorPage: function () {
             console.log('route error');
-            require(['./controllers/error'],
-                function (controller) {
-                    controller.init();
-                });
+
+            msgBus.commands.execute('equifit:error');
+
+            //require(['./controllers/error'],
+            //    function (controller) {
+            //        controller.init();
+            //    });
         }
     });
 
