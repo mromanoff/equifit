@@ -62,15 +62,30 @@ define(function (require, exports, module) {
 
         beforeRender: function () {
             // check if there is no items in collection
-            if (_.isEqual(_.size(this.collection), 0)) {
-                this.insertView('.list', new ItemEmpty());
-            } else {
+            //if (_.isEqual(_.size(this.collection), 0)) {
+            //    this.insertView('.list', new ItemEmpty());
+            //} else {
+            //    this.collection.each(function (item) {
+            //        this.insertView('.list', new Item({
+            //            model: item
+            //        }));
+            //    }, this);
+            //}
+
+            // or check if there is id
+            //if (_.isEqual(_.size(this.collection), 0)) {
+            //    this.insertView('.list', new ItemEmpty());
+            //} else {
                 this.collection.each(function (item) {
-                    this.insertView('.list', new Item({
-                        model: item
-                    }));
+                    if(item.has('_id')) {
+                        this.insertView('.list', new Item({
+                            model: item
+                        }));
+                    } else {
+                        this.insertView('.list', new ItemEmpty());
+                    }
                 }, this);
-            }
+           // }
         },
 
         serialize: function () {

@@ -20,12 +20,13 @@ define(function (require, exports, module) {
         $.when(fetchingEquifits).done(function (equifits) {
             // if there is no existing Equifit. server response []
             // set clientName from the first model
-            if (equifits.length !== 0) {
+           // if (equifits.length !== 0) {
                 // update store model
-                msgBus.commands.execute('store:set', {
-                    clientName: equifits.at(0).get('clientName')
-                });
-            }
+            msgBus.commands.execute('store:set', {
+                clientName: equifits.at(0).get('clientName'),
+                clientId: equifits.at(0).get('clientId')
+            });
+           // }
             app.layout.setView('.header', new HeaderView());
             app.layout.setView('.main-container', new EquifitView({
                 collection: equifits
