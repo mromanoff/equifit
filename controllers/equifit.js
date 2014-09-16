@@ -323,8 +323,8 @@ module.exports = {
                         "personal05": {
                             "type": "Date",
                             "title": "Date of Equifit",
-                            "yearStart": "new Date().getFullYear()",
-                            "yearEnd": "new Date().getFullYear() + 10",
+                            "yearStart": new Date().getFullYear(),
+                            "yearEnd": new Date().getFullYear() + 10,
                             "validators": [
                                 {
                                     "type": "required",
