@@ -15,15 +15,19 @@
         <option name="key" value="Cache-Control" />
         <option name="value" value="no-cache" />
       </KeyValuePair>
+      <KeyValuePair>
+        <option name="key" value="Content-Type" />
+        <option name="value" value="application/json" />
+      </KeyValuePair>
     </list>
   </option>
   <option name="parameters">
     <list />
   </option>
-  <option name="parametersEnabled" value="true" />
-  <option name="haveTextToSend" value="false" />
+  <option name="parametersEnabled" value="false" />
+  <option name="haveTextToSend" value="true" />
   <option name="haveFileToSend" value="false" />
   <option name="isFileUpload" value="false" />
-  <option name="textToSend" value="" />
+  <option name="textToSend" value="{ &quot;templateId&quot;: 1 }" />
   <option name="filesToSend" value="" />
 </RestClientRequest>
