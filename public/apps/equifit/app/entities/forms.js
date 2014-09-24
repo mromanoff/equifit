@@ -49,7 +49,7 @@ define(function (require) {
             // show spinner while fetching data
             loadingView();
 
-            setTimeout(function(){
+            //setTimeout(function(){
             equifit.fetch({
                 success: function(data){
                     defer.resolve(data);
@@ -58,7 +58,7 @@ define(function (require) {
                     defer.resolve(data);
                 }
             });
-            }, 1000);
+            //}, 1000);
             return defer.promise();
         },
 
@@ -71,7 +71,7 @@ define(function (require) {
             // show spinner while fetching data
             loadingView();
 
-            setTimeout(function(){
+           // setTimeout(function(){
             model.save({templateId: templateId}, {
                 wait : true,
                 success: function (data) {
@@ -81,7 +81,7 @@ define(function (require) {
                     defer.reject(data);
                 }
             });
-            }, 1000);
+            //}, 1000);
             return defer.promise();
         },
 
@@ -92,7 +92,7 @@ define(function (require) {
             // show spinner while fetching data
             loadingView();
 
-            setTimeout(function(){
+           // setTimeout(function(){
             model.save({
                 data: form.get('data'),
                 content: form.get('content')
@@ -105,7 +105,7 @@ define(function (require) {
                     defer.reject(data);
                 }
             });
-            }, 2000);
+            //}, 2000);
             return defer.promise();
         }
     };
