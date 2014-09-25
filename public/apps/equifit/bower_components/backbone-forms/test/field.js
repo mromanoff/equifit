@@ -72,15 +72,78 @@ test('creates the editor', function() {
   same(field.editor instanceof Form.editors.Text, true);
 });
 
-test('uses template defined in schema', function() {
-  var customTemplate = _.template('<div class="myField" data-editor></div>');
+test('first, uses template defined in options', function() {
+  var optionsTemplate = _.template('<div class="options" data-editor></div>'),
+      schemaTemplate = _.template('<div class="schema" data-editor></div>'),
+      protoTemplate = _.template('<div class="prototype" data-editor></div>'),
+      constructorTemplate = _.template('<div class="constructor" data-editor></div>');
 
-  var field = new Field({
-    key: 'title',
-    schema: { type: 'Text', template: customTemplate }
+  var CustomField = Field.extend({
+    template: protoTemplate
+  }, {
+    template: constructorTemplate
   });
 
-  same(field.template, customTemplate);
+  var field = new CustomField({
+    key: 'title',
+    template: optionsTemplate,
+    schema: { type: 'Text', template: schemaTemplate }
+  });
+
+  same(field.template, optionsTemplate);
+});
+
+test('second, uses template defined in schema', function() {
+  var schemaTemplate = _.template('<div class="schema" data-editor></div>'),
+      protoTemplate = _.template('<div class="prototype" data-editor></div>'),
+      constructorTemplate = _.template('<div class="constructor" data-editor></div>');
+
+  var CustomField = Field.extend({
+    template: protoTemplate
+  }, {
+    template: constructorTemplate
+  });
+
+  var field = new CustomField({
+    key: 'title',
+    schema: { type: 'Text', template: schemaTemplate }
+  });
+
+  same(field.template, schemaTemplate);
+});
+
+test('third, uses template defined on prototype', function() {
+  var protoTemplate = _.template('<div class="prototype" data-editor></div>'),
+      constructorTemplate = _.template('<div class="constructor" data-editor></div>');
+
+  var CustomField = Field.extend({
+    template: protoTemplate
+  }, {
+    template: constructorTemplate
+  });
+
+  var field = new CustomField({
+    key: 'title',
+    schema: { type: 'Text' }
+  });
+
+  same(field.template, protoTemplate);
+});
+
+test('fourth, uses template defined on constructor', function() {
+  var constructorTemplate = _.template('<div class="constructor" data-editor></div>');
+
+  var CustomField = Field.extend({
+  }, {
+    template: constructorTemplate
+  });
+
+  var field = new CustomField({
+    key: 'title',
+    schema: { type: 'Text' },
+  });
+
+  same(field.template, constructorTemplate);
 });
 
 
@@ -117,7 +180,7 @@ module('Field#createEditor', {
   }
 });
 
-test('creates a new instance of the Editor defined in the schema', function() {  
+test('creates a new instance of the Editor defined in the schema', function() {
   var field = new Field({
     key: 'password',
     schema: { type: 'Password' },
@@ -153,12 +216,12 @@ test('uses idPrefix if defined', function() {
     idPrefix: 'foo_',
     key: 'name'
   });
-  
+
   var numberPrefixField = new Field({
     idPrefix: 123,
     key: 'name'
   });
-  
+
   same(numberPrefixField.createEditorId(), '123name');
 });
 
@@ -167,7 +230,7 @@ test('adds no prefix if idPrefix is null', function() {
     idPrefix: null,
     key: 'name'
   });
-  
+
   same(field.createEditorId(), 'name');
 });
 
@@ -179,7 +242,7 @@ test('uses model cid if no idPrefix is set', function() {
     key: 'name',
     model: model
   });
-  
+
   same(field.createEditorId(), 'foo_name');
 });
 
@@ -187,7 +250,7 @@ test('adds no prefix if idPrefix is null and there is no model', function() {
   var field = new Field({
     key: 'name'
   });
-  
+
   same(field.createEditorId(), 'name');
 });
 
@@ -294,11 +357,11 @@ test('calls setError if validation fails', 4, function() {
   });
 
   this.sinon.spy(field, 'setError');
-  
+
   //Make validation fail
   field.setValue(null);
   var err = field.validate();
-  
+
   //Test
   same(field.setError.callCount, 1);
   same(field.setError.args[0][0], 'Required');
@@ -314,15 +377,15 @@ test('calls clearError if validation passes', 1, function() {
   });
 
   this.sinon.spy(field, 'clearError');
-  
+
   //Trigger error to appear
   field.setValue(null);
   field.validate();
-    
+
   //Trigger validation to pass
   field.setValue('ok');
   field.validate();
-  
+
   //Test
   same(field.clearError.callCount, 1);
 });
@@ -418,7 +481,7 @@ test('Calls editor commit', function() {
   this.sinon.spy(field.editor, 'commit');
 
   field.commit();
-  
+
   same(field.editor.commit.callCount, 1);
 });
 
@@ -433,7 +496,7 @@ test('Returns error from validation', function() {
   });
 
   var result = field.commit();
-  
+
   same(result, { type: 'required' });
 });
 
@@ -458,7 +521,7 @@ test('Returns the value from the editor', function() {
     this.sinon.spy(field.editor, 'getValue');
 
     var result = field.getValue();
-    
+
     same(field.editor.getValue.callCount, 1);
     same(result, 'The Title');
 });
@@ -479,9 +542,9 @@ test('Passes the new value to the editor', function() {
     var field = new Field({ key: 'title' });
 
     this.sinon.spy(field.editor, 'setValue');
-    
+
     field.setValue('New Title');
-    
+
     same(field.editor.setValue.callCount, 1);
     same(field.editor.setValue.args[0][0], 'New Title');
 });
@@ -502,9 +565,9 @@ test('Calls focus on editor', function() {
   var field = new Field({ key: 'title' });
 
   this.sinon.spy(field.editor, 'focus');
-  
+
   field.focus();
-  
+
   same(field.editor.focus.callCount, 1);
 });
 
@@ -524,11 +587,90 @@ test('Calls focus on editor', function() {
   var field = new Field({ key: 'title' });
 
   this.sinon.spy(field.editor, 'blur');
-  
+
   field.blur();
-  
+
   same(field.editor.blur.callCount, 1);
 });
+
+
+
+module('Field#disable', {
+  setup: function() {
+    this.sinon = sinon.sandbox.create();
+  },
+
+  teardown: function() {
+    this.sinon.restore();
+  }
+});
+
+test('Calls disable on editor if method exists', function() {
+  Form.editors.Disabler = Form.editors.Text.extend({
+    disable: function(){}
+  });
+  var field = new Field({
+    schema: { type: "Disabler" },
+    key: 'title'
+  });
+
+  this.sinon.spy(field.editor, 'disable');
+
+  field.disable();
+
+  same(field.editor.disable.callCount, 1);
+});
+
+test('If disable method does not exist on editor, disable all inputs inside it', function() {
+  var field = new Field({ key: 'title' });
+
+  field.render();
+
+  field.disable();
+
+  same(field.$("input").is(":disabled"),true);
+});
+
+
+
+module('Field#enable', {
+  setup: function() {
+    this.sinon = sinon.sandbox.create();
+  },
+
+  teardown: function() {
+    this.sinon.restore();
+  }
+});
+
+test('Calls enable on editor if method exists', function() {
+  Form.editors.Enabler = Form.editors.Text.extend({
+    enable: function(){}
+  });
+  var field = new Field({
+    schema: { type: "Enabler" },
+    key: 'title'
+  });
+
+  this.sinon.spy(field.editor, 'enable');
+
+  field.enable();
+
+  same(field.editor.enable.callCount, 1);
+});
+
+test('If enable method does not exist on editor, enable all inputs inside it', function() {
+  var field = new Field({ key: 'title' });
+
+  field.$("input").attr("disabled",true);
+
+  field.render();
+
+  field.enable();
+
+  same(field.$("input").is(":disabled"),false);
+});
+
 
 
 
@@ -563,5 +705,33 @@ test('Removes self', function() {
   same(Backbone.View.prototype.remove.callCount, 2);
 });
 
+
+
+module('Field#escape title text');
+
+test('Title HTML gets escaped by default', function() {
+  var field = new Field({
+    key: 'XSS',
+    schema: {
+      title: '      "/><script>throw("XSS Success");</script>      '
+    }
+  }).render();
+
+  same( field.$('label').text(), '              \"/><script>throw(\"XSS Success\");</script>            ' );
+  same( field.$('label').html(), '              \"/&gt;&lt;script&gt;throw(\"XSS Success\");&lt;/script&gt;            ' );
+});
+
+test('TitleHTML property can be set to true to allow HTML through', function() {
+  var field = new Field({
+    key: 'XSS',
+    schema: {
+      titleHTML: '<b>some HTML</b>',
+      title: 'will be ignored'
+    }
+  }).render();
+
+  same( field.$('label').text(), '        some HTML              ' );
+  same( field.$('label').html(), '        <b>some HTML</b>              ' );
+});
 
 })(Backbone.Form, Backbone.Form.Field);
