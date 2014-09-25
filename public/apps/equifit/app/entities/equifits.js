@@ -46,7 +46,7 @@ define(function (require) {
             // show spinner while fetching data
             loadingView();
 
-            setTimeout(function () {
+           // setTimeout(function () {
                 collection.fetch({
                     success: function (data) {
                         defer.resolve(data);
@@ -55,7 +55,7 @@ define(function (require) {
                         defer.resolve(data);
                     }
                 });
-            }, 1000);
+           // }, 1000);
             return defer.promise();
         },
 
@@ -66,7 +66,7 @@ define(function (require) {
             // show spinner while fetching data
             loadingView();
 
-            setTimeout(function(){
+            //setTimeout(function(){
             collection.create({clientId: app.store.get('clientId')}, {
                 wait : true,
                 success: function (data) {
@@ -76,7 +76,7 @@ define(function (require) {
                     defer.reject(data);
                 }
             });
-            }, 1000);
+            //}, 1000);
             return defer.promise();
         },
 
@@ -87,7 +87,7 @@ define(function (require) {
             // show spinner while fetching data
             loadingView();
 
-            setTimeout(function(){
+            //setTimeout(function(){
             model.save({}, {
                 wait : true,
                 success: function (data) {
@@ -97,7 +97,7 @@ define(function (require) {
                     defer.reject(data);
                 }
             });
-            }, 2000);
+            //}, 2000);
             return defer.promise();
         }
     };
