@@ -21,7 +21,7 @@
         </button>
         <ul class="dropdown-menu text-left">
             <% _.each(forms, function(item) { %>
-            <li><a href="#" class="show-form" data-id="<%- item._id %>"><%- item.title %></a></li>
+            <li><a href="#" class="show-form" data-template-id="<%- item.templateId %>" data-id="<%- item._id %>"><%- item.title %></a></li>
             <% }); %>
         </ul>
     </div>

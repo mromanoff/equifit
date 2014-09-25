@@ -1,18 +1,27 @@
 define(function (require, exports, module) {
     'use strict';
 
-    var ModalView = require('views/modal');
+    var ModalPromptView = require('views/modal-prompt');
+    var ModalConfirmationView = require('views/modal-confirmation');
     var modalModule = {};
 
-    modalModule.init = function (model) {
-        var layout = new Backbone.Layout({
-            el: '#modal'
-        });
+    var layout = new Backbone.Layout({
+        el: '#modal'
+    });
 
-        layout.setView('', new ModalView({
+    modalModule.prompt = function (model) {
+        layout.setView('', new ModalPromptView({
             model: model
         })).render();
     };
+
+
+    modalModule.confirmation = function (model) {
+        layout.setView('', new ModalConfirmationView({
+            model: model
+        })).render();
+    };
+
 
     module.exports = modalModule;
 });

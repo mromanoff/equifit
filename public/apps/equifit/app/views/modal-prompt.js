@@ -8,13 +8,7 @@ define(function (require, exports, module) {
         manage: true,
         id: 'equifitModal',
         className: 'modal hide fade',
-        template: 'modal',
-
-        //initialize: function (){
-        //   // console.log('model', this.model);
-        //    //this.title = this.model.get('title') || 'Modal';
-        //    //this.message = this.model.get('messages') || 'Modal Text going here';
-        //},
+        template: 'modal-prompt',
 
         events: {
             'click .close': 'closeModal',
@@ -32,7 +26,7 @@ define(function (require, exports, module) {
         closeModal: function () {
             $('.modal-backdrop').remove();
             //this.$el.modal('hide');
-            //this.remove();
+            this.remove();
         },
 
         updateEquifit: function (e) {

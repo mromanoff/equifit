@@ -5,7 +5,7 @@ define(function (require, exports, module) {
 
     helperModule.scrollTop = function () {
         $(document).scrollTop(0);
-        $('#app-main').css({ opacity: 0 }).animate({ opacity: 1 }, 600);
+        $('#main').css({ opacity: 0 }).animate({ opacity: 1 }, 400);
     };
 
     //helperModule.update = function (model) {

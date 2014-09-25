@@ -109,24 +109,42 @@ define(function (require, exports, module) {
     /***
      * Create Modal
      */
-    msgBus.commands.setHandler('modal:show', function(options){
+    msgBus.commands.setHandler('modal:prompt:show', function(model){
         require(['controllers/modal'], function (controller) {
-            controller.init(options);
+            controller.prompt(model);
         });
     });
 
     /***
      * Create simple Modal
      */
-    msgBus.commands.setHandler('modal:simple:show', function(options){
-        require(['controllers/simple-modal'], function (controller) {
-            controller.init(options);
+    msgBus.commands.setHandler('modal:confirmation:show', function(model){
+        require(['controllers/modal'], function (controller) {
+            controller.confirmation(model);
         });
     });
 
-    msgBus.commands.setHandler('equifit:error', function(error){
+    /***
+     * Show loading view
+     */
+    msgBus.commands.setHandler('loading:show', function(options){
+        require(['controllers/loading'], function (controller) {
+            controller.show(options);
+        });
+    });
+
+    /***
+     * Hide loading view
+     */
+    msgBus.commands.setHandler('loading:hide', function(){
+        require(['controllers/loading'], function (controller) {
+            controller.hide();
+        });
+    });
+
+    msgBus.commands.setHandler('equifit:error', function(model, jqXHR, textStatus){
         require(['controllers/error'], function (controller) {
-            controller.init(error);
+            controller.init(model, jqXHR, textStatus);
         });
     });
 

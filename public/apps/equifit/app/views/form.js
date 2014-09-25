@@ -21,7 +21,7 @@ define(function (require, exports, module) {
     };
 
     Field.prototype.initialize = function() {
-        if (this.editor.getValue() == this.$el.data('condition')) {
+        if (this.editor.getValue() === this.$el.data('condition')) {
             this.$el.find('.' + this.target).slideDown(200);
         }
         else {
@@ -42,6 +42,10 @@ define(function (require, exports, module) {
             'click .show-form': 'showForm',
             'click .show-equifit': 'showEquifit',
             'click .show-equifits': 'showEquifits'
+        },
+
+        initialize: function () {
+            msgBus.commands.execute('scroll:top');
         },
 
         beforeRender: function () {
@@ -81,9 +85,17 @@ define(function (require, exports, module) {
 
         showForm: function (e) {
             e.preventDefault();
+            var url = 'client/' + app.store.get('clientId') + '/equifit/' + app.store.get('equifitId') + '/form/';
             var formId = $(e.currentTarget).data('id');
-            var url = 'client/' + app.store.get('clientId') + '/equifit/' + app.store.get('equifitId') + '/form/' + formId;
-            msgBus.commands.execute('form:get', formId);
+            var templateId = $(e.currentTarget).data('template-id');
+
+            // if form created use get else post
+            if(formId) {
+                url = url + formId;
+                msgBus.commands.execute('form:get', formId);
+            } else {
+                msgBus.commands.execute('form:create', templateId);
+            }
             app.router.navigate(url);
         },
 

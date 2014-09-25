@@ -9,21 +9,11 @@ define(function (require, exports, module) {
     var controller = {};
 
     controller.getEquifit = function (equifitId) {
-        /***
-         * update store model
-         */
-        msgBus.commands.execute('store:set', {
-            pageTitle: 'Forms'
-        });
-
         require('entities/equifits');
         var fetchingEquifits = msgBus.reqres.request('equifit:entities');
 
-        $.when(fetchingEquifits).done(function (equifits) {
+        $.when(fetchingEquifits).then(function (equifits) {
             var equifit = equifits.get(equifitId);
-
-            console.log('equifit', equifit);
-
             // update store model
             msgBus.commands.execute('store:set', {
                 clientId: equifit.get('clientId'),
@@ -32,74 +22,47 @@ define(function (require, exports, module) {
                 equifitId: equifit.get('_id'),
                 equifitName: moment(equifit.get('appointmentAt')).format('MMMM D, YYYY') || 'Equifit',
                 isSigned: equifit.get('isSigned'),
-                forms: equifit.get('documents')
+                forms: equifit.get('documents'),
+                updatedAt: equifit.get('updatedAt')
             });
 
-            app.layout.setView('.header', new HeaderView());
+            app.layout.setView('.header', new HeaderView({
+                model: new Backbone.Model({
+                    pageTitle: 'Forms',
+                    updatedAt: equifit.get('updatedAt') || moment().format('MMMM D, YYYY')
+                })
+            }));
             app.layout.setView('.main-container', new EquifitView({
                 model: equifit
             }));
-
             app.layout.render();
         });
 
         $.when(fetchingEquifits).fail(function (model, jqXHR, textStatus) {
-            console.log('error: get equifit failed', model, jqXHR, textStatus);
-            msgBus.commands.setHandler('equifit:error', jqXHR);
-            app.router.navigate('error');
+            msgBus.commands.execute('equifit:error',  model, jqXHR, textStatus);
         });
     };
 
     controller.createEquifit = function () {
-        /***
-         * update store model
-         */
-        msgBus.commands.execute('store:set', {
-            title: 'Forms'
-        });
-
         var createEquifit = msgBus.reqres.request('equifit:entity:create');
-        $.when(createEquifit).done(function (equifit) {
-            /***
-             * update store model
-             */
-            msgBus.commands.execute('store:set', {
-                clientId: equifit.get('clientId'),
-                clientName: equifit.get('clientName'),
-                appointmentAt: equifit.get('appointmentAt'),
-                equifitId: equifit.get('_id'),
-                equifitName: moment(equifit.get('appointmentAt')).format('MMMM D, YYYY') || 'Equifit',
-                isSigned: equifit.get('isSigned'),
-                forms: equifit.get('documents')
-            });
-
-            app.layout.setView('.header', new HeaderView());
-            app.layout.setView('.main-container', new EquifitView({
-                model: equifit
-            }));
-            app.layout.render();
-
-            var url = 'client/' + app.store.get('clientId') + '/equifit/' + equifit.id;
-            app.router.navigate(url);
+        $.when(createEquifit).then(function (equifit) {
+            msgBus.commands.execute('equifit:get', equifit.id);
+            app.router.navigate('client/' + app.store.get('clientId') + '/equifit/' + equifit.id);
         });
 
         $.when(createEquifit).fail(function (model, jqXHR, textStatus) {
-            console.log('error: equifit create failed', model, jqXHR, textStatus);
-            msgBus.commands.setHandler('equifit:error', jqXHR);
-            app.router.navigate('error');
+            msgBus.commands.execute('equifit:error',  model, jqXHR, textStatus);
         });
     };
 
     controller.updateEquifit = function (equifit) {
         var updateEquifit = msgBus.reqres.request('equifit:entity:update', equifit);
         $.when(updateEquifit).done(function (equifit) {
-            msgBus.commands.execute('modal:show', equifit);
+            msgBus.commands.execute('modal:prompt:show', equifit);
         });
 
         $.when(updateEquifit).fail(function (model, jqXHR, textStatus) {
-            console.log('error: equifit create failed', model, jqXHR, textStatus);
-            var url = 'error';
-            app.router.navigate(url, {trigger: true});
+            msgBus.commands.execute('equifit:error',  model, jqXHR, textStatus);
         });
     };
 

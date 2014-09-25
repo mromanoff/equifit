@@ -4,13 +4,7 @@ define(function (require) {
     var app = require('app');
     var Backbone = require('backbone');
     var msgBus = require('msgbus');
-    var LoadingView = require('views/loading');
     var Entities = {};
-
-    var loadingView = function () {
-        app.layout.setView('.main-container', new LoadingView());
-        app.layout.render();
-    };
 
     Entities.Equifit = Backbone.Model.extend({
         idAttribute: '_id',
@@ -21,8 +15,8 @@ define(function (require) {
             trainerFacility: null,
             clientId: null,
             clientName: null,
-            isSigned: false,
-            isValidated: false,
+            isSigned: null,
+            isValidated: null,
             documents: null
         },
         urlRoot: function () {
@@ -42,17 +36,18 @@ define(function (require) {
         getEquifitEntities: function () {
             var collection = new Entities.EquifitCollection();
             var defer = $.Deferred();
-
-            // show spinner while fetching data
-            loadingView();
+            // show loading view  while fetching data
+            msgBus.commands.execute('loading:show', {message: 'Loading...'});  // you can pass message. it is optional
 
            // setTimeout(function () {
                 collection.fetch({
                     success: function (data) {
                         defer.resolve(data);
+                        msgBus.commands.execute('loading:hide');
                     },
-                    error: function (data) {
-                        defer.resolve(data);
+                    error: function (model, jqXHR, textStatus) {
+                        msgBus.commands.execute('loading:hide');
+                        defer.reject(model, jqXHR, textStatus);
                     }
                 });
            // }, 1000);
@@ -63,41 +58,44 @@ define(function (require) {
             var collection = new Entities.EquifitCollection();
             var defer = $.Deferred();
 
-            // show spinner while fetching data
-            loadingView();
+            // show loading view  while fetching data
+            msgBus.commands.execute('loading:show');
 
-            //setTimeout(function(){
+           // setTimeout(function(){
             collection.create({clientId: app.store.get('clientId')}, {
                 wait : true,
                 success: function (data) {
+                    msgBus.commands.execute('loading:hide');
                     defer.resolve(data);
                 },
-                error: function (data) {
-                    defer.reject(data);
+                error: function (model, jqXHR, textStatus) {
+                    msgBus.commands.execute('loading:hide');
+                    defer.reject(model, jqXHR, textStatus);
                 }
             });
-            //}, 1000);
+           // }, 1000);
             return defer.promise();
         },
 
         updateEquifitEntity: function (equifit) {
-            var model = new Entities.Equifit({_id: equifit.id});
             var defer = $.Deferred();
 
-            // show spinner while fetching data
-            loadingView();
+            // show loading view  while fetching data
+            msgBus.commands.execute('loading:show');
 
-            //setTimeout(function(){
-            model.save({}, {
+           // setTimeout(function(){
+            equifit.save({}, {
                 wait : true,
                 success: function (data) {
+                    msgBus.commands.execute('loading:hide');
                     defer.resolve(data);
                 },
-                error: function (data) {
-                    defer.reject(data);
+                error: function (model, jqXHR, textStatus) {
+                    msgBus.commands.execute('loading:hide');
+                    defer.reject(model, jqXHR, textStatus);
                 }
             });
-            //}, 2000);
+           // }, 2000);
             return defer.promise();
         }
     };

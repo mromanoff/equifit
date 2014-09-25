@@ -1,18 +1,23 @@
 define(function (require, exports, module) {
     'use strict';
 
-    var app = require('app');
     var Backbone = require('backbone');
-
+    var moment = require('moment');
     var HeaderViewModule;
 
     HeaderViewModule =  Backbone.View.extend({
         manage: true,
-        tagName: 'h1',
         template: 'header',
 
+        initialize: function () {
+            console.log('this model', this.model.toJSON());
+        },
+
         serialize: function () {
-            return app.store.toJSON();
+            return {
+                pageTitle: this.model.get('pageTitle'),
+                updatedAt: _.isNull(this.model.get('updatedAt')) ? null : moment(this.model.get('updatedAt')).format('MMMM D, YYYY')
+            };
         }
     });
 

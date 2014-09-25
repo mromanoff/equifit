@@ -9,13 +9,8 @@ define(function (require, exports, module) {
         manage: true,
         id: 'spinner',
 
-        initialize: function(opt){
-            var options = _.extend({}, opt);
-            this.message = options.message || 'Loading...';
-        },
-
-        afterRender: function () {
-            var opts = {
+        initialize: function () {
+            this.opts = {
                 lines: 13, // The number of lines to draw
                 length: 7, // The length of each line
                 width: 2, // The line thickness
@@ -31,10 +26,13 @@ define(function (require, exports, module) {
                 className: 'spinner', // The CSS class to assign to the spinner
                 zIndex: 2e9 // The z-index (defaults to 2000000000)
             };
+        },
 
-            var target = document.getElementById(this.el.id);
-            new Spinner(opts).spin(target);
-            $('.' + opts.className).prepend('<div class="spinner-block"><small>' + this.message + '</small></div>');
+        afterRender: function () {
+            new Spinner(this.opts).spin(document.getElementById(this.el.id));
+            $('.' + this.opts.className).prepend(
+                '<div class="block-view"></div><div class="spinner-block"><small>' + this.model.get('message') + '</small></div>'
+            );
         }
     });
 

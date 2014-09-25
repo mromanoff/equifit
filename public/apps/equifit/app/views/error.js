@@ -9,15 +9,17 @@ define(function (require, exports, module) {
         template: 'error',
 
         initialize: function (){
-            console.log('model', this.model);
+            console.log('Error in the view ', this.model.toJSON());
             this.title = this.model.get('statusText') || 'Error';
-            this.text = this.model.get('responseText') || null;
+            this.status = this.model.get('status') || null;
+            this.message = this.model.get('responseJSON').message || null;
         },
 
         serialize: function () {
             return {
                 title: this.title,
-                text: this.text
+                status: this.status,
+                message: this.message
             };
         }
     });

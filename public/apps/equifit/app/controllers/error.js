@@ -7,7 +7,12 @@ define(function (require, exports, module) {
     var HeaderView = require('views/header');
     var errorModule = {};
 
-    errorModule.init = function (error) {
+    errorModule.init = function (model, jqXHR) {
+        /***
+         * update url
+         */
+        app.router.navigate('error');
+
         /***
          * update store model
          */
@@ -17,11 +22,9 @@ define(function (require, exports, module) {
 
         app.layout.setView('.header', new HeaderView());
         app.layout.setView('.main-container', new ErrorView ({
-            model: new Backbone.Model(error)
+            model: new Backbone.Model(jqXHR)
         }));
         app.layout.render();
-
-
     };
 
     module.exports = errorModule;

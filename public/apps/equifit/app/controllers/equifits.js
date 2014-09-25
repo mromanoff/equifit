@@ -7,17 +7,11 @@ define(function (require, exports, module) {
     var HeaderView = require('views/header');
     var controller = {};
 
-
     controller.getEquifits = function (clientId) {
-        // update store model
-        msgBus.commands.execute('store:set', {
-            pageTitle: 'Equifits'
-        });
-
         require('entities/equifits');
         var fetchingEquifits = msgBus.reqres.request('equifit:entities', clientId);
 
-        $.when(fetchingEquifits).done(function (equifits) {
+        $.when(fetchingEquifits).then(function (equifits) {
             // if there is no existing Equifit. server response []
             // set clientName from the first model
            // if (equifits.length !== 0) {
@@ -27,7 +21,12 @@ define(function (require, exports, module) {
                 clientId: equifits.at(0).get('clientId')
             });
            // }
-            app.layout.setView('.header', new HeaderView());
+            app.layout.setView('.header', new HeaderView({
+                model: new Backbone.Model({
+                    pageTitle: 'Equifits',
+                    updatedAt: null
+                })
+            }));
             app.layout.setView('.main-container', new EquifitView({
                 collection: equifits
             }));
@@ -35,9 +34,7 @@ define(function (require, exports, module) {
         });
 
         $.when(fetchingEquifits).fail(function (model, jqXHR, textStatus) {
-            console.error('error: equifit fetch failed:', model, jqXHR, textStatus);
-            msgBus.commands.setHandler('equifit:error', jqXHR);
-            app.router.navigate('error');
+            msgBus.commands.execute('equifit:error',  model, jqXHR, textStatus);
         });
     };
 

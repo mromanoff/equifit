@@ -36,16 +36,15 @@ define(function (require, exports, module) {
          */
         showForm: function (e) {
             e.preventDefault();
-
             var url = 'client/' + this.model.get('parent').clientId + '/equifit/' + this.model.get('parent')._id;
 
-            if(_.isEmpty(this.model.get('_id'))) {
-                console.log('this model doesn\'t have an _Id');
+            if(_.isEmpty(this.model.id)) {
+                console.log('this model doesn\'t have an id');
                 console.warn('create new form with template id', this.model.get('templateId'));
                 msgBus.commands.execute('form:create', this.model.get('templateId'));
             }
             else {
-                console.log('this model have an _Id');
+                console.log('this model have an Id');
                 msgBus.commands.execute('form:get', this.model.get('_id'));
                 url = url + '/form/' + this.model.get('_id');
                 app.router.navigate(url);
@@ -75,9 +74,6 @@ define(function (require, exports, module) {
 
         beforeRender: function () {
             var documents = new Backbone.Collection(this.model.get('documents'));
-
-            console.log('this model docs', this.model.toJSON());
-
             // check if consent form is signed
             if (!this.model.get('isSigned')) {
                 this.setView('.message', new MessageView());
@@ -89,9 +85,15 @@ define(function (require, exports, module) {
             } else {
                 documents.each(function (model) {
                     model.set({parent: _.clone(this.model.toJSON())});
-                    this.insertView('.list', new Item({
-                        model: model
-                    }));
+
+                    // do not render "informed consent form" if it is signed
+                    if(_.isEqual(model.get('templateType'), 'InformedConsent') && this.model.get('isSigned')) {
+                        return false;
+                    } else {
+                        this.insertView('.list', new Item({
+                            model: model
+                        }));
+                    }
                 }, this);
             }
         },

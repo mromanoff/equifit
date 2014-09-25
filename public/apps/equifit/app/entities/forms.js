@@ -4,13 +4,7 @@ define(function (require) {
     var app = require('app');
     var Backbone = require('backbone');
     var msgBus = require('msgbus');
-    var LoadingView = require('views/loading');
     var Entities = {};
-
-    var loadingView = function () {
-        app.layout.setView('.main-container', new LoadingView());
-        app.layout.render();
-    };
 
     Entities.Form = Backbone.Model.extend({
         idAttribute: '_id',
@@ -30,7 +24,7 @@ define(function (require) {
         urlRoot: function () {
             return '/equifit/api/clients/' + app.store.get('clientId') + '/equifits/' + app.store.get('equifitId') + '/documents/';
         },
-
+        //TODO: keep this for mongoose and MondoDB
         parse: function (response) {
             // backbone-forms needs 'schema' property. in mongoose 'schema' is reserved word.
             // In mongoose we had to name it as a formSchema
@@ -46,51 +40,52 @@ define(function (require) {
             var equifit = new Entities.Form({_id: formId});
             var defer = $.Deferred();
 
-            // show spinner while fetching data
-            loadingView();
+            // show loading view  while fetching data
+            msgBus.commands.execute('loading:show');
 
             //setTimeout(function(){
             equifit.fetch({
                 success: function(data){
+                    msgBus.commands.execute('loading:hide');
                     defer.resolve(data);
                 },
-                error: function(data){
-                    defer.resolve(data);
+                error: function(model, jqXHR, textStatus){
+                    msgBus.commands.execute('loading:hide');
+                    defer.reject(model, jqXHR, textStatus);
                 }
             });
-            //}, 1000);
+           // }, 10000);
             return defer.promise();
         },
 
         createFormEntity: function (templateId) {
-            console.warn('create form:', templateId);
             var model = new Entities.Form();
             var defer = $.Deferred();
 
-
-            // show spinner while fetching data
-            loadingView();
+            // show loading view  while fetching data
+            msgBus.commands.execute('loading:show');
 
            // setTimeout(function(){
             model.save({templateId: templateId}, {
                 wait : true,
                 success: function (data) {
+                    msgBus.commands.execute('loading:hide');
                     defer.resolve(data);
                 },
-                error: function (data) {
-                    defer.reject(data);
+                error: function (model, jqXHR, textStatus) {
+                    msgBus.commands.execute('loading:hide');
+                    defer.reject(model, jqXHR, textStatus);
                 }
             });
-            //}, 1000);
+           // }, 1000);
             return defer.promise();
         },
 
         updateFormEntity: function (form) {
-            var model = new Entities.Form({_id: form.id});
+            var model = new Entities.Form({id: form.id});
             var defer = $.Deferred();
-
-            // show spinner while fetching data
-            loadingView();
+            // show loading view  while fetching data
+            msgBus.commands.execute('loading:show');
 
            // setTimeout(function(){
             model.save({
@@ -99,13 +94,15 @@ define(function (require) {
             }, {
                 wait : true,
                 success: function (data) {
+                    msgBus.commands.execute('loading:hide');
                     defer.resolve(data);
                 },
-                error: function (data) {
-                    defer.reject(data);
+                error: function (model, jqXHR, textStatus) {
+                    msgBus.commands.execute('loading:hide');
+                    defer.reject(model, jqXHR, textStatus);
                 }
             });
-            //}, 2000);
+          //  }, 2000);
             return defer.promise();
         }
     };
