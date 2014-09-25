@@ -17,7 +17,7 @@ define(function (require, exports, module) {
 
         serialize: function () {
             var data = this.model.toJSON();
-            data.appointmentAt = _.isNull(data.appointmentAt) ? 'Equifit date is not set' : moment(data.appointmentAt).format('MMMM D, YYYY');
+            data.appointmentAt = _.isNull(data.appointmentAt) ? 'No Date Set' : moment(data.appointmentAt).format('MMMM D, YYYY');
             data.updatedAt = _.isNull(data.updatedAt) ? null : moment(data.updatedAt).format('MMMM D, YYYY');
             return data;
         },

@@ -492,6 +492,138 @@ module.exports = {
                                 "data-condition": "medical07-1"
                             }
                         },
+
+                        headOrNeck: {
+                            type: "Checkboxes",
+                            title: null,
+                            options: [{ val: 'headOrNeckExtra', label: 'Head or Neck'}],
+                            fieldClass: "eventBinder",
+                            fieldAttrs: {
+                                "data-action": "showHelp",
+                                "data-target": "eventBinder",
+                                "data-condition": "headOrNeckExtra"
+                            }
+                        },
+
+                        headOrNeckExtra: {
+                            type: 'Object',
+                            title: null,
+                            fieldClass : "hidden",
+                            subSchema: {
+                                area: {
+                                    type: 'TextArea',
+                                    title: "Area (Left, Right / Upper, Mid, Lower)",
+                                    help: "Area (Left, Right / Upper, Mid, Lower)"
+                                },
+                                when: {
+                                    type: 'TextArea',
+                                    title: "When it happened?",
+                                    help: "When it happened?"
+                                },
+                                how: {
+                                    type: 'TextArea',
+                                    title: "How did it happened?",
+                                    help: "How did it happened?"
+                                },
+
+                                rehub: {
+                                    type: 'TextArea',
+                                    title: "Rehub status?",
+                                    help: "Rehub status?"
+                                },
+                                clearance: {
+                                    type: "Radio",
+                                    title: "Clearance for Exercise?",
+                                    options: [{
+                                        val: "yes",
+                                        label: "Yes"
+                                    }, {
+                                        val: "no",
+                                        label: "No"
+                                    }],
+                                    help: "Clearance for Exercise?"
+                                },
+                                pain: {
+                                    type: "Radio",
+                                    title: "Any pain?",
+                                    options: [{
+                                        val: "yes",
+                                        label: "Yes"
+                                    }, {
+                                        val: "no",
+                                        label: "No"
+                                    }],
+                                    help: "Any pain?"
+                                }
+                            }
+                        },
+
+                        shoulder: {
+                            type: "Checkboxes",
+                            title: null,
+                            options: [{ val: 'shoulderExtra', label: 'Shoulder'}],
+                            fieldClass: "eventBinder",
+                            fieldAttrs: {
+                                "data-action": "showHelp",
+                                "data-target": "eventBinder",
+                                "data-condition": "shoulderExtra"
+                            }
+                        },
+
+                        shoulderExtra: {
+                            type: 'Object',
+                            title: null,
+                            fieldClass : "hidden",
+                            subSchema: {
+                                area: {
+                                    type: 'TextArea',
+                                    title: "Area (Left, Right / Upper, Mid, Lower)",
+                                    help: "Area (Left, Right / Upper, Mid, Lower)"
+                                },
+                                when: {
+                                    type: 'TextArea',
+                                    title: "When it happened?",
+                                    help: "When it happened?"
+                                },
+                                how: {
+                                    type: 'TextArea',
+                                    title: "How did it happened?",
+                                    help: "How did it happened?"
+                                },
+
+                                rehub: {
+                                    type: 'TextArea',
+                                    title: "Rehub status?",
+                                    help: "Rehub status?"
+                                },
+                                clearance: {
+                                    type: "Radio",
+                                    title: "Clearance for Exercise?",
+                                    options: [{
+                                        val: "yes",
+                                        label: "Yes"
+                                    }, {
+                                        val: "no",
+                                        label: "No"
+                                    }],
+                                    help: "Clearance for Exercise?"
+                                },
+                                pain: {
+                                    type: "Radio",
+                                    title: "Any pain?",
+                                    options: [{
+                                        val: "yes",
+                                        label: "Yes"
+                                    }, {
+                                        val: "no",
+                                        label: "No"
+                                    }],
+                                    help: "Any pain?"
+                                }
+                            }
+                        },
+
+
                         "medical08": {
                             "type": "Radio",
                             "title": "Are you over 65 and not accustomed to vigorous exercise?",
@@ -571,7 +703,15 @@ module.exports = {
                                 "medical06"
                             ]
                         },
-                        {"legend": "Body Injury", "fields": ["medical07"]},
+                        {
+                            "legend": "Body Injury",
+                            "fields": [
+                                "headOrNeck",
+                                "headOrNeckExtra",
+                                "shoulder",
+                                "shoulderExtra"
+                            ]
+                        },
                         {
                             "legend": "Other Medical Conditions",
                             "fields": [
