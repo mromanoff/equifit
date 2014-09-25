@@ -25,6 +25,7 @@ var Form = new Schema({
     idPrefix: String,
     data: Schema.Types.Mixed,
     content: [Schema.Types.Mixed]
+    parent: Schema.Types.Mixed
 });
 
 module.exports = {
