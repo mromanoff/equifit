@@ -222,12 +222,11 @@ module.exports = {
                     "formSchema": {
                         "consent01": {
                             "type": "Text",
-                            "tile": "balh ",
-                            "titleHTML": "Informed Consent <p>I have read this form, and I understand the test procedures I will perform. I consent to participate in the Equifit and understand that the information obtained during this evaluation may be used for statistical purposes</p>",
+                            "fieldClass" : "odd",
+                            "titleHTML": "<p>I have read this form, and I understand the test procedures I will perform. I consent to participate in the Equifit and understand that the information obtained during this evaluation may be used for statistical purposes</p> First and last initial",
                             "validators": ["required"]
                         }
                     },
-                    "fieldsets": [{"legend": "Informed Consent", "fields": ["consent01"]}],
                     "data": {},
                     "content": [
                         {

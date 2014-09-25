@@ -13,7 +13,12 @@ define(['jquery', '../../bower_components/lodash/dist/lodash.underscore', 'backb
      * Bootstrap 2 templates
      */
     Form.template = _.template('\
-    <form class="form-inline" data-fieldsets></form>\
+    <form class="form-inline">\
+      <div data-fieldsets></div>\
+      <% if (submitButton) { %>\
+        <button type="submit" class="btn"><%= submitButton %></button>\
+      <% } %>\
+    </form>\
   ');
 
 
@@ -28,7 +33,10 @@ define(['jquery', '../../bower_components/lodash/dist/lodash.underscore', 'backb
 
     Form.Field.template = _.template('\
     <div class="control-group field-<%= key %>">\
-      <label class="control-label" for="<%= editorId %>"><%= title %></label>\
+      <label class="control-label" for="<%= editorId %>">\
+        <% if (titleHTML){ %><%= titleHTML %>\
+        <% } else { %><%- title %><% } %>\
+      </label>\
       <div class="controls">\
         <span data-editor></span>\
         <div class="help-inline" data-error></div>\
@@ -40,7 +48,7 @@ define(['jquery', '../../bower_components/lodash/dist/lodash.underscore', 'backb
 
     Form.NestedField.template = _.template('\
     <div class="field-<%= key %>">\
-      <div title="<%= title %>" class="input-xlarge">\
+      <div title="<% if (titleHTML){ %><%= titleHTML %><% } else { %><%- title %><% } %>" class="input-xlarge">\
         <span data-editor></span>\
         <div class="help-inline" data-error></div>\
       </div>\
