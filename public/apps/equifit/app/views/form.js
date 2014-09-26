@@ -5,35 +5,12 @@ define(function (require, exports, module) {
     var msgBus = require('msgbus');
     var Backbone = require('backbone');
     var Form = require('backbone-forms');
+    var FormComponents = require('components/forms');
     require('views/forms-template');
     var MessageView = require('views/message');
     var SimpleContent = require('views/simple-content');
     var FormView;
     var form;
-
-    var Field = function(form, editor) {
-        this.form = form;
-        this.editor = editor;
-        this.$el = this.editor.$el;
-        this.action = this.$el.data('action');
-        this.condition = this.$el.data('condition');
-        this.target = this.$el.data('target');
-    };
-
-    Field.prototype.initialize = function() {
-        if (this.editor.getValue() === this.$el.data('condition')) {
-            this.$el.find('.' + this.target).slideDown(200);
-        }
-        else {
-            this.$el.find('.' + this.target).slideUp(200);
-        }
-    };
-
-    Field.prototype.bind = function() {
-        this.form.on(this.editor.key + ':change', function () {
-            this.initialize();
-        }, this);
-    };
 
     FormView = Backbone.Layout.extend({
         template: 'form',
@@ -59,9 +36,9 @@ define(function (require, exports, module) {
             }).render();
 
             _.each(form.fields, function (editor) {
-                if (editor.$el.hasClass('eventBinder')) {
-                    var field = new Field(form, editor);
-                    field.initialize();
+                if (editor.$el.data('bind')) {
+                    var field = new FormComponents.Field(form, editor);
+                    field.toggle();
                     field.bind();
                 }
             }, this);
