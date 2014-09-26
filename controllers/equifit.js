@@ -55,7 +55,7 @@ module.exports = {
                 },
 
                 {
-                    title: 'Personal Info',
+                    title: 'Personal Information',
                     templateId: 2,
                     templateType: 'PersonalInformation',
                     totalQuestions: 5,
@@ -176,7 +176,7 @@ module.exports = {
                                     text: 'not signed'
                                 },
                                 {
-                                    title: 'personal info',
+                                    title: 'Personal Information',
                                     text: '3 fields'
                                 },
                                 {
@@ -251,11 +251,23 @@ module.exports = {
                         title: "Freedom of consent",
                         text: "Your permission to perform the Equifit is voluntary. You are free to decline consent or participation if you so desire"
                     }
-                ]
+                ],
+
+                parent: {
+                    appointmentAt: null,
+                    updatedAt: null,
+                    trainerName: 'Johnny Cash',
+                    trainerFacility: 'Tribeca',
+                    clientName: 'Donna Summer',
+                    clientId: 100000,
+                    isSigned: false,
+                    isValidated: false,
+                    documents: []
+                }
             },
 
             {
-                title: "Personal Info",
+                title: "Personal Information",
                 templateId: 2,
                 templateType: "PersonalInformation",
                 totalQuestions: 5,
@@ -264,10 +276,6 @@ module.exports = {
                     personal01: {
                         "type": "Text",
                         "title": "Trainer First & Last Name"
-                    },
-                    personal02: {
-                        "type": "Text",
-                        "title": "Client First & Last Name"
                     },
                     personal03: {
                         type: "Select",
@@ -327,7 +335,6 @@ module.exports = {
                     {
                         legend: "REPLACE_ME_WITH_CLIENT_NAME",
                         fields: [
-                            "personal02",
                             "personal03",
                             "personal04"
                         ]
@@ -1157,7 +1164,7 @@ module.exports = {
                         },
 
                         {
-                            title: 'Personal Info',
+                            title: 'Personal Information',
                             templateId: 2,
                             templateType: 'PersonalInformation',
                             totalQuestions: 5,
