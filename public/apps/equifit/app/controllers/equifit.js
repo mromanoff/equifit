@@ -20,16 +20,16 @@ define(function (require, exports, module) {
                 clientName: equifit.get('clientName'),
                 appointmentAt: equifit.get('appointmentAt'),
                 equifitId: equifit.get('_id'),
-                equifitName: moment(equifit.get('appointmentAt')).format('MMMM D, YYYY') || 'Equifit',
+                equifitName: equifit.get('appointmentAt'),
                 isSigned: equifit.get('isSigned'),
-                forms: equifit.get('documents'),
+                documents: equifit.get('documents'),
                 updatedAt: equifit.get('updatedAt')
             });
 
             app.layout.setView('.header', new HeaderView({
                 model: new Backbone.Model({
                     pageTitle: 'Forms',
-                    updatedAt: equifit.get('updatedAt') || moment().format('MMMM D, YYYY')
+                    updatedAt: equifit.get('updatedAt')
                 })
             }));
             app.layout.setView('.main-container', new EquifitView({
@@ -39,7 +39,7 @@ define(function (require, exports, module) {
         });
 
         $.when(fetchingEquifits).fail(function (model, jqXHR, textStatus) {
-            msgBus.commands.execute('equifit:error',  model, jqXHR, textStatus);
+            msgBus.commands.execute('equifit:error', model, jqXHR, textStatus);
         });
     };
 
@@ -51,7 +51,7 @@ define(function (require, exports, module) {
         });
 
         $.when(createEquifit).fail(function (model, jqXHR, textStatus) {
-            msgBus.commands.execute('equifit:error',  model, jqXHR, textStatus);
+            msgBus.commands.execute('equifit:error', model, jqXHR, textStatus);
         });
     };
 
@@ -62,7 +62,7 @@ define(function (require, exports, module) {
         });
 
         $.when(updateEquifit).fail(function (model, jqXHR, textStatus) {
-            msgBus.commands.execute('equifit:error',  model, jqXHR, textStatus);
+            msgBus.commands.execute('equifit:error', model, jqXHR, textStatus);
         });
     };
 

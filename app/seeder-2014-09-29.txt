@@ -1810,8 +1810,7 @@ module.exports = {
                             {"val": "fms01-3", "label": "2"},
                             {"val": "fms01-4", "label": "3"}
                         ],
-                        editorClass : 'input-small',
-                        help: 'points'
+                        editorClass : 'input-small'
 
                     },
                     fms02: {
@@ -1820,40 +1819,30 @@ module.exports = {
                     },
                     fms03: {
                         type: "Select",
-                        title: "Hurdle Step (Right)",
+                        title: "Hurdle Step (R)",
                         options: [
                             {"val": "fms03-1", "label": "0"},
                             {"val": "fms03-2", "label": "1"},
                             {"val": "fms03-3", "label": "2"},
                             {"val": "fms03-4", "label": "3"}
                         ],
-                        editorClass : 'input-small',
-                        help: 'points'
+                        editorClass : 'input-small'
                     },
-                    fms04: {
+                    fms0: {
                         type: "Select",
-                        title: "Hurdle Step (Left)",
+                        title: "Hurdle Step (L)",
                         options: [
                             {"val": "fms04-1", "label": "0"},
                             {"val": "fms04-2", "label": "1"},
                             {"val": "fms04-3", "label": "2"},
                             {"val": "fms04-4", "label": "3"}
                         ],
-                        editorClass : 'input-small',
-                        help: 'points'
+                        editorClass : 'input-small'
                     },
                     fms05: {
-                        type: "Select",
+                        type: "Number",
                         title: "Floor to Tibial Tuberosity",
-                        options: [
-                            {val: "fms05-1", label: "+"},
-                            {val: "fms05-2", label: "-"}
-                        ],
-                        editorClass : 'input-small',
-                        fieldAttrs: {
-                            "data-bind": "checkbox",
-                            "data-condition": "legExtra"
-                        }
+                        editorClass : 'input-small'
                     },
                     fms06: {
                         type: "TextArea",
@@ -1861,27 +1850,25 @@ module.exports = {
                     },
                     fms07: {
                         type: "Select",
-                        title: "In-line Lunge (Right)",
+                        title: "In-line Lunge (R)",
                         options: [
                             {"val": "fms07-1", "label": "0"},
                             {"val": "fms07-2", "label": "1"},
                             {"val": "fms07-3", "label": "2"},
                             {"val": "fms07-4", "label": "3"}
                         ],
-                        editorClass : 'input-small',
-                        help: 'points'
+                        editorClass : 'input-small'
                     },
                     fms08: {
                         type: "Select",
-                        title: "In-line Lunge (Left)",
+                        title: "In-line Lunge (L)",
                         options: [
                             {"val": "fms08-1", "label": "0"},
                             {"val": "fms08-2", "label": "1"},
                             {"val": "fms08-3", "label": "2"},
                             {"val": "fms08-4", "label": "3"}
                         ],
-                        editorClass : 'input-small',
-                        help: 'points'
+                        editorClass : 'input-small'
                     },
                     fms09: {
                         type: "TextArea",
@@ -1889,27 +1876,25 @@ module.exports = {
                     },
                     fms10: {
                         type: "Select",
-                        title: "Shoulder Mobility (Right)",
+                        title: "Shoulder Mobility (R)",
                         options: [
                             {"val": "fms10-1", "label": "0"},
                             {"val": "fms10-2", "label": "1"},
                             {"val": "fms10-3", "label": "2"},
                             {"val": "fms10-4", "label": "3"}
                         ],
-                        editorClass : 'input-small',
-                        help: 'points'
+                        editorClass : 'input-small'
                     },
                     fms11: {
                         type: "Select",
-                        title: "Shoulder Mobility (Left)",
+                        title: "Shoulder Mobility (L)",
                         options: [
                             {"val": "fms11-1", "label": "0"},
                             {"val": "fms11-2", "label": "1"},
                             {"val": "fms11-3", "label": "2"},
                             {"val": "fms11-4", "label": "3"}
                         ],
-                        editorClass : 'input-small',
-                        help: 'points'
+                        editorClass : 'input-small'
                     },
                     fms12: {
                         type: "Select",
@@ -1920,16 +1905,11 @@ module.exports = {
                             {"val": "fms12-3", "label": "2"},
                             {"val": "fms12-4", "label": "3"}
                         ],
-                        editorClass : 'input-small',
-                        help: 'points'
+                        editorClass : 'input-small'
                     },
                     fms13: {
-                        type: "Select",
+                        type: "Number",
                         title: "Pain Clearance (Was there pain?)",
-                        options: [
-                            {val: "fms13-1", label: "+"},
-                            {val: "fms13-2", label: "-"}
-                        ],
                         editorClass : 'input-small'
                     },
                     fms14: {
@@ -1938,27 +1918,25 @@ module.exports = {
                     },
                     fms15: {
                         type: "Select",
-                        title: "Active Straight Leg Raise (Right)",
+                        title: "Active Straight Leg Raise (R)",
                         options: [
                             {"val": "fms15-1", "label": "0"},
                             {"val": "fms15-2", "label": "1"},
                             {"val": "fms15-3", "label": "2"},
                             {"val": "fms15-4", "label": "3"}
                         ],
-                        editorClass : 'input-small',
-                        help: 'points'
+                        editorClass : 'input-small'
                     },
                     fms16: {
                         type: "Select",
-                        title: "Active Straight Leg Raise (Left)",
+                        title: "Active Straight Leg Raise (L)",
                         options: [
                             {"val": "fms16-1", "label": "0"},
                             {"val": "fms16-2", "label": "1"},
                             {"val": "fms16-3", "label": "2"},
                             {"val": "fms16-4", "label": "3"}
                         ],
-                        editorClass : 'input-small',
-                        help: 'points'
+                        editorClass : 'input-small'
                     },
                     fms17: {
                         type: "TextArea",
@@ -1973,16 +1951,11 @@ module.exports = {
                             {"val": "fms18-3", "label": "2"},
                             {"val": "fms18-4", "label": "3"}
                         ],
-                        editorClass : 'input-small',
-                        help: 'points'
+                        editorClass : 'input-small'
                     },
                     fms19: {
-                        type: "Select",
+                        type: "Number",
                         title: "Pain Clearance (Was there pain?)",
-                        options: [
-                            {val: "fms19-1", label: "+"},
-                            {val: "fms19-2", label: "-"}
-                        ],
                         editorClass : 'input-small'
                     },
                     fms20: {
@@ -1991,35 +1964,29 @@ module.exports = {
                     },
                     fms21: {
                         type: "Select",
-                        title: "Rotary Stability (Right)",
+                        title: "Rotary Stability (R)",
                         options: [
                             {"val": "fms21-1", "label": "0"},
                             {"val": "fms21-2", "label": "1"},
                             {"val": "fms21-3", "label": "2"},
                             {"val": "fms21-4", "label": "3"}
                         ],
-                        editorClass : 'input-small',
-                        help: 'points'
+                        editorClass : 'input-small'
                     },
                     fms22: {
                         type: "Select",
-                        title: "Rotary Stability (Left)",
+                        title: "Rotary Stability (L)",
                         options: [
                             {"val": "fms22-1", "label": "0"},
                             {"val": "fms22-2", "label": "1"},
                             {"val": "fms22-3", "label": "2"},
                             {"val": "fms22-4", "label": "3"}
                         ],
-                        editorClass : 'input-small',
-                        help: 'points'
+                        editorClass : 'input-small'
                     },
                     fms23: {
-                        type: "Select",
+                        type: "Number",
                         title: "Pain Clearance (Was there pain?)",
-                        options: [
-                            {val: "fms23-1", label: "+"},
-                            {val: "fms23-2", label: "-"}
-                        ],
                         editorClass : 'input-small'
                     },
                     fms24: {

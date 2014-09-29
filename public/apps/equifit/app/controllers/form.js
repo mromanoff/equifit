@@ -12,10 +12,16 @@ define(function (require, exports, module) {
         require('entities/forms');
         var fetchingForm = msgBus.reqres.request('form:entity', formId);
         $.when(fetchingForm).done(function (form) {
+
+            // update store model
+            msgBus.commands.execute('store:set', {
+                pageTitle: form.get('title')
+            });
+
             app.layout.setView('.header', new HeaderView({
                 model: new Backbone.Model({
                     pageTitle: form.get('title'),
-                    updatedAt: null //form.get('updatedAt')
+                    updatedAt:  form.get('updatedAt')
                 })
             }));
             app.layout.setView('.main-container', new FormView({

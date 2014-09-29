@@ -44,5 +44,25 @@ define(function (require, exports, module) {
     };
 
 
+
+
+    /// TODO POC dynamic calculations.
+
+    ComponentModule.Field2 = function(form, editor) {
+
+
+    };
+
+    ComponentModule.Field2.prototype.bind = function() {
+        this.$target.hide();
+
+        this.form.on(this.editor.key + ':change', function () {
+            this.toggle();
+        }, this);
+    };
+
+
+
+
     module.exports = ComponentModule;
 });

@@ -19,16 +19,18 @@ define(function (require, exports, module) {
 
             clientId: null,
             clientName: null,
+
             equifitId: null,
             equifitName: null,
-            formName: null,
+            //formName: null,
             formId: null,
 
+            updatedAt: null,
             appointmentAt: null,
             isSigned: null,
             isValidated: null,
 
-            forms: null
+            documents: null
         },
 
         initialize: function () {

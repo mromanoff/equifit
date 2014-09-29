@@ -57,7 +57,16 @@ define(function (require, exports, module) {
 
         afterRender: function () {
             // append form to the rendered view.
-            this.$el.find('.form').html(form.el);
+            this.$('.form').html(form.el);
+
+
+            //Fms need print summary field at the end
+            if(_.isEqual(this.model.get('templateType'), 'Fms')) {
+                console.log('FMS form', this.$el);
+                this.$('form').append('<div class="summary"><strong>Total FMS Score</strong> <span>{total} Points</span></div>')
+            }
+
+
         },
 
         showForm: function (e) {

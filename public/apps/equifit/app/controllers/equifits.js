@@ -24,7 +24,7 @@ define(function (require, exports, module) {
             app.layout.setView('.header', new HeaderView({
                 model: new Backbone.Model({
                     pageTitle: 'Equifits',
-                    updatedAt: null
+                    updatedAt: null   // do not show last modified on equifit list page
                 })
             }));
             app.layout.setView('.main-container', new EquifitView({
