@@ -37,7 +37,7 @@ define(function (require, exports, module) {
             if ($(e.currentTarget).data('validate')) {
                 console.log('set isValidate to true');
                 this.model.set({
-                    isValidated: true
+                    isSubmitted: true
                 });
             }
             msgBus.commands.execute('equifit:update', this.model);

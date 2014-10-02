@@ -28,7 +28,7 @@ define(function (require, exports, module) {
             updatedAt: null,
             appointmentAt: null,
             isSigned: null,
-            isValidated: null,
+            isSubmitted: null,
 
             documents: null
         },

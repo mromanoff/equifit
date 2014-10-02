@@ -24,7 +24,7 @@ module.exports = {
                         clientName: 'Donna Summer',
                         clientId: 100000,
                         isSigned: false,
-                        isValidated: false,
+                        isSubmitted: false,
                         documents: []
                     }];
                 }
@@ -44,7 +44,7 @@ module.exports = {
             clientName: 'Donna Summer',
             clientId: 100000,
             isSigned: false,
-            isValidated: false,
+            isSubmitted: false,
             documents: [
                 {
                     templateId: 1,
@@ -158,8 +158,8 @@ module.exports = {
                 if (err) {
                     res.json({error: 'Error saving equifit.'});
                 } else {
-                    // two sucess messages depends on Client response isValidated
-                    if (obj.isValidated) {
+                    // two sucess messages depends on Client response isSubmitted
+                    if (obj.isSubmitted) {
                         res.json({
                             status: 'success',
                             title: 'This equifit result has been submitted to equifit administrator successfully!',
@@ -261,7 +261,7 @@ module.exports = {
                     clientName: 'Donna Summer',
                     clientId: 100000,
                     isSigned: false,
-                    isValidated: false,
+                    isSubmitted: false,
                     documents: []
                 }
             },
@@ -1153,7 +1153,7 @@ module.exports = {
                     clientName: 'Donna Summer',
                     clientId: 100000,
                     isSigned: false,
-                    isValidated: false,
+                    isSubmitted: false,
                     documents: [
                         {
                             templateId: 1,

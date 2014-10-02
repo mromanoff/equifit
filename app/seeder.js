@@ -15,7 +15,7 @@ module.exports = {
         //            clientName: "Donna Summer",
         //            clientId: 100000,
         //            isSigned: false,
-        //            isValidated: false,
+        //            isSubmitted: false,
         //            documents: [
         //                {
         //                    _id: "53ed60ebb4932fec89e19a40",

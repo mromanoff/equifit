@@ -10,7 +10,7 @@ var Equifit = new Schema({
     clientId: Number,
     trainerFacility: String,
     isSigned: Boolean,
-    isValidated: Boolean,
+    isSubmitted: Boolean,
     documents: [Schema.Types.Mixed]
 });
 

@@ -28,6 +28,6 @@
   <option name="haveTextToSend" value="true" />
   <option name="haveFileToSend" value="false" />
   <option name="isFileUpload" value="false" />
-  <option name="textToSend" value="{     &quot;_id&quot;: &quot;53ed60ebb4932fec89e19a42&quot;,      &quot;isSigned&quot;: true,     &quot;isValidated&quot;: true }" />
+  <option name="textToSend" value="{     &quot;_id&quot;: &quot;53ed60ebb4932fec89e19a42&quot;,      &quot;isSigned&quot;: true,     &quot;isSubmitted&quot;: true }" />
   <option name="filesToSend" value="" />
 </RestClientRequest>

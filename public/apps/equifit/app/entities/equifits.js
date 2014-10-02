@@ -16,7 +16,7 @@ define(function (require) {
             clientId: null,
             clientName: null,
             isSigned: null,
-            isValidated: null,
+            isSubmitted: null,
             documents: null
         },
         urlRoot: function () {
