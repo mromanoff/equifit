@@ -32,7 +32,7 @@ define(function (require, exports, module) {
                 model: formModel,
                 schema: this.model.get('schema'),
                 fieldsets: this.model.get('fieldsets'),
-                idPrefix: this.model.get('idPrefix')
+                template: (_.isNull(this.model.get('template'))) ? null : _.template(this.model.get('template'))
             }).render();
 
             _.each(form.fields, function (editor) {

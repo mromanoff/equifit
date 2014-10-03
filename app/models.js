@@ -24,6 +24,7 @@ var Form = new Schema({
     fieldsets: [Schema.Types.Mixed],
    //idPrefix: String,
     data: Schema.Types.Mixed,
+    template: Schema.Types.Mixed,
     content: [Schema.Types.Mixed],
     parent: Schema.Types.Mixed
 });

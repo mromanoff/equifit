@@ -1810,7 +1810,7 @@ module.exports = {
                             {"val": "fms01-3", "label": "2"},
                             {"val": "fms01-4", "label": "3"}
                         ],
-                        editorClass : 'input-small',
+                        editorClass: 'input-small',
                         help: 'points'
 
                     },
@@ -1827,7 +1827,7 @@ module.exports = {
                             {"val": "fms03-3", "label": "2"},
                             {"val": "fms03-4", "label": "3"}
                         ],
-                        editorClass : 'input-small',
+                        editorClass: 'input-small',
                         help: 'points'
                     },
                     fms04: {
@@ -1839,7 +1839,7 @@ module.exports = {
                             {"val": "fms04-3", "label": "2"},
                             {"val": "fms04-4", "label": "3"}
                         ],
-                        editorClass : 'input-small',
+                        editorClass: 'input-small',
                         help: 'points'
                     },
                     fms05: {
@@ -1849,7 +1849,7 @@ module.exports = {
                             {val: "fms05-1", label: "+"},
                             {val: "fms05-2", label: "-"}
                         ],
-                        editorClass : 'input-small',
+                        editorClass: 'input-small',
                         fieldAttrs: {
                             "data-bind": "checkbox",
                             "data-condition": "legExtra"
@@ -1868,7 +1868,7 @@ module.exports = {
                             {"val": "fms07-3", "label": "2"},
                             {"val": "fms07-4", "label": "3"}
                         ],
-                        editorClass : 'input-small',
+                        editorClass: 'input-small',
                         help: 'points'
                     },
                     fms08: {
@@ -1880,7 +1880,7 @@ module.exports = {
                             {"val": "fms08-3", "label": "2"},
                             {"val": "fms08-4", "label": "3"}
                         ],
-                        editorClass : 'input-small',
+                        editorClass: 'input-small',
                         help: 'points'
                     },
                     fms09: {
@@ -1896,7 +1896,7 @@ module.exports = {
                             {"val": "fms10-3", "label": "2"},
                             {"val": "fms10-4", "label": "3"}
                         ],
-                        editorClass : 'input-small',
+                        editorClass: 'input-small',
                         help: 'points'
                     },
                     fms11: {
@@ -1908,7 +1908,7 @@ module.exports = {
                             {"val": "fms11-3", "label": "2"},
                             {"val": "fms11-4", "label": "3"}
                         ],
-                        editorClass : 'input-small',
+                        editorClass: 'input-small',
                         help: 'points'
                     },
                     fms12: {
@@ -1920,7 +1920,7 @@ module.exports = {
                             {"val": "fms12-3", "label": "2"},
                             {"val": "fms12-4", "label": "3"}
                         ],
-                        editorClass : 'input-small',
+                        editorClass: 'input-small',
                         help: 'points'
                     },
                     fms13: {
@@ -1930,7 +1930,7 @@ module.exports = {
                             {val: "fms13-1", label: "+"},
                             {val: "fms13-2", label: "-"}
                         ],
-                        editorClass : 'input-small'
+                        editorClass: 'input-small'
                     },
                     fms14: {
                         type: "TextArea",
@@ -1945,7 +1945,7 @@ module.exports = {
                             {"val": "fms15-3", "label": "2"},
                             {"val": "fms15-4", "label": "3"}
                         ],
-                        editorClass : 'input-small',
+                        editorClass: 'input-small',
                         help: 'points'
                     },
                     fms16: {
@@ -1957,7 +1957,7 @@ module.exports = {
                             {"val": "fms16-3", "label": "2"},
                             {"val": "fms16-4", "label": "3"}
                         ],
-                        editorClass : 'input-small',
+                        editorClass: 'input-small',
                         help: 'points'
                     },
                     fms17: {
@@ -1973,7 +1973,7 @@ module.exports = {
                             {"val": "fms18-3", "label": "2"},
                             {"val": "fms18-4", "label": "3"}
                         ],
-                        editorClass : 'input-small',
+                        editorClass: 'input-small',
                         help: 'points'
                     },
                     fms19: {
@@ -1983,7 +1983,7 @@ module.exports = {
                             {val: "fms19-1", label: "+"},
                             {val: "fms19-2", label: "-"}
                         ],
-                        editorClass : 'input-small'
+                        editorClass: 'input-small'
                     },
                     fms20: {
                         type: "TextArea",
@@ -1998,7 +1998,7 @@ module.exports = {
                             {"val": "fms21-3", "label": "2"},
                             {"val": "fms21-4", "label": "3"}
                         ],
-                        editorClass : 'input-small',
+                        editorClass: 'input-small',
                         help: 'points'
                     },
                     fms22: {
@@ -2010,7 +2010,7 @@ module.exports = {
                             {"val": "fms22-3", "label": "2"},
                             {"val": "fms22-4", "label": "3"}
                         ],
-                        editorClass : 'input-small',
+                        editorClass: 'input-small',
                         help: 'points'
                     },
                     fms23: {
@@ -2020,7 +2020,7 @@ module.exports = {
                             {val: "fms23-1", label: "+"},
                             {val: "fms23-2", label: "-"}
                         ],
-                        editorClass : 'input-small'
+                        editorClass: 'input-small'
                     },
                     fms24: {
                         type: "TextArea",
@@ -2253,85 +2253,79 @@ module.exports = {
             },
 
             {
-                "templateId": 11,
-                "templateType": "PerformanceTesting",
-                "title": "Performance Testing",
-                "idPrefix": "performance-testing-",
-                "totalQuestions": 10,
-                "totalCompletedQuestions": 0,
-                "formSchema": {
-                    "performancetesting01": {
-                        "type": "Number",
-                        "title": "Leg Press (10 RM)",
-                        "options": null,
-                        "validators": [{"type": "required", "message": "The field is required.", "regex": null}],
-                        "help": "lbs"
+                templateId: 11,
+                templateType: "PerformanceTesting",
+                title: "Performance Testing",
+                totalQuestions: 10,
+                totalCompletedQuestions: 0,
+                formSchema: {
+                    performancetesting01: {
+                        type: "Text",
+                        title: "Leg Press(10 RM)",
+                        editorClass: "input-small",
+                        help: "lbs"
                     },
-                    "performancetesting02": {
-                        "type": "Number",
-                        "title": "Chest Press (10 RM)",
-                        "options": null,
-                        "validators": [{"type": "required", "message": "The field is required.", "regex": null}],
-                        "help": "lbs"
+                    performancetesting02: {
+                        type: "Text",
+                        title: "Chest Press (10 RM)",
+                        editorClass: "input-small",
+                        help: "lbs"
                     },
-                    "performancetesting03": {
-                        "type": "Number",
-                        "title": "Push Ups Test",
-                        "options": null,
-                        "validators": [{"type": "required", "message": "The field is required.", "regex": null}],
-                        "help": "total number completed"
+                    performancetesting03: {
+                        type: "Text",
+                        title: "Push Ups Test",
+                        editorClass: "input-small",
+                        help: "Completed"
                     },
-                    "performancetesting04": {
-                        "type": "Number",
-                        "title": "Bruce Treadmill Protocol - HR at the end of stage 1",
-                        "options": null,
-                        "validators": [{"type": "required", "message": "The field is required.", "regex": null}],
-                        "help": "bpm"
+                    performancetesting04: {
+                        type: "Text",
+                        title: null,
+                        editorClass: "input-small",
+                        help: "BPM"
                     },
-                    "performancetesting05": {
-                        "type": "Number",
-                        "title": "Bruce Treadmill Protocol - HR at the end of stage 2",
-                        "options": null,
-                        "validators": [{"type": "required", "message": "The field is required.", "regex": null}],
-                        "help": "bpm"
+                    performancetesting05: {
+                        type: "Text",
+                        title: null,
+                        editorClass: "input-small",
+                        help: "BPM"
                     },
-                    "performancetesting06": {
-                        "type": "Number",
-                        "title": "Bruce Treadmill Protocol - HR at the end of stage 3",
-                        "options": null,
-                        "validators": [{"type": "required", "message": "The field is required.", "regex": null}],
-                        "help": "bpm"
+                    performancetesting06: {
+                        type: "Text",
+                        title: null,
+                        editorClass: "input-small",
+                        help: "BPM"
                     },
-                    "performancetesting07": {
-                        "type": "Number",
-                        "title": "Bruce Treadmill Protocol - HR at the end of stage 4",
-                        "options": null,
-                        "validators": [{"type": "required", "message": "The field is required.", "regex": null}],
-                        "help": "bpm"
+                    performancetesting07: {
+                        type: "Text",
+                        title: null,
+                        editorClass: "input-small",
+                        help: "BPM"
                     },
-                    "performancetesting08": {
-                        "type": "Number",
-                        "title": "Bruce Treadmill Protocol - HR at the end of stage 5",
-                        "options": null,
-                        "validators": [{"type": "required", "message": "The field is required.", "regex": null}],
-                        "help": "bpm"
+                    performancetesting08: {
+                        type: "Text",
+                        title: null,
+                        editorClass: "input-small",
+                        help: "BPM"
                     },
-                    "performancetesting09": {
-                        "type": "Number",
-                        "title": "Bruce Treadmill Protocol - HR at the end of stage 6",
-                        "options": null,
-                        "validators": [{"type": "required", "message": "The field is required.", "regex": null}],
-                        "help": "bpm"
+                    performancetesting09: {
+                        type: "Text",
+                        title: null,
+                        editorClass: "input-small",
+                        help: "BPM"
                     },
-                    "performancetesting10": {
-                        "type": "Text",
-                        "title": "Final Stage / Total Time / HR at time of Stop",
-                        "options": null,
-                        "validators": [{"type": "required", "message": "The field is required.", "regex": null}],
-                        "help": null
+                    performancetesting10: {
+                        type: "TextArea",
+                        title: "Final State/ Time / Heart Rate at Stop",
+                        editorAttributes: {placeholder: 'Notes'}
+                    },
+                    performancetesting11: {
+                        type: "Text",
+                        title: "VO2MAX (ML/KG/MIN)",
+                        editorClass: 'input-small',
+                        help: '?'
                     }
                 },
-                "fieldsets": [
+                fieldsets: [
                     {
                         "legend": "Performance Testing",
                         "fields": [
@@ -2344,11 +2338,69 @@ module.exports = {
                             "performancetesting07",
                             "performancetesting08",
                             "performancetesting09",
-                            "performancetesting10"
+                            "performancetesting10",
+                            "performancetesting11"
                         ]
                     }
                 ],
-                "data": {}
+                data: {},
+
+                template: '<form class="form-horizontal">\
+                    <h2>Performance</h2>\
+                    <fieldset data-fields="performancetesting01,performancetesting02,performancetesting03"></fieldset>\
+                    <table class="table table-striped">\
+                        <tr>\
+                            <th>Stage</th>\
+                            <th>Time</th>\
+                            <th>Speed</th>\
+                            <th>Speed</th>\
+                            <th></th>\
+                        </tr>\
+                        <tr>\
+                            <td>1</td>\
+                            <td>0-3 mins</td>\
+                            <td>1.7 mph</td>\
+                            <td>10%</td>\
+                            <td><div data-fields="performancetesting04"></div></td>\
+                        </tr>\
+                        <tr>\
+                            <td>2</td>\
+                            <td>3-6 mins</td>\
+                            <td>2.5 mph</td>\
+                            <td>12%</td>\
+                            <td><div data-fields="performancetesting05"></div></td>\
+                        </tr>\
+                        <tr>\
+                            <td>3</td>\
+                            <td>6-9 mins</td>\
+                            <td>3.4 mph</td>\
+                            <td>14%</td>\
+                            <td><div data-fields="performancetesting06"></div></td>\
+                        </tr>\
+                        <tr>\
+                            <td>4</td>\
+                            <td>9-12 mins</td>\
+                            <td>4.5 mph</td>\
+                            <td>15%</td>\
+                            <td><div data-fields="performancetesting07"></div></td>\
+                        </tr>\
+                        <tr>\
+                            <td>5</td>\
+                            <td>12-15 mins</td>\
+                            <td>5.5 mph</td>\
+                            <td>15%</td>\
+                            <td><div data-fields="performancetesting08"></div></td>\
+                        </tr>\
+                        <tr>\
+                            <td>6</td>\
+                            <td>15-18 mins</td>\
+                            <td>6.5 mph</td>\
+                            <td>15%</td>\
+                            <td><div data-fields="performancetesting09"></div></td>\
+                        </tr>\
+                    </table>\
+                    <fieldset data-fields="performancetesting10,performancetesting11"></fieldset>\
+                    </form>'
             },
 
             {

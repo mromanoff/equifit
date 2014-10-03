@@ -21,7 +21,7 @@ define(function (require, exports, module) {
             app.layout.setView('.header', new HeaderView({
                 model: new Backbone.Model({
                     pageTitle: form.get('title'),
-                    updatedAt:  form.get('updatedAt')
+                    updatedAt:  '{FIX THIS}' + form.get('updatedAt')
                 })
             }));
             app.layout.setView('.main-container', new FormView({

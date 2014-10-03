@@ -20,7 +20,7 @@ define(function (require, exports, module) {
                 clientName: equifit.get('clientName'),
                 appointmentAt: equifit.get('appointmentAt'),
                 equifitId: equifit.get('_id'),
-                equifitName: equifit.get('appointmentAt'),
+                equifitName: (moment(equifit.get('updatedAt'))).isValid() ? moment(equifit.get('updatedAt')).format('MMMM D, YYYY') : 'equifit',
                 isSigned: equifit.get('isSigned'),
                 documents: equifit.get('documents'),
                 updatedAt: equifit.get('updatedAt')

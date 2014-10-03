@@ -16,7 +16,7 @@ define(function (require) {
             totalCompletedQuestions: null,
             schema: null,
             fieldsets: null,
-            idPrefix: null,
+            template: null,
             content: null,
             data: null
         },
