@@ -2348,6 +2348,7 @@ module.exports = {
                 template: '<form class="form-horizontal">\
                     <h2>Performance</h2>\
                     <fieldset data-fields="performancetesting01,performancetesting02,performancetesting03"></fieldset>\
+                    <img class="img-polaroid" src="http://placehold.it/350x150.png&text=TBD" alt="Bruce Treadmill Protocol"/>\
                     <table class="table table-striped">\
                         <tr>\
                             <th>Stage</th>\
