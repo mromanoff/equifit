@@ -16,9 +16,7 @@ define(function (require, exports, module) {
         template: 'form',
         events: {
             'click .update': 'updateForm',
-            'click .show-form': 'showForm',
-            'click .show-equifit': 'showEquifit',
-            'click .show-equifits': 'showEquifits'
+            'click .show-form': 'showForm'
         },
 
         initialize: function () {
@@ -59,14 +57,11 @@ define(function (require, exports, module) {
             // append form to the rendered view.
             this.$('.form').html(form.el);
 
-
             //Fms need print summary field at the end
             if(_.isEqual(this.model.get('templateType'), 'Fms')) {
                 console.log('FMS form', this.$el);
-                this.$('form').append('<div class="summary"><strong>Total FMS Score</strong> <span>{total} Points</span></div>')
+                this.$('form').append('<div class="summary"><strong>Total FMS Score</strong> <span>{total} Points</span></div>');
             }
-
-
         },
 
         showForm: function (e) {
@@ -82,20 +77,6 @@ define(function (require, exports, module) {
             } else {
                 msgBus.commands.execute('form:create', templateId);
             }
-            app.router.navigate(url);
-        },
-
-        showEquifit: function (e) {
-            e.preventDefault();
-            var url = 'client/' + app.store.get('clientId') + '/equifit/' + app.store.get('equifitId');
-            msgBus.commands.execute('equifit:get', app.store.get('equifitId'));
-            app.router.navigate(url);
-        },
-
-        showEquifits: function (e) {
-            e.preventDefault();
-            var url = 'client/' + app.store.get('clientId');
-            msgBus.commands.execute('equifits:get', app.store.get('clientId'));
             app.router.navigate(url);
         },
 

@@ -1,0 +1,15 @@
+<% if(_.isEqual(breadCrumbId,'equifits')) { %>
+    <li><a href="/clients/client/<%- clientId %>" data-bypass="true"><%- clientName %></a> <span class="divider">&gt;</span></li>
+<% } %>
+
+<% if(_.isEqual(breadCrumbId, 'equifit')) { %>
+    <li><a href="/clients/client/<%- clientId %>" data-bypass="true"><%- clientName %></a> <span class="divider">&gt;</span></li>
+    <li><a href="#" class="show-equifits">Equifits</a> <span class="divider">&gt;</span></li>
+<% } %>
+
+<% if(_.isEqual(breadCrumbId, 'form')) { %>
+    <li><a href="/clients/client/<%- clientId %>" data-bypass="true"><%- clientName %></a> <span class="divider">&gt;</span></li>
+    <li><a href="#" class="show-equifits">Equifits</a> <span class="divider">&gt;</span></li>
+    <li><a href="#" class="show-equifit"><%- equifitName %></a> <span class="divider">&gt;</span></li>
+<% } %>
+

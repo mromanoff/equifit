@@ -39,10 +39,6 @@ define(function (require, exports, module) {
             this.on('change:pageTitle', this.updatePageTitle);
         },
 
-        //updateStorage: function () {
-        //    this.save();
-        //},
-
         debug: function () {
             console.warn('STORE', this.toJSON());
         },
@@ -52,45 +48,6 @@ define(function (require, exports, module) {
         }
     });
 
-    //app.store = new Entities.Store();
-  //  var store = new Entities.Store();
-
-    //var store = new Entities.Store();
-    //
-    //var API = {
-    //    setStore: function (options) {
-    //        //app.store.set(options);
-    //        store.save();
-    //    },
-    //
-    //    getStore: function () {
-    //        console.log('get store');
-    //        //return store;
-    //
-    //        var deferred = $.Deferred();
-    //
-    //        store.fetch({
-    //            success: deferred.resolve,
-    //            error: deferred.reject
-    //        });
-    //
-    //        return deferred.promise();
-    //
-    //
-    //    }
-    //};
-    //
-    //msgBus.commands.setHandler('store:set', function(options){
-    //    console.log('set store with ', options);
-    //    return API.setStore(options);
-    //});
-    //
-    //msgBus.reqres.setHandler('store:get', function () {
-    //    console.log('get store data');
-    //    return API.getStore();
-    //});
-
-
-    // return instance
+     // return instance
     module.exports = Entities.Store;
 });

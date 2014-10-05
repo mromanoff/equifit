@@ -61,15 +61,7 @@ define(function (require, exports, module) {
         template: 'equifit',
 
         events: {
-            'click .submit': 'updateEquifit',
-            'click .show-equifits': 'showEquifits'
-        },
-
-        showEquifits: function (e) {
-            e.preventDefault();
-            var url = 'client/' + app.store.get('clientId');
-            msgBus.commands.execute('equifits:get', app.store.get('clientId'));
-            app.router.navigate(url);
+            'click .submit': 'updateEquifit'
         },
 
         beforeRender: function () {

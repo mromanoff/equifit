@@ -6,6 +6,7 @@ define(function (require, exports, module) {
     var EquifitView = require('views/equifit');
     var moment = require('moment');
     var HeaderView = require('views/header');
+    var BreadCrumbView = require('views/breadcrumb');
     var controller = {};
 
     controller.getEquifit = function (equifitId) {
@@ -20,7 +21,7 @@ define(function (require, exports, module) {
                 clientName: equifit.get('clientName'),
                 appointmentAt: equifit.get('appointmentAt'),
                 equifitId: equifit.get('_id'),
-                equifitName: (moment(equifit.get('updatedAt'))).isValid() ? moment(equifit.get('updatedAt')).format('MMMM D, YYYY') : 'equifit',
+                equifitName: (moment(equifit.get('updatedAt'))).isValid() ? moment(equifit.get('updatedAt')).format('MMMM D, YYYY') : 'Equifit',
                 isSigned: equifit.get('isSigned'),
                 documents: equifit.get('documents'),
                 updatedAt: equifit.get('updatedAt')
@@ -32,6 +33,13 @@ define(function (require, exports, module) {
                     updatedAt: equifit.get('updatedAt')
                 })
             }));
+
+            app.layout.setView('.navigation', new BreadCrumbView({
+                model: new Backbone.Model({
+                    breadCrumbId: 'equifit'
+                })
+            }));
+
             app.layout.setView('.main-container', new EquifitView({
                 model: equifit
             }));

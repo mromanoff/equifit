@@ -6,6 +6,7 @@ define(function (require, exports, module) {
     var msgBus = require('msgbus');
     var FormView = require('views/form');
     var HeaderView = require('views/header');
+    var BreadCrumbView = require('views/breadcrumb');
     var controller = {};
 
     controller.getForm = function (formId) {
@@ -24,6 +25,13 @@ define(function (require, exports, module) {
                     updatedAt:  '{FIX THIS}' + form.get('updatedAt')
                 })
             }));
+
+            app.layout.setView('.navigation', new BreadCrumbView({
+                model: new Backbone.Model({
+                    breadCrumbId: 'form'
+                })
+            }));
+
             app.layout.setView('.main-container', new FormView({
                 model: form
             }));

@@ -5,6 +5,7 @@ define(function (require, exports, module) {
     var msgBus = require('msgbus');
     var EquifitView = require('views/equifits');
     var HeaderView = require('views/header');
+    var BreadCrumbView = require('views/breadcrumb');
     var controller = {};
 
     controller.getEquifits = function (clientId) {
@@ -27,6 +28,13 @@ define(function (require, exports, module) {
                     updatedAt: null   // do not show last modified on equifit list page
                 })
             }));
+
+            app.layout.setView('.navigation', new BreadCrumbView({
+                model: new Backbone.Model({
+                    breadCrumbId: 'equifits'
+                })
+            }));
+
             app.layout.setView('.main-container', new EquifitView({
                 collection: equifits
             }));

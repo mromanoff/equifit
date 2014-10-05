@@ -9,7 +9,7 @@ define(function (require, exports, module) {
         template: 'dropdown',
 
         initialize: function (){
-            console.log('Error dropdown ', this.model.toJSON());
+            //console.log('Error dropdown ', this.model.toJSON());
         },
 
         serialize: function () {
