@@ -33,6 +33,12 @@ define(function (require, exports, module) {
                 template: (_.isNull(this.model.get('template'))) ? null : _.template(this.model.get('template'))
             }).render();
 
+            // do not submit form till it needed to be submitted.
+            // prevents submit on if user hit the enter key.
+            form.on('submit', function(e) {
+                e.preventDefault();
+            });
+
             _.each(form.fields, function (editor) {
                 // check if editor has a data-bind
                 if (editor.$el.data('bind')) {
@@ -85,17 +91,12 @@ define(function (require, exports, module) {
         },
 
         autoSaveForm: function () {
-            var errors = form.commit();
+            form.commit();
             this.model.set({
                 data: form.model.toJSON()
             });
 
-            if (_.isEmpty(errors)) {
-                msgBus.commands.execute('form:auto:save', this.model);
-            }
-            else {
-                console.error('form did\'t pass validation:', errors);
-            }
+            msgBus.commands.execute('form:auto:save', this.model);
         },
 
         updateForm: function (e) {
