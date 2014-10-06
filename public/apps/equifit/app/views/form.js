@@ -34,18 +34,22 @@ define(function (require, exports, module) {
             }).render();
 
             _.each(form.fields, function (editor) {
+                // check if editor has a data-bind
                 if (editor.$el.data('bind')) {
                     var field = new FormComponents.Field(form, editor);
                     field.toggle();
                     field.bind();
                 }
+                // bind  autoSaveForm to on blur event.  first pass for auto save feature :-)
+                form.on(editor.key + ':blur', function () {
+                    this.autoSaveForm();
+                }, this);
             }, this);
 
             // check if consent form is signed
             if (!app.store.get('isSigned')) {
                 this.setView('.message', new MessageView());
             }
-
             this.insertView('.content', new SimpleContent({model: this.model.get('content')}));
         },
 
@@ -78,6 +82,20 @@ define(function (require, exports, module) {
                 msgBus.commands.execute('form:create', templateId);
             }
             app.router.navigate(url);
+        },
+
+        autoSaveForm: function () {
+            var errors = form.commit();
+            this.model.set({
+                data: form.model.toJSON()
+            });
+
+            if (_.isEmpty(errors)) {
+                msgBus.commands.execute('form:auto:save', this.model);
+            }
+            else {
+                console.error('form did\'t pass validation:', errors);
+            }
         },
 
         updateForm: function (e) {

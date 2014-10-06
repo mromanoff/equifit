@@ -12,7 +12,7 @@
     "noarg":     true,
     "noempty":   true,
     "nonew":     true,
-    "quotmark":  "single",
+   // "quotmark":  "single",
     "strict":    true,
     "undef":     true,
     "unused":    true,

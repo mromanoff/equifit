@@ -1262,7 +1262,6 @@ module.exports = {
                             {"val": "lifestyle01-4", "label": "4"},
                             {"val": "lifestyle01-5", "label": "5"}
                         ],
-                        "validators": [{"type": "required", "message": "Please select one.", "regex": null}],
                         "help": null
                     },
                     "lifestyle02": {
@@ -1272,14 +1271,12 @@ module.exports = {
                             {"val": "lifestyle02-1", "label": "Yes"},
                             {"val": "lifestyle02-2", "label": "No"}
                         ],
-                        "validators": [{"type": "required", "message": "Please select one.", "regex": null}],
                         "help": null
                     },
                     "lifestyle03": {
                         "type": "Text",
                         "title": "Describe your typical daily nutritional habits?",
                         "options": null,
-                        "validators": [{"type": "required", "message": "The field is required.", "regex": null}],
                         "help": "Number of times you eat per day and basic content of diet"
                     },
                     "lifestyle04": {
@@ -1289,14 +1286,12 @@ module.exports = {
                             {"val": "lifestyle04-1", "label": "Yes"},
                             {"val": "lifestyle04-2", "label": "No"}
                         ],
-                        "validators": [{"type": "required", "message": "Please select one.", "regex": null}],
                         "help": null
                     },
                     "lifestyle05": {
                         "type": "Text",
                         "title": "What types of liquids do you typically drink?",
                         "options": null,
-                        "validators": [{"type": "required", "message": "The field is required.", "regex": null}],
                         "help": null
                     },
                     "lifestyle06": {
@@ -1312,14 +1307,12 @@ module.exports = {
                             {"val": "lifestyle06-7", "label": "11 - 12"},
                             {"val": "lifestyle06-8", "label": "More than 12"}
                         ],
-                        "validators": [{"type": "required", "message": "Please select one.", "regex": null}],
                         "help": "Number in glasses. One glass = 8 fluid ounces."
                     },
                     "lifestyle07": {
                         "type": "Text",
                         "title": "Before we get started with assessments, do you have any additional comments or is there anything we did not cover?",
                         "options": null,
-                        "validators": [],
                         "help": null
                     }
                 },
@@ -1357,7 +1350,6 @@ module.exports = {
                         "type": "Text",
                         "title": "Tell me about your current exercise routine?",
                         "options": null,
-                        "validators": [{"type": "required", "message": "The field is required.", "regex": null}],
                         "help": null
                     },
                     "exercisehistory02": {
@@ -1374,7 +1366,6 @@ module.exports = {
                             {"val": "exercisehistory02-8", "label": "7"},
                             {"val": "exercisehistory02-9", "label": "8+"}
                         ],
-                        "validators": [{"type": "required", "message": "Please select one.", "regex": null}],
                         "help": null
                     },
                     "exercisehistory03": {
@@ -1384,7 +1375,6 @@ module.exports = {
                             {"val": "exercisehistory03-1", "label": "Yes"},
                             {"val": "exercisehistory03-2", "label": "No"}
                         ],
-                        "validators": [{"type": "required", "message": "Please select one.", "regex": null}],
                         "help": null
                     }
                 },
@@ -1415,21 +1405,18 @@ module.exports = {
                         "type": "Text",
                         "title": "Fitness goal #1",
                         "options": null,
-                        "validators": [{"type": "required", "message": "The field is required.", "regex": null}],
                         "help": null
                     },
                     "goals02": {
                         "type": "Text",
                         "title": "Fitness goal #2",
                         "options": null,
-                        "validators": [{"type": "required", "message": "The field is required.", "regex": null}],
                         "help": null
                     },
                     "goals03": {
                         "type": "Text",
                         "title": "Fitness goal #3",
                         "options": null,
-                        "validators": [],
                         "help": null
                     },
                     "goals04": {
@@ -1442,7 +1429,6 @@ module.exports = {
                             {"val": "goals04-4", "label": "Longer than 3 years"},
                             {"val": "goals04-5", "label": "Other"}
                         ],
-                        "validators": [{"type": "required", "message": "Please select one.", "regex": null}],
                         "help": null
                     },
                     "goals05": {
@@ -1453,35 +1439,30 @@ module.exports = {
                             {"val": "goals05-2", "label": "No"},
                             {"val": "goals05-3", "label": "Partially"}
                         ],
-                        "validators": [{"type": "required", "message": "Please select one.", "regex": null}],
                         "help": null
                     },
                     "goals06": {
                         "type": "Date",
                         "title": "When would you like to achieve it by?",
                         "options": null,
-                        "validators": [{"type": "required", "message": "Please select date.", "regex": null}],
                         "help": null
                     },
                     "goals07": {
                         "type": "Text",
                         "title": "Why would you like to achieve this goal?",
                         "options": null,
-                        "validators": [{"type": "required", "message": "The field is required.", "regex": null}],
                         "help": null
                     },
                     "goals08": {
                         "type": "Text",
                         "title": "What is the biggest challenge getting in your way of achieving each of these goals?",
                         "options": null,
-                        "validators": [{"type": "required", "message": "The field is required.", "regex": null}],
                         "help": null
                     },
                     "goals09": {
                         "type": "Text",
                         "title": "What strategies in the past have you utilized to overcome these challenges, if any?",
                         "options": null,
-                        "validators": [{"type": "required", "message": "The field is required.", "regex": null}],
                         "help": null
                     },
                     "goals10": {
@@ -1494,14 +1475,12 @@ module.exports = {
                             {"val": "goals10-4", "label": "4"},
                             {"val": "goals10-5", "label": "5"}
                         ],
-                        "validators": [{"type": "required", "message": "Please select one.", "regex": null}],
                         "help": null
                     },
                     "goals11": {
                         "type": "Text",
                         "title": "Notes / Strategy Ideas",
                         "options": null,
-                        "validators": [{"type": "required", "message": "The field is required.", "regex": null}],
                         "help": null
                     }
                 },
@@ -1538,7 +1517,6 @@ module.exports = {
                         "type": "Text",
                         "title": "Number of times you eat per day and basic content of diet?",
                         "options": null,
-                        "validators": [],
                         "help": null
                     },
                     "regeneration02": {
@@ -1548,7 +1526,6 @@ module.exports = {
                             {"val": "regeneration02-1", "label": "Yes"},
                             {"val": "regeneration02-2", "label": "No"}
                         ],
-                        "validators": [{"type": "required", "message": "Please select one.", "regex": null}],
                         "help": null
                     },
                     "regeneration03": {
@@ -1571,7 +1548,6 @@ module.exports = {
                             {"val": "regeneration03-14", "label": "Sports Drinks"},
                             {"val": "regeneration03-15", "label": "Other"}
                         ],
-                        "validators": [{"type": "required", "message": "Please select one.", "regex": null}],
                         "help": null
                     },
                     "regeneration04": {
@@ -1587,7 +1563,6 @@ module.exports = {
                             {"val": "regeneration04-7", "label": "11 - 12 glasses"},
                             {"val": "regeneration04-8", "label": "More than 12 glasses"}
                         ],
-                        "validators": [{"type": "required", "message": "Please select one.", "regex": null}],
                         "help": "One glass = 8 fluid ounces"
                     }
                 },
@@ -1616,119 +1591,102 @@ module.exports = {
                         "type": "Text",
                         "title": "Height",
                         "options": null,
-                        "validators": [{"type": "required", "message": "The field is required.", "regex": null}],
                         "help": "ft, in"
                     },
                     "bodymeasurements02": {
                         "type": "Number",
                         "title": "Weight",
                         "options": null,
-                        "validators": [{"type": "required", "message": "The field is required.", "regex": null}],
                         "help": "lbs"
                     },
                     "bodymeasurements03": {
                         "type": "Number",
                         "title": "Resting Heart Rate",
                         "options": null,
-                        "validators": [{"type": "required", "message": "The field is required.", "regex": null}],
                         "help": "bpm"
                     },
                     "bodymeasurements04": {
                         "type": "Number",
                         "title": "Blood Pressure",
                         "options": null,
-                        "validators": [{"type": "required", "message": "The field is required.", "regex": null}],
                         "help": null
                     },
                     "bodymeasurements05": {
                         "type": "Number",
                         "title": "Right Upper Arm Circumference",
                         "options": null,
-                        "validators": [{"type": "required", "message": "The field is required.", "regex": null}],
                         "help": "in"
                     },
                     "bodymeasurements06": {
                         "type": "Number",
                         "title": "Right Upper Arm Circumference",
                         "options": null,
-                        "validators": [{"type": "required", "message": "The field is required.", "regex": null}],
                         "help": "in"
                     },
                     "bodymeasurements07": {
                         "type": "Number",
                         "title": "Left Upper Arm Circumference",
                         "options": null,
-                        "validators": [{"type": "required", "message": "The field is required.", "regex": null}],
                         "help": "in"
                     },
                     "bodymeasurements08": {
                         "type": "Number",
                         "title": "Chest Circumference",
                         "options": null,
-                        "validators": [{"type": "required", "message": "The field is required.", "regex": null}],
                         "help": "in"
                     },
                     "bodymeasurements09": {
                         "type": "Number",
                         "title": "Waist Circumference",
                         "options": null,
-                        "validators": [{"type": "required", "message": "The field is required.", "regex": null}],
                         "help": "in"
                     },
                     "bodymeasurements10": {
                         "type": "Number",
                         "title": "Abdominal Circumference",
                         "options": null,
-                        "validators": [{"type": "required", "message": "The field is required.", "regex": null}],
                         "help": "in"
                     },
                     "bodymeasurements11": {
                         "type": "Number",
                         "title": "Hip Circumference",
                         "options": null,
-                        "validators": [{"type": "required", "message": "The field is required.", "regex": null}],
                         "help": "in"
                     },
                     "bodymeasurements12": {
                         "type": "Number",
                         "title": "Right Mid Thigh Circumference",
                         "options": null,
-                        "validators": [{"type": "required", "message": "The field is required.", "regex": null}],
                         "help": "in"
                     },
                     "bodymeasurements13": {
                         "type": "Number",
                         "title": "Left Mid Thigh Circumference",
                         "options": null,
-                        "validators": [{"type": "required", "message": "The field is required.", "regex": null}],
                         "help": "in"
                     },
                     "bodymeasurements14": {
                         "type": "Number",
                         "title": "Skinfold Measurement - Tricep",
                         "options": null,
-                        "validators": [{"type": "required", "message": "The field is required.", "regex": null}],
                         "help": "mm"
                     },
                     "bodymeasurements15": {
                         "type": "Number",
                         "title": "Skinfold Measurement - Abdomen",
                         "options": null,
-                        "validators": [{"type": "required", "message": "The field is required.", "regex": null}],
                         "help": "mm"
                     },
                     "bodymeasurements16": {
                         "type": "Number",
                         "title": "Skinfold Measurement - Suprailiac",
                         "options": null,
-                        "validators": [{"type": "required", "message": "The field is required.", "regex": null}],
                         "help": "mm"
                     },
                     "bodymeasurements17": {
                         "type": "Number",
                         "title": "Skinfold Measurement - Mid Thigh",
                         "options": null,
-                        "validators": [{"type": "required", "message": "The field is required.", "regex": null}],
                         "help": "mm"
                     }
                 },
@@ -2081,7 +2039,6 @@ module.exports = {
                             {"val": "equistretch01-2", "label": "Satisifactory"},
                             {"val": "equistretch01-3", "label": "Needs Improvement"}
                         ],
-                        "validators": [{"type": "required", "message": "Please select one.", "regex": null}],
                         "help": null
                     },
                     "equistretch02": {
@@ -2092,7 +2049,6 @@ module.exports = {
                             {"val": "equistretch02-2", "label": "Satisifactory"},
                             {"val": "equistretch02-3", "label": "Needs Improvement"}
                         ],
-                        "validators": [{"type": "required", "message": "Please select one.", "regex": null}],
                         "help": null
                     },
                     "equistretch03": {
@@ -2103,7 +2059,6 @@ module.exports = {
                             {"val": "equistretch03-2", "label": "Satisifactory"},
                             {"val": "equistretch03-3", "label": "Needs Improvement"}
                         ],
-                        "validators": [{"type": "required", "message": "Please select one.", "regex": null}],
                         "help": null
                     },
                     "equistretch04": {
@@ -2114,7 +2069,6 @@ module.exports = {
                             {"val": "equistretch04-2", "label": "Satisifactory"},
                             {"val": "equistretch04-3", "label": "Needs Improvement"}
                         ],
-                        "validators": [{"type": "required", "message": "Please select one.", "regex": null}],
                         "help": null
                     },
                     "equistretch05": {
@@ -2125,7 +2079,6 @@ module.exports = {
                             {"val": "equistretch05-2", "label": "Satisifactory"},
                             {"val": "equistretch05-3", "label": "Needs Improvement"}
                         ],
-                        "validators": [{"type": "required", "message": "Please select one.", "regex": null}],
                         "help": null
                     },
                     "equistretch06": {
@@ -2136,7 +2089,6 @@ module.exports = {
                             {"val": "equistretch06-2", "label": "Satisifactory"},
                             {"val": "equistretch06-3", "label": "Needs Improvement"}
                         ],
-                        "validators": [{"type": "required", "message": "Please select one.", "regex": null}],
                         "help": null
                     },
                     "equistretch07": {
@@ -2147,7 +2099,6 @@ module.exports = {
                             {"val": "equistretch07-2", "label": "Satisifactory"},
                             {"val": "equistretch07-3", "label": "Needs Improvement"}
                         ],
-                        "validators": [{"type": "required", "message": "Please select one.", "regex": null}],
                         "help": null
                     },
                     "equistretch08": {
@@ -2158,7 +2109,6 @@ module.exports = {
                             {"val": "equistretch08-2", "label": "Satisifactory"},
                             {"val": "equistretch08-3", "label": "Needs Improvement"}
                         ],
-                        "validators": [{"type": "required", "message": "Please select one.", "regex": null}],
                         "help": null
                     },
                     "equistretch09": {
@@ -2169,7 +2119,6 @@ module.exports = {
                             {"val": "equistretch09-2", "label": "Satisifactory"},
                             {"val": "equistretch09-3", "label": "Needs Improvement"}
                         ],
-                        "validators": [{"type": "required", "message": "Please select one.", "regex": null}],
                         "help": null
                     },
                     "equistretch10": {
@@ -2180,7 +2129,6 @@ module.exports = {
                             {"val": "equistretch10-2", "label": "Satisifactory"},
                             {"val": "equistretch10-3", "label": "Needs Improvement"}
                         ],
-                        "validators": [{"type": "required", "message": "Please select one.", "regex": null}],
                         "help": null
                     },
                     "equistretch11": {
@@ -2191,7 +2139,6 @@ module.exports = {
                             {"val": "equistretch11-2", "label": "Satisifactory"},
                             {"val": "equistretch11-3", "label": "Needs Improvement"}
                         ],
-                        "validators": [{"type": "required", "message": "Please select one.", "regex": null}],
                         "help": null
                     },
                     "equistretch12": {
@@ -2202,7 +2149,6 @@ module.exports = {
                             {"val": "equistretch12-2", "label": "Satisifactory"},
                             {"val": "equistretch12-3", "label": "Needs Improvement"}
                         ],
-                        "validators": [{"type": "required", "message": "Please select one.", "regex": null}],
                         "help": null
                     },
                     "equistretch13": {
@@ -2213,7 +2159,6 @@ module.exports = {
                             {"val": "equistretch13-2", "label": "Satisifactory"},
                             {"val": "equistretch13-3", "label": "Needs Improvement"}
                         ],
-                        "validators": [{"type": "required", "message": "Please select one.", "regex": null}],
                         "help": null
                     },
                     "equistretch14": {
@@ -2224,7 +2169,6 @@ module.exports = {
                             {"val": "equistretch14-2", "label": "Satisifactory"},
                             {"val": "equistretch14-3", "label": "Needs Improvement"}
                         ],
-                        "validators": [{"type": "required", "message": "Please select one.", "regex": null}],
                         "help": null
                     }
                 },
@@ -2432,12 +2376,10 @@ module.exports = {
                     "address": {
                         "type": "Text",
                         "title": "Address 1",
-                        "validators": ["required"]
                     },
 
                     "city": {
                         "type": "Text",
-                        "validators": ["required"]
                     },
 
                     "state": {
@@ -2452,8 +2394,7 @@ module.exports = {
                     },
 
                     "zip": {
-                        "type": "Text",
-                        "validators": ["required"]
+                        "type": "Text"
                     }
                 },
 

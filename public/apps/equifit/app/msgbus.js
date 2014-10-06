@@ -81,6 +81,15 @@ define(function (require, exports, module) {
     });
 
     /***
+     * Auto Save Form
+     */
+    msgBus.commands.setHandler('form:auto:save', function(form){
+        require(['controllers/form'], function (controller) {
+            controller.autoSaveForm(form);
+        });
+    });
+
+    /***
      * Helper Event triggers
      * @type {Object}
      */
