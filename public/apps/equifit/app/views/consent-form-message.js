@@ -5,9 +5,8 @@ define(function (require, exports, module) {
     var msgBus = require('msgbus');
     var Backbone = require('backbone');
 
-    module.exports = Backbone.View.extend({
-        manage: true,
-        el: false,
+    module.exports = Backbone.Layout.extend({
+        className: 'consent-form-message',
         template: 'consent-form-message',
 
         events: {
@@ -23,6 +22,10 @@ define(function (require, exports, module) {
 
         showForm: function (e) {
             e.preventDefault();
+
+            console.log('consent form show');
+
+
             var form = _.findWhere(app.store.get('documents'), {templateType: 'InformedConsent'});
             msgBus.commands.execute('form:show', form);
         }

@@ -122,6 +122,6 @@ define(function (require, exports, module) {
             app.router.navigate(url);
         }
     };
-    
+
     module.exports = controller;
 });

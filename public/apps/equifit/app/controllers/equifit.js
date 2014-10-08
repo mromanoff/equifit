@@ -43,6 +43,7 @@ define(function (require, exports, module) {
             app.layout.setView('.main-container', new EquifitView({
                 model: equifit
             }));
+
             app.layout.render();
         });
 

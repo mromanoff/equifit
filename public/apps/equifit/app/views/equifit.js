@@ -12,7 +12,7 @@ define(function (require, exports, module) {
         template: 'form-item',
         tagName: 'li',
         events: {
-            'click a': 'showForm'
+            'click .show-form': 'showForm'
         },
 
         serialize: function () {
@@ -35,6 +35,7 @@ define(function (require, exports, module) {
          */
         showForm: function (e) {
             e.preventDefault();
+            // pass plain JSON
             msgBus.commands.execute('form:show', this.model.toJSON());
         }
     });
