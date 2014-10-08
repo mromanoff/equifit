@@ -1,5 +1,9 @@
 .equifit {
 
+  .modified{
+    text-transform: none;
+  }
+
   .container {
     width: 1020px;
     margin-right: auto;
@@ -88,7 +92,7 @@
     }
 
     ul {
-      margin-left: 0;
+      margin: 0;
       li {
         list-style-type: none;
         float: left;
@@ -110,13 +114,14 @@
     }
 
     select[data-type="date"] {
-      .makeColumn(1)
+      .makeColumn(1);
+      margin-left: 0;
     }
     select[data-type="month"] {
-      .makeColumn(2)
+      .makeColumn(2);
     }
     select[data-type="year"] {
-      .makeColumn(2)
+      .makeColumn(2);
     }
 
 

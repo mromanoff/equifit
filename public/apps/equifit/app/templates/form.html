@@ -9,10 +9,10 @@
 
 <section class="nav-jump-menu">
     <div class="btn-group dropup">
-        <button class="btn">Jump to another section</button>
-        <button class="btn dropdown-toggle" data-toggle="dropdown">
+        <a href="#" class="btn dropdown-toggle" data-toggle="dropdown">
+            Jump to another section
             <span class="caret"></span>
-        </button>
+        </a>
         <ul class="dropdown-menu text-left">
             <% _.each(documents, function(item) { %>
             <li><a href="#" class="show-form" data-template-id="<%- item.templateId %>" data-id="<%- item._id %>"><%- item.title %></a></li>

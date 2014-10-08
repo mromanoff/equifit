@@ -24,8 +24,7 @@ define(function (require, exports, module) {
         },
 
         beforeRender: function () {
-            var FormModel = Backbone.Model.extend();
-            var formModel = new FormModel(this.model.get('data'));
+            var formModel = new Backbone.Model(this.model.get('data'));
             form = new Form({
                 model: formModel,
                 schema: this.model.get('schema'),

@@ -2024,152 +2024,258 @@ module.exports = {
             },
 
             {
-                "templateId": 10,
-                "templateType": "Equistretch",
-                "title": "Equistretch",
-                "idPrefix": "equistretch-",
-                "totalQuestions": 14,
-                "totalCompletedQuestions": 0,
-                "formSchema": {
-                    "equistretch01": {
-                        "type": "Radio",
-                        "title": "Seated Cervical Flexion",
-                        "options": [
+                templateId: 10,
+                templateType: "Equistretch",
+                title: "Equistretch",
+                totalQuestions: 14,
+                totalCompletedQuestions: 0,
+                formSchema: {
+                    equistretch01: {
+                        type: "Radio",
+                        title: "Seated Cervical Flexion",
+                        options: [
                             {"val": "equistretch01-1", "label": "Excellent"},
                             {"val": "equistretch01-2", "label": "Satisifactory"},
                             {"val": "equistretch01-3", "label": "Needs Improvement"}
-                        ],
-                        "help": null
+                        ]
                     },
-                    "equistretch02": {
-                        "type": "Radio",
-                        "title": "Seated Cervical Extension",
-                        "options": [
+
+                    equistretch01a: {
+                        type:  'TextArea',
+                        title: null,
+                        editorAttrs: {
+                            maxlength: 100,
+                            placeholder: "Notes"
+                        }
+                    },
+
+                    equistretch02: {
+                        type: "Radio",
+                        title: "Seated Cervical Extension",
+                        options: [
                             {"val": "equistretch02-1", "label": "Excellent"},
                             {"val": "equistretch02-2", "label": "Satisifactory"},
                             {"val": "equistretch02-3", "label": "Needs Improvement"}
-                        ],
-                        "help": null
+                        ]
                     },
-                    "equistretch03": {
-                        "type": "Radio",
-                        "title": "Seated Cervical Rotation",
-                        "options": [
+
+                    equistretch02a: {
+                        type:  'TextArea',
+                        title: null,
+                        editorAttrs: {
+                            maxlength: 100,
+                            placeholder: "Notes"
+                        }
+                    },
+
+                    equistretch03: {
+                        type: "Radio",
+                        title: "Seated Cervical Rotation",
+                        options: [
                             {"val": "equistretch03-1", "label": "Excellent"},
                             {"val": "equistretch03-2", "label": "Satisifactory"},
                             {"val": "equistretch03-3", "label": "Needs Improvement"}
-                        ],
-                        "help": null
+                        ]
                     },
-                    "equistretch04": {
-                        "type": "Radio",
-                        "title": "Seated Cervical Side Bending",
-                        "options": [
+
+                    equistretch03a: {
+                        type:  'TextArea',
+                        title: null,
+                        editorAttrs: {
+                            maxlength: 100,
+                            placeholder: "Notes"
+                        }
+                    },
+
+                    equistretch04: {
+                        type: "Radio",
+                        title: "Seated Cervical Side Bending",
+                        options: [
                             {"val": "equistretch04-1", "label": "Excellent"},
                             {"val": "equistretch04-2", "label": "Satisifactory"},
                             {"val": "equistretch04-3", "label": "Needs Improvement"}
-                        ],
-                        "help": null
+                        ]
                     },
-                    "equistretch05": {
-                        "type": "Radio",
-                        "title": "Seated Shoulder Elevation",
-                        "options": [
+                    equistretch04a: {
+                        type:  'TextArea',
+                        title: null,
+                        editorAttrs: {
+                            maxlength: 100,
+                            placeholder: "Notes"
+                        }
+                    },
+                    equistretch05: {
+                        type: "Radio",
+                        title: "Seated Shoulder Elevation",
+                        options: [
                             {"val": "equistretch05-1", "label": "Excellent"},
                             {"val": "equistretch05-2", "label": "Satisifactory"},
                             {"val": "equistretch05-3", "label": "Needs Improvement"}
-                        ],
-                        "help": null
+                        ]
                     },
-                    "equistretch06": {
-                        "type": "Radio",
-                        "title": "Seated Hands Behind Head",
-                        "options": [
+                    equistretch05a: {
+                        type:  'TextArea',
+                        title: null,
+                        editorAttrs: {
+                            maxlength: 100,
+                            placeholder: "Notes"
+                        }
+                    },
+                    equistretch06: {
+                        type: "Radio",
+                        title: "Seated Hands Behind Head",
+                        options: [
                             {"val": "equistretch06-1", "label": "Excellent"},
                             {"val": "equistretch06-2", "label": "Satisifactory"},
                             {"val": "equistretch06-3", "label": "Needs Improvement"}
-                        ],
-                        "help": null
+                        ]
                     },
-                    "equistretch07": {
-                        "type": "Radio",
-                        "title": "Seated Hands Behind Back",
-                        "options": [
+
+                    equistretch06a: {
+                        type:  'TextArea',
+                        title: null,
+                        editorAttrs: {
+                            maxlength: 100,
+                            placeholder: "Notes"
+                        }
+                    },
+
+                    equistretch07: {
+                        type: "Radio",
+                        title: "Seated Hands Behind Back",
+                        options: [
                             {"val": "equistretch07-1", "label": "Excellent"},
                             {"val": "equistretch07-2", "label": "Satisifactory"},
                             {"val": "equistretch07-3", "label": "Needs Improvement"}
-                        ],
-                        "help": null
+                        ]
                     },
-                    "equistretch08": {
-                        "type": "Radio",
-                        "title": "Supine Lat Length",
-                        "options": [
+                    equistretch07a: {
+                        type:  'TextArea',
+                        title: null,
+                        editorAttrs: {
+                            maxlength: 100,
+                            placeholder: "Notes"
+                        }
+                    },
+
+                    equistretch08: {
+                        type: "Radio",
+                        title: "Supine Lat Length",
+                        options: [
                             {"val": "equistretch08-1", "label": "Excellent"},
                             {"val": "equistretch08-2", "label": "Satisifactory"},
                             {"val": "equistretch08-3", "label": "Needs Improvement"}
-                        ],
-                        "help": null
+                        ]
                     },
-                    "equistretch09": {
-                        "type": "Radio",
-                        "title": "Supine Hip Flexor",
-                        "options": [
+                    equistretch08a: {
+                        type:  'TextArea',
+                        title: null,
+                        editorAttrs: {
+                            maxlength: 100,
+                            placeholder: "Notes"
+                        }
+                    },
+                    equistretch09: {
+                        type: "Radio",
+                        title: "Supine Hip Flexor",
+                        options: [
                             {"val": "equistretch09-1", "label": "Excellent"},
                             {"val": "equistretch09-2", "label": "Satisifactory"},
                             {"val": "equistretch09-3", "label": "Needs Improvement"}
-                        ],
-                        "help": null
+                        ]
                     },
-                    "equistretch10": {
-                        "type": "Radio",
-                        "title": "Supine Adductor Length",
-                        "options": [
+                    equistretch09a: {
+                        type:  'TextArea',
+                        title: null,
+                        editorAttrs: {
+                            maxlength: 100,
+                            placeholder: "Notes"
+                        }
+                    },
+                    equistretch10: {
+                        type: "Radio",
+                        title: "Supine Adductor Length",
+                        options: [
                             {"val": "equistretch10-1", "label": "Excellent"},
                             {"val": "equistretch10-2", "label": "Satisifactory"},
                             {"val": "equistretch10-3", "label": "Needs Improvement"}
-                        ],
-                        "help": null
+                        ]
                     },
-                    "equistretch11": {
-                        "type": "Radio",
-                        "title": "Supine Gastroc Length",
-                        "options": [
+                    equistretch10a: {
+                        type:  'TextArea',
+                        title: null,
+                        editorAttrs: {
+                            maxlength: 100,
+                            placeholder: "Notes"
+                        }
+                    },
+                    equistretch11: {
+                        type: "Radio",
+                        title: "Supine Gastroc Length",
+                        options: [
                             {"val": "equistretch11-1", "label": "Excellent"},
                             {"val": "equistretch11-2", "label": "Satisifactory"},
                             {"val": "equistretch11-3", "label": "Needs Improvement"}
-                        ],
-                        "help": null
+                        ]
                     },
-                    "equistretch12": {
-                        "type": "Radio",
-                        "title": "Side Lying ITB Length (Ober's Test)",
-                        "options": [
+                    equistretch11a: {
+                        type:  'TextArea',
+                        title: null,
+                        editorAttrs: {
+                            maxlength: 100,
+                            placeholder: "Notes"
+                        }
+                    },
+                    equistretch12: {
+                        type: "Radio",
+                        title: "Side Lying ITB Length (Ober's Test)",
+                        options: [
                             {"val": "equistretch12-1", "label": "Excellent"},
                             {"val": "equistretch12-2", "label": "Satisifactory"},
                             {"val": "equistretch12-3", "label": "Needs Improvement"}
-                        ],
-                        "help": null
+                        ]
                     },
-                    "equistretch13": {
-                        "type": "Radio",
-                        "title": "Prone Knee Flexion (Ely's Test)",
-                        "options": [
+                    equistretch12a: {
+                        type:  'TextArea',
+                        title: null,
+                        editorAttrs: {
+                            maxlength: 100,
+                            placeholder: "Notes"
+                        }
+                    },
+                    equistretch13: {
+                        type: "Radio",
+                        title: "Prone Knee Flexion (Ely's Test)",
+                        options: [
                             {"val": "equistretch13-1", "label": "Excellent"},
                             {"val": "equistretch13-2", "label": "Satisifactory"},
                             {"val": "equistretch13-3", "label": "Needs Improvement"}
-                        ],
-                        "help": null
+                        ]
                     },
-                    "equistretch14": {
-                        "type": "Radio",
-                        "title": "Prone Soleus Lenght",
-                        "options": [
+                    equistretch13a: {
+                        type:  'TextArea',
+                        title: null,
+                        editorAttrs: {
+                            maxlength: 100,
+                            placeholder: "Notes"
+                        }
+                    },
+                    equistretch14: {
+                        type: "Radio",
+                        title: "Prone Soleus Lenght",
+                        options: [
                             {"val": "equistretch14-1", "label": "Excellent"},
                             {"val": "equistretch14-2", "label": "Satisifactory"},
                             {"val": "equistretch14-3", "label": "Needs Improvement"}
-                        ],
-                        "help": null
+                        ]
+                    },
+                    equistretch14a: {
+                        type:  'TextArea',
+                        title: null,
+                        editorAttrs: {
+                            maxlength: 100,
+                            placeholder: "Notes"
+                        }
                     }
                 },
                 "fieldsets": [
@@ -2177,19 +2283,33 @@ module.exports = {
                         "legend": "Equistretch",
                         "fields": [
                             "equistretch01",
+                            "equistretch01a",
                             "equistretch02",
+                            "equistretch02a",
                             "equistretch03",
+                            "equistretch03a",
                             "equistretch04",
+                            "equistretch04a",
                             "equistretch05",
+                            "equistretch05a",
                             "equistretch06",
+                            "equistretch06a",
                             "equistretch07",
+                            "equistretch07a",
                             "equistretch08",
+                            "equistretch08a",
                             "equistretch09",
+                            "equistretch09a",
                             "equistretch10",
+                            "equistretch10a",
                             "equistretch11",
+                            "equistretch11a",
                             "equistretch12",
+                            "equistretch12a",
                             "equistretch13",
-                            "equistretch14"
+                            "equistretch13a",
+                            "equistretch14",
+                            "equistretch14a"
                         ]
                     }
                 ],

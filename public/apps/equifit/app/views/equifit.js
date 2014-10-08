@@ -36,9 +36,10 @@ define(function (require, exports, module) {
          */
         showForm: function (e) {
             e.preventDefault();
-            var url = 'client/' + this.model.get('parent').clientId + '/equifit/' + this.model.get('parent')._id;
+           // var url = 'client/' + this.model.get('parent').clientId + '/equifit/' + this.model.get('parent')._id;
+            console.log('this.model', this.model);
 
-            if(_.isEmpty(this.model.id)) {
+            if(_.isEmpty(this.model.get('_id'))) {
                 console.log('this model doesn\'t have an id');
                 console.warn('create new form with template id', this.model.get('templateId'));
                 msgBus.commands.execute('form:create', this.model.get('templateId'));
