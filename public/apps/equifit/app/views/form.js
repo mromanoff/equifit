@@ -7,7 +7,7 @@ define(function (require, exports, module) {
     var Form = require('backbone-forms');
     var FormComponents = require('components/forms');
     require('views/forms-template');
-    var MessageView = require('views/message');
+    var ConsentMessageView = require('views/consent-form-message');
     var SimpleContent = require('views/simple-content');
     var FormView;
     var form;
@@ -53,7 +53,7 @@ define(function (require, exports, module) {
 
             // check if consent form is signed
             if (!app.store.get('isSigned')) {
-                this.setView('.message', new MessageView());
+                this.setView('.message', new ConsentMessageView());
             }
             this.insertView('.content', new SimpleContent({model: this.model.get('content')}));
         },
@@ -67,26 +67,20 @@ define(function (require, exports, module) {
             this.$('.form').html(form.el);
 
             //Fms need print summary field at the end
-            if(_.isEqual(this.model.get('templateType'), 'Fms')) {
-                console.log('FMS form', this.$el);
-                this.$('form').append('<div class="summary"><strong>Total FMS Score</strong> <span>{total} Points</span></div>');
-            }
+            //if(_.isEqual(this.model.get('templateType'), 'Fms')) {
+            //    console.log('FMS form', this.$el);
+            //    this.$('form').append('<div class="summary"><strong>Total FMS Score</strong> <span>{total} Points</span></div>');
+            //}
         },
 
+        /***
+         * show form
+         * @param e
+         */
         showForm: function (e) {
             e.preventDefault();
-            var url = 'client/' + app.store.get('clientId') + '/equifit/' + app.store.get('equifitId') + '/form/';
-            var formId = $(e.currentTarget).data('id');
-            var templateId = $(e.currentTarget).data('template-id');
-
-            // if form created use get else post
-            if(formId) {
-                url = url + formId;
-                msgBus.commands.execute('form:get', formId);
-            } else {
-                msgBus.commands.execute('form:create', templateId);
-            }
-            app.router.navigate(url);
+            var form = _.findWhere(app.store.get('documents'), {templateType: $(e.currentTarget).data('template-type')});
+            msgBus.commands.execute('form:show', form);
         },
 
         autoSaveForm: function () {

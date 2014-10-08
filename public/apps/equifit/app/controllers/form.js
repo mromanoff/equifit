@@ -105,5 +105,23 @@ define(function (require, exports, module) {
         });
     };
 
+    controller.showForm = function(form){
+        var url = 'client/' + app.store.get('clientId') + '/equifit/' + app.store.get('_id');
+        ////TODO check this coz parent doesn't exists yet.
+        //// var url = 'client/' + this.model.get('parent').clientId + '/equifit/' + this.model.get('parent')._id;
+
+        if (_.isEmpty(form._id)) {
+            console.log('this form doesn\'t have an id');
+            console.warn('create new form with template id', form.templateId);
+            msgBus.commands.execute('form:create', form.templateId);
+        }
+        else {
+            console.log('this form have an Id', form._id);
+            msgBus.commands.execute('form:get', form._id);
+            url = url + '/form/' + form._id;
+            app.router.navigate(url);
+        }
+    };
+    
     module.exports = controller;
 });

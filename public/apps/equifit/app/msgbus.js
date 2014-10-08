@@ -72,6 +72,17 @@ define(function (require, exports, module) {
     });
 
     /***
+     * Show Form
+     * This function will create new form or show existing one.
+     * New form doesn't have an id, create by passing templateId.
+     */
+    msgBus.commands.setHandler('form:show', function(form){
+        require(['controllers/form'], function (controller) {
+            controller.showForm(form);
+        });
+    });
+
+    /***
      * Update Form
      */
     msgBus.commands.setHandler('form:update', function(form){

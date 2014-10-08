@@ -4,7 +4,7 @@ define(function (require, exports, module) {
     var app = require('app');
     var Backbone = require('backbone');
     var msgBus = require('msgbus');
-    var MessageView = require('views/message');
+    var ConsentMessageView = require('views/consent-form-message');
     var EquifitView;
 
     var Item = Backbone.View.extend({
@@ -20,8 +20,8 @@ define(function (require, exports, module) {
             data.title = this.model.get('title');
 
             if (_.isEqual(this.model.get('templateType'), 'InformedConsent')) {
-                data.status = app.store.get('isSigned') ? 'Signed' : 'Not Signed';
-                data.badge = 'badge-important';
+                data.status = (app.store.get('isSigned')) ? 'Signed' : 'Not Signed';
+                data.badge = (app.store.get('isSigned')) ? 'badge-success' : 'badge-important';
             } else {
                 data.status = this.model.get('totalCompletedQuestions') + ' of ' + this.model.get('totalQuestions');
                 data.badge = null;
@@ -31,25 +31,11 @@ define(function (require, exports, module) {
 
         /***
          * show form
-         * description we need to create new form if it has no id or get form if it has id
          * @param e
          */
         showForm: function (e) {
             e.preventDefault();
-           // var url = 'client/' + this.model.get('parent').clientId + '/equifit/' + this.model.get('parent')._id;
-            console.log('this.model', this.model);
-
-            if(_.isEmpty(this.model.get('_id'))) {
-                console.log('this model doesn\'t have an id');
-                console.warn('create new form with template id', this.model.get('templateId'));
-                msgBus.commands.execute('form:create', this.model.get('templateId'));
-            }
-            else {
-                console.log('this model have an Id');
-                msgBus.commands.execute('form:get', this.model.get('_id'));
-                url = url + '/form/' + this.model.get('_id');
-                app.router.navigate(url);
-            }
+            msgBus.commands.execute('form:show', this.model.toJSON());
         }
     });
 
@@ -69,7 +55,7 @@ define(function (require, exports, module) {
             var documents = new Backbone.Collection(this.model.get('documents'));
             // check if consent form is signed
             if (!this.model.get('isSigned')) {
-                this.setView('.message', new MessageView());
+                this.setView('.message', new ConsentMessageView());
             }
 
             // check if there is no items in collection
@@ -78,15 +64,9 @@ define(function (require, exports, module) {
             } else {
                 documents.each(function (model) {
                     model.set({parent: _.clone(this.model.toJSON())});
-
-                    // do not render "informed consent form" if it is signed
-                    if(_.isEqual(model.get('templateType'), 'InformedConsent') && this.model.get('isSigned')) {
-                        return false;
-                    } else {
-                        this.insertView('.list', new Item({
-                            model: model
-                        }));
-                    }
+                    this.insertView('.list', new Item({
+                        model: model
+                    }));
                 }, this);
             }
         },

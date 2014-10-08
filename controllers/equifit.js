@@ -275,7 +275,12 @@ module.exports = {
                 formSchema: {
                     personal01: {
                         "type": "Text",
-                        "title": "Trainer First & Last Name"
+                        "title": "First Name"
+                    },
+
+                    personal02: {
+                        "type": "Text",
+                        "title": "Last Name"
                     },
                     personal03: {
                         type: "Select",
@@ -330,7 +335,7 @@ module.exports = {
                 fieldsets: [
                     {
                         legend: "I am",
-                        fields: ["personal01"]
+                        fields: ["personal01", "personal02"]
                     },
                     {
                         legend: "REPLACE_ME_WITH_CLIENT_NAME",
@@ -347,7 +352,12 @@ module.exports = {
                             "personal06"
                         ]
                     }
-                ]
+                ],
+
+                data: {
+                    personal01: 'Bob',
+                    personal02: 'Dylan'
+                }
             },
             {
                 title: "Medical/Orthopedic HX",
@@ -1034,7 +1044,6 @@ module.exports = {
                             }
                         }
                     },
-
 
                     "medical08": {
                         "type": "Radio",
@@ -2495,11 +2504,11 @@ module.exports = {
 
                     "address": {
                         "type": "Text",
-                        "title": "Address 1",
+                        "title": "Address 1"
                     },
 
                     "city": {
-                        "type": "Text",
+                        "type": "Text"
                     },
 
                     "state": {
