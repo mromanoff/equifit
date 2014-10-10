@@ -507,7 +507,7 @@ module.exports = {
                         "help": "We recommend that you see a doctor before your Equifit or before you begin an exercise program."
                     },
                     "medical08": {
-                        "type": "Checkbox",
+                        "type": "Checkboxes",
                         "title": "Check any injuries you have or had in the past:",
                         "fieldClass": "checkbox",
                         "fieldAttrs": {
@@ -579,7 +579,7 @@ module.exports = {
                         ]
                     },
                     "medical09": {
-                        "type": "Checkbox",
+                        "type": "Checkboxes",
                         "title": "",
                         "fieldClass": "checkbox",
                         "fieldAttrs": {
@@ -651,7 +651,7 @@ module.exports = {
                         ]
                     },
                     "medical10": {
-                        "type": "Checkbox",
+                        "type": "Checkboxes",
                         "fieldClass": "checkbox",
                         "title": "",
                         "fieldAttrs": {
@@ -723,7 +723,7 @@ module.exports = {
                         ]
                     },
                     "medical11": {
-                        "type": "Checkbox",
+                        "type": "Checkboxes",
                         "fieldClass": "checkbox",
                         "title": "",
                         "fieldAttrs": {
@@ -795,7 +795,7 @@ module.exports = {
                         ]
                     },
                     "medical12": {
-                        "type": "Checkbox",
+                        "type": "Checkboxes",
                         "fieldClass": "checkbox",
                         "title": "",
                         "fieldAttrs": {
@@ -867,7 +867,7 @@ module.exports = {
                         ]
                     },
                     "medical13": {
-                        "type": "Checkbox",
+                        "type": "Checkboxes",
                         "fieldClass": "checkbox",
                         "title": "",
                         "fieldAttrs": {
@@ -939,7 +939,7 @@ module.exports = {
                         ]
                     },
                     "medical14": {
-                        "type": "Checkbox",
+                        "type": "Checkboxes",
                         "fieldClass": "checkbox",
                         "title": "",
                         "fieldAttrs": {
@@ -1011,7 +1011,7 @@ module.exports = {
                         ]
                     },
                     "medical15": {
-                        "type": "Checkbox",
+                        "type": "Checkboxes",
                         "fieldClass": "checkbox",
                         "title": "",
                         "fieldAttrs": {
@@ -1083,7 +1083,7 @@ module.exports = {
                         ]
                     },
                     "medical16": {
-                        "type": "Checkbox",
+                        "type": "Checkboxes",
                         "fieldClass": "checkbox",
                         "title": "",
                         "fieldAttrs": {
@@ -1155,7 +1155,7 @@ module.exports = {
                         ]
                     },
                     "medical17": {
-                        "type": "Checkbox",
+                        "type": "Checkboxes",
                         "fieldClass": "checkbox",
                         "title": "",
                         "fieldAttrs": {
@@ -1579,75 +1579,63 @@ module.exports = {
                 }
             },
             {
-                "templateId": 4,
-                "templateType": "Lifestyle",
+                templateId: 4,
+                templateType: "Lifestyle",
                 title: "Lifestyle",
-                "idPrefix": "lifestyle-",
-                "totalQuestions": 15,
-                "totalCompletedQuestions": 10,
+                totalQuestions: 15,
+                totalCompletedQuestions: 0,
                 "formSchema": {
                     "lifestyle01": {
                         "type": "Select",
-                        title: "On a scale of 1-5, on average how stressful is your day?",
-                        options: [
-                            {val: "lifestyle01-1", label: "1"},
-                            {val: "lifestyle01-2", label: "2"},
-                            {val: "lifestyle01-3", label: "3"},
-                            {val: "lifestyle01-4", label: "4"},
-                            {val: "lifestyle01-5", label: "5"}
-                        ],
-                        help: null
+                        "title": "On a scale of 1-5, on average how stressful is your day?",
+                        "options": [
+                            {
+                                "val": "lifestyle01-1",
+                                "label": "1 - No Stress"
+                            },
+                            {
+                                "val": "lifestyle01-2",
+                                "label": "2"
+                            },
+                            {
+                                "val": "lifestyle01-3",
+                                "label": "3 - Average"
+                            },
+                            {
+                                "val": "lifestyle01-4",
+                                "label": "4"
+                            },
+                            {
+                                "val": "lifestyle01-5",
+                                "label": "5 - Very Stressed"
+                            }
+                        ]
                     },
                     "lifestyle02": {
-                        type: 'Radio',
-                        title: "Do you feel exercise helps you in managing your stress?",
-                        options: [
-                            {val: "lifestyle02-1", label: "Yes"},
-                            {val: "lifestyle02-2", label: "No"}
-                        ],
-                        help: null
-                    },
-                    "lifestyle03": {
-                        type: 'Text',
-                        title: "Describe your typical daily nutritional habits?",
-                        options: null,
-                        help: "Number of times you eat per day and basic content of diet"
-                    },
-                    "lifestyle04": {
-                        type: 'Radio',
-                        title: "Do you feel you need to change anything with regards to your nutrition?",
-                        options: [
-                            {val: "lifestyle04-1", label: "Yes"},
-                            {val: "lifestyle04-2", label: "No"}
-                        ],
-                        help: null
-                    },
-                    "lifestyle05": {
-                        type: 'Text',
-                        title: "What types of liquids do you typically drink?",
-                        options: null,
-                        help: null
-                    },
-                    "lifestyle06": {
                         "type": "Select",
-                        title: "How much water do you take in daily?",
-                        options: [
-                            {val: "lifestyle06-1", label: "None"},
-                            {val: "lifestyle06-2", label: "1 - 2"},
-                            {val: "lifestyle06-3", label: "3 - 4"},
-                            {val: "lifestyle06-4", label: "5 - 6"},
-                            {val: "lifestyle06-5", label: "7 - 8"},
-                            {val: "lifestyle06-6", label: "9 - 10"},
-                            {val: "lifestyle06-7", label: "11 - 12"},
-                            {val: "lifestyle06-8", label: "More than 12"}
-                        ],
-                        help: "Number in glasses. One glass = 8 fluid ounces."
-                    },
-                    "lifestyle07": {
-                        type: 'Text',
-                        title: "Before we get started with assessments, do you have any additional comments or is there anything we did not cover?",
-                        options: null,
-                        help: null
+                        "title": "Do you feel exercise helps you in managing your stress?",
+                        "options": [
+                            {
+                                "val": "lifestyle02-1",
+                                "label": "1 - Not at all"
+                            },
+                            {
+                                "val": "lifestyle02-2",
+                                "label": "2"
+                            },
+                            {
+                                "val": "lifestyle02-3",
+                                "label": "3 - It helps"
+                            },
+                            {
+                                "val": "lifestyle02-4",
+                                "label": "4"
+                            },
+                            {
+                                "val": "lifestyle02-5",
+                                "label": "5 - It really helps"
+                            }
+                        ]
                     }
                 },
                 "fieldsets": [
@@ -1657,73 +1645,848 @@ module.exports = {
                             "lifestyle01",
                             "lifestyle02"
                         ]
-                    },
-                    {
-                        "legend": "Nutrition",
-                        "fields": [
-                            "lifestyle03",
-                            "lifestyle04",
-                            "lifestyle05",
-                            "lifestyle06"
-                        ]
-                    },
-                    {"legend": "Additional Comments", "fields": ["lifestyle07"]}
+                    }
                 ],
                 "data": {}
             },
             {
-                "templateId": 5,
-                "templateType": 2,
+                templateId: 5,
+                templateType: 2,
                 title: "Exercise History",
-                "idPrefix": "exercise-history-",
-                "totalQuestions": 7,
-                "totalCompletedQuestions": 6,
+                totalQuestions: 7,
+                totalCompletedQuestions: 0,
 
-                "formSchema": {
+                formSchema: {
                     "exercisehistory01": {
-                        type: 'Text',
-                        title: "Tell me about your current exercise routine?",
-                        options: null,
-                        help: null
+                        "type": "TextArea",
+                        "title": "Tell me about your current exercise routine?",
+                        "editorAttrs": {
+                            "maxlength": 100
+                        }
                     },
                     "exercisehistory02": {
                         "type": "Select",
-                        title: "How many times per week on average do you engage in physical activity and/or exercise?",
-                        options: [
-                            {val: "exercisehistory02-1", label: "0"},
-                            {val: "exercisehistory02-2", label: "1"},
-                            {val: "exercisehistory02-3", label: "2"},
-                            {val: "exercisehistory02-4", label: "3"},
-                            {val: "exercisehistory02-5", label: "4"},
-                            {val: "exercisehistory02-6", label: "5"},
-                            {val: "exercisehistory02-7", label: "6"},
-                            {val: "exercisehistory02-8", label: "7"},
-                            {val: "exercisehistory02-9", label: "8+"}
-                        ],
-                        help: null
+                        "title": "How many times per week on average do you engage in physical activity/exercise?",
+                        "options": [
+                            {
+                                "val": "exercisehistory02-1",
+                                "label": "0"
+                            },
+                            {
+                                "val": "exercisehistory02-2",
+                                "label": "1 - 2"
+                            },
+                            {
+                                "val": "exercisehistory02-3",
+                                "label": "2 - 3"
+                            },
+                            {
+                                "val": "exercisehistory02-4",
+                                "label": "3 - 4"
+                            },
+                            {
+                                "val": "exercisehistory02-5",
+                                "label": "4 - 5 or more"
+                            }
+                        ]
                     },
                     "exercisehistory03": {
-                        type: 'Radio',
-                        title: "Do you or have you ever strength trained? (free weights / machines / body wieght)",
-                        options: [
-                            {val: "exercisehistory03-1", label: "Yes"},
-                            {val: "exercisehistory03-2", label: "No"}
-                        ],
-                        help: null
+                        "type": "Checkbox",
+                        "title": "Which days do you prefer to exercise?",
+                        "options": [
+                            {
+                                "val": "exercisehistory03-1",
+                                "label": "Sunday"
+                            },
+                            {
+                                "val": "exercisehistory03-2",
+                                "label": "Monday"
+                            },
+                            {
+                                "val": "exercisehistory03-3",
+                                "label": "Tuesday"
+                            },
+                            {
+                                "val": "exercisehistory03-4",
+                                "label": "Wednesday"
+                            },
+                            {
+                                "val": "exercisehistory03-5",
+                                "label": "Thursday"
+                            },
+                            {
+                                "val": "exercisehistory03-6",
+                                "label": "Friday"
+                            },
+                            {
+                                "val": "exercisehistory03-7",
+                                "label": "Saturday"
+                            }
+                        ]
+                    },
+                    "exercisehistory04": {
+                        "type": "Checkbox",
+                        "title": "Which days do you prefer to exercise?",
+                        "options": [
+                            {
+                                "val": "exercisehistory04-1",
+                                "label": "Early morning"
+                            },
+                            {
+                                "val": "exercisehistory04-2",
+                                "label": "Late morning"
+                            },
+                            {
+                                "val": "exercisehistory04-3",
+                                "label": "Early afternoon"
+                            },
+                            {
+                                "val": "exercisehistory04-4",
+                                "label": "Late afternoon"
+                            },
+                            {
+                                "val": "exercisehistory04-5",
+                                "label": "Evening"
+                            }
+                        ]
+                    },
+                    "exercisehistory05": {
+                        "type": "Radio",
+                        "title": "Do you or have you ever strength trained? (free weights / machines / body wieght)",
+                        "fieldAttrs": {
+                            "data-bind": "toggleRadio",
+                            "data-target": "exercisehistory05-dynamic1,exercisehistory05-dynamic2,exercisehistory05-dynamic3,exercisehistory05-dynamic4,exercisehistory05-dynamic5,exercisehistory05-dynamic6,exercisehistory05-dynamic7,exercisehistory05-dynamic8,exercisehistory05-dynamic9,exercisehistory05-dynamic10",
+                            "data-condition": "exercisehistory05-1"
+                        },
+                        "options": [
+                            {
+                                "val": "exercisehistory05-1",
+                                "label": "Yes"
+                            },
+                            {
+                                "val": "exercisehistory05-2",
+                                "label": "No"
+                            }
+                        ]
+                    },
+                    "exercisehistory05-dynamic1": {
+                        "type": "TextArea",
+                        "title": "How would you describe your strength training routine?",
+                        "editorAttrs": {
+                            "maxlength": 100
+                        }
+                    },
+                    "exercisehistory05-dynamic2": {
+                        "type": "Select",
+                        "title": "How many times per week on average do you strength train?",
+                        "options": [
+                            {
+                                "val": "exercisehistory05-dynamic2-1",
+                                "label": "0"
+                            },
+                            {
+                                "val": "exercisehistory05-dynamic2-2",
+                                "label": "1 - 2"
+                            },
+                            {
+                                "val": "exercisehistory05-dynamic2-3",
+                                "label": "2 - 3"
+                            },
+                            {
+                                "val": "exercisehistory05-dynamic2-4",
+                                "label": "3 - 4"
+                            },
+                            {
+                                "val": "exercisehistory05-dynamic2-5",
+                                "label": "4 - 5 or more"
+                            }
+                        ]
+                    },
+                    "exercisehistory05-dynamic3": {
+                        "type": "Checkbox",
+                        "title": "How long each time?",
+                        "options": [
+                            {
+                                "val": "exercisehistory05-dynamic3-1",
+                                "label": "30 minutes"
+                            },
+                            {
+                                "val": "exercisehistory05-dynamic3-2",
+                                "label": "1 hour"
+                            },
+                            {
+                                "val": "exercisehistory05-dynamic3-3",
+                                "label": "1.5 hours"
+                            },
+                            {
+                                "val": "exercisehistory05-dynamic3-4",
+                                "label": "2 hours"
+                            },
+                            {
+                                "val": "exercisehistory05-dynamic3-5",
+                                "label": "More than 2 hours"
+                            }
+                        ]
+                    },
+                    "exercisehistory05-dynamic4": {
+                        "type": "Checkbox",
+                        "title": "How do you choose your strength exercises?",
+                        "options": [
+                            {
+                                "val": "exercisehistory05-dynamic4-1",
+                                "label": "How I feel that day"
+                            },
+                            {
+                                "val": "exercisehistory05-dynamic4-2",
+                                "label": "By day of week"
+                            },
+                            {
+                                "val": "exercisehistory05-dynamic4-3",
+                                "label": "By body part"
+                            },
+                            {
+                                "val": "exercisehistory05-dynamic4-4",
+                                "label": "I do what my friend does"
+                            },
+                            {
+                                "val": "exercisehistory05-dynamic4-5",
+                                "label": "I stick to the machines"
+                            },
+                            {
+                                "val": "exercisehistory05-dynamic4-6",
+                                "label": "Watching others"
+                            },
+                            {
+                                "val": "exercisehistory05-dynamic4-7",
+                                "label": "Dependent on trainer/group fitness instructor"
+                            },
+                            {
+                                "val": "exercisehistory05-dynamic4-8",
+                                "label": "Videos"
+                            },
+                            {
+                                "val": "exercisehistory05-dynamic4-9",
+                                "label": "Internet/Magazine articles"
+                            },
+                            {
+                                "val": "exercisehistory05-dynamic4-10",
+                                "label": "Random/spontaneous decision"
+                            },
+                            {
+                                "val": "exercisehistory05-dynamic4-11",
+                                "label": "By the way the gym is laid out"
+                            },
+                            {
+                                "val": "exercisehistory05-dynamic4-12",
+                                "label": "Remember what I did for sport"
+                            }
+                        ]
+                    },
+                    "exercisehistory05-dynamic5": {
+                        "type": "Radio",
+                        "title": "Are they always in the same order?",
+                        "options": [
+                            {
+                                "val": "exercisehistory05-dynamic5-1",
+                                "label": "Yes"
+                            },
+                            {
+                                "val": "exercisehistory05-dynamic5-2",
+                                "label": "No"
+                            },
+                            {
+                                "val": "exercisehistory05-dynamic5-3",
+                                "label": "Sometimes"
+                            }
+                        ]
+                    },
+                    "exercisehistory05-dynamic6": {
+                        "type": "TextArea",
+                        "title": "When do you choose to change exercises or the order of exercises?",
+                        "editorAttrs": {
+                            "maxlength": 50
+                        }
+                    },
+                    "exercisehistory05-dynamic7": {
+                        "type": "Checkbox",
+                        "title": "On average how many sets?",
+                        "options": [
+                            {
+                                "val": "exercisehistory05-dynamic7-1",
+                                "label": "0"
+                            },
+                            {
+                                "val": "exercisehistory05-dynamic7-2",
+                                "label": "1"
+                            },
+                            {
+                                "val": "exercisehistory05-dynamic7-3",
+                                "label": "2"
+                            },
+                            {
+                                "val": "exercisehistory05-dynamic7-4",
+                                "label": "3"
+                            },
+                            {
+                                "val": "exercisehistory05-dynamic7-5",
+                                "label": "4"
+                            },
+                            {
+                                "val": "exercisehistory05-dynamic7-6",
+                                "label": "5"
+                            },
+                            {
+                                "val": "exercisehistory05-dynamic7-7",
+                                "label": "6"
+                            }
+                        ]
+                    },
+                    "exercisehistory05-dynamic8": {
+                        "type": "Checkbox",
+                        "title": "On average how many reps?",
+                        "options": [
+                            {
+                                "val": "exercisehistory05-dynamic8-1",
+                                "label": "0"
+                            },
+                            {
+                                "val": "exercisehistory05-dynamic8-2",
+                                "label": "1 - 3"
+                            },
+                            {
+                                "val": "exercisehistory05-dynamic8-3",
+                                "label": "4 - 6"
+                            },
+                            {
+                                "val": "exercisehistory05-dynamic8-4",
+                                "label": "7 - 10"
+                            },
+                            {
+                                "val": "exercisehistory05-dynamic8-5",
+                                "label": "11 - 14"
+                            },
+                            {
+                                "val": "exercisehistory05-dynamic8-6",
+                                "label": "15 - 20"
+                            },
+                            {
+                                "val": "exercisehistory05-dynamic8-7",
+                                "label": "More than 20"
+                            }
+                        ]
+                    },
+                    "exercisehistory05-dynamic9": {
+                        "type": "Select",
+                        "title": "How much rest between sets?",
+                        "options": [
+                            {
+                                "val": "exercisehistory05-dynamic9-1",
+                                "label": "No rest"
+                            },
+                            {
+                                "val": "exercisehistory05-dynamic9-2",
+                                "label": "Less than 30 seconds"
+                            },
+                            {
+                                "val": "exercisehistory05-dynamic9-3",
+                                "label": "30 - 60 seconds"
+                            },
+                            {
+                                "val": "exercisehistory05-dynamic9-4",
+                                "label": "1 - 2 minutes"
+                            },
+                            {
+                                "val": "exercisehistory05-dynamic9-5",
+                                "label": "Complete rest"
+                            }
+                        ]
+                    },
+                    "exercisehistory05-dynamic10": {
+                        "type": "TextArea",
+                        "title": "How do you choose the weight/load?",
+                        "editorAttrs": {
+                            "maxlength": 50
+                        }
+                    },
+                    "exercisehistory06": {
+                        "type": "Radio",
+                        "title": "Do you or have you ever done cardiovascular exercise?",
+                        "fieldAttrs": {
+                            "data-bind": "toggleRadio",
+                            "data-target": "exercisehistory06-dynamic1,exercisehistory06-dynamic2,exercisehistory06-dynamic3,exercisehistory06-dynamic4,exercisehistory06-dynamic5,exercisehistory06-dynamic6",
+                            "data-condition": "exercisehistory06-1"
+                        },
+                        "options": [
+                            {
+                                "val": "exercisehistory06-1",
+                                "label": "Yes"
+                            },
+                            {
+                                "val": "exercisehistory06-2",
+                                "label": "No"
+                            }
+                        ]
+                    },
+                    "exercisehistory06-dynamic1": {
+                        "type": "Select",
+                        "title": "How many times per week on average?",
+                        "options": [
+                            {
+                                "val": "exercisehistory06-dynamic1-1",
+                                "label": "0"
+                            },
+                            {
+                                "val": "exercisehistory06-dynamic1-2",
+                                "label": "1 - 2"
+                            },
+                            {
+                                "val": "exercisehistory06-dynamic1-3",
+                                "label": "2 - 3"
+                            },
+                            {
+                                "val": "exercisehistory06-dynamic1-4",
+                                "label": "3 - 4"
+                            },
+                            {
+                                "val": "exercisehistory06-dynamic1-5",
+                                "label": "4 - 5 or more"
+                            }
+                        ]
+                    },
+                    "exercisehistory06-dynamic2": {
+                        "type": "Checkbox",
+                        "title": "How long each time?",
+                        "options": [
+                            {
+                                "val": "exercisehistory06-dynamic2-1",
+                                "label": "Less than 30 minutes"
+                            },
+                            {
+                                "val": "exercisehistory06-dynamic2-2",
+                                "label": "30 minutes"
+                            },
+                            {
+                                "val": "exercisehistory06-dynamic2-3",
+                                "label": "45 minutes"
+                            },
+                            {
+                                "val": "exercisehistory06-dynamic2-4",
+                                "label": "1 hour"
+                            },
+                            {
+                                "val": "exercisehistory06-dynamic2-5",
+                                "label": "1.5 hours"
+                            },
+                            {
+                                "val": "exercisehistory06-dynamic2-6",
+                                "label": "2 hours"
+                            },
+                            {
+                                "val": "exercisehistory06-dynamic2-7",
+                                "label": "More than 2 hours"
+                            },
+                            {
+                                "val": "exercisehistory06-dynamic2-8",
+                                "label": "None"
+                            }
+                        ]
+                    },
+                    "exercisehistory06-dynamic3": {
+                        "type": "Checkbox",
+                        "title": "Which activity or activities do you choose?",
+                        "options": [
+                            {
+                                "val": "exercisehistory06-dynamic3-1",
+                                "label": "Treadmill walking"
+                            },
+                            {
+                                "val": "exercisehistory06-dynamic3-2",
+                                "label": "Treadmill running"
+                            },
+                            {
+                                "val": "exercisehistory06-dynamic3-3",
+                                "label": "Elliptical"
+                            },
+                            {
+                                "val": "exercisehistory06-dynamic3-4",
+                                "label": "Bike"
+                            },
+                            {
+                                "val": "exercisehistory06-dynamic3-5",
+                                "label": "Rowing"
+                            },
+                            {
+                                "val": "exercisehistory06-dynamic3-6",
+                                "label": "Outdoor walking"
+                            },
+                            {
+                                "val": "exercisehistory06-dynamic3-7",
+                                "label": "Outdoor running"
+                            },
+                            {
+                                "val": "exercisehistory06-dynamic3-8",
+                                "label": "Versaclimber"
+                            },
+                            {
+                                "val": "exercisehistory06-dynamic3-9",
+                                "label": "Battle ropes"
+                            },
+                            {
+                                "val": "exercisehistory06-dynamic3-10",
+                                "label": "Jump ropes"
+                            },
+                            {
+                                "val": "exercisehistory06-dynamic3-11",
+                                "label": "Arm ergometer"
+                            },
+                            {
+                                "val": "exercisehistory06-dynamic3-12",
+                                "label": "Stairmill"
+                            },
+                            {
+                                "val": "exercisehistory06-dynamic3-13",
+                                "label": "Swimming"
+                            },
+                            {
+                                "val": "exercisehistory06-dynamic3-14",
+                                "label": "Hiking"
+                            }
+                        ]
+                    },
+                    "exercisehistory06-dynamic4": {
+                        "type": "TextArea",
+                        "title": "How do you choose your intensity level?",
+                        "editorAttrs": {
+                            "maxlength": 50
+                        }
+                    },
+                    "exercisehistory06-dynamic5": {
+                        "type": "Radio",
+                        "title": "Do you usually keep the same intensity level?",
+                        "options": [
+                            {
+                                "val": "exercisehistory06-dynamic5-1",
+                                "label": "Yes"
+                            },
+                            {
+                                "val": "exercisehistory06-dynamic5-2",
+                                "label": "No"
+                            },
+                            {
+                                "val": "exercisehistory06-dynamic5-3",
+                                "label": "Sometimes"
+                            }
+                        ]
+                    },
+                    "exercisehistory06-dynamic6": {
+                        "type": "TextArea",
+                        "title": "How do you decide to change the intensity of your cardiovascular exercise?",
+                        "editorAttrs": {
+                            "maxlength": 50
+                        }
+                    },
+                    "exercisehistory07": {
+                        "type": "Select",
+                        "title": "How long have you been doing this workout you just described?",
+                        "options": [
+                            {
+                                "val": "exercisehistory07-1",
+                                "label": "Less than 3 months"
+                            },
+                            {
+                                "val": "exercisehistory07-2",
+                                "label": "3 - 6 months"
+                            },
+                            {
+                                "val": "exercisehistory07-3",
+                                "label": "7 - 11 months"
+                            },
+                            {
+                                "val": "exercisehistory07-4",
+                                "label": "1 - 3 years"
+                            },
+                            {
+                                "val": "exercisehistory07-5",
+                                "label": "Longer than 3 years"
+                            }
+                        ]
+                    },
+                    "exercisehistory08": {
+                        "type": "Radio",
+                        "title": "Are you still seeing results from this routine?",
+                        "options": [
+                            {
+                                "val": "exercisehistory08-1",
+                                "label": "Yes"
+                            },
+                            {
+                                "val": "exercisehistory08-2",
+                                "label": "No"
+                            },
+                            {
+                                "val": "exercisehistory08-3",
+                                "label": "Somewhat"
+                            }
+                        ]
+                    },
+                    "exercisehistory09": {
+                        "type": "TextArea",
+                        "title": "What do you feel is the biggest contributor to you getting results or not getting results?",
+                        "editorAttrs": {
+                            "maxlength": 100
+                        }
+                    },
+                    "exercisehistory10": {
+                        "type": "Checkbox",
+                        "title": "Do you work out with anyone or do you work out alone?",
+                        "options": [
+                            {
+                                "val": "exercisehistory10-1",
+                                "label": "I work out alone"
+                            },
+                            {
+                                "val": "exercisehistory10-2",
+                                "label": "I work out with a friend(s)"
+                            },
+                            {
+                                "val": "exercisehistory10-3",
+                                "label": "I take group fitness classes"
+                            },
+                            {
+                                "val": "exercisehistory10-4",
+                                "label": "I work with a trainer"
+                            }
+                        ]
+                    },
+                    "exercisehistory11": {
+                        "type": "Radio",
+                        "title": "Do you ever take group fitness classes?",
+                        "fieldAttrs": {
+                            "data-bind": "toggleRadio",
+                            "data-target": "exercisehistory11-dynamic1,exercisehistory11-dynamic2",
+                            "data-condition": "exercisehistory11-1"
+                        },
+                        "options": [
+                            {
+                                "val": "exercisehistory11-1",
+                                "label": "Yes"
+                            },
+                            {
+                                "val": "exercisehistory11-2",
+                                "label": "No"
+                            }
+                        ]
+                    },
+                    "exercisehistory11-dynamic1": {
+                        "type": "Checkbox",
+                        "title": "How do you choose which ones to take?",
+                        "options": [
+                            {
+                                "val": "exercisehistory11-dynamic1-1",
+                                "label": "The class that fits my schedule"
+                            },
+                            {
+                                "val": "exercisehistory11-dynamic1-2",
+                                "label": "The class that is the most enjoyable"
+                            },
+                            {
+                                "val": "exercisehistory11-dynamic1-3",
+                                "label": "The class that is the hardest"
+                            },
+                            {
+                                "val": "exercisehistory11-dynamic1-4",
+                                "label": "Based on the instructor I prefer"
+                            },
+                            {
+                                "val": "exercisehistory11-dynamic1-5",
+                                "label": "Based on how my body feels that day"
+                            },
+                            {
+                                "val": "exercisehistory11-dynamic1-6",
+                                "label": "Based on injury status"
+                            },
+                            {
+                                "val": "exercisehistory11-dynamic1-7",
+                                "label": "Based on trainer recommendations"
+                            },
+                            {
+                                "val": "exercisehistory11-dynamic1-8",
+                                "label": "The class that matches my fitness goals"
+                            }
+                        ]
+                    },
+                    "exercisehistory11-dynamic2": {
+                        "type": "TextArea",
+                        "title": "Which classes do you prefer?",
+                        "editorAttrs": {
+                            "maxlength": 100
+                        }
+                    },
+                    "exercisehistory12": {
+                        "type": "Radio",
+                        "title": "Have you ever worked with a trainer before?",
+                        "fieldAttrs": {
+                            "data-bind": "toggleRadio",
+                            "data-target": "exercisehistory12-dynamic1,exercisehistory12-dynamic2,exercisehistory12-dynamic3",
+                            "data-condition": "exercisehistory12-1"
+                        },
+                        "options": [
+                            {
+                                "val": "exercisehistory12-1",
+                                "label": "Yes"
+                            },
+                            {
+                                "val": "exercisehistory12-2",
+                                "label": "No"
+                            }
+                        ]
+                    },
+                    "exercisehistory12-dynamic1": {
+                        "type": "TextArea",
+                        "title": "When was the last time you worked with a trainer?",
+                        "editorAttrs": {
+                            "maxlength": 50
+                        }
+                    },
+                    "exercisehistory12-dynamic2": {
+                        "type": "Select",
+                        "title": "For how long did you work with a trainer?",
+                        "options": [
+                            {
+                                "val": "exercisehistory12-dynamic2-1",
+                                "label": "Less than 3 months"
+                            },
+                            {
+                                "val": "exercisehistory12-dynamic2-2",
+                                "label": "3 - 6  months"
+                            },
+                            {
+                                "val": "exercisehistory12-dynamic2-3",
+                                "label": "7 - 11 months"
+                            },
+                            {
+                                "val": "exercisehistory12-dynamic2-4",
+                                "label": "1 - 3 years"
+                            },
+                            {
+                                "val": "exercisehistory12-dynamic2-5",
+                                "label": "Longer than 3 years"
+                            },
+                            {
+                                "val": "exercisehistory12-dynamic2-6",
+                                "label": "I have never worked with a trainer"
+                            }
+                        ]
+                    },
+                    "exercisehistory12-dynamic3": {
+                        "type": "TextArea",
+                        "title": "What did you like about working with a trainer? What did you dislike?",
+                        "editorAttrs": {
+                            "maxlength": 100
+                        }
+                    },
+                    "exercisehistory13": {
+                        "type": "Checkbox",
+                        "title": "Do you have any exercises or types of training that you are interested in trying?",
+                        "options": [
+                            {
+                                "val": "exercisehistory13-1",
+                                "label": "Kettlebells"
+                            },
+                            {
+                                "val": "exercisehistory13-2",
+                                "label": "ViPR"
+                            },
+                            {
+                                "val": "exercisehistory13-3",
+                                "label": "TRX"
+                            },
+                            {
+                                "val": "exercisehistory13-4",
+                                "label": "Machines"
+                            },
+                            {
+                                "val": "exercisehistory13-5",
+                                "label": "Free Weights"
+                            },
+                            {
+                                "val": "exercisehistory13-6",
+                                "label": "Animal Flow"
+                            },
+                            {
+                                "val": "exercisehistory13-7",
+                                "label": "Progressive Body Weight Training"
+                            },
+                            {
+                                "val": "exercisehistory13-8",
+                                "label": "Power / Explosive Training"
+                            },
+                            {
+                                "val": "exercisehistory13-9",
+                                "label": "Sprinting"
+                            },
+                            {
+                                "val": "exercisehistory13-10",
+                                "label": "Boxing"
+                            },
+                            {
+                                "val": "exercisehistory13-11",
+                                "label": "Open to try anything"
+                            }
+                        ]
+                    },
+                    "exercisehistory14": {
+                        "type": "TextArea",
+                        "title": "Do you have any sports that you used to play or would like to start playing?",
+                        "editorAttrs": {
+                            "maxlength": 100
+                        }
                     }
                 },
+                "data": {},
                 "fieldsets": [
                     {
                         "legend": "General questions about your exercise history",
                         "fields": [
                             "exercisehistory01",
                             "exercisehistory02",
-                            "exercisehistory03"
+                            "exercisehistory03",
+                            "exercisehistory04",
+                            "exercisehistory05",
+                            "exercisehistory05-dynamic1",
+                            "exercisehistory05-dynamic2",
+                            "exercisehistory05-dynamic3",
+                            "exercisehistory05-dynamic4",
+                            "exercisehistory05-dynamic5",
+                            "exercisehistory05-dynamic6",
+                            "exercisehistory05-dynamic7",
+                            "exercisehistory05-dynamic8",
+                            "exercisehistory05-dynamic9",
+                            "exercisehistory05-dynamic10",
+                            "exercisehistory06",
+                            "exercisehistory06-dynamic1",
+                            "exercisehistory06-dynamic2",
+                            "exercisehistory06-dynamic3",
+                            "exercisehistory06-dynamic4",
+                            "exercisehistory06-dynamic5",
+                            "exercisehistory06-dynamic6",
+                            "exercisehistory07",
+                            "exercisehistory08",
+                            "exercisehistory09",
+                            "exercisehistory10",
+                            "exercisehistory11",
+                            "exercisehistory11-dynamic1",
+                            "exercisehistory11-dynamic2",
+                            "exercisehistory12",
+                            "exercisehistory12-dynamic1",
+                            "exercisehistory12-dynamic2",
+                            "exercisehistory12-dynamic3",
+                            "exercisehistory13",
+                            "exercisehistory14"
                         ]
                     }
                 ],
-                "data": {}
-
+                "content": null
             },
 
             {
