@@ -5,8 +5,8 @@ define(function (require, exports, module) {
     var msgBus = require('msgbus');
     var Backbone = require('backbone');
     var Form = require('backbone-forms');
-    var FormComponents = require('components/forms');
     require('views/forms-template');
+    var FormComponents = require('components/forms');
     var ConsentMessageView = require('views/consent-form-message');
     var SimpleContent = require('views/simple-content');
     var FormView;
@@ -25,11 +25,15 @@ define(function (require, exports, module) {
 
         beforeRender: function () {
             var formModel = new Backbone.Model(this.model.get('data'));
+
+            // TODO. this is quick fix for 10/14/2014 release. it should be moved to backend. fields name are hard coded here.
+            var template = (_.isEqual(this.model.get('templateType'), 'PerformanceTesting')) ? Form.template.performance : null;
+
             form = new Form({
                 model: formModel,
                 schema: this.model.get('schema'),
                 fieldsets: this.model.get('fieldsets'),
-                template: (_.isNull(this.model.get('template'))) ? null : _.template(this.model.get('template'))
+                template: template
             }).render();
 
             // do not submit form till it needed to be submitted.
@@ -41,10 +45,12 @@ define(function (require, exports, module) {
             _.each(form.fields, function (editor) {
                 // check if editor has a data-bind
                 if (editor.$el.data('bind')) {
+                    var callback = editor.$el.data('bind');
+                    console.log('callback', callback);
                     var field = new FormComponents.Field(form, editor);
-                    field.toggle();
-                    field.bind();
+                    field.init(callback);
                 }
+
                 // bind  autoSaveForm to on blur event.  first pass for auto save feature :-)
                 form.on(editor.key + ':blur', function () {
                     this.autoSaveForm();
@@ -88,7 +94,6 @@ define(function (require, exports, module) {
             this.model.set({
                 data: form.model.toJSON()
             });
-
             msgBus.commands.execute('form:auto:save', this.model);
         },
 

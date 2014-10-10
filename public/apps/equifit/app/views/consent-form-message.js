@@ -22,10 +22,6 @@ define(function (require, exports, module) {
 
         showForm: function (e) {
             e.preventDefault();
-
-            console.log('consent form show');
-
-
             var form = _.findWhere(app.store.get('documents'), {templateType: 'InformedConsent'});
             msgBus.commands.execute('form:show', form);
         }

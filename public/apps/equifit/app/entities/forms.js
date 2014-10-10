@@ -87,6 +87,23 @@ define(function (require) {
             // show loading view  while fetching data
             msgBus.commands.execute('loading:show');
 
+            //
+            //console.log('FORM DATA to FLATTEN');
+            //var test = _.map(form.get('data'), function (value, key, list) {
+            //    if(_.isObject(item)) {
+            //       //console.log('it is object ', _.keys(item), _.values(item));
+            //        //console.log('it is object ', _.flatten(item));
+            //        _.flatten(_.map(item, function(i) {
+            //            console.log(i);
+            //        }));
+            //    }
+            //
+            //}, this);
+
+
+
+
+
            // setTimeout(function(){
             model.save({
                 data: form.get('data'),

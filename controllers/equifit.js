@@ -274,21 +274,21 @@ module.exports = {
                 totalCompletedQuestions: 2,
                 formSchema: {
                     personal01: {
-                        "type": "Text",
-                        "title": "First Name"
+                        type: 'Text',
+                        title: "First Name"
                     },
 
                     personal02: {
-                        "type": "Text",
-                        "title": "Last Name"
+                        type: 'Text',
+                        title: "Last Name"
                     },
                     personal03: {
                         type: "Select",
                         title: "Gender",
                         options: [
-                            {"val": "", "label": "Select"},
-                            {"val": "personal04-1", "label": "Male"},
-                            {"val": "personal04-2", "label": "Female"}
+                            {val: "", label: "Select"},
+                            {val: "personal04-1", label: "Male"},
+                            {val: "personal04-2", label: "Female"}
                         ]
                     },
 
@@ -296,19 +296,19 @@ module.exports = {
                         type: "Select",
                         title: "Age",
                         options: [
-                            {"val": "personal03-1", "label": "< 18"},
-                            {"val": "personal03-2", "label": "18 - 22"},
-                            {"val": "personal03-3", "label": "23 - 27"},
-                            {"val": "personal03-4", "label": "28 - 32"},
-                            {"val": "personal03-5", "label": "33 - 37"},
-                            {"val": "personal03-6", "label": "38 - 42"},
-                            {"val": "personal03-7", "label": "43 - 47"},
-                            {"val": "personal03-8", "label": "48 - 52"},
-                            {"val": "personal03-9", "label": "53 - 57"},
-                            {"val": "personal03-10", "label": "58 - 62"},
-                            {"val": "personal03-11", "label": "63 - 67"},
-                            {"val": "personal03-12", "label": "68 - 72"},
-                            {"val": "personal03-13", "label": "72 +"}
+                            {val: "personal03-1", label: "< 18"},
+                            {val: "personal03-2", label: "18 - 22"},
+                            {val: "personal03-3", label: "23 - 27"},
+                            {val: "personal03-4", label: "28 - 32"},
+                            {val: "personal03-5", label: "33 - 37"},
+                            {val: "personal03-6", label: "38 - 42"},
+                            {val: "personal03-7", label: "43 - 47"},
+                            {val: "personal03-8", label: "48 - 52"},
+                            {val: "personal03-9", label: "53 - 57"},
+                            {val: "personal03-10", label: "58 - 62"},
+                            {val: "personal03-11", label: "63 - 67"},
+                            {val: "personal03-12", label: "68 - 72"},
+                            {val: "personal03-13", label: "72 +"}
                         ]
                     },
 
@@ -322,12 +322,12 @@ module.exports = {
                         type: "Select",
                         title: "Club",
                         options: [
-                            {"val": "", "label": "Select"},
-                            {"val": "broadway", "label": "19 Street"},
-                            {"val": "tribeca", "label": "Tribeca"},
-                            {"val": "westside", "label": "West Side"},
-                            {"val": "es", "label": "East Side"},
-                            {"val": "les", "label": "Lower East Side"}
+                            {val: "", label: "Select"},
+                            {val: "broadway", label: "19 Street"},
+                            {val: "tribeca", label: "Tribeca"},
+                            {val: "westside", label: "West Side"},
+                            {val: "es", label: "East Side"},
+                            {val: "les", label: "Lower East Side"}
                         ]
                     }
                 },
@@ -365,740 +365,1010 @@ module.exports = {
                 templateType: "MedicalOrthopedic",
                 totalQuestions: 11,
                 totalCompletedQuestions: 0,
-                formSchema: {
-                    medical01: {
-                        type: "Radio",
-                        title: "Do you experience an irregular or racing heart rate during rest or exercise?",
-                        options: [
-                            {"val": "medical01-1", "label": "Yes"},
-                            {"val": "medical01-2", "label": "No"}
-                        ],
-                        help: "we recommend that you see a doctor before your Equifit or before you begin an exercise program.",
-                        fieldAttrs: {
-                            "data-bind": "radio",
-                            "data-target": "help-block",
+                "formSchema": {
+                    "medical01": {
+                        "type": "Radio",
+                        "title": "Do you experience an irregular or racing heart rate during rest or exercise?",
+                        "fieldAttrs": {
+                            "data-bind": "toggleHelp",
+                            "data-target": "help",
                             "data-condition": "medical01-1"
-                        }
-                    },
-                    medical02: {
-                        type: "Radio",
-                        title: "Has a doctor ever said you have a heart condition and that you should only do physical activity recommended by a doctor?",
-                        options: [
-                            {val: "medical02-1", label: "Yes"},
-                            {val: "medical02-2", label: "No"}
+                        },
+                        "options": [
+                            {
+                                "val": "medical01-1",
+                                "label": "Yes"
+                            },
+                            {
+                                "val": "medical01-2",
+                                "label": "No"
+                            }
                         ],
-                        help: "we recommend that you see a doctor before your Equifit or before you begin an exercise program.",
-                        fieldAttrs: {
-                            "data-bind": "radio",
-                            "data-target": "help-block",
+                        "help": "We recommend that you see a doctor before your Equifit or before you begin an exercise program."
+                    },
+                    "medical02": {
+                        "type": "Radio",
+                        "title": "Has a doctor ever said you have a heart condition and that you should only do physical activity recommended by a doctor?",
+                        "fieldAttrs": {
+                            "data-bind": "toggleHelp",
+                            "data-target": "help",
                             "data-condition": "medical02-1"
-                        }
+                        },
+                        "options": [
+                            {
+                                "val": "medical02-1",
+                                "label": "Yes"
+                            },
+                            {
+                                "val": "medical02-2",
+                                "label": "No"
+                            }
+                        ],
+                        "help": "We recommend that you see a doctor before your Equifit or before you begin an exercise program."
                     },
                     "medical03": {
                         "type": "Radio",
                         "title": "Do you feel pain in your chest when you do physical activity?",
-                        "options": [
-                            {"val": "medical03-1", "label": "Yes"},
-                            {"val": "medical03-2", "label": "No"}
-                        ],
-                        "help": "we recommend that you see a doctor before your Equifit or before you begin an exercise program.",
                         "fieldAttrs": {
-                            "data-bind": "radio",
-                            "data-target": "help-block",
+                            "data-bind": "toggleHelp",
+                            "data-target": "help",
                             "data-condition": "medical03-1"
-                        }
+                        },
+                        "options": [
+                            {
+                                "val": "medical03-1",
+                                "label": "Yes"
+                            },
+                            {
+                                "val": "medical03-2",
+                                "label": "No"
+                            }
+                        ],
+                        "help": "We recommend that you see a doctor before your Equifit or before you begin an exercise program."
                     },
                     "medical04": {
                         "type": "Radio",
                         "title": "Is your doctor currently prescribing drugs (for example, water pills) for your blood pressure or heart condition?",
-                        "options": [
-                            {"val": "medical04-1", "label": "Yes"},
-                            {"val": "medical04-2", "label": "No"}
-                        ],
-                        "help": "we recommend that you see a doctor before your Equifit or before you begin an exercise program.",
                         "fieldAttrs": {
-                            "data-bind": "radio",
-                            "data-target": "help-block",
+                            "data-bind": "toggleHelp",
+                            "data-target": "help",
                             "data-condition": "medical04-1"
-                        }
+                        },
+                        "options": [
+                            {
+                                "val": "medical04-1",
+                                "label": "Yes"
+                            },
+                            {
+                                "val": "medical04-2",
+                                "label": "No"
+                            }
+                        ],
+                        "help": "We recommend that you see a doctor before your Equifit or before you begin an exercise program."
                     },
                     "medical05": {
                         "type": "Radio",
                         "title": "Do you lose your balance because of dizziness or do you ever lose consciousness?",
-                        "options": [
-                            {"val": "medical05-1", "label": "Yes"},
-                            {"val": "medical05-2", "label": "No"}
-                        ],
-                        "help": "we recommend that you see a doctor before your Equifit or before you begin an exercise program.",
                         "fieldAttrs": {
-                            "data-bind": "radio",
-                            "data-target": "help-block",
+                            "data-bind": "toggleHelp",
+                            "data-target": "help",
                             "data-condition": "medical05-1"
-                        }
+                        },
+                        "options": [
+                            {
+                                "val": "medical05-1",
+                                "label": "Yes"
+                            },
+                            {
+                                "val": "medical05-2",
+                                "label": "No"
+                            }
+                        ],
+                        "help": "We recommend that you see a doctor before your Equifit or before you begin an exercise program."
                     },
                     "medical06": {
                         "type": "Radio",
                         "title": "Do you have a bone or joint problem that could be made worse by a change in your physical activity?",
-                        "options": [
-                            {"val": "medical06-1", "label": "Yes"},
-                            {"val": "medical06-2", "label": "No"}
-                        ],
-                        "help": "we recommend that you see a doctor before your Equifit or before you begin an exercise program.",
                         "fieldAttrs": {
-                            "data-bind": "radio",
-                            "data-target": "help-block",
+                            "data-bind": "toggleHelp",
+                            "data-target": "help",
                             "data-condition": "medical06-1"
-                        }
+                        },
+                        "options": [
+                            {
+                                "val": "medical06-1",
+                                "label": "Yes"
+                            },
+                            {
+                                "val": "medical06-2",
+                                "label": "No"
+                            }
+                        ],
+                        "help": "We recommend that you see a doctor before your Equifit or before you begin an exercise program."
                     },
                     "medical07": {
                         "type": "Radio",
                         "title": "Do you know of any other reason why you should not do physical activity?",
-                        "options": [
-                            {"val": "medical07-1", "label": "Yes"},
-                            {"val": "medical07-2", "label": "No"}
-                        ],
-                        "help": "we recommend that you see a doctor before your Equifit or before you begin an exercise program.",
                         "fieldAttrs": {
-                            "data-bind": "radio",
-                            "data-target": "help-block",
+                            "data-bind": "toggleHelp",
+                            "data-target": "help",
                             "data-condition": "medical07-1"
-                        }
-                    },
-
-
-                    body01: {
-                        type: "Radio",
-                        title: "Do you know of any other reason why you should not do physical activity?",
-                        options: [
-                            {val: "body-1", label: "Yes"},
-                            {val: "body-2", label: "No"}
+                        },
+                        "options": [
+                            {
+                                "val": "medical07-1",
+                                "label": "Yes"
+                            },
+                            {
+                                "val": "medical07-2",
+                                "label": "No"
+                            }
                         ],
-                        help: "we recommend that you see a doctor before your Equifit or before you begin an exercise program.",
-                        fieldAttrs: {
-                            "data-bind": "radio",
-                            "data-target": "help-block",
-                            "data-condition": "body-1"
-                        }
+                        "help": "We recommend that you see a doctor before your Equifit or before you begin an exercise program."
                     },
-
-
-                    headOrNeck: {
-                        type: "Checkboxes",
-                        title: null,
-                        options: [{val: 'headOrNeckExtra', label: 'Head or Neck'}],
-                        fieldAttrs: {
-                            "data-bind": "checkbox",
-                            "data-condition": "headOrNeckExtra"
-                        }
-                    },
-
-                    headOrNeckExtra: {
-                        type: 'Object',
-                        title: null,
-                        subSchema: {
-                            area: {
-                                type: 'TextArea',
-                                title: "Area (Left, Right / Upper, Mid, Lower)"
-                            },
-                            when: {
-                                type: 'TextArea',
-                                title: "When it happened?"
-                            },
-                            how: {
-                                type: 'TextArea',
-                                title: "How did it happened?"
-                            },
-
-                            rehub: {
-                                type: 'TextArea',
-                                title: "Rehub status?"
-                            },
-                            clearance: {
-                                type: "Radio",
-                                title: "Clearance for Exercise?",
-                                options: [{
-                                    val: "yes",
-                                    label: "Yes"
-                                }, {
-                                    val: "no",
-                                    label: "No"
-                                }]
-                            },
-                            pain: {
-                                type: "Radio",
-                                title: "Any pain?",
-                                options: [{
-                                    val: "yes",
-                                    label: "Yes"
-                                }, {
-                                    val: "no",
-                                    label: "No"
-                                }]
-                            }
-                        }
-                    },
-
-                    shoulder: {
-                        type: "Checkboxes",
-                        title: null,
-                        options: [{val: 'shoulderExtra', label: 'Shoulder'}],
-                        fieldAttrs: {
-                            "data-bind": "checkbox",
-                            "data-condition": "shoulderExtra"
-                        }
-                    },
-
-                    shoulderExtra: {
-                        type: 'Object',
-                        title: null,
-                        subSchema: {
-                            area: {
-                                type: 'TextArea',
-                                title: "Area (Left, Right / Upper, Mid, Lower)"
-                            },
-                            when: {
-                                type: 'TextArea',
-                                title: "When it happened?"
-                            },
-                            how: {
-                                type: 'TextArea',
-                                title: "How did it happened?"
-                            },
-
-                            rehub: {
-                                type: 'TextArea',
-                                title: "Rehub status?"
-                            },
-                            clearance: {
-                                type: "Radio",
-                                title: "Clearance for Exercise?",
-                                options: [{
-                                    val: "yes",
-                                    label: "Yes"
-                                }, {
-                                    val: "no",
-                                    label: "No"
-                                }]
-                            },
-                            pain: {
-                                type: "Radio",
-                                title: "Any pain?",
-                                options: [{
-                                    val: "yes",
-                                    label: "Yes"
-                                }, {
-                                    val: "no",
-                                    label: "No"
-                                }]
-                            }
-                        }
-                    },
-
-                    arm: {
-                        type: "Checkboxes",
-                        title: null,
-                        options: [{val: 'armExtra', label: 'Arm'}],
-                        fieldAttrs: {
-                            "data-bind": "checkbox",
-                            "data-condition": "armExtra"
-                        }
-                    },
-
-                    armExtra: {
-                        type: 'Object',
-                        title: null,
-                        subSchema: {
-                            area: {
-                                type: 'TextArea',
-                                title: "Area (Left, Right / Upper, Mid, Lower)"
-                            },
-                            when: {
-                                type: 'TextArea',
-                                title: "When it happened?"
-                            },
-                            how: {
-                                type: 'TextArea',
-                                title: "How did it happened?"
-                            },
-
-                            rehub: {
-                                type: 'TextArea',
-                                title: "Rehub status?"
-                            },
-                            clearance: {
-                                type: "Radio",
-                                title: "Clearance for Exercise?",
-                                options: [{
-                                    val: "yes",
-                                    label: "Yes"
-                                }, {
-                                    val: "no",
-                                    label: "No"
-                                }]
-                            },
-                            pain: {
-                                type: "Radio",
-                                title: "Any pain?",
-                                options: [{
-                                    val: "yes",
-                                    label: "Yes"
-                                }, {
-                                    val: "no",
-                                    label: "No"
-                                }]
-                            }
-                        }
-                    },
-
-
-                    wristOrHand: {
-                        type: "Checkboxes",
-                        title: null,
-                        options: [{val: 'wristOrHandExtra', label: 'Wrist or Hand'}],
-                        fieldAttrs: {
-                            "data-bind": "checkbox",
-                            "data-condition": "wristOrHandExtra"
-                        }
-                    },
-
-                    wristOrHandExtra: {
-                        type: 'Object',
-                        title: null,
-                        subSchema: {
-                            area: {
-                                type: 'TextArea',
-                                title: "Area (Left, Right / Upper, Mid, Lower)"
-                            },
-                            when: {
-                                type: 'TextArea',
-                                title: "When it happened?"
-                            },
-                            how: {
-                                type: 'TextArea',
-                                title: "How did it happened?"
-                            },
-
-                            rehub: {
-                                type: 'TextArea',
-                                title: "Rehub status?"
-                            },
-                            clearance: {
-                                type: "Radio",
-                                title: "Clearance for Exercise?",
-                                options: [{
-                                    val: "yes",
-                                    label: "Yes"
-                                }, {
-                                    val: "no",
-                                    label: "No"
-                                }]
-                            },
-                            pain: {
-                                type: "Radio",
-                                title: "Any pain?",
-                                options: [{
-                                    val: "yes",
-                                    label: "Yes"
-                                }, {
-                                    val: "no",
-                                    label: "No"
-                                }]
-                            }
-                        }
-                    },
-
-
-                    back: {
-                        type: "Checkboxes",
-                        title: null,
-                        options: [{val: 'backExtra', label: 'Back'}],
-                        fieldAttrs: {
-                            "data-bind": "checkbox",
-                            "data-condition": "backExtra"
-                        }
-                    },
-
-                    backExtra: {
-                        type: 'Object',
-                        title: null,
-                        subSchema: {
-                            area: {
-                                type: 'TextArea',
-                                title: "Area (Left, Right / Upper, Mid, Lower)"
-                            },
-                            when: {
-                                type: 'TextArea',
-                                title: "When it happened?"
-                            },
-                            how: {
-                                type: 'TextArea',
-                                title: "How did it happened?"
-                            },
-
-                            rehub: {
-                                type: 'TextArea',
-                                title: "Rehub status?"
-                            },
-                            clearance: {
-                                type: "Radio",
-                                title: "Clearance for Exercise?",
-                                options: [{
-                                    val: "yes",
-                                    label: "Yes"
-                                }, {
-                                    val: "no",
-                                    label: "No"
-                                }]
-                            },
-                            pain: {
-                                type: "Radio",
-                                title: "Any pain?",
-                                options: [{
-                                    val: "yes",
-                                    label: "Yes"
-                                }, {
-                                    val: "no",
-                                    label: "No"
-                                }]
-                            }
-                        }
-                    },
-
-
-                    hip: {
-                        type: "Checkboxes",
-                        title: null,
-                        options: [{val: 'hipExtra', label: 'Hip'}],
-                        fieldAttrs: {
-                            "data-bind": "checkbox",
-                            "data-condition": "hipExtra"
-                        }
-                    },
-
-                    hipExtra: {
-                        type: 'Object',
-                        title: null,
-                        subSchema: {
-                            area: {
-                                type: 'TextArea',
-                                title: "Area (Left, Right / Upper, Mid, Lower)"
-                            },
-                            when: {
-                                type: 'TextArea',
-                                title: "When it happened?"
-                            },
-                            how: {
-                                type: 'TextArea',
-                                title: "How did it happened?"
-                            },
-
-                            rehub: {
-                                type: 'TextArea',
-                                title: "Rehub status?"
-                            },
-                            clearance: {
-                                type: "Radio",
-                                title: "Clearance for Exercise?",
-                                options: [{
-                                    val: "yes",
-                                    label: "Yes"
-                                }, {
-                                    val: "no",
-                                    label: "No"
-                                }]
-                            },
-                            pain: {
-                                type: "Radio",
-                                title: "Any pain?",
-                                options: [{
-                                    val: "yes",
-                                    label: "Yes"
-                                }, {
-                                    val: "no",
-                                    label: "No"
-                                }]
-                            }
-                        }
-                    },
-
-
-                    leg: {
-                        type: "Checkboxes",
-                        title: null,
-                        options: [{val: 'legExtra', label: 'Leg'}],
-                        fieldAttrs: {
-                            "data-bind": "checkbox",
-                            "data-condition": "legExtra"
-                        }
-                    },
-
-                    legExtra: {
-                        type: 'Object',
-                        title: null,
-                        subSchema: {
-                            area: {
-                                type: 'TextArea',
-                                title: "Area (Left, Right / Upper, Mid, Lower)"
-                            },
-                            when: {
-                                type: 'TextArea',
-                                title: "When it happened?"
-                            },
-                            how: {
-                                type: 'TextArea',
-                                title: "How did it happened?"
-                            },
-
-                            rehub: {
-                                type: 'TextArea',
-                                title: "Rehub status?"
-                            },
-                            clearance: {
-                                type: "Radio",
-                                title: "Clearance for Exercise?",
-                                options: [{
-                                    val: "yes",
-                                    label: "Yes"
-                                }, {
-                                    val: "no",
-                                    label: "No"
-                                }]
-                            },
-                            pain: {
-                                type: "Radio",
-                                title: "Any pain?",
-                                options: [{
-                                    val: "yes",
-                                    label: "Yes"
-                                }, {
-                                    val: "no",
-                                    label: "No"
-                                }]
-                            }
-                        }
-                    },
-
-                    knee: {
-                        type: "Checkboxes",
-                        title: null,
-                        options: [{val: 'kneeExtra', label: 'Knee'}],
-                        fieldAttrs: {
-                            "data-bind": "checkbox",
-                            "data-condition": "kneeExtra"
-                        }
-                    },
-
-                    kneeExtra: {
-                        type: 'Object',
-                        title: null,
-                        subSchema: {
-                            area: {
-                                type: 'TextArea',
-                                title: "Area (Left, Right / Upper, Mid, Lower)"
-                            },
-                            when: {
-                                type: 'TextArea',
-                                title: "When it happened?"
-                            },
-                            how: {
-                                type: 'TextArea',
-                                title: "How did it happened?"
-                            },
-
-                            rehub: {
-                                type: 'TextArea',
-                                title: "Rehub status?"
-                            },
-                            clearance: {
-                                type: "Radio",
-                                title: "Clearance for Exercise?",
-                                options: [{
-                                    val: "yes",
-                                    label: "Yes"
-                                }, {
-                                    val: "no",
-                                    label: "No"
-                                }]
-                            },
-                            pain: {
-                                type: "Radio",
-                                title: "Any pain?",
-                                options: [{
-                                    val: "yes",
-                                    label: "Yes"
-                                }, {
-                                    val: "no",
-                                    label: "No"
-                                }]
-                            }
-                        }
-                    },
-                    ankleFoot: {
-                        type: "Checkboxes",
-                        title: null,
-                        options: [{val: 'ankleFootExtra', label: 'Ankle/Foot'}],
-                        fieldAttrs: {
-                            "data-bind": "checkbox",
-                            "data-condition": "ankleFootExtra"
-                        }
-                    },
-
-                    ankleFootExtra: {
-                        type: 'Object',
-                        title: null,
-                        subSchema: {
-                            area: {
-                                type: 'TextArea',
-                                title: "Area (Left, Right / Upper, Mid, Lower)"
-                            },
-                            when: {
-                                type: 'TextArea',
-                                title: "When it happened?"
-                            },
-                            how: {
-                                type: 'TextArea',
-                                title: "How did it happened?"
-                            },
-
-                            rehub: {
-                                type: 'TextArea',
-                                title: "Rehub status?"
-                            },
-                            clearance: {
-                                type: "Radio",
-                                title: "Clearance for Exercise?",
-                                options: [{
-                                    val: "yes",
-                                    label: "Yes"
-                                }, {
-                                    val: "no",
-                                    label: "No"
-                                }]
-                            },
-                            pain: {
-                                type: "Radio",
-                                title: "Any pain?",
-                                options: [{
-                                    val: "yes",
-                                    label: "Yes"
-                                }, {
-                                    val: "no",
-                                    label: "No"
-                                }]
-                            }
-                        }
-                    },
-
-                    anyOther: {
-                        type: "Checkboxes",
-                        title: null,
-                        options: [{val: 'anyOtherExtra', label: 'Any Other'}],
-                        fieldAttrs: {
-                            "data-bind": "checkbox",
-                            "data-condition": "anyOtherExtra"
-                        }
-                    },
-
-                    anyOtherExtra: {
-                        type: 'Object',
-                        title: null,
-                        subSchema: {
-                            area: {
-                                type: 'TextArea',
-                                title: "Area (Left, Right / Upper, Mid, Lower)"
-                            },
-                            when: {
-                                type: 'TextArea',
-                                title: "When it happened?"
-                            },
-                            how: {
-                                type: 'TextArea',
-                                title: "How did it happened?"
-                            },
-
-                            rehub: {
-                                type: 'TextArea',
-                                title: "Rehub status?"
-                            },
-                            clearance: {
-                                type: "Radio",
-                                title: "Clearance for Exercise?",
-                                options: [{
-                                    val: "yes",
-                                    label: "Yes"
-                                }, {
-                                    val: "no",
-                                    label: "No"
-                                }]
-                            },
-                            pain: {
-                                type: "Radio",
-                                title: "Any pain?",
-                                options: [{
-                                    val: "yes",
-                                    label: "Yes"
-                                }, {
-                                    val: "no",
-                                    label: "No"
-                                }]
-                            }
-                        }
-                    },
-
                     "medical08": {
+                        "type": "Checkbox",
+                        "title": "Check any injuries you have or had in the past:",
+                        "fieldClass": "checkbox",
+                        "fieldAttrs": {
+                            "data-bind": "toggleCheckbox",
+                            "data-target": "medical08-dynamic1,medical08-dynamic2,medical08-dynamic3,medical08-dynamic4,medical08-dynamic5,medical08-dynamic6",
+                            "data-condition": null
+                        },
+                        "options": [
+                            {
+                                "val": "medical08-1",
+                                "label": "Head or Neck"
+                            }
+                        ]
+                    },
+                    "medical08-dynamic1": {
+                        "type": "TextArea",
+                        "title": "Area (Left, Right / Upper, Mid, Lower)",
+                        "editorAttrs": {
+                            "maxlength": "40"
+                        }
+                    },
+                    "medical08-dynamic2": {
+                        "type": "TextArea",
+                        "title": "When it happened?",
+                        "editorAttrs": {
+                            "maxlength": "40"
+                        }
+                    },
+                    "medical08-dynamic3": {
+                        "type": "TextArea",
+                        "title": "How did it happen?",
+                        "editorAttrs": {
+                            "maxlength": "40"
+                        }
+                    },
+                    "medical08-dynamic4": {
+                        "type": "TextArea",
+                        "title": "Rehab status?",
+                        "editorAttrs": {
+                            "maxlength": "40"
+                        }
+                    },
+                    "medical08-dynamic5": {
+                        "type": "Radio",
+                        "title": "Clearance for Exercise?",
+                        "options": [
+                            {
+                                "val": "medical08-dynamic5-1",
+                                "label": "Yes"
+                            },
+                            {
+                                "val": "medical08-dynamic5-2",
+                                "label": "No"
+                            }
+                        ]
+                    },
+                    "medical08-dynamic6": {
+                        "type": "Radio",
+                        "title": "Any pain?",
+                        "options": [
+                            {
+                                "val": "medical08-dynamic6-1",
+                                "label": "Yes"
+                            },
+                            {
+                                "val": "medical08-dynamic6-2",
+                                "label": "No"
+                            }
+                        ]
+                    },
+                    "medical09": {
+                        "type": "Checkbox",
+                        "title": "",
+                        "fieldClass": "checkbox",
+                        "fieldAttrs": {
+                            "data-bind": "toggleCheckbox",
+                            "data-target": "medical09-dynamic1,medical09-dynamic2,medical09-dynamic3,medical09-dynamic4,medical09-dynamic5,medical09-dynamic6",
+                            "data-condition": null
+                        },
+                        "options": [
+                            {
+                                "val": "medical09-1",
+                                "label": "Shoulder"
+                            }
+                        ]
+                    },
+                    "medical09-dynamic1": {
+                        "type": "TextArea",
+                        "title": "Area (Left, Right / Upper, Mid, Lower)",
+                        "editorAttrs": {
+                            "maxlength": "40"
+                        }
+                    },
+                    "medical09-dynamic2": {
+                        "type": "TextArea",
+                        "title": "When it happened?",
+                        "editorAttrs": {
+                            "maxlength": "40"
+                        }
+                    },
+                    "medical09-dynamic3": {
+                        "type": "TextArea",
+                        "title": "How did it happen?",
+                        "editorAttrs": {
+                            "maxlength": "40"
+                        }
+                    },
+                    "medical09-dynamic4": {
+                        "type": "TextArea",
+                        "title": "Rehab status?",
+                        "editorAttrs": {
+                            "maxlength": "40"
+                        }
+                    },
+                    "medical09-dynamic5": {
+                        "type": "Radio",
+                        "title": "Clearance for Exercise?",
+                        "options": [
+                            {
+                                "val": "medical09-dynamic5-1",
+                                "label": "Yes"
+                            },
+                            {
+                                "val": "medical09-dynamic5-2",
+                                "label": "No"
+                            }
+                        ]
+                    },
+                    "medical09-dynamic6": {
+                        "type": "Radio",
+                        "title": "Any pain?",
+                        "options": [
+                            {
+                                "val": "medical09-dynamic6-1",
+                                "label": "Yes"
+                            },
+                            {
+                                "val": "medical09-dynamic6-2",
+                                "label": "No"
+                            }
+                        ]
+                    },
+                    "medical10": {
+                        "type": "Checkbox",
+                        "fieldClass": "checkbox",
+                        "title": "",
+                        "fieldAttrs": {
+                            "data-bind": "toggleCheckbox",
+                            "data-target": "medical10-dynamic1,medical10-dynamic2,medical10-dynamic3,medical10-dynamic4,medical10-dynamic5,medical10-dynamic6",
+                            "data-condition": null
+                        },
+                        "options": [
+                            {
+                                "val": "medical10-1",
+                                "label": "Arm"
+                            }
+                        ]
+                    },
+                    "medical10-dynamic1": {
+                        "type": "TextArea",
+                        "title": "Area (Left, Right / Upper, Mid, Lower)",
+                        "editorAttrs": {
+                            "maxlength": "40"
+                        }
+                    },
+                    "medical10-dynamic2": {
+                        "type": "TextArea",
+                        "title": "When it happened?",
+                        "editorAttrs": {
+                            "maxlength": "40"
+                        }
+                    },
+                    "medical10-dynamic3": {
+                        "type": "TextArea",
+                        "title": "How did it happen?",
+                        "editorAttrs": {
+                            "maxlength": "40"
+                        }
+                    },
+                    "medical10-dynamic4": {
+                        "type": "TextArea",
+                        "title": "Rehab status?",
+                        "editorAttrs": {
+                            "maxlength": "40"
+                        }
+                    },
+                    "medical10-dynamic5": {
+                        "type": "Radio",
+                        "title": "Clearance for Exercise?",
+                        "options": [
+                            {
+                                "val": "medical10-dynamic5-1",
+                                "label": "Yes"
+                            },
+                            {
+                                "val": "medical10-dynamic5-2",
+                                "label": "No"
+                            }
+                        ]
+                    },
+                    "medical10-dynamic6": {
+                        "type": "Radio",
+                        "title": "Any pain?",
+                        "options": [
+                            {
+                                "val": "medical10-dynamic6-1",
+                                "label": "Yes"
+                            },
+                            {
+                                "val": "medical10-dynamic6-2",
+                                "label": "No"
+                            }
+                        ]
+                    },
+                    "medical11": {
+                        "type": "Checkbox",
+                        "fieldClass": "checkbox",
+                        "title": "",
+                        "fieldAttrs": {
+                            "data-bind": "toggleCheckbox",
+                            "data-target": "medical11-dynamic1,medical11-dynamic2,medical11-dynamic3,medical11-dynamic4,medical11-dynamic5,medical11-dynamic6",
+                            "data-condition": null
+                        },
+                        "options": [
+                            {
+                                "val": "medical11-1",
+                                "label": "Wrist or Hand"
+                            }
+                        ]
+                    },
+                    "medical11-dynamic1": {
+                        "type": "TextArea",
+                        "title": "Area (Left, Right / Upper, Mid, Lower)",
+                        "editorAttrs": {
+                            "maxlength": "40"
+                        }
+                    },
+                    "medical11-dynamic2": {
+                        "type": "TextArea",
+                        "title": "When it happened?",
+                        "editorAttrs": {
+                            "maxlength": "40"
+                        }
+                    },
+                    "medical11-dynamic3": {
+                        "type": "TextArea",
+                        "title": "How did it happen?",
+                        "editorAttrs": {
+                            "maxlength": "40"
+                        }
+                    },
+                    "medical11-dynamic4": {
+                        "type": "TextArea",
+                        "title": "Rehab status?",
+                        "editorAttrs": {
+                            "maxlength": "40"
+                        }
+                    },
+                    "medical11-dynamic5": {
+                        "type": "Radio",
+                        "title": "Clearance for Exercise?",
+                        "options": [
+                            {
+                                "val": "medical11-dynamic5-1",
+                                "label": "Yes"
+                            },
+                            {
+                                "val": "medical11-dynamic5-2",
+                                "label": "No"
+                            }
+                        ]
+                    },
+                    "medical11-dynamic6": {
+                        "type": "Radio",
+                        "title": "Any pain?",
+                        "options": [
+                            {
+                                "val": "medical11-dynamic6-1",
+                                "label": "Yes"
+                            },
+                            {
+                                "val": "medical11-dynamic6-2",
+                                "label": "No"
+                            }
+                        ]
+                    },
+                    "medical12": {
+                        "type": "Checkbox",
+                        "fieldClass": "checkbox",
+                        "title": "",
+                        "fieldAttrs": {
+                            "data-bind": "toggleCheckbox",
+                            "data-target": "medical12-dynamic1,medical12-dynamic2,medical12-dynamic3,medical12-dynamic4,medical12-dynamic5,medical12-dynamic6",
+                            "data-condition": null
+                        },
+                        "options": [
+                            {
+                                "val": "medical12-1",
+                                "label": "Back"
+                            }
+                        ]
+                    },
+                    "medical12-dynamic1": {
+                        "type": "TextArea",
+                        "title": "Area (Left, Right / Upper, Mid, Lower)",
+                        "editorAttrs": {
+                            "maxlength": "40"
+                        }
+                    },
+                    "medical12-dynamic2": {
+                        "type": "TextArea",
+                        "title": "When it happened?",
+                        "editorAttrs": {
+                            "maxlength": "40"
+                        }
+                    },
+                    "medical12-dynamic3": {
+                        "type": "TextArea",
+                        "title": "How did it happen?",
+                        "editorAttrs": {
+                            "maxlength": "40"
+                        }
+                    },
+                    "medical12-dynamic4": {
+                        "type": "TextArea",
+                        "title": "Rehab status?",
+                        "editorAttrs": {
+                            "maxlength": "40"
+                        }
+                    },
+                    "medical12-dynamic5": {
+                        "type": "Radio",
+                        "title": "Clearance for Exercise?",
+                        "options": [
+                            {
+                                "val": "medical12-dynamic5-1",
+                                "label": "Yes"
+                            },
+                            {
+                                "val": "medical12-dynamic5-2",
+                                "label": "No"
+                            }
+                        ]
+                    },
+                    "medical12-dynamic6": {
+                        "type": "Radio",
+                        "title": "Any pain?",
+                        "options": [
+                            {
+                                "val": "medical12-dynamic6-1",
+                                "label": "Yes"
+                            },
+                            {
+                                "val": "medical12-dynamic6-2",
+                                "label": "No"
+                            }
+                        ]
+                    },
+                    "medical13": {
+                        "type": "Checkbox",
+                        "fieldClass": "checkbox",
+                        "title": "",
+                        "fieldAttrs": {
+                            "data-bind": "toggleCheckbox",
+                            "data-target": "medical13-dynamic1,medical13-dynamic2,medical13-dynamic3,medical13-dynamic4,medical13-dynamic5,medical13-dynamic6",
+                            "data-condition": null
+                        },
+                        "options": [
+                            {
+                                "val": "medical13-1",
+                                "label": "Hip"
+                            }
+                        ]
+                    },
+                    "medical13-dynamic1": {
+                        "type": "TextArea",
+                        "title": "Area (Left, Right / Upper, Mid, Lower)",
+                        "editorAttrs": {
+                            "maxlength": "40"
+                        }
+                    },
+                    "medical13-dynamic2": {
+                        "type": "TextArea",
+                        "title": "When it happened?",
+                        "editorAttrs": {
+                            "maxlength": "40"
+                        }
+                    },
+                    "medical13-dynamic3": {
+                        "type": "TextArea",
+                        "title": "How did it happen?",
+                        "editorAttrs": {
+                            "maxlength": "40"
+                        }
+                    },
+                    "medical13-dynamic4": {
+                        "type": "TextArea",
+                        "title": "Rehab status?",
+                        "editorAttrs": {
+                            "maxlength": "40"
+                        }
+                    },
+                    "medical13-dynamic5": {
+                        "type": "Radio",
+                        "title": "Clearance for Exercise?",
+                        "options": [
+                            {
+                                "val": "medical13-dynamic5-1",
+                                "label": "Yes"
+                            },
+                            {
+                                "val": "medical13-dynamic5-2",
+                                "label": "No"
+                            }
+                        ]
+                    },
+                    "medical13-dynamic6": {
+                        "type": "Radio",
+                        "title": "Any pain?",
+                        "options": [
+                            {
+                                "val": "medical13-dynamic6-1",
+                                "label": "Yes"
+                            },
+                            {
+                                "val": "medical13-dynamic6-2",
+                                "label": "No"
+                            }
+                        ]
+                    },
+                    "medical14": {
+                        "type": "Checkbox",
+                        "fieldClass": "checkbox",
+                        "title": "",
+                        "fieldAttrs": {
+                            "data-bind": "toggleCheckbox",
+                            "data-target": "medical14-dynamic1,medical14-dynamic2,medical14-dynamic3,medical14-dynamic4,medical14-dynamic5,medical14-dynamic6",
+                            "data-condition": null
+                        },
+                        "options": [
+                            {
+                                "val": "medical14-1",
+                                "label": "Leg"
+                            }
+                        ]
+                    },
+                    "medical14-dynamic1": {
+                        "type": "TextArea",
+                        "title": "Area (Left, Right / Upper, Mid, Lower)",
+                        "editorAttrs": {
+                            "maxlength": "40"
+                        }
+                    },
+                    "medical14-dynamic2": {
+                        "type": "TextArea",
+                        "title": "When it happened?",
+                        "editorAttrs": {
+                            "maxlength": "40"
+                        }
+                    },
+                    "medical14-dynamic3": {
+                        "type": "TextArea",
+                        "title": "How did it happen?",
+                        "editorAttrs": {
+                            "maxlength": "40"
+                        }
+                    },
+                    "medical14-dynamic4": {
+                        "type": "TextArea",
+                        "title": "Rehab status?",
+                        "editorAttrs": {
+                            "maxlength": "40"
+                        }
+                    },
+                    "medical14-dynamic5": {
+                        "type": "Radio",
+                        "title": "Clearance for Exercise?",
+                        "options": [
+                            {
+                                "val": "medical14-dynamic5-1",
+                                "label": "Yes"
+                            },
+                            {
+                                "val": "medical14-dynamic5-2",
+                                "label": "No"
+                            }
+                        ]
+                    },
+                    "medical14-dynamic6": {
+                        "type": "Radio",
+                        "title": "Any pain?",
+                        "options": [
+                            {
+                                "val": "medical14-dynamic6-1",
+                                "label": "Yes"
+                            },
+                            {
+                                "val": "medical14-dynamic6-2",
+                                "label": "No"
+                            }
+                        ]
+                    },
+                    "medical15": {
+                        "type": "Checkbox",
+                        "fieldClass": "checkbox",
+                        "title": "",
+                        "fieldAttrs": {
+                            "data-bind": "toggleCheckbox",
+                            "data-target": "medical15-dynamic1,medical15-dynamic2,medical15-dynamic3,medical15-dynamic4,medical15-dynamic5,medical15-dynamic6",
+                            "data-condition": null
+                        },
+                        "options": [
+                            {
+                                "val": "medical15-1",
+                                "label": "Knee"
+                            }
+                        ]
+                    },
+                    "medical15-dynamic1": {
+                        "type": "TextArea",
+                        "title": "Area (Left, Right / Upper, Mid, Lower)",
+                        "editorAttrs": {
+                            "maxlength": "40"
+                        }
+                    },
+                    "medical15-dynamic2": {
+                        "type": "TextArea",
+                        "title": "When it happened?",
+                        "editorAttrs": {
+                            "maxlength": "40"
+                        }
+                    },
+                    "medical15-dynamic3": {
+                        "type": "TextArea",
+                        "title": "How did it happen?",
+                        "editorAttrs": {
+                            "maxlength": "40"
+                        }
+                    },
+                    "medical15-dynamic4": {
+                        "type": "TextArea",
+                        "title": "Rehab status?",
+                        "editorAttrs": {
+                            "maxlength": "40"
+                        }
+                    },
+                    "medical15-dynamic5": {
+                        "type": "Radio",
+                        "title": "Clearance for Exercise?",
+                        "options": [
+                            {
+                                "val": "medical15-dynamic5-1",
+                                "label": "Yes"
+                            },
+                            {
+                                "val": "medical15-dynamic5-2",
+                                "label": "No"
+                            }
+                        ]
+                    },
+                    "medical15-dynamic6": {
+                        "type": "Radio",
+                        "title": "Any pain?",
+                        "options": [
+                            {
+                                "val": "medical15-dynamic6-1",
+                                "label": "Yes"
+                            },
+                            {
+                                "val": "medical15-dynamic6-2",
+                                "label": "No"
+                            }
+                        ]
+                    },
+                    "medical16": {
+                        "type": "Checkbox",
+                        "fieldClass": "checkbox",
+                        "title": "",
+                        "fieldAttrs": {
+                            "data-bind": "toggleCheckbox",
+                            "data-target": "medical16-dynamic1,medical16-dynamic2,medical16-dynamic3,medical16-dynamic4,medical16-dynamic5,medical16-dynamic6",
+                            "data-condition": null
+                        },
+                        "options": [
+                            {
+                                "val": "medical16-1",
+                                "label": "Ankle/Foot"
+                            }
+                        ]
+                    },
+                    "medical16-dynamic1": {
+                        "type": "TextArea",
+                        "title": "Area (Left, Right / Upper, Mid, Lower)",
+                        "editorAttrs": {
+                            "maxlength": "40"
+                        }
+                    },
+                    "medical16-dynamic2": {
+                        "type": "TextArea",
+                        "title": "When it happened?",
+                        "editorAttrs": {
+                            "maxlength": "40"
+                        }
+                    },
+                    "medical16-dynamic3": {
+                        "type": "TextArea",
+                        "title": "How did it happen?",
+                        "editorAttrs": {
+                            "maxlength": "40"
+                        }
+                    },
+                    "medical16-dynamic4": {
+                        "type": "TextArea",
+                        "title": "Rehab status?",
+                        "editorAttrs": {
+                            "maxlength": "40"
+                        }
+                    },
+                    "medical16-dynamic5": {
+                        "type": "Radio",
+                        "title": "Clearance for Exercise?",
+                        "options": [
+                            {
+                                "val": "medical16-dynamic5-1",
+                                "label": "Yes"
+                            },
+                            {
+                                "val": "medical16-dynamic5-2",
+                                "label": "No"
+                            }
+                        ]
+                    },
+                    "medical16-dynamic6": {
+                        "type": "Radio",
+                        "title": "Any pain?",
+                        "options": [
+                            {
+                                "val": "medical16-dynamic6-1",
+                                "label": "Yes"
+                            },
+                            {
+                                "val": "medical16-dynamic6-2",
+                                "label": "No"
+                            }
+                        ]
+                    },
+                    "medical17": {
+                        "type": "Checkbox",
+                        "fieldClass": "checkbox",
+                        "title": "",
+                        "fieldAttrs": {
+                            "data-bind": "toggleCheckbox",
+                            "data-target": "medical17-dynamic1,medical17-dynamic2,medical17-dynamic3,medical17-dynamic4,medical17-dynamic5,medical17-dynamic6",
+                            "data-condition": null
+                        },
+                        "options": [
+                            {
+                                "val": "medical17-1",
+                                "label": "Any Other"
+                            }
+                        ]
+                    },
+                    "medical17-dynamic1": {
+                        "type": "TextArea",
+                        "title": "Area (Left, Right / Upper, Mid, Lower)",
+                        "editorAttrs": {
+                            "maxlength": "40"
+                        }
+                    },
+                    "medical17-dynamic2": {
+                        "type": "TextArea",
+                        "title": "When it happened?",
+                        "editorAttrs": {
+                            "maxlength": "40"
+                        }
+                    },
+                    "medical17-dynamic3": {
+                        "type": "TextArea",
+                        "title": "How did it happen?",
+                        "editorAttrs": {
+                            "maxlength": "40"
+                        }
+                    },
+                    "medical17-dynamic4": {
+                        "type": "TextArea",
+                        "title": "Rehab status?",
+                        "editorAttrs": {
+                            "maxlength": "40"
+                        }
+                    },
+                    "medical17-dynamic5": {
+                        "type": "Radio",
+                        "title": "Clearance for Exercise?",
+                        "options": [
+                            {
+                                "val": "medical17-dynamic5-1",
+                                "label": "Yes"
+                            },
+                            {
+                                "val": "medical17-dynamic5-2",
+                                "label": "No"
+                            }
+                        ]
+                    },
+                    "medical17-dynamic6": {
+                        "type": "Radio",
+                        "title": "Any pain?",
+                        "options": [
+                            {
+                                "val": "medical17-dynamic6-1",
+                                "label": "Yes"
+                            },
+                            {
+                                "val": "medical17-dynamic6-2",
+                                "label": "No"
+                            }
+                        ]
+                    },
+                    "medical18": {
                         "type": "Radio",
                         "title": "Are you over 65 and not accustomed to vigorous exercise?",
                         "options": [
-                            {"val": "medical08-1", "label": "Yes"},
-                            {"val": "medical08-2", "label": "No"}
-                        ],
-                        "help": "we recommend that you see a doctor before your Equifit or before you begin an exercise program.",
+                            {
+                                "val": "medical18-1",
+                                "label": "Yes"
+                            },
+                            {
+                                "val": "medical18-2",
+                                "label": "No"
+                            }
+                        ]
+                    },
+                    "medical19": {
+                        "type": "Radio",
+                        "title": "Are you currently taking any prescribed or over the counter medications?",
                         "fieldAttrs": {
-                            "data-bind": "radio",
-                            "data-target": "help-block",
-                            "data-condition": "medical08-1"
+                            "data-bind": "toggleRadio",
+                            "data-target": "medical19-dynamic1",
+                            "data-condition": "medical19-1"
+                        },
+                        "options": [
+                            {
+                                "val": "medical19-1",
+                                "label": "Yes"
+                            },
+                            {
+                                "val": "medical19-2",
+                                "label": "No"
+                            }
+                        ]
+                    },
+                    "medical19-dynamic1": {
+                        "type": "TextArea",
+                        "title": "If yes, please list below",
+                        "editorAttrs": {
+                            "maxlength": "100"
                         }
                     },
-                    "medical09": {
+                    "medical20": {
                         "type": "Radio",
                         "title": "Are you diabetic? ",
                         "options": [
-                            {"val": "medical09-1", "label": "Yes"},
-                            {"val": "medical09-2", "label": "No"}
-                        ],
-                        "help": "we recommend that you see a doctor before your Equifit or before you begin an exercise program.",
-                        "fieldAttrs": {
-                            "data-bind": "radio",
-                            "data-target": "help-block",
-                            "data-condition": "medical09-1"
-                        }
+                            {
+                                "val": "medical20-1",
+                                "label": "Yes"
+                            },
+                            {
+                                "val": "medical20-2",
+                                "label": "No"
+                            }
+                        ]
                     },
-                    "medical10": {
+                    "medical21": {
                         "type": "Radio",
                         "title": "Are you pregnant?",
                         "options": [
-                            {"val": "medical10-1", "label": "Yes"},
-                            {"val": "medical10-2", "label": "No"}
-                        ],
-                        "help": "we recommend that you see a doctor before your Equifit or before you begin an exercise program.",
-                        "fieldAttrs": {
-                            "data-bind": "radio",
-                            "data-target": "help-block",
-                            "data-condition": "medical10-1"
+                            {
+                                "val": "medical21-1",
+                                "label": "Yes"
+                            },
+                            {
+                                "val": "medical21-2",
+                                "label": "No"
+                            }
+                        ]
+                    },
+                    "medical22": {
+                        "type": "TextArea",
+                        "title": "Do you suffer from any medical conditions that might inhibit your ability to exercise?",
+                        "editorAttrs": {
+                            "maxlength": "100"
                         }
                     },
-                    "medical11": {
-                        "type": "Text",
-                        "title": "Is there anything you would specifically like to learn about youself during the Equifit?",
-                        "options": null,
-                        "help": "we recommend that you see a doctor before your Equifit or before you begin an exercise program.",
-                        "fieldAttrs": {
-                            "data-bind": "radio",
-                            "data-target": "help-block",
-                            "data-condition": "medical11-1"
+                    "medical23": {
+                        "type": "Checkboxes",
+                        "fieldClass": "checkbox",
+                        "title": "Have you ever been diagnosed with a specific medical condition? (Check all that apply)",
+                        "options": [
+                            {
+                                "val": "medical23-1",
+                                "label": "Cardiovascular disease"
+                            },
+                            {
+                                "val": "medical23-2",
+                                "label": "High blood pressure"
+                            },
+                            {
+                                "val": "medical23-3",
+                                "label": "Low blood pressure"
+                            },
+                            {
+                                "val": "medical23-4",
+                                "label": "Heart attack"
+                            },
+                            {
+                                "val": "medical23-5",
+                                "label": "Heart murmur"
+                            },
+                            {
+                                "val": "medical23-6",
+                                "label": "Diabetes"
+                            },
+                            {
+                                "val": "medical23-7",
+                                "label": "Cancer"
+                            },
+                            {
+                                "val": "medical23-8",
+                                "label": "Neurological disorder"
+                            },
+                            {
+                                "val": "medical23-9",
+                                "label": "Respiratory issues"
+                            },
+                            {
+                                "val": "medical23-10",
+                                "label": "Asthma"
+                            },
+                            {
+                                "val": "medical23-11",
+                                "label": "Emphysema"
+                            },
+                            {
+                                "val": "medical23-12",
+                                "label": "Other"
+                            },
+                            {
+                                "val": "medical23-13",
+                                "label": "No history of medical conditions"
+                            }
+                        ]
+                    },
+                    "medical24": {
+                        "type": "TextArea",
+                        "title": "Comments: Date of onset, Treatment, Physician clearance? (Y/N)",
+                        "editorAttrs": {
+                            "maxlength": "100"
                         }
                     }
                 },
+
                 "fieldsets": [
                     {
                         "legend": "Heart",
@@ -1119,39 +1389,94 @@ module.exports = {
                     {
                         "legend": "Body Injury",
                         "fields": [
-                            "body01",
-                            "headOrNeck",
-                            "headOrNeckExtra",
-                            "shoulder",
-                            "shoulderExtra",
-                            "arm",
-                            "armExtra",
-                            "wristOrHand",
-                            "wristOrHandExtra",
-                            "back",
-                            "backExtra",
-                            "hip",
-                            "hipExtra",
-                            "leg",
-                            "legExtra",
-                            "knee",
-                            "kneeExtra",
-                            "ankleFoot",
-                            "ankleFootExtra",
-                            "anyOther",
-                            "anyOtherExtra"
+                            "medical07",
+                            "medical08",
+                            "medical08-dynamic1",
+                            "medical08-dynamic2",
+                            "medical08-dynamic3",
+                            "medical08-dynamic4",
+                            "medical08-dynamic5",
+                            "medical08-dynamic6",
+                            "medical09",
+                            "medical09-dynamic1",
+                            "medical09-dynamic2",
+                            "medical09-dynamic3",
+                            "medical09-dynamic4",
+                            "medical09-dynamic5",
+                            "medical09-dynamic6",
+                            "medical10",
+                            "medical10-dynamic1",
+                            "medical10-dynamic2",
+                            "medical10-dynamic3",
+                            "medical10-dynamic4",
+                            "medical10-dynamic5",
+                            "medical10-dynamic6",
+                            "medical11",
+                            "medical11-dynamic1",
+                            "medical11-dynamic2",
+                            "medical11-dynamic3",
+                            "medical11-dynamic4",
+                            "medical11-dynamic5",
+                            "medical11-dynamic6",
+                            "medical12",
+                            "medical12-dynamic1",
+                            "medical12-dynamic2",
+                            "medical12-dynamic3",
+                            "medical12-dynamic4",
+                            "medical12-dynamic5",
+                            "medical12-dynamic6",
+                            "medical13",
+                            "medical13-dynamic1",
+                            "medical13-dynamic2",
+                            "medical13-dynamic3",
+                            "medical13-dynamic4",
+                            "medical13-dynamic5",
+                            "medical13-dynamic6",
+                            "medical14",
+                            "medical14-dynamic1",
+                            "medical14-dynamic2",
+                            "medical14-dynamic3",
+                            "medical14-dynamic4",
+                            "medical14-dynamic5",
+                            "medical14-dynamic6",
+                            "medical15",
+                            "medical15-dynamic1",
+                            "medical15-dynamic2",
+                            "medical15-dynamic3",
+                            "medical15-dynamic4",
+                            "medical15-dynamic5",
+                            "medical15-dynamic6",
+                            "medical16",
+                            "medical16-dynamic1",
+                            "medical16-dynamic2",
+                            "medical16-dynamic3",
+                            "medical16-dynamic4",
+                            "medical16-dynamic5",
+                            "medical16-dynamic6",
+                            "medical17",
+                            "medical17-dynamic1",
+                            "medical17-dynamic2",
+                            "medical17-dynamic3",
+                            "medical17-dynamic4",
+                            "medical17-dynamic5",
+                            "medical17-dynamic6"
                         ]
                     },
                     {
                         "legend": "Other Medical Conditions",
                         "fields": [
-                            "medical08",
-                            "medical09",
-                            "medical10",
-                            "medical11"
+                            "medical18",
+                            "medical19",
+                            "medical19-dynamic1",
+                            "medical20",
+                            "medical21",
+                            "medical22",
+                            "medical23",
+                            "medical24"
                         ]
                     }
-                ],
+            ],
+
                 "data": {},
 
                 "parent": {
@@ -1256,73 +1581,73 @@ module.exports = {
             {
                 "templateId": 4,
                 "templateType": "Lifestyle",
-                "title": "Lifestyle",
+                title: "Lifestyle",
                 "idPrefix": "lifestyle-",
                 "totalQuestions": 15,
                 "totalCompletedQuestions": 10,
                 "formSchema": {
                     "lifestyle01": {
                         "type": "Select",
-                        "title": "On a scale of 1-5, on average how stressful is your day?",
-                        "options": [
-                            {"val": "lifestyle01-1", "label": "1"},
-                            {"val": "lifestyle01-2", "label": "2"},
-                            {"val": "lifestyle01-3", "label": "3"},
-                            {"val": "lifestyle01-4", "label": "4"},
-                            {"val": "lifestyle01-5", "label": "5"}
+                        title: "On a scale of 1-5, on average how stressful is your day?",
+                        options: [
+                            {val: "lifestyle01-1", label: "1"},
+                            {val: "lifestyle01-2", label: "2"},
+                            {val: "lifestyle01-3", label: "3"},
+                            {val: "lifestyle01-4", label: "4"},
+                            {val: "lifestyle01-5", label: "5"}
                         ],
-                        "help": null
+                        help: null
                     },
                     "lifestyle02": {
-                        "type": "Radio",
-                        "title": "Do you feel exercise helps you in managing your stress?",
-                        "options": [
-                            {"val": "lifestyle02-1", "label": "Yes"},
-                            {"val": "lifestyle02-2", "label": "No"}
+                        type: 'Radio',
+                        title: "Do you feel exercise helps you in managing your stress?",
+                        options: [
+                            {val: "lifestyle02-1", label: "Yes"},
+                            {val: "lifestyle02-2", label: "No"}
                         ],
-                        "help": null
+                        help: null
                     },
                     "lifestyle03": {
-                        "type": "Text",
-                        "title": "Describe your typical daily nutritional habits?",
-                        "options": null,
-                        "help": "Number of times you eat per day and basic content of diet"
+                        type: 'Text',
+                        title: "Describe your typical daily nutritional habits?",
+                        options: null,
+                        help: "Number of times you eat per day and basic content of diet"
                     },
                     "lifestyle04": {
-                        "type": "Radio",
-                        "title": "Do you feel you need to change anything with regards to your nutrition?",
-                        "options": [
-                            {"val": "lifestyle04-1", "label": "Yes"},
-                            {"val": "lifestyle04-2", "label": "No"}
+                        type: 'Radio',
+                        title: "Do you feel you need to change anything with regards to your nutrition?",
+                        options: [
+                            {val: "lifestyle04-1", label: "Yes"},
+                            {val: "lifestyle04-2", label: "No"}
                         ],
-                        "help": null
+                        help: null
                     },
                     "lifestyle05": {
-                        "type": "Text",
-                        "title": "What types of liquids do you typically drink?",
-                        "options": null,
-                        "help": null
+                        type: 'Text',
+                        title: "What types of liquids do you typically drink?",
+                        options: null,
+                        help: null
                     },
                     "lifestyle06": {
                         "type": "Select",
-                        "title": "How much water do you take in daily?",
-                        "options": [
-                            {"val": "lifestyle06-1", "label": "None"},
-                            {"val": "lifestyle06-2", "label": "1 - 2"},
-                            {"val": "lifestyle06-3", "label": "3 - 4"},
-                            {"val": "lifestyle06-4", "label": "5 - 6"},
-                            {"val": "lifestyle06-5", "label": "7 - 8"},
-                            {"val": "lifestyle06-6", "label": "9 - 10"},
-                            {"val": "lifestyle06-7", "label": "11 - 12"},
-                            {"val": "lifestyle06-8", "label": "More than 12"}
+                        title: "How much water do you take in daily?",
+                        options: [
+                            {val: "lifestyle06-1", label: "None"},
+                            {val: "lifestyle06-2", label: "1 - 2"},
+                            {val: "lifestyle06-3", label: "3 - 4"},
+                            {val: "lifestyle06-4", label: "5 - 6"},
+                            {val: "lifestyle06-5", label: "7 - 8"},
+                            {val: "lifestyle06-6", label: "9 - 10"},
+                            {val: "lifestyle06-7", label: "11 - 12"},
+                            {val: "lifestyle06-8", label: "More than 12"}
                         ],
-                        "help": "Number in glasses. One glass = 8 fluid ounces."
+                        help: "Number in glasses. One glass = 8 fluid ounces."
                     },
                     "lifestyle07": {
-                        "type": "Text",
-                        "title": "Before we get started with assessments, do you have any additional comments or is there anything we did not cover?",
-                        "options": null,
-                        "help": null
+                        type: 'Text',
+                        title: "Before we get started with assessments, do you have any additional comments or is there anything we did not cover?",
+                        options: null,
+                        help: null
                     }
                 },
                 "fieldsets": [
@@ -1349,42 +1674,42 @@ module.exports = {
             {
                 "templateId": 5,
                 "templateType": 2,
-                "title": "Exercise History",
+                title: "Exercise History",
                 "idPrefix": "exercise-history-",
                 "totalQuestions": 7,
                 "totalCompletedQuestions": 6,
 
                 "formSchema": {
                     "exercisehistory01": {
-                        "type": "Text",
-                        "title": "Tell me about your current exercise routine?",
-                        "options": null,
-                        "help": null
+                        type: 'Text',
+                        title: "Tell me about your current exercise routine?",
+                        options: null,
+                        help: null
                     },
                     "exercisehistory02": {
                         "type": "Select",
-                        "title": "How many times per week on average do you engage in physical activity and/or exercise?",
-                        "options": [
-                            {"val": "exercisehistory02-1", "label": "0"},
-                            {"val": "exercisehistory02-2", "label": "1"},
-                            {"val": "exercisehistory02-3", "label": "2"},
-                            {"val": "exercisehistory02-4", "label": "3"},
-                            {"val": "exercisehistory02-5", "label": "4"},
-                            {"val": "exercisehistory02-6", "label": "5"},
-                            {"val": "exercisehistory02-7", "label": "6"},
-                            {"val": "exercisehistory02-8", "label": "7"},
-                            {"val": "exercisehistory02-9", "label": "8+"}
+                        title: "How many times per week on average do you engage in physical activity and/or exercise?",
+                        options: [
+                            {val: "exercisehistory02-1", label: "0"},
+                            {val: "exercisehistory02-2", label: "1"},
+                            {val: "exercisehistory02-3", label: "2"},
+                            {val: "exercisehistory02-4", label: "3"},
+                            {val: "exercisehistory02-5", label: "4"},
+                            {val: "exercisehistory02-6", label: "5"},
+                            {val: "exercisehistory02-7", label: "6"},
+                            {val: "exercisehistory02-8", label: "7"},
+                            {val: "exercisehistory02-9", label: "8+"}
                         ],
-                        "help": null
+                        help: null
                     },
                     "exercisehistory03": {
-                        "type": "Radio",
-                        "title": "Do you or have you ever strength trained? (free weights / machines / body wieght)",
-                        "options": [
-                            {"val": "exercisehistory03-1", "label": "Yes"},
-                            {"val": "exercisehistory03-2", "label": "No"}
+                        type: 'Radio',
+                        title: "Do you or have you ever strength trained? (free weights / machines / body wieght)",
+                        options: [
+                            {val: "exercisehistory03-1", label: "Yes"},
+                            {val: "exercisehistory03-2", label: "No"}
                         ],
-                        "help": null
+                        help: null
                     }
                 },
                 "fieldsets": [
@@ -1404,93 +1729,93 @@ module.exports = {
             {
                 "templateId": 6,
                 "templateType": 2,
-                "title": "Goals & Habits",
+                title: "Goals & Habits",
                 "idPrefix": "goals-habits-",
                 "totalQuestions": 11,
                 "totalCompletedQuestions": 0,
 
                 "formSchema": {
                     "goals01": {
-                        "type": "Text",
-                        "title": "Fitness goal #1",
-                        "options": null,
-                        "help": null
+                        type: 'Text',
+                        title: "Fitness goal #1",
+                        options: null,
+                        help: null
                     },
                     "goals02": {
-                        "type": "Text",
-                        "title": "Fitness goal #2",
-                        "options": null,
-                        "help": null
+                        type: 'Text',
+                        title: "Fitness goal #2",
+                        options: null,
+                        help: null
                     },
                     "goals03": {
-                        "type": "Text",
-                        "title": "Fitness goal #3",
-                        "options": null,
-                        "help": null
+                        type: 'Text',
+                        title: "Fitness goal #3",
+                        options: null,
+                        help: null
                     },
                     "goals04": {
                         "type": "Select",
-                        "title": "How long have you wanted to achieve your number one goal?",
-                        "options": [
-                            {"val": "goals04-1", "label": "Less than 3 months"},
-                            {"val": "goals04-2", "label": "3 - 6 months"},
-                            {"val": "goals04-3", "label": "7 - 11 months"},
-                            {"val": "goals04-4", "label": "Longer than 3 years"},
-                            {"val": "goals04-5", "label": "Other"}
+                        title: "How long have you wanted to achieve your number one goal?",
+                        options: [
+                            {val: "goals04-1", label: "Less than 3 months"},
+                            {val: "goals04-2", label: "3 - 6 months"},
+                            {val: "goals04-3", label: "7 - 11 months"},
+                            {val: "goals04-4", label: "Longer than 3 years"},
+                            {val: "goals04-5", label: "Other"}
                         ],
-                        "help": null
+                        help: null
                     },
                     "goals05": {
-                        "type": "Radio",
-                        "title": "Have you ever achieved this goal in the past?",
-                        "options": [
-                            {"val": "goals05-1", "label": "Yes"},
-                            {"val": "goals05-2", "label": "No"},
-                            {"val": "goals05-3", "label": "Partially"}
+                        type: 'Radio',
+                        title: "Have you ever achieved this goal in the past?",
+                        options: [
+                            {val: "goals05-1", label: "Yes"},
+                            {val: "goals05-2", label: "No"},
+                            {val: "goals05-3", label: "Partially"}
                         ],
-                        "help": null
+                        help: null
                     },
                     "goals06": {
                         "type": "Date",
-                        "title": "When would you like to achieve it by?",
-                        "options": null,
-                        "help": null
+                        title: "When would you like to achieve it by?",
+                        options: null,
+                        help: null
                     },
                     "goals07": {
-                        "type": "Text",
-                        "title": "Why would you like to achieve this goal?",
-                        "options": null,
-                        "help": null
+                        type: 'Text',
+                        title: "Why would you like to achieve this goal?",
+                        options: null,
+                        help: null
                     },
                     "goals08": {
-                        "type": "Text",
-                        "title": "What is the biggest challenge getting in your way of achieving each of these goals?",
-                        "options": null,
-                        "help": null
+                        type: 'Text',
+                        title: "What is the biggest challenge getting in your way of achieving each of these goals?",
+                        options: null,
+                        help: null
                     },
                     "goals09": {
-                        "type": "Text",
-                        "title": "What strategies in the past have you utilized to overcome these challenges, if any?",
-                        "options": null,
-                        "help": null
+                        type: 'Text',
+                        title: "What strategies in the past have you utilized to overcome these challenges, if any?",
+                        options: null,
+                        help: null
                     },
                     "goals10": {
-                        "type": "Radio",
-                        "title": "On a scale of 1 - 5, how committed are you to each goal?",
-                        "options": [
-                            {"val": "goals10-1", "label": "1"},
-                            {"val": "goals10-2", "label": "2"},
-                            {"val": "goals10-3", "label": "3"},
-                            {"val": "goals10-4", "label": "4"},
-                            {"val": "goals10-5", "label": "5"}
+                        type: 'Radio',
+                        title: "On a scale of 1 - 5, how committed are you to each goal?",
+                        options: [
+                            {val: "goals10-1", label: "1"},
+                            {val: "goals10-2", label: "2"},
+                            {val: "goals10-3", label: "3"},
+                            {val: "goals10-4", label: "4"},
+                            {val: "goals10-5", label: "5"}
                         ],
-                        "help": null
+                        help: null
                     },
                     "goals11": {
-                        "type": "Text",
-                        "title": "Notes / Strategy Ideas",
-                        "options": null,
-                        "help": null
+                        type: 'Text',
+                        title: "Notes / Strategy Ideas",
+                        options: null,
+                        help: null
                     }
                 },
                 "fieldsets": [
@@ -1517,62 +1842,62 @@ module.exports = {
             {
                 "templateId": 7,
                 "templateType": "RegenerationNutrition",
-                "title": "Regeneration & Nutrition",
+                title: "Regeneration & Nutrition",
                 "idPrefix": "regeneration-nutrition-",
                 "totalQuestions": 4,
                 "totalCompletedQuestions": 0,
                 "formSchema": {
                     "regeneration01": {
-                        "type": "Text",
-                        "title": "Number of times you eat per day and basic content of diet?",
-                        "options": null,
-                        "help": null
+                        type: 'Text',
+                        title: "Number of times you eat per day and basic content of diet?",
+                        options: null,
+                        help: null
                     },
                     "regeneration02": {
-                        "type": "Radio",
-                        "title": "Do you feel you need to change anything with regards to your nutrition?",
-                        "options": [
-                            {"val": "regeneration02-1", "label": "Yes"},
-                            {"val": "regeneration02-2", "label": "No"}
+                        type: 'Radio',
+                        title: "Do you feel you need to change anything with regards to your nutrition?",
+                        options: [
+                            {val: "regeneration02-1", label: "Yes"},
+                            {val: "regeneration02-2", label: "No"}
                         ],
-                        "help": null
+                        help: null
                     },
                     "regeneration03": {
                         "type": "Select",
-                        "title": "What types of liquids do you typically drink?",
-                        "options": [
-                            {"val": "regeneration03-1", "label": "Water"},
-                            {"val": "regeneration03-2", "label": "Coffee"},
-                            {"val": "regeneration03-3", "label": "Tea"},
-                            {"val": "regeneration03-4", "label": "Soda"},
-                            {"val": "regeneration03-5", "label": "Wine"},
-                            {"val": "regeneration03-6", "label": "Beer"},
-                            {"val": "regeneration03-7", "label": "Liquor / Mixed Drink"},
-                            {"val": "regeneration03-8", "label": "Coconut Water"},
-                            {"val": "regeneration03-9", "label": "Fruit Juice"},
-                            {"val": "regeneration03-10", "label": "Pressed Juices"},
-                            {"val": "regeneration03-11", "label": "Protein Shakes"},
-                            {"val": "regeneration03-12", "label": "Milk (including soy, almond, dairy, etc.)"},
-                            {"val": "regeneration03-13", "label": "Energy Drinks"},
-                            {"val": "regeneration03-14", "label": "Sports Drinks"},
-                            {"val": "regeneration03-15", "label": "Other"}
+                        title: "What types of liquids do you typically drink?",
+                        options: [
+                            {val: "regeneration03-1", label: "Water"},
+                            {val: "regeneration03-2", label: "Coffee"},
+                            {val: "regeneration03-3", label: "Tea"},
+                            {val: "regeneration03-4", label: "Soda"},
+                            {val: "regeneration03-5", label: "Wine"},
+                            {val: "regeneration03-6", label: "Beer"},
+                            {val: "regeneration03-7", label: "Liquor / Mixed Drink"},
+                            {val: "regeneration03-8", label: "Coconut Water"},
+                            {val: "regeneration03-9", label: "Fruit Juice"},
+                            {val: "regeneration03-10", label: "Pressed Juices"},
+                            {val: "regeneration03-11", label: "Protein Shakes"},
+                            {val: "regeneration03-12", label: "Milk (including soy, almond, dairy, etc.)"},
+                            {val: "regeneration03-13", label: "Energy Drinks"},
+                            {val: "regeneration03-14", label: "Sports Drinks"},
+                            {val: "regeneration03-15", label: "Other"}
                         ],
-                        "help": null
+                        help: null
                     },
                     "regeneration04": {
                         "type": "Select",
-                        "title": "How much water do you take in daily?",
-                        "options": [
-                            {"val": "regeneration04-1", "label": "None"},
-                            {"val": "regeneration04-2", "label": "1 - 2 glasses"},
-                            {"val": "regeneration04-3", "label": "3 - 4 glasses"},
-                            {"val": "regeneration04-4", "label": "5 - 6 glasses"},
-                            {"val": "regeneration04-5", "label": "7 - 8 glasses"},
-                            {"val": "regeneration04-6", "label": "9 - 10 glasses"},
-                            {"val": "regeneration04-7", "label": "11 - 12 glasses"},
-                            {"val": "regeneration04-8", "label": "More than 12 glasses"}
+                        title: "How much water do you take in daily?",
+                        options: [
+                            {val: "regeneration04-1", label: "None"},
+                            {val: "regeneration04-2", label: "1 - 2 glasses"},
+                            {val: "regeneration04-3", label: "3 - 4 glasses"},
+                            {val: "regeneration04-4", label: "5 - 6 glasses"},
+                            {val: "regeneration04-5", label: "7 - 8 glasses"},
+                            {val: "regeneration04-6", label: "9 - 10 glasses"},
+                            {val: "regeneration04-7", label: "11 - 12 glasses"},
+                            {val: "regeneration04-8", label: "More than 12 glasses"}
                         ],
-                        "help": "One glass = 8 fluid ounces"
+                        help: "One glass = 8 fluid ounces"
                     }
                 },
                 "fieldsets": [
@@ -1591,112 +1916,112 @@ module.exports = {
             {
                 "templateId": 8,
                 "templateType": "BodyMeasurements",
-                "title": "Body Measurements",
+                title: "Body Measurements",
                 "idPrefix": "body-measurements-",
                 "totalQuestions": 17,
                 "totalCompletedQuestions": 0,
                 "formSchema": {
                     "bodymeasurements01": {
-                        "type": "Text",
-                        "title": "Height",
-                        "options": null,
-                        "help": "ft, in"
+                        type: 'Text',
+                        title: "Height",
+                        options: null,
+                        help: "ft, in"
                     },
                     "bodymeasurements02": {
                         "type": "Number",
-                        "title": "Weight",
-                        "options": null,
-                        "help": "lbs"
+                        title: "Weight",
+                        options: null,
+                        help: "lbs"
                     },
                     "bodymeasurements03": {
                         "type": "Number",
-                        "title": "Resting Heart Rate",
-                        "options": null,
-                        "help": "bpm"
+                        title: "Resting Heart Rate",
+                        options: null,
+                        help: "bpm"
                     },
                     "bodymeasurements04": {
                         "type": "Number",
-                        "title": "Blood Pressure",
-                        "options": null,
-                        "help": null
+                        title: "Blood Pressure",
+                        options: null,
+                        help: null
                     },
                     "bodymeasurements05": {
                         "type": "Number",
-                        "title": "Right Upper Arm Circumference",
-                        "options": null,
-                        "help": "in"
+                        title: "Right Upper Arm Circumference",
+                        options: null,
+                        help: "in"
                     },
                     "bodymeasurements06": {
                         "type": "Number",
-                        "title": "Right Upper Arm Circumference",
-                        "options": null,
-                        "help": "in"
+                        title: "Right Upper Arm Circumference",
+                        options: null,
+                        help: "in"
                     },
                     "bodymeasurements07": {
                         "type": "Number",
-                        "title": "Left Upper Arm Circumference",
-                        "options": null,
-                        "help": "in"
+                        title: "Left Upper Arm Circumference",
+                        options: null,
+                        help: "in"
                     },
                     "bodymeasurements08": {
                         "type": "Number",
-                        "title": "Chest Circumference",
-                        "options": null,
-                        "help": "in"
+                        title: "Chest Circumference",
+                        options: null,
+                        help: "in"
                     },
                     "bodymeasurements09": {
                         "type": "Number",
-                        "title": "Waist Circumference",
-                        "options": null,
-                        "help": "in"
+                        title: "Waist Circumference",
+                        options: null,
+                        help: "in"
                     },
                     "bodymeasurements10": {
                         "type": "Number",
-                        "title": "Abdominal Circumference",
-                        "options": null,
-                        "help": "in"
+                        title: "Abdominal Circumference",
+                        options: null,
+                        help: "in"
                     },
                     "bodymeasurements11": {
                         "type": "Number",
-                        "title": "Hip Circumference",
-                        "options": null,
-                        "help": "in"
+                        title: "Hip Circumference",
+                        options: null,
+                        help: "in"
                     },
                     "bodymeasurements12": {
                         "type": "Number",
-                        "title": "Right Mid Thigh Circumference",
-                        "options": null,
-                        "help": "in"
+                        title: "Right Mid Thigh Circumference",
+                        options: null,
+                        help: "in"
                     },
                     "bodymeasurements13": {
                         "type": "Number",
-                        "title": "Left Mid Thigh Circumference",
-                        "options": null,
-                        "help": "in"
+                        title: "Left Mid Thigh Circumference",
+                        options: null,
+                        help: "in"
                     },
                     "bodymeasurements14": {
                         "type": "Number",
-                        "title": "Skinfold Measurement - Tricep",
-                        "options": null,
-                        "help": "mm"
+                        title: "Skinfold Measurement - Tricep",
+                        options: null,
+                        help: "mm"
                     },
                     "bodymeasurements15": {
                         "type": "Number",
-                        "title": "Skinfold Measurement - Abdomen",
-                        "options": null,
-                        "help": "mm"
+                        title: "Skinfold Measurement - Abdomen",
+                        options: null,
+                        help: "mm"
                     },
                     "bodymeasurements16": {
                         "type": "Number",
-                        "title": "Skinfold Measurement - Suprailiac",
-                        "options": null,
-                        "help": "mm"
+                        title: "Skinfold Measurement - Suprailiac",
+                        options: null,
+                        help: "mm"
                     },
                     "bodymeasurements17": {
                         "type": "Number",
-                        "title": "Skinfold Measurement - Mid Thigh",
-                        "options": null,
-                        "help": "mm"
+                        title: "Skinfold Measurement - Mid Thigh",
+                        options: null,
+                        help: "mm"
                     }
                 },
                 "fieldsets": [
@@ -1733,7 +2058,7 @@ module.exports = {
                 totalCompletedQuestions: 0,
                 formSchema: {
                     fms101: {
-                        type: "Radio",
+                        type: 'Radio',
                         title: "Hand",
                         options: [
                             {val: "fms101-1", label: "Right"},
@@ -1742,7 +2067,7 @@ module.exports = {
                     },
 
                     fms102: {
-                        type: "Radio",
+                        type: 'Radio',
                         title: "Swing",
                         options: [
                             {val: "fms102-1", label: "Right"},
@@ -1751,7 +2076,7 @@ module.exports = {
                     },
 
                     fms103: {
-                        type: "Radio",
+                        type: 'Radio',
                         title: "Throw",
                         options: [
                             {val: "fms103-1", label: "Right"},
@@ -1760,7 +2085,7 @@ module.exports = {
                     },
 
                     fms104: {
-                        type: "Radio",
+                        type: 'Radio',
                         title: "Leg",
                         options: [
                             {val: "fms104-1", label: "Right"},
@@ -1772,10 +2097,10 @@ module.exports = {
                         type: "Select",
                         title: "Overhead Deep Squat",
                         options: [
-                            {"val": "fms01-1", "label": "0"},
-                            {"val": "fms01-2", "label": "1"},
-                            {"val": "fms01-3", "label": "2"},
-                            {"val": "fms01-4", "label": "3"}
+                            {val: "fms01-1", label: "0"},
+                            {val: "fms01-2", label: "1"},
+                            {val: "fms01-3", label: "2"},
+                            {val: "fms01-4", label: "3"}
                         ],
                         editorClass: 'input-small',
                         help: 'points'
@@ -1789,10 +2114,10 @@ module.exports = {
                         type: "Select",
                         title: "Hurdle Step (Right)",
                         options: [
-                            {"val": "fms03-1", "label": "0"},
-                            {"val": "fms03-2", "label": "1"},
-                            {"val": "fms03-3", "label": "2"},
-                            {"val": "fms03-4", "label": "3"}
+                            {val: "fms03-1", label: "0"},
+                            {val: "fms03-2", label: "1"},
+                            {val: "fms03-3", label: "2"},
+                            {val: "fms03-4", label: "3"}
                         ],
                         editorClass: 'input-small',
                         help: 'points'
@@ -1801,10 +2126,10 @@ module.exports = {
                         type: "Select",
                         title: "Hurdle Step (Left)",
                         options: [
-                            {"val": "fms04-1", "label": "0"},
-                            {"val": "fms04-2", "label": "1"},
-                            {"val": "fms04-3", "label": "2"},
-                            {"val": "fms04-4", "label": "3"}
+                            {val: "fms04-1", label: "0"},
+                            {val: "fms04-2", label: "1"},
+                            {val: "fms04-3", label: "2"},
+                            {val: "fms04-4", label: "3"}
                         ],
                         editorClass: 'input-small',
                         help: 'points'
@@ -1830,10 +2155,10 @@ module.exports = {
                         type: "Select",
                         title: "In-line Lunge (Right)",
                         options: [
-                            {"val": "fms07-1", "label": "0"},
-                            {"val": "fms07-2", "label": "1"},
-                            {"val": "fms07-3", "label": "2"},
-                            {"val": "fms07-4", "label": "3"}
+                            {val: "fms07-1", label: "0"},
+                            {val: "fms07-2", label: "1"},
+                            {val: "fms07-3", label: "2"},
+                            {val: "fms07-4", label: "3"}
                         ],
                         editorClass: 'input-small',
                         help: 'points'
@@ -1842,10 +2167,10 @@ module.exports = {
                         type: "Select",
                         title: "In-line Lunge (Left)",
                         options: [
-                            {"val": "fms08-1", "label": "0"},
-                            {"val": "fms08-2", "label": "1"},
-                            {"val": "fms08-3", "label": "2"},
-                            {"val": "fms08-4", "label": "3"}
+                            {val: "fms08-1", label: "0"},
+                            {val: "fms08-2", label: "1"},
+                            {val: "fms08-3", label: "2"},
+                            {val: "fms08-4", label: "3"}
                         ],
                         editorClass: 'input-small',
                         help: 'points'
@@ -1858,10 +2183,10 @@ module.exports = {
                         type: "Select",
                         title: "Shoulder Mobility (Right)",
                         options: [
-                            {"val": "fms10-1", "label": "0"},
-                            {"val": "fms10-2", "label": "1"},
-                            {"val": "fms10-3", "label": "2"},
-                            {"val": "fms10-4", "label": "3"}
+                            {val: "fms10-1", label: "0"},
+                            {val: "fms10-2", label: "1"},
+                            {val: "fms10-3", label: "2"},
+                            {val: "fms10-4", label: "3"}
                         ],
                         editorClass: 'input-small',
                         help: 'points'
@@ -1870,10 +2195,10 @@ module.exports = {
                         type: "Select",
                         title: "Shoulder Mobility (Left)",
                         options: [
-                            {"val": "fms11-1", "label": "0"},
-                            {"val": "fms11-2", "label": "1"},
-                            {"val": "fms11-3", "label": "2"},
-                            {"val": "fms11-4", "label": "3"}
+                            {val: "fms11-1", label: "0"},
+                            {val: "fms11-2", label: "1"},
+                            {val: "fms11-3", label: "2"},
+                            {val: "fms11-4", label: "3"}
                         ],
                         editorClass: 'input-small',
                         help: 'points'
@@ -1882,10 +2207,10 @@ module.exports = {
                         type: "Select",
                         title: "Distal Wrist Crease to tip of 3rd finger",
                         options: [
-                            {"val": "fms12-1", "label": "0"},
-                            {"val": "fms12-2", "label": "1"},
-                            {"val": "fms12-3", "label": "2"},
-                            {"val": "fms12-4", "label": "3"}
+                            {val: "fms12-1", label: "0"},
+                            {val: "fms12-2", label: "1"},
+                            {val: "fms12-3", label: "2"},
+                            {val: "fms12-4", label: "3"}
                         ],
                         editorClass: 'input-small',
                         help: 'points'
@@ -1907,10 +2232,10 @@ module.exports = {
                         type: "Select",
                         title: "Active Straight Leg Raise (Right)",
                         options: [
-                            {"val": "fms15-1", "label": "0"},
-                            {"val": "fms15-2", "label": "1"},
-                            {"val": "fms15-3", "label": "2"},
-                            {"val": "fms15-4", "label": "3"}
+                            {val: "fms15-1", label: "0"},
+                            {val: "fms15-2", label: "1"},
+                            {val: "fms15-3", label: "2"},
+                            {val: "fms15-4", label: "3"}
                         ],
                         editorClass: 'input-small',
                         help: 'points'
@@ -1919,10 +2244,10 @@ module.exports = {
                         type: "Select",
                         title: "Active Straight Leg Raise (Left)",
                         options: [
-                            {"val": "fms16-1", "label": "0"},
-                            {"val": "fms16-2", "label": "1"},
-                            {"val": "fms16-3", "label": "2"},
-                            {"val": "fms16-4", "label": "3"}
+                            {val: "fms16-1", label: "0"},
+                            {val: "fms16-2", label: "1"},
+                            {val: "fms16-3", label: "2"},
+                            {val: "fms16-4", label: "3"}
                         ],
                         editorClass: 'input-small',
                         help: 'points'
@@ -1934,11 +2259,11 @@ module.exports = {
                     fms18: {
                         type: "Select",
                         title: "Trunk Stability Pushup",
-                        "options": [
-                            {"val": "fms18-1", "label": "0"},
-                            {"val": "fms18-2", "label": "1"},
-                            {"val": "fms18-3", "label": "2"},
-                            {"val": "fms18-4", "label": "3"}
+                        options: [
+                            {val: "fms18-1", label: "0"},
+                            {val: "fms18-2", label: "1"},
+                            {val: "fms18-3", label: "2"},
+                            {val: "fms18-4", label: "3"}
                         ],
                         editorClass: 'input-small',
                         help: 'points'
@@ -1960,10 +2285,10 @@ module.exports = {
                         type: "Select",
                         title: "Rotary Stability (Right)",
                         options: [
-                            {"val": "fms21-1", "label": "0"},
-                            {"val": "fms21-2", "label": "1"},
-                            {"val": "fms21-3", "label": "2"},
-                            {"val": "fms21-4", "label": "3"}
+                            {val: "fms21-1", label: "0"},
+                            {val: "fms21-2", label: "1"},
+                            {val: "fms21-3", label: "2"},
+                            {val: "fms21-4", label: "3"}
                         ],
                         editorClass: 'input-small',
                         help: 'points'
@@ -1972,10 +2297,10 @@ module.exports = {
                         type: "Select",
                         title: "Rotary Stability (Left)",
                         options: [
-                            {"val": "fms22-1", "label": "0"},
-                            {"val": "fms22-2", "label": "1"},
-                            {"val": "fms22-3", "label": "2"},
-                            {"val": "fms22-4", "label": "3"}
+                            {val: "fms22-1", label: "0"},
+                            {val: "fms22-2", label: "1"},
+                            {val: "fms22-3", label: "2"},
+                            {val: "fms22-4", label: "3"}
                         ],
                         editorClass: 'input-small',
                         help: 'points'
@@ -2040,12 +2365,12 @@ module.exports = {
                 totalCompletedQuestions: 0,
                 formSchema: {
                     equistretch01: {
-                        type: "Radio",
+                        type: 'Radio',
                         title: "Seated Cervical Flexion",
                         options: [
-                            {"val": "equistretch01-1", "label": "Excellent"},
-                            {"val": "equistretch01-2", "label": "Satisifactory"},
-                            {"val": "equistretch01-3", "label": "Needs Improvement"}
+                            {val: "equistretch01-1", label: "Excellent"},
+                            {val: "equistretch01-2", label: "Satisifactory"},
+                            {val: "equistretch01-3", label: "Needs Improvement"}
                         ]
                     },
 
@@ -2059,12 +2384,12 @@ module.exports = {
                     },
 
                     equistretch02: {
-                        type: "Radio",
+                        type: 'Radio',
                         title: "Seated Cervical Extension",
                         options: [
-                            {"val": "equistretch02-1", "label": "Excellent"},
-                            {"val": "equistretch02-2", "label": "Satisifactory"},
-                            {"val": "equistretch02-3", "label": "Needs Improvement"}
+                            {val: "equistretch02-1", label: "Excellent"},
+                            {val: "equistretch02-2", label: "Satisifactory"},
+                            {val: "equistretch02-3", label: "Needs Improvement"}
                         ]
                     },
 
@@ -2078,12 +2403,12 @@ module.exports = {
                     },
 
                     equistretch03: {
-                        type: "Radio",
+                        type: 'Radio',
                         title: "Seated Cervical Rotation",
                         options: [
-                            {"val": "equistretch03-1", "label": "Excellent"},
-                            {"val": "equistretch03-2", "label": "Satisifactory"},
-                            {"val": "equistretch03-3", "label": "Needs Improvement"}
+                            {val: "equistretch03-1", label: "Excellent"},
+                            {val: "equistretch03-2", label: "Satisifactory"},
+                            {val: "equistretch03-3", label: "Needs Improvement"}
                         ]
                     },
 
@@ -2097,12 +2422,12 @@ module.exports = {
                     },
 
                     equistretch04: {
-                        type: "Radio",
+                        type: 'Radio',
                         title: "Seated Cervical Side Bending",
                         options: [
-                            {"val": "equistretch04-1", "label": "Excellent"},
-                            {"val": "equistretch04-2", "label": "Satisifactory"},
-                            {"val": "equistretch04-3", "label": "Needs Improvement"}
+                            {val: "equistretch04-1", label: "Excellent"},
+                            {val: "equistretch04-2", label: "Satisifactory"},
+                            {val: "equistretch04-3", label: "Needs Improvement"}
                         ]
                     },
                     equistretch04a: {
@@ -2114,12 +2439,12 @@ module.exports = {
                         }
                     },
                     equistretch05: {
-                        type: "Radio",
+                        type: 'Radio',
                         title: "Seated Shoulder Elevation",
                         options: [
-                            {"val": "equistretch05-1", "label": "Excellent"},
-                            {"val": "equistretch05-2", "label": "Satisifactory"},
-                            {"val": "equistretch05-3", "label": "Needs Improvement"}
+                            {val: "equistretch05-1", label: "Excellent"},
+                            {val: "equistretch05-2", label: "Satisifactory"},
+                            {val: "equistretch05-3", label: "Needs Improvement"}
                         ]
                     },
                     equistretch05a: {
@@ -2131,12 +2456,12 @@ module.exports = {
                         }
                     },
                     equistretch06: {
-                        type: "Radio",
+                        type: 'Radio',
                         title: "Seated Hands Behind Head",
                         options: [
-                            {"val": "equistretch06-1", "label": "Excellent"},
-                            {"val": "equistretch06-2", "label": "Satisifactory"},
-                            {"val": "equistretch06-3", "label": "Needs Improvement"}
+                            {val: "equistretch06-1", label: "Excellent"},
+                            {val: "equistretch06-2", label: "Satisifactory"},
+                            {val: "equistretch06-3", label: "Needs Improvement"}
                         ]
                     },
 
@@ -2150,12 +2475,12 @@ module.exports = {
                     },
 
                     equistretch07: {
-                        type: "Radio",
+                        type: 'Radio',
                         title: "Seated Hands Behind Back",
                         options: [
-                            {"val": "equistretch07-1", "label": "Excellent"},
-                            {"val": "equistretch07-2", "label": "Satisifactory"},
-                            {"val": "equistretch07-3", "label": "Needs Improvement"}
+                            {val: "equistretch07-1", label: "Excellent"},
+                            {val: "equistretch07-2", label: "Satisifactory"},
+                            {val: "equistretch07-3", label: "Needs Improvement"}
                         ]
                     },
                     equistretch07a: {
@@ -2168,12 +2493,12 @@ module.exports = {
                     },
 
                     equistretch08: {
-                        type: "Radio",
+                        type: 'Radio',
                         title: "Supine Lat Length",
                         options: [
-                            {"val": "equistretch08-1", "label": "Excellent"},
-                            {"val": "equistretch08-2", "label": "Satisifactory"},
-                            {"val": "equistretch08-3", "label": "Needs Improvement"}
+                            {val: "equistretch08-1", label: "Excellent"},
+                            {val: "equistretch08-2", label: "Satisifactory"},
+                            {val: "equistretch08-3", label: "Needs Improvement"}
                         ]
                     },
                     equistretch08a: {
@@ -2185,12 +2510,12 @@ module.exports = {
                         }
                     },
                     equistretch09: {
-                        type: "Radio",
+                        type: 'Radio',
                         title: "Supine Hip Flexor",
                         options: [
-                            {"val": "equistretch09-1", "label": "Excellent"},
-                            {"val": "equistretch09-2", "label": "Satisifactory"},
-                            {"val": "equistretch09-3", "label": "Needs Improvement"}
+                            {val: "equistretch09-1", label: "Excellent"},
+                            {val: "equistretch09-2", label: "Satisifactory"},
+                            {val: "equistretch09-3", label: "Needs Improvement"}
                         ]
                     },
                     equistretch09a: {
@@ -2202,12 +2527,12 @@ module.exports = {
                         }
                     },
                     equistretch10: {
-                        type: "Radio",
+                        type: 'Radio',
                         title: "Supine Adductor Length",
                         options: [
-                            {"val": "equistretch10-1", "label": "Excellent"},
-                            {"val": "equistretch10-2", "label": "Satisifactory"},
-                            {"val": "equistretch10-3", "label": "Needs Improvement"}
+                            {val: "equistretch10-1", label: "Excellent"},
+                            {val: "equistretch10-2", label: "Satisifactory"},
+                            {val: "equistretch10-3", label: "Needs Improvement"}
                         ]
                     },
                     equistretch10a: {
@@ -2219,12 +2544,12 @@ module.exports = {
                         }
                     },
                     equistretch11: {
-                        type: "Radio",
+                        type: 'Radio',
                         title: "Supine Gastroc Length",
                         options: [
-                            {"val": "equistretch11-1", "label": "Excellent"},
-                            {"val": "equistretch11-2", "label": "Satisifactory"},
-                            {"val": "equistretch11-3", "label": "Needs Improvement"}
+                            {val: "equistretch11-1", label: "Excellent"},
+                            {val: "equistretch11-2", label: "Satisifactory"},
+                            {val: "equistretch11-3", label: "Needs Improvement"}
                         ]
                     },
                     equistretch11a: {
@@ -2236,12 +2561,12 @@ module.exports = {
                         }
                     },
                     equistretch12: {
-                        type: "Radio",
+                        type: 'Radio',
                         title: "Side Lying ITB Length (Ober's Test)",
                         options: [
-                            {"val": "equistretch12-1", "label": "Excellent"},
-                            {"val": "equistretch12-2", "label": "Satisifactory"},
-                            {"val": "equistretch12-3", "label": "Needs Improvement"}
+                            {val: "equistretch12-1", label: "Excellent"},
+                            {val: "equistretch12-2", label: "Satisifactory"},
+                            {val: "equistretch12-3", label: "Needs Improvement"}
                         ]
                     },
                     equistretch12a: {
@@ -2253,12 +2578,12 @@ module.exports = {
                         }
                     },
                     equistretch13: {
-                        type: "Radio",
+                        type: 'Radio',
                         title: "Prone Knee Flexion (Ely's Test)",
                         options: [
-                            {"val": "equistretch13-1", "label": "Excellent"},
-                            {"val": "equistretch13-2", "label": "Satisifactory"},
-                            {"val": "equistretch13-3", "label": "Needs Improvement"}
+                            {val: "equistretch13-1", label: "Excellent"},
+                            {val: "equistretch13-2", label: "Satisifactory"},
+                            {val: "equistretch13-3", label: "Needs Improvement"}
                         ]
                     },
                     equistretch13a: {
@@ -2270,12 +2595,12 @@ module.exports = {
                         }
                     },
                     equistretch14: {
-                        type: "Radio",
+                        type: 'Radio',
                         title: "Prone Soleus Lenght",
                         options: [
-                            {"val": "equistretch14-1", "label": "Excellent"},
-                            {"val": "equistretch14-2", "label": "Satisifactory"},
-                            {"val": "equistretch14-3", "label": "Needs Improvement"}
+                            {val: "equistretch14-1", label: "Excellent"},
+                            {val: "equistretch14-2", label: "Satisifactory"},
+                            {val: "equistretch14-3", label: "Needs Improvement"}
                         ]
                     },
                     equistretch14a: {
@@ -2328,7 +2653,7 @@ module.exports = {
             {
                 templateId: 11,
                 templateType: "PerformanceTesting",
-                title: "Performance Testing",
+                title: "Performance",
                 totalQuestions: 10,
                 totalCompletedQuestions: 0,
                 formSchema: {
@@ -2417,77 +2742,77 @@ module.exports = {
                     }
                 ],
                 data: {},
-
-                template: '<form class="form-horizontal">\
-                    <h2>Performance</h2>\
-                    <fieldset data-fields="performancetesting01,performancetesting02,performancetesting03"></fieldset>\
-                    <img class="img-polaroid" src="http://placehold.it/350x150.png&text=TBD" alt="Bruce Treadmill Protocol"/>\
-                    <table class="table table-striped">\
-                        <tr>\
-                            <th>Stage</th>\
-                            <th>Time</th>\
-                            <th>Speed</th>\
-                            <th>Speed</th>\
-                            <th></th>\
-                        </tr>\
-                        <tr>\
-                            <td>1</td>\
-                            <td>0-3 mins</td>\
-                            <td>1.7 mph</td>\
-                            <td>10%</td>\
-                            <td><div data-fields="performancetesting04"></div></td>\
-                        </tr>\
-                        <tr>\
-                            <td>2</td>\
-                            <td>3-6 mins</td>\
-                            <td>2.5 mph</td>\
-                            <td>12%</td>\
-                            <td><div data-fields="performancetesting05"></div></td>\
-                        </tr>\
-                        <tr>\
-                            <td>3</td>\
-                            <td>6-9 mins</td>\
-                            <td>3.4 mph</td>\
-                            <td>14%</td>\
-                            <td><div data-fields="performancetesting06"></div></td>\
-                        </tr>\
-                        <tr>\
-                            <td>4</td>\
-                            <td>9-12 mins</td>\
-                            <td>4.5 mph</td>\
-                            <td>15%</td>\
-                            <td><div data-fields="performancetesting07"></div></td>\
-                        </tr>\
-                        <tr>\
-                            <td>5</td>\
-                            <td>12-15 mins</td>\
-                            <td>5.5 mph</td>\
-                            <td>15%</td>\
-                            <td><div data-fields="performancetesting08"></div></td>\
-                        </tr>\
-                        <tr>\
-                            <td>6</td>\
-                            <td>15-18 mins</td>\
-                            <td>6.5 mph</td>\
-                            <td>15%</td>\
-                            <td><div data-fields="performancetesting09"></div></td>\
-                        </tr>\
-                    </table>\
-                    <fieldset data-fields="performancetesting10,performancetesting11"></fieldset>\
-                    </form>'
+                //
+                //template: '<form class="form-horizontal">\
+                //    <h2>Performance</h2>\
+                //    <fieldset data-fields="performancetesting01,performancetesting02,performancetesting03"></fieldset>\
+                //    <img class="img-polaroid" src="http://placehold.it/350x150.png&text=TBD" alt="Bruce Treadmill Protocol"/>\
+                //    <table class="table table-striped">\
+                //        <tr>\
+                //            <th>Stage</th>\
+                //            <th>Time</th>\
+                //            <th>Speed</th>\
+                //            <th>Speed</th>\
+                //            <th></th>\
+                //        </tr>\
+                //        <tr>\
+                //            <td>1</td>\
+                //            <td>0-3 mins</td>\
+                //            <td>1.7 mph</td>\
+                //            <td>10%</td>\
+                //            <td><div data-fields="performancetesting04"></div></td>\
+                //        </tr>\
+                //        <tr>\
+                //            <td>2</td>\
+                //            <td>3-6 mins</td>\
+                //            <td>2.5 mph</td>\
+                //            <td>12%</td>\
+                //            <td><div data-fields="performancetesting05"></div></td>\
+                //        </tr>\
+                //        <tr>\
+                //            <td>3</td>\
+                //            <td>6-9 mins</td>\
+                //            <td>3.4 mph</td>\
+                //            <td>14%</td>\
+                //            <td><div data-fields="performancetesting06"></div></td>\
+                //        </tr>\
+                //        <tr>\
+                //            <td>4</td>\
+                //            <td>9-12 mins</td>\
+                //            <td>4.5 mph</td>\
+                //            <td>15%</td>\
+                //            <td><div data-fields="performancetesting07"></div></td>\
+                //        </tr>\
+                //        <tr>\
+                //            <td>5</td>\
+                //            <td>12-15 mins</td>\
+                //            <td>5.5 mph</td>\
+                //            <td>15%</td>\
+                //            <td><div data-fields="performancetesting08"></div></td>\
+                //        </tr>\
+                //        <tr>\
+                //            <td>6</td>\
+                //            <td>15-18 mins</td>\
+                //            <td>6.5 mph</td>\
+                //            <td>15%</td>\
+                //            <td><div data-fields="performancetesting09"></div></td>\
+                //        </tr>\
+                //    </table>\
+                //    <fieldset data-fields="performancetesting10,performancetesting11"></fieldset>\
+                //    </form>'
             },
 
             {
                 "templateId": 12,
                 "templateType": 2,
-                "title": "Physical Test",
+                title: "Physical Test",
                 "idPrefix": "physical-test-",
                 "totalQuestions": 5,
                 "totalCompletedQuestions": 5,
                 "formSchema": {
-                    "title": {
+                    title: {
                         "type": "Select",
-                        "options": [
+                        options: [
                             "",
                             "Mr",
                             "Mrs",
@@ -2503,8 +2828,8 @@ module.exports = {
                     },
 
                     "address": {
-                        "type": "Text",
-                        "title": "Address 1"
+                        type: 'Text',
+                        title: "Address 1"
                     },
 
                     "city": {
@@ -2513,7 +2838,7 @@ module.exports = {
 
                     "state": {
                         "type": "Select",
-                        "options": [
+                        options: [
                             "",
                             "AR",
                             "CT",
