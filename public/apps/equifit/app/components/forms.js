@@ -11,16 +11,11 @@ define(function (require, exports, module) {
     ComponentModule.Field.prototype = {
         // actual callbacks
         toggleCheckbox: function () {
-            console.log('toggle checkbox', this.getValue());
-            return (this.getValue()) ? this.showTarget() : this.hideTarget();
+            return (_.isEqual(this.getValue(),this.getCondition())) ? this.showTarget() : this.hideTarget();
         },
 
         toggleRadio: function () {
             return (_.isEqual(this.getValue(),this.getCondition()[0])) ? this.showTarget() : this.hideTarget();
-        },
-
-        toggleRadios: function () {
-            //return (_.isEqual(this.getValue(),this.getCondition()[0])) ? this.showTarget() : this.hideTarget();
         },
 
         toggleHelp: function () {
@@ -42,16 +37,18 @@ define(function (require, exports, module) {
         },
 
         showHelp: function () {
+            // easy to have class name here then update all record in database. 'help-block'
             this.editor.$el.find('.' + this.getTarget() + '-block').slideDown(200).addClass('warning');
         },
 
         hideHelp: function () {
+            // easy to have class name here then update all record in database. 'help-block'
             this.editor.$el.find('.' + this.getTarget() + '-block').hide();
         },
 
         hideTarget: function () {
             _.each(this.getTarget(), function (field) {
-                this.form.fields[field].$el.hide();
+                this.form.fields[field].$el.hide();  //TODO: slideDown() doesn't work. fix it.
             },this);
         },
 
