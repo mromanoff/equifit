@@ -3113,55 +3113,46 @@ module.exports = [
             performancetesting01: {
                 type: "Text",
                 title: "Leg Press(10 RM)",
-                editorClass: "input-small",
                 help: "lbs"
             },
             performancetesting02: {
                 type: "Text",
                 title: "Chest Press (10 RM)",
-                editorClass: "input-small",
                 help: "lbs"
             },
             performancetesting03: {
                 type: "Text",
                 title: "Push Ups Test",
-                editorClass: "input-small",
                 help: "Completed"
             },
             performancetesting04: {
                 type: "Text",
                 title: null,
-                editorClass: "input-small",
                 help: "BPM"
             },
             performancetesting05: {
                 type: "Text",
                 title: null,
-                editorClass: "input-small",
                 help: "BPM"
             },
             performancetesting06: {
                 type: "Text",
                 title: null,
-                editorClass: "input-small",
                 help: "BPM"
             },
             performancetesting07: {
                 type: "Text",
                 title: null,
-                editorClass: "input-small",
                 help: "BPM"
             },
             performancetesting08: {
                 type: "Text",
                 title: null,
-                editorClass: "input-small",
                 help: "BPM"
             },
             performancetesting09: {
                 type: "Text",
                 title: null,
-                editorClass: "input-small",
                 help: "BPM"
             },
             performancetesting10: {
@@ -3172,7 +3163,6 @@ module.exports = [
             performancetesting11: {
                 type: "Text",
                 title: "VO2MAX (ML/KG/MIN)",
-                editorClass: 'input-small',
                 help: '?'
             }
         },
@@ -3194,7 +3184,7 @@ module.exports = [
                 ]
             }
         ],
-        data: {},
+        data: {}
         //
         //template: '<form class="form-horizontal">\
         //    <h2>Performance</h2>\
