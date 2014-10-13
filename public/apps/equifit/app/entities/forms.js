@@ -81,30 +81,18 @@ define(function (require) {
             return defer.promise();
         },
 
-        updateFormEntity: function (form) {
+        updateFormEntity: function (form, options) {
+            options = (options || {});
+
             var model = new Entities.Form({id: form.id});
             var defer = $.Deferred();
-            // show loading view  while fetching data
-            msgBus.commands.execute('loading:show');
 
-            //
-            //console.log('FORM DATA to FLATTEN');
-            //var test = _.map(form.get('data'), function (value, key, list) {
-            //    if(_.isObject(item)) {
-            //       //console.log('it is object ', _.keys(item), _.values(item));
-            //        //console.log('it is object ', _.flatten(item));
-            //        _.flatten(_.map(item, function(i) {
-            //            console.log(i);
-            //        }));
-            //    }
-            //
-            //}, this);
+            // show loading view  while fetching data or not for auto save
+            if(!options.silent) {
+                msgBus.commands.execute('loading:show');
+            }
 
-
-
-
-
-           // setTimeout(function(){
+          // setTimeout(function(){
             model.save({
                 data: form.get('data'),
                 content: form.get('content')
@@ -119,7 +107,7 @@ define(function (require) {
                     defer.reject(model, jqXHR, textStatus);
                 }
             });
-          //  }, 2000);
+           // }, 2000);
             return defer.promise();
         }
     };
@@ -134,6 +122,10 @@ define(function (require) {
 
     msgBus.reqres.setHandler('form:entity:update', function (form) {
         return API.updateFormEntity(form);
+    });
+
+    msgBus.reqres.setHandler('form:entity:auto:save', function (form) {
+        return API.updateFormEntity(form, {silent: true});
     });
 
 });

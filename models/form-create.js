@@ -296,11 +296,10 @@ module.exports = [
             "medical08": {
                 "type": "Checkboxes",
                 "title": "Check any injuries you have or had in the past:",
-                "fieldClass": "checkbox",
                 "fieldAttrs": {
                     "data-bind": "toggleCheckbox",
                     "data-target": "medical08-dynamic1,medical08-dynamic2,medical08-dynamic3,medical08-dynamic4,medical08-dynamic5,medical08-dynamic6",
-                    "data-condition": null
+                    "data-condition": "medical08-1"
                 },
                 "options": [
                     {
@@ -312,30 +311,22 @@ module.exports = [
             "medical08-dynamic1": {
                 "type": "TextArea",
                 "title": "Area (Left, Right / Upper, Mid, Lower)",
-                "editorAttrs": {
-                    "maxlength": "40"
-                }
+                "editorAttrs": {"maxlength": 40}
             },
             "medical08-dynamic2": {
                 "type": "TextArea",
                 "title": "When it happened?",
-                "editorAttrs": {
-                    "maxlength": "40"
-                }
+                "editorAttrs": {"maxlength": 40}
             },
             "medical08-dynamic3": {
                 "type": "TextArea",
                 "title": "How did it happen?",
-                "editorAttrs": {
-                    "maxlength": "40"
-                }
+                "editorAttrs": {"maxlength": 40}
             },
             "medical08-dynamic4": {
                 "type": "TextArea",
                 "title": "Rehab status?",
-                "editorAttrs": {
-                    "maxlength": "40"
-                }
+                "editorAttrs": {"maxlength": 40}
             },
             "medical08-dynamic5": {
                 "type": "Radio",
@@ -368,11 +359,10 @@ module.exports = [
             "medical09": {
                 "type": "Checkboxes",
                 "title": "",
-                "fieldClass": "checkbox",
                 "fieldAttrs": {
                     "data-bind": "toggleCheckbox",
                     "data-target": "medical09-dynamic1,medical09-dynamic2,medical09-dynamic3,medical09-dynamic4,medical09-dynamic5,medical09-dynamic6",
-                    "data-condition": null
+                    "data-condition": "medical09-1"
                 },
                 "options": [
                     {
@@ -384,30 +374,22 @@ module.exports = [
             "medical09-dynamic1": {
                 "type": "TextArea",
                 "title": "Area (Left, Right / Upper, Mid, Lower)",
-                "editorAttrs": {
-                    "maxlength": "40"
-                }
+                "editorAttrs": {"maxlength": 40}
             },
             "medical09-dynamic2": {
                 "type": "TextArea",
                 "title": "When it happened?",
-                "editorAttrs": {
-                    "maxlength": "40"
-                }
+                "editorAttrs": {"maxlength": 40}
             },
             "medical09-dynamic3": {
                 "type": "TextArea",
                 "title": "How did it happen?",
-                "editorAttrs": {
-                    "maxlength": "40"
-                }
+                "editorAttrs": {"maxlength": 40}
             },
             "medical09-dynamic4": {
                 "type": "TextArea",
                 "title": "Rehab status?",
-                "editorAttrs": {
-                    "maxlength": "40"
-                }
+                "editorAttrs": {"maxlength": 40}
             },
             "medical09-dynamic5": {
                 "type": "Radio",
@@ -439,12 +421,11 @@ module.exports = [
             },
             "medical10": {
                 "type": "Checkboxes",
-                "fieldClass": "checkbox",
                 "title": "",
                 "fieldAttrs": {
                     "data-bind": "toggleCheckbox",
                     "data-target": "medical10-dynamic1,medical10-dynamic2,medical10-dynamic3,medical10-dynamic4,medical10-dynamic5,medical10-dynamic6",
-                    "data-condition": null
+                    "data-condition": "medical10-1"
                 },
                 "options": [
                     {
@@ -456,30 +437,22 @@ module.exports = [
             "medical10-dynamic1": {
                 "type": "TextArea",
                 "title": "Area (Left, Right / Upper, Mid, Lower)",
-                "editorAttrs": {
-                    "maxlength": "40"
-                }
+                "editorAttrs": {"maxlength": 40}
             },
             "medical10-dynamic2": {
                 "type": "TextArea",
                 "title": "When it happened?",
-                "editorAttrs": {
-                    "maxlength": "40"
-                }
+                "editorAttrs": {"maxlength": 40}
             },
             "medical10-dynamic3": {
                 "type": "TextArea",
                 "title": "How did it happen?",
-                "editorAttrs": {
-                    "maxlength": "40"
-                }
+                "editorAttrs": {"maxlength": 40}
             },
             "medical10-dynamic4": {
                 "type": "TextArea",
                 "title": "Rehab status?",
-                "editorAttrs": {
-                    "maxlength": "40"
-                }
+                "editorAttrs": {"maxlength": 40}
             },
             "medical10-dynamic5": {
                 "type": "Radio",
@@ -511,12 +484,11 @@ module.exports = [
             },
             "medical11": {
                 "type": "Checkboxes",
-                "fieldClass": "checkbox",
                 "title": "",
                 "fieldAttrs": {
                     "data-bind": "toggleCheckbox",
                     "data-target": "medical11-dynamic1,medical11-dynamic2,medical11-dynamic3,medical11-dynamic4,medical11-dynamic5,medical11-dynamic6",
-                    "data-condition": null
+                    "data-condition": "medical11-1"
                 },
                 "options": [
                     {
@@ -528,30 +500,22 @@ module.exports = [
             "medical11-dynamic1": {
                 "type": "TextArea",
                 "title": "Area (Left, Right / Upper, Mid, Lower)",
-                "editorAttrs": {
-                    "maxlength": "40"
-                }
+                "editorAttrs": {"maxlength": 40}
             },
             "medical11-dynamic2": {
                 "type": "TextArea",
                 "title": "When it happened?",
-                "editorAttrs": {
-                    "maxlength": "40"
-                }
+                "editorAttrs": {"maxlength": 40}
             },
             "medical11-dynamic3": {
                 "type": "TextArea",
                 "title": "How did it happen?",
-                "editorAttrs": {
-                    "maxlength": "40"
-                }
+                "editorAttrs": {"maxlength": 40}
             },
             "medical11-dynamic4": {
                 "type": "TextArea",
                 "title": "Rehab status?",
-                "editorAttrs": {
-                    "maxlength": "40"
-                }
+                "editorAttrs": {"maxlength": 40}
             },
             "medical11-dynamic5": {
                 "type": "Radio",
@@ -583,12 +547,11 @@ module.exports = [
             },
             "medical12": {
                 "type": "Checkboxes",
-                "fieldClass": "checkbox",
                 "title": "",
                 "fieldAttrs": {
                     "data-bind": "toggleCheckbox",
                     "data-target": "medical12-dynamic1,medical12-dynamic2,medical12-dynamic3,medical12-dynamic4,medical12-dynamic5,medical12-dynamic6",
-                    "data-condition": null
+                    "data-condition": "medical12-1"
                 },
                 "options": [
                     {
@@ -600,30 +563,22 @@ module.exports = [
             "medical12-dynamic1": {
                 "type": "TextArea",
                 "title": "Area (Left, Right / Upper, Mid, Lower)",
-                "editorAttrs": {
-                    "maxlength": "40"
-                }
+                "editorAttrs": {"maxlength": 40}
             },
             "medical12-dynamic2": {
                 "type": "TextArea",
                 "title": "When it happened?",
-                "editorAttrs": {
-                    "maxlength": "40"
-                }
+                "editorAttrs": {"maxlength": 40}
             },
             "medical12-dynamic3": {
                 "type": "TextArea",
                 "title": "How did it happen?",
-                "editorAttrs": {
-                    "maxlength": "40"
-                }
+                "editorAttrs": {"maxlength": 40}
             },
             "medical12-dynamic4": {
                 "type": "TextArea",
                 "title": "Rehab status?",
-                "editorAttrs": {
-                    "maxlength": "40"
-                }
+                "editorAttrs": {"maxlength": 40}
             },
             "medical12-dynamic5": {
                 "type": "Radio",
@@ -655,12 +610,11 @@ module.exports = [
             },
             "medical13": {
                 "type": "Checkboxes",
-                "fieldClass": "checkbox",
                 "title": "",
                 "fieldAttrs": {
                     "data-bind": "toggleCheckbox",
                     "data-target": "medical13-dynamic1,medical13-dynamic2,medical13-dynamic3,medical13-dynamic4,medical13-dynamic5,medical13-dynamic6",
-                    "data-condition": null
+                    "data-condition": "medical13-1"
                 },
                 "options": [
                     {
@@ -672,30 +626,22 @@ module.exports = [
             "medical13-dynamic1": {
                 "type": "TextArea",
                 "title": "Area (Left, Right / Upper, Mid, Lower)",
-                "editorAttrs": {
-                    "maxlength": "40"
-                }
+                "editorAttrs": {"maxlength": 40}
             },
             "medical13-dynamic2": {
                 "type": "TextArea",
                 "title": "When it happened?",
-                "editorAttrs": {
-                    "maxlength": "40"
-                }
+                "editorAttrs": {"maxlength": 40}
             },
             "medical13-dynamic3": {
                 "type": "TextArea",
                 "title": "How did it happen?",
-                "editorAttrs": {
-                    "maxlength": "40"
-                }
+                "editorAttrs": {"maxlength": 40}
             },
             "medical13-dynamic4": {
                 "type": "TextArea",
                 "title": "Rehab status?",
-                "editorAttrs": {
-                    "maxlength": "40"
-                }
+                "editorAttrs": {"maxlength": 40}
             },
             "medical13-dynamic5": {
                 "type": "Radio",
@@ -727,12 +673,11 @@ module.exports = [
             },
             "medical14": {
                 "type": "Checkboxes",
-                "fieldClass": "checkbox",
                 "title": "",
                 "fieldAttrs": {
                     "data-bind": "toggleCheckbox",
                     "data-target": "medical14-dynamic1,medical14-dynamic2,medical14-dynamic3,medical14-dynamic4,medical14-dynamic5,medical14-dynamic6",
-                    "data-condition": null
+                    "data-condition": "medical14-1"
                 },
                 "options": [
                     {
@@ -744,30 +689,22 @@ module.exports = [
             "medical14-dynamic1": {
                 "type": "TextArea",
                 "title": "Area (Left, Right / Upper, Mid, Lower)",
-                "editorAttrs": {
-                    "maxlength": "40"
-                }
+                "editorAttrs": {"maxlength": 40}
             },
             "medical14-dynamic2": {
                 "type": "TextArea",
                 "title": "When it happened?",
-                "editorAttrs": {
-                    "maxlength": "40"
-                }
+                "editorAttrs": {"maxlength": 40}
             },
             "medical14-dynamic3": {
                 "type": "TextArea",
                 "title": "How did it happen?",
-                "editorAttrs": {
-                    "maxlength": "40"
-                }
+                "editorAttrs": {"maxlength": 40}
             },
             "medical14-dynamic4": {
                 "type": "TextArea",
                 "title": "Rehab status?",
-                "editorAttrs": {
-                    "maxlength": "40"
-                }
+                "editorAttrs": {"maxlength": 40}
             },
             "medical14-dynamic5": {
                 "type": "Radio",
@@ -799,12 +736,11 @@ module.exports = [
             },
             "medical15": {
                 "type": "Checkboxes",
-                "fieldClass": "checkbox",
                 "title": "",
                 "fieldAttrs": {
                     "data-bind": "toggleCheckbox",
                     "data-target": "medical15-dynamic1,medical15-dynamic2,medical15-dynamic3,medical15-dynamic4,medical15-dynamic5,medical15-dynamic6",
-                    "data-condition": null
+                    "data-condition": "medical15-1"
                 },
                 "options": [
                     {
@@ -816,30 +752,22 @@ module.exports = [
             "medical15-dynamic1": {
                 "type": "TextArea",
                 "title": "Area (Left, Right / Upper, Mid, Lower)",
-                "editorAttrs": {
-                    "maxlength": "40"
-                }
+                "editorAttrs": {"maxlength": 40}
             },
             "medical15-dynamic2": {
                 "type": "TextArea",
                 "title": "When it happened?",
-                "editorAttrs": {
-                    "maxlength": "40"
-                }
+                "editorAttrs": {"maxlength": 40}
             },
             "medical15-dynamic3": {
                 "type": "TextArea",
                 "title": "How did it happen?",
-                "editorAttrs": {
-                    "maxlength": "40"
-                }
+                "editorAttrs": {"maxlength": 40}
             },
             "medical15-dynamic4": {
                 "type": "TextArea",
                 "title": "Rehab status?",
-                "editorAttrs": {
-                    "maxlength": "40"
-                }
+                "editorAttrs": {"maxlength": 40}
             },
             "medical15-dynamic5": {
                 "type": "Radio",
@@ -871,12 +799,11 @@ module.exports = [
             },
             "medical16": {
                 "type": "Checkboxes",
-                "fieldClass": "checkbox",
                 "title": "",
                 "fieldAttrs": {
                     "data-bind": "toggleCheckbox",
                     "data-target": "medical16-dynamic1,medical16-dynamic2,medical16-dynamic3,medical16-dynamic4,medical16-dynamic5,medical16-dynamic6",
-                    "data-condition": null
+                    "data-condition": "medical16-1"
                 },
                 "options": [
                     {
@@ -888,30 +815,22 @@ module.exports = [
             "medical16-dynamic1": {
                 "type": "TextArea",
                 "title": "Area (Left, Right / Upper, Mid, Lower)",
-                "editorAttrs": {
-                    "maxlength": "40"
-                }
+                "editorAttrs": {"maxlength": 40}
             },
             "medical16-dynamic2": {
                 "type": "TextArea",
                 "title": "When it happened?",
-                "editorAttrs": {
-                    "maxlength": "40"
-                }
+                "editorAttrs": {"maxlength": 40}
             },
             "medical16-dynamic3": {
                 "type": "TextArea",
                 "title": "How did it happen?",
-                "editorAttrs": {
-                    "maxlength": "40"
-                }
+                "editorAttrs": {"maxlength": 40}
             },
             "medical16-dynamic4": {
                 "type": "TextArea",
                 "title": "Rehab status?",
-                "editorAttrs": {
-                    "maxlength": "40"
-                }
+                "editorAttrs": {"maxlength": 40}
             },
             "medical16-dynamic5": {
                 "type": "Radio",
@@ -943,12 +862,11 @@ module.exports = [
             },
             "medical17": {
                 "type": "Checkboxes",
-                "fieldClass": "checkbox",
                 "title": "",
                 "fieldAttrs": {
                     "data-bind": "toggleCheckbox",
                     "data-target": "medical17-dynamic1,medical17-dynamic2,medical17-dynamic3,medical17-dynamic4,medical17-dynamic5,medical17-dynamic6",
-                    "data-condition": null
+                    "data-condition": "medical17-1"
                 },
                 "options": [
                     {
@@ -960,30 +878,22 @@ module.exports = [
             "medical17-dynamic1": {
                 "type": "TextArea",
                 "title": "Area (Left, Right / Upper, Mid, Lower)",
-                "editorAttrs": {
-                    "maxlength": "40"
-                }
+                "editorAttrs": {"maxlength": 40}
             },
             "medical17-dynamic2": {
                 "type": "TextArea",
                 "title": "When it happened?",
-                "editorAttrs": {
-                    "maxlength": "40"
-                }
+                "editorAttrs": {"maxlength": 40}
             },
             "medical17-dynamic3": {
                 "type": "TextArea",
                 "title": "How did it happen?",
-                "editorAttrs": {
-                    "maxlength": "40"
-                }
+                "editorAttrs": {"maxlength": 40}
             },
             "medical17-dynamic4": {
                 "type": "TextArea",
                 "title": "Rehab status?",
-                "editorAttrs": {
-                    "maxlength": "40"
-                }
+                "editorAttrs": {"maxlength": 40}
             },
             "medical17-dynamic5": {
                 "type": "Radio",
@@ -1049,9 +959,7 @@ module.exports = [
             "medical19-dynamic1": {
                 "type": "TextArea",
                 "title": "If yes, please list below",
-                "editorAttrs": {
-                    "maxlength": "100"
-                }
+                "editorAttrs": {"maxlength": 100}
             },
             "medical20": {
                 "type": "Radio",
@@ -1084,13 +992,10 @@ module.exports = [
             "medical22": {
                 "type": "TextArea",
                 "title": "Do you suffer from any medical conditions that might inhibit your ability to exercise?",
-                "editorAttrs": {
-                    "maxlength": "100"
-                }
+                "editorAttrs": {"maxlength": 100}
             },
             "medical23": {
                 "type": "Checkboxes",
-                "fieldClass": "checkbox",
                 "title": "Have you ever been diagnosed with a specific medical condition? (Check all that apply)",
                 "options": [
                     {
@@ -1150,9 +1055,7 @@ module.exports = [
             "medical24": {
                 "type": "TextArea",
                 "title": "Comments: Date of onset, Treatment, Physician clearance? (Y/N)",
-                "editorAttrs": {
-                    "maxlength": "100"
-                }
+                "editorAttrs": {"maxlength": 100}
             }
         },
 

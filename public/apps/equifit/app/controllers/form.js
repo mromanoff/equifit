@@ -84,7 +84,7 @@ define(function (require, exports, module) {
 
 
     controller.autoSaveForm = function (form) {
-        var updateForm = msgBus.reqres.request('form:entity:update', form);
+        var updateForm = msgBus.reqres.request('form:entity:auto:save', form);
         $.when(updateForm).done(function (form) {
             console.info('Form auto saved:', form);
             //TODO
@@ -96,8 +96,6 @@ define(function (require, exports, module) {
             console.log('modified', updatedAt);
 
             $('.modified').text(updatedAt);
-
-
         });
 
         $.when(updateForm).fail(function (model, jqXHR, textStatus) {
