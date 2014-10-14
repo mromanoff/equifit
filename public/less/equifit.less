@@ -1,6 +1,11 @@
+// Core variables and mixins
+@import "../bower_components/bootstrap/less/variables.less";
+// Modify this for custom colors, font-sizes, etc
+@import "../bower_components/bootstrap/less/mixins.less";
+
 .equifit {
 
-  .modified{
+  .modified {
     text-transform: none;
   }
 
@@ -52,7 +57,7 @@
     margin: 0 -20px;
   }
 
-  .btn-group{
+  .btn-group {
     margin-bottom: 20px;
   }
 
@@ -65,18 +70,48 @@
   .label,
   .badge {
     font-weight: normal;
+    text-transform: none;
+  }
+
+  .badge-important {
+    background-color: #e96a71;
+    color: white;
+    text-shadow: none;
+  }
+
+  .badge-success {
+    background-color: #84bd5f;
+    color: white;
+    text-shadow: none;
+  }
+
+  .alert-error {
+    background-color: #e96a71;
+    h4 {
+      color: white;
+      text-shadow: none;
+      font-weight: normal;
+    }
   }
 
   .consent-form-message {
     a {
-      text-decoration: none;
+      text-decoration: underline;
+      color: white;
+      &:hover {
+        text-decoration: none;
+      }
     }
   }
 
   // forms
   form {
-    .control-group{
+    .control-group {
       //margin-bottom: 26px;
+    }
+
+    textarea{
+      box-sizing: border-box;
     }
 
     [data-editor] ul {
@@ -92,6 +127,8 @@
     }
 
     label {
+      font-weight: normal;
+      text-transform: none;
       p {
         font-weight: normal;
       }
@@ -118,11 +155,34 @@
       }
     }
 
-    .checkbox li {
-      width: 100%;
-      margin-bottom: 10px;
-      label {
-        display: block;
+    .bbf-checkboxes {
+      li{
+        width: 32%;
+        box-sizing: border-box;
+        margin-bottom: 10px;
+        label {
+          display: inline-block;
+        }
+      }
+    }
+
+    .bbf-radiobuttons{
+      li{
+        width: 47%;
+        box-sizing: border-box;
+        label {
+          display: inline-block;
+        }
+      }
+    }
+
+    @media (max-width: 480px) {
+      .bbf-checkboxes,
+      .bbf-radiobuttons {
+        li{
+          width: 100%;
+          margin-bottom: 10px;
+        }
       }
     }
 
@@ -137,8 +197,8 @@
       .makeColumn(2);
     }
 
-    .help-block.warning{
-      clear: left;
+    .help-block.warning {
+      //clear: left;
       color: #c09853;
       padding: 8px 35px 8px 14px;
       text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
@@ -147,7 +207,7 @@
       -webkit-border-radius: 0;
       -moz-border-radius: 0;
       border-radius: 0;
-      margin-top: 20px;
+      margin: 0 0 40px;
     }
   }
 }

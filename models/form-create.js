@@ -156,6 +156,7 @@ module.exports = [
             "medical01": {
                 "type": "Radio",
                 "title": "Do you experience an irregular or racing heart rate during rest or exercise?",
+                "fieldClass": "bbf-radiobuttons",
                 "fieldAttrs": {
                     "data-bind": "toggleHelp",
                     "data-target": "help",
@@ -176,6 +177,7 @@ module.exports = [
             "medical02": {
                 "type": "Radio",
                 "title": "Has a doctor ever said you have a heart condition and that you should only do physical activity recommended by a doctor?",
+                "fieldClass": "bbf-radiobuttons",
                 "fieldAttrs": {
                     "data-bind": "toggleHelp",
                     "data-target": "help",
@@ -196,6 +198,7 @@ module.exports = [
             "medical03": {
                 "type": "Radio",
                 "title": "Do you feel pain in your chest when you do physical activity?",
+                "fieldClass": "bbf-radiobuttons",
                 "fieldAttrs": {
                     "data-bind": "toggleHelp",
                     "data-target": "help",
@@ -216,6 +219,7 @@ module.exports = [
             "medical04": {
                 "type": "Radio",
                 "title": "Is your doctor currently prescribing drugs (for example, water pills) for your blood pressure or heart condition?",
+                "fieldClass": "bbf-radiobuttons",
                 "fieldAttrs": {
                     "data-bind": "toggleHelp",
                     "data-target": "help",
@@ -236,6 +240,7 @@ module.exports = [
             "medical05": {
                 "type": "Radio",
                 "title": "Do you lose your balance because of dizziness or do you ever lose consciousness?",
+                "fieldClass": "bbf-radiobuttons",
                 "fieldAttrs": {
                     "data-bind": "toggleHelp",
                     "data-target": "help",
@@ -256,6 +261,7 @@ module.exports = [
             "medical06": {
                 "type": "Radio",
                 "title": "Do you have a bone or joint problem that could be made worse by a change in your physical activity?",
+                "fieldClass": "bbf-radiobuttons",
                 "fieldAttrs": {
                     "data-bind": "toggleHelp",
                     "data-target": "help",
@@ -276,6 +282,7 @@ module.exports = [
             "medical07": {
                 "type": "Radio",
                 "title": "Do you know of any other reason why you should not do physical activity?",
+                "fieldClass": "bbf-radiobuttons",
                 "fieldAttrs": {
                     "data-bind": "toggleHelp",
                     "data-target": "help",
@@ -296,6 +303,7 @@ module.exports = [
             "medical08": {
                 "type": "Checkboxes",
                 "title": "Check any injuries you have or had in the past:",
+                "fieldClass": "bbf-checkboxes",
                 "fieldAttrs": {
                     "data-bind": "toggleCheckbox",
                     "data-target": "medical08-dynamic1,medical08-dynamic2,medical08-dynamic3,medical08-dynamic4,medical08-dynamic5,medical08-dynamic6",
@@ -331,6 +339,7 @@ module.exports = [
             "medical08-dynamic5": {
                 "type": "Radio",
                 "title": "Clearance for Exercise?",
+                "fieldClass": "bbf-radiobuttons",
                 "options": [
                     {
                         "val": "medical08-dynamic5-1",
@@ -345,6 +354,7 @@ module.exports = [
             "medical08-dynamic6": {
                 "type": "Radio",
                 "title": "Any pain?",
+                "fieldClass": "bbf-radiobuttons",
                 "options": [
                     {
                         "val": "medical08-dynamic6-1",
@@ -359,6 +369,7 @@ module.exports = [
             "medical09": {
                 "type": "Checkboxes",
                 "title": "",
+                "fieldClass": "bbf-checkboxes",
                 "fieldAttrs": {
                     "data-bind": "toggleCheckbox",
                     "data-target": "medical09-dynamic1,medical09-dynamic2,medical09-dynamic3,medical09-dynamic4,medical09-dynamic5,medical09-dynamic6",
@@ -394,6 +405,7 @@ module.exports = [
             "medical09-dynamic5": {
                 "type": "Radio",
                 "title": "Clearance for Exercise?",
+                "fieldClass": "bbf-radiobuttons",
                 "options": [
                     {
                         "val": "medical09-dynamic5-1",
@@ -408,6 +420,7 @@ module.exports = [
             "medical09-dynamic6": {
                 "type": "Radio",
                 "title": "Any pain?",
+                "fieldClass": "bbf-radiobuttons",
                 "options": [
                     {
                         "val": "medical09-dynamic6-1",
@@ -422,6 +435,7 @@ module.exports = [
             "medical10": {
                 "type": "Checkboxes",
                 "title": "",
+                "fieldClass": "bbf-checkboxes",
                 "fieldAttrs": {
                     "data-bind": "toggleCheckbox",
                     "data-target": "medical10-dynamic1,medical10-dynamic2,medical10-dynamic3,medical10-dynamic4,medical10-dynamic5,medical10-dynamic6",
@@ -457,6 +471,7 @@ module.exports = [
             "medical10-dynamic5": {
                 "type": "Radio",
                 "title": "Clearance for Exercise?",
+                "fieldClass": "bbf-radiobuttons",
                 "options": [
                     {
                         "val": "medical10-dynamic5-1",
@@ -471,6 +486,7 @@ module.exports = [
             "medical10-dynamic6": {
                 "type": "Radio",
                 "title": "Any pain?",
+                "fieldClass": "bbf-radiobuttons",
                 "options": [
                     {
                         "val": "medical10-dynamic6-1",
@@ -485,6 +501,7 @@ module.exports = [
             "medical11": {
                 "type": "Checkboxes",
                 "title": "",
+                "fieldClass": "bbf-checkboxes",
                 "fieldAttrs": {
                     "data-bind": "toggleCheckbox",
                     "data-target": "medical11-dynamic1,medical11-dynamic2,medical11-dynamic3,medical11-dynamic4,medical11-dynamic5,medical11-dynamic6",
@@ -520,6 +537,7 @@ module.exports = [
             "medical11-dynamic5": {
                 "type": "Radio",
                 "title": "Clearance for Exercise?",
+                "fieldClass": "bbf-radiobuttons",
                 "options": [
                     {
                         "val": "medical11-dynamic5-1",
@@ -534,6 +552,7 @@ module.exports = [
             "medical11-dynamic6": {
                 "type": "Radio",
                 "title": "Any pain?",
+                "fieldClass": "bbf-radiobuttons",
                 "options": [
                     {
                         "val": "medical11-dynamic6-1",
@@ -548,6 +567,7 @@ module.exports = [
             "medical12": {
                 "type": "Checkboxes",
                 "title": "",
+                "fieldClass": "bbf-checkboxes",
                 "fieldAttrs": {
                     "data-bind": "toggleCheckbox",
                     "data-target": "medical12-dynamic1,medical12-dynamic2,medical12-dynamic3,medical12-dynamic4,medical12-dynamic5,medical12-dynamic6",
@@ -583,6 +603,7 @@ module.exports = [
             "medical12-dynamic5": {
                 "type": "Radio",
                 "title": "Clearance for Exercise?",
+                "fieldClass": "bbf-radiobuttons",
                 "options": [
                     {
                         "val": "medical12-dynamic5-1",
@@ -597,6 +618,7 @@ module.exports = [
             "medical12-dynamic6": {
                 "type": "Radio",
                 "title": "Any pain?",
+                "fieldClass": "bbf-radiobuttons",
                 "options": [
                     {
                         "val": "medical12-dynamic6-1",
@@ -611,6 +633,7 @@ module.exports = [
             "medical13": {
                 "type": "Checkboxes",
                 "title": "",
+                "fieldClass": "bbf-checkboxes",
                 "fieldAttrs": {
                     "data-bind": "toggleCheckbox",
                     "data-target": "medical13-dynamic1,medical13-dynamic2,medical13-dynamic3,medical13-dynamic4,medical13-dynamic5,medical13-dynamic6",
@@ -646,6 +669,7 @@ module.exports = [
             "medical13-dynamic5": {
                 "type": "Radio",
                 "title": "Clearance for Exercise?",
+                "fieldClass": "bbf-radiobuttons",
                 "options": [
                     {
                         "val": "medical13-dynamic5-1",
@@ -660,6 +684,7 @@ module.exports = [
             "medical13-dynamic6": {
                 "type": "Radio",
                 "title": "Any pain?",
+                "fieldClass": "bbf-radiobuttons",
                 "options": [
                     {
                         "val": "medical13-dynamic6-1",
@@ -674,6 +699,7 @@ module.exports = [
             "medical14": {
                 "type": "Checkboxes",
                 "title": "",
+                "fieldClass": "bbf-checkboxes",
                 "fieldAttrs": {
                     "data-bind": "toggleCheckbox",
                     "data-target": "medical14-dynamic1,medical14-dynamic2,medical14-dynamic3,medical14-dynamic4,medical14-dynamic5,medical14-dynamic6",
@@ -709,6 +735,7 @@ module.exports = [
             "medical14-dynamic5": {
                 "type": "Radio",
                 "title": "Clearance for Exercise?",
+                "fieldClass": "bbf-radiobuttons",
                 "options": [
                     {
                         "val": "medical14-dynamic5-1",
@@ -723,6 +750,7 @@ module.exports = [
             "medical14-dynamic6": {
                 "type": "Radio",
                 "title": "Any pain?",
+                "fieldClass": "bbf-radiobuttons",
                 "options": [
                     {
                         "val": "medical14-dynamic6-1",
@@ -737,6 +765,7 @@ module.exports = [
             "medical15": {
                 "type": "Checkboxes",
                 "title": "",
+                "fieldClass": "bbf-checkboxes",
                 "fieldAttrs": {
                     "data-bind": "toggleCheckbox",
                     "data-target": "medical15-dynamic1,medical15-dynamic2,medical15-dynamic3,medical15-dynamic4,medical15-dynamic5,medical15-dynamic6",
@@ -772,6 +801,7 @@ module.exports = [
             "medical15-dynamic5": {
                 "type": "Radio",
                 "title": "Clearance for Exercise?",
+                "fieldClass": "bbf-radiobuttons",
                 "options": [
                     {
                         "val": "medical15-dynamic5-1",
@@ -786,6 +816,7 @@ module.exports = [
             "medical15-dynamic6": {
                 "type": "Radio",
                 "title": "Any pain?",
+                "fieldClass": "bbf-radiobuttons",
                 "options": [
                     {
                         "val": "medical15-dynamic6-1",
@@ -800,6 +831,7 @@ module.exports = [
             "medical16": {
                 "type": "Checkboxes",
                 "title": "",
+                "fieldClass": "bbf-checkboxes",
                 "fieldAttrs": {
                     "data-bind": "toggleCheckbox",
                     "data-target": "medical16-dynamic1,medical16-dynamic2,medical16-dynamic3,medical16-dynamic4,medical16-dynamic5,medical16-dynamic6",
@@ -835,6 +867,7 @@ module.exports = [
             "medical16-dynamic5": {
                 "type": "Radio",
                 "title": "Clearance for Exercise?",
+                "fieldClass": "bbf-radiobuttons",
                 "options": [
                     {
                         "val": "medical16-dynamic5-1",
@@ -849,6 +882,7 @@ module.exports = [
             "medical16-dynamic6": {
                 "type": "Radio",
                 "title": "Any pain?",
+                "fieldClass": "bbf-radiobuttons",
                 "options": [
                     {
                         "val": "medical16-dynamic6-1",
@@ -863,6 +897,7 @@ module.exports = [
             "medical17": {
                 "type": "Checkboxes",
                 "title": "",
+                "fieldClass": "bbf-checkboxes",
                 "fieldAttrs": {
                     "data-bind": "toggleCheckbox",
                     "data-target": "medical17-dynamic1,medical17-dynamic2,medical17-dynamic3,medical17-dynamic4,medical17-dynamic5,medical17-dynamic6",
@@ -898,6 +933,7 @@ module.exports = [
             "medical17-dynamic5": {
                 "type": "Radio",
                 "title": "Clearance for Exercise?",
+                "fieldClass": "bbf-radiobuttons",
                 "options": [
                     {
                         "val": "medical17-dynamic5-1",
@@ -912,6 +948,7 @@ module.exports = [
             "medical17-dynamic6": {
                 "type": "Radio",
                 "title": "Any pain?",
+                "fieldClass": "bbf-radiobuttons",
                 "options": [
                     {
                         "val": "medical17-dynamic6-1",
@@ -926,6 +963,7 @@ module.exports = [
             "medical18": {
                 "type": "Radio",
                 "title": "Are you over 65 and not accustomed to vigorous exercise?",
+                "fieldClass": "bbf-radiobuttons",
                 "options": [
                     {
                         "val": "medical18-1",
@@ -940,6 +978,7 @@ module.exports = [
             "medical19": {
                 "type": "Radio",
                 "title": "Are you currently taking any prescribed or over the counter medications?",
+                "fieldClass": "bbf-radiobuttons",
                 "fieldAttrs": {
                     "data-bind": "toggleRadio",
                     "data-target": "medical19-dynamic1",
@@ -964,6 +1003,7 @@ module.exports = [
             "medical20": {
                 "type": "Radio",
                 "title": "Are you diabetic? ",
+                "fieldClass": "bbf-radiobuttons",
                 "options": [
                     {
                         "val": "medical20-1",
@@ -978,6 +1018,7 @@ module.exports = [
             "medical21": {
                 "type": "Radio",
                 "title": "Are you pregnant?",
+                "fieldClass": "bbf-radiobuttons",
                 "options": [
                     {
                         "val": "medical21-1",
@@ -997,6 +1038,7 @@ module.exports = [
             "medical23": {
                 "type": "Checkboxes",
                 "title": "Have you ever been diagnosed with a specific medical condition? (Check all that apply)",
+                "fieldClass": "bbf-checkboxes",
                 "options": [
                     {
                         "val": "medical23-1",
