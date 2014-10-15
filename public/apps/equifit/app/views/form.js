@@ -27,7 +27,19 @@ define(function (require, exports, module) {
             var formModel = new Backbone.Model(this.model.get('data'));
 
             // TODO. this is quick fix for 10/14/2014 release. it should be moved to backend. fields name are hard coded here.
-            var template = (_.isEqual(this.model.get('templateType'), 'PerformanceTesting')) ? Form.template.performance : null;
+            var template = null;
+            switch (this.model.get('templateType')) {
+                case "PersonalInformation":
+                    console.log('t', this.model.get('templateType'));
+                    template = Form.template[this.model.get('templateType')];
+                    break;
+                case "PerformanceTesting":
+                    console.log('t', this.model.get('templateType'));
+                    template = Form.template[this.model.get('templateType')];
+                    break;
+                default:
+                    template = null;
+            }
 
             form = new Form({
                 model: formModel,

@@ -25,28 +25,38 @@
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
-.equifit .modified {
+.equifit .page-header {
+  margin-bottom: 20px;
+  background: #313439;
+  line-height: normal;
+}
+.equifit .page-header h1 {
+  font-size: 14px;
+  line-height: 16px;
+  text-transform: uppercase;
+  font-weight: normal;
+}
+.equifit .page-header .modified {
+  position: absolute;
+  top: 0;
+  right: 10px;
+  font-size: 12px;
+  color: #a2a9b3;
   text-transform: none;
 }
 .equifit .container {
   width: 1020px;
   margin-right: auto;
   margin-left: auto;
+  position: relative;
 }
 @media (min-width: 768px) and (max-width: 979px) {
   .equifit .container {
     width: 100%;
   }
 }
-.equifit .header {
-  margin-bottom: 20px;
-}
-.equifit .header .modified {
-  position: absolute;
-  top: 0;
-  right: 10px;
-  font-size: 12px;
-  color: #ccc;
+.equifit .breadcrumb {
+  margin-bottom: 0;
 }
 .equifit .nav {
   margin: 20px 0 40px 0;
@@ -180,23 +190,8 @@
     margin-bottom: 10px;
   }
 }
-.equifit form select[data-type="date"] {
-  float: left;
-  margin-left: 20px;
-  width: 60px;
-  margin-left: 0;
-}
-.equifit form select[data-type="month"] {
-  float: left;
-  margin-left: 20px;
-  width: 140px;
-}
-.equifit form select[data-type="year"] {
-  float: left;
-  margin-left: 20px;
-  width: 140px;
-}
-.equifit form .help-block.warning {
+.equifit form [data-target="help"] .help-block {
+  display: none;
   color: #c09853;
   padding: 8px 35px 8px 14px;
   text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
@@ -206,6 +201,23 @@
   -moz-border-radius: 0;
   border-radius: 0;
   margin: 0 0 40px;
+}
+.equifit form .date select {
+  width: 32%;
+}
+.equifit form .gender select,
+.equifit form .age select,
+.equifit form .club select {
+  width: 100%;
+}
+.equifit .dropdown-menu > li > a:hover,
+.equifit .dropdown-menu > li > a:focus,
+.equifit .dropdown-submenu:hover > a,
+.equifit .dropdown-submenu:focus > a {
+  text-decoration: none;
+  color: white;
+  background-color: #61a3bd;
+  background-image: none;
 }
 .modal-header {
   background: transparent;

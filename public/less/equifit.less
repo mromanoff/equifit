@@ -5,14 +5,33 @@
 
 .equifit {
 
-  .modified {
-    text-transform: none;
+  .page-header {
+    margin-bottom: 20px;
+    background: #313439;
+    line-height: normal;
+
+    h1 {
+      font-size: 14px;
+      line-height: 16px;
+      text-transform: uppercase;
+      font-weight: normal;
+    }
+
+    .modified {
+      position: absolute;
+      top: 0;
+      right: 10px;
+      font-size: 12px;
+      color: #a2a9b3;
+      text-transform: none;
+    }
   }
 
   .container {
     width: 1020px;
     margin-right: auto;
     margin-left: auto;
+    position: relative;
   }
 
   @media (min-width: 768px) and (max-width: 979px) {
@@ -21,17 +40,10 @@
     }
   }
 
-  .header {
-    margin-bottom: 20px;
-
-    .modified {
-      position: absolute;
-      top: 0;
-      right: 10px;
-      font-size: 12px;
-      color: #ccc;
-    }
+  .breadcrumb {
+    margin-bottom: 0;
   }
+
   .nav {
     margin: 20px 0 40px 0;
     border: 1px solid #ededed;
@@ -110,7 +122,7 @@
       //margin-bottom: 26px;
     }
 
-    textarea{
+    textarea {
       box-sizing: border-box;
     }
 
@@ -156,7 +168,7 @@
     }
 
     .bbf-checkboxes {
-      li{
+      li {
         width: 32%;
         box-sizing: border-box;
         margin-bottom: 10px;
@@ -166,8 +178,8 @@
       }
     }
 
-    .bbf-radiobuttons{
-      li{
+    .bbf-radiobuttons {
+      li {
         width: 47%;
         box-sizing: border-box;
         label {
@@ -179,26 +191,15 @@
     @media (max-width: 480px) {
       .bbf-checkboxes,
       .bbf-radiobuttons {
-        li{
+        li {
           width: 100%;
           margin-bottom: 10px;
         }
       }
     }
 
-    select[data-type="date"] {
-      .makeColumn(1);
-      margin-left: 0;
-    }
-    select[data-type="month"] {
-      .makeColumn(2);
-    }
-    select[data-type="year"] {
-      .makeColumn(2);
-    }
-
-    .help-block.warning {
-      //clear: left;
+    [data-target="help"] .help-block {
+      display: none;
       color: #c09853;
       padding: 8px 35px 8px 14px;
       text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
@@ -209,6 +210,29 @@
       border-radius: 0;
       margin: 0 0 40px;
     }
+
+    // custom forms
+
+
+    .date select {
+      width: 32%
+    }
+
+    .gender select,
+    .age select,
+    .club select {
+      width: 100%;
+    }
+  }
+
+  .dropdown-menu > li > a:hover,
+  .dropdown-menu > li > a:focus,
+  .dropdown-submenu:hover > a,
+  .dropdown-submenu:focus > a {
+    text-decoration: none;
+    color: white;
+    background-color: #61a3bd;
+    background-image: none;
   }
 }
 
@@ -255,4 +279,5 @@
   width: 100%;
   z-index: -1;
 }
+
 

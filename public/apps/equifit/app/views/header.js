@@ -7,6 +7,7 @@ define(function (require, exports, module) {
 
     HeaderViewModule =  Backbone.View.extend({
         manage: true,
+        className: 'container',
         template: 'header',
 
         initialize: function () {

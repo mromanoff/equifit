@@ -1,1064 +1,463 @@
 {
   "schema": {
-    "medical01": {
-      "type": "Radio",
-      "title": "Do you experience an irregular or racing heart rate during rest or exercise?",
-      "fieldClass": "bbf-radiobuttons",
-      "fieldAttrs": {
-        "data-bind": "toggleHelp",
-        "data-target": "help",
-        "data-condition": "medical01-1"
-      },
+    "personal01": {
+      "type": "Select",
+      "title": "Gender",
       "options": [
         {
-          "val": "medical01-1",
-          "label": "Yes"
+          "val": "",
+          "label": "Select"
         },
         {
-          "val": "medical01-2",
-          "label": "No"
-        }
-      ],
-      "help": "We recommend that you see a doctor before your Equifit or before you begin an exercise program."
-    },
-    "medical02": {
-      "type": "Radio",
-      "title": "Has a doctor ever said you have a heart condition and that you should only do physical activity recommended by a doctor?",
-      "fieldClass": "bbf-radiobuttons",
-      "fieldAttrs": {
-        "data-bind": "toggleHelp",
-        "data-target": "help",
-        "data-condition": "medical02-1"
-      },
-      "options": [
-        {
-          "val": "medical02-1",
-          "label": "Yes"
+          "val": "personal01-1",
+          "label": "Male"
         },
         {
-          "val": "medical02-2",
-          "label": "No"
-        }
-      ],
-      "help": "We recommend that you see a doctor before your Equifit or before you begin an exercise program."
-    },
-    "medical03": {
-      "type": "Radio",
-      "title": "Do you feel pain in your chest when you do physical activity?",
-      "fieldClass": "bbf-radiobuttons",
-      "fieldAttrs": {
-        "data-bind": "toggleHelp",
-        "data-target": "help",
-        "data-condition": "medical03-1"
-      },
-      "options": [
-        {
-          "val": "medical03-1",
-          "label": "Yes"
-        },
-        {
-          "val": "medical03-2",
-          "label": "No"
-        }
-      ],
-      "help": "We recommend that you see a doctor before your Equifit or before you begin an exercise program."
-    },
-    "medical04": {
-      "type": "Radio",
-      "title": "Is your doctor currently prescribing drugs (for example, water pills) for your blood pressure or heart condition?",
-      "fieldClass": "bbf-radiobuttons",
-      "fieldAttrs": {
-        "data-bind": "toggleHelp",
-        "data-target": "help",
-        "data-condition": "medical04-1"
-      },
-      "options": [
-        {
-          "val": "medical04-1",
-          "label": "Yes"
-        },
-        {
-          "val": "medical04-2",
-          "label": "No"
-        }
-      ],
-      "help": "We recommend that you see a doctor before your Equifit or before you begin an exercise program."
-    },
-    "medical05": {
-      "type": "Radio",
-      "title": "Do you lose your balance because of dizziness or do you ever lose consciousness?",
-      "fieldClass": "bbf-radiobuttons",
-      "fieldAttrs": {
-        "data-bind": "toggleHelp",
-        "data-target": "help",
-        "data-condition": "medical05-1"
-      },
-      "options": [
-        {
-          "val": "medical05-1",
-          "label": "Yes"
-        },
-        {
-          "val": "medical05-2",
-          "label": "No"
-        }
-      ],
-      "help": "We recommend that you see a doctor before your Equifit or before you begin an exercise program."
-    },
-    "medical06": {
-      "type": "Radio",
-      "title": "Do you have a bone or joint problem that could be made worse by a change in your physical activity?",
-      "fieldClass": "bbf-radiobuttons",
-      "fieldAttrs": {
-        "data-bind": "toggleHelp",
-        "data-target": "help",
-        "data-condition": "medical06-1"
-      },
-      "options": [
-        {
-          "val": "medical06-1",
-          "label": "Yes"
-        },
-        {
-          "val": "medical06-2",
-          "label": "No"
-        }
-      ],
-      "help": "We recommend that you see a doctor before your Equifit or before you begin an exercise program."
-    },
-    "medical07": {
-      "type": "Radio",
-      "title": "Do you know of any other reason why you should not do physical activity?",
-      "fieldClass": "bbf-radiobuttons",
-      "fieldAttrs": {
-        "data-bind": "toggleHelp",
-        "data-target": "help",
-        "data-condition": "medical07-1"
-      },
-      "options": [
-        {
-          "val": "medical07-1",
-          "label": "Yes"
-        },
-        {
-          "val": "medical07-2",
-          "label": "No"
-        }
-      ],
-      "help": "We recommend that you see a doctor before your Equifit or before you begin an exercise program."
-    },
-    "medical08": {
-      "type": "Checkboxes",
-      "title": "Check any injuries you have or had in the past:",
-      "fieldClass": "bbf-checkboxes",
-      "fieldAttrs": {
-        "data-bind": "toggleCheckbox",
-        "data-target": "medical08-dynamic1,medical08-dynamic2,medical08-dynamic3,medical08-dynamic4,medical08-dynamic5,medical08-dynamic6",
-        "data-condition": "medical08-1"
-      },
-      "options": [
-        {
-          "val": "medical08-1",
-          "label": "Head or Neck"
+          "val": "personal01-2",
+          "label": "Female"
         }
       ]
     },
-    "medical08-dynamic1": {
-      "type": "TextArea",
-      "title": "Area (Left, Right / Upper, Mid, Lower)",
-      "editorAttrs": {"maxlength": 40}
-    },
-    "medical08-dynamic2": {
-      "type": "TextArea",
-      "title": "When it happened?",
-      "editorAttrs": {"maxlength": 40}
-    },
-    "medical08-dynamic3": {
-      "type": "TextArea",
-      "title": "How did it happen?",
-      "editorAttrs": {"maxlength": 40}
-    },
-    "medical08-dynamic4": {
-      "type": "TextArea",
-      "title": "Rehab status?",
-      "editorAttrs": {"maxlength": 40}
-    },
-    "medical08-dynamic5": {
-      "type": "Radio",
-      "title": "Clearance for Exercise?",
-      "fieldClass": "bbf-radiobuttons",
+    "personal02": {
+      "type": "Select",
+      "title": "Age",
       "options": [
         {
-          "val": "medical08-dynamic5-1",
-          "label": "Yes"
+          "val": "",
+          "label": "Select"
         },
         {
-          "val": "medical08-dynamic5-2",
-          "label": "No"
+          "val": "personal02-1",
+          "label": "< 18"
+        },
+        {
+          "val": "personal02-2",
+          "label": "18 - 22"
+        },
+        {
+          "val": "personal02-3",
+          "label": "23 - 27"
+        },
+        {
+          "val": "personal02-4",
+          "label": "28 - 32"
+        },
+        {
+          "val": "personal02-5",
+          "label": "33 - 37"
+        },
+        {
+          "val": "personal02-6",
+          "label": "38 - 42"
+        },
+        {
+          "val": "personal02-7",
+          "label": "43 - 47"
+        },
+        {
+          "val": "personal02-8",
+          "label": "48 - 52"
+        },
+        {
+          "val": "personal02-9",
+          "label": "53 - 57"
+        },
+        {
+          "val": "personal02-10",
+          "label": "58 - 62"
+        },
+        {
+          "val": "personal02-11",
+          "label": "63 - 67"
+        },
+        {
+          "val": "personal02-12",
+          "label": "68 - 72"
+        },
+        {
+          "val": "personal02-13",
+          "label": "72 +"
         }
       ]
     },
-    "medical08-dynamic6": {
-      "type": "Radio",
-      "title": "Any pain?",
-      "fieldClass": "bbf-radiobuttons",
+    "personal03": {
+      "type": "Date",
+      "title": "Date of Equifit",
+      "yearStart": 2012,
+      "yearEnd": 2020
+    },
+    "personal04": {
+      "type": "Select",
+      "title": "Club",
       "options": [
         {
-          "val": "medical08-dynamic6-1",
-          "label": "Yes"
+          "val": "",
+          "label": "Select"
         },
         {
-          "val": "medical08-dynamic6-2",
-          "label": "No"
+          "val": "116",
+          "label": "Equinox 17th Street"
+        },
+        {
+          "val": "102",
+          "label": "Equinox 19th Street"
+        },
+        {
+          "val": "108",
+          "label": "Equinox 43rd Street"
+        },
+        {
+          "val": "109",
+          "label": "Equinox 44th Street"
+        },
+        {
+          "val": "107",
+          "label": "Equinox 50th Street"
+        },
+        {
+          "val": "106",
+          "label": "Equinox 54th Street"
+        },
+        {
+          "val": "105",
+          "label": "Equinox 63rd Street"
+        },
+        {
+          "val": "117",
+          "label": "Equinox 74th Street"
+        },
+        {
+          "val": "121",
+          "label": "Equinox 76th Street"
+        },
+        {
+          "val": "101",
+          "label": "Equinox 76th Street OLD"
+        },
+        {
+          "val": "104",
+          "label": "Equinox 85th Street"
+        },
+        {
+          "val": "103",
+          "label": "Equinox 92nd Street"
+        },
+        {
+          "val": "149",
+          "label": "Equinox Armonk"
+        },
+        {
+          "val": "303",
+          "label": "Equinox Aventura"
+        },
+        {
+          "val": "852",
+          "label": "Equinox Bay Street"
+        },
+        {
+          "val": "10101",
+          "label": "Equinox Beacon"
+        },
+        {
+          "val": "252",
+          "label": "Equinox Bethesda"
+        },
+        {
+          "val": "712",
+          "label": "Equinox Beverly Hills"
+        },
+        {
+          "val": "128",
+          "label": "Equinox Brookfield Place"
+        },
+        {
+          "val": "130",
+          "label": "Equinox Brooklyn Heights"
+        },
+        {
+          "val": "127",
+          "label": "Equinox Bryant Park"
+        },
+        {
+          "val": "203",
+          "label": "Equinox Chestnut Hill"
+        },
+        {
+          "val": "404",
+          "label": "Equinox Chicago Loop"
+        },
+        {
+          "val": "113",
+          "label": "Equinox Columbus Circle"
+        },
+        {
+          "val": "302",
+          "label": "Equinox Coral Gables"
+        },
+        {
+          "val": "999",
+          "label": "Equinox Corporate"
+        },
+        {
+          "val": "141",
+          "label": "Equinox Darien"
+        },
+        {
+          "val": "201",
+          "label": "Equinox Dartmouth"
+        },
+        {
+          "val": "11301",
+          "label": "Equinox E at Columbus Circle"
+        },
+        {
+          "val": "14801",
+          "label": "Equinox E at Greenwich CT"
+        },
+        {
+          "val": "714",
+          "label": "Equinox Encino"
+        },
+        {
+          "val": "706",
+          "label": "Equinox Fitness Club Spa"
+        },
+        {
+          "val": "715",
+          "label": "Equinox Flower Street"
+        },
+        {
+          "val": "202",
+          "label": "Equinox Franklin Street"
+        },
+        {
+          "val": "718",
+          "label": "Equinox Glendale"
+        },
+        {
+          "val": "145",
+          "label": "Equinox Great Neck"
+        },
+        {
+          "val": "112",
+          "label": "Equinox Greenwich"
+        },
+        {
+          "val": "148",
+          "label": "Equinox Greenwich CT"
+        },
+        {
+          "val": "403",
+          "label": "Equinox Highland Park"
+        },
+        {
+          "val": "451",
+          "label": "Equinox Highland Park Dallas"
+        },
+        {
+          "val": "732",
+          "label": "Equinox Irvine"
+        },
+        {
+          "val": "871",
+          "label": "Equinox Kensington"
+        },
+        {
+          "val": "401",
+          "label": "Equinox Lincoln Park"
+        },
+        {
+          "val": "144",
+          "label": "Equinox Mamaroneck"
+        },
+        {
+          "val": "711",
+          "label": "Equinox Marina del Rey"
+        },
+        {
+          "val": "125",
+          "label": "Equinox MiMA"
+        },
+        {
+          "val": "730",
+          "label": "Equinox Newport Beach"
+        },
+        {
+          "val": "402",
+          "label": "Equinox North Michigan"
+        },
+        {
+          "val": "994",
+          "label": "Equinox Online CA"
+        },
+        {
+          "val": "998",
+          "label": "Equinox Online US"
+        },
+        {
+          "val": "722",
+          "label": "Equinox Palo Alto"
+        },
+        {
+          "val": "705",
+          "label": "Equinox Palos Verdes"
+        },
+        {
+          "val": "151",
+          "label": "Equinox Paramus"
+        },
+        {
+          "val": "115",
+          "label": "Equinox Park Ave"
+        },
+        {
+          "val": "701",
+          "label": "Equinox Pasadena"
+        },
+        {
+          "val": "720",
+          "label": "Equinox Pine Street"
+        },
+        {
+          "val": "997",
+          "label": "Equinox Presale"
+        },
+        {
+          "val": "452",
+          "label": "Equinox Preston Hollow"
+        },
+        {
+          "val": "124",
+          "label": "Equinox Printing House"
+        },
+        {
+          "val": "126",
+          "label": "Equinox Rockefeller Center"
+        },
+        {
+          "val": "143",
+          "label": "Equinox Roslyn"
+        },
+        {
+          "val": "721",
+          "label": "Equinox San Mateo"
+        },
+        {
+          "val": "703",
+          "label": "Equinox Santa Monica"
+        },
+        {
+          "val": "140",
+          "label": "Equinox Scarsdale"
+        },
+        {
+          "val": "114",
+          "label": "Equinox SoHo"
+        },
+        {
+          "val": "708",
+          "label": "Equinox South Bay"
+        },
+        {
+          "val": "301",
+          "label": "Equinox South Beach"
+        },
+        {
+          "val": "204",
+          "label": "Equinox Sports Club Boston"
+        },
+        {
+          "val": "304",
+          "label": "Equinox Sports Club Brickell"
+        },
+        {
+          "val": "253",
+          "label": "Equinox Sports Club DC"
+        },
+        {
+          "val": "131",
+          "label": "Equinox Sports Club New York"
+        },
+        {
+          "val": "724",
+          "label": "Equinox Sports Club San Francisco"
+        },
+        {
+          "val": "132",
+          "label": "Equinox Sports Club Upper East Side"
+        },
+        {
+          "val": "150",
+          "label": "Equinox Summit"
+        },
+        {
+          "val": "111",
+          "label": "Equinox Tribeca"
+        },
+        {
+          "val": "251",
+          "label": "Equinox Tysons Corner"
+        },
+        {
+          "val": "723",
+          "label": "Equinox Union Street"
+        },
+        {
+          "val": "110",
+          "label": "Equinox Wall Street"
+        },
+        {
+          "val": "702",
+          "label": "Equinox West Hollywood"
+        },
+        {
+          "val": "713",
+          "label": "Equinox West LA"
+        },
+        {
+          "val": "716",
+          "label": "Equinox WestLake Village"
+        },
+        {
+          "val": "704",
+          "label": "Equinox Westwood"
+        },
+        {
+          "val": "142",
+          "label": "Equinox Woodbury"
+        },
+        {
+          "val": "707",
+          "label": "Equinox Woodland Hills"
+        },
+        {
+          "val": "851",
+          "label": "Yorkville"
         }
       ]
-    },
-    "medical09": {
-      "type": "Checkboxes",
-      "title": "",
-      "fieldClass": "bbf-checkboxes",
-      "fieldAttrs": {
-        "data-bind": "toggleCheckbox",
-        "data-target": "medical09-dynamic1,medical09-dynamic2,medical09-dynamic3,medical09-dynamic4,medical09-dynamic5,medical09-dynamic6",
-        "data-condition": "medical09-1"
-      },
-      "options": [
-        {
-          "val": "medical09-1",
-          "label": "Shoulder"
-        }
-      ]
-    },
-    "medical09-dynamic1": {
-      "type": "TextArea",
-      "title": "Area (Left, Right / Upper, Mid, Lower)",
-      "editorAttrs": {"maxlength": 40}
-    },
-    "medical09-dynamic2": {
-      "type": "TextArea",
-      "title": "When it happened?",
-      "editorAttrs": {"maxlength": 40}
-    },
-    "medical09-dynamic3": {
-      "type": "TextArea",
-      "title": "How did it happen?",
-      "editorAttrs": {"maxlength": 40}
-    },
-    "medical09-dynamic4": {
-      "type": "TextArea",
-      "title": "Rehab status?",
-      "editorAttrs": {"maxlength": 40}
-    },
-    "medical09-dynamic5": {
-      "type": "Radio",
-      "title": "Clearance for Exercise?",
-      "fieldClass": "bbf-radiobuttons",
-      "options": [
-        {
-          "val": "medical09-dynamic5-1",
-          "label": "Yes"
-        },
-        {
-          "val": "medical09-dynamic5-2",
-          "label": "No"
-        }
-      ]
-    },
-    "medical09-dynamic6": {
-      "type": "Radio",
-      "title": "Any pain?",
-      "fieldClass": "bbf-radiobuttons",
-      "options": [
-        {
-          "val": "medical09-dynamic6-1",
-          "label": "Yes"
-        },
-        {
-          "val": "medical09-dynamic6-2",
-          "label": "No"
-        }
-      ]
-    },
-    "medical10": {
-      "type": "Checkboxes",
-      "title": "",
-      "fieldClass": "bbf-checkboxes",
-      "fieldAttrs": {
-        "data-bind": "toggleCheckbox",
-        "data-target": "medical10-dynamic1,medical10-dynamic2,medical10-dynamic3,medical10-dynamic4,medical10-dynamic5,medical10-dynamic6",
-        "data-condition": "medical10-1"
-      },
-      "options": [
-        {
-          "val": "medical10-1",
-          "label": "Arm"
-        }
-      ]
-    },
-    "medical10-dynamic1": {
-      "type": "TextArea",
-      "title": "Area (Left, Right / Upper, Mid, Lower)",
-      "editorAttrs": {"maxlength": 40}
-    },
-    "medical10-dynamic2": {
-      "type": "TextArea",
-      "title": "When it happened?",
-      "editorAttrs": {"maxlength": 40}
-    },
-    "medical10-dynamic3": {
-      "type": "TextArea",
-      "title": "How did it happen?",
-      "editorAttrs": {"maxlength": 40}
-    },
-    "medical10-dynamic4": {
-      "type": "TextArea",
-      "title": "Rehab status?",
-      "editorAttrs": {"maxlength": 40}
-    },
-    "medical10-dynamic5": {
-      "type": "Radio",
-      "title": "Clearance for Exercise?",
-      "fieldClass": "bbf-radiobuttons",
-      "options": [
-        {
-          "val": "medical10-dynamic5-1",
-          "label": "Yes"
-        },
-        {
-          "val": "medical10-dynamic5-2",
-          "label": "No"
-        }
-      ]
-    },
-    "medical10-dynamic6": {
-      "type": "Radio",
-      "title": "Any pain?",
-      "fieldClass": "bbf-radiobuttons",
-      "options": [
-        {
-          "val": "medical10-dynamic6-1",
-          "label": "Yes"
-        },
-        {
-          "val": "medical10-dynamic6-2",
-          "label": "No"
-        }
-      ]
-    },
-    "medical11": {
-      "type": "Checkboxes",
-      "title": "",
-      "fieldClass": "bbf-checkboxes",
-      "fieldAttrs": {
-        "data-bind": "toggleCheckbox",
-        "data-target": "medical11-dynamic1,medical11-dynamic2,medical11-dynamic3,medical11-dynamic4,medical11-dynamic5,medical11-dynamic6",
-        "data-condition": "medical11-1"
-      },
-      "options": [
-        {
-          "val": "medical11-1",
-          "label": "Wrist or Hand"
-        }
-      ]
-    },
-    "medical11-dynamic1": {
-      "type": "TextArea",
-      "title": "Area (Left, Right / Upper, Mid, Lower)",
-      "editorAttrs": {"maxlength": 40}
-    },
-    "medical11-dynamic2": {
-      "type": "TextArea",
-      "title": "When it happened?",
-      "editorAttrs": {"maxlength": 40}
-    },
-    "medical11-dynamic3": {
-      "type": "TextArea",
-      "title": "How did it happen?",
-      "editorAttrs": {"maxlength": 40}
-    },
-    "medical11-dynamic4": {
-      "type": "TextArea",
-      "title": "Rehab status?",
-      "editorAttrs": {"maxlength": 40}
-    },
-    "medical11-dynamic5": {
-      "type": "Radio",
-      "title": "Clearance for Exercise?",
-      "fieldClass": "bbf-radiobuttons",
-      "options": [
-        {
-          "val": "medical11-dynamic5-1",
-          "label": "Yes"
-        },
-        {
-          "val": "medical11-dynamic5-2",
-          "label": "No"
-        }
-      ]
-    },
-    "medical11-dynamic6": {
-      "type": "Radio",
-      "title": "Any pain?",
-      "fieldClass": "bbf-radiobuttons",
-      "options": [
-        {
-          "val": "medical11-dynamic6-1",
-          "label": "Yes"
-        },
-        {
-          "val": "medical11-dynamic6-2",
-          "label": "No"
-        }
-      ]
-    },
-    "medical12": {
-      "type": "Checkboxes",
-      "title": "",
-      "fieldClass": "bbf-checkboxes",
-      "fieldAttrs": {
-        "data-bind": "toggleCheckbox",
-        "data-target": "medical12-dynamic1,medical12-dynamic2,medical12-dynamic3,medical12-dynamic4,medical12-dynamic5,medical12-dynamic6",
-        "data-condition": "medical12-1"
-      },
-      "options": [
-        {
-          "val": "medical12-1",
-          "label": "Back"
-        }
-      ]
-    },
-    "medical12-dynamic1": {
-      "type": "TextArea",
-      "title": "Area (Left, Right / Upper, Mid, Lower)",
-      "editorAttrs": {"maxlength": 40}
-    },
-    "medical12-dynamic2": {
-      "type": "TextArea",
-      "title": "When it happened?",
-      "editorAttrs": {"maxlength": 40}
-    },
-    "medical12-dynamic3": {
-      "type": "TextArea",
-      "title": "How did it happen?",
-      "editorAttrs": {"maxlength": 40}
-    },
-    "medical12-dynamic4": {
-      "type": "TextArea",
-      "title": "Rehab status?",
-      "editorAttrs": {"maxlength": 40}
-    },
-    "medical12-dynamic5": {
-      "type": "Radio",
-      "title": "Clearance for Exercise?",
-      "fieldClass": "bbf-radiobuttons",
-      "options": [
-        {
-          "val": "medical12-dynamic5-1",
-          "label": "Yes"
-        },
-        {
-          "val": "medical12-dynamic5-2",
-          "label": "No"
-        }
-      ]
-    },
-    "medical12-dynamic6": {
-      "type": "Radio",
-      "title": "Any pain?",
-      "fieldClass": "bbf-radiobuttons",
-      "options": [
-        {
-          "val": "medical12-dynamic6-1",
-          "label": "Yes"
-        },
-        {
-          "val": "medical12-dynamic6-2",
-          "label": "No"
-        }
-      ]
-    },
-    "medical13": {
-      "type": "Checkboxes",
-      "title": "",
-      "fieldClass": "bbf-checkboxes",
-      "fieldAttrs": {
-        "data-bind": "toggleCheckbox",
-        "data-target": "medical13-dynamic1,medical13-dynamic2,medical13-dynamic3,medical13-dynamic4,medical13-dynamic5,medical13-dynamic6",
-        "data-condition": "medical13-1"
-      },
-      "options": [
-        {
-          "val": "medical13-1",
-          "label": "Hip"
-        }
-      ]
-    },
-    "medical13-dynamic1": {
-      "type": "TextArea",
-      "title": "Area (Left, Right / Upper, Mid, Lower)",
-      "editorAttrs": {"maxlength": 40}
-    },
-    "medical13-dynamic2": {
-      "type": "TextArea",
-      "title": "When it happened?",
-      "editorAttrs": {"maxlength": 40}
-    },
-    "medical13-dynamic3": {
-      "type": "TextArea",
-      "title": "How did it happen?",
-      "editorAttrs": {"maxlength": 40}
-    },
-    "medical13-dynamic4": {
-      "type": "TextArea",
-      "title": "Rehab status?",
-      "editorAttrs": {"maxlength": 40}
-    },
-    "medical13-dynamic5": {
-      "type": "Radio",
-      "title": "Clearance for Exercise?",
-      "fieldClass": "bbf-radiobuttons",
-      "options": [
-        {
-          "val": "medical13-dynamic5-1",
-          "label": "Yes"
-        },
-        {
-          "val": "medical13-dynamic5-2",
-          "label": "No"
-        }
-      ]
-    },
-    "medical13-dynamic6": {
-      "type": "Radio",
-      "title": "Any pain?",
-      "fieldClass": "bbf-radiobuttons",
-      "options": [
-        {
-          "val": "medical13-dynamic6-1",
-          "label": "Yes"
-        },
-        {
-          "val": "medical13-dynamic6-2",
-          "label": "No"
-        }
-      ]
-    },
-    "medical14": {
-      "type": "Checkboxes",
-      "title": "",
-      "fieldClass": "bbf-checkboxes",
-      "fieldAttrs": {
-        "data-bind": "toggleCheckbox",
-        "data-target": "medical14-dynamic1,medical14-dynamic2,medical14-dynamic3,medical14-dynamic4,medical14-dynamic5,medical14-dynamic6",
-        "data-condition": "medical14-1"
-      },
-      "options": [
-        {
-          "val": "medical14-1",
-          "label": "Leg"
-        }
-      ]
-    },
-    "medical14-dynamic1": {
-      "type": "TextArea",
-      "title": "Area (Left, Right / Upper, Mid, Lower)",
-      "editorAttrs": {"maxlength": 40}
-    },
-    "medical14-dynamic2": {
-      "type": "TextArea",
-      "title": "When it happened?",
-      "editorAttrs": {"maxlength": 40}
-    },
-    "medical14-dynamic3": {
-      "type": "TextArea",
-      "title": "How did it happen?",
-      "editorAttrs": {"maxlength": 40}
-    },
-    "medical14-dynamic4": {
-      "type": "TextArea",
-      "title": "Rehab status?",
-      "editorAttrs": {"maxlength": 40}
-    },
-    "medical14-dynamic5": {
-      "type": "Radio",
-      "title": "Clearance for Exercise?",
-      "fieldClass": "bbf-radiobuttons",
-      "options": [
-        {
-          "val": "medical14-dynamic5-1",
-          "label": "Yes"
-        },
-        {
-          "val": "medical14-dynamic5-2",
-          "label": "No"
-        }
-      ]
-    },
-    "medical14-dynamic6": {
-      "type": "Radio",
-      "title": "Any pain?",
-      "fieldClass": "bbf-radiobuttons",
-      "options": [
-        {
-          "val": "medical14-dynamic6-1",
-          "label": "Yes"
-        },
-        {
-          "val": "medical14-dynamic6-2",
-          "label": "No"
-        }
-      ]
-    },
-    "medical15": {
-      "type": "Checkboxes",
-      "title": "",
-      "fieldClass": "bbf-checkboxes",
-      "fieldAttrs": {
-        "data-bind": "toggleCheckbox",
-        "data-target": "medical15-dynamic1,medical15-dynamic2,medical15-dynamic3,medical15-dynamic4,medical15-dynamic5,medical15-dynamic6",
-        "data-condition": "medical15-1"
-      },
-      "options": [
-        {
-          "val": "medical15-1",
-          "label": "Knee"
-        }
-      ]
-    },
-    "medical15-dynamic1": {
-      "type": "TextArea",
-      "title": "Area (Left, Right / Upper, Mid, Lower)",
-      "editorAttrs": {"maxlength": 40}
-    },
-    "medical15-dynamic2": {
-      "type": "TextArea",
-      "title": "When it happened?",
-      "editorAttrs": {"maxlength": 40}
-    },
-    "medical15-dynamic3": {
-      "type": "TextArea",
-      "title": "How did it happen?",
-      "editorAttrs": {"maxlength": 40}
-    },
-    "medical15-dynamic4": {
-      "type": "TextArea",
-      "title": "Rehab status?",
-      "editorAttrs": {"maxlength": 40}
-    },
-    "medical15-dynamic5": {
-      "type": "Radio",
-      "title": "Clearance for Exercise?",
-      "fieldClass": "bbf-radiobuttons",
-      "options": [
-        {
-          "val": "medical15-dynamic5-1",
-          "label": "Yes"
-        },
-        {
-          "val": "medical15-dynamic5-2",
-          "label": "No"
-        }
-      ]
-    },
-    "medical15-dynamic6": {
-      "type": "Radio",
-      "title": "Any pain?",
-      "fieldClass": "bbf-radiobuttons",
-      "options": [
-        {
-          "val": "medical15-dynamic6-1",
-          "label": "Yes"
-        },
-        {
-          "val": "medical15-dynamic6-2",
-          "label": "No"
-        }
-      ]
-    },
-    "medical16": {
-      "type": "Checkboxes",
-      "title": "",
-      "fieldClass": "bbf-checkboxes",
-      "fieldAttrs": {
-        "data-bind": "toggleCheckbox",
-        "data-target": "medical16-dynamic1,medical16-dynamic2,medical16-dynamic3,medical16-dynamic4,medical16-dynamic5,medical16-dynamic6",
-        "data-condition": "medical16-1"
-      },
-      "options": [
-        {
-          "val": "medical16-1",
-          "label": "Ankle/Foot"
-        }
-      ]
-    },
-    "medical16-dynamic1": {
-      "type": "TextArea",
-      "title": "Area (Left, Right / Upper, Mid, Lower)",
-      "editorAttrs": {"maxlength": 40}
-    },
-    "medical16-dynamic2": {
-      "type": "TextArea",
-      "title": "When it happened?",
-      "editorAttrs": {"maxlength": 40}
-    },
-    "medical16-dynamic3": {
-      "type": "TextArea",
-      "title": "How did it happen?",
-      "editorAttrs": {"maxlength": 40}
-    },
-    "medical16-dynamic4": {
-      "type": "TextArea",
-      "title": "Rehab status?",
-      "editorAttrs": {"maxlength": 40}
-    },
-    "medical16-dynamic5": {
-      "type": "Radio",
-      "title": "Clearance for Exercise?",
-      "fieldClass": "bbf-radiobuttons",
-      "options": [
-        {
-          "val": "medical16-dynamic5-1",
-          "label": "Yes"
-        },
-        {
-          "val": "medical16-dynamic5-2",
-          "label": "No"
-        }
-      ]
-    },
-    "medical16-dynamic6": {
-      "type": "Radio",
-      "title": "Any pain?",
-      "fieldClass": "bbf-radiobuttons",
-      "options": [
-        {
-          "val": "medical16-dynamic6-1",
-          "label": "Yes"
-        },
-        {
-          "val": "medical16-dynamic6-2",
-          "label": "No"
-        }
-      ]
-    },
-    "medical17": {
-      "type": "Checkboxes",
-      "title": "",
-      "fieldClass": "bbf-checkboxes",
-      "fieldAttrs": {
-        "data-bind": "toggleCheckbox",
-        "data-target": "medical17-dynamic1,medical17-dynamic2,medical17-dynamic3,medical17-dynamic4,medical17-dynamic5,medical17-dynamic6",
-        "data-condition": "medical17-1"
-      },
-      "options": [
-        {
-          "val": "medical17-1",
-          "label": "Any Other"
-        }
-      ]
-    },
-    "medical17-dynamic1": {
-      "type": "TextArea",
-      "title": "Area (Left, Right / Upper, Mid, Lower)",
-      "editorAttrs": {"maxlength": 40}
-    },
-    "medical17-dynamic2": {
-      "type": "TextArea",
-      "title": "When it happened?",
-      "editorAttrs": {"maxlength": 40}
-    },
-    "medical17-dynamic3": {
-      "type": "TextArea",
-      "title": "How did it happen?",
-      "editorAttrs": {"maxlength": 40}
-    },
-    "medical17-dynamic4": {
-      "type": "TextArea",
-      "title": "Rehab status?",
-      "editorAttrs": {"maxlength": 40}
-    },
-    "medical17-dynamic5": {
-      "type": "Radio",
-      "title": "Clearance for Exercise?",
-      "fieldClass": "bbf-radiobuttons",
-      "options": [
-        {
-          "val": "medical17-dynamic5-1",
-          "label": "Yes"
-        },
-        {
-          "val": "medical17-dynamic5-2",
-          "label": "No"
-        }
-      ]
-    },
-    "medical17-dynamic6": {
-      "type": "Radio",
-      "title": "Any pain?",
-      "fieldClass": "bbf-radiobuttons",
-      "options": [
-        {
-          "val": "medical17-dynamic6-1",
-          "label": "Yes"
-        },
-        {
-          "val": "medical17-dynamic6-2",
-          "label": "No"
-        }
-      ]
-    },
-    "medical18": {
-      "type": "Radio",
-      "title": "Are you over 65 and not accustomed to vigorous exercise?",
-      "fieldClass": "bbf-radiobuttons",
-      "options": [
-        {
-          "val": "medical18-1",
-          "label": "Yes"
-        },
-        {
-          "val": "medical18-2",
-          "label": "No"
-        }
-      ]
-    },
-    "medical19": {
-      "type": "Radio",
-      "title": "Are you currently taking any prescribed or over the counter medications?",
-      "fieldClass": "bbf-radiobuttons",
-      "fieldAttrs": {
-        "data-bind": "toggleRadio",
-        "data-target": "medical19-dynamic1",
-        "data-condition": "medical19-1"
-      },
-      "options": [
-        {
-          "val": "medical19-1",
-          "label": "Yes"
-        },
-        {
-          "val": "medical19-2",
-          "label": "No"
-        }
-      ]
-    },
-    "medical19-dynamic1": {
-      "type": "TextArea",
-      "title": "If yes, please list below",
-      "editorAttrs": {"maxlength": 100}
-    },
-    "medical20": {
-      "type": "Radio",
-      "title": "Are you diabetic? ",
-      "fieldClass": "bbf-radiobuttons",
-      "options": [
-        {
-          "val": "medical20-1",
-          "label": "Yes"
-        },
-        {
-          "val": "medical20-2",
-          "label": "No"
-        }
-      ]
-    },
-    "medical21": {
-      "type": "Radio",
-      "title": "Are you pregnant?",
-      "fieldClass": "bbf-radiobuttons",
-      "options": [
-        {
-          "val": "medical21-1",
-          "label": "Yes"
-        },
-        {
-          "val": "medical21-2",
-          "label": "No"
-        }
-      ]
-    },
-    "medical22": {
-      "type": "TextArea",
-      "title": "Do you suffer from any medical conditions that might inhibit your ability to exercise?",
-      "editorAttrs": {"maxlength": 100}
-    },
-    "medical23": {
-      "type": "Checkboxes",
-      "title": "Have you ever been diagnosed with a specific medical condition? (Check all that apply)",
-      "fieldClass": "bbf-checkboxes",
-      "options": [
-        {
-          "val": "medical23-1",
-          "label": "Cardiovascular disease"
-        },
-        {
-          "val": "medical23-2",
-          "label": "High blood pressure"
-        },
-        {
-          "val": "medical23-3",
-          "label": "Low blood pressure"
-        },
-        {
-          "val": "medical23-4",
-          "label": "Heart attack"
-        },
-        {
-          "val": "medical23-5",
-          "label": "Heart murmur"
-        },
-        {
-          "val": "medical23-6",
-          "label": "Diabetes"
-        },
-        {
-          "val": "medical23-7",
-          "label": "Cancer"
-        },
-        {
-          "val": "medical23-8",
-          "label": "Neurological disorder"
-        },
-        {
-          "val": "medical23-9",
-          "label": "Respiratory issues"
-        },
-        {
-          "val": "medical23-10",
-          "label": "Asthma"
-        },
-        {
-          "val": "medical23-11",
-          "label": "Emphysema"
-        },
-        {
-          "val": "medical23-12",
-          "label": "Other"
-        },
-        {
-          "val": "medical23-13",
-          "label": "No history of medical conditions"
-        }
-      ]
-    },
-    "medical24": {
-      "type": "TextArea",
-      "title": "Comments: Date of onset, Treatment, Physician clearance? (Y/N)",
-      "editorAttrs": {"maxlength": 100}
     }
   },
   "data": {},
   "fieldsets": [
     {
-      "legend": "Heart",
+      "legend": "Client Information",
       "fields": [
-        "medical01",
-        "medical02",
-        "medical03",
-        "medical04"
+        "personal01",
+        "personal02"
       ]
     },
     {
-      "legend": "Balance, Bone & Joint",
+      "legend": "Date of Equifit",
       "fields": [
-        "medical05",
-        "medical06"
-      ]
-    },
-    {
-      "legend": "Body Injury",
-      "fields": [
-        "medical07",
-        "medical08",
-        "medical08-dynamic1",
-        "medical08-dynamic2",
-        "medical08-dynamic3",
-        "medical08-dynamic4",
-        "medical08-dynamic5",
-        "medical08-dynamic6",
-        "medical09",
-        "medical09-dynamic1",
-        "medical09-dynamic2",
-        "medical09-dynamic3",
-        "medical09-dynamic4",
-        "medical09-dynamic5",
-        "medical09-dynamic6",
-        "medical10",
-        "medical10-dynamic1",
-        "medical10-dynamic2",
-        "medical10-dynamic3",
-        "medical10-dynamic4",
-        "medical10-dynamic5",
-        "medical10-dynamic6",
-        "medical11",
-        "medical11-dynamic1",
-        "medical11-dynamic2",
-        "medical11-dynamic3",
-        "medical11-dynamic4",
-        "medical11-dynamic5",
-        "medical11-dynamic6",
-        "medical12",
-        "medical12-dynamic1",
-        "medical12-dynamic2",
-        "medical12-dynamic3",
-        "medical12-dynamic4",
-        "medical12-dynamic5",
-        "medical12-dynamic6",
-        "medical13",
-        "medical13-dynamic1",
-        "medical13-dynamic2",
-        "medical13-dynamic3",
-        "medical13-dynamic4",
-        "medical13-dynamic5",
-        "medical13-dynamic6",
-        "medical14",
-        "medical14-dynamic1",
-        "medical14-dynamic2",
-        "medical14-dynamic3",
-        "medical14-dynamic4",
-        "medical14-dynamic5",
-        "medical14-dynamic6",
-        "medical15",
-        "medical15-dynamic1",
-        "medical15-dynamic2",
-        "medical15-dynamic3",
-        "medical15-dynamic4",
-        "medical15-dynamic5",
-        "medical15-dynamic6",
-        "medical16",
-        "medical16-dynamic1",
-        "medical16-dynamic2",
-        "medical16-dynamic3",
-        "medical16-dynamic4",
-        "medical16-dynamic5",
-        "medical16-dynamic6",
-        "medical17",
-        "medical17-dynamic1",
-        "medical17-dynamic2",
-        "medical17-dynamic3",
-        "medical17-dynamic4",
-        "medical17-dynamic5",
-        "medical17-dynamic6"
-      ]
-    },
-    {
-      "legend": "Other Medical Conditions",
-      "fields": [
-        "medical18",
-        "medical19",
-        "medical19-dynamic1",
-        "medical20",
-        "medical21",
-        "medical22",
-        "medical23",
-        "medical24"
+        "personal03",
+        "personal04"
       ]
     }
   ],
-  "id": 13,
-  "templateId": 4,
-  "templateType": "MedicalOrthopedic",
-  "title": "Medical Orthopedic Qualification",
-  "totalQuestions": 24,
+  "id": 1,
+  "templateId": 2,
+  "templateType": "PersonalInformation",
+  "title": "Personal Information",
+  "totalQuestions": 4,
   "totalCompletedQuestions": 0
 }

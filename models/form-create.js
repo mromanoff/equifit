@@ -59,92 +59,461 @@ module.exports = [
         templateType: "PersonalInformation",
         totalQuestions: 5,
         totalCompletedQuestions: 2,
-        formSchema: {
-            personal01: {
-                type: 'Text',
-                title: "First Name"
-            },
-
-            personal02: {
-                type: 'Text',
-                title: "Last Name"
-            },
-            personal03: {
-                type: "Select",
-                title: "Gender",
-                options: [
-                    {val: "", label: "Select"},
-                    {val: "personal04-1", label: "Male"},
-                    {val: "personal04-2", label: "Female"}
+        "formSchema": {
+            "personal01": {
+                "type": "Select",
+                "title": "Gender",
+                "options": [
+                    {
+                        "val": "",
+                        "label": "Select"
+                    },
+                    {
+                        "val": "personal01-1",
+                        "label": "Male"
+                    },
+                    {
+                        "val": "personal01-2",
+                        "label": "Female"
+                    }
                 ]
             },
-
-            personal04: {
-                type: "Select",
-                title: "Age",
-                options: [
-                    {val: "personal03-1", label: "< 18"},
-                    {val: "personal03-2", label: "18 - 22"},
-                    {val: "personal03-3", label: "23 - 27"},
-                    {val: "personal03-4", label: "28 - 32"},
-                    {val: "personal03-5", label: "33 - 37"},
-                    {val: "personal03-6", label: "38 - 42"},
-                    {val: "personal03-7", label: "43 - 47"},
-                    {val: "personal03-8", label: "48 - 52"},
-                    {val: "personal03-9", label: "53 - 57"},
-                    {val: "personal03-10", label: "58 - 62"},
-                    {val: "personal03-11", label: "63 - 67"},
-                    {val: "personal03-12", label: "68 - 72"},
-                    {val: "personal03-13", label: "72 +"}
+            "personal02": {
+                "type": "Select",
+                "title": "Age",
+                "options": [
+                    {
+                        "val": "",
+                        "label": "Select"
+                    },
+                    {
+                        "val": "personal02-1",
+                        "label": "< 18"
+                    },
+                    {
+                        "val": "personal02-2",
+                        "label": "18 - 22"
+                    },
+                    {
+                        "val": "personal02-3",
+                        "label": "23 - 27"
+                    },
+                    {
+                        "val": "personal02-4",
+                        "label": "28 - 32"
+                    },
+                    {
+                        "val": "personal02-5",
+                        "label": "33 - 37"
+                    },
+                    {
+                        "val": "personal02-6",
+                        "label": "38 - 42"
+                    },
+                    {
+                        "val": "personal02-7",
+                        "label": "43 - 47"
+                    },
+                    {
+                        "val": "personal02-8",
+                        "label": "48 - 52"
+                    },
+                    {
+                        "val": "personal02-9",
+                        "label": "53 - 57"
+                    },
+                    {
+                        "val": "personal02-10",
+                        "label": "58 - 62"
+                    },
+                    {
+                        "val": "personal02-11",
+                        "label": "63 - 67"
+                    },
+                    {
+                        "val": "personal02-12",
+                        "label": "68 - 72"
+                    },
+                    {
+                        "val": "personal02-13",
+                        "label": "72 +"
+                    }
                 ]
             },
-
-            personal05: {
-                type: "Date",
-                title: "Date of Equifit",
-                yearStart: new Date().getFullYear() - 2,
-                yearEnd: new Date().getFullYear() + 2
+            "personal03": {
+                "type": "Date",
+                "title": "Date of Equifit",
+                "yearStart": 2012,
+                "yearEnd": 2020
             },
-            personal06: {
-                type: "Select",
-                title: "Club",
-                options: [
-                    {val: "", label: "Select"},
-                    {val: "broadway", label: "19 Street"},
-                    {val: "tribeca", label: "Tribeca"},
-                    {val: "westside", label: "West Side"},
-                    {val: "es", label: "East Side"},
-                    {val: "les", label: "Lower East Side"}
+            "personal04": {
+                "type": "Select",
+                "title": "Club",
+                "options": [
+                    {
+                        "val": "",
+                        "label": "Select"
+                    },
+                    {
+                        "val": "116",
+                        "label": "Equinox 17th Street"
+                    },
+                    {
+                        "val": "102",
+                        "label": "Equinox 19th Street"
+                    },
+                    {
+                        "val": "108",
+                        "label": "Equinox 43rd Street"
+                    },
+                    {
+                        "val": "109",
+                        "label": "Equinox 44th Street"
+                    },
+                    {
+                        "val": "107",
+                        "label": "Equinox 50th Street"
+                    },
+                    {
+                        "val": "106",
+                        "label": "Equinox 54th Street"
+                    },
+                    {
+                        "val": "105",
+                        "label": "Equinox 63rd Street"
+                    },
+                    {
+                        "val": "117",
+                        "label": "Equinox 74th Street"
+                    },
+                    {
+                        "val": "121",
+                        "label": "Equinox 76th Street"
+                    },
+                    {
+                        "val": "101",
+                        "label": "Equinox 76th Street OLD"
+                    },
+                    {
+                        "val": "104",
+                        "label": "Equinox 85th Street"
+                    },
+                    {
+                        "val": "103",
+                        "label": "Equinox 92nd Street"
+                    },
+                    {
+                        "val": "149",
+                        "label": "Equinox Armonk"
+                    },
+                    {
+                        "val": "303",
+                        "label": "Equinox Aventura"
+                    },
+                    {
+                        "val": "852",
+                        "label": "Equinox Bay Street"
+                    },
+                    {
+                        "val": "10101",
+                        "label": "Equinox Beacon"
+                    },
+                    {
+                        "val": "252",
+                        "label": "Equinox Bethesda"
+                    },
+                    {
+                        "val": "712",
+                        "label": "Equinox Beverly Hills"
+                    },
+                    {
+                        "val": "128",
+                        "label": "Equinox Brookfield Place"
+                    },
+                    {
+                        "val": "130",
+                        "label": "Equinox Brooklyn Heights"
+                    },
+                    {
+                        "val": "127",
+                        "label": "Equinox Bryant Park"
+                    },
+                    {
+                        "val": "203",
+                        "label": "Equinox Chestnut Hill"
+                    },
+                    {
+                        "val": "404",
+                        "label": "Equinox Chicago Loop"
+                    },
+                    {
+                        "val": "113",
+                        "label": "Equinox Columbus Circle"
+                    },
+                    {
+                        "val": "302",
+                        "label": "Equinox Coral Gables"
+                    },
+                    {
+                        "val": "999",
+                        "label": "Equinox Corporate"
+                    },
+                    {
+                        "val": "141",
+                        "label": "Equinox Darien"
+                    },
+                    {
+                        "val": "201",
+                        "label": "Equinox Dartmouth"
+                    },
+                    {
+                        "val": "11301",
+                        "label": "Equinox E at Columbus Circle"
+                    },
+                    {
+                        "val": "14801",
+                        "label": "Equinox E at Greenwich CT"
+                    },
+                    {
+                        "val": "714",
+                        "label": "Equinox Encino"
+                    },
+                    {
+                        "val": "706",
+                        "label": "Equinox Fitness Club Spa"
+                    },
+                    {
+                        "val": "715",
+                        "label": "Equinox Flower Street"
+                    },
+                    {
+                        "val": "202",
+                        "label": "Equinox Franklin Street"
+                    },
+                    {
+                        "val": "718",
+                        "label": "Equinox Glendale"
+                    },
+                    {
+                        "val": "145",
+                        "label": "Equinox Great Neck"
+                    },
+                    {
+                        "val": "112",
+                        "label": "Equinox Greenwich"
+                    },
+                    {
+                        "val": "148",
+                        "label": "Equinox Greenwich CT"
+                    },
+                    {
+                        "val": "403",
+                        "label": "Equinox Highland Park"
+                    },
+                    {
+                        "val": "451",
+                        "label": "Equinox Highland Park Dallas"
+                    },
+                    {
+                        "val": "732",
+                        "label": "Equinox Irvine"
+                    },
+                    {
+                        "val": "871",
+                        "label": "Equinox Kensington"
+                    },
+                    {
+                        "val": "401",
+                        "label": "Equinox Lincoln Park"
+                    },
+                    {
+                        "val": "144",
+                        "label": "Equinox Mamaroneck"
+                    },
+                    {
+                        "val": "711",
+                        "label": "Equinox Marina del Rey"
+                    },
+                    {
+                        "val": "125",
+                        "label": "Equinox MiMA"
+                    },
+                    {
+                        "val": "730",
+                        "label": "Equinox Newport Beach"
+                    },
+                    {
+                        "val": "402",
+                        "label": "Equinox North Michigan"
+                    },
+                    {
+                        "val": "994",
+                        "label": "Equinox Online CA"
+                    },
+                    {
+                        "val": "998",
+                        "label": "Equinox Online US"
+                    },
+                    {
+                        "val": "722",
+                        "label": "Equinox Palo Alto"
+                    },
+                    {
+                        "val": "705",
+                        "label": "Equinox Palos Verdes"
+                    },
+                    {
+                        "val": "151",
+                        "label": "Equinox Paramus"
+                    },
+                    {
+                        "val": "115",
+                        "label": "Equinox Park Ave"
+                    },
+                    {
+                        "val": "701",
+                        "label": "Equinox Pasadena"
+                    },
+                    {
+                        "val": "720",
+                        "label": "Equinox Pine Street"
+                    },
+                    {
+                        "val": "997",
+                        "label": "Equinox Presale"
+                    },
+                    {
+                        "val": "452",
+                        "label": "Equinox Preston Hollow"
+                    },
+                    {
+                        "val": "124",
+                        "label": "Equinox Printing House"
+                    },
+                    {
+                        "val": "126",
+                        "label": "Equinox Rockefeller Center"
+                    },
+                    {
+                        "val": "143",
+                        "label": "Equinox Roslyn"
+                    },
+                    {
+                        "val": "721",
+                        "label": "Equinox San Mateo"
+                    },
+                    {
+                        "val": "703",
+                        "label": "Equinox Santa Monica"
+                    },
+                    {
+                        "val": "140",
+                        "label": "Equinox Scarsdale"
+                    },
+                    {
+                        "val": "114",
+                        "label": "Equinox SoHo"
+                    },
+                    {
+                        "val": "708",
+                        "label": "Equinox South Bay"
+                    },
+                    {
+                        "val": "301",
+                        "label": "Equinox South Beach"
+                    },
+                    {
+                        "val": "204",
+                        "label": "Equinox Sports Club Boston"
+                    },
+                    {
+                        "val": "304",
+                        "label": "Equinox Sports Club Brickell"
+                    },
+                    {
+                        "val": "253",
+                        "label": "Equinox Sports Club DC"
+                    },
+                    {
+                        "val": "131",
+                        "label": "Equinox Sports Club New York"
+                    },
+                    {
+                        "val": "724",
+                        "label": "Equinox Sports Club San Francisco"
+                    },
+                    {
+                        "val": "132",
+                        "label": "Equinox Sports Club Upper East Side"
+                    },
+                    {
+                        "val": "150",
+                        "label": "Equinox Summit"
+                    },
+                    {
+                        "val": "111",
+                        "label": "Equinox Tribeca"
+                    },
+                    {
+                        "val": "251",
+                        "label": "Equinox Tysons Corner"
+                    },
+                    {
+                        "val": "723",
+                        "label": "Equinox Union Street"
+                    },
+                    {
+                        "val": "110",
+                        "label": "Equinox Wall Street"
+                    },
+                    {
+                        "val": "702",
+                        "label": "Equinox West Hollywood"
+                    },
+                    {
+                        "val": "713",
+                        "label": "Equinox West LA"
+                    },
+                    {
+                        "val": "716",
+                        "label": "Equinox WestLake Village"
+                    },
+                    {
+                        "val": "704",
+                        "label": "Equinox Westwood"
+                    },
+                    {
+                        "val": "142",
+                        "label": "Equinox Woodbury"
+                    },
+                    {
+                        "val": "707",
+                        "label": "Equinox Woodland Hills"
+                    },
+                    {
+                        "val": "851",
+                        "label": "Yorkville"
+                    }
                 ]
             }
         },
-
-        fieldsets: [
+        "data": {},
+        "fieldsets": [
             {
-                legend: "I am",
-                fields: ["personal01", "personal02"]
+                "legend": "Client Information",
+                "fields": [
+                    "personal01",
+                    "personal02"
+                ]
             },
             {
-                legend: "REPLACE_ME_WITH_CLIENT_NAME",
-                fields: [
+                "legend": "Date of Equifit",
+                "fields": [
                     "personal03",
                     "personal04"
                 ]
-            },
-
-            {
-                legend: "Date of Equifit",
-                fields: [
-                    "personal05",
-                    "personal06"
-                ]
             }
-        ],
-
-        data: {
-            personal01: 'Bob',
-            personal02: 'Dylan'
-        }
+        ]
     },
     {
         title: "Medical/Orthopedic HX",

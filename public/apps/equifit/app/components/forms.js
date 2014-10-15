@@ -69,11 +69,9 @@ define(function (require, exports, module) {
                 var a = +form.fields[fields[0]].getValue();
                 var b = +form.fields[fields[1]].getValue();
 
-                console.log('*', this.multiply(a, b).toFixed());
-                console.log('-', this.subtract(a, this.multiply(a, b).toFixed()));
-
-                var result = this.subtract(a, this.multiply(a, b).toFixed());
-                this.editor.setValue(result);
+                //Calculation = Body Weight - (Body Weight x Body Fat%)    Body Fat = 0.0(5)
+                var result =  this.subtract(a, this.multiply(a, this.divide(b, 100)).toFixed(2));
+                this.editor.setValue( _.isNaN(result) ? '' : result);
             }, this);
         },
 
@@ -99,12 +97,12 @@ define(function (require, exports, module) {
 
         showHelp: function () {
             // easy to have class name here then update all record in database. 'help-block'
-            this.editor.$el.find('.' + this.getTarget() + '-block').slideDown(200).addClass('warning');
+            this.editor.$el.find('.' + this.getTarget() + '-block').slideDown(200);
         },
 
         hideHelp: function () {
             // easy to have class name here then update all record in database. 'help-block'
-            this.editor.$el.find('.' + this.getTarget() + '-block').hide();
+            this.editor.$el.find('.' + this.getTarget() + '-block').slideUp(200);
         },
 
         hideTarget: function () {

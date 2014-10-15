@@ -58,7 +58,7 @@ define(['jquery', '../../bower_components/lodash/dist/lodash.underscore', 'backb
 
 
     // Custom templates
-    Form.template.performance = _.template('\
+    Form.template.PerformanceTesting = _.template('\
         <form class="form-horizontal">\
             <fieldset data-fields="performancetesting01,performancetesting02,performancetesting03"></fieldset>\
             <table class="table table-striped">\
@@ -115,5 +115,28 @@ define(['jquery', '../../bower_components/lodash/dist/lodash.underscore', 'backb
             <fieldset data-fields="performancetesting10,performancetesting11"></fieldset>\
         </form>\
         ');
+
+    Form.template.PersonalInformation= _.template('\
+        <form>\
+            <legend>Client Information</legend>\
+            <div class="row-fluid">\
+                <div class="span6">\
+                    <div class="gender" data-fields="personal01"></div>\
+                </div>\
+                <div class="span6">\
+                    <div class="age" data-fields="personal02"></div>\
+                </div>\
+            </div>\
+            <legend>Date of Equifit</legend>\
+            <div class="row-fluid">\
+                <div class="span6">\
+                    <div class="date" data-fields="personal03"></div>\
+                </div>\
+                <div class="span6">\
+                    <div class="club" data-fields="personal04"></div>\
+                </div>\
+            </div>\
+        </form>\
+    ');
 
 });

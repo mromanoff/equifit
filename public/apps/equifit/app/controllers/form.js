@@ -58,7 +58,6 @@ define(function (require, exports, module) {
     controller.updateForm = function (form) {
         var updateForm = msgBus.reqres.request('form:entity:update', form);
         $.when(updateForm).done(function (form) {
-            console.info('Form manualy updated:', form);
             //TODO
             // on server response. form should have an updatedAt attribute.
             // update UI last saved/modified
@@ -86,14 +85,12 @@ define(function (require, exports, module) {
     controller.autoSaveForm = function (form) {
         var updateForm = msgBus.reqres.request('form:entity:auto:save', form);
         $.when(updateForm).done(function (form) {
-            console.info('Form auto saved:', form);
             //TODO
             // on server response. form should have an updatedAt attribute.
             // update UI last saved/modified
             // for now as a hack use client time
             // July 8, 2014
-            var updatedAt = 'saved ' + moment().format('h:mm:ss a');
-            console.log('modified', updatedAt);
+            var updatedAt = 'saved ' + moment().fromNow();
 
             $('.modified').text(updatedAt);
         });
@@ -109,12 +106,12 @@ define(function (require, exports, module) {
         //// var url = 'client/' + this.model.get('parent').clientId + '/equifit/' + this.model.get('parent')._id;
 
         if (_.isEmpty(form._id)) {
-            console.log('this form doesn\'t have an id');
-            console.warn('create new form with template id', form.templateId);
+            //console.log('this form doesn\'t have an id');
+           // console.warn('create new form with template id', form.templateId);
             msgBus.commands.execute('form:create', form.templateId);
         }
         else {
-            console.log('this form have an Id', form._id);
+           // console.log('this form have an Id', form._id);
             msgBus.commands.execute('form:get', form._id);
             url = url + '/form/' + form._id;
             app.router.navigate(url);
