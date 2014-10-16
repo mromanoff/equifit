@@ -2600,103 +2600,371 @@ module.exports = [
 
         "formSchema": {
             "goals01": {
-                type: 'Text',
-                title: "Fitness goal #1",
-                options: null,
-                help: null
+                "type": "Checkboxes",
+                "title": "Is there anything you would specifically like to learn about yourself during the Equifit?",
+                "fieldClass": "bbf-checkboxes",
+                "options": [
+                    {
+                        "val": "goals01-1",
+                        "label": "Nutrition strategies"
+                    },
+                    {
+                        "val": "goals01-2",
+                        "label": "How to get back in shape"
+                    },
+                    {
+                        "val": "goals01-3",
+                        "label": "How to gain muscle"
+                    },
+                    {
+                        "val": "goals01-4",
+                        "label": "How to decrease bodyfat"
+                    },
+                    {
+                        "val": "goals01-5",
+                        "label": "How to improve at my sport"
+                    },
+                    {
+                        "val": "goals01-6",
+                        "label": "How to increase flexibility/mobility"
+                    },
+                    {
+                        "val": "goals01-7",
+                        "label": "How to improve my posture"
+                    },
+                    {
+                        "val": "goals01-8",
+                        "label": "How to reduce pain associated with injury"
+                    },
+                    {
+                        "val": "goals01-9",
+                        "label": "My muscle imbalances"
+                    },
+                    {
+                        "val": "goals01-10",
+                        "label": "My fitness level in relation to others/norms"
+                    }
+                ]
+            },
+            "goals01-dynamic1": {
+                "type": "TextArea",
+                "title": "Other",
+                "editorAttrs": {"maxlength": 50}
             },
             "goals02": {
-                type: 'Text',
-                title: "Fitness goal #2",
-                options: null,
-                help: null
+                "type": "TextArea",
+                "title": "Fitness goal #1",
+                "editorAttrs": {"maxlength": 100}
             },
             "goals03": {
-                type: 'Text',
-                title: "Fitness goal #3",
-                options: null,
-                help: null
+                "type": "TextArea",
+                "title": "Fitness goal #2",
+                "editorAttrs": {"maxlength": 100}
             },
             "goals04": {
-                "type": "Select",
-                title: "How long have you wanted to achieve your number one goal?",
-                options: [
-                    {val: "goals04-1", label: "Less than 3 months"},
-                    {val: "goals04-2", label: "3 - 6 months"},
-                    {val: "goals04-3", label: "7 - 11 months"},
-                    {val: "goals04-4", label: "Longer than 3 years"},
-                    {val: "goals04-5", label: "Other"}
-                ],
-                help: null
+                "type": "TextArea",
+                "title": "Fitness goal #3",
+                "editorAttrs": {"maxlength": 100}
             },
             "goals05": {
-                type: 'Radio',
-                title: "Have you ever achieved this goal in the past?",
-                options: [
-                    {val: "goals05-1", label: "Yes"},
-                    {val: "goals05-2", label: "No"},
-                    {val: "goals05-3", label: "Partially"}
-                ],
-                help: null
+                "type": "Checkboxes",
+                "title": "Fitness goal summary (Check all that apply based on prior responses)",
+                "fieldClass": "bbf-checkboxes",
+                "options": [
+                    {
+                        "val": "goals05-1",
+                        "label": "Lose weight"
+                    },
+                    {
+                        "val": "goals05-2",
+                        "label": "Lose bodyfat"
+                    },
+                    {
+                        "val": "goals05-3",
+                        "label": "Gain lean mass"
+                    },
+                    {
+                        "val": "goals05-4",
+                        "label": "Increase strength"
+                    },
+                    {
+                        "val": "goals05-5",
+                        "label": "Get toned"
+                    },
+                    {
+                        "val": "goals05-6",
+                        "label": "Increase cardiovascular fitness"
+                    },
+                    {
+                        "val": "goals05-7",
+                        "label": "Increase Flexibility"
+                    },
+                    {
+                        "val": "goals05-8",
+                        "label": "Improve overall health"
+                    },
+                    {
+                        "val": "goals05-9",
+                        "label": "Prepare for an athletic event"
+                    },
+                    {
+                        "val": "goals05-10",
+                        "label": "Prepare for a life event"
+                    },
+                    {
+                        "val": "goals05-11",
+                        "label": "Maintain current fitness and health"
+                    }
+                ]
+            },
+            "goals05-dynamic1": {
+                "type": "TextArea",
+                "title": "Other",
+                "editorAttrs": {"maxlength": 50}
             },
             "goals06": {
-                "type": "Date",
-                title: "When would you like to achieve it by?",
-                options: null,
-                help: null
+                "type": "Select",
+                "title": "How long have you wanted to achieve your number one goal?",
+                "options": [
+                    {
+                        "val": "",
+                        "label": "Select"
+                    },
+                    {
+                        "val": "goals06-1",
+                        "label": "Less than 3 months"
+                    },
+                    {
+                        "val": "goals06-2",
+                        "label": "3 - 6 months"
+                    },
+                    {
+                        "val": "goals06-3",
+                        "label": "7 - 11 months"
+                    },
+                    {
+                        "val": "goals06-4",
+                        "label": "Longer than 3 years"
+                    }
+                ]
+            },
+            "goals06-dynamic1": {
+                "type": "TextArea",
+                "title": "Other",
+                "editorAttrs": {"maxlength": 25}
             },
             "goals07": {
-                type: 'Text',
-                title: "Why would you like to achieve this goal?",
-                options: null,
-                help: null
+                "type": "Radio",
+                "title": "Have you ever achieved this goal in the past?",
+                "fieldClass": "bbf-radiobuttons",
+                "fieldAttrs": {
+                    "data-bind": "toggleRadio",
+                    "data-target": "goals07-dynamic1",
+                    "data-condition": "goals07-1"
+                },
+                "options": [
+                    {
+                        "val": "goals07-1",
+                        "label": "Yes"
+                    },
+                    {
+                        "val": "goals07-2",
+                        "label": "No"
+                    },
+                    {
+                        "val": "goals07-3",
+                        "label": "Partially"
+                    }
+                ]
+            },
+            "goals07-dynamic1": {
+                "type": "TextArea",
+                "title": "If so, when and how?",
+                "editorAttrs": {"maxlength": 50}
             },
             "goals08": {
-                type: 'Text',
-                title: "What is the biggest challenge getting in your way of achieving each of these goals?",
-                options: null,
-                help: null
+                "type": "Select",
+                "title": "When would you like to achieve it by?",
+                "options": [
+                    {
+                        "val": "",
+                        "label": "Select"
+                    },
+                    {
+                        "val": "goals08-1",
+                        "label": "1 - 2 months"
+                    },
+                    {
+                        "val": "goals08-2",
+                        "label": "3 - 4 months"
+                    },
+                    {
+                        "val": "goals08-3",
+                        "label": "5 - 6 months"
+                    },
+                    {
+                        "val": "goals08-4",
+                        "label": "7 months - 1 year"
+                    }
+                ]
+            },
+            "goals08-dynamic1": {
+                "type": "TextArea",
+                "title": "Other",
+                "editorAttrs": {"maxlength": 25}
             },
             "goals09": {
-                type: 'Text',
-                title: "What strategies in the past have you utilized to overcome these challenges, if any?",
-                options: null,
-                help: null
+                "type": "TextArea",
+                "title": "Why would you like to achieve this goal?",
+                "editorAttrs": {"maxlength": 100}
             },
             "goals10": {
-                type: 'Radio',
-                title: "On a scale of 1 - 5, how committed are you to each goal?",
-                options: [
-                    {val: "goals10-1", label: "1"},
-                    {val: "goals10-2", label: "2"},
-                    {val: "goals10-3", label: "3"},
-                    {val: "goals10-4", label: "4"},
-                    {val: "goals10-5", label: "5"}
-                ],
-                help: null
+                "type": "Checkboxes",
+                "title": "What is the biggest challenge getting in your way of achieving each of these goals?",
+                "fieldClass": "bbf-checkboxes",
+                "options": [
+                    {
+                        "val": "goals10-1",
+                        "label": "Poor Nutritional Habits"
+                    },
+                    {
+                        "val": "goals10-2",
+                        "label": "Alcohol intake"
+                    },
+                    {
+                        "val": "goals10-3",
+                        "label": "Travel"
+                    },
+                    {
+                        "val": "goals10-4",
+                        "label": "Lack of exercise consistency"
+                    },
+                    {
+                        "val": "goals10-5",
+                        "label": "Lack of time"
+                    },
+                    {
+                        "val": "goals10-6",
+                        "label": "Lack of motivation"
+                    },
+                    {
+                        "val": "goals10-7",
+                        "label": "Family responsibilities"
+                    },
+                    {
+                        "val": "goals10-8",
+                        "label": "Injury"
+                    },
+                    {
+                        "val": "goals10-9",
+                        "label": "Lack of fitness knowledge"
+                    },
+                    {
+                        "val": "goals10-10",
+                        "label": "Sedentary nature of job"
+                    },
+                    {
+                        "val": "goals10-11",
+                        "label": "Job Schedule / Commitments"
+                    }
+                ]
+            },
+            "goals10-dynamic1": {
+                "type": "TextArea",
+                "title": "Other",
+                "editorAttrs": {"maxlength": 50}
             },
             "goals11": {
-                type: 'Text',
-                title: "Notes / Strategy Ideas",
-                options: null,
-                help: null
+                "type": "TextArea",
+                "title": "Notes on Challenges",
+                "editorAttrs": {"maxlength": 2000}
+            },
+            "goals12": {
+                "type": "TextArea",
+                "title": "What strategies in the past have you utilized to overcome these challenges, if any?",
+                "editorAttrs": {"maxlength": 100}
+            },
+            "goals13": {
+                "type": "TextArea",
+                "title": "What is one behavior / habit you can start now to work toward your goal?",
+                "editorAttrs": {"maxlength": 100}
+            },
+            "goals14": {
+                "type": "Radio",
+                "title": "On a scale of 1 - 5, how committed are you to each goal?",
+                "fieldClass": "bbf-radiobuttons",
+                "fieldAttrs": {
+                    "data-bind": "toggleRadio",
+                    "data-target": "goals14-dynamic1",
+                    "data-condition": "goals14-1,goals14-2,goals14-3,goals14-4"
+                },
+                "options": [
+                    {
+                        "val": "goals14-1",
+                        "label": "1"
+                    },
+                    {
+                        "val": "goals14-2",
+                        "label": "2"
+                    },
+                    {
+                        "val": "goals14-3",
+                        "label": "3"
+                    },
+                    {
+                        "val": "goals14-4",
+                        "label": "4"
+                    },
+                    {
+                        "val": "goals14-5",
+                        "label": "5"
+                    }
+                ]
+            },
+            "goals14-dynamic1": {
+                "type": "TextArea",
+                "title": "If you are not a 5 out 5 committed, what would make you a 5?",
+                "editorAttrs": {"maxlength": 100}
+            },
+            "goals15": {
+                "type": "TextArea",
+                "title": "Notes / Strategy Ideas",
+                "editorAttrs": {"maxlength": 2000}
+            },
+            "goals16": {
+                "type": "TextArea",
+                "title": "Before we get started with assessments, do you have any additional comments or is there anything we did not cover?",
+                "editorAttrs": {"maxlength": 100}
             }
         },
+
         "fieldsets": [
             {
                 "legend": "Goals & Habits",
                 "fields": [
                     "goals01",
+                    "goals01-dynamic1",
                     "goals02",
                     "goals03",
                     "goals04",
                     "goals05",
+                    "goals05-dynamic1",
                     "goals06",
+                    "goals06-dynamic1",
                     "goals07",
+                    "goals07-dynamic1",
                     "goals08",
+                    "goals08-dynamic1",
                     "goals09",
                     "goals10",
-                    "goals11"
+                    "goals10-dynamic1",
+                    "goals11",
+                    "goals12",
+                    "goals13",
+                    "goals14",
+                    "goals14-dynamic1",
+                    "goals15",
+                    "goals16"
                 ]
             }
         ],

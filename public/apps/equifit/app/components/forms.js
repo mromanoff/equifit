@@ -15,16 +15,23 @@ define(function (require, exports, module) {
         },
 
         toggleRadio: function () {
-            return (_.isEqual(this.getValue(), this.getCondition()[0])) ? this.showTarget() : this.hideTarget();
+            //console.log('%ccondition:', 'color: white; background: chocolate', this.getCondition());
+            //console.log('%cvalue:', 'color: white; background: LightCoral ', this.getValue());
+
+            var passTest = _.some(this.getCondition(), function(item){
+                return _.isEqual(item, this.getValue());
+            }, this);
+
+            return (passTest) ? this.showTarget() : this.hideTarget();
         },
 
         toggleHelp: function () {
             return (_.isEqual(this.getValue(), this.getCondition()[0])) ? this.showHelp() : this.hideHelp();
         },
         getWaisteToHipRatio: function () {
-            console.group('getWaisteToHipRatio');
-            console.log('%cvalues to devide: %o', 'color: lime; background: #444', this.getTarget());
-            console.groupEnd();
+            //console.group('getWaisteToHipRatio');
+            //console.log('%cvalues to devide: %o', 'color: lime; background: #444', this.getTarget());
+            //console.groupEnd();
             var fields = this.getTarget();
 
             this.form.on(this.getEvents(), function (form, editor) {
@@ -36,9 +43,9 @@ define(function (require, exports, module) {
         },
 
         getSumOfSkinFolds: function () {
-            console.group('getSumOfSkinFolds');
-            console.log('%cvalues to sum: %o', 'color: lime; background: #444', this.getTarget());
-            console.groupEnd();
+            //console.group('getSumOfSkinFolds');
+            //console.log('%cvalues to sum: %o', 'color: lime; background: #444', this.getTarget());
+           // console.groupEnd();
 
             var fields = this.getTarget();
 
@@ -58,9 +65,9 @@ define(function (require, exports, module) {
         },
 
         getLeanBodyMass: function () {
-            console.group('getLeanBodyMass');
-            console.log('%cCalculation = Body Weight - (Body Weight x Body Fat%) %o', 'color: lime; background: #444', this.getTarget());
-            console.groupEnd();
+            //console.group('getLeanBodyMass');
+            //console.log('%cCalculation = Body Weight - (Body Weight x Body Fat%) %o', 'color: lime; background: #444', this.getTarget());
+            //console.groupEnd();
 
             var fields = this.getTarget();
 
@@ -142,81 +149,6 @@ define(function (require, exports, module) {
             }
         }
     };
-
-
-    //ComponentModule.Field = function(form, editor) {
-    //    this.form = form;
-    //    this.editor = editor;
-    //    this.$el = this.editor.$el;
-    //    this.condition = this.$el.data('condition');
-    //    this.$target = _.isEmpty(this.$el.data('target')) ? this.$el.next() : this.$el.find('.' + this.$el.data('target')).addClass('warning');
-    //};
-    //
-    //ComponentModule.Field.prototype = {
-    //    toggle: function () {
-    //        var value;
-    //
-    //        if (_.isArray(this.editor.getValue())) {
-    //            value = this.editor.getValue()[0];
-    //        } else if (_.isString(this.editor.getValue())) {
-    //            value = this.editor.getValue();
-    //        } else {
-    //            return false;
-    //        }
-    //
-    //        if (value === this.$el.data('condition')) {
-    //            this.$target.slideDown(300);
-    //
-    //        } else {
-    //            this.$target.slideUp(300);
-    //        }
-    //    },
-    //
-    //    bind: function () {
-    //        this.$target.hide();
-    //
-    //        this.form.on(this.editor.key + ':change', function () {
-    //            this.toggle();
-    //        }, this);
-    //    }
-    //};
-
-
-    //ComponentModule.SaveData = function (form, editor) {
-    //    this.form =  form;
-    //    this.editor = editor;
-    //};
-    //
-    //ComponentModule.SaveData.prototype = {
-    //
-    //    save: function () {
-    //        this.form.commit();
-    //        console.log('auto save data function', this.form.model.toJSON());
-    //
-    //        this.model.set({
-    //            data: this.form.model.toJSON()
-    //        });
-    //
-    //        msgBus.commands.execute('form:update', this.model);
-    //    }
-    //};
-
-
-    /// TODO POC dynamic calculations.
-
-    //ComponentModule.Field2 = function(form, editor) {
-    //
-    //
-    //};
-    //
-    //ComponentModule.Field2.prototype.bind = function() {
-    //    this.$target.hide();
-    //
-    //    this.form.on(this.editor.key + ':change', function () {
-    //        this.toggle();
-    //    }, this);
-    //};
-
 
     module.exports = ComponentModule;
 });

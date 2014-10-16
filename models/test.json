@@ -1,463 +1,381 @@
 {
   "schema": {
-    "personal01": {
+    "goals01": {
+      "type": "Checkboxes",
+      "title": "Is there anything you would specifically like to learn about yourself during the Equifit?",
+      "fieldClass": "bbf-checkboxes",
+      "options": [
+        {
+          "val": "goals01-1",
+          "label": "Nutrition strategies"
+        },
+        {
+          "val": "goals01-2",
+          "label": "How to get back in shape"
+        },
+        {
+          "val": "goals01-3",
+          "label": "How to gain muscle"
+        },
+        {
+          "val": "goals01-4",
+          "label": "How to decrease bodyfat"
+        },
+        {
+          "val": "goals01-5",
+          "label": "How to improve at my sport"
+        },
+        {
+          "val": "goals01-6",
+          "label": "How to increase flexibility/mobility"
+        },
+        {
+          "val": "goals01-7",
+          "label": "How to improve my posture"
+        },
+        {
+          "val": "goals01-8",
+          "label": "How to reduce pain associated with injury"
+        },
+        {
+          "val": "goals01-9",
+          "label": "My muscle imbalances"
+        },
+        {
+          "val": "goals01-10",
+          "label": "My fitness level in relation to others/norms"
+        }
+      ]
+    },
+    "goals01-dynamic1": {
+      "type": "TextArea",
+      "title": "Other",
+      "editorAttrs": {"maxlength": 50}
+    },
+    "goals02": {
+      "type": "TextArea",
+      "title": "Fitness goal #1",
+      "editorAttrs": {"maxlength": 100}
+    },
+    "goals03": {
+      "type": "TextArea",
+      "title": "Fitness goal #2",
+      "editorAttrs": {"maxlength": 100}
+    },
+    "goals04": {
+      "type": "TextArea",
+      "title": "Fitness goal #3",
+      "editorAttrs": {"maxlength": 100}
+    },
+    "goals05": {
+      "type": "Checkboxes",
+      "title": "Fitness goal summary (Check all that apply based on prior responses)",
+      "fieldClass": "bbf-checkboxes",
+      "options": [
+        {
+          "val": "goals05-1",
+          "label": "Lose weight"
+        },
+        {
+          "val": "goals05-2",
+          "label": "Lose bodyfat"
+        },
+        {
+          "val": "goals05-3",
+          "label": "Gain lean mass"
+        },
+        {
+          "val": "goals05-4",
+          "label": "Increase strength"
+        },
+        {
+          "val": "goals05-5",
+          "label": "Get toned"
+        },
+        {
+          "val": "goals05-6",
+          "label": "Increase cardiovascular fitness"
+        },
+        {
+          "val": "goals05-7",
+          "label": "Increase Flexibility"
+        },
+        {
+          "val": "goals05-8",
+          "label": "Improve overall health"
+        },
+        {
+          "val": "goals05-9",
+          "label": "Prepare for an athletic event"
+        },
+        {
+          "val": "goals05-10",
+          "label": "Prepare for a life event"
+        },
+        {
+          "val": "goals05-11",
+          "label": "Maintain current fitness and health"
+        }
+      ]
+    },
+    "goals05-dynamic1": {
+      "type": "TextArea",
+      "title": "Other",
+      "editorAttrs": {"maxlength": 50}
+    },
+    "goals06": {
       "type": "Select",
-      "title": "Gender",
+      "title": "How long have you wanted to achieve your number one goal?",
       "options": [
         {
           "val": "",
           "label": "Select"
         },
         {
-          "val": "personal01-1",
-          "label": "Male"
+          "val": "goals06-1",
+          "label": "Less than 3 months"
         },
         {
-          "val": "personal01-2",
-          "label": "Female"
+          "val": "goals06-2",
+          "label": "3 - 6 months"
+        },
+        {
+          "val": "goals06-3",
+          "label": "7 - 11 months"
+        },
+        {
+          "val": "goals06-4",
+          "label": "Longer than 3 years"
         }
       ]
     },
-    "personal02": {
+    "goals06-dynamic1": {
+      "type": "TextArea",
+      "title": "Other",
+      "editorAttrs": {"maxlength": 25}
+    },
+    "goals07": {
+      "type": "Radio",
+      "title": "Have you ever achieved this goal in the past?",
+      "fieldClass": "bbf-radiobuttons",
+      "fieldAttrs": {
+        "data-bind": "toggleRadio",
+        "data-target": "goals07-dynamic1",
+        "data-condition": "goals07-1"
+      },
+      "options": [
+        {
+          "val": "goals07-1",
+          "label": "Yes"
+        },
+        {
+          "val": "goals07-2",
+          "label": "No"
+        },
+        {
+          "val": "goals07-3",
+          "label": "Partially"
+        }
+      ]
+    },
+    "goals07-dynamic1": {
+      "type": "TextArea",
+      "title": "If so, when and how?",
+      "editorAttrs": {"maxlength": 50}
+    },
+    "goals08": {
       "type": "Select",
-      "title": "Age",
+      "title": "When would you like to achieve it by?",
       "options": [
         {
           "val": "",
           "label": "Select"
         },
         {
-          "val": "personal02-1",
-          "label": "< 18"
+          "val": "goals08-1",
+          "label": "1 - 2 months"
         },
         {
-          "val": "personal02-2",
-          "label": "18 - 22"
+          "val": "goals08-2",
+          "label": "3 - 4 months"
         },
         {
-          "val": "personal02-3",
-          "label": "23 - 27"
+          "val": "goals08-3",
+          "label": "5 - 6 months"
         },
         {
-          "val": "personal02-4",
-          "label": "28 - 32"
-        },
-        {
-          "val": "personal02-5",
-          "label": "33 - 37"
-        },
-        {
-          "val": "personal02-6",
-          "label": "38 - 42"
-        },
-        {
-          "val": "personal02-7",
-          "label": "43 - 47"
-        },
-        {
-          "val": "personal02-8",
-          "label": "48 - 52"
-        },
-        {
-          "val": "personal02-9",
-          "label": "53 - 57"
-        },
-        {
-          "val": "personal02-10",
-          "label": "58 - 62"
-        },
-        {
-          "val": "personal02-11",
-          "label": "63 - 67"
-        },
-        {
-          "val": "personal02-12",
-          "label": "68 - 72"
-        },
-        {
-          "val": "personal02-13",
-          "label": "72 +"
+          "val": "goals08-4",
+          "label": "7 months - 1 year"
         }
       ]
     },
-    "personal03": {
-      "type": "Date",
-      "title": "Date of Equifit",
-      "yearStart": 2012,
-      "yearEnd": 2020
+    "goals08-dynamic1": {
+      "type": "TextArea",
+      "title": "Other",
+      "editorAttrs": {"maxlength": 25}
     },
-    "personal04": {
-      "type": "Select",
-      "title": "Club",
+    "goals09": {
+      "type": "TextArea",
+      "title": "Why would you like to achieve this goal?",
+      "editorAttrs": {"maxlength": 100}
+    },
+    "goals10": {
+      "type": "Checkboxes",
+      "title": "What is the biggest challenge getting in your way of achieving each of these goals?",
+      "fieldClass": "bbf-checkboxes",
       "options": [
         {
-          "val": "",
-          "label": "Select"
+          "val": "goals10-1",
+          "label": "Poor Nutritional Habits"
         },
         {
-          "val": "116",
-          "label": "Equinox 17th Street"
+          "val": "goals10-2",
+          "label": "Alcohol intake"
         },
         {
-          "val": "102",
-          "label": "Equinox 19th Street"
+          "val": "goals10-3",
+          "label": "Travel"
         },
         {
-          "val": "108",
-          "label": "Equinox 43rd Street"
+          "val": "goals10-4",
+          "label": "Lack of exercise consistency"
         },
         {
-          "val": "109",
-          "label": "Equinox 44th Street"
+          "val": "goals10-5",
+          "label": "Lack of time"
         },
         {
-          "val": "107",
-          "label": "Equinox 50th Street"
+          "val": "goals10-6",
+          "label": "Lack of motivation"
         },
         {
-          "val": "106",
-          "label": "Equinox 54th Street"
+          "val": "goals10-7",
+          "label": "Family responsibilities"
         },
         {
-          "val": "105",
-          "label": "Equinox 63rd Street"
+          "val": "goals10-8",
+          "label": "Injury"
         },
         {
-          "val": "117",
-          "label": "Equinox 74th Street"
+          "val": "goals10-9",
+          "label": "Lack of fitness knowledge"
         },
         {
-          "val": "121",
-          "label": "Equinox 76th Street"
+          "val": "goals10-10",
+          "label": "Sedentary nature of job"
         },
         {
-          "val": "101",
-          "label": "Equinox 76th Street OLD"
-        },
-        {
-          "val": "104",
-          "label": "Equinox 85th Street"
-        },
-        {
-          "val": "103",
-          "label": "Equinox 92nd Street"
-        },
-        {
-          "val": "149",
-          "label": "Equinox Armonk"
-        },
-        {
-          "val": "303",
-          "label": "Equinox Aventura"
-        },
-        {
-          "val": "852",
-          "label": "Equinox Bay Street"
-        },
-        {
-          "val": "10101",
-          "label": "Equinox Beacon"
-        },
-        {
-          "val": "252",
-          "label": "Equinox Bethesda"
-        },
-        {
-          "val": "712",
-          "label": "Equinox Beverly Hills"
-        },
-        {
-          "val": "128",
-          "label": "Equinox Brookfield Place"
-        },
-        {
-          "val": "130",
-          "label": "Equinox Brooklyn Heights"
-        },
-        {
-          "val": "127",
-          "label": "Equinox Bryant Park"
-        },
-        {
-          "val": "203",
-          "label": "Equinox Chestnut Hill"
-        },
-        {
-          "val": "404",
-          "label": "Equinox Chicago Loop"
-        },
-        {
-          "val": "113",
-          "label": "Equinox Columbus Circle"
-        },
-        {
-          "val": "302",
-          "label": "Equinox Coral Gables"
-        },
-        {
-          "val": "999",
-          "label": "Equinox Corporate"
-        },
-        {
-          "val": "141",
-          "label": "Equinox Darien"
-        },
-        {
-          "val": "201",
-          "label": "Equinox Dartmouth"
-        },
-        {
-          "val": "11301",
-          "label": "Equinox E at Columbus Circle"
-        },
-        {
-          "val": "14801",
-          "label": "Equinox E at Greenwich CT"
-        },
-        {
-          "val": "714",
-          "label": "Equinox Encino"
-        },
-        {
-          "val": "706",
-          "label": "Equinox Fitness Club Spa"
-        },
-        {
-          "val": "715",
-          "label": "Equinox Flower Street"
-        },
-        {
-          "val": "202",
-          "label": "Equinox Franklin Street"
-        },
-        {
-          "val": "718",
-          "label": "Equinox Glendale"
-        },
-        {
-          "val": "145",
-          "label": "Equinox Great Neck"
-        },
-        {
-          "val": "112",
-          "label": "Equinox Greenwich"
-        },
-        {
-          "val": "148",
-          "label": "Equinox Greenwich CT"
-        },
-        {
-          "val": "403",
-          "label": "Equinox Highland Park"
-        },
-        {
-          "val": "451",
-          "label": "Equinox Highland Park Dallas"
-        },
-        {
-          "val": "732",
-          "label": "Equinox Irvine"
-        },
-        {
-          "val": "871",
-          "label": "Equinox Kensington"
-        },
-        {
-          "val": "401",
-          "label": "Equinox Lincoln Park"
-        },
-        {
-          "val": "144",
-          "label": "Equinox Mamaroneck"
-        },
-        {
-          "val": "711",
-          "label": "Equinox Marina del Rey"
-        },
-        {
-          "val": "125",
-          "label": "Equinox MiMA"
-        },
-        {
-          "val": "730",
-          "label": "Equinox Newport Beach"
-        },
-        {
-          "val": "402",
-          "label": "Equinox North Michigan"
-        },
-        {
-          "val": "994",
-          "label": "Equinox Online CA"
-        },
-        {
-          "val": "998",
-          "label": "Equinox Online US"
-        },
-        {
-          "val": "722",
-          "label": "Equinox Palo Alto"
-        },
-        {
-          "val": "705",
-          "label": "Equinox Palos Verdes"
-        },
-        {
-          "val": "151",
-          "label": "Equinox Paramus"
-        },
-        {
-          "val": "115",
-          "label": "Equinox Park Ave"
-        },
-        {
-          "val": "701",
-          "label": "Equinox Pasadena"
-        },
-        {
-          "val": "720",
-          "label": "Equinox Pine Street"
-        },
-        {
-          "val": "997",
-          "label": "Equinox Presale"
-        },
-        {
-          "val": "452",
-          "label": "Equinox Preston Hollow"
-        },
-        {
-          "val": "124",
-          "label": "Equinox Printing House"
-        },
-        {
-          "val": "126",
-          "label": "Equinox Rockefeller Center"
-        },
-        {
-          "val": "143",
-          "label": "Equinox Roslyn"
-        },
-        {
-          "val": "721",
-          "label": "Equinox San Mateo"
-        },
-        {
-          "val": "703",
-          "label": "Equinox Santa Monica"
-        },
-        {
-          "val": "140",
-          "label": "Equinox Scarsdale"
-        },
-        {
-          "val": "114",
-          "label": "Equinox SoHo"
-        },
-        {
-          "val": "708",
-          "label": "Equinox South Bay"
-        },
-        {
-          "val": "301",
-          "label": "Equinox South Beach"
-        },
-        {
-          "val": "204",
-          "label": "Equinox Sports Club Boston"
-        },
-        {
-          "val": "304",
-          "label": "Equinox Sports Club Brickell"
-        },
-        {
-          "val": "253",
-          "label": "Equinox Sports Club DC"
-        },
-        {
-          "val": "131",
-          "label": "Equinox Sports Club New York"
-        },
-        {
-          "val": "724",
-          "label": "Equinox Sports Club San Francisco"
-        },
-        {
-          "val": "132",
-          "label": "Equinox Sports Club Upper East Side"
-        },
-        {
-          "val": "150",
-          "label": "Equinox Summit"
-        },
-        {
-          "val": "111",
-          "label": "Equinox Tribeca"
-        },
-        {
-          "val": "251",
-          "label": "Equinox Tysons Corner"
-        },
-        {
-          "val": "723",
-          "label": "Equinox Union Street"
-        },
-        {
-          "val": "110",
-          "label": "Equinox Wall Street"
-        },
-        {
-          "val": "702",
-          "label": "Equinox West Hollywood"
-        },
-        {
-          "val": "713",
-          "label": "Equinox West LA"
-        },
-        {
-          "val": "716",
-          "label": "Equinox WestLake Village"
-        },
-        {
-          "val": "704",
-          "label": "Equinox Westwood"
-        },
-        {
-          "val": "142",
-          "label": "Equinox Woodbury"
-        },
-        {
-          "val": "707",
-          "label": "Equinox Woodland Hills"
-        },
-        {
-          "val": "851",
-          "label": "Yorkville"
+          "val": "goals10-11",
+          "label": "Job Schedule / Commitments"
         }
       ]
+    },
+    "goals10-dynamic1": {
+      "type": "TextArea",
+      "title": "Other",
+      "editorAttrs": {"maxlength": 50}
+    },
+    "goals11": {
+      "type": "TextArea",
+      "title": "Notes on Challenges",
+      "editorAttrs": {"maxlength": 2000}
+    },
+    "goals12": {
+      "type": "TextArea",
+      "title": "What strategies in the past have you utilized to overcome these challenges, if any?",
+      "editorAttrs": {"maxlength": 100}
+    },
+    "goals13": {
+      "type": "TextArea",
+      "title": "What is one behavior / habit you can start now to work toward your goal?",
+      "editorAttrs": {"maxlength": 100}
+    },
+    "goals14": {
+      "type": "Radio",
+      "title": "On a scale of 1 - 5, how committed are you to each goal?",
+      "fieldClass": "bbf-radiobuttons",
+      "fieldAttrs": {
+        "data-bind": "toggleRadio",
+        "data-target": "goals14-dynamic1",
+        "data-condition": "goals14-1,goals14-2,goals14-3,goals14-4"
+      },
+      "options": [
+        {
+          "val": "goals14-1",
+          "label": "1"
+        },
+        {
+          "val": "goals14-2",
+          "label": "2"
+        },
+        {
+          "val": "goals14-3",
+          "label": "3"
+        },
+        {
+          "val": "goals14-4",
+          "label": "4"
+        },
+        {
+          "val": "goals14-5",
+          "label": "5"
+        }
+      ]
+    },
+    "goals14-dynamic1": {
+      "type": "TextArea",
+      "title": "If you are not a 5 out 5 committed, what would make you a 5?",
+      "editorAttrs": {"maxlength": 100}
+    },
+    "goals15": {
+      "type": "TextArea",
+      "title": "Notes / Strategy Ideas",
+      "editorAttrs": {"maxlength": 2000}
+    },
+    "goals16": {
+      "type": "TextArea",
+      "title": "Before we get started with assessments, do you have any additional comments or is there anything we did not cover?",
+      "editorAttrs": {"maxlength": 100}
     }
   },
-  "data": {},
+  "data": {
+    "goals07": "goals07-1",
+    "goals14": "goals14-2"
+  },
   "fieldsets": [
     {
-      "legend": "Client Information",
+      "legend": "Goals & Habits",
       "fields": [
-        "personal01",
-        "personal02"
-      ]
-    },
-    {
-      "legend": "Date of Equifit",
-      "fields": [
-        "personal03",
-        "personal04"
+        "goals01",
+        "goals01-dynamic1",
+        "goals02",
+        "goals03",
+        "goals04",
+        "goals05",
+        "goals05-dynamic1",
+        "goals06",
+        "goals06-dynamic1",
+        "goals07",
+        "goals07-dynamic1",
+        "goals08",
+        "goals08-dynamic1",
+        "goals09",
+        "goals10",
+        "goals10-dynamic1",
+        "goals11",
+        "goals12",
+        "goals13",
+        "goals14",
+        "goals14-dynamic1",
+        "goals15",
+        "goals16"
       ]
     }
   ],
-  "id": 1,
-  "templateId": 2,
-  "templateType": "PersonalInformation",
-  "title": "Personal Information",
-  "totalQuestions": 4,
-  "totalCompletedQuestions": 0
+  "id": 41,
+  "templateId": 7,
+  "templateType": "GoalsHabits",
+  "title": "Goals & Habits",
+  "totalQuestions": 16,
+  "totalCompletedQuestions": 2
 }
