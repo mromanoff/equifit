@@ -28,6 +28,7 @@ define(function (require, exports, module) {
         toggleHelp: function () {
             return (_.isEqual(this.getValue(), this.getCondition()[0])) ? this.showHelp() : this.hideHelp();
         },
+
         getWaisteToHipRatio: function () {
             //console.group('getWaisteToHipRatio');
             //console.log('%cvalues to devide: %o', 'color: lime; background: #444', this.getTarget());
@@ -120,7 +121,7 @@ define(function (require, exports, module) {
 
         showTarget: function () {
             _.each(this.getTarget(), function (field) {
-                this.form.fields[field].$el.slideDown(200);
+                this.form.fields[field].$el.addClass('sub-form').slideDown(200);
             }, this);
         },
 

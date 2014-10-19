@@ -45,7 +45,6 @@ define(['jquery', '../../bower_components/lodash/dist/lodash.underscore', 'backb
     </div>\
   ');
 
-
     Form.NestedField.template = _.template('\
     <div class="field-<%= key %>">\
       <div title="<% if (titleHTML){ %><%= titleHTML %><% } else { %><%- title %><% } %>" class="input-xlarge">\

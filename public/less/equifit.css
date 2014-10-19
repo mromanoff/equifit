@@ -38,7 +38,7 @@
 }
 .equifit .page-header .modified {
   position: absolute;
-  top: 0;
+  top: 12px;
   right: 10px;
   font-size: 12px;
   color: #a2a9b3;
@@ -118,20 +118,13 @@
 .equifit .consent-form-message a:hover {
   text-decoration: none;
 }
+.equifit form .sub-form {
+  margin: 0 -20px;
+  padding: 10px 20px 0;
+  background-color: #eaeaea;
+}
 .equifit form textarea {
   box-sizing: border-box;
-}
-.equifit form [data-editor] ul {
-  *zoom: 1;
-}
-.equifit form [data-editor] ul:before,
-.equifit form [data-editor] ul:after {
-  display: table;
-  content: "";
-  line-height: 0;
-}
-.equifit form [data-editor] ul:after {
-  clear: both;
 }
 .equifit form .odd {
   background-color: #ebebeb;
@@ -151,10 +144,11 @@
 }
 .equifit form ul {
   margin: 0;
+  line-height: normal;
 }
 .equifit form ul li {
   list-style-type: none;
-  float: left;
+  display: inline-block;
   margin-right: 10px;
   background: #e5e6e8;
   padding: 5px;
@@ -168,6 +162,9 @@
 .equifit form ul li label {
   margin: 0;
 }
+.equifit form .bbf-checkboxes {
+  margin-bottom: 0;
+}
 .equifit form .bbf-checkboxes li {
   width: 32%;
   box-sizing: border-box;
@@ -176,8 +173,10 @@
 .equifit form .bbf-checkboxes li label {
   display: inline-block;
 }
+.equifit form .bbf-radiobuttons {
+  margin-bottom: 0;
+}
 .equifit form .bbf-radiobuttons li {
-  width: 47%;
   box-sizing: border-box;
 }
 .equifit form .bbf-radiobuttons li label {
@@ -190,6 +189,9 @@
     margin-bottom: 10px;
   }
 }
+.equifit form .help-block {
+  margin-bottom: 0;
+}
 .equifit form [data-target="help"] .help-block {
   display: none;
   color: #c09853;
@@ -200,10 +202,15 @@
   -webkit-border-radius: 0;
   -moz-border-radius: 0;
   border-radius: 0;
-  margin: 0 0 40px;
+  margin: 0 0 20px;
 }
 .equifit form .date select {
-  width: 32%;
+  width: 100%;
+}
+@media (min-width: 480px) {
+  .equifit form .date select {
+    width: 32%;
+  }
 }
 .equifit form .gender select,
 .equifit form .age select,
