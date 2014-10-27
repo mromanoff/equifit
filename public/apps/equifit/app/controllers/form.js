@@ -63,7 +63,7 @@ define(function (require, exports, module) {
             // update UI last saved/modified
             // for now as a hack use client time
             // July 8, 2014
-            var updatedAt = '<small>Saved on ' + moment().format('MMMM D, YYYY') + '</small>';
+        	var updatedAt = '<small>Saved on ' + moment(form.get('updatedAt')).format('MMMM D, YYYY h:mm:ss a') + '</small>';
 
             msgBus.commands.execute('modal:confirmation:show',
                 new Backbone.Model({

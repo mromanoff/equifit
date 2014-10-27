@@ -5,6 +5,7 @@ define(function (require, exports, module) {
     var Backbone = require('backbone');
     var Store = require('./entities/store');
     var Layout = require('backbone.layoutmanager');
+    var Nav = require('utilities/nav');
     require('bootstrap');
 
     // Provide a global location to place configuration settings and module
@@ -12,6 +13,7 @@ define(function (require, exports, module) {
     var app = {
         // The root path to run the application.
         root: '/apps/equifit/',
+    	nav: Nav.init(),
         store: new Store()
     };
 

@@ -126,7 +126,7 @@ define(['jquery', '../../bower_components/lodash/dist/lodash.underscore', 'backb
                     <div class="age" data-fields="personal02"></div>\
                 </div>\
             </div>\
-            <legend>Date of Equifit</legend>\
+            <legend>Equifit Information</legend>\
             <div class="row-fluid">\
                 <div class="span6">\
                     <div class="date" data-fields="personal03"></div>\

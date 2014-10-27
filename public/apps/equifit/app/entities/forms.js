@@ -18,7 +18,8 @@ define(function (require) {
             fieldsets: null,
             template: null,
             content: null,
-            data: null
+            data: null,
+            updatedAt: null
         },
 
         urlRoot: function () {
