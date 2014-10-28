@@ -5,15 +5,19 @@ define(function (require, exports, module) {
     var Backbone = require('backbone');
     var Store = require('./entities/store');
     var Layout = require('backbone.layoutmanager');
-    var Nav = require('utilities/nav');
+    var NavComponent = require('components/nav');
     require('bootstrap');
 
     // Provide a global location to place configuration settings and module
     // creation.
+
+    // initialize trainer nav.
+    var nav = new NavComponent.TrainerNav();
+    nav.init();
+
     var app = {
         // The root path to run the application.
         root: '/apps/equifit/',
-    	nav: Nav.init(),
         store: new Store()
     };
 
@@ -55,7 +59,7 @@ define(function (require, exports, module) {
     });
 
     // for debug
-    window.store =  app.store;
+    //window.store =  app.store;
 
     app.layout = new Backbone.Layout({
         el: '#main',

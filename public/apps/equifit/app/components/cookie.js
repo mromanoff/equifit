@@ -1,11 +1,9 @@
-﻿// Utilities module
-define([],
+﻿define(function (require, exports, module) {
+	'use strict';
+	var ComponentModule = {};
 
-// Map dependencies from above array.
-function () {
-	"use strict";
-
-	var Cookie = {
+	ComponentModule.Cookie = function(){};
+	ComponentModule.Cookie.prototype = {
 		readCookie: function (name) {
 			var n = name + "=";
 			var ca = document.cookie.split(';');
@@ -21,6 +19,6 @@ function () {
 			return null;
 		}
 	};
-	// Return the module for AMD compliance.
-	return Cookie;
+
+	module.exports = ComponentModule;
 });
