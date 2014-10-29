@@ -8,37 +8,10 @@ module.exports = [
         formSchema: {
             consent01: {
                 type: "Text",
-                fieldClass: "odd",
-                titleHTML: "<p>I have read this form, and I understand the test procedures I will perform. I consent to participate in the Equifit and understand that the information obtained during this evaluation may be used for statistical purposes</p> First and last initial",
+                title: "First and last initial",
                 validators: ["required"]
             }
         },
-        content: [
-            {
-                title: "Informed Consent",
-                text: "The Equifit is a measure of your overall fitness level. It is not intended as a formal \“stress test.\”"
-            },
-            {
-                title: "Explanation of the fitness evaluation",
-                text: "The Equifit includes measurements of weight, percent body fat, resting heart rate, blood pressure, flexibility, muscle strength and muscle endurance. You will also be performing the following: a functional movement screen (FMS), a passive range of motion screen, and an estimated VO2Max test. We may stop any test at any time because of signs of fatigue or discomfort. During the performance of the test, a personal trainer will monitor your heart rate."
-            },
-            {
-                title: "Risks and discomfort",
-                text: "here exists the possibility of certain changes during the Equifit. They include abnormal blood pressure, fainting, disorders of the heart beat, and in very rare instances, heart attack. Every effort will be made to minimize these discomforts by a preliminary screen and by observation during the testing."
-            },
-            {
-                title: "Benefits to be expected",
-                text: "The information obtained during this test will help you gauge your fitness level and will be used to develop effective, goal-directed fitness programs."
-            },
-            {
-                title: "Inquiries",
-                text: "If you have any concerns or questions, please ask us for further explanations"
-            },
-            {
-                title: "Freedom of consent",
-                text: "Your permission to perform the Equifit is voluntary. You are free to decline consent or participation if you so desire"
-            }
-        ],
 
         parent: {
             appointmentAt: null,

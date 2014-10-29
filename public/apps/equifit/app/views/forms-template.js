@@ -115,7 +115,7 @@ define(['jquery', '../../bower_components/lodash/dist/lodash.underscore', 'backb
         </form>\
         ');
 
-    Form.template.PersonalInformation= _.template('\
+    Form.template.PersonalInformation = _.template('\
         <form>\
             <legend>Client Information</legend>\
             <div class="row-fluid">\
@@ -136,6 +136,28 @@ define(['jquery', '../../bower_components/lodash/dist/lodash.underscore', 'backb
                 </div>\
             </div>\
         </form>\
+    ');
+
+    Form.template.InformedConsent = _.template('\
+            <div><h3>Informed Consent</h3>\
+            <p>The Equifit is a measure of your overall fitness level. It is not intended as a formal “stress test.”</p>\
+            <h3>Explanation of the fitness evaluation</h3>\
+            <p>The Equifit includes measurements of weight, percent body fat, resting heart rate, blood pressure, flexibility, muscle strength and muscle endurance. You will also be performing the following: a functional movement screen (FMS), a passive range of motion screen, and an estimated VO2Max test. We may stop any test at any time because of signs of fatigue or discomfort. During the performance of the test, a personal trainer will monitor your heart rate.</p>\
+            <h3>Risks and discomfort</h3>\
+            <p>here exists the possibility of certain changes during the Equifit. They include abnormal blood pressure, fainting, disorders of the heart beat, and in very rare instances, heart attack. Every effort will be made to minimize these discomforts by a preliminary screen and by observation during the testing.</p>\
+            <h3>Benefits to be expected</h3>\
+            <p>The information obtained during this test will help you gauge your fitness level and will be used to develop effective, goal-directed fitness programs.</p>\
+            <h3>Inquiries</h3>\
+            <p>If you have any concerns or questions, please ask us for further explanations</p>\
+            <h3>Freedom of consent</h3>\
+            <p>Your permission to perform the Equifit is voluntary. You are free to decline consent or participation if you so desire</p>\
+            <form>\
+                <div class="odd"\
+                    <p>I have read this form, and I understand the test procedures I will perform. I consent to participate in the Equifit and understand that the information obtained during this evaluation may be used for statistical purposes</p>\
+                    <div data-fields="consent01"></div>\
+                </div>\
+            </form>\
+            </div>\
     ');
 
 });

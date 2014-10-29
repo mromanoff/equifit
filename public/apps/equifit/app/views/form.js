@@ -8,7 +8,7 @@ define(function (require, exports, module) {
     require('views/forms-template');
     var FormComponents = require('components/forms');
     var ConsentMessageView = require('views/consent-form-message');
-    var SimpleContent = require('views/simple-content');
+    //var SimpleContent = require('views/simple-content');
     var FormView;
     var form;
 
@@ -29,12 +29,13 @@ define(function (require, exports, module) {
             // TODO. this is quick fix for 10/14/2014 release. it should be moved to backend. fields name are hard coded here.
             var template = null;
             switch (this.model.get('templateType')) {
-                case "PersonalInformation":
-                    console.log('t', this.model.get('templateType'));
+                case 'PersonalInformation':
                     template = Form.template[this.model.get('templateType')];
                     break;
-                case "PerformanceTesting":
-                    console.log('t', this.model.get('templateType'));
+                case 'PerformanceTesting':
+                    template = Form.template[this.model.get('templateType')];
+                    break;
+                case 'InformedConsent':
                     template = Form.template[this.model.get('templateType')];
                     break;
                 default:
@@ -73,7 +74,7 @@ define(function (require, exports, module) {
             if (!app.store.get('isSigned')) {
                 this.setView('.message', new ConsentMessageView());
             }
-            this.insertView('.content', new SimpleContent({model: this.model.get('content')}));
+            //this.insertView('.content', new SimpleContent({model: this.model.get('content')}));
         },
 
         serialize: function () {
