@@ -3,7 +3,7 @@ Equifit POC
 
 Equifit Forms proof of concept project
 
-This app features a complete backend using node.js with ExpressJS, a data layer using MongoDB with Mongoose, and a complete front-end application built using Backbone.js (with Backbone LayoutManager and Backfone Forms, Bootstrap 2.3 and LESS).
+This app features a complete backend using node.js with ExpressJS, a data layer using MongoDB with Mongoose, and a complete front-end application built using Backbone.js (with Backbone LayoutManager and Backbone Forms, Bootstrap 2.3 and LESS).
 Test runner Karma with Jasmine.
 
 Idea to build main app with sub apps in it. Every app is independent from each other (Node packages, Bower components and Grunt Task Runner)
